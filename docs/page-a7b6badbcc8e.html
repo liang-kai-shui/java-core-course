@@ -1,0 +1,40 @@
+<!doctype html><html lang="zh-CN" data-theme="dark"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>L09 练习 · switch、循环跳转与大数值 · Java陪读</title><link rel="stylesheet" href="assets/course.css"></head><body id="top"><header class="top"><a class="brand" href="index.html"><span>JAVA</span>一起把基础写扎实</a><div class="tools"><span class="tag">CORE JAVA · VOL. I · 10TH</span><a class="all-link" href="全一册.html">全一册</a><button id="theme" aria-label="切换浅色与深色">明 / 暗</button></div></header><div class="layout"><aside><input id="navsearch" class="navsearch" aria-label="筛选课程导航" placeholder="筛选导航…"><nav aria-label="课程导航"><div class="navlabel">START / 开始</div><a class="navlink" href="index.html">课程说明</a><a class="navlink" href="page-0ef3cebffbed.html">全书路线 · 35课</a><a class="navlink" href="page-b984dae871b4.html">运行环境</a><a class="navlink" href="page-526e3b952094.html">书本与PDF页码</a><a class="navlink" href="page-4cc100767b13.html">零基础起飞</a><div class="navlabel">LESSONS / 第1–3章</div><a class="navlink" href="l01-lesson.html">L01 · 认识 Java 与程序运行</a><a class="navlink" href="l02-lesson.html">L02 · 编译、运行与读报错</a><a class="navlink" href="l03-lesson.html">L03 · 程序结构、变量与类型</a><a class="navlink" href="l04-lesson.html">L04 · 运算符与类型转换</a><a class="navlink" href="l05-lesson.html">L05 · 字符串与文本处理</a><a class="navlink" href="l06-lesson.html">L06 · 键盘输入、格式化与文件</a><a class="navlink" href="l07-lesson.html">L07 · 程序如何作选择</a><a class="navlink" href="l08-lesson.html">L08 · 让程序重复做事</a><a class="navlink" href="l09-lesson.html">L09 · switch、循环跳转与大数值</a><a class="navlink" href="l10-lesson.html">L10 · 数组与成绩统计器</a><div class="navlabel">TOOLS / 查阅与接续</div><a class="navlink" href="page-fea294d77afe.html">447条教材索引</a><a class="navlink" href="page-3f83fca99eef.html">术语表</a><a class="navlink" href="page-32d80fdb4bb7.html">AI批改与进度追踪</a><a class="navlink" href="page-e8601bdcb726.html">个人进度模板</a><a class="navlink" href="page-7def9b47aa03.html">维护与打包</a></nav><p class="side-note">按教材顺序，逐课练习。<br>材料准备 ≠ 学生已过关。<br>教材PDF需自备。</p></aside><main><article><div class="crumb">学习笔记 / 本地离线课程</div><span class="edition">第1–3章 · 10课已备 · 书本/PDF双页码</span><h1 id="l09-练习-switch循环跳转与大数值">L09 练习 · switch、循环跳转与大数值</h1><details class="page-toc"><summary>本页目录</summary><div class="toc">
+<ul>
+<li><a href="page-a7b6badbcc8e.html#q1">Q1</a></li>
+<li><a href="page-a7b6badbcc8e.html#e1">E1</a></li>
+<li><a href="page-a7b6badbcc8e.html#e2">E2</a></li>
+<li><a href="page-a7b6badbcc8e.html#e3">E3</a></li>
+<li><a href="page-a7b6badbcc8e.html#q2">Q2</a></li>
+<li><a href="page-a7b6badbcc8e.html#提交自查">提交自查</a></li>
+</ul>
+</div>
+</details>
+<p>教材范围：<strong>书本 p72–78 / PDF p90–96</strong>；题目均为课程原创。下列题均必做，讲义明确标“选读”的深入内容不作为卡关项。</p>
+<p><strong>怎么交作业：直接在这个 <code>练习.md</code> 文件里填答案，保留题号，按 <code>Ctrl+S</code> 保存即可。</strong> 代码写入 <code>my_code/</code>，在对应题下记下源码路径、运行命令和结果；做完后告诉AI“L09做完了”。不必另建 <code>作答.md</code>，已有作答文件也可以继续使用。卡住时把思路和疑问写下来。</p>
+<h2 id="q1">Q1</h2>
+<p>解释switch中遗漏break、循环中break、循环中continue各有什么效果。</p>
+<p><strong>你的回答／源码路径／验证记录：</strong></p>
+<p>（直接在这里填写；完成后可以删除这行提示）</p>
+<h2 id="e1">E1</h2>
+<p>编写Weekday.java：Scanner读整数1–7，1–5输出weekday，6–7输出weekend；其他值输出invalid。使用Java8风格switch和必要的范围检查/默认分支。验证0、1、5、6、7、8。</p>
+<p><strong>你的回答／源码路径／验证记录：</strong></p>
+<p>（直接在这里填写；完成后可以删除这行提示）</p>
+<h2 id="e2">E2</h2>
+<p>用循环对1–20求和，跳过3的倍数；第一个大于15的数出现时结束。须使用continue和break。输出sum=75，并用手算核对参与求和的值。</p>
+<p><strong>你的回答／源码路径／验证记录：</strong></p>
+<p>（直接在这里填写；完成后可以删除这行提示）</p>
+<h2 id="e3">E3</h2>
+<p>编写Money.java：从字符串“0.1”“0.2”建立BigDecimal，保存相加结果并输出0.3；再以HALF_UP规则将1/3保留两位输出0.33。解释为什么不用new BigDecimal(0.1)。</p>
+<p><strong>你的回答／源码路径／验证记录：</strong></p>
+<p>（直接在这里填写；完成后可以删除这行提示）</p>
+<h2 id="q2">Q2</h2>
+<p>BigInteger是否可以不受任何资源限制地变大？调用a.add(b)后a本身是否一定变化？BigDecimal的equals与compareTo用于比较数值时有何区别？</p>
+<p><strong>你的回答／源码路径／验证记录：</strong></p>
+<p>（直接在这里填写；完成后可以删除这行提示）</p>
+<h2 id="提交自查">提交自查</h2>
+<ul>
+<li>[ ] 原创文字解释与必做代码已保存。</li>
+<li>[ ] 记录实际命令、输入、期望和实际结果；未运行的明确写未运行。</li>
+<li>[ ] 实验标本保留原样，修复写在自己的副本。</li>
+<li>[ ] 已标出卡住的题和自己的思路，不用假装全部完成。</li>
+</ul><div class="pager"><a href="index.html">← 课程入口</a><a href="全一册.html">单文件阅读 →</a></div><p class="footer">课程原创配套讲解与习题 · 阅读教材 → 动手 → 订正 → 更新进度</p></article></main></div><script src="assets/course.js"></script></body></html>

@@ -1,0 +1,15 @@
+*.pdf
+*.class
+.build/
+tmp/
+outputs/
+*.zip
+*.zip.sha256
+进度追踪.md
+**/my_code/*
+!**/my_code/README.md
+**/批改记录/
+**/作答.md
+.vscode/settings.local.json
+.java-course.json
+可分发版/

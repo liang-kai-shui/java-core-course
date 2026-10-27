@@ -1,0 +1,5207 @@
+<!doctype html><html lang="zh-CN" data-theme="dark"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>全一册 · Java陪读</title><style>
+:root{color-scheme:dark;--bg:#111c21;--panel:#16252c;--text:#e5ede9;--muted:#99afa9;--line:#2b4148;--accent:#b9d78b;--gold:#dfbd7c;--code:#0c171c}
+:root[data-theme=light]{color-scheme:light;--bg:#f5f4ed;--panel:#fffef8;--text:#253d42;--muted:#57716e;--line:#d4dfd5;--accent:#416d35;--gold:#8a5f18;--code:#edf0e7}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.85 system-ui,'Microsoft YaHei',sans-serif}a{color:var(--accent);text-underline-offset:4px;overflow-wrap:anywhere}a:hover{color:var(--gold)}button{font:inherit;cursor:pointer;border:1px solid var(--line);background:var(--panel);color:var(--text);border-radius:8px;padding:5px 13px}button:focus-visible,a:focus-visible,input:focus-visible{outline:2px solid var(--gold);outline-offset:4px}
+.top{height:78px;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:0 30px;border-bottom:1px solid var(--line);background:var(--panel)}.brand{font-size:19px;font-weight:650;text-decoration:none;color:var(--text)}.brand span{color:var(--gold);margin-right:12px;letter-spacing:2px}.tag{font-size:12px;color:var(--muted);letter-spacing:1px}.tools{display:flex;align-items:center;gap:15px}.layout{display:grid;grid-template-columns:276px minmax(0,1fr)}aside{padding:25px 20px;position:sticky;top:0;height:100vh;overflow:auto;border-right:1px solid var(--line)}.navlabel{color:var(--muted);font-size:12px;letter-spacing:2px;margin:22px 0 10px}.navlink{display:block;padding:8px 12px;text-decoration:none;font-size:14px;border-radius:7px;margin:3px 0;color:var(--muted)}.navlink[aria-current=page]{color:var(--accent);background:var(--panel);box-shadow:inset 2px 0 var(--accent)}.navlink:hover{background:var(--panel)}.navsearch{background:var(--panel);border:1px solid var(--line);border-radius:8px;color:var(--text);padding:9px 10px;width:100%;font:inherit;font-size:13px}.side-note{font-size:12px;color:var(--muted);padding:14px 12px;border-top:1px solid var(--line);margin-top:26px}
+main{min-width:0;padding:40px 5vw 70px}.crumb{font-size:12px;letter-spacing:1px;color:var(--muted);margin-bottom:20px}.edition{display:inline-block;border:1px solid var(--line);border-radius:20px;color:var(--gold);font-size:12px;padding:3px 12px}article{max-width:900px;margin:auto}h1{font-size:clamp(27px,3vw,38px);line-height:1.4;font-weight:650;letter-spacing:-.5px;margin:18px 0 25px}h2{font-size:23px;line-height:1.5;margin:42px 0 18px;padding-top:13px;border-top:1px solid var(--line)}h3{font-size:18px;line-height:1.6;margin-top:30px}p{margin:15px 0}li{margin:7px 0}strong{font-weight:650}blockquote{margin:22px 0;padding:12px 22px;border-left:3px solid var(--gold);background:var(--panel);border-radius:0 8px 8px 0}blockquote p{margin:6px 0}.table-wrap{max-width:100%;overflow:auto;margin:22px 0;border:1px solid var(--line);border-radius:8px}table{border-collapse:collapse;width:100%;font-size:14px;line-height:1.75}th,td{padding:11px 14px;text-align:left;border-bottom:1px solid var(--line);min-width:72px;vertical-align:top}th{background:var(--panel);color:var(--gold)}tr:last-child td{border-bottom:0}pre{background:var(--code);border:1px solid var(--line);border-radius:9px;padding:20px;overflow:auto;line-height:1.7;font-size:13px;tab-size:4}code{font-family:Consolas,'Cascadia Mono',monospace}p code,li code,td code{font-size:.9em;background:var(--panel);border-radius:4px;padding:2px 5px;overflow-wrap:anywhere}details{margin:16px 0;border:1px solid var(--line);border-radius:8px;padding:12px 17px}summary{cursor:pointer;color:var(--accent)}.toc{font-size:14px;background:var(--panel);padding:17px 22px;border-radius:9px;margin:25px 0}.toc ul{padding-left:20px;margin:0}.toc li{margin:3px 0}.pager{display:flex;justify-content:space-between;gap:20px;border-top:1px solid var(--line);margin-top:45px;padding-top:22px;font-size:14px}.footer{font-size:12px;color:var(--muted);margin-top:40px}.bundle-section{padding-top:30px;margin-top:40px;border-top:4px solid var(--line)}
+@media(max-width:800px){.top{height:auto;min-height:70px;padding:14px 18px}.tag,.all-link{display:none}.layout{display:block}aside{position:relative;height:auto;border-right:0;border-bottom:1px solid var(--line);padding:15px 18px}aside nav{max-height:270px;overflow:auto}.navlabel{margin-top:10px}.side-note{display:none}main{padding:25px 20px 50px}h1{font-size:28px}h2{font-size:21px}pre{padding:14px}td,th{padding:9px 11px}}
+@media print{aside,.tools,.top,.pager,.crumb{display:none}.layout{display:block}main{padding:0}body{background:white;color:black;font-size:11pt}article{max-width:none}pre,blockquote{background:#fafafa;color:black;border-color:#ccc}a{color:black}details{break-inside:avoid}}
+</style></head><body id="top"><header class="top"><a class="brand" href="#doc-b33563055168"><span>JAVA</span>一起把基础写扎实</a><div class="tools"><span class="tag">CORE JAVA · VOL. I · 10TH</span><a class="all-link" href="#top">全一册</a><button id="theme" aria-label="切换浅色与深色">明 / 暗</button></div></header><div class="layout"><aside><input id="navsearch" class="navsearch" aria-label="筛选课程导航" placeholder="筛选导航…"><nav aria-label="课程导航"><div class="navlabel">START / 开始</div><a class="navlink" href="#doc-b33563055168" aria-current="page">课程说明</a><a class="navlink" href="#doc-0ef3cebffbed">全书路线 · 35课</a><a class="navlink" href="#doc-b984dae871b4">运行环境</a><a class="navlink" href="#doc-526e3b952094">书本与PDF页码</a><a class="navlink" href="#doc-4cc100767b13">零基础起飞</a><div class="navlabel">LESSONS / 第1–3章</div><a class="navlink" href="#doc-9accd0bf9b7f">L01 · 认识 Java 与程序运行</a><a class="navlink" href="#doc-27ed48622bd4">L02 · 编译、运行与读报错</a><a class="navlink" href="#doc-6b1b497ed36e">L03 · 程序结构、变量与类型</a><a class="navlink" href="#doc-441c97ad53bb">L04 · 运算符与类型转换</a><a class="navlink" href="#doc-23e9eec49f15">L05 · 字符串与文本处理</a><a class="navlink" href="#doc-6892ef8761d4">L06 · 键盘输入、格式化与文件</a><a class="navlink" href="#doc-b1469f212770">L07 · 程序如何作选择</a><a class="navlink" href="#doc-a6ec0be7c981">L08 · 让程序重复做事</a><a class="navlink" href="#doc-33c8ceac7e88">L09 · switch、循环跳转与大数值</a><a class="navlink" href="#doc-dd1d0b22dbf0">L10 · 数组与成绩统计器</a><div class="navlabel">TOOLS / 查阅与接续</div><a class="navlink" href="#doc-fea294d77afe">447条教材索引</a><a class="navlink" href="#doc-3f83fca99eef">术语表</a><a class="navlink" href="#doc-32d80fdb4bb7">AI批改与进度追踪</a><a class="navlink" href="#doc-e8601bdcb726">个人进度模板</a><a class="navlink" href="#doc-7def9b47aa03">维护与打包</a></nav><p class="side-note">按教材顺序，逐课练习。<br>材料准备 ≠ 学生已过关。<br>教材PDF需自备。</p></aside><main><article><div class="crumb">学习笔记 / 本地离线课程</div><span class="edition">第1–3章 · 10课已备 · 书本/PDF双页码</span><section class="bundle-section" id="doc-b33563055168"><h1 id="doc-b33563055168-java-学习课程-从零到核心基础">Java 学习课程 · 从零到核心基础</h1>
+<p>教材：《Java核心技术 卷Ⅰ：基础知识（原书第10版）》中文版。课程作者：凉开水；AI 协助编写。创建于 2026-10-27。</p>
+<p><a href="https://github.com/liang-kai-shui/java-core-course">GitHub仓库</a> · <a href="https://liang-kai-shui.github.io/java-core-course/">在线阅读</a> · 代码采用<a href="https://github.com/liang-kai-shui/java-core-course/blob/main/LICENSE">MIT协议</a>，文档采用<a href="https://github.com/liang-kai-shui/java-core-course/blob/main/LICENSE-DOCS">CC BY-NC-SA 4.0</a>。</p>
+<p><strong>从这里开始：<a href="#doc-9accd0bf9b7f">L01 讲义</a> → <a href="#doc-2bd2136ce2bb">L01 练习</a>。</strong></p>
+<p>本课程沿用 C++ 学习项目的方式：先用白话解释一个知识点解决什么问题，再精读教材、手敲示例、改参数观察现象、完成练习，最后由 AI 批改并持续记录进度。不假设你已经会 C++，也不根据“以前看过”推定已经掌握。</p>
+<h2 id="doc-b33563055168-当前提供什么">当前提供什么</h2>
+<ul>
+<li>第1–3章的10课：讲义、原创练习、独立示例、错误实验和单独存放的参考答案。</li>
+<li>全书35课路线图、447条教材书签索引、双页码说明。</li>
+<li>本地运行工具、VS Code任务、给其他LLM的批改指南与个人进度记录。</li>
+<li><code>docs/index.html</code> 离线网页；<code>docs/全一册.html</code> 单文件阅读版；可分发ZIP在 <code>outputs/</code>。</li>
+</ul>
+<p>后续 L11–L35 目前为规划，尚未编写讲义。<strong>材料备好与学生过关分别记录</strong>，不会因助手运行过示例就把你的课次标成完成。</p>
+<h2 id="doc-b33563055168-怎样使用">怎样使用</h2>
+<ol>
+<li>第一次先读 <a href="#doc-4cc100767b13">零基础起飞</a>、<a href="#doc-b984dae871b4">环境说明</a> 和 <a href="#doc-526e3b952094">页码对应说明</a>。</li>
+<li>每课先读讲义的“要解决的问题”，按双页码表精读或略读教材。</li>
+<li>在 <code>my_code/</code> 里新建文件手敲示例，先预测结果再运行；保留原 <code>code/</code> 示例。</li>
+<li><strong>直接在每课的 <code>练习.md</code> 里写答案，按 <code>Ctrl+S</code> 保存。</strong> 代码写入 <code>my_code/</code>，在题目下记录源码路径、命令和结果；不必另建 <code>作答.md</code>。已有作答文件仍可继续使用。</li>
+<li>完成后告诉 AI 课号并提供作答；AI 先读 <a href="#doc-e8601bdcb726">进度追踪</a>，按 <a href="#doc-32d80fdb4bb7">批改指南</a> 批改。</li>
+<li>按提示订正，复核通过后进入下一课。参考答案在各课 <code>参考答案/</code>，先独立思考再看。</li>
+</ol>
+<p>本书不是按章配置成套习题的入门课本，因此本项目练习均为原创配套题，<strong>不是教材原题或官方答案</strong>。</p>
+<p>本地个人练习与公开课程分开维护：本地 <code>练习.md</code> 保留你的答案；公开网页、压缩包和GitHub发布目录从独立的空白题目模板构建，不会因为重新打包而清掉答案，也不会把你的作答混入公开习题。</p>
+<h2 id="doc-b33563055168-快速运行一个示例">快速运行一个示例</h2>
+<p>在本目录打开 PowerShell：</p>
+<pre><code class="language-powershell">.\check-java.ps1
+.\java.ps1 -Source '.\L01_第01章_认识Java\code\HelloJava.java'
+</code></pre>
+<p>若当前进程的脚本执行策略阻止运行，可用以下单次命令，不改系统执行策略：</p>
+<pre><code class="language-powershell">powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\java.ps1 -Source '.\L01_第01章_认识Java\code\HelloJava.java'
+</code></pre>
+<p>VS Code直接打开整个 <code>D:\Code\Java</code> 文件夹，打开一个本课程独立 <code>.java</code> 文件后按 <code>Ctrl+Shift+B</code>，调用项目任务。别把PDF当作工作区，也别只打开父目录后套用其他项目的运行配置。</p>
+<p>本机检测到 GraalVM JDK 21.0.12；命令行PATH未找到 <code>java</code>/<code>javac</code>。项目脚本优先读取 <code>.java-course.json</code>，不修改全局环境。示例采用 Java 8 语法/API，在本机 JDK 21 上以 <code>--release 8</code> 编译。<code>java.ps1</code>面向当前无package的单文件程序；后续多文件工程会另设运行入口。</p>
+<h2 id="doc-b33563055168-页码约定">页码约定</h2>
+<p>每课同时写 <strong>书本 pX–Y / PDF pA–B</strong>。例如书本 p63 对应本地PDF第81页。正文换算：<strong>PDF页 = 书本页 + 18</strong>。前置封面、前言、目录不能套用这个公式。</p>
+<p>原教材：<code>Java核心技术卷1基础知识原书第10版 .pdf</code>，文件名在 <code>.pdf</code> 前确实带一个空格，保留不变。教材须自备；公开仓库、离线包不含PDF或扫描图片。核对记录与范围边界见 <a href="#doc-526e3b952094">页码对应说明</a>。</p>
+<h2 id="doc-b33563055168-目录入口">目录入口</h2>
+<ul>
+<li><a href="#doc-0ef3cebffbed">学习路线图</a>：顺序、内容、双页码、当前是否有材料。</li>
+<li><a href="#doc-fea294d77afe">教材目录</a>：按关键词找章节；前置页不标书本阿拉伯页码。</li>
+<li><a href="#doc-3f83fca99eef">术语表</a>：遇到不认识的词先查这里。</li>
+<li><a href="#doc-32d80fdb4bb7">给其他LLM的批改指南</a>：交接与可复制提示词。</li>
+<li><a href="#doc-b984dae871b4">环境说明</a>：手动编译、乱码、PATH与版本差异。</li>
+<li><a href="#doc-7def9b47aa03">维护与打包</a>：代码验证、离线网页和发布包生成。</li>
+</ul>
+<h2 id="doc-b33563055168-学习纪律">学习纪律</h2>
+<p>先自己写、先预测、再运行。报错保留从第一行开始的完整文本。提交时写明输入、期望、实际结果。卡住时先写出思路，AI默认给提示；你明确需要完整答案时可以直接说明。</p>
+<p>不要因为见过C++的相似写法就跳过验证：Java的boolean、字符串比较、数组引用和按值传参都有自己的规则。</p></section><section class="bundle-section" id="doc-4cc100767b13"><h1 id="doc-4cc100767b13-零基础起飞-在电脑上跑一个程序">零基础起飞 · 在电脑上跑一个程序</h1>
+<p>电脑里的<strong>文件</strong>是一份有名字的数据，例如讲义、PDF、源代码；<strong>文件夹</strong>用来组织这些文件。类比书页与书架，但电脑可以让文件夹一层层包含。</p>
+<p><strong>路径</strong>是找到文件的位置。例如 <code>D:\Code\Java\README.md</code> 是从盘符出发的完整地址；<code>code\HelloJava.java</code> 是相对当前目录的地址。命令里出现空格或中文时，用引号把路径包起来。Windows资源管理器的“查看→显示→文件扩展名”能帮你分清<code>.java</code>、<code>.txt</code>和<code>.pdf</code>；不要把代码保存成<code>HelloJava.java.txt</code>。</p>
+<p><strong>CPU</strong>负责执行计算，<strong>内存</strong>暂存运行中的数据，<strong>硬盘</strong>长期存文件。像厨师、案板和储物柜：关机后源码仍在硬盘，程序运行时的临时数据通常不会自动保存。类比只帮助理解分工，不代表CPU只有一个任务或内存只能存一种东西。</p>
+<p><strong>程序</strong>是按规则组织的一系列指令。<strong>源代码</strong>是人写的文字；Java编译器先把它转换成字节码文件，JVM再执行。<strong>进程</strong>是程序运行起来的一次活动；同一程序可以运行多次。需要查看进程时按<code>Ctrl+Shift+Esc</code>打开任务管理器；不要看到陌生进程就结束它。</p>
+<p><strong>终端</strong>是输入命令并观察输出的窗口；<strong>PowerShell</strong>是理解这些命令的一种程序。它们不等于Java。你写<code>javac</code>时，是请求PowerShell启动Java编译器；出现“不是可识别的命令”，说明找程序这一步就没成功，还没有开始检查Java语法。</p>
+<p>在VS Code里选择“文件→打开文件夹”，打开整个Java课程目录；菜单“终端→新建终端”会出现命令输入窗口。输入<code>Get-Location</code>查看当前目录，<code>Get-ChildItem</code>查看里面的文件。不要把提示符里的<code>PS D:\Code\Java&gt;</code>也复制进命令。</p>
+<p>首个任务：确认你能找到教材PDF、README和L01文件夹，打开讲义，然后按README运行HelloJava。暂时记住“保存→编译→运行”三步；看不懂代码时不急，L02和L03会逐项拆开。</p></section><section class="bundle-section" id="doc-b984dae871b4"><h1 id="doc-b984dae871b4-环境说明-先用已有的jdk">环境说明 · 先用已有的JDK</h1>
+<h2 id="doc-b984dae871b4-本机核对结果">本机核对结果</h2>
+<p>2026-10-27实际运行：<code>java -version</code>与<code>javac -version</code>（通过完整路径）均为21.0.12。安装目录为 <code>C:\Program Files\Java\graalvm-jdk-21.0.12+7.1</code>。当前终端的PATH没有找到这两个命令；不需要重新安装，更不必为学习第10版而降级全局环境。</p>
+<p>项目的 <code>.java-course.json</code> 记录本机位置，并由Git忽略。<code>java.ps1</code>优先读它，找不到才依次检查JAVA_HOME、PATH以及常见安装目录。换电脑时可从 <code>.java-course.example.json</code> 复制成本机配置再填写路径。不要把其他项目的配置和机器路径发进公开包。</p>
+<h2 id="doc-b984dae871b4-术语先说清楚">术语先说清楚</h2>
+<ul>
+<li><strong>JDK</strong>：开发Java的工具包，里面有编译器和运行工具。像做菜的一套厨具，不只是拿到成品。</li>
+<li><strong>JVM</strong>：执行Java字节码的虚拟机。可以理解成各个平台提供的“字节码执行员”；它不是完整的电脑模拟器。</li>
+<li><strong>JRE</strong>：Java运行环境这个概念，包括JVM及运行所需的库等。现代JDK的发行形式和书中旧版界面不同，本课程不另找一个“JRE下载”安装。</li>
+<li><strong>PATH</strong>：系统寻找命令的目录清单。命令找不到只表明搜索失败，不证明软件没安装。</li>
+</ul>
+<h2 id="doc-b984dae871b4-先会两步运行">先会两步运行</h2>
+<p>在某个示例目录的PowerShell中，手动执行（例：HelloJava.java）：</p>
+<pre><code class="language-powershell">$jdk = 'C:\Program Files\Java\graalvm-jdk-21.0.12+7.1'
+New-Item -ItemType Directory -Path .\out -Force | Out-Null
+&amp; &quot;$jdk\bin\javac.exe&quot; --release 8 -encoding UTF-8 '-Xlint:all,-options' -d .\out .\HelloJava.java
+if ($LASTEXITCODE -eq 0) {
+    &amp; &quot;$jdk\bin\java.exe&quot; -Dfile.encoding=UTF-8 -Dstdout.encoding=UTF-8 -Dstderr.encoding=UTF-8 -cp .\out HelloJava
+}
+</code></pre>
+<p><code>javac</code>把源文件变成<code>.class</code>；<code>java</code>按类名启动程序。<code>-d</code>指定编译产物目录；<code>-cp</code>指定从哪里找类；运行时写<code>HelloJava</code>，不带<code>.class</code>。<code>--release 8</code>在当前JDK允许的范围内约束Java8语法与标准API；它不会把JDK21变成JDK8。<code>-Xlint:all,-options</code>启用代码警告，仅关闭旧目标版本的选项提示。</p>
+<p>正常学习优先用根目录的 <code>java.ps1</code>：它每次新建隔离输出目录，失败立即停，避免错跑旧class。示例无package且各有独立main，不要把所有课次一次编译到同一个目录。</p>
+<p>需要程序参数时：<code>.\java.ps1 -Source '路径\ArgsDemo.java' -ProgramArgs @('red','blue')</code>。<code>-CompileOnly</code>只编译，不声称运行成功。脚本适用Windows PowerShell5.1或PowerShell7；其他系统可用上面同等的javac/java命令，路径按系统修改。</p>
+<h2 id="doc-b984dae871b4-中文输入与输出">中文输入与输出</h2>
+<p>源码统一保存UTF-8；编译显式<code>-encoding UTF-8</code>。本机JDK21运行时可设置<code>-Dstdout.encoding=UTF-8</code>和<code>-Dstderr.encoding=UTF-8</code>；项目脚本同时临时设置控制台编码并在退出前恢复。输入示例使用键盘交互，不靠旧PowerShell默认编码的管道传中文。出现乱码时先记录终端、源文件编码和实际命令，别随意重装JDK。</p>
+<h2 id="doc-b984dae871b4-第10版与当前环境的区别">第10版与当前环境的区别</h2>
+<table>
+<thead>
+<tr>
+<th>书中内容</th>
+<th>本课程处理</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>旧版JDK安装截图、IDE界面</td>
+<td>理解概念；路径用本机检查结果</td>
+</tr>
+<tr>
+<td>applet、浏览器Java插件、Java Web Start</td>
+<td>历史阅读，不安装浏览器插件，不列为必做实验</td>
+</tr>
+<tr>
+<td>finalize清理资源</td>
+<td>只辨析旧机制，不把它当作资源管理方案</td>
+</tr>
+<tr>
+<td>stop/suspend等旧线程控制</td>
+<td>不作为实践方案；并发课讲合作中断</td>
+</tr>
+<tr>
+<td>Java8之后新增语法/API</td>
+<td>后续另列补充；首批示例不用var、record等新写法</td>
+</tr>
+</tbody>
+</table>
+<p>版本差异依据：<a href="https://docs.oracle.com/en/java/javase/21/migrate/removed-tools-and-components.html">Oracle JDK21迁移指南</a>、<a href="https://docs.oracle.com/en/java/javase/21/docs/specs/man/javac.html">javac工具文档</a>。</p>
+<h2 id="doc-b984dae871b4-报错时如何判断">报错时如何判断</h2>
+<p>编译失败看<code>javac</code>诊断；运行失败看异常类型、第一条指向自己源码的堆栈行和输入；结果错误则列出输入→期望→实际。<strong>看到Compilation succeeded只代表编译过了，看到程序自己的输出才说明它实际运行。</strong></p>
+<p>编译有错时不要手动继续运行旧class。脚本生成的 <code>.build/</code> 都是可再生文件，不含你的源码；本项目不自动删除其中内容。</p></section><section class="bundle-section" id="doc-526e3b952094"><h1 id="doc-526e3b952094-页码对应说明与核对记录">页码对应说明与核对记录</h1>
+<h2 id="doc-526e3b952094-两种页码都必须写">两种页码都必须写</h2>
+<p>“书本 p63”指教材正文页眉/页脚的印刷数字；“PDF p81”指阅读器从文件第1页开始数出的物理页序。若阅读器使用自定义页标签，应切换为物理页序确认。讲义示例：<strong>书本 p63–66 / PDF p81–84</strong>。</p>
+<p>本地PDF：<code>Java核心技术卷1基础知识原书第10版 .pdf</code>，729页。正文从PDF p19开始，对应书本p1。正文换算为 <strong>PDF页 = 书本页 + 18</strong>。前言、目录等前置部分不套用该公式。</p>
+<h2 id="doc-526e3b952094-已核对的证据2026-10-27">已核对的证据（2026-10-27）</h2>
+<p>使用Poppler将本地PDF渲染成图片，直接阅读完整页面及页眉；不是借用英文版页码。图像校对缓存位于 <code>tmp/pdfs/</code>，不进入分发包。</p>
+<table>
+<thead>
+<tr>
+<th>内容或核对点</th>
+<th>书本页</th>
+<th>PDF页</th>
+<th>核对方式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>第1章章首页及1.1</td>
+<td>1</td>
+<td>19</td>
+<td>看完整页面；章首页未印数字，由后页p2和目录定位</td>
+</tr>
+<tr>
+<td>1.2起点</td>
+<td>2</td>
+<td>20</td>
+<td>页眉印刷2、标题1.2</td>
+</tr>
+<tr>
+<td>第1章末页</td>
+<td>11</td>
+<td>29</td>
+<td>页眉印刷11</td>
+</tr>
+<tr>
+<td>第2章章首页及2.1</td>
+<td>12</td>
+<td>30</td>
+<td>看完整页面；按相邻印刷页和书签定位</td>
+</tr>
+<tr>
+<td>2.2起点</td>
+<td>16</td>
+<td>34</td>
+<td>页眉印刷16</td>
+</tr>
+<tr>
+<td>第2章末页</td>
+<td>27</td>
+<td>45</td>
+<td>页眉印刷27</td>
+</tr>
+<tr>
+<td>第3章章首页及3.1</td>
+<td>28</td>
+<td>46</td>
+<td>看完整页面；书签定位</td>
+</tr>
+<tr>
+<td>3.2注释</td>
+<td>31</td>
+<td>49</td>
+<td>页眉印刷31；小节书签</td>
+</tr>
+<tr>
+<td>3.3数据类型</td>
+<td>32</td>
+<td>50</td>
+<td>页眉印刷32；上半页仍为注释</td>
+</tr>
+<tr>
+<td>3.4变量</td>
+<td>36</td>
+<td>54</td>
+<td>页眉印刷36；小节书签</td>
+</tr>
+<tr>
+<td>3.5运算符</td>
+<td>38</td>
+<td>56</td>
+<td>页眉印刷38；小节书签</td>
+</tr>
+<tr>
+<td>3.6字符串</td>
+<td>45</td>
+<td>63</td>
+<td>看完整页面；上半页仍有3.5.9枚举</td>
+</tr>
+<tr>
+<td>3.7输入输出</td>
+<td>55</td>
+<td>73</td>
+<td>看完整页面；上半页仍有StringBuilder API</td>
+</tr>
+<tr>
+<td>3.7.3文件输入输出</td>
+<td>61</td>
+<td>79</td>
+<td>页眉印刷61；小节书签</td>
+</tr>
+<tr>
+<td>3.8控制流程</td>
+<td>63</td>
+<td>81</td>
+<td>页眉印刷63，标题3.8</td>
+</tr>
+<tr>
+<td>3.9大数值</td>
+<td>76</td>
+<td>94</td>
+<td>看完整页面；上半页仍讲continue</td>
+</tr>
+<tr>
+<td>3.10数组</td>
+<td>78</td>
+<td>96</td>
+<td>看完整页面；上半页仍是BigDecimal API</td>
+</tr>
+<tr>
+<td>第3章末页</td>
+<td>90</td>
+<td>108</td>
+<td>页眉印刷90</td>
+</tr>
+<tr>
+<td>第4章章首页</td>
+<td>91</td>
+<td>109</td>
+<td>已渲染章首页；后续讲义编写时再核对具体范围</td>
+</tr>
+<tr>
+<td>文档末页，附录A</td>
+<td>711</td>
+<td>729</td>
+<td>页眉印刷711，检验后段偏移</td>
+</tr>
+</tbody>
+</table>
+<p>3.8内的3.8.3、3.8.4、3.8.5、3.8.6边界见书签（PDF p84、87、90、92），编写首批讲义时也渲染核对其完整正文页面。原书相邻主题常在同一页衔接，所以L03/L04共用p38，L04/L05共用p45，L05/L06共用p55等均为正常现象。</p>
+<h2 id="doc-526e3b952094-后续维护">后续维护</h2>
+<p>首批课次范围已经核对。其余章节的索引来自书签和统一偏移，不能当作逐页核验结果。每次扩课须打开真实正文核实起止页及标题，再更新本表；若发现某个书签偏移一页，以正文为准并记录修正。</p>
+<p>若更换教材文件，不沿用+18：重新检查总页数、正文起点、各章起点及分页。索引生成工具不会替代人工确认。</p></section><section class="bundle-section" id="doc-0ef3cebffbed"><h1 id="doc-0ef3cebffbed-学习路线图">学习路线图</h1>
+<p>按教材章节顺序推进；同一小节跨页或新小节在同页开始时，课次页码可以重叠。所有页码以用户提供的本地第10版PDF为准。</p>
+<p>已备第1–3章10课；后续25课为规划，不代表材料或学习已完成。每课约需1–3次学习，按作答调整节奏，不以固定周数催进度。</p>
+<table>
+<thead>
+<tr>
+<th>课次</th>
+<th>内容</th>
+<th>教材小节</th>
+<th>书本页</th>
+<th>PDF页</th>
+<th>材料</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#doc-9accd0bf9b7f">L01</a></td>
+<td>认识 Java 与程序运行</td>
+<td>第1章 1.1–1.5</td>
+<td>1–11</td>
+<td>19–29</td>
+<td>已备；边界已看图核对</td>
+</tr>
+<tr>
+<td><a href="#doc-27ed48622bd4">L02</a></td>
+<td>编译、运行与读报错</td>
+<td>第2章 2.1–2.3；2.4选读；2.5历史了解</td>
+<td>12–27</td>
+<td>30–45</td>
+<td>已备；边界已看图核对</td>
+</tr>
+<tr>
+<td><a href="#doc-6b1b497ed36e">L03</a></td>
+<td>程序结构、变量与类型</td>
+<td>第3章 3.1–3.4</td>
+<td>28–38</td>
+<td>46–56</td>
+<td>已备；边界已看图核对</td>
+</tr>
+<tr>
+<td><a href="#doc-441c97ad53bb">L04</a></td>
+<td>运算符与类型转换</td>
+<td>第3章 3.5</td>
+<td>38–45</td>
+<td>56–63</td>
+<td>已备；边界已看图核对</td>
+</tr>
+<tr>
+<td><a href="#doc-23e9eec49f15">L05</a></td>
+<td>字符串与文本处理</td>
+<td>第3章 3.6</td>
+<td>45–55</td>
+<td>63–73</td>
+<td>已备；边界已看图核对</td>
+</tr>
+<tr>
+<td><a href="#doc-6892ef8761d4">L06</a></td>
+<td>键盘输入、格式化与文件</td>
+<td>第3章 3.7</td>
+<td>55–63</td>
+<td>73–81</td>
+<td>已备；边界已看图核对</td>
+</tr>
+<tr>
+<td><a href="#doc-b1469f212770">L07</a></td>
+<td>程序如何作选择</td>
+<td>第3章 3.8.1–3.8.2</td>
+<td>63–66</td>
+<td>81–84</td>
+<td>已备；边界已看图核对</td>
+</tr>
+<tr>
+<td><a href="#doc-a6ec0be7c981">L08</a></td>
+<td>让程序重复做事</td>
+<td>第3章 3.8.3–3.8.4</td>
+<td>66–72</td>
+<td>84–90</td>
+<td>已备；边界已看图核对</td>
+</tr>
+<tr>
+<td><a href="#doc-33c8ceac7e88">L09</a></td>
+<td>switch、循环跳转与大数值</td>
+<td>第3章 3.8.5–3.9</td>
+<td>72–78</td>
+<td>90–96</td>
+<td>已备；边界已看图核对</td>
+</tr>
+<tr>
+<td><a href="#doc-dd1d0b22dbf0">L10</a></td>
+<td>数组与成绩统计器</td>
+<td>第3章 3.10</td>
+<td>78–90</td>
+<td>96–108</td>
+<td>已备；边界已看图核对</td>
+</tr>
+<tr>
+<td>L11</td>
+<td>对象、引用与预定义类</td>
+<td>4.1–4.2</td>
+<td>91–103</td>
+<td>109–121</td>
+<td>规划；编写前复核正文</td>
+</tr>
+<tr>
+<td>L12</td>
+<td>自定义类与封装</td>
+<td>4.3</td>
+<td>103–112</td>
+<td>121–130</td>
+<td>规划；编写前复核正文</td>
+</tr>
+<tr>
+<td>L13</td>
+<td>静态成员、方法与按值传参</td>
+<td>4.4–4.5</td>
+<td>112–123</td>
+<td>130–141</td>
+<td>规划；编写前复核正文</td>
+</tr>
+<tr>
+<td>L14</td>
+<td>构造器与重载</td>
+<td>4.6</td>
+<td>123–131</td>
+<td>141–149</td>
+<td>规划；编写前复核正文</td>
+</tr>
+<tr>
+<td>L15</td>
+<td>包、类路径、文档注释与类设计</td>
+<td>4.7–4.10</td>
+<td>131–146</td>
+<td>149–164</td>
+<td>规划；编写前复核正文</td>
+</tr>
+<tr>
+<td>L16</td>
+<td>继承、多态与抽象类</td>
+<td>5.1</td>
+<td>147–166</td>
+<td>165–184</td>
+<td>规划；编写前复核正文</td>
+</tr>
+<tr>
+<td>L17</td>
+<td>Object、ArrayList、包装类与枚举</td>
+<td>5.2–5.6</td>
+<td>166–190</td>
+<td>184–208</td>
+<td>规划；编写前复核正文</td>
+</tr>
+<tr>
+<td>L18</td>
+<td>反射与继承设计</td>
+<td>5.7–5.8</td>
+<td>190–210</td>
+<td>208–228</td>
+<td>规划；编写前复核正文</td>
+</tr>
+<tr>
+<td>L19</td>
+<td>接口与回调</td>
+<td>6.1–6.2</td>
+<td>211–231</td>
+<td>229–249</td>
+<td>规划；编写前复核正文</td>
+</tr>
+<tr>
+<td>L20</td>
+<td>Lambda 与方法引用</td>
+<td>6.3</td>
+<td>231–242</td>
+<td>249–260</td>
+<td>规划；编写前复核正文</td>
+</tr>
+<tr>
+<td>L21</td>
+<td>内部类与代理</td>
+<td>6.4–6.5</td>
+<td>242–263</td>
+<td>260–281</td>
+<td>规划；编写前复核正文</td>
+</tr>
+<tr>
+<td>L22</td>
+<td>异常、断言、日志与调试</td>
+<td>第7章</td>
+<td>264–308</td>
+<td>282–326</td>
+<td>规划；编写前复核正文</td>
+</tr>
+<tr>
+<td>L23</td>
+<td>泛型、擦除与通配符</td>
+<td>第8章</td>
+<td>309–343</td>
+<td>327–361</td>
+<td>规划；编写前复核正文</td>
+</tr>
+<tr>
+<td>L24</td>
+<td>集合框架与常用容器</td>
+<td>9.1–9.2</td>
+<td>344–372</td>
+<td>362–390</td>
+<td>规划；编写前复核正文</td>
+</tr>
+<tr>
+<td>L25</td>
+<td>映射、视图与集合算法</td>
+<td>9.3–9.6</td>
+<td>372–402</td>
+<td>390–420</td>
+<td>规划；编写前复核正文</td>
+</tr>
+<tr>
+<td>L26</td>
+<td>Swing 与绘图</td>
+<td>第10章</td>
+<td>403–438</td>
+<td>421–456</td>
+<td>规划；编写前复核正文</td>
+</tr>
+<tr>
+<td>L27</td>
+<td>事件与监听器</td>
+<td>第11章</td>
+<td>439–468</td>
+<td>457–486</td>
+<td>规划；编写前复核正文</td>
+</tr>
+<tr>
+<td>L28</td>
+<td>组件与基本布局</td>
+<td>12.1–12.4</td>
+<td>469–504</td>
+<td>487–522</td>
+<td>规划；编写前复核正文</td>
+</tr>
+<tr>
+<td>L29</td>
+<td>菜单与复杂布局</td>
+<td>12.5–12.6</td>
+<td>504–541</td>
+<td>522–559</td>
+<td>规划；编写前复核正文</td>
+</tr>
+<tr>
+<td>L30</td>
+<td>对话框与 GUI 排错</td>
+<td>12.7–12.8</td>
+<td>541–579</td>
+<td>559–597</td>
+<td>规划；编写前复核正文</td>
+</tr>
+<tr>
+<td>L31</td>
+<td>JAR、资源与配置</td>
+<td>第13章；applet/Web Start历史阅读</td>
+<td>580–623</td>
+<td>598–641</td>
+<td>规划；编写前复核正文</td>
+</tr>
+<tr>
+<td>L32</td>
+<td>线程、中断与状态</td>
+<td>14.1–14.4</td>
+<td>624–640</td>
+<td>642–658</td>
+<td>规划；编写前复核正文</td>
+</tr>
+<tr>
+<td>L33</td>
+<td>同步、可见性与竞态</td>
+<td>14.5</td>
+<td>640–668</td>
+<td>658–686</td>
+<td>规划；编写前复核正文</td>
+</tr>
+<tr>
+<td>L34</td>
+<td>队列、线程池、Future 与 Swing线程</td>
+<td>14.6–14.11</td>
+<td>668–710</td>
+<td>686–728</td>
+<td>规划；编写前复核正文</td>
+</tr>
+<tr>
+<td>L35</td>
+<td>综合项目：图书或学习任务管理器</td>
+<td>综合应用</td>
+<td>—</td>
+<td>—</td>
+<td>规划；编写前复核正文</td>
+</tr>
+</tbody>
+</table>
+<h2 id="doc-0ef3cebffbed-阅读取舍">阅读取舍</h2>
+<p>L01完整理解Java是什么，历史年代不要求背诵。L02以已安装的JDK21和命令行为准；2.5 applet只作历史阅读。第3章的位运算、Unicode码点、大数值和不规则数组均有明确学习层级，选读不能冒充完全没提过。</p>
+<p>后续仍按原书顺序经过Swing；GUI可以按兴趣调整深度。第13章的applet和Java Web Start只作历史了解。<code>finalize</code>和<code>Thread.stop/suspend</code>作为旧机制辨析，不要求照抄为实践方案。更新依据见环境说明。</p>
+<h2 id="doc-0ef3cebffbed-过关原则">过关原则</h2>
+<p>每课必做题齐全、核心概念正确、题目指定验证有依据才通过。选做、风格优化或尚未讲过的高级写法不作为卡关条件。前课通过状态不因开新课重置。当前实际进度只记在进度追踪.md。</p></section><section class="bundle-section" id="doc-9accd0bf9b7f"><h1 id="doc-9accd0bf9b7f-l01-讲义-认识-java-与程序运行">L01 讲义 · 认识 Java 与程序运行</h1>
+<blockquote>
+<p>前置：无；不会编程也能开始。
+页码：<strong>书本 p1–11 / PDF p19–29</strong>。见<a href="#doc-526e3b952094">页码说明</a>。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>阅读内容</th>
+<th>书本页</th>
+<th>PDF页</th>
+<th>要求</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1.1 Java程序设计平台</td>
+<td>1–2</td>
+<td>19–20</td>
+<td>精读：语言、平台与运行环境</td>
+</tr>
+<tr>
+<td>1.2 白皮书术语</td>
+<td>2–6</td>
+<td>20–24</td>
+<td>理解作用，不背宣传式定义</td>
+</tr>
+<tr>
+<td>1.3–1.4 applet与简史</td>
+<td>6–9</td>
+<td>24–27</td>
+<td>历史选读，不实践旧插件</td>
+</tr>
+<tr>
+<td>1.5 常见误解</td>
+<td>9–11</td>
+<td>27–29</td>
+<td>精读：跨平台与运行前提</td>
+</tr>
+</tbody>
+</table>
+<h2 id="doc-9accd0bf9b7f-这一课要解决什么问题">这一课要解决什么问题</h2>
+<p>一份<code>.java</code>文字为什么能变成屏幕上的输出？先建立“谁负责哪一步”的地图，后面报错才知道找谁。</p>
+<h2 id="doc-9accd0bf9b7f-1-java不只是语法">1. Java不只是语法</h2>
+<p><strong>编程语言</strong>是人给电脑描述操作的一套规则。像约定好的工作指令，规则统一才能被工具理解。<strong>平台</strong>还包括执行环境和可以调用的现成库；库可以类比常用工具集合。你不是每次输出文字都从控制硬件开始写。</p>
+<p>本课只要求理解1.1、1.2和1.5的主旨：Java提供语言、类库和运行环境，移植性有前提。1.3、1.4作历史阅读；不要背年代，也不用实现浏览器applet。</p>
+<h2 id="doc-9accd0bf9b7f-2-源码编译执行">2. 源码→编译→执行</h2>
+<p>你手写的<code>HelloJava.java</code>叫<strong>源代码</strong>，就是保存下来的程序文本。<strong>编译器</strong><code>javac</code>先检查它是否符合规则，再生成常见后缀为<code>.class</code>的<strong>字节码</strong>。<strong>JVM</strong>执行字节码，完成输出等动作。类比同一份菜谱先整理成统一的操作单，再由不同厨房里的执行员完成；厨房仍需要合适的工具和原料。</p>
+<pre><code class="language-text">HelloJava.java --javac--&gt; HelloJava.class --java/JVM--&gt; 屏幕输出
+</code></pre>
+<p>编译成功只说明通过了一部分规则检查，不能证明程序算对了。把<code>2+3</code>错写成<code>2-3</code>仍可能编译成功。</p>
+<p><strong>JDK</strong>是开发工具包，包含<code>javac</code>和运行工具；<strong>JRE</strong>是运行环境的概念。我们已有JDK21，不再找旧JRE安装包。<code>java</code>是启动工具，不等于整个Java平台。</p>
+<h2 id="doc-9accd0bf9b7f-3-先跑一个最小程序">3. 先跑一个最小程序</h2>
+<p>示例<code>code/HelloJava.java</code>中，<code>class</code>先理解为装程序的外壳，<code>main</code>先理解为启动入口。<code>System.out.println</code>把括号中的内容输出并换行。每个词的详细规则L03继续讲，不要求现在背“面向对象”定义。</p>
+<p>在根目录运行：<code>.\java.ps1 -Source '.\L01_第01章_认识Java\code\HelloJava.java'</code>。应该看到<code>你好，Java！</code>。这一步由助手跑通不代表你已做过；你要自己敲和运行一遍。</p>
+<h2 id="doc-9accd0bf9b7f-4-三类现象三种判断">4. 三类现象，三种判断</h2>
+<p><strong>编译错误</strong>：工具不能把源码编译成功，例如少分号。<strong>运行时异常</strong>：已经启动，执行到不合法操作时报告问题，例如数组越界。<strong>逻辑错误</strong>：程序跑完，但不符合题意，例如长方形面积写成周长。这只是入门分类；程序也可能同时有多类问题。</p>
+<p><strong>跨平台</strong>是指兼容的字节码可以由各系统上的适配JVM执行，不是任意电脑不用安装东西就能跑，也不是依赖特定系统文件的程序必然通用。<code>System.getProperty</code>示例先当作“向运行环境查询信息”的现成工具，之后再讲对象和方法。</p>
+<h2 id="doc-9accd0bf9b7f-动手实验">动手实验</h2>
+<ol>
+<li>先预测<code>HelloJava</code>输出几行；在自己的副本里改成姓名，再运行。</li>
+<li>运行<code>RuntimeInfo</code>，记录<code>java.version</code>和<code>os.name</code>。你当前结果可能和别人不同，这不是错误。</li>
+<li>复制HelloJava后删掉一处分号，记录究竟在哪一步失败，再恢复并重新编译。</li>
+</ol>
+<h2 id="doc-9accd0bf9b7f-本课过关">本课过关</h2>
+<p>能用自己的话讲清源码、javac、class、JVM的分工；自己运行出中文输出；能区分编译成功与结果正确。历史年代和白皮书术语不要求逐条背。</p>
+<h2 id="doc-9accd0bf9b7f-示例入口">示例入口</h2>
+<p><a href="#doc-88947e1a9eb7">逐个示例与运行命令</a>。</p>
+<h2 id="doc-9accd0bf9b7f-学完交什么">学完交什么</h2>
+<p>完成<a href="#doc-2bd2136ce2bb">本课练习</a>，代码写入<a href="#doc-d6f55ade8a89">my_code</a>，附命令、输入和结果。先做题，再看<a href="#doc-8ac64aceb665">参考答案</a>。批改后将结论保存到<a href="#doc-e8601bdcb726">进度追踪</a>。</p>
+<p>下一课：<a href="#doc-27ed48622bd4">L02 编译、运行与读报错</a>。</p></section><section class="bundle-section" id="doc-88947e1a9eb7"><h1 id="doc-88947e1a9eb7-本课独立示例">本课独立示例</h1>
+<p>从项目根目录运行以下命令，每次一个程序。先预测结果，再手敲到my_code实验。</p>
+<h2 id="doc-88947e1a9eb7-hellojavajava">HelloJava.java</h2>
+<pre><code class="language-powershell">.\java.ps1 -Source 'L01_第01章_认识Java/code/HelloJava.java'
+</code></pre>
+<h2 id="doc-88947e1a9eb7-runtimeinfojava">RuntimeInfo.java</h2>
+<pre><code class="language-powershell">.\java.ps1 -Source 'L01_第01章_认识Java/code/RuntimeInfo.java'
+</code></pre><h2>本目录源码 · 点击展开</h2><details><summary>HelloJava.java</summary><pre><code>// L01 原创示例：先观察程序自己的输出。
+public class HelloJava {
+    public static void main(String[] args) {
+        System.out.println(&quot;你好，Java！&quot;);
+    }
+}
+</code></pre></details><details><summary>RuntimeInfo.java</summary><pre><code>public class RuntimeInfo {
+    public static void main(String[] args) {
+        System.out.println(&quot;java.version=&quot; + System.getProperty(&quot;java.version&quot;));
+        System.out.println(&quot;os.name=&quot; + System.getProperty(&quot;os.name&quot;));
+    }
+}
+</code></pre></details></section><section class="bundle-section" id="doc-2bd2136ce2bb"><h1 id="doc-2bd2136ce2bb-l01-练习-认识-java-与程序运行">L01 练习 · 认识 Java 与程序运行</h1>
+<p>教材范围：<strong>书本 p1–11 / PDF p19–29</strong>；题目均为课程原创。下列题均必做，讲义明确标“选读”的深入内容不作为卡关项。</p>
+<p><strong>怎么交作业：直接在这个 <code>练习.md</code> 文件里填答案，保留题号，按 <code>Ctrl+S</code> 保存即可。</strong> 代码写入 <code>my_code/</code>，在对应题下记下源码路径、运行命令和结果；做完后告诉AI“L01做完了”。不必另建 <code>作答.md</code>，已有作答文件也可以继续使用。卡住时把思路和疑问写下来。</p>
+<h2 id="doc-2bd2136ce2bb-q1">Q1</h2>
+<p>用自己的话说明源代码、javac、class文件、JVM的分工。不要只列四个英文词。</p>
+<p><strong>你的回答／源码路径／验证记录：</strong></p>
+<p>（直接在这里填写；完成后可以删除这行提示）</p>
+<h2 id="doc-2bd2136ce2bb-q2">Q2</h2>
+<p>“编译成功就说明程序正确”“任何电脑不用运行环境都能执行class”分别哪里不准确？</p>
+<p><strong>你的回答／源码路径／验证记录：</strong></p>
+<p>（直接在这里填写；完成后可以删除这行提示）</p>
+<h2 id="doc-2bd2136ce2bb-e1">E1</h2>
+<p>手敲HelloJava到my_code/HelloJava.java，输出两行：第一行姓名（可用昵称），第二行“我开始学习Java”。记录运行命令和实际输出。</p>
+<p><strong>你的回答／源码路径／验证记录：</strong></p>
+<p>（直接在这里填写；完成后可以删除这行提示）</p>
+<h2 id="doc-2bd2136ce2bb-e2">E2</h2>
+<p>运行RuntimeInfo，记录java.version与os.name，说明为什么他人的输出可能不同。</p>
+<p><strong>你的回答／源码路径／验证记录：</strong></p>
+<p>（直接在这里填写；完成后可以删除这行提示）</p>
+<h2 id="doc-2bd2136ce2bb-e3">E3</h2>
+<p>在my_code的副本里删掉一处分号，记录失败阶段、第一条有效诊断；恢复后重新编译运行。</p>
+<p><strong>你的回答／源码路径／验证记录：</strong></p>
+<p>（直接在这里填写；完成后可以删除这行提示）</p>
+<h2 id="doc-2bd2136ce2bb-提交自查">提交自查</h2>
+<ul>
+<li>[ ] 原创文字解释与必做代码已保存。</li>
+<li>[ ] 记录实际命令、输入、期望和实际结果；未运行的明确写未运行。</li>
+<li>[ ] 实验标本保留原样，修复写在自己的副本。</li>
+<li>[ ] 已标出卡住的题和自己的思路，不用假装全部完成。</li>
+</ul></section><section class="bundle-section" id="doc-27ed48622bd4"><h1 id="doc-27ed48622bd4-l02-讲义-编译运行与读报错">L02 讲义 · 编译、运行与读报错</h1>
+<blockquote>
+<p>前置：L01：源代码、字节码、JVM。
+页码：<strong>书本 p12–27 / PDF p30–45</strong>。见<a href="#doc-526e3b952094">页码说明</a>。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>阅读内容</th>
+<th>书本页</th>
+<th>PDF页</th>
+<th>要求</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2.1 JDK</td>
+<td>12–16</td>
+<td>30–34</td>
+<td>概念精读，安装操作看环境说明</td>
+</tr>
+<tr>
+<td>2.2 命令行</td>
+<td>16–18</td>
+<td>34–36</td>
+<td>精读并实际运行</td>
+</tr>
+<tr>
+<td>2.3 IDE</td>
+<td>18–21</td>
+<td>36–39</td>
+<td>了解用途，本项目用VS Code</td>
+</tr>
+<tr>
+<td>2.4 GUI</td>
+<td>21–23</td>
+<td>39–41</td>
+<td>选读，后续Swing再实践</td>
+</tr>
+<tr>
+<td>2.5 applet</td>
+<td>23–27</td>
+<td>41–45</td>
+<td>历史阅读，不要求运行</td>
+</tr>
+</tbody>
+</table>
+<h2 id="doc-27ed48622bd4-这一课要解决什么问题">这一课要解决什么问题</h2>
+<p>按运行按钮出问题时，你需要知道按钮背后执行了什么。先会手动两步运行，再用便捷脚本。</p>
+<h2 id="doc-27ed48622bd4-1-工具在但命令可能找不到">1. 工具在，但命令可能找不到</h2>
+<p><strong>PATH</strong>是终端找命令时查找的目录列表，像通讯录。没有登记电话号码不等于那个人不存在。本机JDK21已安装，但当前终端直接找不到<code>java</code>和<code>javac</code>；因此课程脚本读取项目配置中的完整路径，不改系统环境。</p>
+<p>先在根目录执行<code>.\check-java.ps1</code>，记录实际版本；再执行README的HelloJava命令。PowerShell若限制脚本，使用README给出的单次<code>powershell.exe -ExecutionPolicy Bypass -File ...</code>入口，无需更改全局策略。</p>
+<h2 id="doc-27ed48622bd4-2-编译命令逐项拆开">2. 编译命令逐项拆开</h2>
+<p>在某个源码目录中，按环境说明设置<code>$jdk</code>，再执行：</p>
+<pre><code class="language-powershell">&amp; &quot;$jdk\bin\javac.exe&quot; --release 8 -encoding UTF-8 -d .\out .\HelloJava.java
+if ($LASTEXITCODE -eq 0) {
+    &amp; &quot;$jdk\bin\java.exe&quot; -cp .\out HelloJava
+}
+</code></pre>
+<p><code>&amp;</code>让PowerShell启动引号中的程序；不是Java语法。<code>-d</code>是放编译产物的目录，<code>-cp</code>是运行时查找类的目录。<strong>类名</strong>在这里是<code>HelloJava</code>，运行时不写扩展名。<code>$LASTEXITCODE</code>记录上个外部程序的退出状态；这里等于0才继续，防止编译失败仍执行旧文件。</p>
+<p><strong>当前目录</strong>是相对路径的起点。<code>Get-Location</code>看位置，<code>Get-ChildItem</code>看文件。教材命令中的示例路径不能原样当成你电脑的真实地址。</p>
+<h2 id="doc-27ed48622bd4-3-程序的名字要对应">3. 程序的名字要对应</h2>
+<p>先采用一文件一个<code>public class</code>的约定：<code>HelloJava.java</code>里面是<code>public class HelloJava</code>。大小写也要对应。<code>main</code>必须按当前模板准确写为<code>public static void main(String[] args)</code>；写成<code>Main</code>是不同名字。</p>
+<p><strong>命令行参数</strong>是在启动类名后给程序的数据，像把待办事项随启动请求一起交进去。<code>ArgsDemo</code>先只显示参数个数，不访问不存在的第一个参数；数组细节L10讲。</p>
+<h2 id="doc-27ed48622bd4-4-读报错不要只看最后一行">4. 读报错不要只看最后一行</h2>
+<p>编译诊断通常包含文件、位置、说明。先读第一条有意义的错误，再定位原语句；后面许多诊断可能只是前一处错误引发的连锁结果。</p>
+<p><code>error_lab/MissingSemicolon.java</code>和<code>WrongFileName.java</code>预期编译失败；<code>MissingMain.java</code>可以编译，但启动失败；<code>RuntimeCrash.java</code>在运行时报告异常；<code>WrongFormula.java</code>正常结束但面积算错。它们是实验标本，不是待修复的课程样例。复制到my_code再修，保留原标本。</p>
+<h2 id="doc-27ed48622bd4-动手实验">动手实验</h2>
+<ol>
+<li>编译HelloJava后在my_code副本中故意写错；确认新编译失败时课程脚本不会输出上次的“你好，Java！”。</li>
+<li>用<code>-ProgramArgs @('red','blue')</code>运行ArgsDemo，再用无参数运行，比较结果。</li>
+<li>按error_lab/README逐个观察失败阶段，记录完整诊断。不要把5个错误标本一起编译。</li>
+</ol>
+<h2 id="doc-27ed48622bd4-本课过关">本课过关</h2>
+<p>能解释两步命令，自己定位一处文件名问题；能保留原始错误证据、修复自己的副本并重新运行；不把运行旧class当作修复成功。</p>
+<h2 id="doc-27ed48622bd4-示例入口">示例入口</h2>
+<p><a href="#doc-8dc288399ce5">逐个示例与运行命令</a>。</p>
+<h2 id="doc-27ed48622bd4-学完交什么">学完交什么</h2>
+<p>完成<a href="#doc-95000a110447">本课练习</a>，代码写入<a href="#doc-612a839fdbf1">my_code</a>，附命令、输入和结果。先做题，再看<a href="#doc-702232ba7bff">参考答案</a>。批改后将结论保存到<a href="#doc-e8601bdcb726">进度追踪</a>。</p>
+<p>下一课：<a href="#doc-6b1b497ed36e">L03 程序结构、变量与类型</a>。</p></section><section class="bundle-section" id="doc-8dc288399ce5"><h1 id="doc-8dc288399ce5-本课独立示例">本课独立示例</h1>
+<p>从项目根目录运行以下命令，每次一个程序。先预测结果，再手敲到my_code实验。</p>
+<h2 id="doc-8dc288399ce5-argsdemojava">ArgsDemo.java</h2>
+<pre><code class="language-powershell">.\java.ps1 -Source 'L02_第02章_编译运行与错误/code/ArgsDemo.java'
+</code></pre><h2>本目录源码 · 点击展开</h2><details><summary>ArgsDemo.java</summary><pre><code>public class ArgsDemo {
+    public static void main(String[] args) {
+        System.out.println(&quot;argument count=&quot; + args.length);
+    }
+}
+</code></pre></details></section><section class="bundle-section" id="doc-95000a110447"><h1 id="doc-95000a110447-l02-练习-编译运行与读报错">L02 练习 · 编译、运行与读报错</h1>
+<p>教材范围：<strong>书本 p12–27 / PDF p30–45</strong>；题目均为课程原创。下列题均必做，讲义明确标“选读”的深入内容不作为卡关项。</p>
+<p><strong>怎么交作业：直接在这个 <code>练习.md</code> 文件里填答案，保留题号，按 <code>Ctrl+S</code> 保存即可。</strong> 代码写入 <code>my_code/</code>，在对应题下记下源码路径、运行命令和结果；做完后告诉AI“L02做完了”。不必另建 <code>作答.md</code>，已有作答文件也可以继续使用。卡住时把思路和疑问写下来。</p>
+<h2 id="doc-95000a110447-q1">Q1</h2>
+<p>解释javac与java的区别，-d与-cp各做什么，运行时为何用类名而非class文件名。</p>
+<p><strong>你的回答／源码路径／验证记录：</strong></p>
+<p>（直接在这里填写；完成后可以删除这行提示）</p>
+<h2 id="doc-95000a110447-q2">Q2</h2>
+<p>为什么“找不到java命令”不能直接推出“没有安装JDK”？编译失败后运行旧class有什么问题？</p>
+<p><strong>你的回答／源码路径／验证记录：</strong></p>
+<p>（直接在这里填写；完成后可以删除这行提示）</p>
+<h2 id="doc-95000a110447-e1">E1</h2>
+<p>手动分两步编译运行自己的HelloJava，记录完整命令和实际输出，不只提交按钮截图。</p>
+<p><strong>你的回答／源码路径／验证记录：</strong></p>
+<p>（直接在这里填写；完成后可以删除这行提示）</p>
+<h2 id="doc-95000a110447-e2">E2</h2>
+<p>运行ArgsDemo，分别不传参数和传red、blue；记录结果并解释参数来自哪里。</p>
+<p><strong>你的回答／源码路径／验证记录：</strong></p>
+<p>（直接在这里填写；完成后可以删除这行提示）</p>
+<h2 id="doc-95000a110447-e3">E3</h2>
+<p>按error_lab/README观察5个标本，逐个记录：编译能否成功、能否正常启动/结束、第一条有效诊断或错误结果。只修自己的副本，并任选一个记录修复后的验证。</p>
+<p><strong>你的回答／源码路径／验证记录：</strong></p>
+<p>（直接在这里填写；完成后可以删除这行提示）</p>
+<h2 id="doc-95000a110447-提交自查">提交自查</h2>
+<ul>
+<li>[ ] 原创文字解释与必做代码已保存。</li>
+<li>[ ] 记录实际命令、输入、期望和实际结果；未运行的明确写未运行。</li>
+<li>[ ] 实验标本保留原样，修复写在自己的副本。</li>
+<li>[ ] 已标出卡住的题和自己的思路，不用假装全部完成。</li>
+</ul></section><section class="bundle-section" id="doc-6b1b497ed36e"><h1 id="doc-6b1b497ed36e-l03-讲义-程序结构变量与类型">L03 讲义 · 程序结构、变量与类型</h1>
+<blockquote>
+<p>前置：L02：能独立编译运行一个程序。
+页码：<strong>书本 p28–38 / PDF p46–56</strong>。见<a href="#doc-526e3b952094">页码说明</a>。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>阅读内容</th>
+<th>书本页</th>
+<th>PDF页</th>
+<th>要求</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>3.1 简单程序</td>
+<td>28–31</td>
+<td>46–49</td>
+<td>精读外壳、main与输出</td>
+</tr>
+<tr>
+<td>3.2 注释</td>
+<td>31–32</td>
+<td>49–50</td>
+<td>精读并识别嵌套限制</td>
+</tr>
+<tr>
+<td>3.3 数据类型</td>
+<td>32–36</td>
+<td>50–54</td>
+<td>精读基本类型；Unicode细节结合实验</td>
+</tr>
+<tr>
+<td>3.4 变量</td>
+<td>36–38</td>
+<td>54–56</td>
+<td>精读初始化与常量</td>
+</tr>
+</tbody>
+</table>
+<h2 id="doc-6b1b497ed36e-这一课要解决什么问题">这一课要解决什么问题</h2>
+<p>程序要记住人数、价格、姓名和真假条件。如何给数据起名，又避免把不合适的数据混用？</p>
+<h2 id="doc-6b1b497ed36e-1-先看程序外壳">1. 先看程序外壳</h2>
+<pre><code class="language-java">public class VariableDemo {
+    public static void main(String[] args) {
+        int count = 3;
+        System.out.println(count);
+    }
+}
+</code></pre>
+<p><code>class</code>声明类；<strong>类</strong>可以组织程序，后面还会用来描述对象。<strong>方法</strong>是一段有名字、可被调用的操作；这里<code>main</code>是启动方法。先把<code>public static void main(String[] args)</code>当作完整模板使用：<code>public</code>表示可访问，<code>static</code>使启动时无需先创建该类对象，<code>void</code>表示不返回结果；第4章会用真正的调用解释它们。</p>
+<p>花括号包住代码范围，分号结束语句。<code>//</code>到行末是注释，<code>/* ... */</code>是块注释，注释不会被执行，也不能随意嵌套。引号中的<code>//</code>属于文本，不会变成注释。</p>
+<h2 id="doc-6b1b497ed36e-2-变量与赋值">2. 变量与赋值</h2>
+<p><strong>变量</strong>给运行中要用的数据起名，像贴着标签的格子。<code>int count = 3</code>声明类型、名字并给初值。<code>count = count + 1</code>是先取右边旧值计算，再把结果放回左边；不是数学里声称两侧永远相等。</p>
+<p><strong>类型</strong>规定可以存什么值及允许哪些操作。类比容器标签只是入门帮助；Java的引用变量并不直接把整个对象装进格子。</p>
+<p>局部变量用之前必须确定已赋值：<code>int count;</code>本身合法，但直接输出尚未赋值的count会编译失败。不要把“局部变量未初始化”与“数组元素有默认值”混为一谈。</p>
+<h2 id="doc-6b1b497ed36e-3-常用类型先抓住用途">3. 常用类型先抓住用途</h2>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>适合的值</th>
+<th>重点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>byte/short/int/long</td>
+<td>一定范围内的整数</td>
+<td>首选int；很大的整数字面量加L</td>
+</tr>
+<tr>
+<td>float/double</td>
+<td>浮点数</td>
+<td>首选double；float字面量常需f；许多小数不能精确表示</td>
+</tr>
+<tr>
+<td>char</td>
+<td>一个UTF-16代码单元</td>
+<td>如'A'、'中'；不是任意一个完整Unicode字符</td>
+</tr>
+<tr>
+<td>boolean</td>
+<td>true或false</td>
+<td>不能拿0/1自动替代</td>
+</tr>
+<tr>
+<td>String</td>
+<td>一段文本</td>
+<td>引用类型，不属于8种基本类型</td>
+</tr>
+</tbody>
+</table>
+<p><strong>字面量</strong>是直接写在源码里的值，例如<code>42</code>、<code>3.5</code>、<code>'A'</code>和<code>"Java"</code>。<strong>常量</strong>在本课用<code>final int DAYS = 7</code>表示赋值后不能再改的量，避免把固定意义散落成神秘数字。普通变量名用<code>studentCount</code>这类有意义的写法，常量名可用<code>MAX_COUNT</code>。</p>
+<h2 id="doc-6b1b497ed36e-4-范围初始化与作用域">4. 范围、初始化与作用域</h2>
+<p><code>int</code>范围是-2147483648到2147483647；存不下的计算不会自动变成long。运行VariableDemo观察最大值加1，它会绕回负数。不要套用C++有符号整数溢出的规则。</p>
+<p><strong>作用域</strong>指代码哪些位置可以使用一个名字。花括号内声明的局部变量通常只在相应范围可用；它不是对“这块数据在内存里什么时候消失”的完整描述。</p>
+<h2 id="doc-6b1b497ed36e-动手实验">动手实验</h2>
+<p>运行VariableDemo，修改人数和单价，先估算总价。运行UnicodeDemo，比较<code>"中".length()</code>与<code>"😀".length()</code>；length数的是UTF-16代码单元，后者会是2，不能把length一概称为“屏幕上的字数”。在副本中试<code>boolean ready = 1</code>、使用未赋值的局部变量，记录编译阶段的诊断。</p>
+<h2 id="doc-6b1b497ed36e-本课过关">本课过关</h2>
+<p>能选适当类型，解释赋值的先后顺序、局部变量初始化、final和int范围；不要求背全部浮点标准。</p>
+<h2 id="doc-6b1b497ed36e-示例入口">示例入口</h2>
+<p><a href="#doc-d9c576e49900">逐个示例与运行命令</a>。</p>
+<h2 id="doc-6b1b497ed36e-学完交什么">学完交什么</h2>
+<p>完成<a href="#doc-20353e11686c">本课练习</a>，代码写入<a href="#doc-73a05fdd5377">my_code</a>，附命令、输入和结果。先做题，再看<a href="#doc-c068f2bbb9af">参考答案</a>。批改后将结论保存到<a href="#doc-e8601bdcb726">进度追踪</a>。</p>
+<p>下一课：<a href="#doc-441c97ad53bb">L04 运算符与类型转换</a>。</p></section><section class="bundle-section" id="doc-d9c576e49900"><h1 id="doc-d9c576e49900-本课独立示例">本课独立示例</h1>
+<p>从项目根目录运行以下命令，每次一个程序。先预测结果，再手敲到my_code实验。</p>
+<h2 id="doc-d9c576e49900-unicodedemojava">UnicodeDemo.java</h2>
+<pre><code class="language-powershell">.\java.ps1 -Source 'L03_第03章A_程序结构与变量类型/code/UnicodeDemo.java'
+</code></pre>
+<h2 id="doc-d9c576e49900-variabledemojava">VariableDemo.java</h2>
+<pre><code class="language-powershell">.\java.ps1 -Source 'L03_第03章A_程序结构与变量类型/code/VariableDemo.java'
+</code></pre><h2>本目录源码 · 点击展开</h2><details><summary>UnicodeDemo.java</summary><pre><code>public class UnicodeDemo {
+    public static void main(String[] args) {
+        String chinese = &quot;中&quot;;
+        String emoji = &quot;\uD83D\uDE00&quot;;
+        System.out.println(&quot;chinese units=&quot; + chinese.length());
+        System.out.println(&quot;emoji units=&quot; + emoji.length());
+        System.out.println(&quot;emoji code points=&quot; + emoji.codePointCount(0, emoji.length()));
+    }
+}
+</code></pre></details><details><summary>VariableDemo.java</summary><pre><code>public class VariableDemo {
+    public static void main(String[] args) {
+        int count = 3;
+        double price = 12.5;
+        final int DAYS = 7;
+        System.out.println(&quot;count=&quot; + count);
+        count = count + 1;
+        System.out.println(&quot;updated=&quot; + count);
+        System.out.println(&quot;total=&quot; + count * price);
+        System.out.println(&quot;days=&quot; + DAYS);
+        int maximum = Integer.MAX_VALUE;
+        System.out.println(&quot;overflow=&quot; + (maximum + 1));
+    }
+}
+</code></pre></details></section><section class="bundle-section" id="doc-20353e11686c"><h1 id="doc-20353e11686c-l03-练习-程序结构变量与类型">L03 练习 · 程序结构、变量与类型</h1>
+<p>教材范围：<strong>书本 p28–38 / PDF p46–56</strong>；题目均为课程原创。下列题均必做，讲义明确标“选读”的深入内容不作为卡关项。</p>
+<p><strong>怎么交作业：直接在这个 <code>练习.md</code> 文件里填答案，保留题号，按 <code>Ctrl+S</code> 保存即可。</strong> 代码写入 <code>my_code/</code>，在对应题下记下源码路径、运行命令和结果；做完后告诉AI“L03做完了”。不必另建 <code>作答.md</code>，已有作答文件也可以继续使用。卡住时把思路和疑问写下来。</p>
+<h2 id="doc-20353e11686c-q1">Q1</h2>
+<p>int count=3; count=count+1; 每一步分别做什么？为何不是数学上的恒等式？</p>
+<p><strong>你的回答／源码路径／验证记录：</strong></p>
+<p>（直接在这里填写；完成后可以删除这行提示）</p>
+<h2 id="doc-20353e11686c-q2">Q2</h2>
+<p>列出8种基本类型；String是否属于其中？boolean能否写为1？char能否保存任意完整emoji？</p>
+<p><strong>你的回答／源码路径／验证记录：</strong></p>
+<p>（直接在这里填写；完成后可以删除这行提示）</p>
+<h2 id="doc-20353e11686c-e1">E1</h2>
+<p>编写Profile.java：用变量保存昵称“Java learner”、整数年龄18、double身高1.75、boolean是否开始学习true；每行输出“字段=值”。另设final int DAYS_PER_WEEK=7并输出。</p>
+<p><strong>你的回答／源码路径／验证记录：</strong></p>
+<p>（直接在这里填写；完成后可以删除这行提示）</p>
+<h2 id="doc-20353e11686c-e2">E2</h2>
+<p>分别试验局部变量未初始化就输出、再次赋值给final变量；记录编译诊断并在自己的副本修正。</p>
+<p><strong>你的回答／源码路径／验证记录：</strong></p>
+<p>（直接在这里填写；完成后可以删除这行提示）</p>
+<h2 id="doc-20353e11686c-e3">E3</h2>
+<p>运行VariableDemo和UnicodeDemo，解释int最大值+1及两个length的结果。</p>
+<p><strong>你的回答／源码路径／验证记录：</strong></p>
+<p>（直接在这里填写；完成后可以删除这行提示）</p>
+<h2 id="doc-20353e11686c-提交自查">提交自查</h2>
+<ul>
+<li>[ ] 原创文字解释与必做代码已保存。</li>
+<li>[ ] 记录实际命令、输入、期望和实际结果；未运行的明确写未运行。</li>
+<li>[ ] 实验标本保留原样，修复写在自己的副本。</li>
+<li>[ ] 已标出卡住的题和自己的思路，不用假装全部完成。</li>
+</ul></section><section class="bundle-section" id="doc-441c97ad53bb"><h1 id="doc-441c97ad53bb-l04-讲义-运算符与类型转换">L04 讲义 · 运算符与类型转换</h1>
+<blockquote>
+<p>前置：L03：变量、数值类型、boolean。
+页码：<strong>书本 p38–45 / PDF p56–63</strong>。见<a href="#doc-526e3b952094">页码说明</a>。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>阅读内容</th>
+<th>书本页</th>
+<th>PDF页</th>
+<th>要求</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>3.5及3.5.1 数学运算</td>
+<td>38–40</td>
+<td>56–58</td>
+<td>精读算术、Math使用方式</td>
+</tr>
+<tr>
+<td>3.5.2–3.5.5 转换与赋值</td>
+<td>40–42</td>
+<td>58–60</td>
+<td>精读并验证运算前的类型</td>
+</tr>
+<tr>
+<td>3.5.6 布尔运算</td>
+<td>42–43</td>
+<td>60–61</td>
+<td>精读短路</td>
+</tr>
+<tr>
+<td>3.5.7–3.5.8 位运算与优先级</td>
+<td>43–45</td>
+<td>61–63</td>
+<td>位运算选读；优先级会查表</td>
+</tr>
+<tr>
+<td>3.5.9 枚举</td>
+<td>45–45</td>
+<td>63–63</td>
+<td>理解有限选项，后续展开</td>
+</tr>
+</tbody>
+</table>
+<h2 id="doc-441c97ad53bb-这一课要解决什么问题">这一课要解决什么问题</h2>
+<p>相同数字，为什么换个类型或括号就得到不同答案？先确定表达式怎样算，再给结果起名。</p>
+<h2 id="doc-441c97ad53bb-1-整数除法发生在赋值之前">1. 整数除法发生在赋值之前</h2>
+<p><strong>表达式</strong>是会计算出结果的组合，像一张小算式。<code>7 / 2</code>两侧是整数，结果是3；<code>double x = 7 / 2</code>只是把已经得到的3再转成3.0。要得到3.5，让运算本身含double：<code>7 / 2.0</code>。<code>%</code>是余数，不是百分比。</p>
+<p>负整数除法向0截断，例如<code>-7/2</code>是-3，<code>-7%2</code>是-1。乘法和除法优先于加减，但涉及业务含义时主动加括号比硬背复杂优先级更清楚。</p>
+<p>教材3.5.1还会用到<code>Math</code>这个数学工具类：<code>Math.sqrt(9.0)</code>得到平方根3.0，<code>Math.pow(2.0, 3.0)</code>得到8.0。这里的点表示调用该类提供的方法，不是小数点。Java中的<code>^</code>是按位异或，不是乘方；想算平方也可直接写<code>x * x</code>。本阶段只需按API说明调用，第4章再展开静态方法。</p>
+<h2 id="doc-441c97ad53bb-2-类型转换不能修复已经算坏的结果">2. 类型转换不能修复已经算坏的结果</h2>
+<p><strong>转换</strong>是把值用另一种类型表示。<strong>强制转换</strong>写成<code>(int)3.9</code>，结果是3，丢掉小数部分，不是四舍五入。</p>
+<pre><code class="language-java">int count = 1_000_000;
+long wrong = count * count;
+long right = (long) count * count;
+</code></pre>
+<p>第一种先按int相乘并溢出，装进long也救不回来；第二种在乘之前就让计算使用long。即使int转double通常能表示，long转double仍可能丢精度，不能认为“目标容量大就什么都不丢”。</p>
+<p><code>+=</code>等组合赋值有隐式转换规则，例如<code>short s=1; s+=1</code>可行，直接<code>s=s+1</code>不一定可行。本课优先写清楚表达式，不靠隐式转换省字。<code>i++</code>先给出旧值再加1，<code>++i</code>先加1再给出值；在独立一行作为更新时相同，避免堆在一个复杂算式里。</p>
+<h2 id="doc-441c97ad53bb-3-比较与短路">3. 比较与短路</h2>
+<p><code>==</code>比较是否相等，<code>=</code>赋值；<code>!=</code>不等。<code>&amp;&amp;</code>表示同时成立，<code>||</code>表示至少一个成立，<code>!</code>取反。它们处理boolean，不把整数自动当真假。</p>
+<p><strong>短路</strong>是已经知道结果时不再执行右边，像两道门中第一道明确不通就不必检查第二道。<code>divisor != 0 &amp;&amp; 10 / divisor &gt; 1</code>在除数为0时不会计算除法。<code>&amp;</code>和<code>|</code>用于boolean时会计算两边，也可用于整数位运算；与<code>&amp;&amp;</code>、<code>||</code>不要混用。</p>
+<p>三目表达式<code>score &gt;= 60 ? "pass" : "retry"</code>根据条件选一个值。位运算的<code>&amp; | ^ ~ &lt;&lt; &gt;&gt; &gt;&gt;&gt;</code>先知道作用在二进制位；本课扩展阅读，不要求用它写业务题。3.5.9枚举先理解“给有限选项起名字”，详细设计在第5章。</p>
+<h2 id="doc-441c97ad53bb-动手实验">动手实验</h2>
+<p>运行ArithmeticDemo，预测四种除法与大整数乘法输出。运行ShortCircuitDemo，将右侧除数从变量0改为2，再比较；只在自己副本里把<code>&amp;&amp;</code>改成<code>&amp;</code>观察运行时异常。尝试<code>0.1+0.2</code>，用现象理解浮点近似，不据此断言Java算术随机出错。</p>
+<h2 id="doc-441c97ad53bb-本课过关">本课过关</h2>
+<p>能解释“先计算再赋值”、转换时机、整数除法和短路，并用自己的输入验证；位运算与枚举深入用法为选读。</p>
+<h2 id="doc-441c97ad53bb-示例入口">示例入口</h2>
+<p><a href="#doc-8083ebb8dc8a">逐个示例与运行命令</a>。</p>
+<h2 id="doc-441c97ad53bb-学完交什么">学完交什么</h2>
+<p>完成<a href="#doc-7d5e3415eb77">本课练习</a>，代码写入<a href="#doc-f893514ffbc4">my_code</a>，附命令、输入和结果。先做题，再看<a href="#doc-f0ad7e277387">参考答案</a>。批改后将结论保存到<a href="#doc-e8601bdcb726">进度追踪</a>。</p>
+<p>下一课：<a href="#doc-23e9eec49f15">L05 字符串与文本处理</a>。</p></section><section class="bundle-section" id="doc-8083ebb8dc8a"><h1 id="doc-8083ebb8dc8a-本课独立示例">本课独立示例</h1>
+<p>从项目根目录运行以下命令，每次一个程序。先预测结果，再手敲到my_code实验。</p>
+<h2 id="doc-8083ebb8dc8a-arithmeticdemojava">ArithmeticDemo.java</h2>
+<pre><code class="language-powershell">.\java.ps1 -Source 'L04_第03章B_运算符与类型转换/code/ArithmeticDemo.java'
+</code></pre>
+<h2 id="doc-8083ebb8dc8a-shortcircuitdemojava">ShortCircuitDemo.java</h2>
+<pre><code class="language-powershell">.\java.ps1 -Source 'L04_第03章B_运算符与类型转换/code/ShortCircuitDemo.java'
+</code></pre><h2>本目录源码 · 点击展开</h2><details><summary>ArithmeticDemo.java</summary><pre><code>public class ArithmeticDemo {
+    public static void main(String[] args) {
+        System.out.println(7 / 2);
+        System.out.println(7 / 2.0);
+        System.out.println((double) (7 / 2));
+        System.out.println((int) 3.9);
+        int count = 1_000_000;
+        long wrong = count * count;
+        long right = (long) count * count;
+        System.out.println(&quot;wrong=&quot; + wrong);
+        System.out.println(&quot;right=&quot; + right);
+        System.out.println(0.1 + 0.2);
+    }
+}
+</code></pre></details><details><summary>ShortCircuitDemo.java</summary><pre><code>public class ShortCircuitDemo {
+    public static void main(String[] args) {
+        int divisor = 0;
+        boolean safe = divisor != 0 &amp;&amp; 10 / divisor &gt; 1;
+        System.out.println(&quot;safe=&quot; + safe);
+    }
+}
+</code></pre></details></section><section class="bundle-section" id="doc-7d5e3415eb77"><h1 id="doc-7d5e3415eb77-l04-练习-运算符与类型转换">L04 练习 · 运算符与类型转换</h1>
+<p>教材范围：<strong>书本 p38–45 / PDF p56–63</strong>；题目均为课程原创。下列题均必做，讲义明确标“选读”的深入内容不作为卡关项。</p>
+<p><strong>怎么交作业：直接在这个 <code>练习.md</code> 文件里填答案，保留题号，按 <code>Ctrl+S</code> 保存即可。</strong> 代码写入 <code>my_code/</code>，在对应题下记下源码路径、运行命令和结果；做完后告诉AI“L04做完了”。不必另建 <code>作答.md</code>，已有作答文件也可以继续使用。卡住时把思路和疑问写下来。</p>
+<h2 id="doc-7d5e3415eb77-q1">Q1</h2>
+<p>预测并解释7/2、7/2.0、(double)(7/2)、(int)3.9的值和类型。</p>
+<p><strong>你的回答／源码路径／验证记录：</strong></p>
+<p>（直接在这里填写；完成后可以删除这行提示）</p>
+<h2 id="doc-7d5e3415eb77-q2">Q2</h2>
+<p>解释long result=1000000*1000000为什么仍会出问题，给出在运算前修正的方法。</p>
+<p><strong>你的回答／源码路径／验证记录：</strong></p>
+<p>（直接在这里填写；完成后可以删除这行提示）</p>
+<h2 id="doc-7d5e3415eb77-e1">E1</h2>
+<p>编写TimeSplit.java：总秒数3671，计算并输出hours=1、minutes=1、seconds=11，各占一行。再修改为0、59、60、3600分别记录结果。</p>
+<p><strong>你的回答／源码路径／验证记录：</strong></p>
+<p>（直接在这里填写；完成后可以删除这行提示）</p>
+<h2 id="doc-7d5e3415eb77-e2">E2</h2>
+<p>编写Average.java：整数成绩80、81、82，输出平均值81.0，计算中不得先做整数除法。再测80、80、81，说明结果约为80.3333。</p>
+<p><strong>你的回答／源码路径／验证记录：</strong></p>
+<p>（直接在这里填写；完成后可以删除这行提示）</p>
+<h2 id="doc-7d5e3415eb77-e3">E3</h2>
+<p>运行ShortCircuitDemo，再在副本中把&amp;&amp;换成&amp;；记录差异并解释为何不是编译错误。</p>
+<p><strong>你的回答／源码路径／验证记录：</strong></p>
+<p>（直接在这里填写；完成后可以删除这行提示）</p>
+<h2 id="doc-7d5e3415eb77-提交自查">提交自查</h2>
+<ul>
+<li>[ ] 原创文字解释与必做代码已保存。</li>
+<li>[ ] 记录实际命令、输入、期望和实际结果；未运行的明确写未运行。</li>
+<li>[ ] 实验标本保留原样，修复写在自己的副本。</li>
+<li>[ ] 已标出卡住的题和自己的思路，不用假装全部完成。</li>
+</ul></section><section class="bundle-section" id="doc-23e9eec49f15"><h1 id="doc-23e9eec49f15-l05-讲义-字符串与文本处理">L05 讲义 · 字符串与文本处理</h1>
+<blockquote>
+<p>前置：L04：表达式与比较。
+页码：<strong>书本 p45–55 / PDF p63–73</strong>。见<a href="#doc-526e3b952094">页码说明</a>。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>阅读内容</th>
+<th>书本页</th>
+<th>PDF页</th>
+<th>要求</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>3.6.1–3.6.3 子串、拼接、不变性</td>
+<td>45–47</td>
+<td>63–65</td>
+<td>精读，预测实验</td>
+</tr>
+<tr>
+<td>3.6.4–3.6.5 比较、空串与null</td>
+<td>47–49</td>
+<td>65–67</td>
+<td>重点精读</td>
+</tr>
+<tr>
+<td>3.6.6 码点和代码单元</td>
+<td>49–50</td>
+<td>67–68</td>
+<td>理解length边界，深入遍历选读</td>
+</tr>
+<tr>
+<td>3.6.7–3.6.8 API</td>
+<td>50–54</td>
+<td>68–72</td>
+<td>学会查方法，不背全部条目</td>
+</tr>
+<tr>
+<td>3.6.9 StringBuilder</td>
+<td>54–55</td>
+<td>72–73</td>
+<td>精读append与返回结果</td>
+</tr>
+</tbody>
+</table>
+<h2 id="doc-23e9eec49f15-这一课要解决什么问题">这一课要解决什么问题</h2>
+<p>电脑怎样保存姓名、拼接消息、比较文本、截取一部分？不要把字符串当成C++字符数组照搬。</p>
+<h2 id="doc-23e9eec49f15-1-string与不变性">1. String与不变性</h2>
+<p><strong>字符串</strong>是一段文本，例如<code>"Java"</code>；Java用<code>String</code>类表示它。<strong>方法调用</strong>是请求某个对象或类完成一个操作，写法先读成“对象.操作(参数)”。参数是交给操作的数据，返回值是操作得到的结果。</p>
+<pre><code class="language-java">String name = &quot;  Java  &quot;;
+name.trim();
+System.out.println(name);
+name = name.trim();
+</code></pre>
+<p><strong>不可变</strong>表示已经建立的String对象内容不会被这些操作改写。<code>trim()</code>返回去掉首尾相应空白的新结果；不接住结果，name还是原来的引用。这里的<strong>引用</strong>可类比找到对象的凭证，但不是能自己做地址算术的指针。重新给变量赋值与修改原对象不是一回事。</p>
+<h2 id="doc-23e9eec49f15-2-内容比较用equals">2. 内容比较用equals</h2>
+<p><code>a.equals(b)</code>比较字符串内容；引用上的<code>==</code>比较是否指向同一对象。一些字面量可能共享对象，导致<code>==</code>偶尔看似能比内容，不能因此拿它判断用户输入的文本。</p>
+<p>空字符串<code>""</code>是存在但没有内容的String；<code>null</code>是没有指向对象。<code>null.length()</code>会报异常，不是0。已知常量时可写<code>"yes".equals(answer)</code>，answer为null也不会因为调用者为null而报错；不要因此认为所有null操作都安全。</p>
+<h2 id="doc-23e9eec49f15-3-下标从0终点不包含">3. 下标从0，终点不包含</h2>
+<p><code>"Java".charAt(0)</code>得到'J'。<code>substring(1,3)</code>取下标1、2，得到<code>"av"</code>；结束下标不包含，像从起点格子走到终点前停下。<code>length()</code>是代码单元个数，合法charAt下标从0到length()-1。空串没有可取的第0个元素。</p>
+<p><code>"score="+80+5</code>会先拼接成文本再继续拼接，得到<code>score=805</code>；要先求和写<code>"score="+(80+5)</code>。</p>
+<h2 id="doc-23e9eec49f15-4-unicode与stringbuilder">4. Unicode与StringBuilder</h2>
+<p>String内部使用UTF-16代码单元语义；emoji等补充字符可能占两个代码单元。运行UnicodeDemo，比较length和codePointCount。<strong>码点</strong>是Unicode给字符分配的编号；它与“视觉上一个字形”也不总是一对一。先知道边界，本课不要求实现通用字素切分。</p>
+<p>反复拼很多片段时，可以用<strong>StringBuilder</strong>这个可变文本构建工具，像先在草稿板上逐段追加，最后<code>toString()</code>交出String。<code>append</code>会改变构建器，区别于String上的不可变操作。先运行示例，不要求在还没学循环时优化所有字符串。</p>
+<h2 id="doc-23e9eec49f15-动手实验">动手实验</h2>
+<p>运行StringDemo和UnicodeDemo；在自己副本里故意调用<code>charAt(length())</code>，区分编译成功与运行越界。读取教材3.6.7、3.6.8的API条目时，先找方法名字、参数、返回结果及前提；不要一次背全部方法。</p>
+<h2 id="doc-23e9eec49f15-本课过关">本课过关</h2>
+<p>能解释equals、null、空串和不变性；准确计算子串范围；对包含空格与中文的文本完成题目指定处理。</p>
+<h2 id="doc-23e9eec49f15-示例入口">示例入口</h2>
+<p><a href="#doc-d9dddbc70e06">逐个示例与运行命令</a>。</p>
+<h2 id="doc-23e9eec49f15-学完交什么">学完交什么</h2>
+<p>完成<a href="#doc-279cca6b26ab">本课练习</a>，代码写入<a href="#doc-f3fbee0e1a6b">my_code</a>，附命令、输入和结果。先做题，再看<a href="#doc-21329cb1f07a">参考答案</a>。批改后将结论保存到<a href="#doc-e8601bdcb726">进度追踪</a>。</p>
+<p>下一课：<a href="#doc-6892ef8761d4">L06 键盘输入、格式化与文件</a>。</p></section><section class="bundle-section" id="doc-d9dddbc70e06"><h1 id="doc-d9dddbc70e06-本课独立示例">本课独立示例</h1>
+<p>从项目根目录运行以下命令，每次一个程序。先预测结果，再手敲到my_code实验。</p>
+<h2 id="doc-d9dddbc70e06-stringdemojava">StringDemo.java</h2>
+<pre><code class="language-powershell">.\java.ps1 -Source 'L05_第03章C_字符串/code/StringDemo.java'
+</code></pre>
+<h2 id="doc-d9dddbc70e06-unicodedemojava">UnicodeDemo.java</h2>
+<pre><code class="language-powershell">.\java.ps1 -Source 'L05_第03章C_字符串/code/UnicodeDemo.java'
+</code></pre><h2>本目录源码 · 点击展开</h2><details><summary>StringDemo.java</summary><pre><code>public class StringDemo {
+    public static void main(String[] args) {
+        String original = &quot;  Java  &quot;;
+        original.trim(); // 忽略返回值，不改变original引用的内容。
+        System.out.println(&quot;original=[&quot; + original + &quot;]&quot;);
+        String cleaned = original.trim();
+        System.out.println(&quot;cleaned=[&quot; + cleaned + &quot;]&quot;);
+        System.out.println(&quot;part=&quot; + cleaned.substring(1, 3));
+        String other = new String(&quot;Java&quot;);
+        System.out.println(&quot;same reference=&quot; + (cleaned == other));
+        System.out.println(&quot;same content=&quot; + cleaned.equals(other));
+        System.out.println(&quot;score=&quot; + 80 + 5);
+        System.out.println(&quot;score=&quot; + (80 + 5));
+        StringBuilder builder = new StringBuilder();
+        builder.append(&quot;Java&quot;);
+        builder.append(&quot; course&quot;);
+        System.out.println(builder.toString());
+    }
+}
+</code></pre></details><details><summary>UnicodeDemo.java</summary><pre><code>public class UnicodeDemo {
+    public static void main(String[] args) {
+        String chinese = &quot;中&quot;;
+        String emoji = &quot;\uD83D\uDE00&quot;;
+        System.out.println(&quot;chinese units=&quot; + chinese.length());
+        System.out.println(&quot;emoji units=&quot; + emoji.length());
+        System.out.println(&quot;emoji code points=&quot; + emoji.codePointCount(0, emoji.length()));
+    }
+}
+</code></pre></details></section><section class="bundle-section" id="doc-279cca6b26ab"><h1 id="doc-279cca6b26ab-l05-练习-字符串与文本处理">L05 练习 · 字符串与文本处理</h1>
+<p>教材范围：<strong>书本 p45–55 / PDF p63–73</strong>；题目均为课程原创。下列题均必做，讲义明确标“选读”的深入内容不作为卡关项。</p>
+<p><strong>怎么交作业：直接在这个 <code>练习.md</code> 文件里填答案，保留题号，按 <code>Ctrl+S</code> 保存即可。</strong> 代码写入 <code>my_code/</code>，在对应题下记下源码路径、运行命令和结果；做完后告诉AI“L05做完了”。不必另建 <code>作答.md</code>，已有作答文件也可以继续使用。卡住时把思路和疑问写下来。</p>
+<h2 id="doc-279cca6b26ab-q1">Q1</h2>
+<p>用具体例子解释equals与==、空字符串与null、重新赋值与String对象不可变。</p>
+<p><strong>你的回答／源码路径／验证记录：</strong></p>
+<p>（直接在这里填写；完成后可以删除这行提示）</p>
+<h2 id="doc-279cca6b26ab-q2">Q2</h2>
+<p>“Java”.substring(1,3)是什么？charAt(length())为什么不合法？length一定等于屏幕显示的字数吗？</p>
+<p><strong>你的回答／源码路径／验证记录：</strong></p>
+<p>（直接在这里填写；完成后可以删除这行提示）</p>
+<h2 id="doc-279cca6b26ab-e1">E1</h2>
+<p>编写NameCard.java：原始字符串为“  Li Ming  ”，去除首尾空白后输出name=Li Ming、length=7、prefix=Li三行；原始值另外保留。只需处理这个指定输入。</p>
+<p><strong>你的回答／源码路径／验证记录：</strong></p>
+<p>（直接在这里填写；完成后可以删除这行提示）</p>
+<h2 id="doc-279cca6b26ab-e2">E2</h2>
+<p>构造String a="Java"和String b=new String("Java")，打印==与equals两种结果并解释；不根据字面量共享现象归纳==能比较内容。</p>
+<p><strong>你的回答／源码路径／验证记录：</strong></p>
+<p>（直接在这里填写；完成后可以删除这行提示）</p>
+<h2 id="doc-279cca6b26ab-e3">E3</h2>
+<p>用StringBuilder依次追加“Java”、“ ”、“course”，最后输出完整文本。解释它与String.trim的修改行为有何不同。</p>
+<p><strong>你的回答／源码路径／验证记录：</strong></p>
+<p>（直接在这里填写；完成后可以删除这行提示）</p>
+<h2 id="doc-279cca6b26ab-提交自查">提交自查</h2>
+<ul>
+<li>[ ] 原创文字解释与必做代码已保存。</li>
+<li>[ ] 记录实际命令、输入、期望和实际结果；未运行的明确写未运行。</li>
+<li>[ ] 实验标本保留原样，修复写在自己的副本。</li>
+<li>[ ] 已标出卡住的题和自己的思路，不用假装全部完成。</li>
+</ul></section><section class="bundle-section" id="doc-6892ef8761d4"><h1 id="doc-6892ef8761d4-l06-讲义-键盘输入格式化与文件">L06 讲义 · 键盘输入、格式化与文件</h1>
+<blockquote>
+<p>前置：L05：String、equals、方法调用的使用方式。
+页码：<strong>书本 p55–63 / PDF p73–81</strong>。见<a href="#doc-526e3b952094">页码说明</a>。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>阅读内容</th>
+<th>书本页</th>
+<th>PDF页</th>
+<th>要求</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>3.7.1 读取输入</td>
+<td>55–58</td>
+<td>73–76</td>
+<td>精读nextInt与nextLine；密码控制台选读</td>
+</tr>
+<tr>
+<td>3.7.2 格式化输出</td>
+<td>58–61</td>
+<td>76–79</td>
+<td>精读常用格式；完整语法图查阅</td>
+</tr>
+<tr>
+<td>3.7.3 文件输入输出</td>
+<td>61–63</td>
+<td>79–81</td>
+<td>按UTF-8示例实践；异常后续展开</td>
+</tr>
+</tbody>
+</table>
+<h2 id="doc-6892ef8761d4-这一课要解决什么问题">这一课要解决什么问题</h2>
+<p>让程序接收你输入的数据，打印清楚的结果，并把文本写入文件。</p>
+<h2 id="doc-6892ef8761d4-1-scanner像一位读入助手">1. Scanner像一位读入助手</h2>
+<p><strong>输入流</strong>可以先理解为按顺序到来的数据通道，<code>System.in</code>通常连接键盘输入。<strong>Scanner</strong>是帮助从通道里读数或文本的工具；<code>new Scanner(System.in)</code>建立这位读入助手，<code>import java.util.Scanner</code>让你能写短类名。<code>new</code>的对象构造机制第4章讲，此处只掌握使用方式。</p>
+<p><code>nextInt()</code>读一个整数，<code>nextDouble()</code>读一个浮点数；<code>next()</code>读一个空白分隔的片段，<code>nextLine()</code>读当前行剩余内容并跨过行分隔符。输入<code>Li Ming</code>，next不能一次读到完整姓名。</p>
+<pre><code class="language-java">int age = in.nextInt();
+in.nextLine(); // 消耗数字后这一行剩余的内容
+String name = in.nextLine();
+</code></pre>
+<p>为什么要中间这一行？数字读取通常把数字后面的换行留在通道里；紧接着nextLine会先读到数字所在行的剩余部分。如果那部分只有换行，结果就是空串。注意：这一行不一定只剩换行，若同一行还有别的数据，也会一起被读走；本课约定年龄和姓名分别各占一行。</p>
+<p><code>Locale.US</code>在数值输入示例里明确使用点作小数分隔，避免系统地区设置改变实验。这里只把Locale看成“地区格式规则”，不要求先学国际化框架。</p>
+<h2 id="doc-6892ef8761d4-2-格式化输出">2. 格式化输出</h2>
+<p><strong>格式化</strong>是把数值按约定排成文字。<code>printf("%.2f%n", price)</code>中的<code>%.2f</code>用两位小数显示浮点数，<code>%d</code>显示整数，<code>%s</code>显示文本，<code>%n</code>换行。显示两位不等于底层值变成精确的两位小数。格式说明符与参数类型必须匹配。</p>
+<h2 id="doc-6892ef8761d4-3-文件有路径也有编码">3. 文件有路径，也有编码</h2>
+<p><code>Paths.get("note.txt")</code>表示相对当前工作目录的路径，不一定是源码所在目录。课程脚本不替你切换到源码文件夹；从根目录启动时相对文件就落在根目录。</p>
+<p><strong>编码</strong>是文字变成字节的规则，读写双方一致才能避免乱码。FileUtf8Demo用UTF-8明确写入、读回一个文件；路径由命令行参数指定。<strong>资源</strong>指打开后需要管理的文件通道等，<code>try (...) { ... }</code>会在结束时关闭本例的文件工具；第7章再系统讲异常与资源管理。示例的<code>throws IOException</code>表示本方法可能把此类文件错误交给调用方；不是“自动修好错误”。</p>
+<p>示例将内容写到你给出的目标路径，会覆盖同名文件；请只在自己新建的实验目录里使用不同文件名。不要把教材PDF路径交给它。</p>
+<h2 id="doc-6892ef8761d4-动手实验">动手实验</h2>
+<p>运行InputDemo，依次输入年龄、完整姓名、单价、数量，按练习的顺序每项一行；先预测账单。FileUtf8Demo使用课程给出的<code>.build/file-lab/note.txt</code>路径，运行后打开文件确认内容，再换一个新名字测试。使用参数或代码中明确的路径定位文件，别靠搜索猜。</p>
+<h2 id="doc-6892ef8761d4-本课过关">本课过关</h2>
+<p>能正确接收带空格的姓名与小数，解释nextInt/nextLine衔接；能说明工作目录、文本编码与文件位置。复杂非法输入恢复在第7章后展开，本课不作隐藏要求。</p>
+<h2 id="doc-6892ef8761d4-示例入口">示例入口</h2>
+<p><a href="#doc-6d5a15d068b7">逐个示例与运行命令</a>。</p>
+<h2 id="doc-6892ef8761d4-学完交什么">学完交什么</h2>
+<p>完成<a href="#doc-ac312fcdaf24">本课练习</a>，代码写入<a href="#doc-7fc7bf220376">my_code</a>，附命令、输入和结果。先做题，再看<a href="#doc-1d5374d4cbf3">参考答案</a>。批改后将结论保存到<a href="#doc-e8601bdcb726">进度追踪</a>。</p>
+<p>下一课：<a href="#doc-b1469f212770">L07 程序如何作选择</a>。</p></section><section class="bundle-section" id="doc-6d5a15d068b7"><h1 id="doc-6d5a15d068b7-本课独立示例">本课独立示例</h1>
+<p>从项目根目录运行以下命令，每次一个程序。先预测结果，再手敲到my_code实验。</p>
+<h2 id="doc-6d5a15d068b7-fileutf8demojava">FileUtf8Demo.java</h2>
+<pre><code class="language-powershell">.\java.ps1 -Source 'L06_第03章D_输入输出/code/FileUtf8Demo.java' -ProgramArgs @('.build/file-lab/note.txt')
+</code></pre>
+<h2 id="doc-6d5a15d068b7-inputdemojava">InputDemo.java</h2>
+<pre><code class="language-powershell">.\java.ps1 -Source 'L06_第03章D_输入输出/code/InputDemo.java'
+</code></pre><h2>本目录源码 · 点击展开</h2><details><summary>FileUtf8Demo.java</summary><pre><code>import java.io.IOException;
+import java.io.PrintWriter;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.Scanner;
+public class FileUtf8Demo {
+    public static void main(String[] args) throws IOException {
+        if (args.length != 1) {
+            System.out.println(&quot;usage: FileUtf8Demo &lt;new-experiment-file&gt;&quot;);
+            return;
+        }
+        Path path = Paths.get(args[0]);
+        Path parent = path.toAbsolutePath().getParent();
+        if (parent != null) {
+            Files.createDirectories(parent);
+        }
+        try (PrintWriter writer = new PrintWriter(Files.newBufferedWriter(path, StandardCharsets.UTF_8))) {
+            writer.println(&quot;你好，Java！&quot;);
+        }
+        try (Scanner input = new Scanner(path, &quot;UTF-8&quot;)) {
+            System.out.println(input.nextLine());
+        }
+    }
+}
+</code></pre></details><details><summary>InputDemo.java</summary><pre><code>import java.util.Locale;
+import java.util.Scanner;
+public class InputDemo {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in).useLocale(Locale.US);
+        System.out.println(&quot;年龄、姓名、单价、数量，各一行：&quot;);
+        int age = in.nextInt();
+        in.nextLine();
+        String name = in.nextLine();
+        double price = in.nextDouble();
+        int count = in.nextInt();
+        System.out.println(&quot;name=&quot; + name + &quot;, age=&quot; + age);
+        System.out.printf(Locale.US, &quot;total=%.2f%n&quot;, price * count);
+        // 此程序随main结束；不提前关闭后续可能还要读取的System.in。
+    }
+}
+</code></pre></details></section><section class="bundle-section" id="doc-ac312fcdaf24"><h1 id="doc-ac312fcdaf24-l06-练习-键盘输入格式化与文件">L06 练习 · 键盘输入、格式化与文件</h1>
+<p>教材范围：<strong>书本 p55–63 / PDF p73–81</strong>；题目均为课程原创。下列题均必做，讲义明确标“选读”的深入内容不作为卡关项。</p>
+<p><strong>怎么交作业：直接在这个 <code>练习.md</code> 文件里填答案，保留题号，按 <code>Ctrl+S</code> 保存即可。</strong> 代码写入 <code>my_code/</code>，在对应题下记下源码路径、运行命令和结果；做完后告诉AI“L06做完了”。不必另建 <code>作答.md</code>，已有作答文件也可以继续使用。卡住时把思路和疑问写下来。</p>
+<h2 id="doc-ac312fcdaf24-q1">Q1</h2>
+<p>说明next、nextLine、nextInt的区别，以及读完整数后紧接着nextLine可能得到空串的原因。</p>
+<p><strong>你的回答／源码路径／验证记录：</strong></p>
+<p>（直接在这里填写；完成后可以删除这行提示）</p>
+<h2 id="doc-ac312fcdaf24-e1">E1</h2>
+<p>编写Bill.java：依次按行读完整姓名、double单价、int数量，姓名允许空格；按US小数格式输出“name=姓名”与“total=两位小数”两行。有效输入即可。输入Li Ming、12.5、3时应为total=37.50。再测数量0、单价0.1数量3。</p>
+<p><strong>你的回答／源码路径／验证记录：</strong></p>
+<p>（直接在这里填写；完成后可以删除这行提示）</p>
+<h2 id="doc-ac312fcdaf24-e2">E2</h2>
+<p>编写AgeName.java：年龄一行、姓名下一行，正确读取18与Li Ming并输出“Li Ming:18”。必须说明如何处理数字后残留的行内容。</p>
+<p><strong>你的回答／源码路径／验证记录：</strong></p>
+<p>（直接在这里填写；完成后可以删除这行提示）</p>
+<h2 id="doc-ac312fcdaf24-e3">E3</h2>
+<p>在新的实验文件路径运行FileUtf8Demo，记录目标路径、程序输出和打开文件看到的文字；说明相对路径从哪里算起、为何要指定UTF-8。</p>
+<p><strong>你的回答／源码路径／验证记录：</strong></p>
+<p>（直接在这里填写；完成后可以删除这行提示）</p>
+<h2 id="doc-ac312fcdaf24-q2">Q2</h2>
+<p>printf把0.1+0.2显示成0.30，是否说明内部浮点值一定是精确十进制0.3？说明理由。</p>
+<p><strong>你的回答／源码路径／验证记录：</strong></p>
+<p>（直接在这里填写；完成后可以删除这行提示）</p>
+<h2 id="doc-ac312fcdaf24-提交自查">提交自查</h2>
+<ul>
+<li>[ ] 原创文字解释与必做代码已保存。</li>
+<li>[ ] 记录实际命令、输入、期望和实际结果；未运行的明确写未运行。</li>
+<li>[ ] 实验标本保留原样，修复写在自己的副本。</li>
+<li>[ ] 已标出卡住的题和自己的思路，不用假装全部完成。</li>
+</ul></section><section class="bundle-section" id="doc-b1469f212770"><h1 id="doc-b1469f212770-l07-讲义-程序如何作选择">L07 讲义 · 程序如何作选择</h1>
+<blockquote>
+<p>前置：L06：读入数据；L04：布尔表达式。
+页码：<strong>书本 p63–66 / PDF p81–84</strong>。见<a href="#doc-526e3b952094">页码说明</a>。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>阅读内容</th>
+<th>书本页</th>
+<th>PDF页</th>
+<th>要求</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>3.8.1 块作用域</td>
+<td>63–63</td>
+<td>81–81</td>
+<td>精读，观察名字可用范围</td>
+</tr>
+<tr>
+<td>3.8.2 条件语句</td>
+<td>63–66</td>
+<td>81–84</td>
+<td>精读if与else-if并测边界</td>
+</tr>
+</tbody>
+</table>
+<h2 id="doc-b1469f212770-这一课要解决什么问题">这一课要解决什么问题</h2>
+<p>同样的程序，需要按年龄或分数选择不同操作。怎样写出互斥又没有漏掉临界值的规则？</p>
+<h2 id="doc-b1469f212770-1-if是按条件选择执行">1. if是按条件选择执行</h2>
+<p><strong>条件</strong>是计算结果为boolean的表达式，像一道决定往哪走的路口。<code>if (score &gt;= 60) { ... } else { ... }</code>只选一个分支。条件不是任意整数；<code>if(1)</code>不能照搬到Java。</p>
+<pre><code class="language-java">if (score &lt; 0 || score &gt; 100) {
+    System.out.println(&quot;invalid&quot;);
+} else if (score &gt;= 90) {
+    System.out.println(&quot;excellent&quot;);
+} else if (score &gt;= 60) {
+    System.out.println(&quot;pass&quot;);
+} else {
+    System.out.println(&quot;retry&quot;);
+}
+</code></pre>
+<p>这是一条互斥的条件链：前一项成立就不再测试后面的项。顺序是规则的一部分；先测<code>&gt;=60</code>再测<code>&gt;=90</code>，90分也会先进入pass。多个独立if不是同一回事，可能重复打印。</p>
+<h2 id="doc-b1469f212770-2-先写范围表再写代码">2. 先写范围表再写代码</h2>
+<p>把分数切成：小于0、0–59、60–89、90–100、大于100。分界处用-1、0、59、60、89、90、100、101验证。<strong>边界测试</strong>就是专门在这些接缝检查，像检查两块拼图之间有没有缝或重叠；只测75分无法证明60分正确。</p>
+<p>判断“18至25岁，包含两端”，写<code>age &gt;= 18 &amp;&amp; age &lt;= 25</code>，不能写数学式<code>18 &lt;= age &lt;= 25</code>。同类条件先用括号表达清楚，不要依靠缩进猜关联。</p>
+<h2 id="doc-b1469f212770-3-代码块与作用域">3. 代码块与作用域</h2>
+<p><strong>代码块</strong>是花括号包围的一组语句。局部变量通常从声明后到所属块结束可用，块里的同名声明还有限制。写入块内不等于声明了一个到处可用的名字。</p>
+<pre><code class="language-java">if (ready) {
+    int count = 3;
+    System.out.println(count);
+}
+</code></pre>
+<p>块外用count会编译失败。初学时总给分支加花括号，避免只控制一条语句时误读。不在if括号后随手加分号：<code>if(condition);</code>可能让后面的语句无条件执行。</p>
+<h2 id="doc-b1469f212770-动手实验">动手实验</h2>
+<p>用GradeDemo依次测试分界值，每次启动传一个参数，例如<code>-ProgramArgs @('60')</code>；Integer.parseInt先理解成“把整数文本转成int”的工具。示例只约定参数为合法整数，非法文本的恢复不是本课必做。先画区间表，再独立写练习中的票价规则。</p>
+<h2 id="doc-b1469f212770-本课过关">本课过关</h2>
+<p>能说明独立if与else-if链区别，覆盖所有题目要求范围和临界值，解释局部变量作用域。通过由你的作答决定，不由示例测试替代。</p>
+<h2 id="doc-b1469f212770-示例入口">示例入口</h2>
+<p><a href="#doc-16bbc7816c2e">逐个示例与运行命令</a>。</p>
+<h2 id="doc-b1469f212770-学完交什么">学完交什么</h2>
+<p>完成<a href="#doc-59c311bedabe">本课练习</a>，代码写入<a href="#doc-ef27d53aa3da">my_code</a>，附命令、输入和结果。先做题，再看<a href="#doc-c1f9ec907b08">参考答案</a>。批改后将结论保存到<a href="#doc-e8601bdcb726">进度追踪</a>。</p>
+<p>下一课：<a href="#doc-a6ec0be7c981">L08 让程序重复做事</a>。</p></section><section class="bundle-section" id="doc-16bbc7816c2e"><h1 id="doc-16bbc7816c2e-本课独立示例">本课独立示例</h1>
+<p>从项目根目录运行以下命令，每次一个程序。先预测结果，再手敲到my_code实验。</p>
+<h2 id="doc-16bbc7816c2e-gradedemojava">GradeDemo.java</h2>
+<pre><code class="language-powershell">.\java.ps1 -Source 'L07_第03章E_条件分支/code/GradeDemo.java'
+</code></pre><h2>本目录源码 · 点击展开</h2><details><summary>GradeDemo.java</summary><pre><code>public class GradeDemo {
+    public static void main(String[] args) {
+        int score = args.length == 0 ? 60 : Integer.parseInt(args[0]);
+        if (score &lt; 0 || score &gt; 100) {
+            System.out.println(&quot;invalid&quot;);
+        } else if (score &gt;= 90) {
+            System.out.println(&quot;excellent&quot;);
+        } else if (score &gt;= 60) {
+            System.out.println(&quot;pass&quot;);
+        } else {
+            System.out.println(&quot;retry&quot;);
+        }
+    }
+}
+</code></pre></details></section><section class="bundle-section" id="doc-59c311bedabe"><h1 id="doc-59c311bedabe-l07-练习-程序如何作选择">L07 练习 · 程序如何作选择</h1>
+<p>教材范围：<strong>书本 p63–66 / PDF p81–84</strong>；题目均为课程原创。下列题均必做，讲义明确标“选读”的深入内容不作为卡关项。</p>
+<p><strong>怎么交作业：直接在这个 <code>练习.md</code> 文件里填答案，保留题号，按 <code>Ctrl+S</code> 保存即可。</strong> 代码写入 <code>my_code/</code>，在对应题下记下源码路径、运行命令和结果；做完后告诉AI“L07做完了”。不必另建 <code>作答.md</code>，已有作答文件也可以继续使用。卡住时把思路和疑问写下来。</p>
+<h2 id="doc-59c311bedabe-q1">Q1</h2>
+<p>解释互斥的else-if链与多个独立if的区别。为何先&gt;=60再&gt;=90可能写错分级？</p>
+<p><strong>你的回答／源码路径／验证记录：</strong></p>
+<p>（直接在这里填写；完成后可以删除这行提示）</p>
+<h2 id="doc-59c311bedabe-e1">E1</h2>
+<p>编写Ticket.java，Scanner读整数年龄：小于0或大于120输出invalid；0–5输出free；6–17输出half；18–59输出full；60–120输出senior。每次只输出一个词。</p>
+<p><strong>你的回答／源码路径／验证记录：</strong></p>
+<p>（直接在这里填写；完成后可以删除这行提示）</p>
+<h2 id="doc-59c311bedabe-e2">E2</h2>
+<p>对Ticket逐项验证-1、0、5、6、17、18、59、60、120、121，写输入→期望→实际。</p>
+<p><strong>你的回答／源码路径／验证记录：</strong></p>
+<p>（直接在这里填写；完成后可以删除这行提示）</p>
+<h2 id="doc-59c311bedabe-e3">E3</h2>
+<p>在自己的副本尝试if(age&gt;=18);后接输出，解释分号造成什么变化；再尝试在块外使用块内声明变量，记录失败阶段。</p>
+<p><strong>你的回答／源码路径／验证记录：</strong></p>
+<p>（直接在这里填写；完成后可以删除这行提示）</p>
+<h2 id="doc-59c311bedabe-q2">Q2</h2>
+<p>给出“18到25岁包含两端”的合法Java条件，并说明为什么不能用18&lt;=age&lt;=25。</p>
+<p><strong>你的回答／源码路径／验证记录：</strong></p>
+<p>（直接在这里填写；完成后可以删除这行提示）</p>
+<h2 id="doc-59c311bedabe-提交自查">提交自查</h2>
+<ul>
+<li>[ ] 原创文字解释与必做代码已保存。</li>
+<li>[ ] 记录实际命令、输入、期望和实际结果；未运行的明确写未运行。</li>
+<li>[ ] 实验标本保留原样，修复写在自己的副本。</li>
+<li>[ ] 已标出卡住的题和自己的思路，不用假装全部完成。</li>
+</ul></section><section class="bundle-section" id="doc-a6ec0be7c981"><h1 id="doc-a6ec0be7c981-l08-讲义-让程序重复做事">L08 讲义 · 让程序重复做事</h1>
+<blockquote>
+<p>前置：L07：条件与代码块。
+页码：<strong>书本 p66–72 / PDF p84–90</strong>。见<a href="#doc-526e3b952094">页码说明</a>。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>阅读内容</th>
+<th>书本页</th>
+<th>PDF页</th>
+<th>要求</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>3.8.3 循环</td>
+<td>66–69</td>
+<td>84–87</td>
+<td>精读while与do-while；按状态理解教材案例</td>
+</tr>
+<tr>
+<td>3.8.4 确定循环</td>
+<td>69–72</td>
+<td>87–90</td>
+<td>精读for；组合数公式仅作案例背景</td>
+</tr>
+</tbody>
+</table>
+<h2 id="doc-a6ec0be7c981-这一课要解决什么问题">这一课要解决什么问题</h2>
+<p>输出100行、累加一组数或反复读取输入，不应该复制粘贴100份代码。循环用一段规则表达重复。</p>
+<h2 id="doc-a6ec0be7c981-1-while的三个要素">1. while的三个要素</h2>
+<p><strong>循环</strong>是在条件满足时重复执行代码，像按清单逐件检查货物。务必找出：初始状态、继续条件、如何前进。</p>
+<pre><code class="language-java">int i = 1;
+int sum = 0;
+while (i &lt;= 5) {
+    sum += i;
+    i++;
+}
+</code></pre>
+<p>逐轮写表：进入时i=1，sum变成1，i变成2；下一轮sum变成3。退出时i=6，sum=15。遗漏i++可能永远满足条件。<strong>迭代</strong>就是循环的一轮，不是某个新的Java关键字。</p>
+<p><code>do { ... } while(condition);</code>至少执行一次，while可能一次不执行。读教材投资示例时先看状态怎么变化，不急于套金融背景；<code>double</code>只用于教学计算，不据此推出财务金额都适合浮点数。</p>
+<h2 id="doc-a6ec0be7c981-2-for把计数规则放在一起">2. for把计数规则放在一起</h2>
+<pre><code class="language-java">for (int i = 1; i &lt;= 5; i++) {
+    System.out.println(i);
+}
+</code></pre>
+<p>顺序是初始化一次→检查条件→循环体→更新→再检查。这里i的作用域限于for及其循环体。需要恰好n次且从0编号，常用<code>i=0; i&lt;n; i++</code>；需要1到n的值，常用<code>i=1; i&lt;=n; i++</code>，不要不看目的机械替换符号。</p>
+<h2 id="doc-a6ec0be7c981-3-初值与空情况">3. 初值与空情况</h2>
+<p>累加从0开始，是因为没有任何数时总和为0。求最大值不能总从0开始：若输入全负数，会得到不存在的0；数组课将处理这一点。<code>n=0</code>时循环可能不进入，程序仍需给出题目规定结果。</p>
+<p>嵌套循环像钟表的时针与分针：外层每前进一次，内层完成一整轮。NestedDemo的两行三列共执行6次输出。不要只把两个上限相加；同时也别把一切嵌套循环都不加条件地说成固定平方复杂度。</p>
+<h2 id="doc-a6ec0be7c981-动手实验">动手实验</h2>
+<p>先手算SumDemo在n=0、1、5时的结果，再分别用while和for观察；运行CountdownDemo看do-while。把<code>&lt;=</code>改成<code>&lt;</code>看少了哪一项；在自己的副本中故意去掉更新语句时，先预测会不会停，若运行需用Ctrl+C停止，不把卡住当成终端坏了。</p>
+<h2 id="doc-a6ec0be7c981-本课过关">本课过关</h2>
+<p>能画出一轮状态变化，写出终止条件，验证0/1/普通值，解释for执行顺序和嵌套次数。下一课才系统讲break/continue与switch。</p>
+<h2 id="doc-a6ec0be7c981-示例入口">示例入口</h2>
+<p><a href="#doc-539c04050fe3">逐个示例与运行命令</a>。</p>
+<h2 id="doc-a6ec0be7c981-学完交什么">学完交什么</h2>
+<p>完成<a href="#doc-d18029bb4803">本课练习</a>，代码写入<a href="#doc-27df85f65585">my_code</a>，附命令、输入和结果。先做题，再看<a href="#doc-af8cd7604511">参考答案</a>。批改后将结论保存到<a href="#doc-e8601bdcb726">进度追踪</a>。</p>
+<p>下一课：<a href="#doc-33c8ceac7e88">L09 switch、循环跳转与大数值</a>。</p></section><section class="bundle-section" id="doc-539c04050fe3"><h1 id="doc-539c04050fe3-本课独立示例">本课独立示例</h1>
+<p>从项目根目录运行以下命令，每次一个程序。先预测结果，再手敲到my_code实验。</p>
+<h2 id="doc-539c04050fe3-countdowndemojava">CountdownDemo.java</h2>
+<pre><code class="language-powershell">.\java.ps1 -Source 'L08_第03章F_循环/code/CountdownDemo.java'
+</code></pre>
+<h2 id="doc-539c04050fe3-nesteddemojava">NestedDemo.java</h2>
+<pre><code class="language-powershell">.\java.ps1 -Source 'L08_第03章F_循环/code/NestedDemo.java'
+</code></pre>
+<h2 id="doc-539c04050fe3-sumdemojava">SumDemo.java</h2>
+<pre><code class="language-powershell">.\java.ps1 -Source 'L08_第03章F_循环/code/SumDemo.java'
+</code></pre><h2>本目录源码 · 点击展开</h2><details><summary>CountdownDemo.java</summary><pre><code>public class CountdownDemo {
+    public static void main(String[] args) {
+        int left = 0;
+        do {
+            System.out.println(&quot;left=&quot; + left);
+            left--;
+        } while (left &gt; 0);
+    }
+}
+</code></pre></details><details><summary>NestedDemo.java</summary><pre><code>public class NestedDemo {
+    public static void main(String[] args) {
+        for (int row = 1; row &lt;= 2; row++) {
+            for (int column = 1; column &lt;= 3; column++) {
+                System.out.println(row + &quot;,&quot; + column);
+            }
+        }
+    }
+}
+</code></pre></details><details><summary>SumDemo.java</summary><pre><code>public class SumDemo {
+    public static void main(String[] args) {
+        int n = args.length == 0 ? 5 : Integer.parseInt(args[0]);
+        int sum = 0;
+        int i = 1;
+        while (i &lt;= n) {
+            sum += i;
+            i++;
+        }
+        System.out.println(&quot;while=&quot; + sum);
+        int total = 0;
+        for (int j = 1; j &lt;= n; j++) {
+            total += j;
+        }
+        System.out.println(&quot;for=&quot; + total);
+    }
+}
+</code></pre></details></section><section class="bundle-section" id="doc-d18029bb4803"><h1 id="doc-d18029bb4803-l08-练习-让程序重复做事">L08 练习 · 让程序重复做事</h1>
+<p>教材范围：<strong>书本 p66–72 / PDF p84–90</strong>；题目均为课程原创。下列题均必做，讲义明确标“选读”的深入内容不作为卡关项。</p>
+<p><strong>怎么交作业：直接在这个 <code>练习.md</code> 文件里填答案，保留题号，按 <code>Ctrl+S</code> 保存即可。</strong> 代码写入 <code>my_code/</code>，在对应题下记下源码路径、运行命令和结果；做完后告诉AI“L08做完了”。不必另建 <code>作答.md</code>，已有作答文件也可以继续使用。卡住时把思路和疑问写下来。</p>
+<h2 id="doc-d18029bb4803-q1">Q1</h2>
+<p>手工列出sum=0、i=1，while(i&lt;=3){sum+=i;i++;}每轮结束的i与sum，以及退出时的值。</p>
+<p><strong>你的回答／源码路径／验证记录：</strong></p>
+<p>（直接在这里填写；完成后可以删除这行提示）</p>
+<h2 id="doc-d18029bb4803-q2">Q2</h2>
+<p>for的初始化、条件、循环体、更新按什么顺序？while与do-while能否一次都不执行？</p>
+<p><strong>你的回答／源码路径／验证记录：</strong></p>
+<p>（直接在这里填写；完成后可以删除这行提示）</p>
+<h2 id="doc-d18029bb4803-e1">E1</h2>
+<p>编写SumToN.java：Scanner读取0–10000内整数n，输出1到n之和；n=0输出0。分别使用for和while各写一版（类名区分）。验证0、1、5、10000。</p>
+<p><strong>你的回答／源码路径／验证记录：</strong></p>
+<p>（直接在这里填写；完成后可以删除这行提示）</p>
+<h2 id="doc-d18029bb4803-e2">E2</h2>
+<p>编写Triangle.java，固定打印三行：<em>、</em><em>、</em>**；必须用嵌套循环，写出每行内循环执行次数。</p>
+<p><strong>你的回答／源码路径／验证记录：</strong></p>
+<p>（直接在这里填写；完成后可以删除这行提示）</p>
+<h2 id="doc-d18029bb4803-e3">E3</h2>
+<p>写出一个会让循环最终停止的更新规则，并解释去掉更新后为何可能不停止；不要求真的长时间运行死循环。</p>
+<p><strong>你的回答／源码路径／验证记录：</strong></p>
+<p>（直接在这里填写；完成后可以删除这行提示）</p>
+<h2 id="doc-d18029bb4803-提交自查">提交自查</h2>
+<ul>
+<li>[ ] 原创文字解释与必做代码已保存。</li>
+<li>[ ] 记录实际命令、输入、期望和实际结果；未运行的明确写未运行。</li>
+<li>[ ] 实验标本保留原样，修复写在自己的副本。</li>
+<li>[ ] 已标出卡住的题和自己的思路，不用假装全部完成。</li>
+</ul></section><section class="bundle-section" id="doc-33c8ceac7e88"><h1 id="doc-33c8ceac7e88-l09-讲义-switch循环跳转与大数值">L09 讲义 · switch、循环跳转与大数值</h1>
+<blockquote>
+<p>前置：L08：for、while、迭代过程。
+页码：<strong>书本 p72–78 / PDF p90–96</strong>。见<a href="#doc-526e3b952094">页码说明</a>。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>阅读内容</th>
+<th>书本页</th>
+<th>PDF页</th>
+<th>要求</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>3.8.5 switch</td>
+<td>72–74</td>
+<td>90–92</td>
+<td>精读传统语法和贯穿</td>
+</tr>
+<tr>
+<td>3.8.6 中断控制流程</td>
+<td>74–76</td>
+<td>92–94</td>
+<td>精读break/continue；标签选读</td>
+</tr>
+<tr>
+<td>3.9 大数值</td>
+<td>76–78</td>
+<td>94–96</td>
+<td>精读BigInteger与BigDecimal使用</td>
+</tr>
+</tbody>
+</table>
+<h2 id="doc-33c8ceac7e88-这一课要解决什么问题">这一课要解决什么问题</h2>
+<p>有限的几个选项怎样分派？循环中想提前结束怎么办？整数或小数超出基本类型能力时用什么？</p>
+<h2 id="doc-33c8ceac7e88-1-switch按一个值选择分支">1. switch按一个值选择分支</h2>
+<p><strong>多重选择</strong>是按同一个值匹配若干选项。传统Java8写法中，<code>case</code>标出选项，<code>default</code>处理未匹配情况，<code>break</code>结束当前switch。没有break时可能继续执行后面的语句，叫<strong>贯穿</strong>；它有时是有意合并分支，但初学要明确标注。</p>
+<pre><code class="language-java">switch (day) {
+    case 6:
+    case 7:
+        System.out.println(&quot;weekend&quot;);
+        break;
+    default:
+        System.out.println(&quot;weekday&quot;);
+}
+</code></pre>
+<p>示例假定day在1–7内；若任务要求验证范围，必须先处理0、8等非法值。switch适合离散选项，不直接写<code>case score &gt;= 60</code>。新版箭头语法另行补充，首批练习采用教材风格。</p>
+<h2 id="doc-33c8ceac7e88-2-break和continue">2. break和continue</h2>
+<p>循环里的<code>break</code>结束最内层对应循环；<code>continue</code>跳过本轮剩余部分，转入下一轮。for中的continue会先走更新部分；while里若把更新放在continue之后，可能永远跳过更新导致死循环。</p>
+<p>不要说continue“退出循环”；它只退出这一轮。多层嵌套和带标签跳转先会读，本课选做，不要求靠标签重写普通题。</p>
+<h2 id="doc-33c8ceac7e88-3-biginteger与bigdecimal">3. BigInteger与BigDecimal</h2>
+<p><strong>大整数</strong><code>BigInteger</code>用于超出long范围的整数，仍受可用内存与资源限制；不是无限大。<code>new BigInteger("...")</code>从十进制文本建立值。相加写<code>a.add(b)</code>，不能写<code>a+b</code>。</p>
+<p><strong>十进制数</strong><code>BigDecimal</code>适合明确控制十进制表示与舍入。需要精确表示0.1时用<code>new BigDecimal("0.1")</code>，避免先把0.1变成近似double再交给构造器。<code>BigDecimal.valueOf(0.1)</code>也是常见选择，但必须分清它与<code>new BigDecimal(0.1)</code>。</p>
+<p>这些数值对象的运算返回结果，<code>a.add(b)</code>不改原a，需要保存结果。除法不一定有有限小数，<code>1/3</code>要指定保留位数和<strong>舍入规则</strong>，如<code>divide(three,2,RoundingMode.HALF_UP)</code>；本课用它观察“保留2位按规则取舍”，不泛称所有金额都采用同一规则。<code>equals</code>还比较scale等表示细节，数值比较用<code>compareTo</code>并检查是否为0。</p>
+<h2 id="doc-33c8ceac7e88-动手实验">动手实验</h2>
+<p>运行MenuDemo的1、2、其他选项；在副本删break预测后续输出。运行SkipAndStopDemo，逐项解释哪些数被跳过、何时停止。运行BigNumberDemo，观察大数加法、0.1+0.2和1/3；再去掉divide中的舍入约定，理解为什么不能假设所有除法都精确终止。</p>
+<h2 id="doc-33c8ceac7e88-本课过关">本课过关</h2>
+<p>能说明switch贯穿，区分break与continue，用字符串建立BigDecimal并解释为什么保存运算结果。大数值练习提供步骤，不要求提前掌握完整类设计。</p>
+<h2 id="doc-33c8ceac7e88-示例入口">示例入口</h2>
+<p><a href="#doc-a8fac8cdd2df">逐个示例与运行命令</a>。</p>
+<h2 id="doc-33c8ceac7e88-学完交什么">学完交什么</h2>
+<p>完成<a href="#doc-a7b6badbcc8e">本课练习</a>，代码写入<a href="#doc-690be1402f69">my_code</a>，附命令、输入和结果。先做题，再看<a href="#doc-8cff2b23cfcc">参考答案</a>。批改后将结论保存到<a href="#doc-e8601bdcb726">进度追踪</a>。</p>
+<p>下一课：<a href="#doc-dd1d0b22dbf0">L10 数组与成绩统计器</a>。</p></section><section class="bundle-section" id="doc-a8fac8cdd2df"><h1 id="doc-a8fac8cdd2df-本课独立示例">本课独立示例</h1>
+<p>从项目根目录运行以下命令，每次一个程序。先预测结果，再手敲到my_code实验。</p>
+<h2 id="doc-a8fac8cdd2df-bignumberdemojava">BigNumberDemo.java</h2>
+<pre><code class="language-powershell">.\java.ps1 -Source 'L09_第03章G_多重选择与大数值/code/BigNumberDemo.java'
+</code></pre>
+<h2 id="doc-a8fac8cdd2df-menudemojava">MenuDemo.java</h2>
+<pre><code class="language-powershell">.\java.ps1 -Source 'L09_第03章G_多重选择与大数值/code/MenuDemo.java'
+</code></pre>
+<h2 id="doc-a8fac8cdd2df-skipandstopdemojava">SkipAndStopDemo.java</h2>
+<pre><code class="language-powershell">.\java.ps1 -Source 'L09_第03章G_多重选择与大数值/code/SkipAndStopDemo.java'
+</code></pre><h2>本目录源码 · 点击展开</h2><details><summary>BigNumberDemo.java</summary><pre><code>import java.math.BigDecimal;
+import java.math.BigInteger;
+import java.math.RoundingMode;
+public class BigNumberDemo {
+    public static void main(String[] args) {
+        BigInteger huge = new BigInteger(&quot;9223372036854775808&quot;);
+        System.out.println(huge.add(BigInteger.ONE));
+        BigDecimal a = new BigDecimal(&quot;0.1&quot;);
+        BigDecimal b = new BigDecimal(&quot;0.2&quot;);
+        System.out.println(a.add(b));
+        BigDecimal third = BigDecimal.ONE.divide(new BigDecimal(&quot;3&quot;), 2, RoundingMode.HALF_UP);
+        System.out.println(third);
+        BigDecimal x = new BigDecimal(&quot;1.0&quot;);
+        BigDecimal y = new BigDecimal(&quot;1.00&quot;);
+        System.out.println(&quot;equals=&quot; + x.equals(y));
+        System.out.println(&quot;compare=&quot; + x.compareTo(y));
+    }
+}
+</code></pre></details><details><summary>MenuDemo.java</summary><pre><code>public class MenuDemo {
+    public static void main(String[] args) {
+        int option = args.length == 0 ? 1 : Integer.parseInt(args[0]);
+        switch (option) {
+            case 1:
+                System.out.println(&quot;start&quot;);
+                break;
+            case 2:
+                System.out.println(&quot;help&quot;);
+                break;
+            default:
+                System.out.println(&quot;unknown&quot;);
+        }
+    }
+}
+</code></pre></details><details><summary>SkipAndStopDemo.java</summary><pre><code>public class SkipAndStopDemo {
+    public static void main(String[] args) {
+        for (int value = 1; value &lt;= 10; value++) {
+            if (value &gt; 7) {
+                break;
+            }
+            if (value % 2 == 0) {
+                continue;
+            }
+            System.out.println(value);
+        }
+    }
+}
+</code></pre></details></section><section class="bundle-section" id="doc-a7b6badbcc8e"><h1 id="doc-a7b6badbcc8e-l09-练习-switch循环跳转与大数值">L09 练习 · switch、循环跳转与大数值</h1>
+<p>教材范围：<strong>书本 p72–78 / PDF p90–96</strong>；题目均为课程原创。下列题均必做，讲义明确标“选读”的深入内容不作为卡关项。</p>
+<p><strong>怎么交作业：直接在这个 <code>练习.md</code> 文件里填答案，保留题号，按 <code>Ctrl+S</code> 保存即可。</strong> 代码写入 <code>my_code/</code>，在对应题下记下源码路径、运行命令和结果；做完后告诉AI“L09做完了”。不必另建 <code>作答.md</code>，已有作答文件也可以继续使用。卡住时把思路和疑问写下来。</p>
+<h2 id="doc-a7b6badbcc8e-q1">Q1</h2>
+<p>解释switch中遗漏break、循环中break、循环中continue各有什么效果。</p>
+<p><strong>你的回答／源码路径／验证记录：</strong></p>
+<p>（直接在这里填写；完成后可以删除这行提示）</p>
+<h2 id="doc-a7b6badbcc8e-e1">E1</h2>
+<p>编写Weekday.java：Scanner读整数1–7，1–5输出weekday，6–7输出weekend；其他值输出invalid。使用Java8风格switch和必要的范围检查/默认分支。验证0、1、5、6、7、8。</p>
+<p><strong>你的回答／源码路径／验证记录：</strong></p>
+<p>（直接在这里填写；完成后可以删除这行提示）</p>
+<h2 id="doc-a7b6badbcc8e-e2">E2</h2>
+<p>用循环对1–20求和，跳过3的倍数；第一个大于15的数出现时结束。须使用continue和break。输出sum=75，并用手算核对参与求和的值。</p>
+<p><strong>你的回答／源码路径／验证记录：</strong></p>
+<p>（直接在这里填写；完成后可以删除这行提示）</p>
+<h2 id="doc-a7b6badbcc8e-e3">E3</h2>
+<p>编写Money.java：从字符串“0.1”“0.2”建立BigDecimal，保存相加结果并输出0.3；再以HALF_UP规则将1/3保留两位输出0.33。解释为什么不用new BigDecimal(0.1)。</p>
+<p><strong>你的回答／源码路径／验证记录：</strong></p>
+<p>（直接在这里填写；完成后可以删除这行提示）</p>
+<h2 id="doc-a7b6badbcc8e-q2">Q2</h2>
+<p>BigInteger是否可以不受任何资源限制地变大？调用a.add(b)后a本身是否一定变化？BigDecimal的equals与compareTo用于比较数值时有何区别？</p>
+<p><strong>你的回答／源码路径／验证记录：</strong></p>
+<p>（直接在这里填写；完成后可以删除这行提示）</p>
+<h2 id="doc-a7b6badbcc8e-提交自查">提交自查</h2>
+<ul>
+<li>[ ] 原创文字解释与必做代码已保存。</li>
+<li>[ ] 记录实际命令、输入、期望和实际结果；未运行的明确写未运行。</li>
+<li>[ ] 实验标本保留原样，修复写在自己的副本。</li>
+<li>[ ] 已标出卡住的题和自己的思路，不用假装全部完成。</li>
+</ul></section><section class="bundle-section" id="doc-dd1d0b22dbf0"><h1 id="doc-dd1d0b22dbf0-l10-讲义-数组与成绩统计器">L10 讲义 · 数组与成绩统计器</h1>
+<blockquote>
+<p>前置：L03–L09；特别是循环、输入与下标。
+页码：<strong>书本 p78–90 / PDF p96–108</strong>。见<a href="#doc-526e3b952094">页码说明</a>。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>阅读内容</th>
+<th>书本页</th>
+<th>PDF页</th>
+<th>要求</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>3.10 数组基础</td>
+<td>78–79</td>
+<td>96–97</td>
+<td>精读创建、默认值与边界</td>
+</tr>
+<tr>
+<td>3.10.1–3.10.3 遍历、初始化、拷贝</td>
+<td>79–81</td>
+<td>97–99</td>
+<td>重点精读引用共享</td>
+</tr>
+<tr>
+<td>3.10.4 参数</td>
+<td>81–82</td>
+<td>99–100</td>
+<td>精读args和长度检查</td>
+</tr>
+<tr>
+<td>3.10.5 排序</td>
+<td>82–85</td>
+<td>100–103</td>
+<td>精读排序副本与查找前提</td>
+</tr>
+<tr>
+<td>3.10.6–3.10.7 多维与不规则数组</td>
+<td>85–90</td>
+<td>103–108</td>
+<td>精读行长，复杂应用选读</td>
+</tr>
+</tbody>
+</table>
+<h2 id="doc-dd1d0b22dbf0-这一课要解决什么问题">这一课要解决什么问题</h2>
+<p>保存一组成绩并统计，而不是为每个人写一个变量。本课结束做一个有明确输入输出的成绩统计器。</p>
+<h2 id="doc-dd1d0b22dbf0-1-数组是编号的一排同类型元素">1. 数组是编号的一排同类型元素</h2>
+<p><strong>数组</strong>按编号组织一组固定长度元素，像编号从0开始的储物格。<code>int[] scores = new int[3]</code>建立3个int元素，默认各为0；变量scores保存数组引用。合法下标是0、1、2，<code>scores.length</code>是3，数组length不是方法，没有括号。</p>
+<p><strong>引用共享</strong>：<code>int[] b = scores</code>复制引用，像两张凭证找到同一排格子，改b[0]会影响从scores看到的内容。<code>Arrays.copyOf</code>建立另一份数组。对引用数组做浅拷贝时元素仍可能共享对象；当前先对int数组验证。</p>
+<pre><code class="language-java">for (int i = 0; i &lt; scores.length; i++) {
+    scores[i] += 1;
+}
+for (int score : scores) {
+    System.out.println(score);
+}
+</code></pre>
+<p>增强for适合依次读取元素；<code>for(int score:scores){score++;}</code>只改本轮局部变量，不会把int数组元素改掉。需要下标更新时用普通for。</p>
+<h2 id="doc-dd1d0b22dbf0-2-不存在的位置不是随便一个值">2. 不存在的位置不是“随便一个值”</h2>
+<p>访问length位置会产生越界异常。空数组<code>new int[0]</code>合法，但没有第0项；它与null不同。统计平均值先确认数量大于0；最大值对非空数组可从第一项初始化，避免把全负数误判为0。</p>
+<h2 id="doc-dd1d0b22dbf0-3-排序与查找有前提">3. 排序与查找有前提</h2>
+<p><code>Arrays.sort</code>会改变原数组顺序；想保留原始录入顺序先复制。<code>Arrays.binarySearch</code>要求相应区间按同样规则有序；未找到时返回负数编码，不能把所有负结果都解释成固定-1，也不能把返回值直接当成绩。</p>
+<h2 id="doc-dd1d0b22dbf0-4-二维数组是数组的数组">4. 二维数组是数组的数组</h2>
+<p><code>int[][] grid={{1,2},{3,4,5}}</code>两行长度不同。外层<code>grid.length</code>是行数，内层每次读<code>grid[row].length</code>；不能假设每行都等于第0行长度。<strong>不规则数组</strong>就是这种不等长情况。NestedArrayDemo演示遍历；不要求现在写高维算法。</p>
+<p><strong>命令行参数</strong><code>String[] args</code>也属于数组；访问args[0]前检查长度。它与Scanner读键盘是不同的数据入口。</p>
+<h2 id="doc-dd1d0b22dbf0-5-阶段项目的边界">5. 阶段项目的边界</h2>
+<p>成绩统计器先读数量n，约定0–100；n=0打印<code>no data</code>并结束。n&gt;0再读n个0–100的整数成绩，保留录入顺序，输出总分、两位小数平均分、最大值、最小值、及格人数，再另行打印排序副本。题目规定有效的成绩输入，不把字母恢复或文件保存作为本阶段卡关项。</p>
+<p>先写输入/输出样例，再拆步骤：分配数组→读入→统计→复制排序→输出。<strong>算法</strong>在这里就是为解决任务安排的一系列步骤，不是背某种高深公式。</p>
+<h2 id="doc-dd1d0b22dbf0-动手实验">动手实验</h2>
+<p>运行ArrayDemo，预测别名修改和复制结果；运行NestedArrayDemo，修改第二行长度；运行ArgsEcho先不给参数再传两个参数。阶段项目参考程序只在独立完成后查看，不能用参考程序的测试通过来代替你的提交验证。</p>
+<h2 id="doc-dd1d0b22dbf0-本课过关">本课过关</h2>
+<p>能解释数组引用、length和边界，处理n=0和单元素；项目各项输出符合题意。通过后进入第4章对象与类，后续课次尚需继续编写，不自动判为已学。</p>
+<h2 id="doc-dd1d0b22dbf0-示例入口">示例入口</h2>
+<p><a href="#doc-b1915ed3b0b5">逐个示例与运行命令</a>。</p>
+<h2 id="doc-dd1d0b22dbf0-学完交什么">学完交什么</h2>
+<p>完成<a href="#doc-edb3747d12d2">本课练习</a>，代码写入<a href="#doc-c4bb98fb3a80">my_code</a>，附命令、输入和结果。先做题，再看<a href="#doc-4a36dc3be0b6">参考答案</a>。批改后将结论保存到<a href="#doc-e8601bdcb726">进度追踪</a>。</p>
+<p>下一课规划：L11 对象、引用与预定义类（第4章4.1–4.2）；讲义尚未编写。</p></section><section class="bundle-section" id="doc-b1915ed3b0b5"><h1 id="doc-b1915ed3b0b5-本课独立示例">本课独立示例</h1>
+<p>从项目根目录运行以下命令，每次一个程序。先预测结果，再手敲到my_code实验。</p>
+<h2 id="doc-b1915ed3b0b5-argsechojava">ArgsEcho.java</h2>
+<pre><code class="language-powershell">.\java.ps1 -Source 'L10_第03章H_数组与阶段项目/code/ArgsEcho.java'
+</code></pre>
+<h2 id="doc-b1915ed3b0b5-arraydemojava">ArrayDemo.java</h2>
+<pre><code class="language-powershell">.\java.ps1 -Source 'L10_第03章H_数组与阶段项目/code/ArrayDemo.java'
+</code></pre>
+<h2 id="doc-b1915ed3b0b5-nestedarraydemojava">NestedArrayDemo.java</h2>
+<pre><code class="language-powershell">.\java.ps1 -Source 'L10_第03章H_数组与阶段项目/code/NestedArrayDemo.java'
+</code></pre><h2>本目录源码 · 点击展开</h2><details><summary>ArgsEcho.java</summary><pre><code>public class ArgsEcho {
+    public static void main(String[] args) {
+        System.out.println(&quot;count=&quot; + args.length);
+        for (String argument : args) {
+            System.out.println(argument);
+        }
+    }
+}
+</code></pre></details><details><summary>ArrayDemo.java</summary><pre><code>import java.util.Arrays;
+public class ArrayDemo {
+    public static void main(String[] args) {
+        int[] a = {3, 1, 2};
+        int[] alias = a;
+        alias[0] = 9;
+        int[] copy = Arrays.copyOf(a, a.length);
+        Arrays.sort(copy);
+        System.out.println(&quot;original=&quot; + Arrays.toString(a));
+        System.out.println(&quot;sorted copy=&quot; + Arrays.toString(copy));
+        for (int value : a) {
+            value++;
+        }
+        System.out.println(&quot;after foreach=&quot; + Arrays.toString(a));
+        System.out.println(&quot;index of 2=&quot; + Arrays.binarySearch(copy, 2));
+    }
+}
+</code></pre></details><details><summary>NestedArrayDemo.java</summary><pre><code>public class NestedArrayDemo {
+    public static void main(String[] args) {
+        int[][] grid = {{1, 2}, {3, 4, 5}};
+        int sum = 0;
+        for (int row = 0; row &lt; grid.length; row++) {
+            for (int column = 0; column &lt; grid[row].length; column++) {
+                sum += grid[row][column];
+            }
+        }
+        System.out.println(&quot;sum=&quot; + sum);
+    }
+}
+</code></pre></details></section><section class="bundle-section" id="doc-edb3747d12d2"><h1 id="doc-edb3747d12d2-l10-练习-数组与成绩统计器">L10 练习 · 数组与成绩统计器</h1>
+<p>教材范围：<strong>书本 p78–90 / PDF p96–108</strong>；题目均为课程原创。下列题均必做，讲义明确标“选读”的深入内容不作为卡关项。</p>
+<p><strong>怎么交作业：直接在这个 <code>练习.md</code> 文件里填答案，保留题号，按 <code>Ctrl+S</code> 保存即可。</strong> 代码写入 <code>my_code/</code>，在对应题下记下源码路径、运行命令和结果；做完后告诉AI“L10做完了”。不必另建 <code>作答.md</code>，已有作答文件也可以继续使用。卡住时把思路和疑问写下来。</p>
+<h2 id="doc-edb3747d12d2-q1">Q1</h2>
+<p>int[] b=a与Arrays.copyOf(a,a.length)有何区别？数组length与String.length()写法有何不同？</p>
+<p><strong>你的回答／源码路径／验证记录：</strong></p>
+<p>（直接在这里填写；完成后可以删除这行提示）</p>
+<h2 id="doc-edb3747d12d2-e1">E1</h2>
+<p>手工预测ArrayDemo每行输出，运行验证，再解释增强for中的int局部变量变化为何不修改原数组。</p>
+<p><strong>你的回答／源码路径／验证记录：</strong></p>
+<p>（直接在这里填写；完成后可以删除这行提示）</p>
+<h2 id="doc-edb3747d12d2-e2">E2</h2>
+<p>编写RaggedSum.java：遍历{{1,2},{3,4,5},{}}并输出sum=15。不能假定每行等长；空行也要正确处理。</p>
+<p><strong>你的回答／源码路径／验证记录：</strong></p>
+<p>（直接在这里填写；完成后可以删除这行提示）</p>
+<h2 id="doc-edb3747d12d2-p1">P1</h2>
+<p>编写ScoreStats.java阶段项目：先读n，n范围0–100；越界输出invalid count并结束，n=0输出no data并结束。否则读取n个0–100整数成绩；输入保证有足够的有效成绩。不重复提示输入。输出格式见下方。保存原顺序并另复制排序，不能排序后丢掉原录入顺序。</p>
+<p><strong>你的回答／源码路径／验证记录：</strong></p>
+<p>（直接在这里填写；完成后可以删除这行提示）</p>
+<h2 id="doc-edb3747d12d2-p2">P2</h2>
+<p>验证项目的n=0、n=-1、n=101、单个0、单个100、全相同成绩，以及示例混合成绩；记录期望和实际。</p>
+<p><strong>你的回答／源码路径／验证记录：</strong></p>
+<p>（直接在这里填写；完成后可以删除这行提示）</p>
+<h3 id="doc-edb3747d12d2-p1-指定输出样例">P1 指定输出样例</h3>
+<p>输入（换行或空格分隔均可）：</p>
+<pre><code class="language-text">4
+59 60 90 100
+</code></pre>
+<p>输出：</p>
+<pre><code class="language-text">original=[59, 60, 90, 100]
+sum=309
+average=77.25
+max=100
+min=59
+passed=3
+sorted=[59, 60, 90, 100]
+</code></pre>
+<p>另外用<code>3 / 90 0 60</code>验证排序副本确实不改变original（斜杠在这里代表换行，不是实际输入）。n为0或越界时只输出对应的一行；不要求继续读取成绩。平均值固定US小数点及两位小数。格式与字段名是本题明确要求，不是通用代码风格要求。</p>
+<h2 id="doc-edb3747d12d2-提交自查">提交自查</h2>
+<ul>
+<li>[ ] 原创文字解释与必做代码已保存。</li>
+<li>[ ] 记录实际命令、输入、期望和实际结果；未运行的明确写未运行。</li>
+<li>[ ] 实验标本保留原样，修复写在自己的副本。</li>
+<li>[ ] 已标出卡住的题和自己的思路，不用假装全部完成。</li>
+</ul></section><section class="bundle-section" id="doc-32d80fdb4bb7"><h1 id="doc-32d80fdb4bb7-给其他-llm-的批改与接续指南">给其他 LLM 的批改与接续指南</h1>
+<p>目标：帮助初学者独立订正，并持续记录学习进度。课程参考答案也可能有错，不能当作绝对标准。</p>
+<h2 id="doc-32d80fdb4bb7-先读已有记录">先读已有记录</h2>
+<p>先读取README、学习路线图、进度追踪.md、当前课讲义、练习、作答和上次批改。只读用户授权目录；没有文件访问能力的模型应请用户粘贴相应材料，不能声称能读取本地路径。</p>
+<p>接续原进度文件，不每换聊天就清空。没有证据的阅读、实验、掌握程度填“未确认”。不能凭C++学习经历、代码风格或教材下载完成推断Java水平。既有记录与最新证据冲突时说明更正原因，保留日志。</p>
+<p><strong>作答位置：优先读取每课 <code>练习.md</code> 中直接填写的答案，以及 <code>my_code/</code> 下的代码。</strong> 不要求学习者搬到另一个文件。用户已用 <code>作答.md</code> 或其他文件提交时照样接续；题目和答案之间的空行、分隔线或填写位置不整齐，不能作为知识错误。不得为了重新发布题目而清空学习者的练习文件。</p>
+<h2 id="doc-32d80fdb4bb7-按题检查">按题检查</h2>
+<ol>
+<li>先读题和提交，再对照参考答案。建立必做/选做清单，识别故意报错的实验。</li>
+<li>概念按意思判断，不要求复述讲义。空白只代表未提交，不证明不会；允许正确的不同实现。</li>
+<li>用已教的知识解释，不要求用还没教的集合、Stream、异常框架。题目只要求有效输入时，健壮性建议标为可选改进，不增加隐藏卡关条件。</li>
+<li>不改写用户原答案。批改另存到课次的批改记录/中；明确要求直接修代码时才改原提交。先给最小提示，再给局部修法；用户要求完整解答时可提供并解释。</li>
+<li>同一核心误解在多题出现时合并最少订正任务，不重复罚做。复核时先看旧待办，已通过内容保持通过。</li>
+</ol>
+<h2 id="doc-32d80fdb4bb7-编译与运行必须如实">编译与运行必须如实</h2>
+<p>先检查本机JDK，再编译原始提交。每个独立main程序隔离输出；失败立即停，不运行旧class。可用课程java.ps1，也可手动使用<code>javac --release 8 -encoding UTF-8 -Xlint:all,-options -d 临时目录 文件.java</code>，再<code>java -cp 临时目录 类名</code>。用实际版本和编码选项，记录完整命令。</p>
+<p>编译成功、运行成功、结果符合题意是不同结论。正常题核对普通值和题目明确要求的边界；固定输入输出按题意比较。故意错误实验按目标阶段判断：编译失败、运行时异常、逻辑错误不能混为一谈。编译诊断随语言环境可能不同，不能只凭一条英文错误文本判对错。</p>
+<p>字符串内容比较检查equals；数组检查下标、空数组、引用共享；输入检查nextInt/nextLine衔接；整数除法、溢出、精度和整型表达式中间结果都要根据真实代码判断。选用少量能证实问题的测试，不机械堆测试。</p>
+<p>明确区分“助手实测”“学生自测记录”“仅静态检查”。没有工具时必须写“未实际编译运行”，不能编造输出、零警告或通过用例。JDK21上--release8编译不等于在JDK8虚拟机实测。</p>
+<h2 id="doc-32d80fdb4bb7-如何反馈">如何反馈</h2>
+<p>先说本次结论，再按“题号/文件位置→问题→为什么→最小提示→如何验证”给反馈。准确行号未经核实就不写。核心错误、未交、待验证和可选风格建议分开列出。无需强行百分制。</p>
+<p>建议输出：本次范围；总体结论；实际验证；逐题结果；最少订正清单；复核方式；可选改进；学习进度。</p>
+<h2 id="doc-32d80fdb4bb7-每次批改必须更新进度">每次批改必须更新进度</h2>
+<p>四类事实分别记：<strong>材料准备、作业提交、知识评判、验证方式</strong>。助手测试了课程样例只说明材料情况，不说明学生会写。</p>
+<p>状态可用：未确认、未开始（需本人明确说明）、学习中、待补交、待订正、待验证、已通过。一课可有“代码通过，文字题待补交”。只有必做齐全、核心概念和计算问题解决、题目所需验证有依据，才能判整课通过。选做未做不阻止通过。</p>
+<p>每次批改都要：</p>
+<ol>
+<li>更新总览的当前课次、状态与复核日期。</li>
+<li>按题记结论及文件/运行证据。</li>
+<li>更新未结订正项：题号、问题、完成条件；复核后及时关闭已解决项。</li>
+<li>追加学习日志，说明本次改变，保留历史。原判断有误时明确更正。</li>
+<li>易错点只记有证据的事实，并标明是否已解决。</li>
+<li>给下一步：先订正什么，或下一课的名称、讲义和练习入口。未开始的下一课只写“可开始”。</li>
+</ol>
+<p>有写入工具时保存到进度追踪.md并重读确认。没有工具则输出可直接保存的更新后Markdown，明确“未写入文件”。最终答复必须说明：当前课与结论、剩余订正、下一步、记录保存位置及是否真正保存。不能只说“继续加油”。</p>
+<h2 id="doc-32d80fdb4bb7-可复制的请求">可复制的请求</h2>
+<pre><code class="language-text">请按这套Java课程批改我当前课次的作业。先读README、进度追踪.md、当前课讲义，再看练习.md中直接填写的答案、my_code与上次订正；如果存在作答.md等既有提交也一起看。
+先检查原提交，允许不同正确解法，默认给最小提示。按题区分通过、未交、需订正和待验证；如实说明是否实际编译运行。
+请持续更新原进度记录：章节总览、逐题结果、订正任务和学习日志。材料备好不代表我已学完。最后说明当前进度、未结项、下一步和记录保存位置；没有文件写入能力时给我待保存的Markdown。
+当前课次：填写Lxx。
+</code></pre></section><section class="bundle-section" id="doc-e8601bdcb726"><h1 id="doc-e8601bdcb726-学习进度模板">学习进度模板</h1>
+<p>首次使用时复制为根目录的 <code>进度追踪.md</code>；如果已有该文件，接续旧记录，不要覆盖。</p>
+<p>当前课次：未确认。最近更新：填写实际日期。建议初次入口：L01。</p>
+<h2 id="doc-e8601bdcb726-课次总览">课次总览</h2>
+<table>
+<thead>
+<tr>
+<th>课次</th>
+<th>材料</th>
+<th>阅读/实验</th>
+<th>作业提交</th>
+<th>知识评判</th>
+<th>验证依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>L01–L10（使用时逐课展开）</td>
+<td>已备</td>
+<td>未确认</td>
+<td>未确认</td>
+<td>未评判</td>
+<td>待实际提交</td>
+</tr>
+<tr>
+<td>L11–L35</td>
+<td>规划</td>
+<td>未确认</td>
+<td>未确认</td>
+<td>未评判</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<h2 id="doc-e8601bdcb726-当前课逐题结果">当前课逐题结果</h2>
+<p>收到提交后按题号填写：通过、待补交、待订正、待验证；附实际文件、命令或说明依据。不把本模板占位文字当作事实。</p>
+<h2 id="doc-e8601bdcb726-未结订正项">未结订正项</h2>
+<p>按题号列问题、完成条件和复核结果；已解决的关闭并保留记录。</p>
+<h2 id="doc-e8601bdcb726-已确认的易错点">已确认的易错点</h2>
+<p>只写有作答证据的理解问题及是否解决，无证据时留空。</p>
+<h2 id="doc-e8601bdcb726-下一步">下一步</h2>
+<p>具体写待完成题目或下一课名称与入口。下一课材料已提供不代表已开始学习。</p>
+<h2 id="doc-e8601bdcb726-学习日志">学习日志</h2>
+<p>每次批改追加日期、提交范围、真实验证方式、状态变化和下一步。没有文件写入能力时输出待保存记录，不声称已保存。</p></section><section class="bundle-section" id="doc-3f83fca99eef"><h1 id="doc-3f83fca99eef-术语表-先懂作用再记名称">术语表 · 先懂作用，再记名称</h1>
+<table>
+<thead>
+<tr>
+<th>词</th>
+<th>一句话解释</th>
+<th>为什么需要／类比</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>编译</td>
+<td>将源码检查并转换为另一种可执行表示</td>
+<td>像先检查配方并翻译成执行清单；不保证配方符合你的本意</td>
+</tr>
+<tr>
+<td>字节码</td>
+<td>Java编译器常见的输出指令格式</td>
+<td>交给JVM执行；不是本机CPU直接执行的全部机器码</td>
+</tr>
+<tr>
+<td>JVM</td>
+<td>执行Java字节码的虚拟机</td>
+<td>各平台安装合适的执行环境</td>
+</tr>
+<tr>
+<td>JDK</td>
+<td>Java开发工具包</td>
+<td>含javac、java等，像开发工具箱</td>
+</tr>
+<tr>
+<td>类</td>
+<td>一种程序组织与对象描述方式</td>
+<td>当前先作为程序外壳；第4章展开</td>
+</tr>
+<tr>
+<td>对象</td>
+<td>按某个类建立的具体实例</td>
+<td>类像说明，具体对象像按说明制作的一份物品</td>
+</tr>
+<tr>
+<td>方法</td>
+<td>类中有名字、可以被调用的一段操作</td>
+<td>避免每次重新描述操作；第4章系统讲定义</td>
+</tr>
+<tr>
+<td>main</td>
+<td>当前命令行程序的启动入口方法</td>
+<td>JVM启动这个类时从它开始</td>
+</tr>
+<tr>
+<td>变量</td>
+<td>类型、名字和值之间的一种绑定</td>
+<td>给运行中的数据起名；不是数学里永不改变的等号</td>
+</tr>
+<tr>
+<td>类型</td>
+<td>规定值的种类和允许的操作</td>
+<td>防止把不合适的东西混用；有些错误能编译前发现</td>
+</tr>
+<tr>
+<td>字面量</td>
+<td>源码中直接写出的值</td>
+<td>如42、3.5、'A'、"hi"、true</td>
+</tr>
+<tr>
+<td>表达式</td>
+<td>能计算出一个结果的组合</td>
+<td>如price*count，用计算结果参与更大任务</td>
+</tr>
+<tr>
+<td>引用</td>
+<td>用于访问对象的值</td>
+<td>类比找到对象的凭证；不是C++可做地址算术的指针</td>
+</tr>
+<tr>
+<td>null</td>
+<td>引用没有指向对象的特殊值</td>
+<td>不等于空字符串或长度为0的数组</td>
+</tr>
+<tr>
+<td>索引／下标</td>
+<td>指出序列中的第几个位置</td>
+<td>从0开始，像一排格子的编号</td>
+</tr>
+<tr>
+<td>异常</td>
+<td>程序运行过程中报告异常情况的机制</td>
+<td>如访问不存在的位置；不等于所有错误</td>
+</tr>
+<tr>
+<td>API</td>
+<td>库提供给调用者使用的功能约定</td>
+<td>像工具说明：名字、参数、返回值和限制</td>
+</tr>
+<tr>
+<td>作用域</td>
+<td>代码中一个名字可以被使用的范围</td>
+<td>不是对象在内存中存活多久</td>
+</tr>
+<tr>
+<td>边界测试</td>
+<td>专门检查最小、最大、刚好临界的情况</td>
+<td>常能发现平常输入隐藏的问题</td>
+</tr>
+<tr>
+<td>UTF-8</td>
+<td>把文字编码成字节的一种方式</td>
+<td>保存、读取双方使用一致规则才能正确显示</td>
+</tr>
+</tbody>
+</table>
+<p>遇到讲义里没有解释的新词，可以直接指出。术语表作为查阅补充，不能替代讲义第一次出现该词时的解释。</p></section><section class="bundle-section" id="doc-fea294d77afe"><h1 id="doc-fea294d77afe-教材目录-双页码索引">教材目录 · 双页码索引</h1>
+<p>本地文件：<code>Java核心技术卷1基础知识原书第10版 .pdf</code>。共729页，抽取447条可定位书签。</p>
+<p>PDF页为文件从1开始的物理页序；书本页为正文的阿拉伯页码。正文采用经抽样图像核对的+18偏移，章节/小节起点来自PDF书签。后续尚未编写课次的具体阅读边界须继续看图核对。不能把此索引称为全书逐页校对。</p>
+<table>
+<thead>
+<tr>
+<th>层级</th>
+<th>章节或书签</th>
+<th>书本页</th>
+<th>PDF页</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>封面</td>
+<td>—（前置页）</td>
+<td>2</td>
+</tr>
+<tr>
+<td>0</td>
+<td>书名</td>
+<td>—（前置页）</td>
+<td>4</td>
+</tr>
+<tr>
+<td>0</td>
+<td>版权</td>
+<td>—（前置页）</td>
+<td>5</td>
+</tr>
+<tr>
+<td>0</td>
+<td>前言</td>
+<td>—（前置页）</td>
+<td>6</td>
+</tr>
+<tr>
+<td>0</td>
+<td>目录</td>
+<td>—（前置页）</td>
+<td>12</td>
+</tr>
+<tr>
+<td>0</td>
+<td>第1章 Java程序设计概述</td>
+<td>1</td>
+<td>19</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1.1 Java程序设计平台</td>
+<td>1</td>
+<td>19</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1.2 Java“白皮书”的关键术语</td>
+<td>2</td>
+<td>20</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1.2.1 简单性</td>
+<td>2</td>
+<td>20</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1.2.2 面向对象</td>
+<td>2</td>
+<td>20</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1.2.3 分布式</td>
+<td>3</td>
+<td>21</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1.2.4 健壮性</td>
+<td>3</td>
+<td>21</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1.2.5 安全性</td>
+<td>3</td>
+<td>21</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1.2.6 体系结构中立</td>
+<td>4</td>
+<td>22</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1.2.7 可移植性</td>
+<td>4</td>
+<td>22</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1.2.8 解释型</td>
+<td>5</td>
+<td>23</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1.2.9 高性能</td>
+<td>5</td>
+<td>23</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1.2.10 多线程</td>
+<td>5</td>
+<td>23</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1.2.11 动态性</td>
+<td>5</td>
+<td>23</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1.3 Java applet与Internet</td>
+<td>6</td>
+<td>24</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1.4 Java发展简史</td>
+<td>7</td>
+<td>25</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1.5 关于Java的常见误解</td>
+<td>9</td>
+<td>27</td>
+</tr>
+<tr>
+<td>0</td>
+<td>第2章 Java程序设计环境</td>
+<td>12</td>
+<td>30</td>
+</tr>
+<tr>
+<td>1</td>
+<td>2.1 安装Java开发工具包</td>
+<td>12</td>
+<td>30</td>
+</tr>
+<tr>
+<td>2</td>
+<td>2.1.1 下载JDK</td>
+<td>12</td>
+<td>30</td>
+</tr>
+<tr>
+<td>2</td>
+<td>2.1.2 设置JDK</td>
+<td>13</td>
+<td>31</td>
+</tr>
+<tr>
+<td>2</td>
+<td>2.1.3 安装库源文件和文档</td>
+<td>15</td>
+<td>33</td>
+</tr>
+<tr>
+<td>1</td>
+<td>2.2 使用命令行工具</td>
+<td>16</td>
+<td>34</td>
+</tr>
+<tr>
+<td>1</td>
+<td>2.3 使用集成开发环境</td>
+<td>18</td>
+<td>36</td>
+</tr>
+<tr>
+<td>1</td>
+<td>2.4 运行图形化应用程序</td>
+<td>21</td>
+<td>39</td>
+</tr>
+<tr>
+<td>1</td>
+<td>2.5 构建并运行applet</td>
+<td>23</td>
+<td>41</td>
+</tr>
+<tr>
+<td>0</td>
+<td>第3章 Java的基本程序设计结构</td>
+<td>28</td>
+<td>46</td>
+</tr>
+<tr>
+<td>1</td>
+<td>3.1 一个简单的Java应用程序</td>
+<td>28</td>
+<td>46</td>
+</tr>
+<tr>
+<td>1</td>
+<td>3.2 注释</td>
+<td>31</td>
+<td>49</td>
+</tr>
+<tr>
+<td>1</td>
+<td>3.3 数据类型</td>
+<td>32</td>
+<td>50</td>
+</tr>
+<tr>
+<td>2</td>
+<td>3.3.1 整型</td>
+<td>32</td>
+<td>50</td>
+</tr>
+<tr>
+<td>2</td>
+<td>3.3.2 浮点类型</td>
+<td>33</td>
+<td>51</td>
+</tr>
+<tr>
+<td>2</td>
+<td>3.3.3 char类型</td>
+<td>34</td>
+<td>52</td>
+</tr>
+<tr>
+<td>2</td>
+<td>3.3.4 Unicode和char类型</td>
+<td>35</td>
+<td>53</td>
+</tr>
+<tr>
+<td>2</td>
+<td>3.3.5 boolean类型</td>
+<td>35</td>
+<td>53</td>
+</tr>
+<tr>
+<td>1</td>
+<td>3.4 变量</td>
+<td>36</td>
+<td>54</td>
+</tr>
+<tr>
+<td>2</td>
+<td>3.4.1 变量初始化</td>
+<td>37</td>
+<td>55</td>
+</tr>
+<tr>
+<td>2</td>
+<td>3.4.2 常量</td>
+<td>37</td>
+<td>55</td>
+</tr>
+<tr>
+<td>1</td>
+<td>3.5 运算符</td>
+<td>38</td>
+<td>56</td>
+</tr>
+<tr>
+<td>2</td>
+<td>3.5.1 数学函数与常量</td>
+<td>39</td>
+<td>57</td>
+</tr>
+<tr>
+<td>2</td>
+<td>3.5.2 数值类型之间的转换</td>
+<td>40</td>
+<td>58</td>
+</tr>
+<tr>
+<td>2</td>
+<td>3.5.3 强制类型转换</td>
+<td>41</td>
+<td>59</td>
+</tr>
+<tr>
+<td>2</td>
+<td>3.5.4 结合赋值和运算符</td>
+<td>42</td>
+<td>60</td>
+</tr>
+<tr>
+<td>2</td>
+<td>3.5.5 自增与自减运算符</td>
+<td>42</td>
+<td>60</td>
+</tr>
+<tr>
+<td>2</td>
+<td>3.5.6 关系和boolean运算符</td>
+<td>42</td>
+<td>60</td>
+</tr>
+<tr>
+<td>2</td>
+<td>3.5.7 位运算符</td>
+<td>43</td>
+<td>61</td>
+</tr>
+<tr>
+<td>2</td>
+<td>3.5.8 括号与运算符级别</td>
+<td>44</td>
+<td>62</td>
+</tr>
+<tr>
+<td>2</td>
+<td>3.5.9 枚举类型</td>
+<td>45</td>
+<td>63</td>
+</tr>
+<tr>
+<td>1</td>
+<td>3.6 字符串</td>
+<td>45</td>
+<td>63</td>
+</tr>
+<tr>
+<td>2</td>
+<td>3.6.1 子串</td>
+<td>45</td>
+<td>63</td>
+</tr>
+<tr>
+<td>2</td>
+<td>3.6.2 拼接</td>
+<td>46</td>
+<td>64</td>
+</tr>
+<tr>
+<td>2</td>
+<td>3.6.3 不可变字符串</td>
+<td>46</td>
+<td>64</td>
+</tr>
+<tr>
+<td>2</td>
+<td>3.6.4 检测字符串是否相等</td>
+<td>47</td>
+<td>65</td>
+</tr>
+<tr>
+<td>2</td>
+<td>3.6.5 空串与Null串</td>
+<td>48</td>
+<td>66</td>
+</tr>
+<tr>
+<td>2</td>
+<td>3.6.6 码点与代码单元</td>
+<td>49</td>
+<td>67</td>
+</tr>
+<tr>
+<td>2</td>
+<td>3.6.7 String API</td>
+<td>50</td>
+<td>68</td>
+</tr>
+<tr>
+<td>2</td>
+<td>3.6.8 阅读联机API文档</td>
+<td>52</td>
+<td>70</td>
+</tr>
+<tr>
+<td>2</td>
+<td>3.6.9 构建字符串</td>
+<td>54</td>
+<td>72</td>
+</tr>
+<tr>
+<td>1</td>
+<td>3.7 输入输出</td>
+<td>55</td>
+<td>73</td>
+</tr>
+<tr>
+<td>2</td>
+<td>3.7.1 读取输入</td>
+<td>55</td>
+<td>73</td>
+</tr>
+<tr>
+<td>2</td>
+<td>3.7.2 格式化输出</td>
+<td>58</td>
+<td>76</td>
+</tr>
+<tr>
+<td>2</td>
+<td>3.7.3 文件输入与输出</td>
+<td>61</td>
+<td>79</td>
+</tr>
+<tr>
+<td>1</td>
+<td>3.8 控制流程</td>
+<td>63</td>
+<td>81</td>
+</tr>
+<tr>
+<td>2</td>
+<td>3.8.1 块作用域</td>
+<td>63</td>
+<td>81</td>
+</tr>
+<tr>
+<td>2</td>
+<td>3.8.2 条件语句</td>
+<td>63</td>
+<td>81</td>
+</tr>
+<tr>
+<td>2</td>
+<td>3.8.3 循环</td>
+<td>66</td>
+<td>84</td>
+</tr>
+<tr>
+<td>2</td>
+<td>3.8.4 确定循环</td>
+<td>69</td>
+<td>87</td>
+</tr>
+<tr>
+<td>2</td>
+<td>3.8.5 多重选择：switch语句</td>
+<td>72</td>
+<td>90</td>
+</tr>
+<tr>
+<td>2</td>
+<td>3.8.6 中断控制流程语句</td>
+<td>74</td>
+<td>92</td>
+</tr>
+<tr>
+<td>1</td>
+<td>3.9 大数值</td>
+<td>76</td>
+<td>94</td>
+</tr>
+<tr>
+<td>1</td>
+<td>3.10 数组</td>
+<td>78</td>
+<td>96</td>
+</tr>
+<tr>
+<td>2</td>
+<td>3.10.1 for each循环</td>
+<td>79</td>
+<td>97</td>
+</tr>
+<tr>
+<td>2</td>
+<td>3.10.2 数组初始化以及匿名数组</td>
+<td>80</td>
+<td>98</td>
+</tr>
+<tr>
+<td>2</td>
+<td>3.10.3 数组拷贝</td>
+<td>81</td>
+<td>99</td>
+</tr>
+<tr>
+<td>2</td>
+<td>3.10.4 命令行参数</td>
+<td>81</td>
+<td>99</td>
+</tr>
+<tr>
+<td>2</td>
+<td>3.10.5 数组排序</td>
+<td>82</td>
+<td>100</td>
+</tr>
+<tr>
+<td>2</td>
+<td>3.10.6 多维数组</td>
+<td>85</td>
+<td>103</td>
+</tr>
+<tr>
+<td>2</td>
+<td>3.10.7 不规则数组</td>
+<td>88</td>
+<td>106</td>
+</tr>
+<tr>
+<td>0</td>
+<td>第4章 对象与类</td>
+<td>91</td>
+<td>109</td>
+</tr>
+<tr>
+<td>1</td>
+<td>4.1 面向对象程序设计概述</td>
+<td>91</td>
+<td>109</td>
+</tr>
+<tr>
+<td>2</td>
+<td>4.1.1 类</td>
+<td>92</td>
+<td>110</td>
+</tr>
+<tr>
+<td>2</td>
+<td>4.1.2 对象</td>
+<td>93</td>
+<td>111</td>
+</tr>
+<tr>
+<td>2</td>
+<td>4.1.3 识别类</td>
+<td>93</td>
+<td>111</td>
+</tr>
+<tr>
+<td>2</td>
+<td>4.1.4 类之间的关系</td>
+<td>94</td>
+<td>112</td>
+</tr>
+<tr>
+<td>1</td>
+<td>4.2 使用预定义类</td>
+<td>95</td>
+<td>113</td>
+</tr>
+<tr>
+<td>2</td>
+<td>4.2.1 对象与对象变量</td>
+<td>95</td>
+<td>113</td>
+</tr>
+<tr>
+<td>2</td>
+<td>4.2.2 Java类库中的LocalDate类</td>
+<td>98</td>
+<td>116</td>
+</tr>
+<tr>
+<td>2</td>
+<td>4.2.3 更改器方法与访问器方法</td>
+<td>100</td>
+<td>118</td>
+</tr>
+<tr>
+<td>1</td>
+<td>4.3 用户自定义类</td>
+<td>103</td>
+<td>121</td>
+</tr>
+<tr>
+<td>2</td>
+<td>4.3.1 Employee类</td>
+<td>103</td>
+<td>121</td>
+</tr>
+<tr>
+<td>2</td>
+<td>4.3.2 多个源文件的使用</td>
+<td>105</td>
+<td>123</td>
+</tr>
+<tr>
+<td>2</td>
+<td>4.3.3 剖析Employee类</td>
+<td>106</td>
+<td>124</td>
+</tr>
+<tr>
+<td>2</td>
+<td>4.3.4 从构造器开始</td>
+<td>106</td>
+<td>124</td>
+</tr>
+<tr>
+<td>2</td>
+<td>4.3.5 隐式参数与显式参数</td>
+<td>108</td>
+<td>126</td>
+</tr>
+<tr>
+<td>2</td>
+<td>4.3.6 封装的优点</td>
+<td>109</td>
+<td>127</td>
+</tr>
+<tr>
+<td>2</td>
+<td>4.3.7 基于类的访问权限</td>
+<td>111</td>
+<td>129</td>
+</tr>
+<tr>
+<td>2</td>
+<td>4.3.8 私有方法</td>
+<td>111</td>
+<td>129</td>
+</tr>
+<tr>
+<td>2</td>
+<td>4.3.9 final实例域</td>
+<td>112</td>
+<td>130</td>
+</tr>
+<tr>
+<td>1</td>
+<td>4.4 静态域与静态方法</td>
+<td>112</td>
+<td>130</td>
+</tr>
+<tr>
+<td>2</td>
+<td>4.4.1 静态域</td>
+<td>112</td>
+<td>130</td>
+</tr>
+<tr>
+<td>2</td>
+<td>4.4.2 静态常量</td>
+<td>113</td>
+<td>131</td>
+</tr>
+<tr>
+<td>2</td>
+<td>4.4.3 静态方法</td>
+<td>114</td>
+<td>132</td>
+</tr>
+<tr>
+<td>2</td>
+<td>4.4.4 工厂方法</td>
+<td>115</td>
+<td>133</td>
+</tr>
+<tr>
+<td>2</td>
+<td>4.4.5 main方法</td>
+<td>115</td>
+<td>133</td>
+</tr>
+<tr>
+<td>1</td>
+<td>4.5 方法参数</td>
+<td>118</td>
+<td>136</td>
+</tr>
+<tr>
+<td>1</td>
+<td>4.6 对象构造</td>
+<td>123</td>
+<td>141</td>
+</tr>
+<tr>
+<td>2</td>
+<td>4.6.1 重载</td>
+<td>123</td>
+<td>141</td>
+</tr>
+<tr>
+<td>2</td>
+<td>4.6.2 默认域初始化</td>
+<td>123</td>
+<td>141</td>
+</tr>
+<tr>
+<td>2</td>
+<td>4.6.3 无参数的构造器</td>
+<td>124</td>
+<td>142</td>
+</tr>
+<tr>
+<td>2</td>
+<td>4.6.4 显式域初始化</td>
+<td>125</td>
+<td>143</td>
+</tr>
+<tr>
+<td>2</td>
+<td>4.6.5 参数名</td>
+<td>125</td>
+<td>143</td>
+</tr>
+<tr>
+<td>2</td>
+<td>4.6.6 调用另一个构造器</td>
+<td>126</td>
+<td>144</td>
+</tr>
+<tr>
+<td>2</td>
+<td>4.6.7 初始化块</td>
+<td>127</td>
+<td>145</td>
+</tr>
+<tr>
+<td>2</td>
+<td>4.6.8 对象析构与finalize方法</td>
+<td>130</td>
+<td>148</td>
+</tr>
+<tr>
+<td>1</td>
+<td>4.7 包</td>
+<td>131</td>
+<td>149</td>
+</tr>
+<tr>
+<td>2</td>
+<td>4.7.1 类的导入</td>
+<td>131</td>
+<td>149</td>
+</tr>
+<tr>
+<td>2</td>
+<td>4.7.2 静态导入</td>
+<td>133</td>
+<td>151</td>
+</tr>
+<tr>
+<td>2</td>
+<td>4.7.3 将类放入包中</td>
+<td>133</td>
+<td>151</td>
+</tr>
+<tr>
+<td>2</td>
+<td>4.7.4 包作用域</td>
+<td>136</td>
+<td>154</td>
+</tr>
+<tr>
+<td>1</td>
+<td>4.8 类路径</td>
+<td>137</td>
+<td>155</td>
+</tr>
+<tr>
+<td>2</td>
+<td>4.8.1 设置类路径</td>
+<td>139</td>
+<td>157</td>
+</tr>
+<tr>
+<td>1</td>
+<td>4.9 文档注释</td>
+<td>140</td>
+<td>158</td>
+</tr>
+<tr>
+<td>2</td>
+<td>4.9.1 注释的插入</td>
+<td>140</td>
+<td>158</td>
+</tr>
+<tr>
+<td>2</td>
+<td>4.9.2 类注释</td>
+<td>140</td>
+<td>158</td>
+</tr>
+<tr>
+<td>2</td>
+<td>4.9.3 方法注释</td>
+<td>141</td>
+<td>159</td>
+</tr>
+<tr>
+<td>2</td>
+<td>4.9.4 域注释</td>
+<td>142</td>
+<td>160</td>
+</tr>
+<tr>
+<td>2</td>
+<td>4.9.5 通用注释</td>
+<td>142</td>
+<td>160</td>
+</tr>
+<tr>
+<td>2</td>
+<td>4.9.6 包与概述注释</td>
+<td>143</td>
+<td>161</td>
+</tr>
+<tr>
+<td>2</td>
+<td>4.9.7 注释的抽取</td>
+<td>143</td>
+<td>161</td>
+</tr>
+<tr>
+<td>1</td>
+<td>4.10 类设计技巧</td>
+<td>144</td>
+<td>162</td>
+</tr>
+<tr>
+<td>0</td>
+<td>第5章 继承</td>
+<td>147</td>
+<td>165</td>
+</tr>
+<tr>
+<td>1</td>
+<td>5.1 类、超类和子类</td>
+<td>147</td>
+<td>165</td>
+</tr>
+<tr>
+<td>2</td>
+<td>5.1.1 定义子类</td>
+<td>147</td>
+<td>165</td>
+</tr>
+<tr>
+<td>2</td>
+<td>5.1.2 覆盖方法</td>
+<td>149</td>
+<td>167</td>
+</tr>
+<tr>
+<td>2</td>
+<td>5.1.3 子类构造器</td>
+<td>150</td>
+<td>168</td>
+</tr>
+<tr>
+<td>2</td>
+<td>5.1.4 继承层次</td>
+<td>153</td>
+<td>171</td>
+</tr>
+<tr>
+<td>2</td>
+<td>5.1.5 多态</td>
+<td>154</td>
+<td>172</td>
+</tr>
+<tr>
+<td>2</td>
+<td>5.1.6 理解方法调用</td>
+<td>155</td>
+<td>173</td>
+</tr>
+<tr>
+<td>2</td>
+<td>5.1.7 阻止继承：final类和方法</td>
+<td>157</td>
+<td>175</td>
+</tr>
+<tr>
+<td>2</td>
+<td>5.1.8 强制类型转换</td>
+<td>158</td>
+<td>176</td>
+</tr>
+<tr>
+<td>2</td>
+<td>5.1.9 抽象类</td>
+<td>160</td>
+<td>178</td>
+</tr>
+<tr>
+<td>2</td>
+<td>5.1.10 受保护访问</td>
+<td>165</td>
+<td>183</td>
+</tr>
+<tr>
+<td>1</td>
+<td>5.2 Object：所有类的超类</td>
+<td>166</td>
+<td>184</td>
+</tr>
+<tr>
+<td>2</td>
+<td>5.2.1 equals方法</td>
+<td>166</td>
+<td>184</td>
+</tr>
+<tr>
+<td>2</td>
+<td>5.2.2 相等测试与继承</td>
+<td>167</td>
+<td>185</td>
+</tr>
+<tr>
+<td>2</td>
+<td>5.2.3 hashCode方法</td>
+<td>170</td>
+<td>188</td>
+</tr>
+<tr>
+<td>2</td>
+<td>5.2.4 toString方法</td>
+<td>172</td>
+<td>190</td>
+</tr>
+<tr>
+<td>1</td>
+<td>5.3 泛型数组列表</td>
+<td>178</td>
+<td>196</td>
+</tr>
+<tr>
+<td>2</td>
+<td>5.3.1 访问数组列表元素</td>
+<td>180</td>
+<td>198</td>
+</tr>
+<tr>
+<td>2</td>
+<td>5.3.2 类型化与原始数组列表的兼容性</td>
+<td>183</td>
+<td>201</td>
+</tr>
+<tr>
+<td>1</td>
+<td>5.4 对象包装器与自动装箱</td>
+<td>184</td>
+<td>202</td>
+</tr>
+<tr>
+<td>1</td>
+<td>5.5 参数数量可变的方法</td>
+<td>187</td>
+<td>205</td>
+</tr>
+<tr>
+<td>1</td>
+<td>5.6 枚举类</td>
+<td>188</td>
+<td>206</td>
+</tr>
+<tr>
+<td>1</td>
+<td>5.7 反射</td>
+<td>190</td>
+<td>208</td>
+</tr>
+<tr>
+<td>2</td>
+<td>5.7.1 Class类</td>
+<td>190</td>
+<td>208</td>
+</tr>
+<tr>
+<td>2</td>
+<td>5.7.2 捕获异常</td>
+<td>192</td>
+<td>210</td>
+</tr>
+<tr>
+<td>2</td>
+<td>5.7.3 利用反射分析类的能力</td>
+<td>194</td>
+<td>212</td>
+</tr>
+<tr>
+<td>2</td>
+<td>5.7.4 在运行时使用反射分析对象</td>
+<td>198</td>
+<td>216</td>
+</tr>
+<tr>
+<td>2</td>
+<td>5.7.5 使用反射编写泛型数组代码</td>
+<td>202</td>
+<td>220</td>
+</tr>
+<tr>
+<td>2</td>
+<td>5.7.6 调用任意方法</td>
+<td>205</td>
+<td>223</td>
+</tr>
+<tr>
+<td>1</td>
+<td>5.8 继承的设计技巧</td>
+<td>208</td>
+<td>226</td>
+</tr>
+<tr>
+<td>0</td>
+<td>第6章 接口、lambda表达式与内部类</td>
+<td>211</td>
+<td>229</td>
+</tr>
+<tr>
+<td>1</td>
+<td>6.1 接口</td>
+<td>211</td>
+<td>229</td>
+</tr>
+<tr>
+<td>2</td>
+<td>6.1.1 接口概念</td>
+<td>211</td>
+<td>229</td>
+</tr>
+<tr>
+<td>2</td>
+<td>6.1.2 接口的特性</td>
+<td>217</td>
+<td>235</td>
+</tr>
+<tr>
+<td>2</td>
+<td>6.1.3 接口与抽象类</td>
+<td>218</td>
+<td>236</td>
+</tr>
+<tr>
+<td>2</td>
+<td>6.1.4 静态方法</td>
+<td>218</td>
+<td>236</td>
+</tr>
+<tr>
+<td>2</td>
+<td>6.1.5 默认方法</td>
+<td>219</td>
+<td>237</td>
+</tr>
+<tr>
+<td>2</td>
+<td>6.1.6 解决默认方法冲突</td>
+<td>220</td>
+<td>238</td>
+</tr>
+<tr>
+<td>1</td>
+<td>6.2 接口示例</td>
+<td>222</td>
+<td>240</td>
+</tr>
+<tr>
+<td>2</td>
+<td>6.2.1 接口与回调</td>
+<td>222</td>
+<td>240</td>
+</tr>
+<tr>
+<td>2</td>
+<td>6.2.2 Comparator接口</td>
+<td>224</td>
+<td>242</td>
+</tr>
+<tr>
+<td>2</td>
+<td>6.2.3 对象克隆</td>
+<td>225</td>
+<td>243</td>
+</tr>
+<tr>
+<td>1</td>
+<td>6.3 lambda表达式</td>
+<td>231</td>
+<td>249</td>
+</tr>
+<tr>
+<td>2</td>
+<td>6.3.1 为什么引入lambda表达式</td>
+<td>231</td>
+<td>249</td>
+</tr>
+<tr>
+<td>2</td>
+<td>6.3.2 lambda表达式的语法</td>
+<td>232</td>
+<td>250</td>
+</tr>
+<tr>
+<td>2</td>
+<td>6.3.3 函数式接口</td>
+<td>234</td>
+<td>252</td>
+</tr>
+<tr>
+<td>2</td>
+<td>6.3.4 方法引用</td>
+<td>235</td>
+<td>253</td>
+</tr>
+<tr>
+<td>2</td>
+<td>6.3.5 构造器引用</td>
+<td>237</td>
+<td>255</td>
+</tr>
+<tr>
+<td>2</td>
+<td>6.3.6 变量作用域</td>
+<td>237</td>
+<td>255</td>
+</tr>
+<tr>
+<td>2</td>
+<td>6.3.7 处理lambda表达式</td>
+<td>239</td>
+<td>257</td>
+</tr>
+<tr>
+<td>2</td>
+<td>6.3.8 再谈Comparator</td>
+<td>242</td>
+<td>260</td>
+</tr>
+<tr>
+<td>1</td>
+<td>6.4 内部类</td>
+<td>242</td>
+<td>260</td>
+</tr>
+<tr>
+<td>2</td>
+<td>6.4.1 使用内部类访问对象状态</td>
+<td>244</td>
+<td>262</td>
+</tr>
+<tr>
+<td>2</td>
+<td>6.4.2 内部类的特殊语法规则</td>
+<td>247</td>
+<td>265</td>
+</tr>
+<tr>
+<td>2</td>
+<td>6.4.3 内部类是否有用、必要和安全</td>
+<td>248</td>
+<td>266</td>
+</tr>
+<tr>
+<td>2</td>
+<td>6.4.4 局部内部类</td>
+<td>250</td>
+<td>268</td>
+</tr>
+<tr>
+<td>2</td>
+<td>6.4.5 由外部方法访问变量</td>
+<td>250</td>
+<td>268</td>
+</tr>
+<tr>
+<td>2</td>
+<td>6.4.6 匿名内部类</td>
+<td>252</td>
+<td>270</td>
+</tr>
+<tr>
+<td>2</td>
+<td>6.4.7 静态内部类</td>
+<td>255</td>
+<td>273</td>
+</tr>
+<tr>
+<td>1</td>
+<td>6.5 代理</td>
+<td>258</td>
+<td>276</td>
+</tr>
+<tr>
+<td>2</td>
+<td>6.5.1 何时使用代理</td>
+<td>259</td>
+<td>277</td>
+</tr>
+<tr>
+<td>2</td>
+<td>6.5.2 创建代理对象</td>
+<td>259</td>
+<td>277</td>
+</tr>
+<tr>
+<td>2</td>
+<td>6.5.3 代理类的特性</td>
+<td>262</td>
+<td>280</td>
+</tr>
+<tr>
+<td>0</td>
+<td>第7章 异常、断言和日志</td>
+<td>264</td>
+<td>282</td>
+</tr>
+<tr>
+<td>1</td>
+<td>7.1 处理错误</td>
+<td>264</td>
+<td>282</td>
+</tr>
+<tr>
+<td>2</td>
+<td>7.1.1 异常分类</td>
+<td>265</td>
+<td>283</td>
+</tr>
+<tr>
+<td>2</td>
+<td>7.1.2 声明受查异常</td>
+<td>267</td>
+<td>285</td>
+</tr>
+<tr>
+<td>2</td>
+<td>7.1.3 如何抛出异常</td>
+<td>269</td>
+<td>287</td>
+</tr>
+<tr>
+<td>2</td>
+<td>7.1.4 创建异常类</td>
+<td>270</td>
+<td>288</td>
+</tr>
+<tr>
+<td>1</td>
+<td>7.2 捕获异常</td>
+<td>271</td>
+<td>289</td>
+</tr>
+<tr>
+<td>2</td>
+<td>7.2.1 捕获异常</td>
+<td>271</td>
+<td>289</td>
+</tr>
+<tr>
+<td>2</td>
+<td>7.2.2 捕获多个异常</td>
+<td>273</td>
+<td>291</td>
+</tr>
+<tr>
+<td>2</td>
+<td>7.2.3 再次抛出异常与异常链</td>
+<td>274</td>
+<td>292</td>
+</tr>
+<tr>
+<td>2</td>
+<td>7.2.4 finally子句</td>
+<td>275</td>
+<td>293</td>
+</tr>
+<tr>
+<td>2</td>
+<td>7.2.5 带资源的try语句</td>
+<td>278</td>
+<td>296</td>
+</tr>
+<tr>
+<td>2</td>
+<td>7.2.6 分析堆栈轨迹元素</td>
+<td>280</td>
+<td>298</td>
+</tr>
+<tr>
+<td>1</td>
+<td>7.3 使用异常机制的技巧</td>
+<td>282</td>
+<td>300</td>
+</tr>
+<tr>
+<td>1</td>
+<td>7.4 使用断言</td>
+<td>285</td>
+<td>303</td>
+</tr>
+<tr>
+<td>2</td>
+<td>7.4.1 断言的概念</td>
+<td>285</td>
+<td>303</td>
+</tr>
+<tr>
+<td>2</td>
+<td>7.4.2 启用和禁用断言</td>
+<td>286</td>
+<td>304</td>
+</tr>
+<tr>
+<td>2</td>
+<td>7.4.3 使用断言完成参数检查</td>
+<td>287</td>
+<td>305</td>
+</tr>
+<tr>
+<td>2</td>
+<td>7.4.4 为文档假设使用断言</td>
+<td>288</td>
+<td>306</td>
+</tr>
+<tr>
+<td>1</td>
+<td>7.5 记录日志</td>
+<td>289</td>
+<td>307</td>
+</tr>
+<tr>
+<td>2</td>
+<td>7.5.1 基本日志</td>
+<td>289</td>
+<td>307</td>
+</tr>
+<tr>
+<td>2</td>
+<td>7.5.2 高级日志</td>
+<td>289</td>
+<td>307</td>
+</tr>
+<tr>
+<td>2</td>
+<td>7.5.3 修改日志管理器配置</td>
+<td>291</td>
+<td>309</td>
+</tr>
+<tr>
+<td>2</td>
+<td>7.5.4 本地化</td>
+<td>292</td>
+<td>310</td>
+</tr>
+<tr>
+<td>2</td>
+<td>7.5.5 处理器</td>
+<td>293</td>
+<td>311</td>
+</tr>
+<tr>
+<td>2</td>
+<td>7.5.6 过滤器</td>
+<td>296</td>
+<td>314</td>
+</tr>
+<tr>
+<td>2</td>
+<td>7.5.7 格式化器</td>
+<td>296</td>
+<td>314</td>
+</tr>
+<tr>
+<td>2</td>
+<td>7.5.8 日志记录说明</td>
+<td>296</td>
+<td>314</td>
+</tr>
+<tr>
+<td>1</td>
+<td>7.6 调试技巧</td>
+<td>304</td>
+<td>322</td>
+</tr>
+<tr>
+<td>0</td>
+<td>第8章 泛型程序设计</td>
+<td>309</td>
+<td>327</td>
+</tr>
+<tr>
+<td>1</td>
+<td>8.1 为什么要使用泛型程序设计</td>
+<td>309</td>
+<td>327</td>
+</tr>
+<tr>
+<td>2</td>
+<td>8.1.1 类型参数的好处</td>
+<td>309</td>
+<td>327</td>
+</tr>
+<tr>
+<td>2</td>
+<td>8.1.2 谁想成为泛型程序员</td>
+<td>310</td>
+<td>328</td>
+</tr>
+<tr>
+<td>1</td>
+<td>8.2 定义简单泛型类</td>
+<td>311</td>
+<td>329</td>
+</tr>
+<tr>
+<td>1</td>
+<td>8.3 泛型方法</td>
+<td>313</td>
+<td>331</td>
+</tr>
+<tr>
+<td>1</td>
+<td>8.4 类型变量的限定</td>
+<td>314</td>
+<td>332</td>
+</tr>
+<tr>
+<td>1</td>
+<td>8.5 泛型代码和虚拟机</td>
+<td>316</td>
+<td>334</td>
+</tr>
+<tr>
+<td>2</td>
+<td>8.5.1 类型擦除</td>
+<td>316</td>
+<td>334</td>
+</tr>
+<tr>
+<td>2</td>
+<td>8.5.2 翻译泛型表达式</td>
+<td>317</td>
+<td>335</td>
+</tr>
+<tr>
+<td>2</td>
+<td>8.5.3 翻译泛型方法</td>
+<td>318</td>
+<td>336</td>
+</tr>
+<tr>
+<td>2</td>
+<td>8.5.4 调用遗留代码</td>
+<td>319</td>
+<td>337</td>
+</tr>
+<tr>
+<td>1</td>
+<td>8.6 约束与局限性</td>
+<td>320</td>
+<td>338</td>
+</tr>
+<tr>
+<td>2</td>
+<td>8.6.1 不能用基本类型实例化类型参数</td>
+<td>320</td>
+<td>338</td>
+</tr>
+<tr>
+<td>2</td>
+<td>8.6.2 运行时类型查询只适用于原始类型</td>
+<td>321</td>
+<td>339</td>
+</tr>
+<tr>
+<td>2</td>
+<td>8.6.3 不能创建参数化类型的数组</td>
+<td>321</td>
+<td>339</td>
+</tr>
+<tr>
+<td>2</td>
+<td>8.6.4 Varargs警告</td>
+<td>322</td>
+<td>340</td>
+</tr>
+<tr>
+<td>2</td>
+<td>8.6.5 不能实例化类型变量</td>
+<td>323</td>
+<td>341</td>
+</tr>
+<tr>
+<td>2</td>
+<td>8.6.6 不能构造泛型数组</td>
+<td>323</td>
+<td>341</td>
+</tr>
+<tr>
+<td>2</td>
+<td>8.6.7 泛型类的静态上下文中类型变量无效</td>
+<td>325</td>
+<td>343</td>
+</tr>
+<tr>
+<td>2</td>
+<td>8.6.8 不能抛出或捕获泛型类的实例</td>
+<td>325</td>
+<td>343</td>
+</tr>
+<tr>
+<td>2</td>
+<td>8.6.9 可以消除对受查异常的检查</td>
+<td>326</td>
+<td>344</td>
+</tr>
+<tr>
+<td>2</td>
+<td>8.6.10 注意擦除后的冲突</td>
+<td>327</td>
+<td>345</td>
+</tr>
+<tr>
+<td>1</td>
+<td>8.7 泛型类型的继承规则</td>
+<td>328</td>
+<td>346</td>
+</tr>
+<tr>
+<td>1</td>
+<td>8.8 通配符类型</td>
+<td>330</td>
+<td>348</td>
+</tr>
+<tr>
+<td>2</td>
+<td>8.8.1 通配符概念</td>
+<td>330</td>
+<td>348</td>
+</tr>
+<tr>
+<td>2</td>
+<td>8.8.2 通配符的超类型限定</td>
+<td>331</td>
+<td>349</td>
+</tr>
+<tr>
+<td>2</td>
+<td>8.8.3 无限定通配符</td>
+<td>334</td>
+<td>352</td>
+</tr>
+<tr>
+<td>2</td>
+<td>8.8.4 通配符捕获</td>
+<td>334</td>
+<td>352</td>
+</tr>
+<tr>
+<td>1</td>
+<td>8.9 反射和泛型</td>
+<td>337</td>
+<td>355</td>
+</tr>
+<tr>
+<td>2</td>
+<td>8.9.1 泛型Class类</td>
+<td>337</td>
+<td>355</td>
+</tr>
+<tr>
+<td>2</td>
+<td>8.9.2 使用Class参数进行类型匹配</td>
+<td>338</td>
+<td>356</td>
+</tr>
+<tr>
+<td>2</td>
+<td>8.9.3 虚拟机中的泛型类型信息</td>
+<td>338</td>
+<td>356</td>
+</tr>
+<tr>
+<td>0</td>
+<td>第9章 集合</td>
+<td>344</td>
+<td>362</td>
+</tr>
+<tr>
+<td>1</td>
+<td>9.1 Java集合框架</td>
+<td>344</td>
+<td>362</td>
+</tr>
+<tr>
+<td>2</td>
+<td>9.1.1 将集合的接口与实现分离</td>
+<td>344</td>
+<td>362</td>
+</tr>
+<tr>
+<td>2</td>
+<td>9.1.2 Collection接口</td>
+<td>346</td>
+<td>364</td>
+</tr>
+<tr>
+<td>2</td>
+<td>9.1.3 迭代器</td>
+<td>347</td>
+<td>365</td>
+</tr>
+<tr>
+<td>2</td>
+<td>9.1.4 泛型实用方法</td>
+<td>349</td>
+<td>367</td>
+</tr>
+<tr>
+<td>2</td>
+<td>9.1.5 集合框架中的接口</td>
+<td>352</td>
+<td>370</td>
+</tr>
+<tr>
+<td>1</td>
+<td>9.2 具体的集合</td>
+<td>353</td>
+<td>371</td>
+</tr>
+<tr>
+<td>2</td>
+<td>9.2.1 链表</td>
+<td>355</td>
+<td>373</td>
+</tr>
+<tr>
+<td>2</td>
+<td>9.2.2 数组列表</td>
+<td>362</td>
+<td>380</td>
+</tr>
+<tr>
+<td>2</td>
+<td>9.2.3 散列集</td>
+<td>363</td>
+<td>381</td>
+</tr>
+<tr>
+<td>2</td>
+<td>9.2.4 树集</td>
+<td>366</td>
+<td>384</td>
+</tr>
+<tr>
+<td>2</td>
+<td>9.2.5 队列与双端队列</td>
+<td>369</td>
+<td>387</td>
+</tr>
+<tr>
+<td>2</td>
+<td>9.2.6 优先级队列</td>
+<td>371</td>
+<td>389</td>
+</tr>
+<tr>
+<td>1</td>
+<td>9.3 映射</td>
+<td>372</td>
+<td>390</td>
+</tr>
+<tr>
+<td>2</td>
+<td>9.3.1 基本映射操作</td>
+<td>372</td>
+<td>390</td>
+</tr>
+<tr>
+<td>2</td>
+<td>9.3.2 更新映射项</td>
+<td>375</td>
+<td>393</td>
+</tr>
+<tr>
+<td>2</td>
+<td>9.3.3 映射视图</td>
+<td>376</td>
+<td>394</td>
+</tr>
+<tr>
+<td>2</td>
+<td>9.3.4 弱散列映射</td>
+<td>377</td>
+<td>395</td>
+</tr>
+<tr>
+<td>2</td>
+<td>9.3.5 链接散列集与映射</td>
+<td>378</td>
+<td>396</td>
+</tr>
+<tr>
+<td>2</td>
+<td>9.3.6 枚举集与映射</td>
+<td>379</td>
+<td>397</td>
+</tr>
+<tr>
+<td>2</td>
+<td>9.3.7 标识散列映射</td>
+<td>380</td>
+<td>398</td>
+</tr>
+<tr>
+<td>1</td>
+<td>9.4 视图与包装器</td>
+<td>381</td>
+<td>399</td>
+</tr>
+<tr>
+<td>2</td>
+<td>9.4.1 轻量级集合包装器</td>
+<td>382</td>
+<td>400</td>
+</tr>
+<tr>
+<td>2</td>
+<td>9.4.2 子范围</td>
+<td>382</td>
+<td>400</td>
+</tr>
+<tr>
+<td>2</td>
+<td>9.4.3 不可修改的视图</td>
+<td>383</td>
+<td>401</td>
+</tr>
+<tr>
+<td>2</td>
+<td>9.4.4 同步视图</td>
+<td>384</td>
+<td>402</td>
+</tr>
+<tr>
+<td>2</td>
+<td>9.4.5 受查视图</td>
+<td>384</td>
+<td>402</td>
+</tr>
+<tr>
+<td>2</td>
+<td>9.4.6 关于可选操作的说明</td>
+<td>385</td>
+<td>403</td>
+</tr>
+<tr>
+<td>1</td>
+<td>9.5 算法</td>
+<td>388</td>
+<td>406</td>
+</tr>
+<tr>
+<td>2</td>
+<td>9.5.1 排序与混排</td>
+<td>389</td>
+<td>407</td>
+</tr>
+<tr>
+<td>2</td>
+<td>9.5.2 二分查找</td>
+<td>391</td>
+<td>409</td>
+</tr>
+<tr>
+<td>2</td>
+<td>9.5.3 简单算法</td>
+<td>392</td>
+<td>410</td>
+</tr>
+<tr>
+<td>2</td>
+<td>9.5.4 批操作</td>
+<td>394</td>
+<td>412</td>
+</tr>
+<tr>
+<td>2</td>
+<td>9.5.5 集合与数组的转换</td>
+<td>394</td>
+<td>412</td>
+</tr>
+<tr>
+<td>2</td>
+<td>9.5.6 编写自己的算法</td>
+<td>395</td>
+<td>413</td>
+</tr>
+<tr>
+<td>1</td>
+<td>9.6 遗留的集合</td>
+<td>396</td>
+<td>414</td>
+</tr>
+<tr>
+<td>2</td>
+<td>9.6.1 Hashtable类</td>
+<td>397</td>
+<td>415</td>
+</tr>
+<tr>
+<td>2</td>
+<td>9.6.2 枚举</td>
+<td>397</td>
+<td>415</td>
+</tr>
+<tr>
+<td>2</td>
+<td>9.6.3 属性映射</td>
+<td>398</td>
+<td>416</td>
+</tr>
+<tr>
+<td>2</td>
+<td>9.6.4 栈</td>
+<td>399</td>
+<td>417</td>
+</tr>
+<tr>
+<td>2</td>
+<td>9.6.5 位集</td>
+<td>399</td>
+<td>417</td>
+</tr>
+<tr>
+<td>0</td>
+<td>第10章 图形程序设计</td>
+<td>403</td>
+<td>421</td>
+</tr>
+<tr>
+<td>1</td>
+<td>10.1 Swing概述</td>
+<td>403</td>
+<td>421</td>
+</tr>
+<tr>
+<td>1</td>
+<td>10.2 创建框架</td>
+<td>407</td>
+<td>425</td>
+</tr>
+<tr>
+<td>1</td>
+<td>10.3 框架定位</td>
+<td>409</td>
+<td>427</td>
+</tr>
+<tr>
+<td>2</td>
+<td>10.3.1 框架属性</td>
+<td>411</td>
+<td>429</td>
+</tr>
+<tr>
+<td>2</td>
+<td>10.3.2 确定合适的框架大小</td>
+<td>411</td>
+<td>429</td>
+</tr>
+<tr>
+<td>1</td>
+<td>10.4 在组件中显示信息</td>
+<td>415</td>
+<td>433</td>
+</tr>
+<tr>
+<td>1</td>
+<td>10.5 处理2D图形</td>
+<td>419</td>
+<td>437</td>
+</tr>
+<tr>
+<td>1</td>
+<td>10.6 使用颜色</td>
+<td>426</td>
+<td>444</td>
+</tr>
+<tr>
+<td>1</td>
+<td>10.7 文本使用特殊字体</td>
+<td>429</td>
+<td>447</td>
+</tr>
+<tr>
+<td>1</td>
+<td>10.8 显示图像</td>
+<td>435</td>
+<td>453</td>
+</tr>
+<tr>
+<td>0</td>
+<td>第11章 事件处理</td>
+<td>439</td>
+<td>457</td>
+</tr>
+<tr>
+<td>1</td>
+<td>11.1 事件处理基础</td>
+<td>439</td>
+<td>457</td>
+</tr>
+<tr>
+<td>2</td>
+<td>11.1.1 实例：处理按钮点击事件</td>
+<td>441</td>
+<td>459</td>
+</tr>
+<tr>
+<td>2</td>
+<td>11.1.2 简洁地指定监听器</td>
+<td>445</td>
+<td>463</td>
+</tr>
+<tr>
+<td>2</td>
+<td>11.1.3 实例：改变观感</td>
+<td>447</td>
+<td>465</td>
+</tr>
+<tr>
+<td>2</td>
+<td>11.1.4 适配器类</td>
+<td>450</td>
+<td>468</td>
+</tr>
+<tr>
+<td>1</td>
+<td>11.2 动作</td>
+<td>453</td>
+<td>471</td>
+</tr>
+<tr>
+<td>1</td>
+<td>11.3 鼠标事件</td>
+<td>459</td>
+<td>477</td>
+</tr>
+<tr>
+<td>1</td>
+<td>11.4 AWT事件继承层次</td>
+<td>465</td>
+<td>483</td>
+</tr>
+<tr>
+<td>2</td>
+<td>11.4.1 语义事件和底层事件</td>
+<td>466</td>
+<td>484</td>
+</tr>
+<tr>
+<td>0</td>
+<td>第12章 Swing用户界面组件</td>
+<td>469</td>
+<td>487</td>
+</tr>
+<tr>
+<td>1</td>
+<td>12.1 Swing和模型–视图–控制器设计模式</td>
+<td>469</td>
+<td>487</td>
+</tr>
+<tr>
+<td>2</td>
+<td>12.1.1 设计模式</td>
+<td>469</td>
+<td>487</td>
+</tr>
+<tr>
+<td>2</td>
+<td>12.1.2 模型–视图–控制器模式</td>
+<td>470</td>
+<td>488</td>
+</tr>
+<tr>
+<td>2</td>
+<td>12.1.3 Swing按钮的模型–视图–控制器分析</td>
+<td>473</td>
+<td>491</td>
+</tr>
+<tr>
+<td>1</td>
+<td>12.2 布局管理概述</td>
+<td>474</td>
+<td>492</td>
+</tr>
+<tr>
+<td>2</td>
+<td>12.2.1 边框布局</td>
+<td>477</td>
+<td>495</td>
+</tr>
+<tr>
+<td>2</td>
+<td>12.2.2 网格布局</td>
+<td>478</td>
+<td>496</td>
+</tr>
+<tr>
+<td>1</td>
+<td>12.3 文本输入</td>
+<td>481</td>
+<td>499</td>
+</tr>
+<tr>
+<td>2</td>
+<td>12.3.1 文本域</td>
+<td>482</td>
+<td>500</td>
+</tr>
+<tr>
+<td>2</td>
+<td>12.3.2 标签和标签组件</td>
+<td>483</td>
+<td>501</td>
+</tr>
+<tr>
+<td>2</td>
+<td>12.3.3 密码域</td>
+<td>484</td>
+<td>502</td>
+</tr>
+<tr>
+<td>2</td>
+<td>12.3.4 文本区</td>
+<td>485</td>
+<td>503</td>
+</tr>
+<tr>
+<td>2</td>
+<td>12.3.5 滚动窗格</td>
+<td>485</td>
+<td>503</td>
+</tr>
+<tr>
+<td>1</td>
+<td>12.4 选择组件</td>
+<td>488</td>
+<td>506</td>
+</tr>
+<tr>
+<td>2</td>
+<td>12.4.1 复选框</td>
+<td>488</td>
+<td>506</td>
+</tr>
+<tr>
+<td>2</td>
+<td>12.4.2 单选钮</td>
+<td>490</td>
+<td>508</td>
+</tr>
+<tr>
+<td>2</td>
+<td>12.4.3 边框</td>
+<td>493</td>
+<td>511</td>
+</tr>
+<tr>
+<td>2</td>
+<td>12.4.4 组合框</td>
+<td>496</td>
+<td>514</td>
+</tr>
+<tr>
+<td>2</td>
+<td>12.4.5 滑动条</td>
+<td>499</td>
+<td>517</td>
+</tr>
+<tr>
+<td>1</td>
+<td>12.5 菜单</td>
+<td>504</td>
+<td>522</td>
+</tr>
+<tr>
+<td>2</td>
+<td>12.5.1 菜单创建</td>
+<td>504</td>
+<td>522</td>
+</tr>
+<tr>
+<td>2</td>
+<td>12.5.2 菜单项中的图标</td>
+<td>507</td>
+<td>525</td>
+</tr>
+<tr>
+<td>2</td>
+<td>12.5.3 复选框和单选钮菜单项</td>
+<td>508</td>
+<td>526</td>
+</tr>
+<tr>
+<td>2</td>
+<td>12.5.4 弹出菜单</td>
+<td>508</td>
+<td>526</td>
+</tr>
+<tr>
+<td>2</td>
+<td>12.5.5 快捷键和加速器</td>
+<td>510</td>
+<td>528</td>
+</tr>
+<tr>
+<td>2</td>
+<td>12.5.6 启用和禁用菜单项</td>
+<td>511</td>
+<td>529</td>
+</tr>
+<tr>
+<td>2</td>
+<td>12.5.7 工具栏</td>
+<td>515</td>
+<td>533</td>
+</tr>
+<tr>
+<td>2</td>
+<td>12.5.8 工具提示</td>
+<td>516</td>
+<td>534</td>
+</tr>
+<tr>
+<td>1</td>
+<td>12.6 复杂的布局管理</td>
+<td>518</td>
+<td>536</td>
+</tr>
+<tr>
+<td>2</td>
+<td>12.6.1 网格组布局</td>
+<td>520</td>
+<td>538</td>
+</tr>
+<tr>
+<td>2</td>
+<td>12.6.2 组布局</td>
+<td>528</td>
+<td>546</td>
+</tr>
+<tr>
+<td>2</td>
+<td>12.6.3 不使用布局管理器</td>
+<td>537</td>
+<td>555</td>
+</tr>
+<tr>
+<td>2</td>
+<td>12.6.4 定制布局管理器</td>
+<td>537</td>
+<td>555</td>
+</tr>
+<tr>
+<td>2</td>
+<td>12.6.5 遍历顺序</td>
+<td>541</td>
+<td>559</td>
+</tr>
+<tr>
+<td>1</td>
+<td>12.7 对话框</td>
+<td>541</td>
+<td>559</td>
+</tr>
+<tr>
+<td>2</td>
+<td>12.7.1 选项对话框</td>
+<td>542</td>
+<td>560</td>
+</tr>
+<tr>
+<td>2</td>
+<td>12.7.2 创建对话框</td>
+<td>551</td>
+<td>569</td>
+</tr>
+<tr>
+<td>2</td>
+<td>12.7.3 数据交换</td>
+<td>554</td>
+<td>572</td>
+</tr>
+<tr>
+<td>2</td>
+<td>12.7.4 文件对话框</td>
+<td>559</td>
+<td>577</td>
+</tr>
+<tr>
+<td>2</td>
+<td>12.7.5 颜色选择器</td>
+<td>569</td>
+<td>587</td>
+</tr>
+<tr>
+<td>1</td>
+<td>12.8 GUI程序排错</td>
+<td>573</td>
+<td>591</td>
+</tr>
+<tr>
+<td>2</td>
+<td>12.8.1 调试技巧</td>
+<td>573</td>
+<td>591</td>
+</tr>
+<tr>
+<td>2</td>
+<td>12.8.2 让AWT机器人完成工作</td>
+<td>576</td>
+<td>594</td>
+</tr>
+<tr>
+<td>0</td>
+<td>第13章 部署Java应用程序</td>
+<td>580</td>
+<td>598</td>
+</tr>
+<tr>
+<td>1</td>
+<td>13.1 JAR文件</td>
+<td>580</td>
+<td>598</td>
+</tr>
+<tr>
+<td>2</td>
+<td>13.1.1 创建JAR文件</td>
+<td>580</td>
+<td>598</td>
+</tr>
+<tr>
+<td>2</td>
+<td>13.1.2 清单文件</td>
+<td>581</td>
+<td>599</td>
+</tr>
+<tr>
+<td>2</td>
+<td>13.1.3 可执行JAR文件</td>
+<td>582</td>
+<td>600</td>
+</tr>
+<tr>
+<td>2</td>
+<td>13.1.4 资源</td>
+<td>583</td>
+<td>601</td>
+</tr>
+<tr>
+<td>2</td>
+<td>13.1.5 密封</td>
+<td>585</td>
+<td>603</td>
+</tr>
+<tr>
+<td>1</td>
+<td>13.2 应用首选项的存储</td>
+<td>586</td>
+<td>604</td>
+</tr>
+<tr>
+<td>2</td>
+<td>13.2.1 属性映射</td>
+<td>586</td>
+<td>604</td>
+</tr>
+<tr>
+<td>2</td>
+<td>13.2.2 首选项API</td>
+<td>591</td>
+<td>609</td>
+</tr>
+<tr>
+<td>1</td>
+<td>13.3 服务加载器</td>
+<td>596</td>
+<td>614</td>
+</tr>
+<tr>
+<td>1</td>
+<td>13.4 applet</td>
+<td>598</td>
+<td>616</td>
+</tr>
+<tr>
+<td>2</td>
+<td>13.4.1 一个简单的applet</td>
+<td>599</td>
+<td>617</td>
+</tr>
+<tr>
+<td>2</td>
+<td>13.4.2 applet HTML标记和属性</td>
+<td>602</td>
+<td>620</td>
+</tr>
+<tr>
+<td>2</td>
+<td>13.4.3 使用参数向applet传递信息</td>
+<td>603</td>
+<td>621</td>
+</tr>
+<tr>
+<td>2</td>
+<td>13.4.4 访问图像和音频文件</td>
+<td>608</td>
+<td>626</td>
+</tr>
+<tr>
+<td>2</td>
+<td>13.4.5 applet上下文</td>
+<td>609</td>
+<td>627</td>
+</tr>
+<tr>
+<td>2</td>
+<td>13.4.6 applet间通信</td>
+<td>609</td>
+<td>627</td>
+</tr>
+<tr>
+<td>2</td>
+<td>13.4.7 在浏览器中显示信息项</td>
+<td>610</td>
+<td>628</td>
+</tr>
+<tr>
+<td>2</td>
+<td>13.4.8 沙箱</td>
+<td>611</td>
+<td>629</td>
+</tr>
+<tr>
+<td>2</td>
+<td>13.4.9 签名代码</td>
+<td>612</td>
+<td>630</td>
+</tr>
+<tr>
+<td>1</td>
+<td>13.5 Java Web Start</td>
+<td>614</td>
+<td>632</td>
+</tr>
+<tr>
+<td>2</td>
+<td>13.5.1 发布Java Web Start应用</td>
+<td>614</td>
+<td>632</td>
+</tr>
+<tr>
+<td>2</td>
+<td>13.5.2 JNLP API</td>
+<td>617</td>
+<td>635</td>
+</tr>
+<tr>
+<td>0</td>
+<td>第14章 并发</td>
+<td>624</td>
+<td>642</td>
+</tr>
+<tr>
+<td>1</td>
+<td>14.1 什么是线程</td>
+<td>624</td>
+<td>642</td>
+</tr>
+<tr>
+<td>2</td>
+<td>14.1.1 使用线程给其他任务提供机会</td>
+<td>629</td>
+<td>647</td>
+</tr>
+<tr>
+<td>1</td>
+<td>14.2 中断线程</td>
+<td>632</td>
+<td>650</td>
+</tr>
+<tr>
+<td>1</td>
+<td>14.3 线程状态</td>
+<td>635</td>
+<td>653</td>
+</tr>
+<tr>
+<td>2</td>
+<td>14.3.1 新创建线程</td>
+<td>635</td>
+<td>653</td>
+</tr>
+<tr>
+<td>2</td>
+<td>14.3.2 可运行线程</td>
+<td>635</td>
+<td>653</td>
+</tr>
+<tr>
+<td>2</td>
+<td>14.3.3 被阻塞线程和等待线程</td>
+<td>636</td>
+<td>654</td>
+</tr>
+<tr>
+<td>2</td>
+<td>14.3.4 被终止的线程</td>
+<td>636</td>
+<td>654</td>
+</tr>
+<tr>
+<td>1</td>
+<td>14.4 线程属性</td>
+<td>638</td>
+<td>656</td>
+</tr>
+<tr>
+<td>2</td>
+<td>14.4.1 线程优先级</td>
+<td>638</td>
+<td>656</td>
+</tr>
+<tr>
+<td>2</td>
+<td>14.4.2 守护线程</td>
+<td>639</td>
+<td>657</td>
+</tr>
+<tr>
+<td>2</td>
+<td>14.4.3 未捕获异常处理器</td>
+<td>639</td>
+<td>657</td>
+</tr>
+<tr>
+<td>1</td>
+<td>14.5 同步</td>
+<td>640</td>
+<td>658</td>
+</tr>
+<tr>
+<td>2</td>
+<td>14.5.1 竞争条件的一个例子</td>
+<td>641</td>
+<td>659</td>
+</tr>
+<tr>
+<td>2</td>
+<td>14.5.2 竞争条件详解</td>
+<td>644</td>
+<td>662</td>
+</tr>
+<tr>
+<td>2</td>
+<td>14.5.3 锁对象</td>
+<td>646</td>
+<td>664</td>
+</tr>
+<tr>
+<td>2</td>
+<td>14.5.4 条件对象</td>
+<td>648</td>
+<td>666</td>
+</tr>
+<tr>
+<td>2</td>
+<td>14.5.5 synchronized关键字</td>
+<td>653</td>
+<td>671</td>
+</tr>
+<tr>
+<td>2</td>
+<td>14.5.6 同步阻塞</td>
+<td>656</td>
+<td>674</td>
+</tr>
+<tr>
+<td>2</td>
+<td>14.5.7 监视器概念</td>
+<td>657</td>
+<td>675</td>
+</tr>
+<tr>
+<td>2</td>
+<td>14.5.8 Volatile域</td>
+<td>658</td>
+<td>676</td>
+</tr>
+<tr>
+<td>2</td>
+<td>14.5.9 final变量</td>
+<td>659</td>
+<td>677</td>
+</tr>
+<tr>
+<td>2</td>
+<td>14.5.10 原子性</td>
+<td>659</td>
+<td>677</td>
+</tr>
+<tr>
+<td>2</td>
+<td>14.5.11 死锁</td>
+<td>661</td>
+<td>679</td>
+</tr>
+<tr>
+<td>2</td>
+<td>14.5.12 线程局部变量</td>
+<td>663</td>
+<td>681</td>
+</tr>
+<tr>
+<td>2</td>
+<td>14.5.13 锁测试与超时</td>
+<td>665</td>
+<td>683</td>
+</tr>
+<tr>
+<td>2</td>
+<td>14.5.14 读/写锁</td>
+<td>666</td>
+<td>684</td>
+</tr>
+<tr>
+<td>2</td>
+<td>14.5.15 为什么弃用stop和suspend方法</td>
+<td>667</td>
+<td>685</td>
+</tr>
+<tr>
+<td>1</td>
+<td>14.6 阻塞队列</td>
+<td>668</td>
+<td>686</td>
+</tr>
+<tr>
+<td>1</td>
+<td>14.7 线程安全的集合</td>
+<td>673</td>
+<td>691</td>
+</tr>
+<tr>
+<td>2</td>
+<td>14.7.1 高效的映射、集和队列</td>
+<td>674</td>
+<td>692</td>
+</tr>
+<tr>
+<td>2</td>
+<td>14.7.2 映射条目的原子更新</td>
+<td>675</td>
+<td>693</td>
+</tr>
+<tr>
+<td>2</td>
+<td>14.7.3 对并发散列映射的批操作</td>
+<td>676</td>
+<td>694</td>
+</tr>
+<tr>
+<td>2</td>
+<td>14.7.4 并发集视图</td>
+<td>678</td>
+<td>696</td>
+</tr>
+<tr>
+<td>2</td>
+<td>14.7.5 写数组的拷贝</td>
+<td>679</td>
+<td>697</td>
+</tr>
+<tr>
+<td>2</td>
+<td>14.7.6 并行数组算法</td>
+<td>679</td>
+<td>697</td>
+</tr>
+<tr>
+<td>2</td>
+<td>14.7.7 较早的线程安全集合</td>
+<td>680</td>
+<td>698</td>
+</tr>
+<tr>
+<td>1</td>
+<td>14.8 Callable与Future</td>
+<td>681</td>
+<td>699</td>
+</tr>
+<tr>
+<td>1</td>
+<td>14.9 执行器</td>
+<td>685</td>
+<td>703</td>
+</tr>
+<tr>
+<td>2</td>
+<td>14.9.1 线程池</td>
+<td>685</td>
+<td>703</td>
+</tr>
+<tr>
+<td>2</td>
+<td>14.9.2 预定执行</td>
+<td>689</td>
+<td>707</td>
+</tr>
+<tr>
+<td>2</td>
+<td>14.9.3 控制任务组</td>
+<td>690</td>
+<td>708</td>
+</tr>
+<tr>
+<td>2</td>
+<td>14.9.4 Fork-Join框架</td>
+<td>691</td>
+<td>709</td>
+</tr>
+<tr>
+<td>2</td>
+<td>14.9.5 可完成Future</td>
+<td>694</td>
+<td>712</td>
+</tr>
+<tr>
+<td>1</td>
+<td>14.10 同步器</td>
+<td>696</td>
+<td>714</td>
+</tr>
+<tr>
+<td>2</td>
+<td>14.10.1 信号量</td>
+<td>696</td>
+<td>714</td>
+</tr>
+<tr>
+<td>2</td>
+<td>14.10.2 倒计时门栓</td>
+<td>697</td>
+<td>715</td>
+</tr>
+<tr>
+<td>2</td>
+<td>14.10.3 障栅</td>
+<td>697</td>
+<td>715</td>
+</tr>
+<tr>
+<td>2</td>
+<td>14.10.4 交换器</td>
+<td>698</td>
+<td>716</td>
+</tr>
+<tr>
+<td>2</td>
+<td>14.10.5 同步队列</td>
+<td>698</td>
+<td>716</td>
+</tr>
+<tr>
+<td>1</td>
+<td>14.11 线程与Swing</td>
+<td>698</td>
+<td>716</td>
+</tr>
+<tr>
+<td>2</td>
+<td>14.11.1 运行耗时的任务</td>
+<td>699</td>
+<td>717</td>
+</tr>
+<tr>
+<td>2</td>
+<td>14.11.2 使用Swing工作线程</td>
+<td>703</td>
+<td>721</td>
+</tr>
+<tr>
+<td>2</td>
+<td>14.11.3 单一线程规则</td>
+<td>708</td>
+<td>726</td>
+</tr>
+</tbody>
+</table></section><section class="bundle-section" id="doc-a54ff182c7e8"><h1 id="doc-a54ff182c7e8-java-陪读课程工作约定">Java 陪读课程工作约定</h1>
+<p>本项目配合用户自备的《Java核心技术 卷Ⅰ：基础知识（原书第10版）》中文版。先读 README.md、学习路线图.md、进度追踪.md 和 给其他LLM的批改指南.md，再处理当前课。</p>
+<ul>
+<li>不假设用户会 C++ 或已经学会 Java。根据实际作答判断；已有 C++ 项目不是 Java 掌握证据。</li>
+<li>教材按章推进，密集章节拆课。每个新术语先解释是什么、为什么需要、给出类比，再解释类比边界。</li>
+<li>每课要有目标、前置知识、双页码阅读表、白话讲解、独立可运行示例、预测/修改实验、必做练习、边界样例和过关标准。题目为本课程原创，不冒称教材原题。</li>
+<li>讲义页码必须同时写“书本 pX”和“PDF pY”。阅读规则见 页码对应说明.md；首批第1–3章正文边界已看图核对，后续编写前继续看正文，不凭书签就声称逐页核对。</li>
+<li>不复制教材正文或扫描图进入可分发包。PDF 保留原文件名，不自动改名、不打包、不提交。</li>
+<li>默认先提示，再给局部修法；不得未经用户要求重写其提交。完整参考答案单独存放。</li>
+<li>用户直接在每课练习.md里作答，不要求复制到作答.md。批改以练习.md中实际答案为主，兼容已有作答文件；不得为恢复空白题目而覆盖个人练习。</li>
+<li>公开题目源在_课程工具/exercises.json。网页、ZIP与可分发版均从该模板构建练习，不从个人练习复制答案。新增或改题时显式同步模板，保留原有学生作答。</li>
+<li>每次批改读旧进度、核对上轮订正、按题记录证据、追加日志，并保存进度追踪.md。材料已生成、助手测试通过都不等于学生通过。</li>
+<li>不凭空填写“未开始”“阅读完成”“已经掌握”。无证据填“未确认”；只有明确必做项、核心概念和所需验证均有依据，才判整课通过。</li>
+<li>编译使用本地 JDK，普通示例保持 Java 8 语法/API；默认在 JDK 21 上用 --release 8。不能将此写成“已在 Java 8 JVM 测试”。新版本补充单独注明。</li>
+<li>每个独立 main 程序隔离编译输出，编译失败立即停止，不得执行旧 class。错误实验必须标明预期失败阶段；验证脚本不能把所有源码都要求编译成功。</li>
+<li>本机 JDK 配置见 环境说明.md 和 .java-course.json。优先用 java.ps1，不修改全局 PATH、JAVA_HOME 或其他项目编辑器设置。</li>
+<li>更新内容后运行 python _课程工具/verify_course.py，再运行 python _课程工具/build_release.py。后者需 Markdown 包；普通学习不需要 Python。</li>
+<li>对外发布前排除个人进度、作答、批改、构建产物、工具临时目录及教材。发布仓库位于可分发版，个人学习目录不整体提交；用户已授权创建并推送liang-kai-shui/java-core-course。</li>
+</ul></section><section class="bundle-section" id="doc-d6f55ade8a89"><h1 id="doc-d6f55ade8a89-l01-我的练习代码">L01 我的练习代码</h1>
+<p>在这里新建自己的.java文件；文件名与public类名一致。每题保留独立类名，运行时一次选一个文件。题意与验证要求见上级练习.md。此目录不会进入公开课程包，README除外。</p>
+<p>文字答案直接写在上级练习.md，不必另建作答.md；在题目下记下本目录源码路径和实际运行结果。</p></section><section class="bundle-section" id="doc-8ac64aceb665"><h1 id="doc-8ac64aceb665-l01-参考答案-先独立作答">L01 参考答案 · 先独立作答</h1>
+<p>本文件是课程原创参考，允许其他正确解法。代码与参考答案通过验证不等于学生已通过。</p>
+<p>Q1：源码是人写的程序文本，javac检查并编译为class中的字节码，JVM在运行环境中执行。Q2：编译通过不保证题意和算法正确；执行还需要兼容运行环境及依赖。</p>
+<p>E1：姓名可不同，必须有两行且第二行文字符合题意。看真实源码、命令和输出。E2：记录本机值，不要求和助手版本相同；JDK与操作系统可能不同。E3：少分号应先在编译阶段失败；恢复后必须重新编译再运行。没有运行证据时保留待验证，不因能复述答案就判全课通过。</p>
+<h2 id="doc-8ac64aceb665-编程参考文件">编程参考文件</h2>
+<p>本目录中的.java文件可分别独立运行；部分实验直接对照上级code或error_lab。原始题目和指定输入输出优先于参考实现，发现矛盾应核实后修正。</p></section><section class="bundle-section" id="doc-4872a8512f23"><h1 id="doc-4872a8512f23-错误标本-预期行为说明">错误标本 · 预期行为说明</h1>
+<p>这些是课程实验，故意保留错误。每次独立编译一个，不与正常示例混编；在my_code副本中修复。</p>
+<table>
+<thead>
+<tr>
+<th>文件</th>
+<th>预期编译</th>
+<th>预期运行或结果</th>
+<th>观察重点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MissingSemicolon.java</td>
+<td>失败</td>
+<td>不运行</td>
+<td>println后少分号</td>
+</tr>
+<tr>
+<td>WrongFileName.java</td>
+<td>失败</td>
+<td>不运行</td>
+<td>public类名与文件名不一致</td>
+</tr>
+<tr>
+<td>MissingMain.java</td>
+<td>成功</td>
+<td>启动失败</td>
+<td>缺少main入口</td>
+</tr>
+<tr>
+<td>RuntimeCrash.java</td>
+<td>成功</td>
+<td>运行失败</td>
+<td>数组访问越界</td>
+</tr>
+<tr>
+<td>WrongFormula.java</td>
+<td>成功</td>
+<td>正常结束但结果不合题意</td>
+<td>长4宽3面积应为12，程序输出14</td>
+</tr>
+</tbody>
+</table>
+<p>运行命令用根目录java.ps1。只有编译成功才启动，因此前两个应直接停在编译阶段。编译诊断具体文字可能随JDK和语言环境变化，以失败原因判断。</p></section><section class="bundle-section" id="doc-612a839fdbf1"><h1 id="doc-612a839fdbf1-l02-我的练习代码">L02 我的练习代码</h1>
+<p>在这里新建自己的.java文件；文件名与public类名一致。每题保留独立类名，运行时一次选一个文件。题意与验证要求见上级练习.md。此目录不会进入公开课程包，README除外。</p>
+<p>文字答案直接写在上级练习.md，不必另建作答.md；在题目下记下本目录源码路径和实际运行结果。</p></section><section class="bundle-section" id="doc-702232ba7bff"><h1 id="doc-702232ba7bff-l02-参考答案-先独立作答">L02 参考答案 · 先独立作答</h1>
+<p>本文件是课程原创参考，允许其他正确解法。代码与参考答案通过验证不等于学生已通过。</p>
+<p>Q1：javac编译源码，java启动类；-d放class，-cp告诉启动工具从哪里找类，类名不是文件路径。Q2：PATH可能未包含实际安装目录；旧class只代表上次编译结果。</p>
+<p>E1：命令可用环境说明中的两步写法，检查原提交是否实际完成。E2：无参数是0，red、blue是2；它们由启动命令提供，不来自Scanner。</p>
+<p>E3：MissingSemicolon与WrongFileName编译失败；MissingMain编译成功但启动失败；RuntimeCrash编译成功，运行到数组越界时失败；WrongFormula正常输出14但面积应为12。修复时分别补分号、匹配类名、补正确main、访问有效下标、改为宽×高。学生任选其一修复即可满足该题，不要求统一补交所有标本的修复。</p>
+<h2 id="doc-702232ba7bff-编程参考文件">编程参考文件</h2>
+<p>本目录中的.java文件可分别独立运行；部分实验直接对照上级code或error_lab。原始题目和指定输入输出优先于参考实现，发现矛盾应核实后修正。</p></section><section class="bundle-section" id="doc-73a05fdd5377"><h1 id="doc-73a05fdd5377-l03-我的练习代码">L03 我的练习代码</h1>
+<p>在这里新建自己的.java文件；文件名与public类名一致。每题保留独立类名，运行时一次选一个文件。题意与验证要求见上级练习.md。此目录不会进入公开课程包，README除外。</p>
+<p>文字答案直接写在上级练习.md，不必另建作答.md；在题目下记下本目录源码路径和实际运行结果。</p></section><section class="bundle-section" id="doc-c068f2bbb9af"><h1 id="doc-c068f2bbb9af-l03-参考答案-先独立作答">L03 参考答案 · 先独立作答</h1>
+<p>本文件是课程原创参考，允许其他正确解法。代码与参考答案通过验证不等于学生已通过。</p>
+<p>Q1：先将count初始化为3，再读右侧旧值3，计算4并赋回。Q2：byte、short、int、long、float、double、char、boolean；String是引用类型；boolean不能直接赋1；char是UTF-16代码单元，部分emoji需要两个。</p>
+<p>E1：参考Profile.java；允许合理的命名变化。E2：未初始化局部变量直接使用、给已赋值final局部变量再次赋值均应编译失败；修复为先赋值、或保留final并取消重新赋值。E3：int最大值加1按int规则绕回-2147483648；“中”length为1，示例emoji为2，码点数为1。</p>
+<h2 id="doc-c068f2bbb9af-编程参考文件">编程参考文件</h2>
+<p>本目录中的.java文件可分别独立运行；部分实验直接对照上级code或error_lab。原始题目和指定输入输出优先于参考实现，发现矛盾应核实后修正。</p><h2>本目录源码 · 点击展开</h2><details><summary>Profile.java</summary><pre><code>public class Profile {
+    public static void main(String[] args) {
+        String nickname = &quot;Java learner&quot;;
+        int age = 18;
+        double height = 1.75;
+        boolean started = true;
+        final int DAYS_PER_WEEK = 7;
+        System.out.println(&quot;nickname=&quot; + nickname);
+        System.out.println(&quot;age=&quot; + age);
+        System.out.println(&quot;height=&quot; + height);
+        System.out.println(&quot;started=&quot; + started);
+        System.out.println(&quot;DAYS_PER_WEEK=&quot; + DAYS_PER_WEEK);
+    }
+}
+</code></pre></details></section><section class="bundle-section" id="doc-f893514ffbc4"><h1 id="doc-f893514ffbc4-l04-我的练习代码">L04 我的练习代码</h1>
+<p>在这里新建自己的.java文件；文件名与public类名一致。每题保留独立类名，运行时一次选一个文件。题意与验证要求见上级练习.md。此目录不会进入公开课程包，README除外。</p>
+<p>文字答案直接写在上级练习.md，不必另建作答.md；在题目下记下本目录源码路径和实际运行结果。</p></section><section class="bundle-section" id="doc-f0ad7e277387"><h1 id="doc-f0ad7e277387-l04-参考答案-先独立作答">L04 参考答案 · 先独立作答</h1>
+<p>本文件是课程原创参考，允许其他正确解法。代码与参考答案通过验证不等于学生已通过。</p>
+<p>Q1：依次为int的3、double的3.5、double的3.0、int的3。Q2：先发生int乘法溢出再转long，应在乘之前转换一个操作数，或用long操作数。</p>
+<p>E1：参考TimeSplit；测试0→0/0/0，59→0/0/59，60→0/1/0，3600→1/0/0。E2：参考Average；分母或分子在除法前为double，不能只将整数商赋给double。E3：&amp;&amp;在divisor为0时短路；换为&amp;则会执行整数除零，编译可过但运行出现ArithmeticException。</p>
+<h2 id="doc-f0ad7e277387-编程参考文件">编程参考文件</h2>
+<p>本目录中的.java文件可分别独立运行；部分实验直接对照上级code或error_lab。原始题目和指定输入输出优先于参考实现，发现矛盾应核实后修正。</p><h2>本目录源码 · 点击展开</h2><details><summary>Average.java</summary><pre><code>public class Average {
+    public static void main(String[] args) {
+        int a = 80;
+        int b = 81;
+        int c = 82;
+        double average = (a + b + c) / 3.0;
+        System.out.println(average);
+    }
+}
+</code></pre></details><details><summary>TimeSplit.java</summary><pre><code>public class TimeSplit {
+    public static void main(String[] args) {
+        int total = 3671;
+        int hours = total / 3600;
+        int minutes = (total % 3600) / 60;
+        int seconds = total % 60;
+        System.out.println(&quot;hours=&quot; + hours);
+        System.out.println(&quot;minutes=&quot; + minutes);
+        System.out.println(&quot;seconds=&quot; + seconds);
+    }
+}
+</code></pre></details></section><section class="bundle-section" id="doc-f3fbee0e1a6b"><h1 id="doc-f3fbee0e1a6b-l05-我的练习代码">L05 我的练习代码</h1>
+<p>在这里新建自己的.java文件；文件名与public类名一致。每题保留独立类名，运行时一次选一个文件。题意与验证要求见上级练习.md。此目录不会进入公开课程包，README除外。</p>
+<p>文字答案直接写在上级练习.md，不必另建作答.md；在题目下记下本目录源码路径和实际运行结果。</p></section><section class="bundle-section" id="doc-21329cb1f07a"><h1 id="doc-21329cb1f07a-l05-参考答案-先独立作答">L05 参考答案 · 先独立作答</h1>
+<p>本文件是课程原创参考，允许其他正确解法。代码与参考答案通过验证不等于学生已通过。</p>
+<p>Q1：equals比较内容，引用==比较同一对象；空串是有效String，null没有指向对象；trim返回结果而不修改原String。Q2：子串为av；length位置已超出最后下标；length数代码单元，不能当作全部视觉字数。</p>
+<p>E1：参考NameCard；去掉外侧两个空格后Li Ming为7个代码单元，前两个为Li。E2：指定new String的两个对象引用比较false，内容比较true。E3：builder.append逐步修改构建器；String.trim需要接住返回值。参考TextCompare.java也包含构建器操作。</p>
+<h2 id="doc-21329cb1f07a-编程参考文件">编程参考文件</h2>
+<p>本目录中的.java文件可分别独立运行；部分实验直接对照上级code或error_lab。原始题目和指定输入输出优先于参考实现，发现矛盾应核实后修正。</p><h2>本目录源码 · 点击展开</h2><details><summary>NameCard.java</summary><pre><code>public class NameCard {
+    public static void main(String[] args) {
+        String original = &quot;  Li Ming  &quot;;
+        String name = original.trim();
+        System.out.println(&quot;name=&quot; + name);
+        System.out.println(&quot;length=&quot; + name.length());
+        System.out.println(&quot;prefix=&quot; + name.substring(0, 2));
+    }
+}
+</code></pre></details><details><summary>TextCompare.java</summary><pre><code>public class TextCompare {
+    public static void main(String[] args) {
+        String a = &quot;Java&quot;;
+        String b = new String(&quot;Java&quot;);
+        System.out.println(a == b);
+        System.out.println(a.equals(b));
+        StringBuilder builder = new StringBuilder();
+        builder.append(&quot;Java&quot;);
+        builder.append(&quot; &quot;);
+        builder.append(&quot;course&quot;);
+        System.out.println(builder.toString());
+    }
+}
+</code></pre></details></section><section class="bundle-section" id="doc-7fc7bf220376"><h1 id="doc-7fc7bf220376-l06-我的练习代码">L06 我的练习代码</h1>
+<p>在这里新建自己的.java文件；文件名与public类名一致。每题保留独立类名，运行时一次选一个文件。题意与验证要求见上级练习.md。此目录不会进入公开课程包，README除外。</p>
+<p>文字答案直接写在上级练习.md，不必另建作答.md；在题目下记下本目录源码路径和实际运行结果。</p></section><section class="bundle-section" id="doc-1d5374d4cbf3"><h1 id="doc-1d5374d4cbf3-l06-参考答案-先独立作答">L06 参考答案 · 先独立作答</h1>
+<p>本文件是课程原创参考，允许其他正确解法。代码与参考答案通过验证不等于学生已通过。</p>
+<p>Q1：next按空白读片段，nextLine读当前行剩余内容并跨过分隔符，nextInt解析整数而通常留下后续分隔符；下一次nextLine先取到数字所在行的余下内容。Q2：格式化只是显示舍入，不证明原浮点值是精确0.3。</p>
+<p>E1：参考Bill；Li Ming、12.5、3→name=Li Ming / total=37.50；数量0→0.00；0.1×3显示0.30。E2：参考AgeName；在年龄后消耗该行余下内容，再读下一行。E3：参考code/FileUtf8Demo；用新实验路径，程序应打印你好，Java！且磁盘文件保存同样文字（含行结束符）。相对路径以进程工作目录为起点，写入与读取均指定UTF-8。</p>
+<h2 id="doc-1d5374d4cbf3-编程参考文件">编程参考文件</h2>
+<p>本目录中的.java文件可分别独立运行；部分实验直接对照上级code或error_lab。原始题目和指定输入输出优先于参考实现，发现矛盾应核实后修正。</p><h2>本目录源码 · 点击展开</h2><details><summary>AgeName.java</summary><pre><code>import java.util.Scanner;
+public class AgeName {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int age = in.nextInt();
+        in.nextLine();
+        String name = in.nextLine();
+        System.out.println(name + &quot;:&quot; + age);
+    }
+}
+</code></pre></details><details><summary>Bill.java</summary><pre><code>import java.util.Locale;
+import java.util.Scanner;
+public class Bill {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in).useLocale(Locale.US);
+        String name = in.nextLine();
+        double price = in.nextDouble();
+        int count = in.nextInt();
+        System.out.println(&quot;name=&quot; + name);
+        System.out.printf(Locale.US, &quot;total=%.2f%n&quot;, price * count);
+    }
+}
+</code></pre></details></section><section class="bundle-section" id="doc-ef27d53aa3da"><h1 id="doc-ef27d53aa3da-l07-我的练习代码">L07 我的练习代码</h1>
+<p>在这里新建自己的.java文件；文件名与public类名一致。每题保留独立类名，运行时一次选一个文件。题意与验证要求见上级练习.md。此目录不会进入公开课程包，README除外。</p>
+<p>文字答案直接写在上级练习.md，不必另建作答.md；在题目下记下本目录源码路径和实际运行结果。</p></section><section class="bundle-section" id="doc-c1f9ec907b08"><h1 id="doc-c1f9ec907b08-l07-参考答案-先独立作答">L07 参考答案 · 先独立作答</h1>
+<p>本文件是课程原创参考，允许其他正确解法。代码与参考答案通过验证不等于学生已通过。</p>
+<p>Q1：else-if链只选第一个成立分支；多个独立if可能都执行。&gt;=60先匹配会吞掉90分。Q2：age&gt;=18 &amp;&amp; age&lt;=25；连续比较不符合Java类型规则。</p>
+<p>E1：参考Ticket。E2：-1 invalid；0/5 free；6/17 half；18/59 full；60/120 senior；121 invalid。E3：if后分号结束空语句，后面的普通输出不再受该条件控制；块外使用块内局部变量应在编译阶段失败。</p>
+<h2 id="doc-c1f9ec907b08-编程参考文件">编程参考文件</h2>
+<p>本目录中的.java文件可分别独立运行；部分实验直接对照上级code或error_lab。原始题目和指定输入输出优先于参考实现，发现矛盾应核实后修正。</p><h2>本目录源码 · 点击展开</h2><details><summary>Ticket.java</summary><pre><code>import java.util.Scanner;
+public class Ticket {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int age = in.nextInt();
+        if (age &lt; 0 || age &gt; 120) {
+            System.out.println(&quot;invalid&quot;);
+        } else if (age &lt;= 5) {
+            System.out.println(&quot;free&quot;);
+        } else if (age &lt;= 17) {
+            System.out.println(&quot;half&quot;);
+        } else if (age &lt;= 59) {
+            System.out.println(&quot;full&quot;);
+        } else {
+            System.out.println(&quot;senior&quot;);
+        }
+    }
+}
+</code></pre></details></section><section class="bundle-section" id="doc-27df85f65585"><h1 id="doc-27df85f65585-l08-我的练习代码">L08 我的练习代码</h1>
+<p>在这里新建自己的.java文件；文件名与public类名一致。每题保留独立类名，运行时一次选一个文件。题意与验证要求见上级练习.md。此目录不会进入公开课程包，README除外。</p>
+<p>文字答案直接写在上级练习.md，不必另建作答.md；在题目下记下本目录源码路径和实际运行结果。</p></section><section class="bundle-section" id="doc-af8cd7604511"><h1 id="doc-af8cd7604511-l08-参考答案-先独立作答">L08 参考答案 · 先独立作答</h1>
+<p>本文件是课程原创参考，允许其他正确解法。代码与参考答案通过验证不等于学生已通过。</p>
+<p>Q1：每轮后(i,sum)分别为(2,1)、(3,3)、(4,6)；退出时i=4、sum=6。Q2：初始化一次，条件、体、更新反复进行；while可以零次，do-while至少一次。</p>
+<p>E1：参考SumToN与SumToNWhile；输入0/1/5/10000对应0/1/15/50005000，int在此指定范围够用。E2：参考Triangle，三行内层分别执行1、2、3次。E3：例如i++使i最终越过上界；若i始终不变且没有其他退出机制，初始条件真时可能无限循环。</p>
+<h2 id="doc-af8cd7604511-编程参考文件">编程参考文件</h2>
+<p>本目录中的.java文件可分别独立运行；部分实验直接对照上级code或error_lab。原始题目和指定输入输出优先于参考实现，发现矛盾应核实后修正。</p><h2>本目录源码 · 点击展开</h2><details><summary>SumToN.java</summary><pre><code>import java.util.Scanner;
+public class SumToN {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
+        int sum = 0;
+        for (int i = 1; i &lt;= n; i++) {
+            sum += i;
+        }
+        System.out.println(sum);
+    }
+}
+</code></pre></details><details><summary>SumToNWhile.java</summary><pre><code>import java.util.Scanner;
+public class SumToNWhile {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
+        int sum = 0;
+        int i = 1;
+        while (i &lt;= n) {
+            sum += i;
+            i++;
+        }
+        System.out.println(sum);
+    }
+}
+</code></pre></details><details><summary>Triangle.java</summary><pre><code>public class Triangle {
+    public static void main(String[] args) {
+        for (int row = 1; row &lt;= 3; row++) {
+            for (int column = 1; column &lt;= row; column++) {
+                System.out.print(&quot;*&quot;);
+            }
+            System.out.println();
+        }
+    }
+}
+</code></pre></details></section><section class="bundle-section" id="doc-690be1402f69"><h1 id="doc-690be1402f69-l09-我的练习代码">L09 我的练习代码</h1>
+<p>在这里新建自己的.java文件；文件名与public类名一致。每题保留独立类名，运行时一次选一个文件。题意与验证要求见上级练习.md。此目录不会进入公开课程包，README除外。</p>
+<p>文字答案直接写在上级练习.md，不必另建作答.md；在题目下记下本目录源码路径和实际运行结果。</p></section><section class="bundle-section" id="doc-8cff2b23cfcc"><h1 id="doc-8cff2b23cfcc-l09-参考答案-先独立作答">L09 参考答案 · 先独立作答</h1>
+<p>本文件是课程原创参考，允许其他正确解法。代码与参考答案通过验证不等于学生已通过。</p>
+<p>Q1：switch没break可能贯穿；循环break退出最内层循环；continue跳过本轮剩余部分，并非退出整个循环。</p>
+<p>E1：参考Weekday；0/8 invalid，1/5 weekday，6/7 weekend。E2：参与值1、2、4、5、7、8、10、11、13、14，总和75；参考FilteredSum，先判断&gt;15再continue。E3：参考Money，输出0.3和0.33；从double构造可能把二进制近似带进BigDecimal，从字符串明确十进制值。</p>
+<p>Q2：大整数受内存与资源限制；add返回新结果不修改原对象；BigDecimal.equals还要求scale等表示相符，compareTo可用于数值比较是否为0。</p>
+<h2 id="doc-8cff2b23cfcc-编程参考文件">编程参考文件</h2>
+<p>本目录中的.java文件可分别独立运行；部分实验直接对照上级code或error_lab。原始题目和指定输入输出优先于参考实现，发现矛盾应核实后修正。</p><h2>本目录源码 · 点击展开</h2><details><summary>FilteredSum.java</summary><pre><code>public class FilteredSum {
+    public static void main(String[] args) {
+        int sum = 0;
+        for (int value = 1; value &lt;= 20; value++) {
+            if (value &gt; 15) { break; }
+            if (value % 3 == 0) { continue; }
+            sum += value;
+        }
+        System.out.println(&quot;sum=&quot; + sum);
+    }
+}
+</code></pre></details><details><summary>Money.java</summary><pre><code>import java.math.BigDecimal;
+import java.math.RoundingMode;
+public class Money {
+    public static void main(String[] args) {
+        BigDecimal a = new BigDecimal(&quot;0.1&quot;);
+        BigDecimal b = new BigDecimal(&quot;0.2&quot;);
+        BigDecimal total = a.add(b);
+        System.out.println(total);
+        System.out.println(BigDecimal.ONE.divide(new BigDecimal(&quot;3&quot;), 2, RoundingMode.HALF_UP));
+    }
+}
+</code></pre></details><details><summary>Weekday.java</summary><pre><code>import java.util.Scanner;
+public class Weekday {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int day = in.nextInt();
+        switch (day) {
+            case 1: case 2: case 3: case 4: case 5:
+                System.out.println(&quot;weekday&quot;);
+                break;
+            case 6: case 7:
+                System.out.println(&quot;weekend&quot;);
+                break;
+            default:
+                System.out.println(&quot;invalid&quot;);
+        }
+    }
+}
+</code></pre></details></section><section class="bundle-section" id="doc-c4bb98fb3a80"><h1 id="doc-c4bb98fb3a80-l10-我的练习代码">L10 我的练习代码</h1>
+<p>在这里新建自己的.java文件；文件名与public类名一致。每题保留独立类名，运行时一次选一个文件。题意与验证要求见上级练习.md。此目录不会进入公开课程包，README除外。</p>
+<p>文字答案直接写在上级练习.md，不必另建作答.md；在题目下记下本目录源码路径和实际运行结果。</p></section><section class="bundle-section" id="doc-4a36dc3be0b6"><h1 id="doc-4a36dc3be0b6-l10-参考答案-先独立作答">L10 参考答案 · 先独立作答</h1>
+<p>本文件是课程原创参考，允许其他正确解法。代码与参考答案通过验证不等于学生已通过。</p>
+<p>Q1：b=a共享同一数组；copyOf对int数组复制元素形成独立数组；数组.length是字段，String.length()是方法。</p>
+<p>E1：original=[9, 1, 2]；sorted copy=[1, 2, 9]；after foreach=[9, 1, 2]；index of 2=1。增强for的int变量是每次取出的值副本。E2：参考RaggedSum，对每行使用自己的length，结果15。P1：参考ScoreStats.java。先处理n非法和0，再访问首元素；排序必须用副本。P2：n=-1/101→invalid count；0→no data；单个0→sum0/average0.00/max0/min0/passed0；单个100→sum100/average100.00/max100/min100/passed1。其余样例见题目与验证报告，批改仍需运行学生原提交。</p>
+<h2 id="doc-4a36dc3be0b6-编程参考文件">编程参考文件</h2>
+<p>本目录中的.java文件可分别独立运行；部分实验直接对照上级code或error_lab。原始题目和指定输入输出优先于参考实现，发现矛盾应核实后修正。</p><h2>本目录源码 · 点击展开</h2><details><summary>RaggedSum.java</summary><pre><code>public class RaggedSum {
+    public static void main(String[] args) {
+        int[][] values = {{1, 2}, {3, 4, 5}, {}};
+        int sum = 0;
+        for (int row = 0; row &lt; values.length; row++) {
+            for (int column = 0; column &lt; values[row].length; column++) {
+                sum += values[row][column];
+            }
+        }
+        System.out.println(&quot;sum=&quot; + sum);
+    }
+}
+</code></pre></details><details><summary>ScoreStats.java</summary><pre><code>import java.util.Arrays;
+import java.util.Locale;
+import java.util.Scanner;
+public class ScoreStats {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
+        if (n &lt; 0 || n &gt; 100) {
+            System.out.println(&quot;invalid count&quot;);
+            return;
+        }
+        if (n == 0) {
+            System.out.println(&quot;no data&quot;);
+            return;
+        }
+        int[] scores = new int[n];
+        for (int i = 0; i &lt; n; i++) {
+            scores[i] = in.nextInt();
+        }
+        int sum = 0;
+        int maximum = scores[0];
+        int minimum = scores[0];
+        int passed = 0;
+        for (int score : scores) {
+            sum += score;
+            if (score &gt; maximum) { maximum = score; }
+            if (score &lt; minimum) { minimum = score; }
+            if (score &gt;= 60) { passed++; }
+        }
+        int[] sorted = Arrays.copyOf(scores, scores.length);
+        Arrays.sort(sorted);
+        System.out.println(&quot;original=&quot; + Arrays.toString(scores));
+        System.out.println(&quot;sum=&quot; + sum);
+        System.out.printf(Locale.US, &quot;average=%.2f%n&quot;, sum / (double) n);
+        System.out.println(&quot;max=&quot; + maximum);
+        System.out.println(&quot;min=&quot; + minimum);
+        System.out.println(&quot;passed=&quot; + passed);
+        System.out.println(&quot;sorted=&quot; + Arrays.toString(sorted));
+    }
+}
+</code></pre></details></section><section class="bundle-section" id="doc-7def9b47aa03"><h1 id="doc-7def9b47aa03-维护与打包">维护与打包</h1>
+<p>学习只需要JDK和编辑器。以下工具供课程维护者验证和更新网页，不是学生开课前的安装要求。</p>
+<h2 id="doc-7def9b47aa03-修改课程后">修改课程后</h2>
+<ol>
+<li>同步讲义、练习与参考答案；保持双页码。公开练习题源为 <code>_课程工具/exercises.json</code>，用户直接在本地各课 <code>练习.md</code> 中作答，不能清空或用发布模板覆盖它。新增课次先看教材正文，再修改 <code>_课程工具/course.json</code>、公开题目模板和路线图。</li>
+<li>新增或修改Java源码时，在 <code>_课程工具/checks.json</code> 登记正常输出、输入、边界和错误实验的预期阶段。</li>
+<li>运行 <code>python _课程工具/verify_course.py</code>，实测原始课程源码。报告写入 <code>outputs/验证报告.json</code>，不代表学生成绩。</li>
+<li>用已安装Markdown模块的Python运行 <code>python _课程工具/build_release.py</code>，生成离线网页和ZIP。缺模块时才用 <code>python -m pip install -r _课程工具/requirements.txt</code>；不要求每次重新安装。</li>
+</ol>
+<p>源码验证使用标准库和JDK。网页构建使用Python Markdown；pypdf仅供抽取教材书签。当前电脑系统Python已安装Markdown，Codex自带Python与系统Python的软件包互不相同，不要把“某个解释器没有包”当成电脑完全没有包。</p>
+<h2 id="doc-7def9b47aa03-分发范围">分发范围</h2>
+<p>构建器按白名单收集课程文档、示例、错误标本、参考答案和工具。每课练习使用 <code>exercises.json</code> 中的空白模板，不读取本地练习中的个人答案。排除教材PDF、扫描图、个人进度、作答、my_code源码、批改记录、缓存、编译产物及本机JDK绝对配置。公开包用学习进度模板替代个人记录，重新使用时按实际情况建立进度追踪.md。</p>
+<p><code>docs/</code>是可双击的纯本地阅读器，不加载网络资源。完整课程源码与网页打入 <code>outputs/Java入门课程-第1-3章.zip</code>；附SHA-256与内部链接/ZIP完整性校验报告。</p>
+<p>构建只更新生成物；不得覆盖学生作答或个人进度。不要把一次性种子脚本当作日常维护工具反复运行。</p>
+<h2 id="doc-7def9b47aa03-github-发布">GitHub 发布</h2>
+<p>公开仓库：<a href="https://github.com/liang-kai-shui/java-core-course">liang-kai-shui/java-core-course</a>。在线阅读：<a href="https://liang-kai-shui.github.io/java-core-course/">GitHub Pages</a>。沿用C++课程的代码MIT、文档CC BY-NC-SA 4.0协议。</p>
+<p>构建时同步生成根目录 <code>可分发版/</code>，这是独立的公开Git仓库；已存在的 <code>.git/</code> 不会被构建器覆盖。本地个人学习目录与教材不加入该仓库。维护者在本地课程根目录修改并验证，再构建公开版本；推送前检查可分发版的Git差异。</p>
+<pre><code class="language-powershell">python _课程工具/verify_course.py
+python _课程工具/build_release.py
+git -C 可分发版 status --short
+</code></pre>
+<p>GitHub Pages以main分支的 <code>/docs</code> 为发布源，<code>.nojekyll</code> 保证原样提供HTML与带下划线的文件。压缩包可本地分发；仓库直接保留课程源文件与网页，下载仓库ZIP也能离线阅读。</p></section><p class="footer">课程原创配套讲解与习题 · 阅读教材 → 动手 → 订正 → 更新进度</p></article></main></div><script>
+(()=>{const root=document.documentElement;try{root.dataset.theme=localStorage.getItem('java-course-theme')||'dark'}catch(e){}
+document.querySelector('#theme').addEventListener('click',()=>{root.dataset.theme=root.dataset.theme==='light'?'dark':'light';try{localStorage.setItem('java-course-theme',root.dataset.theme)}catch(e){}});
+const input=document.querySelector('#navsearch');if(input)input.addEventListener('input',()=>{const q=input.value.trim().toLowerCase();document.querySelectorAll('.navlink').forEach(a=>{a.hidden=!a.textContent.toLowerCase().includes(q);a.style.display=a.hidden?'none':''})});
+document.querySelectorAll('table').forEach(table=>{const box=document.createElement('div');box.className='table-wrap';table.replaceWith(box);box.appendChild(table)});
+})();
+</script></body></html>

@@ -1,0 +1,19 @@
+<!doctype html><html lang="zh-CN" data-theme="dark"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Java 陪读课程工作约定 · Java陪读</title><link rel="stylesheet" href="assets/course.css"></head><body id="top"><header class="top"><a class="brand" href="index.html"><span>JAVA</span>一起把基础写扎实</a><div class="tools"><span class="tag">CORE JAVA · VOL. I · 10TH</span><a class="all-link" href="全一册.html">全一册</a><button id="theme" aria-label="切换浅色与深色">明 / 暗</button></div></header><div class="layout"><aside><input id="navsearch" class="navsearch" aria-label="筛选课程导航" placeholder="筛选导航…"><nav aria-label="课程导航"><div class="navlabel">START / 开始</div><a class="navlink" href="index.html">课程说明</a><a class="navlink" href="page-0ef3cebffbed.html">全书路线 · 35课</a><a class="navlink" href="page-b984dae871b4.html">运行环境</a><a class="navlink" href="page-526e3b952094.html">书本与PDF页码</a><a class="navlink" href="page-4cc100767b13.html">零基础起飞</a><div class="navlabel">LESSONS / 第1–3章</div><a class="navlink" href="l01-lesson.html">L01 · 认识 Java 与程序运行</a><a class="navlink" href="l02-lesson.html">L02 · 编译、运行与读报错</a><a class="navlink" href="l03-lesson.html">L03 · 程序结构、变量与类型</a><a class="navlink" href="l04-lesson.html">L04 · 运算符与类型转换</a><a class="navlink" href="l05-lesson.html">L05 · 字符串与文本处理</a><a class="navlink" href="l06-lesson.html">L06 · 键盘输入、格式化与文件</a><a class="navlink" href="l07-lesson.html">L07 · 程序如何作选择</a><a class="navlink" href="l08-lesson.html">L08 · 让程序重复做事</a><a class="navlink" href="l09-lesson.html">L09 · switch、循环跳转与大数值</a><a class="navlink" href="l10-lesson.html">L10 · 数组与成绩统计器</a><div class="navlabel">TOOLS / 查阅与接续</div><a class="navlink" href="page-fea294d77afe.html">447条教材索引</a><a class="navlink" href="page-3f83fca99eef.html">术语表</a><a class="navlink" href="page-32d80fdb4bb7.html">AI批改与进度追踪</a><a class="navlink" href="page-e8601bdcb726.html">个人进度模板</a><a class="navlink" href="page-7def9b47aa03.html">维护与打包</a></nav><p class="side-note">按教材顺序，逐课练习。<br>材料准备 ≠ 学生已过关。<br>教材PDF需自备。</p></aside><main><article><div class="crumb">学习笔记 / 本地离线课程</div><span class="edition">第1–3章 · 10课已备 · 书本/PDF双页码</span><h1 id="java-陪读课程工作约定">Java 陪读课程工作约定</h1>
+<p>本项目配合用户自备的《Java核心技术 卷Ⅰ：基础知识（原书第10版）》中文版。先读 README.md、学习路线图.md、进度追踪.md 和 给其他LLM的批改指南.md，再处理当前课。</p>
+<ul>
+<li>不假设用户会 C++ 或已经学会 Java。根据实际作答判断；已有 C++ 项目不是 Java 掌握证据。</li>
+<li>教材按章推进，密集章节拆课。每个新术语先解释是什么、为什么需要、给出类比，再解释类比边界。</li>
+<li>每课要有目标、前置知识、双页码阅读表、白话讲解、独立可运行示例、预测/修改实验、必做练习、边界样例和过关标准。题目为本课程原创，不冒称教材原题。</li>
+<li>讲义页码必须同时写“书本 pX”和“PDF pY”。阅读规则见 页码对应说明.md；首批第1–3章正文边界已看图核对，后续编写前继续看正文，不凭书签就声称逐页核对。</li>
+<li>不复制教材正文或扫描图进入可分发包。PDF 保留原文件名，不自动改名、不打包、不提交。</li>
+<li>默认先提示，再给局部修法；不得未经用户要求重写其提交。完整参考答案单独存放。</li>
+<li>用户直接在每课练习.md里作答，不要求复制到作答.md。批改以练习.md中实际答案为主，兼容已有作答文件；不得为恢复空白题目而覆盖个人练习。</li>
+<li>公开题目源在_课程工具/exercises.json。网页、ZIP与可分发版均从该模板构建练习，不从个人练习复制答案。新增或改题时显式同步模板，保留原有学生作答。</li>
+<li>每次批改读旧进度、核对上轮订正、按题记录证据、追加日志，并保存进度追踪.md。材料已生成、助手测试通过都不等于学生通过。</li>
+<li>不凭空填写“未开始”“阅读完成”“已经掌握”。无证据填“未确认”；只有明确必做项、核心概念和所需验证均有依据，才判整课通过。</li>
+<li>编译使用本地 JDK，普通示例保持 Java 8 语法/API；默认在 JDK 21 上用 --release 8。不能将此写成“已在 Java 8 JVM 测试”。新版本补充单独注明。</li>
+<li>每个独立 main 程序隔离编译输出，编译失败立即停止，不得执行旧 class。错误实验必须标明预期失败阶段；验证脚本不能把所有源码都要求编译成功。</li>
+<li>本机 JDK 配置见 环境说明.md 和 .java-course.json。优先用 java.ps1，不修改全局 PATH、JAVA_HOME 或其他项目编辑器设置。</li>
+<li>更新内容后运行 python _课程工具/verify_course.py，再运行 python _课程工具/build_release.py。后者需 Markdown 包；普通学习不需要 Python。</li>
+<li>对外发布前排除个人进度、作答、批改、构建产物、工具临时目录及教材。发布仓库位于可分发版，个人学习目录不整体提交；用户已授权创建并推送liang-kai-shui/java-core-course。</li>
+</ul><div class="pager"><a href="index.html">← 课程入口</a><a href="全一册.html">单文件阅读 →</a></div><p class="footer">课程原创配套讲解与习题 · 阅读教材 → 动手 → 订正 → 更新进度</p></article></main></div><script src="assets/course.js"></script></body></html>

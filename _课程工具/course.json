@@ -1,0 +1,177 @@
+{
+  "lessons": [
+    {
+      "id": "L01",
+      "folder": "L01_第01章_认识Java",
+      "title": "认识 Java 与程序运行",
+      "section": "第1章 1.1–1.5",
+      "book_start": 1,
+      "book_end": 11,
+      "pdf_start": 19,
+      "pdf_end": 29,
+      "questions": [
+        "Q1",
+        "Q2",
+        "E1",
+        "E2",
+        "E3"
+      ]
+    },
+    {
+      "id": "L02",
+      "folder": "L02_第02章_编译运行与错误",
+      "title": "编译、运行与读报错",
+      "section": "第2章 2.1–2.3；2.4选读；2.5历史了解",
+      "book_start": 12,
+      "book_end": 27,
+      "pdf_start": 30,
+      "pdf_end": 45,
+      "questions": [
+        "Q1",
+        "Q2",
+        "E1",
+        "E2",
+        "E3"
+      ]
+    },
+    {
+      "id": "L03",
+      "folder": "L03_第03章A_程序结构与变量类型",
+      "title": "程序结构、变量与类型",
+      "section": "第3章 3.1–3.4",
+      "book_start": 28,
+      "book_end": 38,
+      "pdf_start": 46,
+      "pdf_end": 56,
+      "questions": [
+        "Q1",
+        "Q2",
+        "E1",
+        "E2",
+        "E3"
+      ]
+    },
+    {
+      "id": "L04",
+      "folder": "L04_第03章B_运算符与类型转换",
+      "title": "运算符与类型转换",
+      "section": "第3章 3.5",
+      "book_start": 38,
+      "book_end": 45,
+      "pdf_start": 56,
+      "pdf_end": 63,
+      "questions": [
+        "Q1",
+        "Q2",
+        "E1",
+        "E2",
+        "E3"
+      ]
+    },
+    {
+      "id": "L05",
+      "folder": "L05_第03章C_字符串",
+      "title": "字符串与文本处理",
+      "section": "第3章 3.6",
+      "book_start": 45,
+      "book_end": 55,
+      "pdf_start": 63,
+      "pdf_end": 73,
+      "questions": [
+        "Q1",
+        "Q2",
+        "E1",
+        "E2",
+        "E3"
+      ]
+    },
+    {
+      "id": "L06",
+      "folder": "L06_第03章D_输入输出",
+      "title": "键盘输入、格式化与文件",
+      "section": "第3章 3.7",
+      "book_start": 55,
+      "book_end": 63,
+      "pdf_start": 73,
+      "pdf_end": 81,
+      "questions": [
+        "Q1",
+        "E1",
+        "E2",
+        "E3",
+        "Q2"
+      ]
+    },
+    {
+      "id": "L07",
+      "folder": "L07_第03章E_条件分支",
+      "title": "程序如何作选择",
+      "section": "第3章 3.8.1–3.8.2",
+      "book_start": 63,
+      "book_end": 66,
+      "pdf_start": 81,
+      "pdf_end": 84,
+      "questions": [
+        "Q1",
+        "E1",
+        "E2",
+        "E3",
+        "Q2"
+      ]
+    },
+    {
+      "id": "L08",
+      "folder": "L08_第03章F_循环",
+      "title": "让程序重复做事",
+      "section": "第3章 3.8.3–3.8.4",
+      "book_start": 66,
+      "book_end": 72,
+      "pdf_start": 84,
+      "pdf_end": 90,
+      "questions": [
+        "Q1",
+        "Q2",
+        "E1",
+        "E2",
+        "E3"
+      ]
+    },
+    {
+      "id": "L09",
+      "folder": "L09_第03章G_多重选择与大数值",
+      "title": "switch、循环跳转与大数值",
+      "section": "第3章 3.8.5–3.9",
+      "book_start": 72,
+      "book_end": 78,
+      "pdf_start": 90,
+      "pdf_end": 96,
+      "questions": [
+        "Q1",
+        "E1",
+        "E2",
+        "E3",
+        "Q2"
+      ]
+    },
+    {
+      "id": "L10",
+      "folder": "L10_第03章H_数组与阶段项目",
+      "title": "数组与成绩统计器",
+      "section": "第3章 3.10",
+      "book_start": 78,
+      "book_end": 90,
+      "pdf_start": 96,
+      "pdf_end": 108,
+      "questions": [
+        "Q1",
+        "E1",
+        "E2",
+        "P1",
+        "P2"
+      ]
+    }
+  ],
+  "planned_lessons": 35,
+  "pdf_pages": 729,
+  "offset": 18
+}

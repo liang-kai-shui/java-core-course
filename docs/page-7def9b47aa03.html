@@ -1,0 +1,29 @@
+<!doctype html><html lang="zh-CN" data-theme="dark"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>维护与打包 · Java陪读</title><link rel="stylesheet" href="assets/course.css"></head><body id="top"><header class="top"><a class="brand" href="index.html"><span>JAVA</span>一起把基础写扎实</a><div class="tools"><span class="tag">CORE JAVA · VOL. I · 10TH</span><a class="all-link" href="全一册.html">全一册</a><button id="theme" aria-label="切换浅色与深色">明 / 暗</button></div></header><div class="layout"><aside><input id="navsearch" class="navsearch" aria-label="筛选课程导航" placeholder="筛选导航…"><nav aria-label="课程导航"><div class="navlabel">START / 开始</div><a class="navlink" href="index.html">课程说明</a><a class="navlink" href="page-0ef3cebffbed.html">全书路线 · 35课</a><a class="navlink" href="page-b984dae871b4.html">运行环境</a><a class="navlink" href="page-526e3b952094.html">书本与PDF页码</a><a class="navlink" href="page-4cc100767b13.html">零基础起飞</a><div class="navlabel">LESSONS / 第1–3章</div><a class="navlink" href="l01-lesson.html">L01 · 认识 Java 与程序运行</a><a class="navlink" href="l02-lesson.html">L02 · 编译、运行与读报错</a><a class="navlink" href="l03-lesson.html">L03 · 程序结构、变量与类型</a><a class="navlink" href="l04-lesson.html">L04 · 运算符与类型转换</a><a class="navlink" href="l05-lesson.html">L05 · 字符串与文本处理</a><a class="navlink" href="l06-lesson.html">L06 · 键盘输入、格式化与文件</a><a class="navlink" href="l07-lesson.html">L07 · 程序如何作选择</a><a class="navlink" href="l08-lesson.html">L08 · 让程序重复做事</a><a class="navlink" href="l09-lesson.html">L09 · switch、循环跳转与大数值</a><a class="navlink" href="l10-lesson.html">L10 · 数组与成绩统计器</a><div class="navlabel">TOOLS / 查阅与接续</div><a class="navlink" href="page-fea294d77afe.html">447条教材索引</a><a class="navlink" href="page-3f83fca99eef.html">术语表</a><a class="navlink" href="page-32d80fdb4bb7.html">AI批改与进度追踪</a><a class="navlink" href="page-e8601bdcb726.html">个人进度模板</a><a class="navlink" href="page-7def9b47aa03.html" aria-current="page">维护与打包</a></nav><p class="side-note">按教材顺序，逐课练习。<br>材料准备 ≠ 学生已过关。<br>教材PDF需自备。</p></aside><main><article><div class="crumb">学习笔记 / 本地离线课程</div><span class="edition">第1–3章 · 10课已备 · 书本/PDF双页码</span><h1 id="维护与打包">维护与打包</h1><details class="page-toc"><summary>本页目录</summary><div class="toc">
+<ul>
+<li><a href="page-7def9b47aa03.html#修改课程后">修改课程后</a></li>
+<li><a href="page-7def9b47aa03.html#分发范围">分发范围</a></li>
+<li><a href="page-7def9b47aa03.html#github-发布">GitHub 发布</a></li>
+</ul>
+</div>
+</details>
+<p>学习只需要JDK和编辑器。以下工具供课程维护者验证和更新网页，不是学生开课前的安装要求。</p>
+<h2 id="修改课程后">修改课程后</h2>
+<ol>
+<li>同步讲义、练习与参考答案；保持双页码。公开练习题源为 <code>_课程工具/exercises.json</code>，用户直接在本地各课 <code>练习.md</code> 中作答，不能清空或用发布模板覆盖它。新增课次先看教材正文，再修改 <code>_课程工具/course.json</code>、公开题目模板和路线图。</li>
+<li>新增或修改Java源码时，在 <code>_课程工具/checks.json</code> 登记正常输出、输入、边界和错误实验的预期阶段。</li>
+<li>运行 <code>python _课程工具/verify_course.py</code>，实测原始课程源码。报告写入 <code>outputs/验证报告.json</code>，不代表学生成绩。</li>
+<li>用已安装Markdown模块的Python运行 <code>python _课程工具/build_release.py</code>，生成离线网页和ZIP。缺模块时才用 <code>python -m pip install -r _课程工具/requirements.txt</code>；不要求每次重新安装。</li>
+</ol>
+<p>源码验证使用标准库和JDK。网页构建使用Python Markdown；pypdf仅供抽取教材书签。当前电脑系统Python已安装Markdown，Codex自带Python与系统Python的软件包互不相同，不要把“某个解释器没有包”当成电脑完全没有包。</p>
+<h2 id="分发范围">分发范围</h2>
+<p>构建器按白名单收集课程文档、示例、错误标本、参考答案和工具。每课练习使用 <code>exercises.json</code> 中的空白模板，不读取本地练习中的个人答案。排除教材PDF、扫描图、个人进度、作答、my_code源码、批改记录、缓存、编译产物及本机JDK绝对配置。公开包用学习进度模板替代个人记录，重新使用时按实际情况建立进度追踪.md。</p>
+<p><code>docs/</code>是可双击的纯本地阅读器，不加载网络资源。完整课程源码与网页打入 <code>outputs/Java入门课程-第1-3章.zip</code>；附SHA-256与内部链接/ZIP完整性校验报告。</p>
+<p>构建只更新生成物；不得覆盖学生作答或个人进度。不要把一次性种子脚本当作日常维护工具反复运行。</p>
+<h2 id="github-发布">GitHub 发布</h2>
+<p>公开仓库：<a href="https://github.com/liang-kai-shui/java-core-course">liang-kai-shui/java-core-course</a>。在线阅读：<a href="https://liang-kai-shui.github.io/java-core-course/">GitHub Pages</a>。沿用C++课程的代码MIT、文档CC BY-NC-SA 4.0协议。</p>
+<p>构建时同步生成根目录 <code>可分发版/</code>，这是独立的公开Git仓库；已存在的 <code>.git/</code> 不会被构建器覆盖。本地个人学习目录与教材不加入该仓库。维护者在本地课程根目录修改并验证，再构建公开版本；推送前检查可分发版的Git差异。</p>
+<pre><code class="language-powershell">python _课程工具/verify_course.py
+python _课程工具/build_release.py
+git -C 可分发版 status --short
+</code></pre>
+<p>GitHub Pages以main分支的 <code>/docs</code> 为发布源，<code>.nojekyll</code> 保证原样提供HTML与带下划线的文件。压缩包可本地分发；仓库直接保留课程源文件与网页，下载仓库ZIP也能离线阅读。</p><div class="pager"><a href="index.html">← 课程入口</a><a href="全一册.html">单文件阅读 →</a></div><p class="footer">课程原创配套讲解与习题 · 阅读教材 → 动手 → 订正 → 更新进度</p></article></main></div><script src="assets/course.js"></script></body></html>

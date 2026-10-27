@@ -1,0 +1,58 @@
+<!doctype html><html lang="zh-CN" data-theme="dark"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>L10 参考答案 · 先独立作答 · Java陪读</title><link rel="stylesheet" href="assets/course.css"></head><body id="top"><header class="top"><a class="brand" href="index.html"><span>JAVA</span>一起把基础写扎实</a><div class="tools"><span class="tag">CORE JAVA · VOL. I · 10TH</span><a class="all-link" href="全一册.html">全一册</a><button id="theme" aria-label="切换浅色与深色">明 / 暗</button></div></header><div class="layout"><aside><input id="navsearch" class="navsearch" aria-label="筛选课程导航" placeholder="筛选导航…"><nav aria-label="课程导航"><div class="navlabel">START / 开始</div><a class="navlink" href="index.html">课程说明</a><a class="navlink" href="page-0ef3cebffbed.html">全书路线 · 35课</a><a class="navlink" href="page-b984dae871b4.html">运行环境</a><a class="navlink" href="page-526e3b952094.html">书本与PDF页码</a><a class="navlink" href="page-4cc100767b13.html">零基础起飞</a><div class="navlabel">LESSONS / 第1–3章</div><a class="navlink" href="l01-lesson.html">L01 · 认识 Java 与程序运行</a><a class="navlink" href="l02-lesson.html">L02 · 编译、运行与读报错</a><a class="navlink" href="l03-lesson.html">L03 · 程序结构、变量与类型</a><a class="navlink" href="l04-lesson.html">L04 · 运算符与类型转换</a><a class="navlink" href="l05-lesson.html">L05 · 字符串与文本处理</a><a class="navlink" href="l06-lesson.html">L06 · 键盘输入、格式化与文件</a><a class="navlink" href="l07-lesson.html">L07 · 程序如何作选择</a><a class="navlink" href="l08-lesson.html">L08 · 让程序重复做事</a><a class="navlink" href="l09-lesson.html">L09 · switch、循环跳转与大数值</a><a class="navlink" href="l10-lesson.html">L10 · 数组与成绩统计器</a><div class="navlabel">TOOLS / 查阅与接续</div><a class="navlink" href="page-fea294d77afe.html">447条教材索引</a><a class="navlink" href="page-3f83fca99eef.html">术语表</a><a class="navlink" href="page-32d80fdb4bb7.html">AI批改与进度追踪</a><a class="navlink" href="page-e8601bdcb726.html">个人进度模板</a><a class="navlink" href="page-7def9b47aa03.html">维护与打包</a></nav><p class="side-note">按教材顺序，逐课练习。<br>材料准备 ≠ 学生已过关。<br>教材PDF需自备。</p></aside><main><article><div class="crumb">学习笔记 / 本地离线课程</div><span class="edition">第1–3章 · 10课已备 · 书本/PDF双页码</span><h1 id="l10-参考答案-先独立作答">L10 参考答案 · 先独立作答</h1>
+<p>本文件是课程原创参考，允许其他正确解法。代码与参考答案通过验证不等于学生已通过。</p>
+<p>Q1：b=a共享同一数组；copyOf对int数组复制元素形成独立数组；数组.length是字段，String.length()是方法。</p>
+<p>E1：original=[9, 1, 2]；sorted copy=[1, 2, 9]；after foreach=[9, 1, 2]；index of 2=1。增强for的int变量是每次取出的值副本。E2：参考RaggedSum，对每行使用自己的length，结果15。P1：参考ScoreStats.java。先处理n非法和0，再访问首元素；排序必须用副本。P2：n=-1/101→invalid count；0→no data；单个0→sum0/average0.00/max0/min0/passed0；单个100→sum100/average100.00/max100/min100/passed1。其余样例见题目与验证报告，批改仍需运行学生原提交。</p>
+<h2 id="编程参考文件">编程参考文件</h2>
+<p>本目录中的.java文件可分别独立运行；部分实验直接对照上级code或error_lab。原始题目和指定输入输出优先于参考实现，发现矛盾应核实后修正。</p><h2>本目录源码 · 点击展开</h2><details><summary>RaggedSum.java</summary><pre><code>public class RaggedSum {
+    public static void main(String[] args) {
+        int[][] values = {{1, 2}, {3, 4, 5}, {}};
+        int sum = 0;
+        for (int row = 0; row &lt; values.length; row++) {
+            for (int column = 0; column &lt; values[row].length; column++) {
+                sum += values[row][column];
+            }
+        }
+        System.out.println(&quot;sum=&quot; + sum);
+    }
+}
+</code></pre></details><details><summary>ScoreStats.java</summary><pre><code>import java.util.Arrays;
+import java.util.Locale;
+import java.util.Scanner;
+public class ScoreStats {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
+        if (n &lt; 0 || n &gt; 100) {
+            System.out.println(&quot;invalid count&quot;);
+            return;
+        }
+        if (n == 0) {
+            System.out.println(&quot;no data&quot;);
+            return;
+        }
+        int[] scores = new int[n];
+        for (int i = 0; i &lt; n; i++) {
+            scores[i] = in.nextInt();
+        }
+        int sum = 0;
+        int maximum = scores[0];
+        int minimum = scores[0];
+        int passed = 0;
+        for (int score : scores) {
+            sum += score;
+            if (score &gt; maximum) { maximum = score; }
+            if (score &lt; minimum) { minimum = score; }
+            if (score &gt;= 60) { passed++; }
+        }
+        int[] sorted = Arrays.copyOf(scores, scores.length);
+        Arrays.sort(sorted);
+        System.out.println(&quot;original=&quot; + Arrays.toString(scores));
+        System.out.println(&quot;sum=&quot; + sum);
+        System.out.printf(Locale.US, &quot;average=%.2f%n&quot;, sum / (double) n);
+        System.out.println(&quot;max=&quot; + maximum);
+        System.out.println(&quot;min=&quot; + minimum);
+        System.out.println(&quot;passed=&quot; + passed);
+        System.out.println(&quot;sorted=&quot; + Arrays.toString(sorted));
+    }
+}
+</code></pre></details><div class="pager"><a href="index.html">← 课程入口</a><a href="全一册.html">单文件阅读 →</a></div><p class="footer">课程原创配套讲解与习题 · 阅读教材 → 动手 → 订正 → 更新进度</p></article></main></div><script src="assets/course.js"></script></body></html>

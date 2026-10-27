@@ -1,0 +1,51 @@
+<!doctype html><html lang="zh-CN" data-theme="dark"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>给其他 LLM 的批改与接续指南 · Java陪读</title><link rel="stylesheet" href="assets/course.css"></head><body id="top"><header class="top"><a class="brand" href="index.html"><span>JAVA</span>一起把基础写扎实</a><div class="tools"><span class="tag">CORE JAVA · VOL. I · 10TH</span><a class="all-link" href="全一册.html">全一册</a><button id="theme" aria-label="切换浅色与深色">明 / 暗</button></div></header><div class="layout"><aside><input id="navsearch" class="navsearch" aria-label="筛选课程导航" placeholder="筛选导航…"><nav aria-label="课程导航"><div class="navlabel">START / 开始</div><a class="navlink" href="index.html">课程说明</a><a class="navlink" href="page-0ef3cebffbed.html">全书路线 · 35课</a><a class="navlink" href="page-b984dae871b4.html">运行环境</a><a class="navlink" href="page-526e3b952094.html">书本与PDF页码</a><a class="navlink" href="page-4cc100767b13.html">零基础起飞</a><div class="navlabel">LESSONS / 第1–3章</div><a class="navlink" href="l01-lesson.html">L01 · 认识 Java 与程序运行</a><a class="navlink" href="l02-lesson.html">L02 · 编译、运行与读报错</a><a class="navlink" href="l03-lesson.html">L03 · 程序结构、变量与类型</a><a class="navlink" href="l04-lesson.html">L04 · 运算符与类型转换</a><a class="navlink" href="l05-lesson.html">L05 · 字符串与文本处理</a><a class="navlink" href="l06-lesson.html">L06 · 键盘输入、格式化与文件</a><a class="navlink" href="l07-lesson.html">L07 · 程序如何作选择</a><a class="navlink" href="l08-lesson.html">L08 · 让程序重复做事</a><a class="navlink" href="l09-lesson.html">L09 · switch、循环跳转与大数值</a><a class="navlink" href="l10-lesson.html">L10 · 数组与成绩统计器</a><div class="navlabel">TOOLS / 查阅与接续</div><a class="navlink" href="page-fea294d77afe.html">447条教材索引</a><a class="navlink" href="page-3f83fca99eef.html">术语表</a><a class="navlink" href="page-32d80fdb4bb7.html" aria-current="page">AI批改与进度追踪</a><a class="navlink" href="page-e8601bdcb726.html">个人进度模板</a><a class="navlink" href="page-7def9b47aa03.html">维护与打包</a></nav><p class="side-note">按教材顺序，逐课练习。<br>材料准备 ≠ 学生已过关。<br>教材PDF需自备。</p></aside><main><article><div class="crumb">学习笔记 / 本地离线课程</div><span class="edition">第1–3章 · 10课已备 · 书本/PDF双页码</span><h1 id="给其他-llm-的批改与接续指南">给其他 LLM 的批改与接续指南</h1><details class="page-toc"><summary>本页目录</summary><div class="toc">
+<ul>
+<li><a href="page-32d80fdb4bb7.html#先读已有记录">先读已有记录</a></li>
+<li><a href="page-32d80fdb4bb7.html#按题检查">按题检查</a></li>
+<li><a href="page-32d80fdb4bb7.html#编译与运行必须如实">编译与运行必须如实</a></li>
+<li><a href="page-32d80fdb4bb7.html#如何反馈">如何反馈</a></li>
+<li><a href="page-32d80fdb4bb7.html#每次批改必须更新进度">每次批改必须更新进度</a></li>
+<li><a href="page-32d80fdb4bb7.html#可复制的请求">可复制的请求</a></li>
+</ul>
+</div>
+</details>
+<p>目标：帮助初学者独立订正，并持续记录学习进度。课程参考答案也可能有错，不能当作绝对标准。</p>
+<h2 id="先读已有记录">先读已有记录</h2>
+<p>先读取README、学习路线图、进度追踪.md、当前课讲义、练习、作答和上次批改。只读用户授权目录；没有文件访问能力的模型应请用户粘贴相应材料，不能声称能读取本地路径。</p>
+<p>接续原进度文件，不每换聊天就清空。没有证据的阅读、实验、掌握程度填“未确认”。不能凭C++学习经历、代码风格或教材下载完成推断Java水平。既有记录与最新证据冲突时说明更正原因，保留日志。</p>
+<p><strong>作答位置：优先读取每课 <code>练习.md</code> 中直接填写的答案，以及 <code>my_code/</code> 下的代码。</strong> 不要求学习者搬到另一个文件。用户已用 <code>作答.md</code> 或其他文件提交时照样接续；题目和答案之间的空行、分隔线或填写位置不整齐，不能作为知识错误。不得为了重新发布题目而清空学习者的练习文件。</p>
+<h2 id="按题检查">按题检查</h2>
+<ol>
+<li>先读题和提交，再对照参考答案。建立必做/选做清单，识别故意报错的实验。</li>
+<li>概念按意思判断，不要求复述讲义。空白只代表未提交，不证明不会；允许正确的不同实现。</li>
+<li>用已教的知识解释，不要求用还没教的集合、Stream、异常框架。题目只要求有效输入时，健壮性建议标为可选改进，不增加隐藏卡关条件。</li>
+<li>不改写用户原答案。批改另存到课次的批改记录/中；明确要求直接修代码时才改原提交。先给最小提示，再给局部修法；用户要求完整解答时可提供并解释。</li>
+<li>同一核心误解在多题出现时合并最少订正任务，不重复罚做。复核时先看旧待办，已通过内容保持通过。</li>
+</ol>
+<h2 id="编译与运行必须如实">编译与运行必须如实</h2>
+<p>先检查本机JDK，再编译原始提交。每个独立main程序隔离输出；失败立即停，不运行旧class。可用课程java.ps1，也可手动使用<code>javac --release 8 -encoding UTF-8 -Xlint:all,-options -d 临时目录 文件.java</code>，再<code>java -cp 临时目录 类名</code>。用实际版本和编码选项，记录完整命令。</p>
+<p>编译成功、运行成功、结果符合题意是不同结论。正常题核对普通值和题目明确要求的边界；固定输入输出按题意比较。故意错误实验按目标阶段判断：编译失败、运行时异常、逻辑错误不能混为一谈。编译诊断随语言环境可能不同，不能只凭一条英文错误文本判对错。</p>
+<p>字符串内容比较检查equals；数组检查下标、空数组、引用共享；输入检查nextInt/nextLine衔接；整数除法、溢出、精度和整型表达式中间结果都要根据真实代码判断。选用少量能证实问题的测试，不机械堆测试。</p>
+<p>明确区分“助手实测”“学生自测记录”“仅静态检查”。没有工具时必须写“未实际编译运行”，不能编造输出、零警告或通过用例。JDK21上--release8编译不等于在JDK8虚拟机实测。</p>
+<h2 id="如何反馈">如何反馈</h2>
+<p>先说本次结论，再按“题号/文件位置→问题→为什么→最小提示→如何验证”给反馈。准确行号未经核实就不写。核心错误、未交、待验证和可选风格建议分开列出。无需强行百分制。</p>
+<p>建议输出：本次范围；总体结论；实际验证；逐题结果；最少订正清单；复核方式；可选改进；学习进度。</p>
+<h2 id="每次批改必须更新进度">每次批改必须更新进度</h2>
+<p>四类事实分别记：<strong>材料准备、作业提交、知识评判、验证方式</strong>。助手测试了课程样例只说明材料情况，不说明学生会写。</p>
+<p>状态可用：未确认、未开始（需本人明确说明）、学习中、待补交、待订正、待验证、已通过。一课可有“代码通过，文字题待补交”。只有必做齐全、核心概念和计算问题解决、题目所需验证有依据，才能判整课通过。选做未做不阻止通过。</p>
+<p>每次批改都要：</p>
+<ol>
+<li>更新总览的当前课次、状态与复核日期。</li>
+<li>按题记结论及文件/运行证据。</li>
+<li>更新未结订正项：题号、问题、完成条件；复核后及时关闭已解决项。</li>
+<li>追加学习日志，说明本次改变，保留历史。原判断有误时明确更正。</li>
+<li>易错点只记有证据的事实，并标明是否已解决。</li>
+<li>给下一步：先订正什么，或下一课的名称、讲义和练习入口。未开始的下一课只写“可开始”。</li>
+</ol>
+<p>有写入工具时保存到进度追踪.md并重读确认。没有工具则输出可直接保存的更新后Markdown，明确“未写入文件”。最终答复必须说明：当前课与结论、剩余订正、下一步、记录保存位置及是否真正保存。不能只说“继续加油”。</p>
+<h2 id="可复制的请求">可复制的请求</h2>
+<pre><code class="language-text">请按这套Java课程批改我当前课次的作业。先读README、进度追踪.md、当前课讲义，再看练习.md中直接填写的答案、my_code与上次订正；如果存在作答.md等既有提交也一起看。
+先检查原提交，允许不同正确解法，默认给最小提示。按题区分通过、未交、需订正和待验证；如实说明是否实际编译运行。
+请持续更新原进度记录：章节总览、逐题结果、订正任务和学习日志。材料备好不代表我已学完。最后说明当前进度、未结项、下一步和记录保存位置；没有文件写入能力时给我待保存的Markdown。
+当前课次：填写Lxx。
+</code></pre><div class="pager"><a href="index.html">← 课程入口</a><a href="全一册.html">单文件阅读 →</a></div><p class="footer">课程原创配套讲解与习题 · 阅读教材 → 动手 → 订正 → 更新进度</p></article></main></div><script src="assets/course.js"></script></body></html>

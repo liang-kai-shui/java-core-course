@@ -1,0 +1,120 @@
+<!doctype html><html lang="zh-CN" data-theme="dark"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>L03 讲义 · 程序结构、变量与类型 · Java陪读</title><link rel="stylesheet" href="assets/course.css"></head><body id="top"><header class="top"><a class="brand" href="index.html"><span>JAVA</span>一起把基础写扎实</a><div class="tools"><span class="tag">CORE JAVA · VOL. I · 10TH</span><a class="all-link" href="全一册.html">全一册</a><button id="theme" aria-label="切换浅色与深色">明 / 暗</button></div></header><div class="layout"><aside><input id="navsearch" class="navsearch" aria-label="筛选课程导航" placeholder="筛选导航…"><nav aria-label="课程导航"><div class="navlabel">START / 开始</div><a class="navlink" href="index.html">课程说明</a><a class="navlink" href="page-0ef3cebffbed.html">全书路线 · 35课</a><a class="navlink" href="page-b984dae871b4.html">运行环境</a><a class="navlink" href="page-526e3b952094.html">书本与PDF页码</a><a class="navlink" href="page-4cc100767b13.html">零基础起飞</a><div class="navlabel">LESSONS / 第1–3章</div><a class="navlink" href="l01-lesson.html">L01 · 认识 Java 与程序运行</a><a class="navlink" href="l02-lesson.html">L02 · 编译、运行与读报错</a><a class="navlink" href="l03-lesson.html" aria-current="page">L03 · 程序结构、变量与类型</a><a class="navlink" href="l04-lesson.html">L04 · 运算符与类型转换</a><a class="navlink" href="l05-lesson.html">L05 · 字符串与文本处理</a><a class="navlink" href="l06-lesson.html">L06 · 键盘输入、格式化与文件</a><a class="navlink" href="l07-lesson.html">L07 · 程序如何作选择</a><a class="navlink" href="l08-lesson.html">L08 · 让程序重复做事</a><a class="navlink" href="l09-lesson.html">L09 · switch、循环跳转与大数值</a><a class="navlink" href="l10-lesson.html">L10 · 数组与成绩统计器</a><div class="navlabel">TOOLS / 查阅与接续</div><a class="navlink" href="page-fea294d77afe.html">447条教材索引</a><a class="navlink" href="page-3f83fca99eef.html">术语表</a><a class="navlink" href="page-32d80fdb4bb7.html">AI批改与进度追踪</a><a class="navlink" href="page-e8601bdcb726.html">个人进度模板</a><a class="navlink" href="page-7def9b47aa03.html">维护与打包</a></nav><p class="side-note">按教材顺序，逐课练习。<br>材料准备 ≠ 学生已过关。<br>教材PDF需自备。</p></aside><main><article><div class="crumb">学习笔记 / 本地离线课程</div><span class="edition">第1–3章 · 10课已备 · 书本/PDF双页码</span><h1 id="l03-讲义-程序结构变量与类型">L03 讲义 · 程序结构、变量与类型</h1><details class="page-toc"><summary>本页目录</summary><div class="toc">
+<ul>
+<li><a href="l03-lesson.html#这一课要解决什么问题">这一课要解决什么问题</a></li>
+<li><a href="l03-lesson.html#1-先看程序外壳">1. 先看程序外壳</a></li>
+<li><a href="l03-lesson.html#2-变量与赋值">2. 变量与赋值</a></li>
+<li><a href="l03-lesson.html#3-常用类型先抓住用途">3. 常用类型先抓住用途</a></li>
+<li><a href="l03-lesson.html#4-范围初始化与作用域">4. 范围、初始化与作用域</a></li>
+<li><a href="l03-lesson.html#动手实验">动手实验</a></li>
+<li><a href="l03-lesson.html#本课过关">本课过关</a></li>
+<li><a href="l03-lesson.html#示例入口">示例入口</a></li>
+<li><a href="l03-lesson.html#学完交什么">学完交什么</a></li>
+</ul>
+</div>
+</details>
+<blockquote>
+<p>前置：L02：能独立编译运行一个程序。
+页码：<strong>书本 p28–38 / PDF p46–56</strong>。见<a href="page-526e3b952094.html">页码说明</a>。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>阅读内容</th>
+<th>书本页</th>
+<th>PDF页</th>
+<th>要求</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>3.1 简单程序</td>
+<td>28–31</td>
+<td>46–49</td>
+<td>精读外壳、main与输出</td>
+</tr>
+<tr>
+<td>3.2 注释</td>
+<td>31–32</td>
+<td>49–50</td>
+<td>精读并识别嵌套限制</td>
+</tr>
+<tr>
+<td>3.3 数据类型</td>
+<td>32–36</td>
+<td>50–54</td>
+<td>精读基本类型；Unicode细节结合实验</td>
+</tr>
+<tr>
+<td>3.4 变量</td>
+<td>36–38</td>
+<td>54–56</td>
+<td>精读初始化与常量</td>
+</tr>
+</tbody>
+</table>
+<h2 id="这一课要解决什么问题">这一课要解决什么问题</h2>
+<p>程序要记住人数、价格、姓名和真假条件。如何给数据起名，又避免把不合适的数据混用？</p>
+<h2 id="1-先看程序外壳">1. 先看程序外壳</h2>
+<pre><code class="language-java">public class VariableDemo {
+    public static void main(String[] args) {
+        int count = 3;
+        System.out.println(count);
+    }
+}
+</code></pre>
+<p><code>class</code>声明类；<strong>类</strong>可以组织程序，后面还会用来描述对象。<strong>方法</strong>是一段有名字、可被调用的操作；这里<code>main</code>是启动方法。先把<code>public static void main(String[] args)</code>当作完整模板使用：<code>public</code>表示可访问，<code>static</code>使启动时无需先创建该类对象，<code>void</code>表示不返回结果；第4章会用真正的调用解释它们。</p>
+<p>花括号包住代码范围，分号结束语句。<code>//</code>到行末是注释，<code>/* ... */</code>是块注释，注释不会被执行，也不能随意嵌套。引号中的<code>//</code>属于文本，不会变成注释。</p>
+<h2 id="2-变量与赋值">2. 变量与赋值</h2>
+<p><strong>变量</strong>给运行中要用的数据起名，像贴着标签的格子。<code>int count = 3</code>声明类型、名字并给初值。<code>count = count + 1</code>是先取右边旧值计算，再把结果放回左边；不是数学里声称两侧永远相等。</p>
+<p><strong>类型</strong>规定可以存什么值及允许哪些操作。类比容器标签只是入门帮助；Java的引用变量并不直接把整个对象装进格子。</p>
+<p>局部变量用之前必须确定已赋值：<code>int count;</code>本身合法，但直接输出尚未赋值的count会编译失败。不要把“局部变量未初始化”与“数组元素有默认值”混为一谈。</p>
+<h2 id="3-常用类型先抓住用途">3. 常用类型先抓住用途</h2>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>适合的值</th>
+<th>重点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>byte/short/int/long</td>
+<td>一定范围内的整数</td>
+<td>首选int；很大的整数字面量加L</td>
+</tr>
+<tr>
+<td>float/double</td>
+<td>浮点数</td>
+<td>首选double；float字面量常需f；许多小数不能精确表示</td>
+</tr>
+<tr>
+<td>char</td>
+<td>一个UTF-16代码单元</td>
+<td>如'A'、'中'；不是任意一个完整Unicode字符</td>
+</tr>
+<tr>
+<td>boolean</td>
+<td>true或false</td>
+<td>不能拿0/1自动替代</td>
+</tr>
+<tr>
+<td>String</td>
+<td>一段文本</td>
+<td>引用类型，不属于8种基本类型</td>
+</tr>
+</tbody>
+</table>
+<p><strong>字面量</strong>是直接写在源码里的值，例如<code>42</code>、<code>3.5</code>、<code>'A'</code>和<code>"Java"</code>。<strong>常量</strong>在本课用<code>final int DAYS = 7</code>表示赋值后不能再改的量，避免把固定意义散落成神秘数字。普通变量名用<code>studentCount</code>这类有意义的写法，常量名可用<code>MAX_COUNT</code>。</p>
+<h2 id="4-范围初始化与作用域">4. 范围、初始化与作用域</h2>
+<p><code>int</code>范围是-2147483648到2147483647；存不下的计算不会自动变成long。运行VariableDemo观察最大值加1，它会绕回负数。不要套用C++有符号整数溢出的规则。</p>
+<p><strong>作用域</strong>指代码哪些位置可以使用一个名字。花括号内声明的局部变量通常只在相应范围可用；它不是对“这块数据在内存里什么时候消失”的完整描述。</p>
+<h2 id="动手实验">动手实验</h2>
+<p>运行VariableDemo，修改人数和单价，先估算总价。运行UnicodeDemo，比较<code>"中".length()</code>与<code>"😀".length()</code>；length数的是UTF-16代码单元，后者会是2，不能把length一概称为“屏幕上的字数”。在副本中试<code>boolean ready = 1</code>、使用未赋值的局部变量，记录编译阶段的诊断。</p>
+<h2 id="本课过关">本课过关</h2>
+<p>能选适当类型，解释赋值的先后顺序、局部变量初始化、final和int范围；不要求背全部浮点标准。</p>
+<h2 id="示例入口">示例入口</h2>
+<p><a href="page-d9c576e49900.html">逐个示例与运行命令</a>。</p>
+<h2 id="学完交什么">学完交什么</h2>
+<p>完成<a href="page-20353e11686c.html">本课练习</a>，代码写入<a href="page-73a05fdd5377.html">my_code</a>，附命令、输入和结果。先做题，再看<a href="page-c068f2bbb9af.html">参考答案</a>。批改后将结论保存到<a href="page-e8601bdcb726.html">进度追踪</a>。</p>
+<p>下一课：<a href="l04-lesson.html">L04 运算符与类型转换</a>。</p><div class="pager"><a href="index.html">← 课程入口</a><a href="全一册.html">单文件阅读 →</a></div><p class="footer">课程原创配套讲解与习题 · 阅读教材 → 动手 → 订正 → 更新进度</p></article></main></div><script src="assets/course.js"></script></body></html>

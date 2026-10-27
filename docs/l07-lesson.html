@@ -1,0 +1,76 @@
+<!doctype html><html lang="zh-CN" data-theme="dark"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>L07 讲义 · 程序如何作选择 · Java陪读</title><link rel="stylesheet" href="assets/course.css"></head><body id="top"><header class="top"><a class="brand" href="index.html"><span>JAVA</span>一起把基础写扎实</a><div class="tools"><span class="tag">CORE JAVA · VOL. I · 10TH</span><a class="all-link" href="全一册.html">全一册</a><button id="theme" aria-label="切换浅色与深色">明 / 暗</button></div></header><div class="layout"><aside><input id="navsearch" class="navsearch" aria-label="筛选课程导航" placeholder="筛选导航…"><nav aria-label="课程导航"><div class="navlabel">START / 开始</div><a class="navlink" href="index.html">课程说明</a><a class="navlink" href="page-0ef3cebffbed.html">全书路线 · 35课</a><a class="navlink" href="page-b984dae871b4.html">运行环境</a><a class="navlink" href="page-526e3b952094.html">书本与PDF页码</a><a class="navlink" href="page-4cc100767b13.html">零基础起飞</a><div class="navlabel">LESSONS / 第1–3章</div><a class="navlink" href="l01-lesson.html">L01 · 认识 Java 与程序运行</a><a class="navlink" href="l02-lesson.html">L02 · 编译、运行与读报错</a><a class="navlink" href="l03-lesson.html">L03 · 程序结构、变量与类型</a><a class="navlink" href="l04-lesson.html">L04 · 运算符与类型转换</a><a class="navlink" href="l05-lesson.html">L05 · 字符串与文本处理</a><a class="navlink" href="l06-lesson.html">L06 · 键盘输入、格式化与文件</a><a class="navlink" href="l07-lesson.html" aria-current="page">L07 · 程序如何作选择</a><a class="navlink" href="l08-lesson.html">L08 · 让程序重复做事</a><a class="navlink" href="l09-lesson.html">L09 · switch、循环跳转与大数值</a><a class="navlink" href="l10-lesson.html">L10 · 数组与成绩统计器</a><div class="navlabel">TOOLS / 查阅与接续</div><a class="navlink" href="page-fea294d77afe.html">447条教材索引</a><a class="navlink" href="page-3f83fca99eef.html">术语表</a><a class="navlink" href="page-32d80fdb4bb7.html">AI批改与进度追踪</a><a class="navlink" href="page-e8601bdcb726.html">个人进度模板</a><a class="navlink" href="page-7def9b47aa03.html">维护与打包</a></nav><p class="side-note">按教材顺序，逐课练习。<br>材料准备 ≠ 学生已过关。<br>教材PDF需自备。</p></aside><main><article><div class="crumb">学习笔记 / 本地离线课程</div><span class="edition">第1–3章 · 10课已备 · 书本/PDF双页码</span><h1 id="l07-讲义-程序如何作选择">L07 讲义 · 程序如何作选择</h1><details class="page-toc"><summary>本页目录</summary><div class="toc">
+<ul>
+<li><a href="l07-lesson.html#这一课要解决什么问题">这一课要解决什么问题</a></li>
+<li><a href="l07-lesson.html#1-if是按条件选择执行">1. if是按条件选择执行</a></li>
+<li><a href="l07-lesson.html#2-先写范围表再写代码">2. 先写范围表再写代码</a></li>
+<li><a href="l07-lesson.html#3-代码块与作用域">3. 代码块与作用域</a></li>
+<li><a href="l07-lesson.html#动手实验">动手实验</a></li>
+<li><a href="l07-lesson.html#本课过关">本课过关</a></li>
+<li><a href="l07-lesson.html#示例入口">示例入口</a></li>
+<li><a href="l07-lesson.html#学完交什么">学完交什么</a></li>
+</ul>
+</div>
+</details>
+<blockquote>
+<p>前置：L06：读入数据；L04：布尔表达式。
+页码：<strong>书本 p63–66 / PDF p81–84</strong>。见<a href="page-526e3b952094.html">页码说明</a>。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>阅读内容</th>
+<th>书本页</th>
+<th>PDF页</th>
+<th>要求</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>3.8.1 块作用域</td>
+<td>63–63</td>
+<td>81–81</td>
+<td>精读，观察名字可用范围</td>
+</tr>
+<tr>
+<td>3.8.2 条件语句</td>
+<td>63–66</td>
+<td>81–84</td>
+<td>精读if与else-if并测边界</td>
+</tr>
+</tbody>
+</table>
+<h2 id="这一课要解决什么问题">这一课要解决什么问题</h2>
+<p>同样的程序，需要按年龄或分数选择不同操作。怎样写出互斥又没有漏掉临界值的规则？</p>
+<h2 id="1-if是按条件选择执行">1. if是按条件选择执行</h2>
+<p><strong>条件</strong>是计算结果为boolean的表达式，像一道决定往哪走的路口。<code>if (score &gt;= 60) { ... } else { ... }</code>只选一个分支。条件不是任意整数；<code>if(1)</code>不能照搬到Java。</p>
+<pre><code class="language-java">if (score &lt; 0 || score &gt; 100) {
+    System.out.println(&quot;invalid&quot;);
+} else if (score &gt;= 90) {
+    System.out.println(&quot;excellent&quot;);
+} else if (score &gt;= 60) {
+    System.out.println(&quot;pass&quot;);
+} else {
+    System.out.println(&quot;retry&quot;);
+}
+</code></pre>
+<p>这是一条互斥的条件链：前一项成立就不再测试后面的项。顺序是规则的一部分；先测<code>&gt;=60</code>再测<code>&gt;=90</code>，90分也会先进入pass。多个独立if不是同一回事，可能重复打印。</p>
+<h2 id="2-先写范围表再写代码">2. 先写范围表再写代码</h2>
+<p>把分数切成：小于0、0–59、60–89、90–100、大于100。分界处用-1、0、59、60、89、90、100、101验证。<strong>边界测试</strong>就是专门在这些接缝检查，像检查两块拼图之间有没有缝或重叠；只测75分无法证明60分正确。</p>
+<p>判断“18至25岁，包含两端”，写<code>age &gt;= 18 &amp;&amp; age &lt;= 25</code>，不能写数学式<code>18 &lt;= age &lt;= 25</code>。同类条件先用括号表达清楚，不要依靠缩进猜关联。</p>
+<h2 id="3-代码块与作用域">3. 代码块与作用域</h2>
+<p><strong>代码块</strong>是花括号包围的一组语句。局部变量通常从声明后到所属块结束可用，块里的同名声明还有限制。写入块内不等于声明了一个到处可用的名字。</p>
+<pre><code class="language-java">if (ready) {
+    int count = 3;
+    System.out.println(count);
+}
+</code></pre>
+<p>块外用count会编译失败。初学时总给分支加花括号，避免只控制一条语句时误读。不在if括号后随手加分号：<code>if(condition);</code>可能让后面的语句无条件执行。</p>
+<h2 id="动手实验">动手实验</h2>
+<p>用GradeDemo依次测试分界值，每次启动传一个参数，例如<code>-ProgramArgs @('60')</code>；Integer.parseInt先理解成“把整数文本转成int”的工具。示例只约定参数为合法整数，非法文本的恢复不是本课必做。先画区间表，再独立写练习中的票价规则。</p>
+<h2 id="本课过关">本课过关</h2>
+<p>能说明独立if与else-if链区别，覆盖所有题目要求范围和临界值，解释局部变量作用域。通过由你的作答决定，不由示例测试替代。</p>
+<h2 id="示例入口">示例入口</h2>
+<p><a href="page-16bbc7816c2e.html">逐个示例与运行命令</a>。</p>
+<h2 id="学完交什么">学完交什么</h2>
+<p>完成<a href="page-59c311bedabe.html">本课练习</a>，代码写入<a href="page-ef27d53aa3da.html">my_code</a>，附命令、输入和结果。先做题，再看<a href="page-c1f9ec907b08.html">参考答案</a>。批改后将结论保存到<a href="page-e8601bdcb726.html">进度追踪</a>。</p>
+<p>下一课：<a href="l08-lesson.html">L08 让程序重复做事</a>。</p><div class="pager"><a href="index.html">← 课程入口</a><a href="全一册.html">单文件阅读 →</a></div><p class="footer">课程原创配套讲解与习题 · 阅读教材 → 动手 → 订正 → 更新进度</p></article></main></div><script src="assets/course.js"></script></body></html>

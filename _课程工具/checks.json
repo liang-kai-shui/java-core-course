@@ -1,0 +1,641 @@
+[
+  {
+    "path": "L01_第01章_认识Java/code/HelloJava.java",
+    "class": "HelloJava",
+    "kind": "normal",
+    "stdout": "你好，Java！\n",
+    "stdin": "",
+    "args": [],
+    "contains": null,
+    "cases": []
+  },
+  {
+    "path": "L01_第01章_认识Java/code/RuntimeInfo.java",
+    "class": "RuntimeInfo",
+    "kind": "normal",
+    "stdout": null,
+    "stdin": "",
+    "args": [],
+    "contains": [
+      "java.version=",
+      "os.name="
+    ],
+    "cases": []
+  },
+  {
+    "path": "L02_第02章_编译运行与错误/code/ArgsDemo.java",
+    "class": "ArgsDemo",
+    "kind": "normal",
+    "stdout": "argument count=2\n",
+    "stdin": "",
+    "args": [
+      "red",
+      "blue"
+    ],
+    "contains": null,
+    "cases": [
+      {
+        "args": [],
+        "stdout": "argument count=0\n"
+      }
+    ]
+  },
+  {
+    "path": "L02_第02章_编译运行与错误/error_lab/MissingSemicolon.java",
+    "class": "MissingSemicolon",
+    "kind": "compile_error",
+    "stdout": null,
+    "stdin": "",
+    "args": [],
+    "contains": null,
+    "cases": []
+  },
+  {
+    "path": "L02_第02章_编译运行与错误/error_lab/WrongFileName.java",
+    "class": "WrongFileName",
+    "kind": "compile_error",
+    "stdout": null,
+    "stdin": "",
+    "args": [],
+    "contains": null,
+    "cases": []
+  },
+  {
+    "path": "L02_第02章_编译运行与错误/error_lab/MissingMain.java",
+    "class": "MissingMain",
+    "kind": "launch_error",
+    "stdout": null,
+    "stdin": "",
+    "args": [],
+    "contains": null,
+    "cases": []
+  },
+  {
+    "path": "L02_第02章_编译运行与错误/error_lab/RuntimeCrash.java",
+    "class": "RuntimeCrash",
+    "kind": "runtime_error",
+    "stdout": null,
+    "stdin": "",
+    "args": [],
+    "contains": null,
+    "cases": []
+  },
+  {
+    "path": "L02_第02章_编译运行与错误/error_lab/WrongFormula.java",
+    "class": "WrongFormula",
+    "kind": "logic_error",
+    "stdout": "14\n",
+    "stdin": "",
+    "args": [],
+    "contains": null,
+    "cases": []
+  },
+  {
+    "path": "L03_第03章A_程序结构与变量类型/code/VariableDemo.java",
+    "class": "VariableDemo",
+    "kind": "normal",
+    "stdout": "count=3\nupdated=4\ntotal=50.0\ndays=7\noverflow=-2147483648\n",
+    "stdin": "",
+    "args": [],
+    "contains": null,
+    "cases": []
+  },
+  {
+    "path": "L03_第03章A_程序结构与变量类型/code/UnicodeDemo.java",
+    "class": "UnicodeDemo",
+    "kind": "normal",
+    "stdout": "chinese units=1\nemoji units=2\nemoji code points=1\n",
+    "stdin": "",
+    "args": [],
+    "contains": null,
+    "cases": []
+  },
+  {
+    "path": "L04_第03章B_运算符与类型转换/code/ArithmeticDemo.java",
+    "class": "ArithmeticDemo",
+    "kind": "normal",
+    "stdout": "3\n3.5\n3.0\n3\nwrong=-727379968\nright=1000000000000\n0.30000000000000004\n",
+    "stdin": "",
+    "args": [],
+    "contains": null,
+    "cases": []
+  },
+  {
+    "path": "L04_第03章B_运算符与类型转换/code/ShortCircuitDemo.java",
+    "class": "ShortCircuitDemo",
+    "kind": "normal",
+    "stdout": "safe=false\n",
+    "stdin": "",
+    "args": [],
+    "contains": null,
+    "cases": []
+  },
+  {
+    "path": "L05_第03章C_字符串/code/StringDemo.java",
+    "class": "StringDemo",
+    "kind": "normal",
+    "stdout": "original=[  Java  ]\ncleaned=[Java]\npart=av\nsame reference=false\nsame content=true\nscore=805\nscore=85\nJava course\n",
+    "stdin": "",
+    "args": [],
+    "contains": null,
+    "cases": []
+  },
+  {
+    "path": "L05_第03章C_字符串/code/UnicodeDemo.java",
+    "class": "UnicodeDemo",
+    "kind": "normal",
+    "stdout": "chinese units=1\nemoji units=2\nemoji code points=1\n",
+    "stdin": "",
+    "args": [],
+    "contains": null,
+    "cases": []
+  },
+  {
+    "path": "L06_第03章D_输入输出/code/InputDemo.java",
+    "class": "InputDemo",
+    "kind": "normal",
+    "stdout": "年龄、姓名、单价、数量，各一行：\nname=Li Ming, age=18\ntotal=37.50\n",
+    "stdin": "18\nLi Ming\n12.5\n3\n",
+    "args": [],
+    "contains": null,
+    "cases": []
+  },
+  {
+    "path": "L06_第03章D_输入输出/code/FileUtf8Demo.java",
+    "class": "FileUtf8Demo",
+    "kind": "normal",
+    "stdout": "你好，Java！\n",
+    "stdin": "",
+    "args": [
+      "{work}/file-lab/note.txt"
+    ],
+    "contains": null,
+    "cases": [
+      {
+        "args": [],
+        "stdout": "usage: FileUtf8Demo <new-experiment-file>\n"
+      }
+    ]
+  },
+  {
+    "path": "L07_第03章E_条件分支/code/GradeDemo.java",
+    "class": "GradeDemo",
+    "kind": "normal",
+    "stdout": "pass\n",
+    "stdin": "",
+    "args": [
+      "60"
+    ],
+    "contains": null,
+    "cases": [
+      {
+        "args": [
+          "-1"
+        ],
+        "stdout": "invalid\n"
+      },
+      {
+        "args": [
+          "0"
+        ],
+        "stdout": "retry\n"
+      },
+      {
+        "args": [
+          "59"
+        ],
+        "stdout": "retry\n"
+      },
+      {
+        "args": [
+          "89"
+        ],
+        "stdout": "pass\n"
+      },
+      {
+        "args": [
+          "90"
+        ],
+        "stdout": "excellent\n"
+      },
+      {
+        "args": [
+          "100"
+        ],
+        "stdout": "excellent\n"
+      },
+      {
+        "args": [
+          "101"
+        ],
+        "stdout": "invalid\n"
+      }
+    ]
+  },
+  {
+    "path": "L08_第03章F_循环/code/SumDemo.java",
+    "class": "SumDemo",
+    "kind": "normal",
+    "stdout": "while=15\nfor=15\n",
+    "stdin": "",
+    "args": [],
+    "contains": null,
+    "cases": [
+      {
+        "args": [
+          "0"
+        ],
+        "stdout": "while=0\nfor=0\n"
+      },
+      {
+        "args": [
+          "1"
+        ],
+        "stdout": "while=1\nfor=1\n"
+      }
+    ]
+  },
+  {
+    "path": "L08_第03章F_循环/code/CountdownDemo.java",
+    "class": "CountdownDemo",
+    "kind": "normal",
+    "stdout": "left=0\n",
+    "stdin": "",
+    "args": [],
+    "contains": null,
+    "cases": []
+  },
+  {
+    "path": "L08_第03章F_循环/code/NestedDemo.java",
+    "class": "NestedDemo",
+    "kind": "normal",
+    "stdout": "1,1\n1,2\n1,3\n2,1\n2,2\n2,3\n",
+    "stdin": "",
+    "args": [],
+    "contains": null,
+    "cases": []
+  },
+  {
+    "path": "L09_第03章G_多重选择与大数值/code/MenuDemo.java",
+    "class": "MenuDemo",
+    "kind": "normal",
+    "stdout": "start\n",
+    "stdin": "",
+    "args": [],
+    "contains": null,
+    "cases": [
+      {
+        "args": [
+          "2"
+        ],
+        "stdout": "help\n"
+      },
+      {
+        "args": [
+          "9"
+        ],
+        "stdout": "unknown\n"
+      }
+    ]
+  },
+  {
+    "path": "L09_第03章G_多重选择与大数值/code/SkipAndStopDemo.java",
+    "class": "SkipAndStopDemo",
+    "kind": "normal",
+    "stdout": "1\n3\n5\n7\n",
+    "stdin": "",
+    "args": [],
+    "contains": null,
+    "cases": []
+  },
+  {
+    "path": "L09_第03章G_多重选择与大数值/code/BigNumberDemo.java",
+    "class": "BigNumberDemo",
+    "kind": "normal",
+    "stdout": "9223372036854775809\n0.3\n0.33\nequals=false\ncompare=0\n",
+    "stdin": "",
+    "args": [],
+    "contains": null,
+    "cases": []
+  },
+  {
+    "path": "L10_第03章H_数组与阶段项目/code/ArrayDemo.java",
+    "class": "ArrayDemo",
+    "kind": "normal",
+    "stdout": "original=[9, 1, 2]\nsorted copy=[1, 2, 9]\nafter foreach=[9, 1, 2]\nindex of 2=1\n",
+    "stdin": "",
+    "args": [],
+    "contains": null,
+    "cases": []
+  },
+  {
+    "path": "L10_第03章H_数组与阶段项目/code/NestedArrayDemo.java",
+    "class": "NestedArrayDemo",
+    "kind": "normal",
+    "stdout": "sum=15\n",
+    "stdin": "",
+    "args": [],
+    "contains": null,
+    "cases": []
+  },
+  {
+    "path": "L10_第03章H_数组与阶段项目/code/ArgsEcho.java",
+    "class": "ArgsEcho",
+    "kind": "normal",
+    "stdout": "count=2\nred\nblue\n",
+    "stdin": "",
+    "args": [
+      "red",
+      "blue"
+    ],
+    "contains": null,
+    "cases": [
+      {
+        "args": [],
+        "stdout": "count=0\n"
+      }
+    ]
+  },
+  {
+    "path": "L03_第03章A_程序结构与变量类型/参考答案/Profile.java",
+    "class": "Profile",
+    "kind": "normal",
+    "stdout": "nickname=Java learner\nage=18\nheight=1.75\nstarted=true\nDAYS_PER_WEEK=7\n",
+    "stdin": "",
+    "args": [],
+    "contains": null,
+    "cases": []
+  },
+  {
+    "path": "L04_第03章B_运算符与类型转换/参考答案/TimeSplit.java",
+    "class": "TimeSplit",
+    "kind": "normal",
+    "stdout": "hours=1\nminutes=1\nseconds=11\n",
+    "stdin": "",
+    "args": [],
+    "contains": null,
+    "cases": []
+  },
+  {
+    "path": "L04_第03章B_运算符与类型转换/参考答案/Average.java",
+    "class": "Average",
+    "kind": "normal",
+    "stdout": "81.0\n",
+    "stdin": "",
+    "args": [],
+    "contains": null,
+    "cases": []
+  },
+  {
+    "path": "L05_第03章C_字符串/参考答案/NameCard.java",
+    "class": "NameCard",
+    "kind": "normal",
+    "stdout": "name=Li Ming\nlength=7\nprefix=Li\n",
+    "stdin": "",
+    "args": [],
+    "contains": null,
+    "cases": []
+  },
+  {
+    "path": "L05_第03章C_字符串/参考答案/TextCompare.java",
+    "class": "TextCompare",
+    "kind": "normal",
+    "stdout": "false\ntrue\nJava course\n",
+    "stdin": "",
+    "args": [],
+    "contains": null,
+    "cases": []
+  },
+  {
+    "path": "L06_第03章D_输入输出/参考答案/Bill.java",
+    "class": "Bill",
+    "kind": "normal",
+    "stdout": "name=Li Ming\ntotal=37.50\n",
+    "stdin": "Li Ming\n12.5\n3\n",
+    "args": [],
+    "contains": null,
+    "cases": [
+      {
+        "stdin": "A B\n0.1\n3\n",
+        "stdout": "name=A B\ntotal=0.30\n"
+      },
+      {
+        "stdin": "小明 同学\n12.5\n0\n",
+        "stdout": "name=小明 同学\ntotal=0.00\n"
+      }
+    ]
+  },
+  {
+    "path": "L06_第03章D_输入输出/参考答案/AgeName.java",
+    "class": "AgeName",
+    "kind": "normal",
+    "stdout": "Li Ming:18\n",
+    "stdin": "18\nLi Ming\n",
+    "args": [],
+    "contains": null,
+    "cases": []
+  },
+  {
+    "path": "L07_第03章E_条件分支/参考答案/Ticket.java",
+    "class": "Ticket",
+    "kind": "normal",
+    "stdout": "full\n",
+    "stdin": "18\n",
+    "args": [],
+    "contains": null,
+    "cases": [
+      {
+        "stdin": "-1\n",
+        "stdout": "invalid\n"
+      },
+      {
+        "stdin": "0\n",
+        "stdout": "free\n"
+      },
+      {
+        "stdin": "5\n",
+        "stdout": "free\n"
+      },
+      {
+        "stdin": "6\n",
+        "stdout": "half\n"
+      },
+      {
+        "stdin": "17\n",
+        "stdout": "half\n"
+      },
+      {
+        "stdin": "59\n",
+        "stdout": "full\n"
+      },
+      {
+        "stdin": "60\n",
+        "stdout": "senior\n"
+      },
+      {
+        "stdin": "120\n",
+        "stdout": "senior\n"
+      },
+      {
+        "stdin": "121\n",
+        "stdout": "invalid\n"
+      }
+    ]
+  },
+  {
+    "path": "L08_第03章F_循环/参考答案/SumToN.java",
+    "class": "SumToN",
+    "kind": "normal",
+    "stdout": "15\n",
+    "stdin": "5\n",
+    "args": [],
+    "contains": null,
+    "cases": [
+      {
+        "stdin": "0\n",
+        "stdout": "0\n"
+      },
+      {
+        "stdin": "1\n",
+        "stdout": "1\n"
+      },
+      {
+        "stdin": "10000\n",
+        "stdout": "50005000\n"
+      }
+    ]
+  },
+  {
+    "path": "L08_第03章F_循环/参考答案/SumToNWhile.java",
+    "class": "SumToNWhile",
+    "kind": "normal",
+    "stdout": "15\n",
+    "stdin": "5\n",
+    "args": [],
+    "contains": null,
+    "cases": [
+      {
+        "stdin": "0\n",
+        "stdout": "0\n"
+      },
+      {
+        "stdin": "1\n",
+        "stdout": "1\n"
+      },
+      {
+        "stdin": "10000\n",
+        "stdout": "50005000\n"
+      }
+    ]
+  },
+  {
+    "path": "L08_第03章F_循环/参考答案/Triangle.java",
+    "class": "Triangle",
+    "kind": "normal",
+    "stdout": "*\n**\n***\n",
+    "stdin": "",
+    "args": [],
+    "contains": null,
+    "cases": []
+  },
+  {
+    "path": "L09_第03章G_多重选择与大数值/参考答案/Weekday.java",
+    "class": "Weekday",
+    "kind": "normal",
+    "stdout": "weekend\n",
+    "stdin": "6\n",
+    "args": [],
+    "contains": null,
+    "cases": [
+      {
+        "stdin": "0\n",
+        "stdout": "invalid\n"
+      },
+      {
+        "stdin": "1\n",
+        "stdout": "weekday\n"
+      },
+      {
+        "stdin": "5\n",
+        "stdout": "weekday\n"
+      },
+      {
+        "stdin": "7\n",
+        "stdout": "weekend\n"
+      },
+      {
+        "stdin": "8\n",
+        "stdout": "invalid\n"
+      }
+    ]
+  },
+  {
+    "path": "L09_第03章G_多重选择与大数值/参考答案/FilteredSum.java",
+    "class": "FilteredSum",
+    "kind": "normal",
+    "stdout": "sum=75\n",
+    "stdin": "",
+    "args": [],
+    "contains": null,
+    "cases": []
+  },
+  {
+    "path": "L09_第03章G_多重选择与大数值/参考答案/Money.java",
+    "class": "Money",
+    "kind": "normal",
+    "stdout": "0.3\n0.33\n",
+    "stdin": "",
+    "args": [],
+    "contains": null,
+    "cases": []
+  },
+  {
+    "path": "L10_第03章H_数组与阶段项目/参考答案/RaggedSum.java",
+    "class": "RaggedSum",
+    "kind": "normal",
+    "stdout": "sum=15\n",
+    "stdin": "",
+    "args": [],
+    "contains": null,
+    "cases": []
+  },
+  {
+    "path": "L10_第03章H_数组与阶段项目/参考答案/ScoreStats.java",
+    "class": "ScoreStats",
+    "kind": "normal",
+    "stdout": "original=[59, 60, 90, 100]\nsum=309\naverage=77.25\nmax=100\nmin=59\npassed=3\nsorted=[59, 60, 90, 100]\n",
+    "stdin": "4\n59 60 90 100\n",
+    "args": [],
+    "contains": null,
+    "cases": [
+      {
+        "stdin": "0\n",
+        "stdout": "no data\n"
+      },
+      {
+        "stdin": "-1\n",
+        "stdout": "invalid count\n"
+      },
+      {
+        "stdin": "101\n",
+        "stdout": "invalid count\n"
+      },
+      {
+        "stdin": "1\n0\n",
+        "stdout": "original=[0]\nsum=0\naverage=0.00\nmax=0\nmin=0\npassed=0\nsorted=[0]\n"
+      },
+      {
+        "stdin": "1\n100\n",
+        "stdout": "original=[100]\nsum=100\naverage=100.00\nmax=100\nmin=100\npassed=1\nsorted=[100]\n"
+      },
+      {
+        "stdin": "3\n60 60 60\n",
+        "stdout": "original=[60, 60, 60]\nsum=180\naverage=60.00\nmax=60\nmin=60\npassed=3\nsorted=[60, 60, 60]\n"
+      },
+      {
+        "stdin": "3\n90 0 60\n",
+        "stdout": "original=[90, 0, 60]\nsum=150\naverage=50.00\nmax=90\nmin=0\npassed=2\nsorted=[0, 60, 90]\n"
+      }
+    ]
+  }
+]

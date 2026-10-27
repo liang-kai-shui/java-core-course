@@ -1,0 +1,93 @@
+<!doctype html><html lang="zh-CN" data-theme="dark"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>L02 讲义 · 编译、运行与读报错 · Java陪读</title><link rel="stylesheet" href="assets/course.css"></head><body id="top"><header class="top"><a class="brand" href="index.html"><span>JAVA</span>一起把基础写扎实</a><div class="tools"><span class="tag">CORE JAVA · VOL. I · 10TH</span><a class="all-link" href="全一册.html">全一册</a><button id="theme" aria-label="切换浅色与深色">明 / 暗</button></div></header><div class="layout"><aside><input id="navsearch" class="navsearch" aria-label="筛选课程导航" placeholder="筛选导航…"><nav aria-label="课程导航"><div class="navlabel">START / 开始</div><a class="navlink" href="index.html">课程说明</a><a class="navlink" href="page-0ef3cebffbed.html">全书路线 · 35课</a><a class="navlink" href="page-b984dae871b4.html">运行环境</a><a class="navlink" href="page-526e3b952094.html">书本与PDF页码</a><a class="navlink" href="page-4cc100767b13.html">零基础起飞</a><div class="navlabel">LESSONS / 第1–3章</div><a class="navlink" href="l01-lesson.html">L01 · 认识 Java 与程序运行</a><a class="navlink" href="l02-lesson.html" aria-current="page">L02 · 编译、运行与读报错</a><a class="navlink" href="l03-lesson.html">L03 · 程序结构、变量与类型</a><a class="navlink" href="l04-lesson.html">L04 · 运算符与类型转换</a><a class="navlink" href="l05-lesson.html">L05 · 字符串与文本处理</a><a class="navlink" href="l06-lesson.html">L06 · 键盘输入、格式化与文件</a><a class="navlink" href="l07-lesson.html">L07 · 程序如何作选择</a><a class="navlink" href="l08-lesson.html">L08 · 让程序重复做事</a><a class="navlink" href="l09-lesson.html">L09 · switch、循环跳转与大数值</a><a class="navlink" href="l10-lesson.html">L10 · 数组与成绩统计器</a><div class="navlabel">TOOLS / 查阅与接续</div><a class="navlink" href="page-fea294d77afe.html">447条教材索引</a><a class="navlink" href="page-3f83fca99eef.html">术语表</a><a class="navlink" href="page-32d80fdb4bb7.html">AI批改与进度追踪</a><a class="navlink" href="page-e8601bdcb726.html">个人进度模板</a><a class="navlink" href="page-7def9b47aa03.html">维护与打包</a></nav><p class="side-note">按教材顺序，逐课练习。<br>材料准备 ≠ 学生已过关。<br>教材PDF需自备。</p></aside><main><article><div class="crumb">学习笔记 / 本地离线课程</div><span class="edition">第1–3章 · 10课已备 · 书本/PDF双页码</span><h1 id="l02-讲义-编译运行与读报错">L02 讲义 · 编译、运行与读报错</h1><details class="page-toc"><summary>本页目录</summary><div class="toc">
+<ul>
+<li><a href="l02-lesson.html#这一课要解决什么问题">这一课要解决什么问题</a></li>
+<li><a href="l02-lesson.html#1-工具在但命令可能找不到">1. 工具在，但命令可能找不到</a></li>
+<li><a href="l02-lesson.html#2-编译命令逐项拆开">2. 编译命令逐项拆开</a></li>
+<li><a href="l02-lesson.html#3-程序的名字要对应">3. 程序的名字要对应</a></li>
+<li><a href="l02-lesson.html#4-读报错不要只看最后一行">4. 读报错不要只看最后一行</a></li>
+<li><a href="l02-lesson.html#动手实验">动手实验</a></li>
+<li><a href="l02-lesson.html#本课过关">本课过关</a></li>
+<li><a href="l02-lesson.html#示例入口">示例入口</a></li>
+<li><a href="l02-lesson.html#学完交什么">学完交什么</a></li>
+</ul>
+</div>
+</details>
+<blockquote>
+<p>前置：L01：源代码、字节码、JVM。
+页码：<strong>书本 p12–27 / PDF p30–45</strong>。见<a href="page-526e3b952094.html">页码说明</a>。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>阅读内容</th>
+<th>书本页</th>
+<th>PDF页</th>
+<th>要求</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2.1 JDK</td>
+<td>12–16</td>
+<td>30–34</td>
+<td>概念精读，安装操作看环境说明</td>
+</tr>
+<tr>
+<td>2.2 命令行</td>
+<td>16–18</td>
+<td>34–36</td>
+<td>精读并实际运行</td>
+</tr>
+<tr>
+<td>2.3 IDE</td>
+<td>18–21</td>
+<td>36–39</td>
+<td>了解用途，本项目用VS Code</td>
+</tr>
+<tr>
+<td>2.4 GUI</td>
+<td>21–23</td>
+<td>39–41</td>
+<td>选读，后续Swing再实践</td>
+</tr>
+<tr>
+<td>2.5 applet</td>
+<td>23–27</td>
+<td>41–45</td>
+<td>历史阅读，不要求运行</td>
+</tr>
+</tbody>
+</table>
+<h2 id="这一课要解决什么问题">这一课要解决什么问题</h2>
+<p>按运行按钮出问题时，你需要知道按钮背后执行了什么。先会手动两步运行，再用便捷脚本。</p>
+<h2 id="1-工具在但命令可能找不到">1. 工具在，但命令可能找不到</h2>
+<p><strong>PATH</strong>是终端找命令时查找的目录列表，像通讯录。没有登记电话号码不等于那个人不存在。本机JDK21已安装，但当前终端直接找不到<code>java</code>和<code>javac</code>；因此课程脚本读取项目配置中的完整路径，不改系统环境。</p>
+<p>先在根目录执行<code>.\check-java.ps1</code>，记录实际版本；再执行README的HelloJava命令。PowerShell若限制脚本，使用README给出的单次<code>powershell.exe -ExecutionPolicy Bypass -File ...</code>入口，无需更改全局策略。</p>
+<h2 id="2-编译命令逐项拆开">2. 编译命令逐项拆开</h2>
+<p>在某个源码目录中，按环境说明设置<code>$jdk</code>，再执行：</p>
+<pre><code class="language-powershell">&amp; &quot;$jdk\bin\javac.exe&quot; --release 8 -encoding UTF-8 -d .\out .\HelloJava.java
+if ($LASTEXITCODE -eq 0) {
+    &amp; &quot;$jdk\bin\java.exe&quot; -cp .\out HelloJava
+}
+</code></pre>
+<p><code>&amp;</code>让PowerShell启动引号中的程序；不是Java语法。<code>-d</code>是放编译产物的目录，<code>-cp</code>是运行时查找类的目录。<strong>类名</strong>在这里是<code>HelloJava</code>，运行时不写扩展名。<code>$LASTEXITCODE</code>记录上个外部程序的退出状态；这里等于0才继续，防止编译失败仍执行旧文件。</p>
+<p><strong>当前目录</strong>是相对路径的起点。<code>Get-Location</code>看位置，<code>Get-ChildItem</code>看文件。教材命令中的示例路径不能原样当成你电脑的真实地址。</p>
+<h2 id="3-程序的名字要对应">3. 程序的名字要对应</h2>
+<p>先采用一文件一个<code>public class</code>的约定：<code>HelloJava.java</code>里面是<code>public class HelloJava</code>。大小写也要对应。<code>main</code>必须按当前模板准确写为<code>public static void main(String[] args)</code>；写成<code>Main</code>是不同名字。</p>
+<p><strong>命令行参数</strong>是在启动类名后给程序的数据，像把待办事项随启动请求一起交进去。<code>ArgsDemo</code>先只显示参数个数，不访问不存在的第一个参数；数组细节L10讲。</p>
+<h2 id="4-读报错不要只看最后一行">4. 读报错不要只看最后一行</h2>
+<p>编译诊断通常包含文件、位置、说明。先读第一条有意义的错误，再定位原语句；后面许多诊断可能只是前一处错误引发的连锁结果。</p>
+<p><code>error_lab/MissingSemicolon.java</code>和<code>WrongFileName.java</code>预期编译失败；<code>MissingMain.java</code>可以编译，但启动失败；<code>RuntimeCrash.java</code>在运行时报告异常；<code>WrongFormula.java</code>正常结束但面积算错。它们是实验标本，不是待修复的课程样例。复制到my_code再修，保留原标本。</p>
+<h2 id="动手实验">动手实验</h2>
+<ol>
+<li>编译HelloJava后在my_code副本中故意写错；确认新编译失败时课程脚本不会输出上次的“你好，Java！”。</li>
+<li>用<code>-ProgramArgs @('red','blue')</code>运行ArgsDemo，再用无参数运行，比较结果。</li>
+<li>按error_lab/README逐个观察失败阶段，记录完整诊断。不要把5个错误标本一起编译。</li>
+</ol>
+<h2 id="本课过关">本课过关</h2>
+<p>能解释两步命令，自己定位一处文件名问题；能保留原始错误证据、修复自己的副本并重新运行；不把运行旧class当作修复成功。</p>
+<h2 id="示例入口">示例入口</h2>
+<p><a href="page-8dc288399ce5.html">逐个示例与运行命令</a>。</p>
+<h2 id="学完交什么">学完交什么</h2>
+<p>完成<a href="page-95000a110447.html">本课练习</a>，代码写入<a href="page-612a839fdbf1.html">my_code</a>，附命令、输入和结果。先做题，再看<a href="page-702232ba7bff.html">参考答案</a>。批改后将结论保存到<a href="page-e8601bdcb726.html">进度追踪</a>。</p>
+<p>下一课：<a href="l03-lesson.html">L03 程序结构、变量与类型</a>。</p><div class="pager"><a href="index.html">← 课程入口</a><a href="全一册.html">单文件阅读 →</a></div><p class="footer">课程原创配套讲解与习题 · 阅读教材 → 动手 → 订正 → 更新进度</p></article></main></div><script src="assets/course.js"></script></body></html>

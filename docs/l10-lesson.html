@@ -1,0 +1,93 @@
+<!doctype html><html lang="zh-CN" data-theme="dark"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>L10 讲义 · 数组与成绩统计器 · Java陪读</title><link rel="stylesheet" href="assets/course.css"></head><body id="top"><header class="top"><a class="brand" href="index.html"><span>JAVA</span>一起把基础写扎实</a><div class="tools"><span class="tag">CORE JAVA · VOL. I · 10TH</span><a class="all-link" href="全一册.html">全一册</a><button id="theme" aria-label="切换浅色与深色">明 / 暗</button></div></header><div class="layout"><aside><input id="navsearch" class="navsearch" aria-label="筛选课程导航" placeholder="筛选导航…"><nav aria-label="课程导航"><div class="navlabel">START / 开始</div><a class="navlink" href="index.html">课程说明</a><a class="navlink" href="page-0ef3cebffbed.html">全书路线 · 35课</a><a class="navlink" href="page-b984dae871b4.html">运行环境</a><a class="navlink" href="page-526e3b952094.html">书本与PDF页码</a><a class="navlink" href="page-4cc100767b13.html">零基础起飞</a><div class="navlabel">LESSONS / 第1–3章</div><a class="navlink" href="l01-lesson.html">L01 · 认识 Java 与程序运行</a><a class="navlink" href="l02-lesson.html">L02 · 编译、运行与读报错</a><a class="navlink" href="l03-lesson.html">L03 · 程序结构、变量与类型</a><a class="navlink" href="l04-lesson.html">L04 · 运算符与类型转换</a><a class="navlink" href="l05-lesson.html">L05 · 字符串与文本处理</a><a class="navlink" href="l06-lesson.html">L06 · 键盘输入、格式化与文件</a><a class="navlink" href="l07-lesson.html">L07 · 程序如何作选择</a><a class="navlink" href="l08-lesson.html">L08 · 让程序重复做事</a><a class="navlink" href="l09-lesson.html">L09 · switch、循环跳转与大数值</a><a class="navlink" href="l10-lesson.html" aria-current="page">L10 · 数组与成绩统计器</a><div class="navlabel">TOOLS / 查阅与接续</div><a class="navlink" href="page-fea294d77afe.html">447条教材索引</a><a class="navlink" href="page-3f83fca99eef.html">术语表</a><a class="navlink" href="page-32d80fdb4bb7.html">AI批改与进度追踪</a><a class="navlink" href="page-e8601bdcb726.html">个人进度模板</a><a class="navlink" href="page-7def9b47aa03.html">维护与打包</a></nav><p class="side-note">按教材顺序，逐课练习。<br>材料准备 ≠ 学生已过关。<br>教材PDF需自备。</p></aside><main><article><div class="crumb">学习笔记 / 本地离线课程</div><span class="edition">第1–3章 · 10课已备 · 书本/PDF双页码</span><h1 id="l10-讲义-数组与成绩统计器">L10 讲义 · 数组与成绩统计器</h1><details class="page-toc"><summary>本页目录</summary><div class="toc">
+<ul>
+<li><a href="l10-lesson.html#这一课要解决什么问题">这一课要解决什么问题</a></li>
+<li><a href="l10-lesson.html#1-数组是编号的一排同类型元素">1. 数组是编号的一排同类型元素</a></li>
+<li><a href="l10-lesson.html#2-不存在的位置不是随便一个值">2. 不存在的位置不是“随便一个值”</a></li>
+<li><a href="l10-lesson.html#3-排序与查找有前提">3. 排序与查找有前提</a></li>
+<li><a href="l10-lesson.html#4-二维数组是数组的数组">4. 二维数组是数组的数组</a></li>
+<li><a href="l10-lesson.html#5-阶段项目的边界">5. 阶段项目的边界</a></li>
+<li><a href="l10-lesson.html#动手实验">动手实验</a></li>
+<li><a href="l10-lesson.html#本课过关">本课过关</a></li>
+<li><a href="l10-lesson.html#示例入口">示例入口</a></li>
+<li><a href="l10-lesson.html#学完交什么">学完交什么</a></li>
+</ul>
+</div>
+</details>
+<blockquote>
+<p>前置：L03–L09；特别是循环、输入与下标。
+页码：<strong>书本 p78–90 / PDF p96–108</strong>。见<a href="page-526e3b952094.html">页码说明</a>。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>阅读内容</th>
+<th>书本页</th>
+<th>PDF页</th>
+<th>要求</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>3.10 数组基础</td>
+<td>78–79</td>
+<td>96–97</td>
+<td>精读创建、默认值与边界</td>
+</tr>
+<tr>
+<td>3.10.1–3.10.3 遍历、初始化、拷贝</td>
+<td>79–81</td>
+<td>97–99</td>
+<td>重点精读引用共享</td>
+</tr>
+<tr>
+<td>3.10.4 参数</td>
+<td>81–82</td>
+<td>99–100</td>
+<td>精读args和长度检查</td>
+</tr>
+<tr>
+<td>3.10.5 排序</td>
+<td>82–85</td>
+<td>100–103</td>
+<td>精读排序副本与查找前提</td>
+</tr>
+<tr>
+<td>3.10.6–3.10.7 多维与不规则数组</td>
+<td>85–90</td>
+<td>103–108</td>
+<td>精读行长，复杂应用选读</td>
+</tr>
+</tbody>
+</table>
+<h2 id="这一课要解决什么问题">这一课要解决什么问题</h2>
+<p>保存一组成绩并统计，而不是为每个人写一个变量。本课结束做一个有明确输入输出的成绩统计器。</p>
+<h2 id="1-数组是编号的一排同类型元素">1. 数组是编号的一排同类型元素</h2>
+<p><strong>数组</strong>按编号组织一组固定长度元素，像编号从0开始的储物格。<code>int[] scores = new int[3]</code>建立3个int元素，默认各为0；变量scores保存数组引用。合法下标是0、1、2，<code>scores.length</code>是3，数组length不是方法，没有括号。</p>
+<p><strong>引用共享</strong>：<code>int[] b = scores</code>复制引用，像两张凭证找到同一排格子，改b[0]会影响从scores看到的内容。<code>Arrays.copyOf</code>建立另一份数组。对引用数组做浅拷贝时元素仍可能共享对象；当前先对int数组验证。</p>
+<pre><code class="language-java">for (int i = 0; i &lt; scores.length; i++) {
+    scores[i] += 1;
+}
+for (int score : scores) {
+    System.out.println(score);
+}
+</code></pre>
+<p>增强for适合依次读取元素；<code>for(int score:scores){score++;}</code>只改本轮局部变量，不会把int数组元素改掉。需要下标更新时用普通for。</p>
+<h2 id="2-不存在的位置不是随便一个值">2. 不存在的位置不是“随便一个值”</h2>
+<p>访问length位置会产生越界异常。空数组<code>new int[0]</code>合法，但没有第0项；它与null不同。统计平均值先确认数量大于0；最大值对非空数组可从第一项初始化，避免把全负数误判为0。</p>
+<h2 id="3-排序与查找有前提">3. 排序与查找有前提</h2>
+<p><code>Arrays.sort</code>会改变原数组顺序；想保留原始录入顺序先复制。<code>Arrays.binarySearch</code>要求相应区间按同样规则有序；未找到时返回负数编码，不能把所有负结果都解释成固定-1，也不能把返回值直接当成绩。</p>
+<h2 id="4-二维数组是数组的数组">4. 二维数组是数组的数组</h2>
+<p><code>int[][] grid={{1,2},{3,4,5}}</code>两行长度不同。外层<code>grid.length</code>是行数，内层每次读<code>grid[row].length</code>；不能假设每行都等于第0行长度。<strong>不规则数组</strong>就是这种不等长情况。NestedArrayDemo演示遍历；不要求现在写高维算法。</p>
+<p><strong>命令行参数</strong><code>String[] args</code>也属于数组；访问args[0]前检查长度。它与Scanner读键盘是不同的数据入口。</p>
+<h2 id="5-阶段项目的边界">5. 阶段项目的边界</h2>
+<p>成绩统计器先读数量n，约定0–100；n=0打印<code>no data</code>并结束。n&gt;0再读n个0–100的整数成绩，保留录入顺序，输出总分、两位小数平均分、最大值、最小值、及格人数，再另行打印排序副本。题目规定有效的成绩输入，不把字母恢复或文件保存作为本阶段卡关项。</p>
+<p>先写输入/输出样例，再拆步骤：分配数组→读入→统计→复制排序→输出。<strong>算法</strong>在这里就是为解决任务安排的一系列步骤，不是背某种高深公式。</p>
+<h2 id="动手实验">动手实验</h2>
+<p>运行ArrayDemo，预测别名修改和复制结果；运行NestedArrayDemo，修改第二行长度；运行ArgsEcho先不给参数再传两个参数。阶段项目参考程序只在独立完成后查看，不能用参考程序的测试通过来代替你的提交验证。</p>
+<h2 id="本课过关">本课过关</h2>
+<p>能解释数组引用、length和边界，处理n=0和单元素；项目各项输出符合题意。通过后进入第4章对象与类，后续课次尚需继续编写，不自动判为已学。</p>
+<h2 id="示例入口">示例入口</h2>
+<p><a href="page-b1915ed3b0b5.html">逐个示例与运行命令</a>。</p>
+<h2 id="学完交什么">学完交什么</h2>
+<p>完成<a href="page-edb3747d12d2.html">本课练习</a>，代码写入<a href="page-c4bb98fb3a80.html">my_code</a>，附命令、输入和结果。先做题，再看<a href="page-4a36dc3be0b6.html">参考答案</a>。批改后将结论保存到<a href="page-e8601bdcb726.html">进度追踪</a>。</p>
+<p>下一课规划：L11 对象、引用与预定义类（第4章4.1–4.2）；讲义尚未编写。</p><div class="pager"><a href="index.html">← 课程入口</a><a href="全一册.html">单文件阅读 →</a></div><p class="footer">课程原创配套讲解与习题 · 阅读教材 → 动手 → 订正 → 更新进度</p></article></main></div><script src="assets/course.js"></script></body></html>

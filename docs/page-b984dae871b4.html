@@ -1,0 +1,70 @@
+<!doctype html><html lang="zh-CN" data-theme="dark"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>环境说明 · 先用已有的JDK · Java陪读</title><link rel="stylesheet" href="assets/course.css"></head><body id="top"><header class="top"><a class="brand" href="index.html"><span>JAVA</span>一起把基础写扎实</a><div class="tools"><span class="tag">CORE JAVA · VOL. I · 10TH</span><a class="all-link" href="全一册.html">全一册</a><button id="theme" aria-label="切换浅色与深色">明 / 暗</button></div></header><div class="layout"><aside><input id="navsearch" class="navsearch" aria-label="筛选课程导航" placeholder="筛选导航…"><nav aria-label="课程导航"><div class="navlabel">START / 开始</div><a class="navlink" href="index.html">课程说明</a><a class="navlink" href="page-0ef3cebffbed.html">全书路线 · 35课</a><a class="navlink" href="page-b984dae871b4.html" aria-current="page">运行环境</a><a class="navlink" href="page-526e3b952094.html">书本与PDF页码</a><a class="navlink" href="page-4cc100767b13.html">零基础起飞</a><div class="navlabel">LESSONS / 第1–3章</div><a class="navlink" href="l01-lesson.html">L01 · 认识 Java 与程序运行</a><a class="navlink" href="l02-lesson.html">L02 · 编译、运行与读报错</a><a class="navlink" href="l03-lesson.html">L03 · 程序结构、变量与类型</a><a class="navlink" href="l04-lesson.html">L04 · 运算符与类型转换</a><a class="navlink" href="l05-lesson.html">L05 · 字符串与文本处理</a><a class="navlink" href="l06-lesson.html">L06 · 键盘输入、格式化与文件</a><a class="navlink" href="l07-lesson.html">L07 · 程序如何作选择</a><a class="navlink" href="l08-lesson.html">L08 · 让程序重复做事</a><a class="navlink" href="l09-lesson.html">L09 · switch、循环跳转与大数值</a><a class="navlink" href="l10-lesson.html">L10 · 数组与成绩统计器</a><div class="navlabel">TOOLS / 查阅与接续</div><a class="navlink" href="page-fea294d77afe.html">447条教材索引</a><a class="navlink" href="page-3f83fca99eef.html">术语表</a><a class="navlink" href="page-32d80fdb4bb7.html">AI批改与进度追踪</a><a class="navlink" href="page-e8601bdcb726.html">个人进度模板</a><a class="navlink" href="page-7def9b47aa03.html">维护与打包</a></nav><p class="side-note">按教材顺序，逐课练习。<br>材料准备 ≠ 学生已过关。<br>教材PDF需自备。</p></aside><main><article><div class="crumb">学习笔记 / 本地离线课程</div><span class="edition">第1–3章 · 10课已备 · 书本/PDF双页码</span><h1 id="环境说明-先用已有的jdk">环境说明 · 先用已有的JDK</h1><details class="page-toc"><summary>本页目录</summary><div class="toc">
+<ul>
+<li><a href="page-b984dae871b4.html#本机核对结果">本机核对结果</a></li>
+<li><a href="page-b984dae871b4.html#术语先说清楚">术语先说清楚</a></li>
+<li><a href="page-b984dae871b4.html#先会两步运行">先会两步运行</a></li>
+<li><a href="page-b984dae871b4.html#中文输入与输出">中文输入与输出</a></li>
+<li><a href="page-b984dae871b4.html#第10版与当前环境的区别">第10版与当前环境的区别</a></li>
+<li><a href="page-b984dae871b4.html#报错时如何判断">报错时如何判断</a></li>
+</ul>
+</div>
+</details>
+<h2 id="本机核对结果">本机核对结果</h2>
+<p>2026-10-27实际运行：<code>java -version</code>与<code>javac -version</code>（通过完整路径）均为21.0.12。安装目录为 <code>C:\Program Files\Java\graalvm-jdk-21.0.12+7.1</code>。当前终端的PATH没有找到这两个命令；不需要重新安装，更不必为学习第10版而降级全局环境。</p>
+<p>项目的 <code>.java-course.json</code> 记录本机位置，并由Git忽略。<code>java.ps1</code>优先读它，找不到才依次检查JAVA_HOME、PATH以及常见安装目录。换电脑时可从 <code>.java-course.example.json</code> 复制成本机配置再填写路径。不要把其他项目的配置和机器路径发进公开包。</p>
+<h2 id="术语先说清楚">术语先说清楚</h2>
+<ul>
+<li><strong>JDK</strong>：开发Java的工具包，里面有编译器和运行工具。像做菜的一套厨具，不只是拿到成品。</li>
+<li><strong>JVM</strong>：执行Java字节码的虚拟机。可以理解成各个平台提供的“字节码执行员”；它不是完整的电脑模拟器。</li>
+<li><strong>JRE</strong>：Java运行环境这个概念，包括JVM及运行所需的库等。现代JDK的发行形式和书中旧版界面不同，本课程不另找一个“JRE下载”安装。</li>
+<li><strong>PATH</strong>：系统寻找命令的目录清单。命令找不到只表明搜索失败，不证明软件没安装。</li>
+</ul>
+<h2 id="先会两步运行">先会两步运行</h2>
+<p>在某个示例目录的PowerShell中，手动执行（例：HelloJava.java）：</p>
+<pre><code class="language-powershell">$jdk = 'C:\Program Files\Java\graalvm-jdk-21.0.12+7.1'
+New-Item -ItemType Directory -Path .\out -Force | Out-Null
+&amp; &quot;$jdk\bin\javac.exe&quot; --release 8 -encoding UTF-8 '-Xlint:all,-options' -d .\out .\HelloJava.java
+if ($LASTEXITCODE -eq 0) {
+    &amp; &quot;$jdk\bin\java.exe&quot; -Dfile.encoding=UTF-8 -Dstdout.encoding=UTF-8 -Dstderr.encoding=UTF-8 -cp .\out HelloJava
+}
+</code></pre>
+<p><code>javac</code>把源文件变成<code>.class</code>；<code>java</code>按类名启动程序。<code>-d</code>指定编译产物目录；<code>-cp</code>指定从哪里找类；运行时写<code>HelloJava</code>，不带<code>.class</code>。<code>--release 8</code>在当前JDK允许的范围内约束Java8语法与标准API；它不会把JDK21变成JDK8。<code>-Xlint:all,-options</code>启用代码警告，仅关闭旧目标版本的选项提示。</p>
+<p>正常学习优先用根目录的 <code>java.ps1</code>：它每次新建隔离输出目录，失败立即停，避免错跑旧class。示例无package且各有独立main，不要把所有课次一次编译到同一个目录。</p>
+<p>需要程序参数时：<code>.\java.ps1 -Source '路径\ArgsDemo.java' -ProgramArgs @('red','blue')</code>。<code>-CompileOnly</code>只编译，不声称运行成功。脚本适用Windows PowerShell5.1或PowerShell7；其他系统可用上面同等的javac/java命令，路径按系统修改。</p>
+<h2 id="中文输入与输出">中文输入与输出</h2>
+<p>源码统一保存UTF-8；编译显式<code>-encoding UTF-8</code>。本机JDK21运行时可设置<code>-Dstdout.encoding=UTF-8</code>和<code>-Dstderr.encoding=UTF-8</code>；项目脚本同时临时设置控制台编码并在退出前恢复。输入示例使用键盘交互，不靠旧PowerShell默认编码的管道传中文。出现乱码时先记录终端、源文件编码和实际命令，别随意重装JDK。</p>
+<h2 id="第10版与当前环境的区别">第10版与当前环境的区别</h2>
+<table>
+<thead>
+<tr>
+<th>书中内容</th>
+<th>本课程处理</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>旧版JDK安装截图、IDE界面</td>
+<td>理解概念；路径用本机检查结果</td>
+</tr>
+<tr>
+<td>applet、浏览器Java插件、Java Web Start</td>
+<td>历史阅读，不安装浏览器插件，不列为必做实验</td>
+</tr>
+<tr>
+<td>finalize清理资源</td>
+<td>只辨析旧机制，不把它当作资源管理方案</td>
+</tr>
+<tr>
+<td>stop/suspend等旧线程控制</td>
+<td>不作为实践方案；并发课讲合作中断</td>
+</tr>
+<tr>
+<td>Java8之后新增语法/API</td>
+<td>后续另列补充；首批示例不用var、record等新写法</td>
+</tr>
+</tbody>
+</table>
+<p>版本差异依据：<a href="https://docs.oracle.com/en/java/javase/21/migrate/removed-tools-and-components.html">Oracle JDK21迁移指南</a>、<a href="https://docs.oracle.com/en/java/javase/21/docs/specs/man/javac.html">javac工具文档</a>。</p>
+<h2 id="报错时如何判断">报错时如何判断</h2>
+<p>编译失败看<code>javac</code>诊断；运行失败看异常类型、第一条指向自己源码的堆栈行和输入；结果错误则列出输入→期望→实际。<strong>看到Compilation succeeded只代表编译过了，看到程序自己的输出才说明它实际运行。</strong></p>
+<p>编译有错时不要手动继续运行旧class。脚本生成的 <code>.build/</code> 都是可再生文件，不含你的源码；本项目不自动删除其中内容。</p><div class="pager"><a href="index.html">← 课程入口</a><a href="全一册.html">单文件阅读 →</a></div><p class="footer">课程原创配套讲解与习题 · 阅读教材 → 动手 → 订正 → 更新进度</p></article></main></div><script src="assets/course.js"></script></body></html>
