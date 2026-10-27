@@ -1,8 +1,1596 @@
-<!doctype html><html lang="zh-CN" data-theme="dark"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>零基础起飞 · 在电脑上跑一个程序 · Java陪读</title><link rel="stylesheet" href="assets/course.css"></head><body id="top"><header class="top"><a class="brand" href="index.html"><span>JAVA</span>一起把基础写扎实</a><div class="tools"><span class="tag">CORE JAVA · VOL. I · 10TH</span><a class="all-link" href="全一册.html">全一册</a><button id="theme" aria-label="切换浅色与深色">明 / 暗</button></div></header><div class="layout"><aside><input id="navsearch" class="navsearch" aria-label="筛选课程导航" placeholder="筛选导航…"><nav aria-label="课程导航"><div class="navlabel">START / 开始</div><a class="navlink" href="index.html">课程说明</a><a class="navlink" href="page-0ef3cebffbed.html">全书路线 · 35课</a><a class="navlink" href="page-b984dae871b4.html">运行环境</a><a class="navlink" href="page-526e3b952094.html">书本与PDF页码</a><a class="navlink" href="page-4cc100767b13.html" aria-current="page">零基础起飞</a><div class="navlabel">LESSONS / 第1–3章</div><a class="navlink" href="l01-lesson.html">L01 · 认识 Java 与程序运行</a><a class="navlink" href="l02-lesson.html">L02 · 编译、运行与读报错</a><a class="navlink" href="l03-lesson.html">L03 · 程序结构、变量与类型</a><a class="navlink" href="l04-lesson.html">L04 · 运算符与类型转换</a><a class="navlink" href="l05-lesson.html">L05 · 字符串与文本处理</a><a class="navlink" href="l06-lesson.html">L06 · 键盘输入、格式化与文件</a><a class="navlink" href="l07-lesson.html">L07 · 程序如何作选择</a><a class="navlink" href="l08-lesson.html">L08 · 让程序重复做事</a><a class="navlink" href="l09-lesson.html">L09 · switch、循环跳转与大数值</a><a class="navlink" href="l10-lesson.html">L10 · 数组与成绩统计器</a><div class="navlabel">TOOLS / 查阅与接续</div><a class="navlink" href="page-fea294d77afe.html">447条教材索引</a><a class="navlink" href="page-3f83fca99eef.html">术语表</a><a class="navlink" href="page-32d80fdb4bb7.html">AI批改与进度追踪</a><a class="navlink" href="page-e8601bdcb726.html">个人进度模板</a><a class="navlink" href="page-7def9b47aa03.html">维护与打包</a></nav><p class="side-note">按教材顺序，逐课练习。<br>材料准备 ≠ 学生已过关。<br>教材PDF需自备。</p></aside><main><article><div class="crumb">学习笔记 / 本地离线课程</div><span class="edition">第1–3章 · 10课已备 · 书本/PDF双页码</span><h1 id="零基础起飞-在电脑上跑一个程序">零基础起飞 · 在电脑上跑一个程序</h1>
-<p>电脑里的<strong>文件</strong>是一份有名字的数据，例如讲义、PDF、源代码；<strong>文件夹</strong>用来组织这些文件。类比书页与书架，但电脑可以让文件夹一层层包含。</p>
-<p><strong>路径</strong>是找到文件的位置。例如 <code>D:\Code\Java\README.md</code> 是从盘符出发的完整地址；<code>code\HelloJava.java</code> 是相对当前目录的地址。命令里出现空格或中文时，用引号把路径包起来。Windows资源管理器的“查看→显示→文件扩展名”能帮你分清<code>.java</code>、<code>.txt</code>和<code>.pdf</code>；不要把代码保存成<code>HelloJava.java.txt</code>。</p>
-<p><strong>CPU</strong>负责执行计算，<strong>内存</strong>暂存运行中的数据，<strong>硬盘</strong>长期存文件。像厨师、案板和储物柜：关机后源码仍在硬盘，程序运行时的临时数据通常不会自动保存。类比只帮助理解分工，不代表CPU只有一个任务或内存只能存一种东西。</p>
-<p><strong>程序</strong>是按规则组织的一系列指令。<strong>源代码</strong>是人写的文字；Java编译器先把它转换成字节码文件，JVM再执行。<strong>进程</strong>是程序运行起来的一次活动；同一程序可以运行多次。需要查看进程时按<code>Ctrl+Shift+Esc</code>打开任务管理器；不要看到陌生进程就结束它。</p>
-<p><strong>终端</strong>是输入命令并观察输出的窗口；<strong>PowerShell</strong>是理解这些命令的一种程序。它们不等于Java。你写<code>javac</code>时，是请求PowerShell启动Java编译器；出现“不是可识别的命令”，说明找程序这一步就没成功，还没有开始检查Java语法。</p>
-<p>在VS Code里选择“文件→打开文件夹”，打开整个Java课程目录；菜单“终端→新建终端”会出现命令输入窗口。输入<code>Get-Location</code>查看当前目录，<code>Get-ChildItem</code>查看里面的文件。不要把提示符里的<code>PS D:\Code\Java&gt;</code>也复制进命令。</p>
-<p>首个任务：确认你能找到教材PDF、README和L01文件夹，打开讲义，然后按README运行HelloJava。暂时记住“保存→编译→运行”三步；看不懂代码时不急，L02和L03会逐项拆开。</p><div class="pager"><a href="index.html">← 课程入口</a><a href="全一册.html">单文件阅读 →</a></div><p class="footer">课程原创配套讲解与习题 · 阅读教材 → 动手 → 订正 → 更新进度</p></article></main></div><script src="assets/course.js"></script></body></html>
+<!doctype html><html lang="zh-CN" data-theme="dark"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>零基础起飞 · 学 Java 之前先把这些搞明白 · Java陪读</title><link rel="stylesheet" href="assets/course.css"></head><body id="top"><header class="top"><a class="brand" href="index.html"><span>JAVA</span>一起把基础写扎实</a><div class="tools"><span class="tag">CORE JAVA · VOL. I · 10TH</span><a class="all-link" href="全一册.html">全一册</a><button id="theme" aria-label="切换浅色与深色">明 / 暗</button></div></header><div class="layout"><aside><input id="navsearch" class="navsearch" aria-label="筛选课程导航" placeholder="筛选导航…"><nav aria-label="课程导航"><div class="navlabel">START / 开始</div><a class="navlink" href="index.html">课程说明</a><a class="navlink" href="page-0ef3cebffbed.html">全书路线 · 35课</a><a class="navlink" href="page-b984dae871b4.html">运行环境</a><a class="navlink" href="page-526e3b952094.html">书本与PDF页码</a><a class="navlink" href="page-4cc100767b13.html" aria-current="page">零基础起飞</a><div class="navlabel">LESSONS / 第1–3章</div><a class="navlink" href="l01-lesson.html">L01 · 认识 Java 与程序运行</a><a class="navlink" href="l02-lesson.html">L02 · 编译、运行与读报错</a><a class="navlink" href="l03-lesson.html">L03 · 程序结构、变量与类型</a><a class="navlink" href="l04-lesson.html">L04 · 运算符与类型转换</a><a class="navlink" href="l05-lesson.html">L05 · 字符串与文本处理</a><a class="navlink" href="l06-lesson.html">L06 · 键盘输入、格式化与文件</a><a class="navlink" href="l07-lesson.html">L07 · 程序如何作选择</a><a class="navlink" href="l08-lesson.html">L08 · 让程序重复做事</a><a class="navlink" href="l09-lesson.html">L09 · switch、循环跳转与大数值</a><a class="navlink" href="l10-lesson.html">L10 · 数组与成绩统计器</a><div class="navlabel">TOOLS / 查阅与接续</div><a class="navlink" href="page-fea294d77afe.html">447条教材索引</a><a class="navlink" href="page-3f83fca99eef.html">术语表</a><a class="navlink" href="page-32d80fdb4bb7.html">AI批改与进度追踪</a><a class="navlink" href="page-e8601bdcb726.html">个人进度模板</a><a class="navlink" href="page-7def9b47aa03.html">维护与打包</a></nav><p class="side-note">按教材顺序，逐课练习。<br>材料准备 ≠ 学生已过关。<br>教材PDF需自备。</p></aside><main><article><div class="crumb">学习笔记 / 本地离线课程</div><span class="edition">第1–3章 · 10课已备 · 书本/PDF双页码</span><h1 id="零基础起飞-学-java-之前先把这些搞明白">零基础起飞 · 学 Java 之前先把这些搞明白</h1><details class="page-toc"><summary>本页目录</summary><div class="toc">
+<ul>
+<li><a href="page-4cc100767b13.html#阅读路线">阅读路线</a></li>
+<li><a href="page-4cc100767b13.html#1-电脑到底在干什么">1. 电脑到底在干什么</a><ul>
+<li><a href="page-4cc100767b13.html#11-先把电脑想成一间厨房">1.1 先把电脑想成一间厨房</a></li>
+<li><a href="page-4cc100767b13.html#12-内存和硬盘最大的区别">1.2 内存和硬盘最大的区别</a></li>
+<li><a href="page-4cc100767b13.html#动手①看见保存前和保存后的区别">动手①：看见“保存前”和“保存后”的区别</a></li>
+</ul>
+</li>
+<li><a href="page-4cc100767b13.html#2-什么是文件">2. 什么是文件</a><ul>
+<li><a href="page-4cc100767b13.html#21-为什么要有文件">2.1 为什么要有文件</a></li>
+<li><a href="page-4cc100767b13.html#22-文件里到底装了什么">2.2 文件里到底装了什么</a></li>
+<li><a href="page-4cc100767b13.html#23-文件打开了和程序运行了不同">2.3 文件“打开了”和程序“运行了”不同</a></li>
+<li><a href="page-4cc100767b13.html#动手②查看文件的类型位置和大小">动手②：查看文件的类型、位置和大小</a></li>
+</ul>
+</li>
+<li><a href="page-4cc100767b13.html#3-文件名和扩展名先把后缀显示出来">3. 文件名和扩展名：先把后缀显示出来</a><ul>
+<li><a href="page-4cc100767b13.html#31-flighthellojava分成哪两部分">3.1 FlightHello.java分成哪两部分</a></li>
+<li><a href="page-4cc100767b13.html#32-这门课会遇到哪些后缀">3.2 这门课会遇到哪些后缀</a></li>
+<li><a href="page-4cc100767b13.html#33-windows-11怎样显示文件扩展名">3.3 Windows 11：怎样显示文件扩展名</a></li>
+<li><a href="page-4cc100767b13.html#34-最常见的坑源码其实多了一个txt">3.4 最常见的坑：源码其实多了一个.txt</a></li>
+<li><a href="page-4cc100767b13.html#动手③确认你看见的是真名">动手③：确认你看见的是真名</a></li>
+</ul>
+</li>
+<li><a href="page-4cc100767b13.html#4-文件夹路径以及我现在在哪">4. 文件夹、路径，以及“我现在在哪”</a><ul>
+<li><a href="page-4cc100767b13.html#41-为什么还要有文件夹">4.1 为什么还要有文件夹</a></li>
+<li><a href="page-4cc100767b13.html#42-路径就是地址">4.2 路径就是地址</a></li>
+<li><a href="page-4cc100767b13.html#43-绝对路径和相对路径">4.3 绝对路径和相对路径</a></li>
+<li><a href="page-4cc100767b13.html#44-三个位置容易被混在一起">4.4 三个“位置”容易被混在一起</a></li>
+<li><a href="page-4cc100767b13.html#45-空格引号与复制路径">4.5 空格、引号与复制路径</a></li>
+<li><a href="page-4cc100767b13.html#动手④复制一份真实地址">动手④：复制一份真实地址</a></li>
+</ul>
+</li>
+<li><a href="page-4cc100767b13.html#5-什么是程序为什么打开源码不等于运行">5. 什么是程序：为什么打开源码不等于运行</a><ul>
+<li><a href="page-4cc100767b13.html#51-先区分指令与数据">5.1 先区分“指令”与“数据”</a></li>
+<li><a href="page-4cc100767b13.html#52-用菜谱把几个角色分开">5.2 用菜谱把几个角色分开</a></li>
+<li><a href="page-4cc100767b13.html#53-java初学者最容易混淆的三个东西">5.3 Java初学者最容易混淆的三个东西</a></li>
+<li><a href="page-4cc100767b13.html#动手⑤看懂打开发生在哪里">动手⑤：看懂“打开”发生在哪里</a></li>
+</ul>
+</li>
+<li><a href="page-4cc100767b13.html#6-什么是进程用任务管理器看见正在运行的东西">6. 什么是进程：用任务管理器看见正在运行的东西</a><ul>
+<li><a href="page-4cc100767b13.html#61-程序和进程不是同一个角度">6.1 程序和进程不是同一个角度</a></li>
+<li><a href="page-4cc100767b13.html#62-任务管理器是观察工具">6.2 任务管理器是观察工具</a></li>
+<li><a href="page-4cc100767b13.html#63-程序卡住时先做什么">6.3 程序卡住时先做什么</a></li>
+<li><a href="page-4cc100767b13.html#动手⑥看见进程再正常关闭">动手⑥：看见进程，再正常关闭</a></li>
+</ul>
+</li>
+<li><a href="page-4cc100767b13.html#7-代码编译器以及java多出来的那一层">7. 代码、编译器，以及Java多出来的那一层</a><ul>
+<li><a href="page-4cc100767b13.html#71-人为什么不直接给cpu写指令">7.1 人为什么不直接给CPU写指令</a></li>
+<li><a href="page-4cc100767b13.html#72-编译器为什么像翻译员">7.2 编译器为什么像翻译员</a></li>
+<li><a href="page-4cc100767b13.html#73-java这条链要分两段看">7.3 Java这条链要分两段看</a></li>
+<li><a href="page-4cc100767b13.html#74-同一张角色表消除五个名字的混淆">7.4 同一张角色表，消除五个名字的混淆</a></li>
+<li><a href="page-4cc100767b13.html#75-跨平台到底承诺了什么">7.5 “跨平台”到底承诺了什么</a></li>
+<li><a href="page-4cc100767b13.html#76-我到底要不要重新安装">7.6 我到底要不要重新安装</a></li>
+<li><a href="page-4cc100767b13.html#动手⑦说清谁写谁编译谁执行">动手⑦：说清“谁写、谁编译、谁执行”</a></li>
+</ul>
+</li>
+<li><a href="page-4cc100767b13.html#8-终端和命令行从打开窗口到亲手运行">8. 终端和命令行：从打开窗口到亲手运行</a><ul>
+<li><a href="page-4cc100767b13.html#81-为什么要用打字下命令">8.1 为什么要用打字下命令</a></li>
+<li><a href="page-4cc100767b13.html#82-终端powershellcmd分别是什么">8.2 终端、PowerShell、cmd分别是什么</a></li>
+<li><a href="page-4cc100767b13.html#83-两种打开方法">8.3 两种打开方法</a></li>
+<li><a href="page-4cc100767b13.html#84-先会我在哪这里有什么走到哪里">8.4 先会“我在哪、这里有什么、走到哪里”</a></li>
+<li><a href="page-4cc100767b13.html#85-五个常用操作先解决眼前问题">8.5 五个常用操作，先解决眼前问题</a></li>
+<li><a href="page-4cc100767b13.html#动手⑧只走目录不写程序">动手⑧：只走目录，不写程序</a></li>
+<li><a href="page-4cc100767b13.html#86-在vs-code里建立一个自己的源码文件">8.6 在VS Code里建立一个自己的源码文件</a></li>
+<li><a href="page-4cc100767b13.html#87-先用课程工具跑通一次">8.7 先用课程工具跑通一次</a></li>
+<li><a href="page-4cc100767b13.html#88-再揭开脚本它大致帮你做了什么">8.8 再揭开脚本：它大致帮你做了什么</a></li>
+<li><a href="page-4cc100767b13.html#89-看见两步形式先编译再启动">8.9 看见两步形式：先编译，再启动</a></li>
+<li><a href="page-4cc100767b13.html#动手⑨走完新建保存运行找到产物">动手⑨：走完“新建→保存→运行→找到产物”</a></li>
+</ul>
+</li>
+<li><a href="page-4cc100767b13.html#9-中文编码和乱码不是一见方块就重装java">9. 中文、编码和乱码：不是一见方块就重装Java</a><ul>
+<li><a href="page-4cc100767b13.html#91-同样的文件为什么会读出怪文字">9.1 同样的文件，为什么会读出怪文字</a></li>
+<li><a href="page-4cc100767b13.html#92-先区分unicodeutf-8和字体">9.2 先区分Unicode、UTF-8和字体</a></li>
+<li><a href="page-4cc100767b13.html#93-java输出中文要经过几站">9.3 Java输出中文要经过几站</a></li>
+<li><a href="page-4cc100767b13.html#94-chcp能说明什么不能说明什么">9.4 chcp能说明什么，不能说明什么</a></li>
+<li><a href="page-4cc100767b13.html#动手⑩只改输出文字验证中文">动手⑩：只改输出文字，验证中文</a></li>
+</ul>
+</li>
+<li><a href="page-4cc100767b13.html#10-改了代码为什么还是旧结果">10. 改了代码，为什么还是旧结果</a><ul>
+<li><a href="page-4cc100767b13.html#101-先记住这三个动作">10.1 先记住这三个动作</a></li>
+<li><a href="page-4cc100767b13.html#102-用一个小实验看见旧在哪里">10.2 用一个小实验看见“旧”在哪里</a></li>
+<li><a href="page-4cc100767b13.html#103-编译失败也可能还留着上次的class">10.3 编译失败，也可能还留着上次的class</a></li>
+<li><a href="page-4cc100767b13.html#动手⑪故意错一次再验证恢复">动手⑪：故意错一次，再验证恢复</a></li>
+<li><a href="page-4cc100767b13.html#104-遇到这些现象先查哪一步">10.4 遇到这些现象，先查哪一步</a></li>
+</ul>
+</li>
+<li><a href="page-4cc100767b13.html#11-一页速查表">11. 一页速查表</a></li>
+<li><a href="page-4cc100767b13.html#12-动手清单做完能说清楚才算接上第一课">12. 动手清单：做完能说清楚，才算接上第一课</a></li>
+<li><a href="page-4cc100767b13.html#操作差异与查阅依据">操作差异与查阅依据</a></li>
+</ul>
+</div>
+</details>
+<blockquote>
+<p><strong>这篇给谁看</strong>：会开机、会上网、会收发文件，但还没分清“文件、程序、进程”，没用过终端，也不知道编译到底在干什么的读者。</p>
+<p><strong>读完要能做什么</strong>：找到自己的源文件，保存到正确位置，在终端里运行一个小程序；看到报错时知道先检查哪一步。</p>
+<p><strong>怎么读</strong>：每节先读解释，再做“动手”。不要一次背完名词。操作后停下来，确认屏幕上的现象和说明对得上。</p>
+</blockquote>
+<p>如果你曾经问过“这个命令到底往哪里输入”“我改的到底是哪一个文件”，这篇就从这些问题讲起。</p>
+<p>可以分三次读：先读第1–4节认识电脑和文件，再读第5–7节认识程序，最后坐在电脑前完成第8–12节。已经会的操作可以快速验证后跳过；遇到陌生步骤就停下来，不用硬往后赶。</p>
+<p>本文沿用 C++ 课程《零基础起飞》的展开方式，针对 Java 重新编写。<strong>不要求先学过 C++</strong>。这是一篇原创入门附录；正式课程的书本/PDF双页码仍在各课讲义中查阅。</p>
+<h2 id="阅读路线">阅读路线</h2>
+<table>
+<thead>
+<tr>
+<th>你现在的困惑</th>
+<th>先看这里</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>内存和硬盘是不是一回事？保存到底保存到哪里？</td>
+<td>第1节</td>
+</tr>
+<tr>
+<td>文件、文件夹、扩展名是什么？怎么显示后缀？</td>
+<td>第2–3节</td>
+</tr>
+<tr>
+<td>路径怎么读？命令为什么总说找不到文件？</td>
+<td>第4节</td>
+</tr>
+<tr>
+<td>双击.java为什么只是打开编辑器？</td>
+<td>第5、7节</td>
+</tr>
+<tr>
+<td>程序、进程、任务管理器到底有什么关系？</td>
+<td>第6节</td>
+</tr>
+<tr>
+<td>Java、JDK、JVM、javac、java怎么分？</td>
+<td>第7节</td>
+</tr>
+<tr>
+<td>命令输在哪里？怎样真正跑出一句话？</td>
+<td>第8节</td>
+</tr>
+<tr>
+<td>中文为什么变成怪符号？</td>
+<td>第9节</td>
+</tr>
+<tr>
+<td>明明改了代码，为什么输出还是旧的？</td>
+<td>第10节</td>
+</tr>
+<tr>
+<td>忘了一个词，想快速回顾</td>
+<td>第11节</td>
+</tr>
+<tr>
+<td>想确认自己能不能开始L01</td>
+<td>第12节</td>
+</tr>
+</tbody>
+</table>
+<h2 id="1-电脑到底在干什么">1. 电脑到底在干什么</h2>
+<h3 id="11-先把电脑想成一间厨房">1.1 先把电脑想成一间厨房</h3>
+<p>你做一顿饭，不能把所有事情都交给同一个东西：柜子负责存原料，台面负责摊开正在处理的东西，厨师负责照步骤操作。</p>
+<p>电脑也有分工。</p>
+<table>
+<thead>
+<tr>
+<th>厨房里的角色</th>
+<th>电脑里的东西</th>
+<th>它主要负责什么</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>厨师</td>
+<td><strong>CPU，中央处理器</strong></td>
+<td>执行指令，进行运算和控制</td>
+</tr>
+<tr>
+<td>料理台面</td>
+<td><strong>内存，也叫RAM</strong></td>
+<td>临时放正在使用的程序和数据</td>
+</tr>
+<tr>
+<td>储物柜</td>
+<td><strong>硬盘、固态硬盘等存储设备</strong></td>
+<td>保存程序、照片、文档等文件</td>
+</tr>
+</tbody>
+</table>
+<p>这三个词为什么要现在认识？因为以后你会碰到三种不同的问题：</p>
+<ul>
+<li>“我写的源码存在哪里？”——主要是在找硬盘上的文件。</li>
+<li>“这个程序运行时用了多少空间？”——可能是在问它占用了多少内存。</li>
+<li>“它是不是一直在计算？”——可能要观察CPU使用情况。</li>
+</ul>
+<p><strong>先分清自己在问哪件事，才不会把“硬盘快满了”和“内存不够用”当成同一个问题。</strong></p>
+<p>这个厨房比方只帮助理解分工。真实电脑还有寄存器、缓存、GPU等部件，CPU也不是完全不能暂存数据；现在不用把这些细节一口气学完。</p>
+<h3 id="12-内存和硬盘最大的区别">1.2 内存和硬盘最大的区别</h3>
+<table>
+<thead>
+<tr>
+<th>问题</th>
+<th>内存：台面</th>
+<th>硬盘：柜子</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>主要放什么</td>
+<td>当前运行、处理中的东西</td>
+<td>要保存的文件</td>
+</tr>
+<tr>
+<td>普通电脑断电后呢</td>
+<td>原来的运行状态通常不能保留</td>
+<td>已经正确保存的文件通常仍在</td>
+</tr>
+<tr>
+<td>“16GB内存”说的是谁</td>
+<td>这里</td>
+<td>不是这里</td>
+</tr>
+<tr>
+<td>“硬盘还剩100GB”说的是谁</td>
+<td>不是这里</td>
+<td>这里</td>
+</tr>
+<tr>
+<td>学Java时的例子</td>
+<td>正在执行的程序、运行时的数据</td>
+<td><code>.java</code>源码、教材PDF、保存的练习</td>
+</tr>
+</tbody>
+</table>
+<p>所以，<strong>保存</strong>不是“我已经在屏幕上看到字了”，而是让软件把修改写入对应文件。</p>
+<p>你在编辑器里改了三行代码，还没保存，编译器从硬盘读取的可能仍是旧内容。这就是为什么课程总让你先按 <code>Ctrl+S</code>。</p>
+<p>有些软件会自动保存、恢复未保存的内容。这是软件提供的额外帮助，不能据此认为“所有修改都会自动保存”。本课程先养成自己确认保存的习惯。</p>
+<h3 id="动手①看见保存前和保存后的区别">动手①：看见“保存前”和“保存后”的区别</h3>
+<ol>
+<li>打开记事本，输入一句“这是我的学习记录”。</li>
+<li>按 <code>Ctrl+S</code>。如果是新文档，会让你选文件名和保存位置。</li>
+<li>保存到一个你找得到的文件夹，名字例如 <code>观察.txt</code>。</li>
+<li>关闭记事本，再从资源管理器找到这个文件，重新打开。</li>
+</ol>
+<p><strong>应该看到什么</strong>：刚才保存的那句话还在。</p>
+<p><strong>如果找不到</strong>：先回忆刚才选了哪个文件夹，不要马上重写一份。下一节开始讲“怎样确定文件的位置”。</p>
+<h2 id="2-什么是文件">2. 什么是文件</h2>
+<h3 id="21-为什么要有文件">2.1 为什么要有文件</h3>
+<p>假设你写了一段文字，希望明天继续看。电脑需要知道三件事：</p>
+<ol>
+<li>你要保存哪些内容。</li>
+<li>这份内容叫什么名字。</li>
+<li>它放在什么地方。</li>
+</ol>
+<p><strong>文件</strong>就是电脑把一份数据组织起来、让你能按名字保存和读取的一种方式。可以先把它想成贴了标签的资料袋。</p>
+<p><code>观察.txt</code>、<code>教材.pdf</code>、<code>照片.jpg</code>、<code>FlightHello.java</code>，都属于文件。</p>
+<p>资料袋是比方，不代表一个文件在硬盘内部必须占连续的一整块空间。现在关心的是：它作为一份有名字的内容，可以被找到、打开、修改和保存。</p>
+<h3 id="22-文件里到底装了什么">2.2 文件里到底装了什么</h3>
+<p>照片看起来是画面，歌曲听起来是声音，源码看起来是文字；保存和传输时，它们都会用数字数据表示。</p>
+<p>电脑最基本的数据单位叫<strong>位</strong>，英文bit，可以取0或1。<strong>字节</strong>英文byte，通常按8位计算。你在“属性”里看到的文件大小，往往会用字节、KB、MB等表示。</p>
+<p>不用现在学习二进制计算，只要先知道：<strong>文件的内容要由合适的规则和软件解释。</strong></p>
+<table>
+<thead>
+<tr>
+<th>文件</th>
+<th>合适的打开方式</th>
+<th>为什么</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>观察.txt</code></td>
+<td>记事本、VS Code</td>
+<td>里面是文本</td>
+</tr>
+<tr>
+<td>教材PDF</td>
+<td>PDF阅读器</td>
+<td>按PDF的格式组织页面</td>
+</tr>
+<tr>
+<td>照片</td>
+<td>看图软件</td>
+<td>按图片格式解释数据</td>
+</tr>
+<tr>
+<td>Java源码</td>
+<td>VS Code等文本编辑器</td>
+<td>查看、修改代码文字</td>
+</tr>
+</tbody>
+</table>
+<p>拿记事本打开图片或<code>.class</code>文件，可能看到怪符号。这不一定说明文件坏了，也可能只是<strong>用错了查看内容的方式</strong>。</p>
+<h3 id="23-文件打开了和程序运行了不同">2.3 文件“打开了”和程序“运行了”不同</h3>
+<p>你双击教材PDF，启动的是PDF阅读器，阅读器把教材显示出来。教材里的示例代码不会因为你打开这一页就自动执行。</p>
+<p>同样，你在浏览器里看到这篇讲义，只是打开了网页。网页中的Java代码展示在屏幕上，不等于它已经在你的电脑里编译运行。</p>
+<table>
+<thead>
+<tr>
+<th>你做的事</th>
+<th>实际发生了什么</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>打开教材PDF</td>
+<td>阅读器显示教材</td>
+</tr>
+<tr>
+<td>打开网页中的讲义</td>
+<td>浏览器显示课程内容</td>
+</tr>
+<tr>
+<td>在VS Code打开.java</td>
+<td>编辑器显示源码文字</td>
+</tr>
+<tr>
+<td>按课程命令编译并启动Java类</td>
+<td>工具开始处理、执行这个程序</td>
+</tr>
+</tbody>
+</table>
+<h3 id="动手②查看文件的类型位置和大小">动手②：查看文件的类型、位置和大小</h3>
+<ol>
+<li>按 <code>Win+E</code> 打开<strong>文件资源管理器</strong>，就是平时浏览“此电脑”“下载”的那个窗口。</li>
+<li>找到刚保存的 <code>观察.txt</code>，右键选择“属性”。</li>
+<li>找到“文件类型”“位置”“大小”这几项。</li>
+<li>再对教材PDF做同样的观察。</li>
+</ol>
+<p><strong>应该发现</strong>：它们的类型、大小可以不同，位置也可以不同，但都是文件。</p>
+<p><strong>观察问题</strong>：你能把“它叫什么”和“它放哪里”分别说出来吗？说不清位置就接着看第4节。</p>
+<h2 id="3-文件名和扩展名先把后缀显示出来">3. 文件名和扩展名：先把后缀显示出来</h2>
+<h3 id="31-flighthellojava分成哪两部分">3.1 <code>FlightHello.java</code>分成哪两部分</h3>
+<table>
+<thead>
+<tr>
+<th>部分</th>
+<th>在这个名字里是什么</th>
+<th>有什么用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>主名</td>
+<td><code>FlightHello</code></td>
+<td>帮人和工具区分这份文件</td>
+</tr>
+<tr>
+<td>扩展名，也叫后缀</td>
+<td><code>.java</code></td>
+<td>提示文件的类型；影响工具识别和默认打开方式</td>
+</tr>
+</tbody>
+</table>
+<p>文件名中可以有多个点。对 <code>FlightHello.java.txt</code> 来说，最后的扩展名是 <code>.txt</code>，不是 <code>.java</code>。</p>
+<p><strong>扩展名像标签，不是转换器。</strong> 把照片从<code>.jpg</code>改名为<code>.java</code>，不会把照片变成Java代码；把源码从<code>.java</code>改成<code>.exe</code>，也不会变成能直接启动的Windows程序。</p>
+<h3 id="32-这门课会遇到哪些后缀">3.2 这门课会遇到哪些后缀</h3>
+<table>
+<thead>
+<tr>
+<th>后缀</th>
+<th>先理解成什么</th>
+<th>本课程里怎样用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>.txt</code></td>
+<td>普通文本</td>
+<td>观察记录、练习数据</td>
+</tr>
+<tr>
+<td><code>.md</code></td>
+<td>按Markdown标记排版的文本</td>
+<td>讲义、练习；在编辑器里能直接写答案</td>
+</tr>
+<tr>
+<td><code>.pdf</code></td>
+<td>固定页面的文档</td>
+<td>你的教材</td>
+</tr>
+<tr>
+<td><code>.java</code></td>
+<td>Java源代码文本</td>
+<td>你亲手编写、修改的程序</td>
+</tr>
+<tr>
+<td><code>.class</code></td>
+<td>编译后的Java类文件，包含字节码等信息</td>
+<td>交给Java运行环境加载执行，不手改其中内容</td>
+</tr>
+<tr>
+<td><code>.jar</code></td>
+<td>将Java类和资源等装在一起的一种归档文件</td>
+<td>后续学习打包；不是每个JAR都能直接启动</td>
+</tr>
+<tr>
+<td><code>.ps1</code></td>
+<td>PowerShell脚本</td>
+<td>项目的<code>java.ps1</code>会帮你编译和运行</td>
+</tr>
+<tr>
+<td><code>.exe</code></td>
+<td>Windows可执行文件</td>
+<td><code>java.exe</code>、<code>javac.exe</code>就是已有工具</td>
+</tr>
+<tr>
+<td><code>.zip</code></td>
+<td>压缩包</td>
+<td>下载课程后先完整解压，再学习和写作业</td>
+</tr>
+</tbody>
+</table>
+<p><strong>不要把 <code>.java</code>、<code>.class</code> 和 <code>java.exe</code>当成一个东西。</strong> 第7节会把它们串起来。</p>
+<h3 id="33-windows-11怎样显示文件扩展名">3.3 Windows 11：怎样显示文件扩展名</h3>
+<p>如果系统把后缀藏起来，你可能只看到 <code>FlightHello</code>，却不知道它实际叫 <code>FlightHello.java</code>还是<code>FlightHello.java.txt</code>。</p>
+<p>按下面做：</p>
+<ol>
+<li>按 <code>Win+E</code>，打开文件资源管理器。</li>
+<li>在窗口上方找到 <strong>“查看”</strong>。</li>
+<li>点开 <strong>“显示”</strong>。</li>
+<li>勾选 <strong>“文件扩展名”</strong>。</li>
+<li>回到文件列表，观察文件名的末尾。</li>
+</ol>
+<p>Windows 10常见的界面是在顶部“查看”选项卡里直接勾选“文件扩展名”；部分界面也可在“文件夹选项→查看”中取消“隐藏已知文件类型的扩展名”。找不到时按实际系统界面查看，<strong>资源管理器的右键“查看”菜单不一定包含这个开关</strong>。</p>
+<p>这个操作只改变显示方式，不会改动文件内容。它与“显示隐藏的项目”也不是同一个开关。</p>
+<h3 id="34-最常见的坑源码其实多了一个txt">3.4 最常见的坑：源码其实多了一个.txt</h3>
+<p>你在记事本中保存了 <code>FlightHello.java</code>，但保存类型仍是“文本文档”。实际文件名可能变成：</p>
+<pre><code class="language-text">FlightHello.java.txt
+</code></pre>
+<p>如果扩展名被隐藏，看起来很像已经起对名字了。</p>
+<p><strong>检查办法</strong>：先显示扩展名，再看完整名字；也可以右键属性查看文件类型。</p>
+<p>用记事本新存Java源码时，留意“保存类型”是否选为“所有文件”，名字是否确实以<code>.java</code>结束，编码是否为UTF-8。用VS Code新建并保存为<code>FlightHello.java</code>通常更直观，第8节会带你做。</p>
+<h3 id="动手③确认你看见的是真名">动手③：确认你看见的是真名</h3>
+<ol>
+<li>显示扩展名。</li>
+<li>在课程目录找一个 <code>.md</code>、一个 <code>.java</code>和教材 <code>.pdf</code>。</li>
+<li>分别读出它们的完整文件名。</li>
+<li>在VS Code中打开一个<code>.md</code>，按 <code>Ctrl+Shift+V</code>查看排版后的预览，再回到编辑标签。</li>
+</ol>
+<p><strong>应该看到什么</strong>：编辑区里有<code>#</code>、<code>**</code>等文本标记，预览区会把它们显示成标题或加粗。它们来自同一份<code>.md</code>文件。</p>
+<p><strong>和交作业有什么关系</strong>：答案直接写在本地 <code>练习.md</code> 的编辑区并保存。浏览器里的课程网页用于阅读，不会因为你在浏览器里看过题目就自动生成作答文件。</p>
+<h2 id="4-文件夹路径以及我现在在哪">4. 文件夹、路径，以及“我现在在哪”</h2>
+<h3 id="41-为什么还要有文件夹">4.1 为什么还要有文件夹</h3>
+<p>如果把照片、教材、示例、作业全堆在一起，你会很难找到想要的东西。</p>
+<p><strong>文件夹</strong>用来组织文件，也可以继续包含其他文件夹。它又叫<strong>目录</strong>；这两个词在本篇可以当作同义词。</p>
+<p>可以把硬盘想成柜子，文件夹是抽屉，抽屉里还可以有小抽屉。几层文件夹形成的组织结构，常叫<strong>目录树</strong>。</p>
+<p>这门课的一小部分可以画成：</p>
+<pre><code class="language-text">Java/                         ← 课程根目录
+├── README.md                 ← 总入口
+├── java.ps1                  ← 运行工具
+├── 附录/
+│   └── 零基础起飞.md
+├── L01_第01章_认识Java/
+│   ├── 讲义.md
+│   ├── 练习.md                ← 在这里直接写本课文字答案
+│   ├── code/                 ← 课程原始示例
+│   └── my_code/              ← 你自己的本课代码
+└── my_code/                  ← 第8节会新建，用于这篇入门实验
+    └── flight_lab/
+        └── FlightHello.java
+</code></pre>
+<p><strong>根目录</strong>在这里指这套课程最外层的文件夹，不是特指C盘根目录。判断自己有没有打开对：应该能在这一层同时看到 <code>README.md</code>、<code>java.ps1</code>和各课文件夹。</p>
+<p>根目录的入门实验<code>my_code/flight_lab</code>与L01里面的<code>my_code</code>是两个不同位置。这篇用新文件<code>FlightHello.java</code>练操作，不改你已经写过的L01答案和<code>HelloJava.java</code>。</p>
+<h3 id="42-路径就是地址">4.2 路径就是地址</h3>
+<p><strong>路径</strong>是告诉人和工具“到哪一层找哪个文件”的地址。</p>
+<p>以这台电脑的课程位置为例：</p>
+<pre><code class="language-text">D:\Code\Java\my_code\flight_lab\FlightHello.java
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>这一段</th>
+<th>读法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>D:</code></td>
+<td>D盘这个位置标识</td>
+</tr>
+<tr>
+<td><code>\Code</code></td>
+<td>进入Code文件夹</td>
+</tr>
+<tr>
+<td><code>\Java</code></td>
+<td>再进入Java文件夹</td>
+</tr>
+<tr>
+<td><code>\my_code</code></td>
+<td>再进入my_code</td>
+</tr>
+<tr>
+<td><code>\flight_lab</code></td>
+<td>再进入入门实验文件夹</td>
+</tr>
+<tr>
+<td><code>\FlightHello.java</code></td>
+<td>最后找到这个文件</td>
+</tr>
+</tbody>
+</table>
+<p><code>\</code>叫<strong>反斜杠</strong>，这里用来分隔层级。网上也经常看到<code>/</code>，叫正斜杠。Windows的许多工具能接受部分正斜杠写法，但并非所有位置都可随意互换；本篇的PowerShell示例统一按给出的写法输入。</p>
+<p><strong>盘符不是物理硬盘数量的证明。</strong> 一块硬盘可能划分出C盘、D盘；你的电脑也可能根本没有D盘。</p>
+<p>如果你从GitHub下载到“下载”文件夹，课程地址可能完全不同。<code>D:\Code\Java</code>是本机示例，不是每个人都必须拥有的固定地址。</p>
+<h3 id="43-绝对路径和相对路径">4.3 绝对路径和相对路径</h3>
+<p>别人问你“去图书馆怎么走”，你可以说完整街道门牌，也可以说“从这里出去右转”。</p>
+<ul>
+<li><strong>绝对路径</strong>类似完整门牌：写清确定的起点，例如<code>D:\Code\Java\README.md</code>。</li>
+<li><strong>相对路径</strong>类似“从这里走”：从当前所在目录算起，例如<code>README.md</code>。</li>
+</ul>
+<p>相对路径依赖一个前提：<strong>你现在站在哪里。</strong></p>
+<p>假设终端当前目录是<code>D:\Code\Java</code>：</p>
+<table>
+<thead>
+<tr>
+<th>写法</th>
+<th>指向哪里</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>README.md</code></td>
+<td>课程根目录里的README</td>
+</tr>
+<tr>
+<td><code>.\README.md</code></td>
+<td>同上；<code>.</code>表示当前位置</td>
+</tr>
+<tr>
+<td><code>.\附录\零基础起飞.md</code></td>
+<td>进入附录找这篇文章</td>
+</tr>
+<tr>
+<td><code>..\</code></td>
+<td>回到上一层<code>D:\Code</code></td>
+</tr>
+</tbody>
+</table>
+<p>如果当前目录已经变成<code>D:\Code\Java\附录</code>，同样写<code>README.md</code>就会在“附录”里面找它，不再指向根目录的README。</p>
+<p><strong>两个点 <code>..</code> 是上一层，一个点 <code>.</code> 是当前位置。</strong> 点后面跟哪个分隔符、后面还有哪些名字，也要一起读，不能只看某个词眼熟就认为地址相同。</p>
+<h3 id="44-三个位置容易被混在一起">4.4 三个“位置”容易被混在一起</h3>
+<table>
+<thead>
+<tr>
+<th>位置</th>
+<th>它是谁的状态</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>资源管理器地址栏</td>
+<td>这个浏览窗口正查看哪个文件夹</td>
+</tr>
+<tr>
+<td>VS Code打开的工作区文件夹</td>
+<td>编辑器把哪个文件夹当作项目入口</td>
+</tr>
+<tr>
+<td>终端当前目录</td>
+<td>这一个终端中的相对路径从哪里算</td>
+</tr>
+</tbody>
+</table>
+<p><strong>它们可能相同，也可能不同。</strong> 你在编辑器里点开一个深层源码，不代表终端自动跟着进入那个目录；新开另一个终端，也不保证继承你刚才所有操作。</p>
+<p>碰到“找不到文件”，先核对这三者，不要第一反应就重装软件。</p>
+<h3 id="45-空格引号与复制路径">4.5 空格、引号与复制路径</h3>
+<p>例如JDK安装在：</p>
+<pre><code class="language-text">C:\Program Files\Java\graalvm-jdk-21.0.12+7.1
+</code></pre>
+<p><code>Program Files</code>中间有空格。命令行需要知道“这是一个完整地址”，所以常把路径放进英文引号里：</p>
+<pre><code class="language-powershell">cd 'D:\Code\Java'
+</code></pre>
+<p>中文文件夹和带空格的路径并非一律不能用。本项目本来就有中文课次目录。先掌握引号和准确路径，不要为了学编程把课程目录全部改名。</p>
+<p>Java源文件主名先用英文，例如<code>FlightHello.java</code>，并与程序中的<code>public class FlightHello</code>对应，能减少起步时的拼写困扰。</p>
+<h3 id="动手④复制一份真实地址">动手④：复制一份真实地址</h3>
+<ol>
+<li>在资源管理器里进入课程最外层，确认看到README和<code>java.ps1</code>。</li>
+<li>按 <code>Ctrl+L</code>选中地址栏，再按 <code>Ctrl+C</code>复制当前文件夹地址。</li>
+<li>粘贴到记事本里，看清它从哪个盘或位置开始。</li>
+<li>再进入“附录”，比较地址末尾多了哪一段。</li>
+</ol>
+<p><strong>应该发现</strong>：文件夹地址和文件的完整地址不同，后者还要加文件名。</p>
+<p><strong>如果看到的是压缩包内部</strong>：先回到ZIP所在位置，右键选择“全部解压”，进入解压后的普通文件夹再操作。不要只从压缩包中拖出一个Java文件；课程还需要根目录里的运行工具和其他材料。</p>
+<h2 id="5-什么是程序为什么打开源码不等于运行">5. 什么是程序：为什么打开源码不等于运行</h2>
+<h3 id="51-先区分指令与数据">5.1 先区分“指令”与“数据”</h3>
+<p><strong>程序</strong>是为完成任务而组织的一系列指令。它可以显示文字、计算总价、处理图片，也可以启动和管理别的程序。</p>
+<p>记事本是一个程序，教材PDF通常是它交给阅读器处理的数据，Java源码则是开发工具要读取和处理的文本。</p>
+<p>现实中的一个软件可能由多个文件、库和资源组成，不能简单认定“一个软件永远就是一个.exe”。起步先分清：你在编辑什么，你正在让哪个工具执行任务。</p>
+<h3 id="52-用菜谱把几个角色分开">5.2 用菜谱把几个角色分开</h3>
+<p>想象你把做饭步骤写在纸上：</p>
+<table>
+<thead>
+<tr>
+<th>厨房里的动作</th>
+<th>编程中相似的动作</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>写、修改菜谱</td>
+<td>编写、修改源代码</td>
+</tr>
+<tr>
+<td>检查并转换为厨房能使用的操作单</td>
+<td>编译</td>
+</tr>
+<tr>
+<td>执行员按照操作单工作</td>
+<td>启动运行环境执行程序</td>
+</tr>
+<tr>
+<td>端出结果</td>
+<td>程序产生输出或完成其他任务</td>
+</tr>
+</tbody>
+</table>
+<p><strong>读一眼菜谱，不会自动做出饭。打开源文件，也不等于已经运行其中的程序。</strong></p>
+<p>这个比方不能用来理解所有底层细节，尤其别把字节码当成“已经执行过的结果”。字节码仍是待执行的指令表示，不是最终屏幕输出。</p>
+<h3 id="53-java初学者最容易混淆的三个东西">5.3 Java初学者最容易混淆的三个东西</h3>
+<table>
+<thead>
+<tr>
+<th>东西</th>
+<th>它是什么</th>
+<th>你通常怎样处理</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>FlightHello.java</code></td>
+<td>你编写的源码文本</td>
+<td>用编辑器打开、修改、保存</td>
+</tr>
+<tr>
+<td><code>FlightHello.class</code></td>
+<td>编译产生的类文件</td>
+<td>让Java运行环境加载执行</td>
+</tr>
+<tr>
+<td><code>java.exe</code></td>
+<td>已安装JDK中的启动工具</td>
+<td>在终端通过命令启动它</td>
+</tr>
+</tbody>
+</table>
+<p>双击<code>.java</code>具体会怎样，取决于电脑的<strong>文件关联</strong>，也就是系统约定“这种文件默认交给谁打开”。常见情况是打开编辑器，或询问用什么程序打开。这本身不说明Java坏了。</p>
+<p>双击<code>.class</code>也不等于系统自动知道“请替我选好运行环境、类路径和入口”。本课程用明确的命令启动，方便你看清每一步。</p>
+<p>如果你以后看到新版Java用<code>java 文件.java</code>直接启动源文件，那是JDK提供的<strong>源文件启动模式</strong>；其中仍有编译与执行过程。我们先学两步形式，便于观察文件和报错，不把“先编译再执行”误解成“所有工具都必须让人手工点两次”。</p>
+<h3 id="动手⑤看懂打开发生在哪里">动手⑤：看懂“打开”发生在哪里</h3>
+<ol>
+<li>在VS Code里打开课程的一个<code>.java</code>示例，只观察内容，先不点击运行。</li>
+<li>找到程序里<code>System.out.println(...)</code>那一行。</li>
+<li>想一想：现在只是显示了这行代码，终端里是否已经出现它要输出的文字？</li>
+</ol>
+<p><strong>应该区分</strong>：编辑器中显示代码，与程序在终端里实际输出，是两种不同的现象。第8节会真的运行一遍，再回来对照。</p>
+<h2 id="6-什么是进程用任务管理器看见正在运行的东西">6. 什么是进程：用任务管理器看见正在运行的东西</h2>
+<h3 id="61-程序和进程不是同一个角度">6.1 程序和进程不是同一个角度</h3>
+<p>源码和程序文件保存在硬盘上；当你启动程序，操作系统会为这次运行安排内存、执行等资源。</p>
+<p>这次运行中的实例，叫<strong>进程</strong>。可以类比“保存的菜谱”与“这一次正在进行的做饭活动”。</p>
+<table>
+<thead>
+<tr>
+<th>问题</th>
+<th>程序及其文件</th>
+<th>进程</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>关注什么</td>
+<td>保存的指令、软件内容</td>
+<td>一次运行活动</td>
+</tr>
+<tr>
+<td>不运行时还在吗</td>
+<td>已保存的文件仍可以在</td>
+<td>这次活动已经结束</td>
+</tr>
+<tr>
+<td>为什么会占内存</td>
+<td>文件被使用、运行时需要装入相关内容</td>
+<td>运行中要维护自己的数据和资源</td>
+</tr>
+<tr>
+<td>能和窗口一一对应吗</td>
+<td>不能这样推断</td>
+<td>也不能；一个窗口可能关联多个进程，进程也可以没窗口</td>
+</tr>
+</tbody>
+</table>
+<p>浏览器经常有多个进程；新版记事本可能用标签页组织文档。因此，“打开三个窗口就必定是三个独立进程”不能当成通用规则。</p>
+<p>Java程序运行时，任务管理器里可能看到<code>java.exe</code>、Java相关名称，或被归在某个应用分组里。具体显示随工具和启动方式不同，不要求大家的截图完全一致。</p>
+<h3 id="62-任务管理器是观察工具">6.2 任务管理器是观察工具</h3>
+<p><strong>任务管理器</strong>是Windows自带的工具，用来查看正在运行的应用、进程和资源使用情况。</p>
+<p>它像厨房监控台，可以帮助回答：“谁还在运行”“谁正忙”“谁占了较多内存”。</p>
+<p>打开方法：同时按 <strong><code>Ctrl+Shift+Esc</code></strong>。</p>
+<p>如果界面是精简的，先找“详细信息”或“更多详细信息”；如果已经有“进程”“性能”等页面，就直接进入“进程”。Windows不同版本的位置有差异，以文字标签为准。</p>
+<table>
+<thead>
+<tr>
+<th>常见列</th>
+<th>先怎样理解</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>名称</td>
+<td>这一项是哪一个应用或进程</td>
+</tr>
+<tr>
+<td>CPU</td>
+<td>一段时间内使用了多少CPU处理能力</td>
+</tr>
+<tr>
+<td>内存</td>
+<td>正占用多少内存</td>
+</tr>
+<tr>
+<td>磁盘</td>
+<td>近期存储读写活动</td>
+</tr>
+<tr>
+<td>网络</td>
+<td>近期网络传输活动</td>
+</tr>
+</tbody>
+</table>
+<p>点“内存”或“CPU”的列标题，通常可以按这一列排序；再点可能改变排序方向。</p>
+<p><strong>占得多不等于有错。</strong> 浏览器打开很多页面、编译器正在工作，都可能正常地使用资源。暂时等待键盘输入的程序，CPU占用也可能很低，但仍然活着。</p>
+<h3 id="63-程序卡住时先做什么">6.3 程序卡住时先做什么</h3>
+<p>对你在终端里启动的练习程序：先点到那个终端，再按 <strong><code>Ctrl+C</code></strong>，请求中断当前运行。</p>
+<p>如果按键被终端当作复制，先取消文字选择、确认焦点在正在运行程序的终端，再试一次。中断是否成功也要看程序是否停止、提示符是否重新出现。</p>
+<p>确实无法停止时，才在任务管理器里识别自己刚启动的程序，使用“结束任务”。这是强制停止，不会替你保存尚未保存的内容；不要为了练习随便结束不认识的系统进程、编辑器或其他人的任务。</p>
+<p><strong>死循环</strong>是本来想重复有限次，却写成一直无法结束的循环。它可能持续消耗CPU；也有程序只是等输入，看起来没动但并非死循环。先看题目要求和终端提示，不要只凭“还没结束”判断。</p>
+<h3 id="动手⑥看见进程再正常关闭">动手⑥：看见进程，再正常关闭</h3>
+<ol>
+<li>打开任务管理器，进入“进程”。</li>
+<li>按内存列排序，找出自己的浏览器；只观察，不结束它。</li>
+<li>打开一个记事本文档，观察列表中是否出现或更新对应项。</li>
+<li>从记事本菜单或窗口按钮正常关闭它，留意任务管理器的变化。</li>
+</ol>
+<p><strong>应该学会的事</strong>：能找到应用并观察资源，而不是要求列表必须恰好增加一行。</p>
+<p>后面自己的Java程序运行不结束时，你至少知道有“中断当前运行”和“确认进程再结束任务”这两种处理办法。</p>
+<h2 id="7-代码编译器以及java多出来的那一层">7. 代码、编译器，以及Java多出来的那一层</h2>
+<h3 id="71-人为什么不直接给cpu写指令">7.1 人为什么不直接给CPU写指令</h3>
+<p>CPU执行的是对应硬件能识别的机器指令，不是直接读懂中文作文。让人长期用一串机器指令编写复杂程序，很难阅读、修改和检查。</p>
+<p>所以有了<strong>编程语言</strong>：规定一些严格的写法，让人能够描述操作，再由工具处理这些描述。</p>
+<p><strong>代码</strong>就是你按编程语言规则写下来的内容；开发时原始的那份，叫<strong>源代码</strong>，简称<strong>源码</strong>。</p>
+<p>编程语言不像日常聊天那样能大量依靠猜测。少一个引号、拼错一个名字，可能就变成另一种意思，或者根本不符合规则。</p>
+<p>Java是这样一种语言。它的代码不要求你先学过C、C++或Python。</p>
+<h3 id="72-编译器为什么像翻译员">7.2 编译器为什么像翻译员</h3>
+<p><strong>编译器</strong>是一种程序：读取源码，检查相应规则，再转换为后续工具可以使用的形式。</p>
+<p>像把你写的菜谱整理成统一的操作单。整理时能发现漏了符号、名字用错、某些类型不合要求等问题，但不一定知道你原本想做什么菜。</p>
+<p>例如你本来想算长方形面积，却写成周长，程序完全可能编译成功。<strong>“工具接受了代码”和“结果符合题意”要分别判断。</strong></p>
+<h3 id="73-java这条链要分两段看">7.3 Java这条链要分两段看</h3>
+<p>本课程先采用下面的形式：</p>
+<pre><code class="language-text">你手写并保存                    编译得到                    启动执行
+FlightHello.java   --javac--&gt;   FlightHello.class   --java / JVM--&gt;   屏幕输出
+   源代码文本                  类文件，包含字节码等信息
+</code></pre>
+<p><strong>字节码</strong>是一种供Java虚拟机使用的指令表示。它与直接交给某一款CPU的机器码不是同一个层次。</p>
+<p><strong>JVM</strong>是Java Virtual Machine的缩写，中文叫<strong>Java虚拟机</strong>。它负责加载、执行相应Java程序；实际实现可能解释字节码，也可能把部分代码编译成本机机器码执行。初学不需要拆开它内部的所有步骤。</p>
+<p>这个“虚拟机”不是要求你先装一台完整的虚拟Windows电脑。先把它理解成<strong>Java程序的执行环境中的核心执行部分</strong>。</p>
+<h3 id="74-同一张角色表消除五个名字的混淆">7.4 同一张角色表，消除五个名字的混淆</h3>
+<table>
+<thead>
+<tr>
+<th>名字</th>
+<th>它是什么</th>
+<th>类比与作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Java</strong></td>
+<td>一门编程语言；日常也用来指相关平台</td>
+<td>你学习的规则，以及围绕它提供的工具与库</td>
+</tr>
+<tr>
+<td><strong>JDK</strong></td>
+<td>Java Development Kit，开发工具包</td>
+<td>工具箱，里面有编译、启动等开发工具</td>
+</tr>
+<tr>
+<td><strong>javac</strong></td>
+<td>JDK提供的Java编译命令</td>
+<td>翻译员，把源码编译成类文件</td>
+</tr>
+<tr>
+<td><strong>java</strong></td>
+<td>启动Java程序的命令</td>
+<td>请运行环境开始执行指定程序的入口</td>
+</tr>
+<tr>
+<td><strong>JVM</strong></td>
+<td>Java虚拟机</td>
+<td>运行环境中负责执行Java程序的核心部分</td>
+</tr>
+<tr>
+<td><strong>JRE</strong></td>
+<td>Java Runtime Environment，Java运行环境的概念</td>
+<td>JVM及运行所需库等；现代发行方式与旧教材截图不必完全相同</td>
+</tr>
+</tbody>
+</table>
+<p>特别看清最后一个字母：<code>java</code>和<code>javac</code>是两个不同的命令。它们不是“一个词的两种随便写法”。</p>
+<p>在Windows的JDK安装目录中，你能找到<code>java.exe</code>、<code>javac.exe</code>。这些工具本身已经是可运行的软件，不是你要从零编写的课堂作业。</p>
+<p>我们选用<strong>JDK 21</strong>来学习。书中的Java8写法与“电脑安装的JDK版本”也不是同一个概念；课程会尽量先按教材基础语法编写，再单独补新版本内容。</p>
+<h3 id="75-跨平台到底承诺了什么">7.5 “跨平台”到底承诺了什么</h3>
+<p>可以先把字节码想成统一的操作单：不同系统上有适配的执行环境，就不必每次重新手写一份同样的业务逻辑。</p>
+<p>但前提仍然存在：运行环境要兼容程序要求的版本，程序需要的库、文件和系统功能也得满足。</p>
+<table>
+<thead>
+<tr>
+<th>说法</th>
+<th>怎样修正</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Java程序任何电脑都能直接跑</td>
+<td>要有适配、兼容的运行环境及所需依赖</td>
+</tr>
+<tr>
+<td>Windows上的java.exe可以原样拿到所有系统执行</td>
+<td>启动工具和JVM实现也要适配系统、硬件</td>
+</tr>
+<tr>
+<td>有JDK就保证我写的程序完全正确</td>
+<td>工具不能替代题意检查和测试</td>
+</tr>
+</tbody>
+</table>
+<p>这不是让你现在研究全部兼容性问题，而是避免把“跨平台”误解为“没有任何条件”。</p>
+<h3 id="76-我到底要不要重新安装">7.6 我到底要不要重新安装</h3>
+<p><strong>这台电脑已经有可用的JDK21。</strong> 直接接着第8节检查，不用为了截图或教材版本相同而卸载重装。</p>
+<p>其他读者如果确实还没有JDK，可以按下面的顺序准备：</p>
+<ol>
+<li>打开Windows“设置→系统→关于/系统信息”，查看“系统类型”。普通x64电脑选x64；ARM电脑按实际架构选择，不根据“都是64位”就随意混选。</li>
+<li>到<a href="https://adoptium.net/temurin/releases/?version=21">Eclipse Temurin官方发布页</a>选择JDK21、Windows和相应架构。选择 <strong>JDK</strong>，不要只找能运行但不含开发工具的包。</li>
+<li>下载安装程序，记住安装位置。安装选项若提供添加PATH，可按安装器说明处理；已有环境的读者不用为了这一篇更改全局配置。</li>
+<li>安装后重新打开终端，再检查<code>java -version</code>和<code>javac -version</code>。</li>
+<li>能运行<code>java</code>但找不到<code>javac</code>时，先核对JDK是否完整安装、两个工具是否来自同一安装目录。</li>
+</ol>
+<p><strong>PATH</strong>是系统寻找命令时使用的一份目录清单，像“去哪几个地方找工具”的通讯录。<code>java</code>找不到，可能只是工具没被列进这份清单，不证明电脑完全没装Java。</p>
+<p>本课程根目录的<code>check-java.ps1</code>会优先读取项目配置，再尝试已有环境与常见安装目录。所以本机即使直接输入<code>java</code>找不到，也可以先通过课程工具使用已经安装的JDK。具体配置查<a href="page-b984dae871b4.html">环境说明</a>。</p>
+<h3 id="动手⑦说清谁写谁编译谁执行">动手⑦：说清“谁写、谁编译、谁执行”</h3>
+<p>看一眼上面的运行链，试着用自己的话补完整：</p>
+<blockquote>
+<p>我写的是<strong><em>_文件；</em></strong>_工具把它编译成类文件；启动时通过<strong><em>_命令，让</em></strong>_负责执行。</p>
+</blockquote>
+<p>不需要说得和本文一模一样，但不要把<code>.class</code>说成屏幕输出，也不要把JDK、javac、JVM都叫作“那个Java”。</p>
+<p>下一节会真正走一遍，不止停留在记名字。</p>
+<h2 id="8-终端和命令行从打开窗口到亲手运行">8. 终端和命令行：从打开窗口到亲手运行</h2>
+<h3 id="81-为什么要用打字下命令">8.1 为什么要用打字下命令</h3>
+<p>你也许习惯点“开始”“打开”。命令行只是另一种交代任务的方式：把“启动哪个工具、处理哪个文件、用什么选项”写成一行。</p>
+<p>学编程需要它，是因为：</p>
+<ul>
+<li>工具的一些功能通过命令使用最直接。</li>
+<li>同一条命令可以重复执行，也能原样交给别人复现。</li>
+<li>编译、运行产生的结果和诊断，可以保留成完整文字。</li>
+</ul>
+<p>它不是“必须很懂电脑才能打开的黑客模式”。我们先学几条只负责查看、换位置和运行自己文件的命令。</p>
+<h3 id="82-终端powershellcmd分别是什么">8.2 终端、PowerShell、cmd分别是什么</h3>
+<p><strong>终端</strong>先理解为容纳命令输入、输出的窗口或面板。</p>
+<p><strong>PowerShell</strong>是理解并执行你输入的命令的一种程序。<strong>cmd</strong>也是一种，但具体语法不同。<strong>Windows Terminal</strong>又可以提供标签页，让这些命令解释程序在里面运行。</p>
+<table>
+<thead>
+<tr>
+<th>名字</th>
+<th>在这篇里怎样理解</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>命令行</td>
+<td>用文字输入命令这种操作方式</td>
+</tr>
+<tr>
+<td>终端</td>
+<td>输入命令、看输出的界面</td>
+</tr>
+<tr>
+<td>PowerShell</td>
+<td>本文统一使用的命令解释程序</td>
+</tr>
+<tr>
+<td>cmd/命令提示符</td>
+<td>另一种命令解释程序；不要混抄两边的语法</td>
+</tr>
+<tr>
+<td>VS Code终端面板</td>
+<td>编辑器内提供的终端界面，里面仍要选具体使用哪个解释程序</td>
+</tr>
+</tbody>
+</table>
+<p><strong>下面所有标为powershell的命令，都在PowerShell里输入，不是写进.java代码里。</strong></p>
+<h3 id="83-两种打开方法">8.3 两种打开方法</h3>
+<p><strong>方法A：从Windows打开。</strong></p>
+<ol>
+<li>按一下 <code>Win</code> 键，打开开始菜单。</li>
+<li>输入 <code>PowerShell</code>。</li>
+<li>打开“Windows PowerShell”或已安装的“PowerShell”。普通权限即可。</li>
+<li>应该出现一个可以输入文字的窗口；窗口颜色不是判断依据。</li>
+</ol>
+<p><strong>方法B：从VS Code打开。</strong></p>
+<ol>
+<li>菜单“文件→打开文件夹”，选择课程最外层目录。</li>
+<li>菜单“终端→新建终端”。</li>
+<li>看终端标签或下拉菜单，确认选择的是PowerShell。</li>
+<li>如果当前是cmd、Git Bash等，使用终端旁的下拉菜单新建PowerShell终端。</li>
+</ol>
+<p>你可能看到：</p>
+<pre><code class="language-text">PS D:\Code\Java&gt;
+</code></pre>
+<p>这叫<strong>提示符</strong>，意思大致是“我当前在这个目录，正在等你的命令”。</p>
+<p><strong>不要把提示符一起输入。</strong> 如果材料写<code>PS D:\Code\Java&gt;</code>只是举例说明位置；真正需要输入的命令放在单独的命令块中。</p>
+<h3 id="84-先会我在哪这里有什么走到哪里">8.4 先会“我在哪、这里有什么、走到哪里”</h3>
+<p>先输入下面这一条，按回车：</p>
+<pre><code class="language-powershell">Get-Location
+</code></pre>
+<p>它会显示当前目录，例如：</p>
+<pre><code class="language-text">Path
+----
+D:\Code\Java
+</code></pre>
+<p>然后输入：</p>
+<pre><code class="language-powershell">Get-ChildItem
+</code></pre>
+<p>它会列出当前目录的文件与子目录。显示项目可能包括名称、修改时间、长度等；文件夹的长度列不一定像普通文件那样有数值。</p>
+<p><strong>输出不是让你继续输入的命令。</strong> 等新的提示符出现，再输入下一条。</p>
+<p>换目录用<code>Set-Location</code>。常见短写是<code>cd</code>，例如：</p>
+<pre><code class="language-powershell">cd 'D:\Code\Java'
+</code></pre>
+<p>这是一份本机地址示例。路径不同的读者，把第4节从地址栏复制的真实课程地址放进引号里。</p>
+<p>继续观察：</p>
+<pre><code class="language-powershell">cd '.\附录'
+Get-Location
+Get-ChildItem
+cd ..
+Get-Location
+</code></pre>
+<p><strong>应该看到什么</strong>：先进入附录，当前目录末尾增加“附录”；再<code>cd ..</code>回到课程根目录。</p>
+<p>PowerShell中<code>cd</code>到完整D盘路径可以直接切换。网上cmd教程的<code>cd /d</code>是另一套语法，不要拿来替换这里的命令。</p>
+<h3 id="85-五个常用操作先解决眼前问题">8.5 五个常用操作，先解决眼前问题</h3>
+<table>
+<thead>
+<tr>
+<th>想做什么</th>
+<th>PowerShell里的做法</th>
+<th>它不会自动替你做什么</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>看当前位置</td>
+<td><code>Get-Location</code>，常见短写<code>pwd</code></td>
+<td>不会切换目录</td>
+</tr>
+<tr>
+<td>看有哪些文件</td>
+<td><code>Get-ChildItem</code>，常见短写<code>dir</code></td>
+<td>不会打开、执行列出的文件</td>
+</tr>
+<tr>
+<td>换位置</td>
+<td><code>Set-Location '路径'</code>，常见短写<code>cd</code></td>
+<td>不会把编辑器所有文件搬过去</td>
+</tr>
+<tr>
+<td>清理当前屏幕显示</td>
+<td><code>Clear-Host</code>，常见短写<code>cls</code></td>
+<td>不会删除硬盘文件，也不保证清空所有终端历史</td>
+</tr>
+<tr>
+<td>退出当前解释程序</td>
+<td><code>exit</code></td>
+<td>不等于关机；在编辑器内可能只是关闭这个终端会话</td>
+</tr>
+</tbody>
+</table>
+<p>小技巧也逐个试：</p>
+<ul>
+<li>按 <strong>↑</strong>，通常能调出上一次输入的命令。</li>
+<li>文件夹名字较长时，输入前几个字符再按 <strong>Tab</strong>，观察补全结果；可能需要再按几次选择。</li>
+<li>粘贴到终端后，先检查路径和字符，再按回车。</li>
+<li>不知道某条命令做什么时，先问清楚，不把网上一整段陌生命令当成必做步骤。</li>
+</ul>
+<h3 id="动手⑧只走目录不写程序">动手⑧：只走目录，不写程序</h3>
+<p>从课程根目录出发，按8.4节进入附录，再退回根目录。最后用<code>Get-ChildItem</code>确认能看到 <code>java.ps1</code>。</p>
+<p><strong>成功标准</strong>：能解释每次<code>cd</code>之后当前位置怎么变。不是“复制了六行没看到红字就算会”。</p>
+<p>如果“找不到路径”，检查你实际的文件夹地址、名字、引号；不要假设所有人的电脑都有D盘，也不要为了凑教程路径去移动整个教材文件夹。</p>
+<h3 id="86-在vs-code里建立一个自己的源码文件">8.6 在VS Code里建立一个自己的源码文件</h3>
+<p>这次做一个新实验，<strong>不使用、不覆盖你已经提交的L01作业文件</strong>。</p>
+<ol>
+<li>用VS Code打开课程根目录，确认左边能看到 <code>README.md</code>、<code>java.ps1</code>和各课文件夹。</li>
+<li>在左侧资源管理器的课程根目录位置新建文件夹 <code>my_code</code>；如果已经有，就使用已有文件夹。</li>
+<li>在这个<code>my_code</code>里新建子文件夹 <code>flight_lab</code>。</li>
+<li>在<code>flight_lab</code>内新建文件 <code>FlightHello.java</code>。</li>
+<li>检查标签页或资源管理器显示的是这个完整名字，不是<code>.java.txt</code>。</li>
+<li>输入下面的代码，再按 <code>Ctrl+S</code>保存。</li>
+</ol>
+<pre><code class="language-java">public class FlightHello {
+    public static void main(String[] args) {
+        System.out.println(&quot;Hello, Java!&quot;);
+    }
+}
+</code></pre>
+<p>如果编辑器末尾额外显示一个空白行，不影响本例。重点是文件名、内容和实际执行结果。</p>
+<p>先这样读它，不必现在背所有关键字：</p>
+<table>
+<thead>
+<tr>
+<th>你看到的部分</th>
+<th>此刻只需要理解什么</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>class FlightHello</code></td>
+<td>给这个类起名；先把类当作组织代码的外壳</td>
+</tr>
+<tr>
+<td><code>main(...)</code></td>
+<td>本课这种程序启动时的入口；方法可以先理解为一段有名字的操作</td>
+</tr>
+<tr>
+<td><code>{</code>和<code>}</code></td>
+<td>圈定相应代码的范围，左右要配对</td>
+</tr>
+<tr>
+<td><code>System.out.println(...)</code></td>
+<td>把括号里的内容输出到终端并换行</td>
+</tr>
+<tr>
+<td><code>"Hello, Java!"</code></td>
+<td>程序要输出的一段文本</td>
+</tr>
+<tr>
+<td>最后的<code>;</code></td>
+<td>结束这一条语句</td>
+</tr>
+</tbody>
+</table>
+<p>Java区分大小写，<code>FlightHello</code>与<code>flighthello</code>不是随便互换的名字。代码中的引号、括号、分号用英文半角字符；不要用Word的弯引号替换<code>"</code>。</p>
+<p>课程第3章会进一步拆开这个模板。此刻先完成“找到文件→保存→运行”的闭环。</p>
+<h3 id="87-先用课程工具跑通一次">8.7 先用课程工具跑通一次</h3>
+<p>回到VS Code的PowerShell终端。先检查当前位置：</p>
+<pre><code class="language-powershell">Get-Location
+Get-ChildItem
+</code></pre>
+<p>确认当前在课程根目录，再分别执行：</p>
+<pre><code class="language-powershell">.\check-java.ps1
+</code></pre>
+<p>这会显示课程找到的JDK位置和版本。你这台电脑已有21.0.12；其他读者的维护版本号可能不同，不要求输出数字一模一样。</p>
+<p>然后执行：</p>
+<pre><code class="language-powershell">.\java.ps1 -Source '.\my_code\flight_lab\FlightHello.java'
+</code></pre>
+<p><strong>正确观察目标</strong>：终端里出现程序自己的这一行：</p>
+<pre><code class="language-text">Hello, Java!
+</code></pre>
+<p>看到版本号，只能说明版本检查运行过；看到编译信息，也不等于已经看到你的程序输出。别把“命令结束了”当成“题目要求的结果出现了”。</p>
+<p>把这条命令分开读：</p>
+<table>
+<thead>
+<tr>
+<th>部分</th>
+<th>意思</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>.\</code></td>
+<td>从当前目录找这个脚本</td>
+</tr>
+<tr>
+<td><code>java.ps1</code></td>
+<td>课程提供的PowerShell脚本，不是你写的Java源码</td>
+</tr>
+<tr>
+<td><code>-Source</code></td>
+<td>脚本的一个选项，后面告诉它源码在哪里</td>
+</tr>
+<tr>
+<td>后面的引号和路径</td>
+<td>把完整源码路径作为一个参数交过去</td>
+</tr>
+</tbody>
+</table>
+<p><strong>选项</strong>可以先理解为交代工具怎样工作的补充说明；<strong>参数</strong>是交给工具的数据。这里源码路径就是要交给脚本处理的数据。</p>
+<p>如果提示“禁止运行脚本”之类执行策略信息，可在课程根目录使用一次性的入口：</p>
+<pre><code class="language-powershell">powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\java.ps1 -Source '.\my_code\flight_lab\FlightHello.java'
+</code></pre>
+<p>这只给本次启动的PowerShell指定策略，不要求你永久修改电脑的全局设置。若是学校或单位策略强制限制，先保留完整错误文本，别反复更改系统选项。</p>
+<p>如果提示“没有找到JDK”，回到7.6节和<a href="page-b984dae871b4.html">环境说明</a>核对安装位置；如果提示“找不到源文件”，先核对目录和文件名。这是两种不同问题。</p>
+<h3 id="88-再揭开脚本它大致帮你做了什么">8.8 再揭开脚本：它大致帮你做了什么</h3>
+<p>课程脚本不是另一门神秘语言。对本阶段无package的单文件程序，它主要做：</p>
+<ol>
+<li>找到已经安装的JDK。</li>
+<li>找到你指定的源码，建立一份新的编译输出目录。</li>
+<li>调用<code>javac</code>编译。</li>
+<li><strong>只有编译成功才调用<code>java</code>启动</strong>，避免错跑上次的旧class。</li>
+<li>帮本机终端与程序输出约定UTF-8，减少中文乱码。</li>
+</ol>
+<p><strong>package</strong>是Java用于组织类名字的一种机制，后面才讲。此处只知道我们的入门文件暂时不写它，不能把这份单文件脚本当成所有复杂Java工程的通用启动器。</p>
+<h3 id="89-看见两步形式先编译再启动">8.9 看见两步形式：先编译，再启动</h3>
+<p>已经完成8.7后，再读这一段。它帮助你理解<code>javac</code>和<code>java</code>的区别，不要求第一次就记住每个选项。</p>
+<p>下面使用本机已检查的JDK位置。其他读者应采用自己的安装位置；先前<code>check-java.ps1</code>输出的<code>Course JDK</code>可帮助定位。</p>
+<p>在课程根目录执行：</p>
+<pre><code class="language-powershell">$jdk = 'C:\Program Files\Java\graalvm-jdk-21.0.12+7.1'
+New-Item -ItemType Directory -Path '.\my_code\flight_lab\out' -Force | Out-Null
+&amp; &quot;$jdk\bin\javac.exe&quot; --release 8 -encoding UTF-8 '-Xlint:all,-options' -d '.\my_code\flight_lab\out' '.\my_code\flight_lab\FlightHello.java'
+</code></pre>
+<p>这几行中，<code>$jdk</code>只是给一段路径起个临时名字；<code>New-Item</code>创建输出文件夹，<code>-Force</code>允许文件夹已存在；<code>| Out-Null</code>是不把创建目录的普通结果打印出来。它们属于PowerShell操作，不是Java源码。</p>
+<p>最后一行开头的<code>&amp;</code>表示“启动后面这个地址的程序”。引号把带空格的安装路径视作整体。</p>
+<table>
+<thead>
+<tr>
+<th>编译选项</th>
+<th>这里的作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--release 8</code></td>
+<td>在当前编译器支持范围内约束为Java8的语法与标准API</td>
+</tr>
+<tr>
+<td><code>-encoding UTF-8</code></td>
+<td>按UTF-8读取源文件文字</td>
+</tr>
+<tr>
+<td><code>-Xlint:all,-options</code></td>
+<td>启用代码警告，仅关闭旧目标版本本身的选项提示</td>
+</tr>
+<tr>
+<td><code>-d '...\out'</code></td>
+<td>把编译产物放进指定输出目录</td>
+</tr>
+<tr>
+<td>最后一个<code>.java</code>路径</td>
+<td>本次要编译的源码</td>
+</tr>
+</tbody>
+</table>
+<p><strong>编译成功时javac可能一句话都不输出。</strong> 不要因为没有“恭喜成功”就以为它没工作。</p>
+<p>紧接着执行下面这一整段：</p>
+<pre><code class="language-powershell">if ($LASTEXITCODE -eq 0) {
+    &amp; &quot;$jdk\bin\java.exe&quot; -cp '.\my_code\flight_lab\out' FlightHello
+}
+</code></pre>
+<p><code>$LASTEXITCODE</code>在这里保存刚才外部程序的退出码，0通常表示正常完成；<code>if</code>这段是PowerShell判断，意思是“上一次编译成功才继续”。不要在编译和这个判断之间再启动别的外部程序，否则读到的可能不是编译器的状态。</p>
+<p><code>-cp</code>告诉启动工具去哪个位置寻找类，简称<strong>类路径</strong>。这里启动的是类名<code>FlightHello</code>，不写<code>.class</code>扩展名；它也不等于把源码路径原样再抄一遍。</p>
+<p>现在应再次看到<code>Hello, Java!</code>。再执行：</p>
+<pre><code class="language-powershell">Get-ChildItem '.\my_code\flight_lab\out'
+</code></pre>
+<p><strong>应该找到</strong>：<code>FlightHello.class</code>。先不拿编辑器修改它：它是编译产物，源码才是你要编辑的内容。</p>
+<p>手动例子先用英文输出，是为了专注编译和启动；下面中文实验优先走课程脚本。不同终端的中文配置需要另核对，不能用“英文正常”证明所有编码环节都已经相同。</p>
+<h3 id="动手⑨走完新建保存运行找到产物">动手⑨：走完“新建→保存→运行→找到产物”</h3>
+<p>完成8.6–8.9，观察下列四个事实：</p>
+<ol>
+<li>编辑器里有你自己的<code>FlightHello.java</code>，源码中的类名一致。</li>
+<li>源文件已经保存。</li>
+<li>终端确实输出<code>Hello, Java!</code>。</li>
+<li>手动编译的<code>out</code>目录里确实有<code>FlightHello.class</code>。</li>
+</ol>
+<p>哪一项不符合，就先停在那一项排查。不要把四件事合成模糊的一句“反正我按了运行”。</p>
+<h2 id="9-中文编码和乱码不是一见方块就重装java">9. 中文、编码和乱码：不是一见方块就重装Java</h2>
+<h3 id="91-同样的文件为什么会读出怪文字">9.1 同样的文件，为什么会读出怪文字</h3>
+<p>电脑保存的是字节数据。要把字变成字节，以及把字节还原成字，需要双方约定规则。</p>
+<p>这类约定叫<strong>字符编码</strong>。类比一套“文字怎样写成数字、数字怎样读回文字”的规则本。</p>
+<p>你用一套规则保存，对方用另一套不匹配的规则读取，就可能出现乱码。</p>
+<p>这个比方不能理解成所有字符都固定占一个字节。不同编码使用的表示方法和长度可能不同。</p>
+<h3 id="92-先区分unicodeutf-8和字体">9.2 先区分Unicode、UTF-8和字体</h3>
+<table>
+<thead>
+<tr>
+<th>名字</th>
+<th>先理解什么</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Unicode</strong></td>
+<td>为字符等规定编号和相关规则的标准体系</td>
+</tr>
+<tr>
+<td><strong>UTF-8</strong></td>
+<td>将Unicode文本编码成字节的一种方式</td>
+</tr>
+<tr>
+<td><strong>GBK</strong></td>
+<td>中文环境里仍可能遇到的另一种字符编码</td>
+</tr>
+<tr>
+<td><strong>ASCII</strong></td>
+<td>早期常见的字符编码，覆盖基本英文等字符，不包含汉字</td>
+</tr>
+<tr>
+<td><strong>字体</strong></td>
+<td>决定字符用什么字形画到屏幕上</td>
+</tr>
+</tbody>
+</table>
+<p>例如英文字母<code>A</code>在UTF-8里用一个字节表示；汉字<code>中</code>用三个字节表示。<strong>“一个汉字就是一个字节”不能作为通用结论。</strong> 这与Java中<code>String.length()</code>的计数规则也不是同一个问题，后面字符串课会分开讲。</p>
+<p>如果字符成了别的乱字，先怀疑编码环节；如果部分符号只显示为方框，也可能是字体缺少对应字形。不要认为所有显示异常只有一个原因。</p>
+<h3 id="93-java输出中文要经过几站">9.3 Java输出中文要经过几站</h3>
+<p>可以把这次输出当成一封经过几个站点的信：</p>
+<pre><code class="language-text">你在编辑器里写中文
+    ↓ 按某种编码保存
+.java源文件
+    ↓ 编译器按约定读取
+程序中的文字
+    ↓ 运行时写出字节
+终端按自己的规则读取、显示
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>环节</th>
+<th>本课程先采用的做法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>源文件保存</td>
+<td>UTF-8</td>
+</tr>
+<tr>
+<td>javac读取源码</td>
+<td>显式指定<code>-encoding UTF-8</code></td>
+</tr>
+<tr>
+<td>本机程序输出与控制台</td>
+<td>优先由课程<code>java.ps1</code>配合UTF-8处理</td>
+</tr>
+<tr>
+<td>文本文件的读写</td>
+<td>输入输出课再明确指定读写编码</td>
+</tr>
+</tbody>
+</table>
+<p><strong>源码是UTF-8，不自动保证终端也按UTF-8显示。</strong> JDK版本、命令解释程序、终端和启动方式都有可能影响实际表现。</p>
+<h3 id="94-chcp能说明什么不能说明什么">9.4 <code>chcp</code>能说明什么，不能说明什么</h3>
+<p>在Windows终端里输入：</p>
+<pre><code class="language-powershell">chcp
+</code></pre>
+<p>它会显示当前活动控制台代码页，常见结果有936或65001；65001对应UTF-8。<strong>不要假设所有中文Windows、所有终端的默认结果都相同。</strong></p>
+<p>修改控制台代码页也不等于把硬盘上的源文件转换成了UTF-8。对Windows PowerShell5.1等环境，仅改<code>chcp</code>也未必同时改变所有.NET控制台、管道和程序的编码处理。</p>
+<p>初学时不必为了这一篇反复改系统区域设置。先使用已提供的脚本；确实遇到问题时，报告编辑器保存编码、实际启动命令和终端类型。</p>
+<h3 id="动手⑩只改输出文字验证中文">动手⑩：只改输出文字，验证中文</h3>
+<p>在你自己的<code>FlightHello.java</code>中，把那一行改成：</p>
+<pre><code class="language-java">System.out.println(&quot;我在学习Java&quot;);
+</code></pre>
+<p>然后：</p>
+<ol>
+<li>按 <code>Ctrl+S</code>保存，确认文件为UTF-8。</li>
+<li>回到课程根目录的PowerShell。</li>
+<li>用8.7节同一条<code>java.ps1 -Source ...</code>命令重新编译运行。</li>
+<li>观察是否真正输出了<code>我在学习Java</code>。</li>
+</ol>
+<p><strong>成功标准</strong>：源码、命令和实际输出能一一对应。</p>
+<p><strong>如果乱码</strong>：先保留现象，核对是不是仍在用刚才手动启动的旧class，或换成了另一种运行按钮。编辑器打开文件就已乱码时，先保留原文件副本、检查读取编码，不要一边看着乱码一边反复覆盖保存。</p>
+<h2 id="10-改了代码为什么还是旧结果">10. 改了代码，为什么还是旧结果</h2>
+<h3 id="101-先记住这三个动作">10.1 先记住这三个动作</h3>
+<p><strong>修改 → 保存 → 重新编译并运行。</strong></p>
+<p>你改的是源码，不会因此把之前生成的每一个<code>.class</code>都同步改好。编译器要重新处理保存后的源码，启动时也要找到这次产生的类文件。</p>
+<p>有些IDE会帮你自动编译，这是工具替你完成步骤；不能据此推断任意终端命令、任意目录也都会自动更新。</p>
+<h3 id="102-用一个小实验看见旧在哪里">10.2 用一个小实验看见“旧”在哪里</h3>
+<p>假设你已经完成第8节的手动编译，<code>out</code>目录里有输出<code>Hello, Java!</code>的类文件。</p>
+<p>如果你现在只修改源码中的文本，按 <code>Ctrl+S</code>，却<strong>只运行旧out目录里的类</strong>：</p>
+<pre><code class="language-powershell">&amp; &quot;$jdk\bin\java.exe&quot; -cp '.\my_code\flight_lab\out' FlightHello
+</code></pre>
+<p>它仍可能输出旧文字。这不是源码修改没生效，而是<strong>你根本还没把这个修改编译到正在运行的那份class里</strong>。</p>
+<p>这里的<code>$jdk</code>沿用8.9节在同一个PowerShell会话中的设置。换了新终端，这个临时名字可能已经不存在，需要重新设置；不要把变量不存在误判成Java类文件损坏。</p>
+<h3 id="103-编译失败也可能还留着上次的class">10.3 编译失败，也可能还留着上次的class</h3>
+<p>在自己实验文件里暂时删掉<code>println</code>语句后的分号：</p>
+<pre><code class="language-java">System.out.println(&quot;我在学习Java&quot;)
+</code></pre>
+<p>重新编译应当失败。<strong>失败不会保证替你删除所有旧产物。</strong> 如果忽略错误，另外运行上次的class，就可能又看到旧输出。</p>
+<p>课程<code>java.ps1</code>每次使用新的隔离输出目录，编译失败立即停下，就是为了减少这个误会。</p>
+<h3 id="动手⑪故意错一次再验证恢复">动手⑪：故意错一次，再验证恢复</h3>
+<ol>
+<li>确保你改的是入门实验<code>FlightHello.java</code>，不是教材示例或已经交过的L01源码。</li>
+<li>删掉一处分号并保存。</li>
+<li>用课程脚本运行，记录第一条有效编译诊断，以及是否出现程序自己的输出。</li>
+<li>恢复分号，保存，再运行。</li>
+<li>看到正确中文输出后，才把“这次已恢复”记下来。</li>
+</ol>
+<p>编译诊断里的路径、行号和措辞可能随环境变化；关注它是否指出你故意制造的错误。不要求和老师的英文/中文提示逐字相同。</p>
+<h3 id="104-遇到这些现象先查哪一步">10.4 遇到这些现象，先查哪一步</h3>
+<table>
+<thead>
+<tr>
+<th>现象</th>
+<th>优先核对</th>
+<th>下一步</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>java</code>不是可识别的命令</td>
+<td>工具位置和PATH</td>
+<td>用<code>check-java.ps1</code>检查，不直接断言没装JDK</td>
+</tr>
+<tr>
+<td>找不到<code>java.ps1</code></td>
+<td>当前目录</td>
+<td>先<code>Get-Location</code>，再看这一层是否有脚本</td>
+</tr>
+<tr>
+<td>找不到源码</td>
+<td>源码路径、完整文件名</td>
+<td>核对.java.txt、引号和真实保存位置</td>
+</tr>
+<tr>
+<td>提示public类应在另一个文件中</td>
+<td>文件名和public类名</td>
+<td>核对大小写与名字</td>
+</tr>
+<tr>
+<td>启动时提示找不到main</td>
+<td>入口模板和这次启动的类</td>
+<td>不只看“编译通过”</td>
+</tr>
+<tr>
+<td>改了文字还是旧输出</td>
+<td>保存、编译是否成功、类路径</td>
+<td>核对究竟运行哪份class</td>
+</tr>
+<tr>
+<td>控制台没有提示符，但看起来不动</td>
+<td>是否在等键盘输入</td>
+<td>看程序要求；不急着认定死循环</td>
+</tr>
+<tr>
+<td>新窗口一闪而过</td>
+<td>是否程序结束时窗口随之关闭</td>
+<td>在现有终端中启动，便于保留输出</td>
+</tr>
+<tr>
+<td>中文变怪字符</td>
+<td>源文件、编译、输出、终端的编码链</td>
+<td>先走课程脚本，保留完整命令和现象</td>
+</tr>
+<tr>
+<td>能正常结束但结果不对</td>
+<td>题意、输入、表达式和逻辑</td>
+<td>写清输入→期望→实际，不只说“跑通了”</td>
+</tr>
+</tbody>
+</table>
+<p><strong>编译错误、启动错误、运行时异常和逻辑错误不是同一个阶段。</strong> L01和L02会继续用实验把它们分开。</p>
+<h2 id="11-一页速查表">11. 一页速查表</h2>
+<p>忘了就回来查，不要求一口气背下来。</p>
+<table>
+<thead>
+<tr>
+<th>词或写法</th>
+<th>一句话解释</th>
+<th>想到它时先问什么</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CPU</td>
+<td>执行指令、运算与控制的处理器</td>
+<td>程序在忙着做什么？</td>
+</tr>
+<tr>
+<td>内存/RAM</td>
+<td>当前运行需要的临时数据空间</td>
+<td>哪个进程占了多少？</td>
+</tr>
+<tr>
+<td>硬盘/存储</td>
+<td>保存文件的地方</td>
+<td>我的文件存在哪里？</td>
+</tr>
+<tr>
+<td>文件</td>
+<td>有名字、可以保存和读取的一份数据</td>
+<td>它叫什么、内容是什么？</td>
+</tr>
+<tr>
+<td>扩展名</td>
+<td>文件名末尾提示类型的部分</td>
+<td>是.java还是.java.txt？</td>
+</tr>
+<tr>
+<td>文件夹/目录</td>
+<td>组织文件和下层文件夹的位置</td>
+<td>我进到了哪一层？</td>
+</tr>
+<tr>
+<td>根目录</td>
+<td>当前讨论的项目最外层</td>
+<td>这一层有没有README与java.ps1？</td>
+</tr>
+<tr>
+<td>路径</td>
+<td>找文件或目录的地址</td>
+<td>起点是什么？</td>
+</tr>
+<tr>
+<td>绝对路径</td>
+<td>写清确定起点的地址</td>
+<td>是否适合我电脑的实际位置？</td>
+</tr>
+<tr>
+<td>相对路径</td>
+<td>从当前目录算起的地址</td>
+<td>当前目录究竟是哪儿？</td>
+</tr>
+<tr>
+<td><code>.</code> / <code>..</code></td>
+<td>当前位置 / 上一层</td>
+<td>我准备往哪走？</td>
+</tr>
+<tr>
+<td>编辑器</td>
+<td>查看、修改源码文本的软件</td>
+<td>改的文件保存了吗？</td>
+</tr>
+<tr>
+<td>源代码</td>
+<td>按语言规则编写的原始代码</td>
+<td>本次准备编译哪份.java？</td>
+</tr>
+<tr>
+<td>编译器/javac</td>
+<td>检查并转换Java源码的工具</td>
+<td>编译真的成功了吗？</td>
+</tr>
+<tr>
+<td>字节码与.class</td>
+<td>类文件中供Java执行环境处理的指令表示等</td>
+<td>是否本次新编译的产物？</td>
+</tr>
+<tr>
+<td>java命令</td>
+<td>启动Java程序的工具</td>
+<td>类路径和启动类名对吗？</td>
+</tr>
+<tr>
+<td>JVM</td>
+<td>执行Java程序的虚拟机</td>
+<td>运行环境是否兼容？</td>
+</tr>
+<tr>
+<td>JDK</td>
+<td>包含编译、运行等工具的开发包</td>
+<td>用的是哪套安装？</td>
+</tr>
+<tr>
+<td>进程</td>
+<td>程序的一次运行实例</td>
+<td>它还在跑还是已经退出？</td>
+</tr>
+<tr>
+<td>任务管理器</td>
+<td>查看进程和资源的工具</td>
+<td>我识别清楚自己的程序了吗？</td>
+</tr>
+<tr>
+<td>终端/PowerShell</td>
+<td>输入输出界面 / 本文采用的命令解释程序</td>
+<td>命令输对地方了吗？</td>
+</tr>
+<tr>
+<td>提示符</td>
+<td>解释程序等待输入时显示的提示</td>
+<td>不要把它一起当命令复制</td>
+</tr>
+<tr>
+<td>参数与选项</td>
+<td>交给工具的数据与工作说明</td>
+<td>路径有没有作为完整的一项传入？</td>
+</tr>
+<tr>
+<td>PATH</td>
+<td>寻找命令的目录清单</td>
+<td>工具没找到，还是源码没找到？</td>
+</tr>
+<tr>
+<td>UTF-8</td>
+<td>将文字编码成字节的一种方式</td>
+<td>写、读两端约定一致吗？</td>
+</tr>
+<tr>
+<td>编译产物</td>
+<td>工具生成的.class等结果文件</td>
+<td>不手改它，回去改源码</td>
+</tr>
+</tbody>
+</table>
+<p>如果一个词仍然模糊，再看<a href="page-3f83fca99eef.html">术语表</a>。需要安装、配置与完整命令时看<a href="page-b984dae871b4.html">环境说明</a>。先用这篇走通操作，不要求提前读完整本教材。</p>
+<h2 id="12-动手清单做完能说清楚才算接上第一课">12. 动手清单：做完能说清楚，才算接上第一课</h2>
+<p>这份清单是自查，不是自动给你判成绩。已经会的可以验证一次；卡住的写下卡在哪一步。</p>
+<table>
+<thead>
+<tr>
+<th>序号</th>
+<th>请亲手完成</th>
+<th>应该能拿什么说明完成了</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>保存并重新打开一份文本</td>
+<td>重新打开仍看见保存内容</td>
+</tr>
+<tr>
+<td>2</td>
+<td>显示文件扩展名</td>
+<td>能读出.md、.java、.pdf的完整名字</td>
+</tr>
+<tr>
+<td>3</td>
+<td>复制课程根目录真实地址</td>
+<td>说清这一层有哪些关键文件</td>
+</tr>
+<tr>
+<td>4</td>
+<td>区分绝对与相对路径</td>
+<td>能说明同一个相对路径为何可能指向别处</td>
+</tr>
+<tr>
+<td>5</td>
+<td>打开任务管理器看自己的应用</td>
+<td>指出名称、CPU、内存列；不乱结束任务</td>
+</tr>
+<tr>
+<td>6</td>
+<td>打开PowerShell</td>
+<td>认出提示符；知道它不是Java代码</td>
+</tr>
+<tr>
+<td>7</td>
+<td>进入附录再回到根目录</td>
+<td>两次Get-Location的结果符合预期</td>
+</tr>
+<tr>
+<td>8</td>
+<td>新建自己的FlightHello.java</td>
+<td>文件名与public类名一致，源码已保存</td>
+</tr>
+<tr>
+<td>9</td>
+<td>用课程脚本运行</td>
+<td>终端出现程序自己的Hello, Java!</td>
+</tr>
+<tr>
+<td>10</td>
+<td>手动编译并找到class</td>
+<td>out里有FlightHello.class，能说明它由谁生成</td>
+</tr>
+<tr>
+<td>11</td>
+<td>改成中文后重新运行</td>
+<td>看到我在学习Java，或记录明确的乱码现象</td>
+</tr>
+<tr>
+<td>12</td>
+<td>故意缺分号再恢复</td>
+<td>分别保留失败诊断与恢复后的实际结果</td>
+</tr>
+<tr>
+<td>13</td>
+<td>分清.java、.class、java命令</td>
+<td>能说清源码、编译产物、启动工具的关系</td>
+</tr>
+<tr>
+<td>14</td>
+<td>把一个疑问写出来</td>
+<td>直接记在当前练习.md的相应题目下，不必另造一份作答</td>
+</tr>
+</tbody>
+</table>
+<p>最后试着回答三个问题：</p>
+<ol>
+<li>我现在正在编辑的文件到底放在哪里，完整名字是什么？</li>
+<li>源码已经修改，但只运行旧class，为什么输出可能不变？</li>
+<li>程序卡住时，我怎样先确认它是在等输入，还是需要中断？</li>
+</ol>
+<p>如果能结合自己刚才看到的东西解释，就可以接着读<a href="l01-lesson.html">L01讲义</a>，再直接在<a href="page-2bd2136ce2bb.html">L01练习</a>里作答。</p>
+<p>已经做过L01的读者，可以把这篇当作查漏补缺，不会因为补读就清空原来的提交或要求重新做一遍。课程示例被老师跑通，也不代表你的动手清单已经完成；实际进度以你的确认和作答为依据。</p>
+<h2 id="操作差异与查阅依据">操作差异与查阅依据</h2>
+<p>本篇保留“生活类比→操作步骤→观察结果→排错”的教学结构。Windows菜单、记事本标签页和编辑器界面会随版本变化；操作名字以实际界面为准，遇到差异可贴完整现象来核对。</p>
+<ul>
+<li><a href="https://support.microsoft.com/en-us/windows/experience/storage-filemanagement/common-file-name-extensions-in-windows">Microsoft：Windows中的文件扩展名</a>。</li>
+<li><a href="https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_locations">Microsoft：PowerShell中的当前位置</a>。</li>
+<li><a href="https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.management/get-childitem">Microsoft：Get-ChildItem</a>。</li>
+<li><a href="https://docs.oracle.com/en/java/javase/21/docs/specs/man/java.html">Oracle：JDK21的java启动工具与源文件启动模式</a>。</li>
+</ul>
+<p>这些链接供界面有差异或希望继续查阅时使用，不是读这篇前必须先读完的文档。</p><div class="pager"><a href="index.html">← 课程入口</a><a href="全一册.html">单文件阅读 →</a></div><p class="footer">课程原创配套讲解与习题 · 阅读教材 → 动手 → 订正 → 更新进度</p></article></main></div><script src="assets/course.js"></script></body></html>
