@@ -32,18 +32,26 @@ main{min-width:0;padding:40px 5vw 70px}.crumb{font-size:12px;letter-spacing:1px;
 @media print{aside,.tools,.top,.pager,.crumb{display:none}.layout{display:block}main{padding:0}body{background:white;color:black;font-size:11pt}article{max-width:none}pre,blockquote{background:#fafafa;color:black;border-color:#ccc}a{color:black}details{break-inside:avoid}}
 '''
 
-JS = '''
-(()=>{const root=document.documentElement;try{root.dataset.theme=localStorage.getItem('java-course-theme')||'dark'}catch(e){}
-document.querySelector('#theme').addEventListener('click',()=>{root.dataset.theme=root.dataset.theme==='light'?'dark':'light';try{localStorage.setItem('java-course-theme',root.dataset.theme)}catch(e){}});
-const input=document.querySelector('#navsearch');if(input)input.addEventListener('input',()=>{const q=input.value.trim().toLowerCase();document.querySelectorAll('.navlink').forEach(a=>{a.hidden=!a.textContent.toLowerCase().includes(q);a.style.display=a.hidden?'none':''})});
-document.querySelectorAll('table').forEach(table=>{const box=document.createElement('div');box.className='table-wrap';table.replaceWith(box);box.appendChild(table)});
-})();
+CSS += '''
+.top{position:sticky;top:0;z-index:20}.layout aside{top:78px;height:calc(100vh - 78px)}
+.navlink{transition:color .16s ease,background-color .16s ease,box-shadow .16s ease}.navlink[hidden]{display:none!important}
+.navlink[aria-current]{color:var(--accent);background:var(--panel);box-shadow:inset 2px 0 var(--accent);font-weight:600}
+h1,h2,h3,h4,.bundle-section{scroll-margin-top:105px}.navlabel{border-top:1px solid var(--line);padding-top:16px}.navlabel:first-of-type{border-top:0}
+.lesson-tabs{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0 25px}.lesson-tabs a{padding:6px 15px;border:1px solid var(--line);border-radius:7px;text-decoration:none;font-size:14px}
+.lesson-tabs a[aria-current]{background:var(--panel);color:var(--gold);border-color:var(--gold)}
+.course-cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin:25px 0}.course-card{padding:20px 22px;background:var(--panel);border:1px solid var(--line);border-radius:10px;min-width:0}
+.course-card h3{margin:0 0 10px;font-size:19px}.course-card p{color:var(--muted);font-size:14px;margin:8px 0}.course-card .card-links{display:flex;flex-wrap:wrap;gap:15px;font-size:14px;margin-top:14px}.start-links{display:flex;flex-wrap:wrap;gap:12px;margin:24px 0}.start-links a{display:inline-block;padding:9px 17px;border:1px solid var(--line);border-radius:8px;background:var(--panel);text-decoration:none}
+.pager a{max-width:48%}.mode-note{font-size:14px;color:var(--muted);padding:12px 17px;border:1px solid var(--line);border-radius:8px;margin:24px 0}
+@media(max-width:800px){.layout aside{position:relative;top:0;height:auto}.course-cards{grid-template-columns:1fr}.top .tag{display:none}.top{padding:12px 16px}.brand{font-size:16px}.brand span{margin-right:7px}.tools{gap:9px;font-size:13px}.tools button{font-size:13px;padding:5px 9px}.lesson-tabs a{padding:6px 11px}}
+@media(prefers-reduced-motion:reduce){.navlink{transition:none}}
 '''
+JS = (ROOT / '_课程工具/course_navigation.js').read_text(encoding='utf-8')
+ASSET_VERSION = hashlib.sha256((CSS + JS).encode('utf-8')).hexdigest()[:12]
 
 def collect_files():
     files = {Path(p) for p in ROOT_FILES}
     files.update(p.relative_to(ROOT) for p in (ROOT / '附录').glob('*.md'))
-    files.update(p.relative_to(ROOT) for p in (ROOT / '_课程工具').glob('*') if p.suffix in ['.py', '.json', '.txt', '.ps1'])
+    files.update(p.relative_to(ROOT) for p in (ROOT / '_课程工具').glob('*') if p.suffix in ['.py', '.json', '.txt', '.ps1', '.js', '.cjs'])
     for lesson in COURSE['lessons']:
         folder = ROOT / lesson['folder']
         for rel in ['讲义.md', '练习.md', 'my_code/README.md']:
@@ -54,7 +62,7 @@ def collect_files():
 
 def doc_name(rel):
     if rel == Path('README.md'):
-        return 'index.html'
+        return 'course-info.html'
     if rel.name == '讲义.md':
         return rel.parts[0].split('_')[0].lower() + '-lesson.html'
     return 'page-' + hashlib.sha256(rel.as_posix().encode('utf-8')).hexdigest()[:12] + '.html'
@@ -161,35 +169,105 @@ def render(rel, names, combined=False):
     toc_parser.feed(md.toc if len(md.toc_tokens) > 1 else '')
     return ''.join(toc_parser.parts), ''.join(parser.parts)
 
+def nav_owner(rel):
+    if rel in ['home', 'combined']:
+        return rel
+    rel = Path(rel)
+    if rel.name == 'README.md' and rel.parent.name in ['my_code', 'error_lab']:
+        return rel.parent.parent / ('练习.md' if rel.parent.name == 'my_code' else 'code/README.md')
+    return rel
+
+def nav_key(rel):
+    owner = nav_owner(rel)
+    return owner if isinstance(owner, str) else doc_id(owner)
+
 def navigation(names, active, combined=False):
-    def link(rel, label):
-        rel = Path(rel)
-        href = '#' + doc_id(rel) if combined else names[rel]
-        current = ' aria-current="page"' if rel == active else ''
-        return f'<a class="navlink" href="{href}"{current}>{html.escape(label)}</a>'
-    text = '<input id="navsearch" class="navsearch" aria-label="筛选课程导航" placeholder="筛选导航…"><nav aria-label="课程导航">'
-    text += '<div class="navlabel">START / 开始</div>'
-    for rel, label in [('README.md', '课程说明'), ('学习路线图.md', '全书路线 · 35课'),
-                       ('环境说明.md', '运行环境'), ('页码对应说明.md', '书本与PDF页码'), ('附录/零基础起飞.md', '零基础起飞')]:
+    def link(rel, label, kind='guide', lesson=''):
+        rel = rel if rel in ['home', 'combined'] else Path(rel)
+        href = {'home': 'index.html', 'combined': '全一册.html'}.get(rel, names.get(rel))
+        current = ' aria-current="page"' if nav_key(rel) == nav_key(active) else ''
+        return f'<a class="navlink" href="{href}" data-doc="{nav_key(rel)}" data-page="{href}" data-kind="{kind}" data-lesson="{lesson}"{current}>{html.escape(label)}</a>'
+    text = '<input id="navsearch" class="navsearch" aria-label="筛选课程导航" placeholder="筛选课号、讲义、练习…"><nav aria-label="课程导航">'
+    text += '<div class="navlabel">课程入口</div>'
+    text += link('home', '课程首页', 'home') + link('README.md', '课程说明')
+    text += '<div class="navlabel">附录 · 先把基础讲清楚</div>'
+    for rel, label in [('附录/零基础起飞.md', '零基础起飞'), ('附录/术语表.md', '术语表'),
+                       ('环境说明.md', '运行环境'), ('页码对应说明.md', '书本与PDF页码')]:
         text += link(rel, label)
-    text += '<div class="navlabel">LESSONS / 第1–3章</div>'
-    for lesson in COURSE['lessons']:
-        text += link(Path(lesson['folder']) / '讲义.md', lesson['id'] + ' · ' + lesson['title'])
-    text += '<div class="navlabel">TOOLS / 查阅与接续</div>'
-    for rel, label in [('教材目录.md', '447条教材索引'), ('附录/术语表.md', '术语表'),
-                       ('给其他LLM的批改指南.md', 'AI批改与进度追踪'), ('学习进度模板.md', '个人进度模板'), ('维护与打包.md', '维护与打包')]:
+    for group, relative, kind in [('讲义', '讲义.md', 'lesson'), ('练习', '练习.md', 'exercise'),
+                                   ('参考答案 · 先独立作答', '参考答案/答案.md', 'answers'),
+                                   ('示例代码与运行命令', 'code/README.md', 'code')]:
+        text += '<div class="navlabel">' + group + '</div>'
+        for lesson in COURSE['lessons']:
+            text += link(Path(lesson['folder']) / relative, lesson['id'] + ' · ' + lesson['title'], kind, lesson['id'])
+    text += '<div class="navlabel">查阅与接续</div>'
+    for rel, label in [('学习路线图.md', '全书路线 · 35课'), ('教材目录.md', '447条教材索引'),
+                       ('给其他LLM的批改指南.md', 'AI批改与进度追踪'), ('学习进度模板.md', '个人进度模板'),
+                       ('维护与打包.md', '维护与打包'), ('AGENTS.md', '课程写作约定')]:
         text += link(rel, label)
-    text += '</nav><p class="side-note">按教材顺序，逐课练习。<br>材料准备 ≠ 学生已过关。<br>教材PDF需自备。</p>'
+    text += '<div class="navlabel">连续阅读 · 可选</div>' + link('combined', '全一册（连续阅读）', 'combined')
+    text += '</nav><p class="side-note">按课阅读，逐项练习。<br>个人作答直接写入练习.md。<br>教材PDF需自备。</p>'
     return text
 
-def shell(title, nav, content, pager='', inline=False):
-    styles = '<style>' + CSS + '</style>' if inline else '<link rel="stylesheet" href="assets/course.css">'
-    script = '<script>' + JS + '</script>' if inline else '<script src="assets/course.js"></script>'
-    home_link = '#' + doc_id(Path('README.md')) if inline else 'index.html'
-    all_link = '#top' if inline else '全一册.html'
-    return '<!doctype html><html lang="zh-CN" data-theme="dark"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>' + html.escape(title) + ' · Java陪读</title>' + styles + '</head><body id="top">' + \
-        '<header class="top"><a class="brand" href="' + home_link + '"><span>JAVA</span>一起把基础写扎实</a><div class="tools"><span class="tag">CORE JAVA · VOL. I · 10TH</span><a class="all-link" href="' + all_link + '">全一册</a><button id="theme" aria-label="切换浅色与深色">明 / 暗</button></div></header>' + \
-        '<div class="layout"><aside>' + nav + '</aside><main><article><div class="crumb">学习笔记 / 本地离线课程</div><span class="edition">第1–3章 · 10课已备 · 书本/PDF双页码</span>' + content + pager + '<p class="footer">课程原创配套讲解与习题 · 阅读教材 → 动手 → 订正 → 更新进度</p></article></main></div>' + script + '</body></html>'
+def lesson_for(rel):
+    rel = Path(rel)
+    return next((lesson for lesson in COURSE['lessons'] if rel.parts[0] == lesson['folder']), None)
+
+def lesson_tabs(names, rel):
+    lesson = lesson_for(rel)
+    if not lesson:
+        return ''
+    tabs = '<nav class="lesson-tabs" aria-label="本课内容切换">'
+    for label, relative in [('讲义', '讲义.md'), ('示例', 'code/README.md'), ('练习', '练习.md'), ('参考答案', '参考答案/答案.md')]:
+        target = Path(lesson['folder']) / relative
+        selected = ' aria-current="page"' if nav_owner(rel) == target else ''
+        tabs += f'<a href="{names[target]}"{selected}>{label}</a>'
+    return tabs + '</nav>'
+
+def page_pager(names, rel):
+    route = [Path('README.md'), Path('附录/零基础起飞.md'), Path('环境说明.md'), Path('页码对应说明.md')]
+    for lesson in COURSE['lessons']:
+        route += [Path(lesson['folder']) / part for part in ['讲义.md', 'code/README.md', '练习.md']]
+    owner = nav_owner(rel)
+    lesson = lesson_for(rel)
+    if lesson and Path(rel).parent.name == '参考答案':
+        owner = Path(lesson['folder']) / '练习.md'
+    if owner not in route:
+        return f'<div class="pager"><a href="index.html">← 课程首页</a><a href="{names[Path(COURSE["lessons"][0]["folder"]) / "讲义.md"]}">开始L01 →</a></div>'
+    position = route.index(owner)
+    def label(target):
+        unit = lesson_for(target)
+        if unit:
+            category = '示例' if target.parent.name == 'code' else target.stem
+            return unit['id'] + ' ' + category
+        return '课程说明' if target == Path('README.md') else target.stem
+    previous = f'<a rel="prev" href="{names[route[position - 1]]}">← 上一页：{label(route[position - 1])}</a>' if position else '<a rel="prev" href="index.html">← 课程首页</a>'
+    following = f'<a rel="next" href="{names[route[position + 1]]}">下一页：{label(route[position + 1])} →</a>' if position + 1 < len(route) else f'<a rel="next" href="{names[Path("学习路线图.md")]}">查看后续学习路线 →</a>'
+    return '<div class="pager">' + previous + following + '</div>'
+
+def home_content(names):
+    content = '<h1>Java 入门课程</h1><p>配合《Java核心技术 卷Ⅰ：基础知识》第10版，从电脑与程序的基础讲起。每课的讲义、示例、练习和参考答案分别阅读。</p>'
+    content += f'<div class="start-links"><a href="{names[Path("附录/零基础起飞.md")]}">第一次学：零基础起飞 →</a><a href="{names[Path("README.md")]}">课程说明</a><a href="{names[Path("学习路线图.md")]}">学习路线</a></div>'
+    content += '<h2>按课开始学习</h2><p>先读讲义，再运行示例、独立练习，最后复核答案。左侧也可直接切换到指定课次的讲义或练习。</p><div class="course-cards">'
+    for lesson in COURSE['lessons']:
+        folder = Path(lesson['folder'])
+        content += f'<section class="course-card"><h3><a href="{names[folder / "讲义.md"]}">{lesson["id"]} · {html.escape(lesson["title"])}</a></h3><p>{html.escape(lesson["section"])}</p><p>书本 p{lesson["book_start"]}–{lesson["book_end"]} / PDF p{lesson["pdf_start"]}–{lesson["pdf_end"]}</p><div class="card-links">'
+        for label, part in [('讲义', '讲义.md'), ('示例', 'code/README.md'), ('练习', '练习.md'), ('参考答案', '参考答案/答案.md')]:
+            content += f'<a href="{names[folder / part]}">{label}</a>'
+        content += '</div></section>'
+    content += '</div><h2>学习与记录</h2><p>第1–3章共10课材料已备。L11–L35为后续规划，材料状态与学习是否过关分别记录。文字答案直接写在本地练习.md，代码写在my_code。</p>'
+    content += '<details><summary>需要把所有内容连续阅读？</summary><p>可以使用<a href="全一册.html">全一册（连续阅读）</a>。日常学习使用上方分课入口，点击左侧导航也会打开相应的独立页面。</p></details>'
+    return content
+
+def shell(title, nav, content, pager='', inline=False, active='home'):
+    styles = '<style>' + CSS + '</style>' if inline else f'<link rel="stylesheet" href="assets/course.css?v={ASSET_VERSION}">'
+    script = '<script>' + JS + '</script>' if inline else f'<script src="assets/course.js?v={ASSET_VERSION}"></script>'
+    mode_label = '切回分课阅读' if inline else '分课阅读'
+    mode = 'combined' if inline else 'pages'
+    edition = '连续阅读 · 全一册 · 左侧可切回独立页面' if inline else '分课阅读 · 第1–3章 · 10课已备 · 双页码'
+    return '<!doctype html><html lang="zh-CN" data-theme="dark"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>' + html.escape(title) + ' · Java陪读</title>' + styles + f'</head><body id="top" data-reading-mode="{mode}" data-nav-doc="{nav_key(active)}">' + \
+        '<header class="top"><a class="brand" href="index.html"><span>JAVA</span>一起把基础写扎实</a><div class="tools"><span class="tag">CORE JAVA · VOL. I · 10TH</span><a id="reading-mode" href="index.html">' + mode_label + '</a><button id="theme" aria-label="切换浅色与深色">明 / 暗</button></div></header>' + \
+        '<div class="layout"><aside>' + nav + '</aside><main><article><div class="crumb">Java入门课程 / 按课学习</div><span class="edition">' + edition + '</span>' + content + pager + '<p class="footer">课程原创配套讲解与习题 · 阅读教材 → 动手 → 订正 → 更新进度</p></article></main></div>' + script + '</body></html>'
 
 class Links(HTMLParser):
     def __init__(self):
@@ -239,7 +317,7 @@ def main():
     (DOCS / 'assets/course.css').write_text(CSS, encoding='utf-8')
     (DOCS / 'assets/course.js').write_text(JS, encoding='utf-8')
     # Only remove stale generated HTML, never recurse or touch authored material.
-    expected = set(names.values()) | {'全一册.html'}
+    expected = set(names.values()) | {'index.html', '全一册.html'}
     for old in DOCS.glob('*.html'):
         if old.name not in expected:
             old.unlink()
@@ -250,17 +328,19 @@ def main():
     ordered += [Path('给其他LLM的批改指南.md'), Path('学习进度模板.md'), Path('附录/术语表.md'), Path('教材目录.md')]
     ordered += sorted(set(names) - set(ordered), key=lambda p: p.as_posix())
     combined = []
+    (DOCS / 'index.html').write_text(shell('Java入门课程', navigation(names, 'home'), home_content(names), active='home'), encoding='utf-8')
     for rel in ordered:
         toc, body = render(rel, names)
         text = public_text(rel)
         title = next(line.lstrip('# ').strip() for line in text.splitlines() if line.startswith('# '))
-        pager = '<div class="pager"><a href="index.html">← 课程入口</a><a href="全一册.html">单文件阅读 →</a></div>'
+        pager = page_pager(names, rel)
         if toc:
             body = re.sub(r'(</h1>)', lambda m: m.group(1) + '<details class="page-toc"><summary>本页目录</summary>' + toc + '</details>', body, count=1)
-        (DOCS / names[rel]).write_text(shell(title, navigation(names, rel), body, pager), encoding='utf-8')
+        (DOCS / names[rel]).write_text(shell(title, navigation(names, rel), lesson_tabs(names, rel) + body, pager, active=rel), encoding='utf-8')
         _, content = render(rel, names, combined=True)
-        combined.append(f'<section class="bundle-section" id="{doc_id(rel)}">{content}</section>')
-    (DOCS / '全一册.html').write_text(shell('全一册', navigation(names, Path('README.md'), True), ''.join(combined), inline=True), encoding='utf-8')
+        combined.append(f'<section class="bundle-section" id="{doc_id(rel)}" data-nav-doc="{nav_key(rel)}" data-page="{names[rel]}">{content}</section>')
+    mode_note = '<p class="mode-note">当前为全一册连续阅读。点击左侧任一条目可打开独立页面；也可用右上角“切回分课阅读”回到当前内容对应的页面。</p>'
+    (DOCS / '全一册.html').write_text(shell('全一册', navigation(names, 'combined', True), mode_note + ''.join(combined), inline=True, active='combined'), encoding='utf-8')
     (DOCS / '.nojekyll').write_text('', encoding='utf-8')
     validation = verify_links()
     OUT.mkdir(exist_ok=True)
