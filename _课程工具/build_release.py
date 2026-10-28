@@ -246,7 +246,7 @@ def page_pager(names, rel):
     return '<div class="pager">' + previous + following + '</div>'
 
 def home_content(names):
-    content = '<h1>Java 入门课程</h1><p>配合《Java核心技术 卷Ⅰ：基础知识》第10版，从电脑与程序的基础讲起。每课的讲义、示例、练习和参考答案分别阅读。</p>'
+    content = '<h1>Java 入门课程</h1><p>跟着讲义理解、动手并完成基础练习，再读《Java核心技术 卷Ⅰ：基础知识》第10版深化。课程从电脑与程序的基础讲起，每课的讲义、示例、练习和参考答案分别阅读。</p>'
     content += f'<div class="start-links"><a href="{names[Path("附录/零基础起飞.md")]}">第一次学：零基础起飞 →</a><a href="{names[Path("README.md")]}">课程说明</a><a href="{names[Path("学习路线图.md")]}">学习路线</a></div>'
     content += '<h2>按课开始学习</h2><p>先读讲义，再运行示例、独立练习，最后复核答案。左侧也可直接切换到指定课次的讲义或练习。</p><div class="course-cards">'
     for lesson in COURSE['lessons']:
@@ -267,7 +267,7 @@ def shell(title, nav, content, pager='', inline=False, active='home'):
     edition = '连续阅读 · 全一册 · 左侧可切回独立页面' if inline else '分课阅读 · 第1–3章 · 10课已备 · 双页码'
     return '<!doctype html><html lang="zh-CN" data-theme="dark"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>' + html.escape(title) + ' · Java陪读</title>' + styles + f'</head><body id="top" data-reading-mode="{mode}" data-nav-doc="{nav_key(active)}">' + \
         '<header class="top"><a class="brand" href="index.html"><span>JAVA</span>一起把基础写扎实</a><div class="tools"><span class="tag">CORE JAVA · VOL. I · 10TH</span><a id="reading-mode" href="index.html">' + mode_label + '</a><button id="theme" aria-label="切换浅色与深色">明 / 暗</button></div></header>' + \
-        '<div class="layout"><aside>' + nav + '</aside><main><article><div class="crumb">Java入门课程 / 按课学习</div><span class="edition">' + edition + '</span>' + content + pager + '<p class="footer">课程原创配套讲解与习题 · 阅读教材 → 动手 → 订正 → 更新进度</p></article></main></div>' + script + '</body></html>'
+        '<div class="layout"><aside>' + nav + '</aside><main><article><div class="crumb">Java入门课程 / 按课学习</div><span class="edition">' + edition + '</span>' + content + pager + '<p class="footer">课程原创讲义与习题 · 讲义学习 → 动手练习 → 订正 · 教材深化</p></article></main></div>' + script + '</body></html>'
 
 class Links(HTMLParser):
     def __init__(self):
@@ -305,6 +305,11 @@ def main():
         assert report[name + '_sha256'] == hashlib.sha256((ROOT / f'_课程工具/{name}.json').read_bytes()).hexdigest(), 'Verification manifest changed.'
     for result in report['results']:
         assert hashlib.sha256((ROOT / result['source']).read_bytes()).hexdigest() == result['sha256'], 'Source changed after verification.'
+    lecture_report = json.loads((OUT / '讲义程序验证.json').read_text(encoding='utf-8'))
+    assert lecture_report['passed'], 'Verify complete lecture examples before building.'
+    assert lecture_report['manifest_sha256'] == hashlib.sha256((ROOT / '_课程工具/lecture_checks.json').read_bytes()).hexdigest()
+    for rel, digest in lecture_report['lecture_sha256'].items():
+        assert hashlib.sha256((ROOT / rel).read_bytes()).hexdigest() == digest, 'Lecture changed after verification: ' + rel
     files = collect_files()
     expected_exercises = {(Path(lesson['folder']) / '练习.md').as_posix() for lesson in COURSE['lessons']}
     assert set(EXERCISES) == expected_exercises, 'Publication templates must cover exactly the authored lessons.'

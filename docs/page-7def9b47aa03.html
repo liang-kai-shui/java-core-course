@@ -12,7 +12,9 @@
 <li>同步讲义、练习与参考答案；保持双页码。公开练习题源为 <code>_课程工具/exercises.json</code>，用户直接在本地各课 <code>练习.md</code> 中作答，不能清空或用发布模板覆盖它。新增课次先看教材正文，再修改 <code>_课程工具/course.json</code>、公开题目模板和路线图。</li>
 <li>新增或修改Java源码时，在 <code>_课程工具/checks.json</code> 登记正常输出、输入、边界和错误实验的预期阶段。</li>
 <li>运行 <code>python _课程工具/verify_course.py</code>，实测原始课程源码。报告写入 <code>outputs/验证报告.json</code>，不代表学生成绩。</li>
-<li>用已安装Markdown模块的Python运行 <code>python _课程工具/build_release.py</code>，生成离线网页和ZIP。缺模块时才用 <code>python -m pip install -r _课程工具/requirements.txt</code>；不要求每次重新安装。</li>
+<li>运行 <code>python _课程工具/verify_lecture_examples.py</code>，隔离编译讲义内的完整Java程序，核对输出、交互输入、关键修改实验与文件内容；对应清单在 <code>lecture_checks.json</code>，片段及预期失败分开判断。报告写入 <code>outputs/讲义程序验证.json</code>，同样不代表学生成绩。</li>
+<li>人工检查讲义无需依赖PDF完成基础学习；概念、语法、操作、推演、实验及习题台阶是否齐备。PDF表格置于“教材深化”，同时保留双页码。</li>
+<li>用已安装Markdown模块的Python运行 <code>python _课程工具/build_release.py</code>，生成离线网页和ZIP。缺模块时才用 <code>python -m pip install -r _课程工具/requirements.txt</code>；不要求每次重新安装。构建核对两份验证报告与源文件摘要，防止材料改动后沿用旧验证。</li>
 </ol>
 <p>网页导航改动后，运行 <code>node _课程工具/check_navigation.cjs</code>。该检查需要开发环境安装Playwright及浏览器；可用<code>COURSE_BROWSER</code>指定现有浏览器可执行文件，<code>NODE_PATH</code>指向已有Node包目录。不属于普通学习者的安装要求。检查包含独立页面、当前项、历史前进后退、课内页签、连续阅读深链接与滚动、手机宽度；报告在outputs中。</p>
 <p>源码验证使用标准库和JDK。网页构建使用Python Markdown；pypdf仅供抽取教材书签。当前电脑系统Python已安装Markdown，Codex自带Python与系统Python的软件包互不相同，不要把“某个解释器没有包”当成电脑完全没有包。</p>
@@ -24,7 +26,8 @@
 <p>公开仓库：<a href="https://github.com/liang-kai-shui/java-core-course">liang-kai-shui/java-core-course</a>。在线阅读：<a href="https://liang-kai-shui.github.io/java-core-course/">GitHub Pages</a>。沿用C++课程的代码MIT、文档CC BY-NC-SA 4.0协议。</p>
 <p>构建时同步生成根目录 <code>可分发版/</code>，这是独立的公开Git仓库；已存在的 <code>.git/</code> 不会被构建器覆盖。本地个人学习目录与教材不加入该仓库。维护者在本地课程根目录修改并验证，再构建公开版本；推送前检查可分发版的Git差异。</p>
 <pre><code class="language-powershell">python _课程工具/verify_course.py
+python _课程工具/verify_lecture_examples.py
 python _课程工具/build_release.py
 git -C 可分发版 status --short
 </code></pre>
-<p>GitHub Pages以main分支的 <code>/docs</code> 为发布源，<code>.nojekyll</code> 保证原样提供HTML与带下划线的文件。压缩包可本地分发；仓库直接保留课程源文件与网页，下载仓库ZIP也能离线阅读。</p><div class="pager"><a href="index.html">← 课程首页</a><a href="l01-lesson.html">开始L01 →</a></div><p class="footer">课程原创配套讲解与习题 · 阅读教材 → 动手 → 订正 → 更新进度</p></article></main></div><script src="assets/course.js?v=1c1950cb02ee"></script></body></html>
+<p>GitHub Pages以main分支的 <code>/docs</code> 为发布源，<code>.nojekyll</code> 保证原样提供HTML与带下划线的文件。压缩包可本地分发；仓库直接保留课程源文件与网页，下载仓库ZIP也能离线阅读。</p><div class="pager"><a href="index.html">← 课程首页</a><a href="l01-lesson.html">开始L01 →</a></div><p class="footer">课程原创讲义与习题 · 讲义学习 → 动手练习 → 订正 · 教材深化</p></article></main></div><script src="assets/course.js?v=1c1950cb02ee"></script></body></html>

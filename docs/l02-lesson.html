@@ -1,21 +1,278 @@
 <!doctype html><html lang="zh-CN" data-theme="dark"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>L02 讲义 · 编译、运行与读报错 · Java陪读</title><link rel="stylesheet" href="assets/course.css?v=1c1950cb02ee"></head><body id="top" data-reading-mode="pages" data-nav-doc="doc-27ed48622bd4"><header class="top"><a class="brand" href="index.html"><span>JAVA</span>一起把基础写扎实</a><div class="tools"><span class="tag">CORE JAVA · VOL. I · 10TH</span><a id="reading-mode" href="index.html">分课阅读</a><button id="theme" aria-label="切换浅色与深色">明 / 暗</button></div></header><div class="layout"><aside><input id="navsearch" class="navsearch" aria-label="筛选课程导航" placeholder="筛选课号、讲义、练习…"><nav aria-label="课程导航"><div class="navlabel">课程入口</div><a class="navlink" href="index.html" data-doc="home" data-page="index.html" data-kind="home" data-lesson="">课程首页</a><a class="navlink" href="course-info.html" data-doc="doc-b33563055168" data-page="course-info.html" data-kind="guide" data-lesson="">课程说明</a><div class="navlabel">附录 · 先把基础讲清楚</div><a class="navlink" href="page-4cc100767b13.html" data-doc="doc-4cc100767b13" data-page="page-4cc100767b13.html" data-kind="guide" data-lesson="">零基础起飞</a><a class="navlink" href="page-3f83fca99eef.html" data-doc="doc-3f83fca99eef" data-page="page-3f83fca99eef.html" data-kind="guide" data-lesson="">术语表</a><a class="navlink" href="page-b984dae871b4.html" data-doc="doc-b984dae871b4" data-page="page-b984dae871b4.html" data-kind="guide" data-lesson="">运行环境</a><a class="navlink" href="page-526e3b952094.html" data-doc="doc-526e3b952094" data-page="page-526e3b952094.html" data-kind="guide" data-lesson="">书本与PDF页码</a><div class="navlabel">讲义</div><a class="navlink" href="l01-lesson.html" data-doc="doc-9accd0bf9b7f" data-page="l01-lesson.html" data-kind="lesson" data-lesson="L01">L01 · 认识 Java 与程序运行</a><a class="navlink" href="l02-lesson.html" data-doc="doc-27ed48622bd4" data-page="l02-lesson.html" data-kind="lesson" data-lesson="L02" aria-current="page">L02 · 编译、运行与读报错</a><a class="navlink" href="l03-lesson.html" data-doc="doc-6b1b497ed36e" data-page="l03-lesson.html" data-kind="lesson" data-lesson="L03">L03 · 程序结构、变量与类型</a><a class="navlink" href="l04-lesson.html" data-doc="doc-441c97ad53bb" data-page="l04-lesson.html" data-kind="lesson" data-lesson="L04">L04 · 运算符与类型转换</a><a class="navlink" href="l05-lesson.html" data-doc="doc-23e9eec49f15" data-page="l05-lesson.html" data-kind="lesson" data-lesson="L05">L05 · 字符串与文本处理</a><a class="navlink" href="l06-lesson.html" data-doc="doc-6892ef8761d4" data-page="l06-lesson.html" data-kind="lesson" data-lesson="L06">L06 · 键盘输入、格式化与文件</a><a class="navlink" href="l07-lesson.html" data-doc="doc-b1469f212770" data-page="l07-lesson.html" data-kind="lesson" data-lesson="L07">L07 · 程序如何作选择</a><a class="navlink" href="l08-lesson.html" data-doc="doc-a6ec0be7c981" data-page="l08-lesson.html" data-kind="lesson" data-lesson="L08">L08 · 让程序重复做事</a><a class="navlink" href="l09-lesson.html" data-doc="doc-33c8ceac7e88" data-page="l09-lesson.html" data-kind="lesson" data-lesson="L09">L09 · switch、循环跳转与大数值</a><a class="navlink" href="l10-lesson.html" data-doc="doc-dd1d0b22dbf0" data-page="l10-lesson.html" data-kind="lesson" data-lesson="L10">L10 · 数组与成绩统计器</a><div class="navlabel">练习</div><a class="navlink" href="page-2bd2136ce2bb.html" data-doc="doc-2bd2136ce2bb" data-page="page-2bd2136ce2bb.html" data-kind="exercise" data-lesson="L01">L01 · 认识 Java 与程序运行</a><a class="navlink" href="page-95000a110447.html" data-doc="doc-95000a110447" data-page="page-95000a110447.html" data-kind="exercise" data-lesson="L02">L02 · 编译、运行与读报错</a><a class="navlink" href="page-20353e11686c.html" data-doc="doc-20353e11686c" data-page="page-20353e11686c.html" data-kind="exercise" data-lesson="L03">L03 · 程序结构、变量与类型</a><a class="navlink" href="page-7d5e3415eb77.html" data-doc="doc-7d5e3415eb77" data-page="page-7d5e3415eb77.html" data-kind="exercise" data-lesson="L04">L04 · 运算符与类型转换</a><a class="navlink" href="page-279cca6b26ab.html" data-doc="doc-279cca6b26ab" data-page="page-279cca6b26ab.html" data-kind="exercise" data-lesson="L05">L05 · 字符串与文本处理</a><a class="navlink" href="page-ac312fcdaf24.html" data-doc="doc-ac312fcdaf24" data-page="page-ac312fcdaf24.html" data-kind="exercise" data-lesson="L06">L06 · 键盘输入、格式化与文件</a><a class="navlink" href="page-59c311bedabe.html" data-doc="doc-59c311bedabe" data-page="page-59c311bedabe.html" data-kind="exercise" data-lesson="L07">L07 · 程序如何作选择</a><a class="navlink" href="page-d18029bb4803.html" data-doc="doc-d18029bb4803" data-page="page-d18029bb4803.html" data-kind="exercise" data-lesson="L08">L08 · 让程序重复做事</a><a class="navlink" href="page-a7b6badbcc8e.html" data-doc="doc-a7b6badbcc8e" data-page="page-a7b6badbcc8e.html" data-kind="exercise" data-lesson="L09">L09 · switch、循环跳转与大数值</a><a class="navlink" href="page-edb3747d12d2.html" data-doc="doc-edb3747d12d2" data-page="page-edb3747d12d2.html" data-kind="exercise" data-lesson="L10">L10 · 数组与成绩统计器</a><div class="navlabel">参考答案 · 先独立作答</div><a class="navlink" href="page-8ac64aceb665.html" data-doc="doc-8ac64aceb665" data-page="page-8ac64aceb665.html" data-kind="answers" data-lesson="L01">L01 · 认识 Java 与程序运行</a><a class="navlink" href="page-702232ba7bff.html" data-doc="doc-702232ba7bff" data-page="page-702232ba7bff.html" data-kind="answers" data-lesson="L02">L02 · 编译、运行与读报错</a><a class="navlink" href="page-c068f2bbb9af.html" data-doc="doc-c068f2bbb9af" data-page="page-c068f2bbb9af.html" data-kind="answers" data-lesson="L03">L03 · 程序结构、变量与类型</a><a class="navlink" href="page-f0ad7e277387.html" data-doc="doc-f0ad7e277387" data-page="page-f0ad7e277387.html" data-kind="answers" data-lesson="L04">L04 · 运算符与类型转换</a><a class="navlink" href="page-21329cb1f07a.html" data-doc="doc-21329cb1f07a" data-page="page-21329cb1f07a.html" data-kind="answers" data-lesson="L05">L05 · 字符串与文本处理</a><a class="navlink" href="page-1d5374d4cbf3.html" data-doc="doc-1d5374d4cbf3" data-page="page-1d5374d4cbf3.html" data-kind="answers" data-lesson="L06">L06 · 键盘输入、格式化与文件</a><a class="navlink" href="page-c1f9ec907b08.html" data-doc="doc-c1f9ec907b08" data-page="page-c1f9ec907b08.html" data-kind="answers" data-lesson="L07">L07 · 程序如何作选择</a><a class="navlink" href="page-af8cd7604511.html" data-doc="doc-af8cd7604511" data-page="page-af8cd7604511.html" data-kind="answers" data-lesson="L08">L08 · 让程序重复做事</a><a class="navlink" href="page-8cff2b23cfcc.html" data-doc="doc-8cff2b23cfcc" data-page="page-8cff2b23cfcc.html" data-kind="answers" data-lesson="L09">L09 · switch、循环跳转与大数值</a><a class="navlink" href="page-4a36dc3be0b6.html" data-doc="doc-4a36dc3be0b6" data-page="page-4a36dc3be0b6.html" data-kind="answers" data-lesson="L10">L10 · 数组与成绩统计器</a><div class="navlabel">示例代码与运行命令</div><a class="navlink" href="page-88947e1a9eb7.html" data-doc="doc-88947e1a9eb7" data-page="page-88947e1a9eb7.html" data-kind="code" data-lesson="L01">L01 · 认识 Java 与程序运行</a><a class="navlink" href="page-8dc288399ce5.html" data-doc="doc-8dc288399ce5" data-page="page-8dc288399ce5.html" data-kind="code" data-lesson="L02">L02 · 编译、运行与读报错</a><a class="navlink" href="page-d9c576e49900.html" data-doc="doc-d9c576e49900" data-page="page-d9c576e49900.html" data-kind="code" data-lesson="L03">L03 · 程序结构、变量与类型</a><a class="navlink" href="page-8083ebb8dc8a.html" data-doc="doc-8083ebb8dc8a" data-page="page-8083ebb8dc8a.html" data-kind="code" data-lesson="L04">L04 · 运算符与类型转换</a><a class="navlink" href="page-d9dddbc70e06.html" data-doc="doc-d9dddbc70e06" data-page="page-d9dddbc70e06.html" data-kind="code" data-lesson="L05">L05 · 字符串与文本处理</a><a class="navlink" href="page-6d5a15d068b7.html" data-doc="doc-6d5a15d068b7" data-page="page-6d5a15d068b7.html" data-kind="code" data-lesson="L06">L06 · 键盘输入、格式化与文件</a><a class="navlink" href="page-16bbc7816c2e.html" data-doc="doc-16bbc7816c2e" data-page="page-16bbc7816c2e.html" data-kind="code" data-lesson="L07">L07 · 程序如何作选择</a><a class="navlink" href="page-539c04050fe3.html" data-doc="doc-539c04050fe3" data-page="page-539c04050fe3.html" data-kind="code" data-lesson="L08">L08 · 让程序重复做事</a><a class="navlink" href="page-a8fac8cdd2df.html" data-doc="doc-a8fac8cdd2df" data-page="page-a8fac8cdd2df.html" data-kind="code" data-lesson="L09">L09 · switch、循环跳转与大数值</a><a class="navlink" href="page-b1915ed3b0b5.html" data-doc="doc-b1915ed3b0b5" data-page="page-b1915ed3b0b5.html" data-kind="code" data-lesson="L10">L10 · 数组与成绩统计器</a><div class="navlabel">查阅与接续</div><a class="navlink" href="page-0ef3cebffbed.html" data-doc="doc-0ef3cebffbed" data-page="page-0ef3cebffbed.html" data-kind="guide" data-lesson="">全书路线 · 35课</a><a class="navlink" href="page-fea294d77afe.html" data-doc="doc-fea294d77afe" data-page="page-fea294d77afe.html" data-kind="guide" data-lesson="">447条教材索引</a><a class="navlink" href="page-32d80fdb4bb7.html" data-doc="doc-32d80fdb4bb7" data-page="page-32d80fdb4bb7.html" data-kind="guide" data-lesson="">AI批改与进度追踪</a><a class="navlink" href="page-e8601bdcb726.html" data-doc="doc-e8601bdcb726" data-page="page-e8601bdcb726.html" data-kind="guide" data-lesson="">个人进度模板</a><a class="navlink" href="page-7def9b47aa03.html" data-doc="doc-7def9b47aa03" data-page="page-7def9b47aa03.html" data-kind="guide" data-lesson="">维护与打包</a><a class="navlink" href="page-a54ff182c7e8.html" data-doc="doc-a54ff182c7e8" data-page="page-a54ff182c7e8.html" data-kind="guide" data-lesson="">课程写作约定</a><div class="navlabel">连续阅读 · 可选</div><a class="navlink" href="全一册.html" data-doc="combined" data-page="全一册.html" data-kind="combined" data-lesson="">全一册（连续阅读）</a></nav><p class="side-note">按课阅读，逐项练习。<br>个人作答直接写入练习.md。<br>教材PDF需自备。</p></aside><main><article><div class="crumb">Java入门课程 / 按课学习</div><span class="edition">分课阅读 · 第1–3章 · 10课已备 · 双页码</span><nav class="lesson-tabs" aria-label="本课内容切换"><a href="l02-lesson.html" aria-current="page">讲义</a><a href="page-8dc288399ce5.html">示例</a><a href="page-95000a110447.html">练习</a><a href="page-702232ba7bff.html">参考答案</a></nav><h1 id="l02-讲义-编译运行与读报错">L02 讲义 · 编译、运行与读报错</h1><details class="page-toc"><summary>本页目录</summary><div class="toc">
 <ul>
-<li><a href="l02-lesson.html#这一课要解决什么问题">这一课要解决什么问题</a></li>
-<li><a href="l02-lesson.html#1-工具在但命令可能找不到">1. 工具在，但命令可能找不到</a></li>
-<li><a href="l02-lesson.html#2-编译命令逐项拆开">2. 编译命令逐项拆开</a></li>
-<li><a href="l02-lesson.html#3-程序的名字要对应">3. 程序的名字要对应</a></li>
-<li><a href="l02-lesson.html#4-读报错不要只看最后一行">4. 读报错不要只看最后一行</a></li>
-<li><a href="l02-lesson.html#动手实验">动手实验</a></li>
-<li><a href="l02-lesson.html#本课过关">本课过关</a></li>
-<li><a href="l02-lesson.html#示例入口">示例入口</a></li>
-<li><a href="l02-lesson.html#学完交什么">学完交什么</a></li>
+<li><a href="l02-lesson.html#0-这课分几步学">0. 这课分几步学</a><ul>
+<li><a href="l02-lesson.html#怎么把讲义中的程序跑起来">怎么把讲义中的程序跑起来</a></li>
+</ul>
+</li>
+<li><a href="l02-lesson.html#1-运行按钮背后也有两件工作">1. 运行按钮背后也有两件工作</a></li>
+<li><a href="l02-lesson.html#2-在哪一个目录决定相对路径从哪开始">2. 在哪一个目录，决定相对路径从哪开始</a></li>
+<li><a href="l02-lesson.html#3-亲手编译一次">3. 亲手编译一次</a></li>
+<li><a href="l02-lesson.html#4-启动为什么不写-runstepsclass">4. 启动为什么不写 RunSteps.class</a></li>
+<li><a href="l02-lesson.html#5-为什么编译失败了还能看见旧输出">5. 为什么编译失败了，还能看见旧输出</a></li>
+<li><a href="l02-lesson.html#6-命令行参数是什么">6. 命令行参数是什么</a></li>
+<li><a href="l02-lesson.html#7-五个标本先判断失败在哪里">7. 五个标本，先判断失败在哪里</a></li>
+<li><a href="l02-lesson.html#8-按症状排查不盲目改环境">8. 按症状排查，不盲目改环境</a></li>
+<li><a href="l02-lesson.html#教材第2章的其余入口工具之外还要会查资料">教材第2章的其余入口：工具之外还要会查资料</a><ul>
+<li><a href="l02-lesson.html#21se发行实现与本机工具">2.1：SE、发行实现与本机工具</a></li>
+<li><a href="l02-lesson.html#213源码api文档书中示例是三份材料">2.1.3：源码、API文档、书中示例是三份材料</a></li>
+<li><a href="l02-lesson.html#2325ide图形应用与applet分别怎么处理">2.3–2.5：IDE、图形应用与applet分别怎么处理</a></li>
+</ul>
+</li>
+<li><a href="l02-lesson.html#教材深化会做以后再带着问题读">教材深化：会做以后，再带着问题读</a></li>
+<li><a href="l02-lesson.html#接下来怎么交">接下来怎么交</a></li>
 </ul>
 </div>
 </details>
 <blockquote>
-<p>前置：L01：源代码、字节码、JVM。
-页码：<strong>书本 p12–27 / PDF p30–45</strong>。见<a href="page-526e3b952094.html">页码说明</a>。</p>
+<p><strong>定位：不打开教材，也能跟着本讲义理解、操作并开始完成本课练习。</strong> PDF 用来在学会以后深化；前课学过的概念可按链接回看。
+前置：L01：能自己保存并运行一个输出程序，知道源码、字节码与 JVM 的分工。
+教材对应：<strong>书本 p12–27 / PDF p30–45</strong>。页码含义见<a href="page-526e3b952094.html">页码对应说明</a>。</p>
 </blockquote>
+<h2 id="0-这课分几步学">0. 这课分几步学</h2>
+<p>第一次完成第 1–4 节的手动两步运行；第二次做第 5–8 节的参数、错误和排查。你要带走的是“我知道命令每一部分在找什么”。</p>
+<h3 id="怎么把讲义中的程序跑起来">怎么把讲义中的程序跑起来</h3>
+<p>带有 <code>public class</code>、完整大括号和 <code>main</code> 的 Java 代码框是完整程序。标为“片段”的短代码只替换 main 里面相应部分，不能单独当文件运行。每个完整程序另建一个文件，不能把两个 public class 或两个 main 随手拼在一起。</p>
+<p>在 VS Code 中打开整个 <code>D:\Code\Java</code> 文件夹。在本课 <code>my_code</code> 文件夹新建 <code>RunSteps.java</code>，文件名要与 <code>public class</code> 后的名字相同；保存为 UTF-8。没有显示后缀、不会新建文件或打开终端，先看<a href="page-4cc100767b13.html">零基础起飞</a>，无需先读 PDF。</p>
+<p>打开“终端 → 新建终端”，确认使用 <strong>PowerShell</strong>。以下命令从课程根目录开始输入，提示符本身不用抄：</p>
+<pre><code class="language-powershell">Set-Location 'D:\Code\Java'
+.\java.ps1 -Source '.\L02_第02章_编译运行与错误\my_code\RunSteps.java'
+</code></pre>
+<p>这是课程提供的“编译成功才启动”工具。它每次在 <code>.build</code> 中另建输出目录，生成 class 后才运行；不要手动执行以前留下的 class。后面的完整程序同样操作，只换末尾文件名。需要键盘输入时，运行后在终端键入数据并回车；程序没有显示新提示符，可能正在等输入。出现脚本策略提示时，在同一根目录把运行一行改为：</p>
+<pre><code class="language-powershell">powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\java.ps1 -Source '.\L02_第02章_编译运行与错误\my_code\RunSteps.java'
+</code></pre>
+<p>每次实验留三项记录：<strong>预测、实际输出、解释第一次出现差异的步骤</strong>。看到程序自己的输出才算实际启动；没有报错不等于题目做对。</p>
+<h2 id="1-运行按钮背后也有两件工作">1. 运行按钮背后也有两件工作</h2>
+<p>上一课用课程脚本直接看到了输出。现在假设按钮失败，想查出问题，需要把编译和启动分开。</p>
+<p>先建立 <code>RunSteps.java</code>：</p>
+<pre><code class="language-java">public class RunSteps {
+    public static void main(String[] args) {
+        System.out.println(&quot;version A&quot;);
+    }
+}
+</code></pre>
+<p>用第 0 节的脚本方法先确认能输出 version A，再做下面的手动操作。源码仍写在 my_code；不要在 code 示例原件上试错。</p>
+<h2 id="2-在哪一个目录决定相对路径从哪开始">2. 在哪一个目录，决定相对路径从哪开始</h2>
+<p><strong>当前目录</strong>是终端此刻拿来解释相对路径的起点。它像站在某一栋楼，再说“去旁边那栋楼”；同一句相对位置换个起点就会变。</p>
+<p><strong>绝对路径</strong>给完整位置，例如 <code>D:CodeJava</code>。<strong>相对路径</strong>从当前位置出发，例如 <code>.my_codeRunSteps.java</code>。<code>.</code>表示当前文件夹，<code>..</code>表示上一层。</p>
+<p>手动实验从本课的 my_code 开始。打开 PowerShell，逐行执行：</p>
+<pre><code class="language-powershell">Set-Location 'D:CodeJavaL02_第02章_编译运行与错误my_code'
+Get-Location
+Get-ChildItem
+</code></pre>
+<p>应看到当前位置就是这一目录，列表中有 RunSteps.java。看不到时先找保存位置，不要继续编译一个不存在的文件。</p>
+<p>VS Code 当前编辑的文件与终端当前目录是两回事。打开了 RunSteps.java，并不会保证终端自动走到它旁边。后面写入文件也要记住这个区别。</p>
+<h2 id="3-亲手编译一次">3. 亲手编译一次</h2>
+<p>本机 JDK 已安装，但终端未必能靠短命令找到它。<strong>PATH</strong>是查找命令的目录清单，像通讯录。没登记不等于人不存在；使用完整位置仍能找到。</p>
+<p>在刚才的 PowerShell 中设置一个变量，保存工具包目录。这个位置是本机已核对的配置；换电脑时按课程环境说明查自己的安装位置。</p>
+<pre><code class="language-powershell">$jdk = 'C:Program FilesJavagraalvm-jdk-21.0.12+7.1'
+&amp; &quot;$jdkinjavac.exe&quot; -version
+&amp; &quot;$jdkinjava.exe&quot; -version
+</code></pre>
+<p><code>$jdk</code>是 PowerShell 变量，不是 Java 变量。<code>&amp;</code>让 PowerShell 执行后面的程序路径，双引号允许路径包含空格。不要把它们写入 <code>.java</code> 文件。</p>
+<p>为本次实验建一个新的输出目录：</p>
+<pre><code class="language-powershell">$out = Join-Path (Get-Location) ('out-' + [guid]::NewGuid().ToString('N'))
+New-Item -ItemType Directory -Path $out | Out-Null
+&amp; &quot;$jdkinjavac.exe&quot; --release 8 -encoding UTF-8 -d $out .RunSteps.java
+</code></pre>
+<p>此处那段较长的 PowerShell 只是在当前目录下造一个每次不同的文件夹名，不属于 Java 必学语法。隔离输出的目的，是让上一轮 class 不能冒充这一轮产物。</p>
+<table>
+<thead>
+<tr>
+<th>命令部分</th>
+<th>本次含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>javac.exe</td>
+<td>运行编译器</td>
+</tr>
+<tr>
+<td>--release 8</td>
+<td>按 Java 8 目标语法/API 编译</td>
+</tr>
+<tr>
+<td>-encoding UTF-8</td>
+<td>按 UTF-8 读取源码文本</td>
+</tr>
+<tr>
+<td>-d $out</td>
+<td>把 class 放进刚创建的目录</td>
+</tr>
+<tr>
+<td>.\RunSteps.java</td>
+<td>从当前目录找到待编译源文件</td>
+</tr>
+</tbody>
+</table>
+<p>编译通常成功时不输出“恭喜”；先检查退出码，再看产物：</p>
+<pre><code class="language-powershell">if ($LASTEXITCODE -eq 0) {
+    Get-ChildItem -LiteralPath $out
+    &amp; &quot;$jdkinjava.exe&quot; -cp $out RunSteps
+}
+</code></pre>
+<p><code>$LASTEXITCODE</code>是上一个外部程序的退出状态，通常 0 表示成功。这里的 if 属于 PowerShell，意为“成功才执行括号里的操作”。第 L07 课的 Java if 写法不同，不要混在一起。</p>
+<p>应看到输出目录里有 RunSteps.class，之后看到 version A。若编译报错，停止，不要单独跳到启动那一行。</p>
+<h2 id="4-启动为什么不写-runstepsclass">4. 启动为什么不写 RunSteps.class</h2>
+<p><strong>类路径</strong>是运行工具查找类的位置。<code>-cp $out</code>告诉它到本次输出目录查找；末尾 RunSteps 是类名。</p>
+<pre><code class="language-text">java -cp 某个目录 RunSteps
+         在哪里找  找哪一个类
+</code></pre>
+<p>本阶段不使用 package，因此类文件直接位于该目录。以后使用包，启动名还会包含包名，不能把这里的简化规则扩展为所有 Java 项目。</p>
+<p>常见的三种名字：</p>
+<table>
+<thead>
+<tr>
+<th>名字</th>
+<th>例子</th>
+<th>用在哪里</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>源文件名</td>
+<td>RunSteps.java</td>
+<td>javac 后面</td>
+</tr>
+<tr>
+<td>public 类名</td>
+<td>RunSteps</td>
+<td>源码外壳与启动命令</td>
+</tr>
+<tr>
+<td>编译结果名</td>
+<td>RunSteps.class</td>
+<td>生成目录里观察</td>
+</tr>
+</tbody>
+</table>
+<p><code>java -cp $out RunSteps.class</code>把“.class”也当作类名的一部分，通常找不到你要的类；<code>java RunSteps.java</code>在较新 JDK 有另一种源码启动模式，本课程先不用它，避免把两步实验混掉。</p>
+<p>大小写准确对应。Java 里的 Main、main、mian 是不同名字；Windows 文件系统的某些宽松行为不能代替 Java 标识符规则。</p>
+<h2 id="5-为什么编译失败了还能看见旧输出">5. 为什么编译失败了，还能看见旧输出</h2>
+<p>手工流程如果先产生 version A 的 class，后来源码改坏，编译失败并不会自动把旧 class 擦掉。若仍运行旧目录，就可能再次看到 version A。</p>
+<pre><code class="language-text">第一次：正确源码 A → 编译成功 → class A → 输出 A
+第二次：改坏的源码 B → 编译失败     旧 class A 仍可能存在
+错误操作：忽略失败，继续启动旧目录 → 又输出 A
+</code></pre>
+<p>这不代表编译器忽略了错误，而是你执行了另一份旧产物。像打印失败后拿起昨天的纸张，纸上有字也不能证明今天打印成功。</p>
+<p>安全实验：在自己的副本把文字改为 version B，并删去一处分号。使用课程根目录的 java.ps1 运行；应见编译失败，没有 version A 或 B 的程序正文。恢复分号后再运行，应见 version B。</p>
+<p>平常优先用课程脚本；手动实验的隔离目录与“成功才启动”也必须保留。不要为了少敲一行把条件判断去掉。</p>
+<h2 id="6-命令行参数是什么">6. 命令行参数是什么</h2>
+<p><strong>参数</strong>是你交给一个操作的数据。命令行参数是在启动时交给程序的文本，例如一次传入 red、blue。</p>
+<p>新建 <code>LaunchCount.java</code>：</p>
+<pre><code class="language-java">public class LaunchCount {
+    public static void main(String[] args) {
+        System.out.println(&quot;count=&quot; + args.length);
+    }
+}
+</code></pre>
+<p>这里 String[] args 先理解成“存放启动时收到的文本的一组位置”，args.length 是收到多少项；数组的详细规则到 L10。这个程序只问数量，不访问不存在的项。</p>
+<p>回到课程根目录运行：</p>
+<pre><code class="language-powershell">Set-Location 'D:CodeJava'
+.\java.ps1 -Source '.\L02_第02章_编译运行与错误\my_code\LaunchCount.java'
+.\java.ps1 -Source '.\L02_第02章_编译运行与错误\my_code\LaunchCount.java' -ProgramArgs @('red','blue')
+</code></pre>
+<p>分别是 count=0、count=2。<code>@(...)</code>是 PowerShell 把这两项交给脚本的写法。想传“Li Ming”作为一项，写 <code>@('Li Ming')</code>，应得到 count=1。引号用来保持这一项，不会作为姓名正文的一部分。</p>
+<p>这与启动后停下来等待键盘输入不同：参数在启动时已经给出，后续键盘读取到 L06 才系统练习。</p>
+<h2 id="7-五个标本先判断失败在哪里">7. 五个标本，先判断失败在哪里</h2>
+<p><strong>诊断</strong>是工具告诉你出了什么问题的文字。编译诊断通常包含文件、行、说明和指向位置。运行异常常有调用记录，说明程序沿着哪些方法走到出错处。</p>
+<p>本课 error_lab 保留以下原始标本，逐个观察，先预测再按该目录说明运行，不把它们一起编译：</p>
+<table>
+<thead>
+<tr>
+<th>标本</th>
+<th>应出现的阶段</th>
+<th>这次要观察什么</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MissingSemicolon</td>
+<td>编译失败</td>
+<td>第一条有效诊断指向哪里</td>
+</tr>
+<tr>
+<td>WrongFileName</td>
+<td>编译失败</td>
+<td>public 类名与文件名要求</td>
+</tr>
+<tr>
+<td>MissingMain</td>
+<td>编译成功，启动失败</td>
+<td>有 class 不保证有当前约定入口</td>
+</tr>
+<tr>
+<td>RuntimeCrash</td>
+<td>启动后异常</td>
+<td>运行到了哪条非法操作</td>
+</tr>
+<tr>
+<td>WrongFormula</td>
+<td>正常结束，结果不合题意</td>
+<td>对照手算定位错误公式</td>
+</tr>
+</tbody>
+</table>
+<p>修复放在自己的副本里。不能把预期报错的标本“修好”以后，下一次就再也找不到错误原样。</p>
+<p>遇到多条诊断，从最早的一条有意义错误开始。一处缺括号可能让后面很多行都被误读；先改一个原因，再重新编译，不必逐条猜测每一行都独立坏了。</p>
+<h2 id="8-按症状排查不盲目改环境">8. 按症状排查，不盲目改环境</h2>
+<table>
+<thead>
+<tr>
+<th>现象</th>
+<th>先做什么</th>
+<th>为什么</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>找不到 java.ps1</td>
+<td>Get-Location，回根目录</td>
+<td>先分清脚本位置与源码位置</td>
+</tr>
+<tr>
+<td>找不到源文件</td>
+<td>查看目录与文件完整后缀</td>
+<td>常见是保存错地方或多了 .txt</td>
+</tr>
+<tr>
+<td>找不到主类</td>
+<td>看 -cp 指向本次 class 目录吗</td>
+<td>源码所在目录未必是产物目录</td>
+</tr>
+<tr>
+<td>找不到 main</td>
+<td>对照完整入口拼写</td>
+<td>这是启动条件，不是缺分号</td>
+</tr>
+<tr>
+<td>少分号后仍出旧文字</td>
+<td>检查是否启动旧目录</td>
+<td>本次编译失败不清除旧文件</td>
+</tr>
+<tr>
+<td>中文变乱码</td>
+<td>检查 UTF-8 保存并用课程脚本</td>
+<td>源文件编码与终端显示要对应</td>
+</tr>
+</tbody>
+</table>
+<p>本课过关：能解释两步运行、产物位置、-cp 与类名；能保留错误原文，在副本修正后重新运行；能说明自己看到的是哪一轮源码的结果。IDE 是帮助编辑、编译、运行和调试的综合工具，VS Code 在本项目通过任务和脚本提供这些入口；按钮方便，但不改变这些阶段。</p>
+<h2 id="教材第2章的其余入口工具之外还要会查资料">教材第2章的其余入口：工具之外还要会查资料</h2>
+<h3 id="21se发行实现与本机工具">2.1：SE、发行实现与本机工具</h3>
+<p>教材先区分JDK、JRE、SE等名字。<strong>Java SE</strong>是标准版的平台规范范围；<strong>OpenJDK</strong>与具体JDK发行实现相关，不能把它理解成另一个语法完全不同的语言。EE、ME是教材介绍的平台分工背景，本课先学SE，不安装全部平台。</p>
+<p>书里的jdk符号是安装目录的代称，不是你的电脑真的有一个叫jdk的固定路径。教材建议配置PATH，本课程用完整位置与项目脚本解决查找，保持其他项目环境不受影响；这是操作方式的适配，不改变PATH的作用。</p>
+<h3 id="213源码api文档书中示例是三份材料">2.1.3：源码、API文档、书中示例是三份材料</h3>
+<p><strong>库源码</strong>展示工具内部怎样实现，例如发行包中的src.zip；<strong>API文档</strong>说明可以怎样调用；<strong>教材示例源码</strong>是作者用于说明章节的程序。三者不能混为“装了JDK就自动都有本书代码”。</p>
+<p>像电器内部线路图、使用说明书、课堂实验样品：学会使用先看说明，想研究实现再看源码。初学不需要解压整套库才能输出一行字。</p>
+<p>需要查一个方法时：先认类名，如String；到与学习版本对应的官方API找到该类；在方法汇总中找名字；查看参数、返回结果和失败条件。L05会用具体条目练习读法。书中的文档下载与三窗格界面属于当时版本，不要求把浏览器界面改成截图的样子。</p>
+<h3 id="2325ide图形应用与applet分别怎么处理">2.3–2.5：IDE、图形应用与applet分别怎么处理</h3>
+<p><strong>IDE</strong>把编辑、编译、运行、诊断等工作放在一个环境中。教材用Eclipse示范，并允许选其他环境；本项目使用VS Code与项目任务。它们的共同目标是把操作串起来，不是改变Java入口规则。</p>
+<p>在VS Code打开本项目根文件夹，打开自己的独立Java文件，用Ctrl+Shift+B调用项目任务。若有问题，对照手动流程，确认任务实际编译的是哪个文件、运行的是哪一轮class。编辑器下划线是诊断入口，最终仍需保存并编译验证。</p>
+<p><strong>图形化应用</strong>会建立自己的窗口，终端应用主要通过文字输入输出。教材ImageViewer先让读者看结果，其具体窗口结构到第10–12章学习；本课认识这条后续路线，不要求提前写Swing窗口。</p>
+<p>2.5的applet内容教材本身也允许跳过。它使用与普通java主类不同的加载方式，本课程按历史认识处理，不执行旧浏览器插件与信任设置步骤。原书工具名、当前替代方式和暂缓的知识各有来由，不把它们悄悄删成“未读过的部分”。</p>
+<h2 id="教材深化会做以后再带着问题读">教材深化：会做以后，再带着问题读</h2>
+<p>下面是教材定位表，不是完成正文和基础练习的先决条件。先用讲义做出本课任务，再读对应页，把教材的术语、更多例子与自己已经观察到的现象联系起来；看不懂的细节可以留作问题。</p>
 <table>
 <thead>
 <tr>
@@ -58,36 +315,8 @@
 </tr>
 </tbody>
 </table>
-<h2 id="这一课要解决什么问题">这一课要解决什么问题</h2>
-<p>按运行按钮出问题时，你需要知道按钮背后执行了什么。先会手动两步运行，再用便捷脚本。</p>
-<h2 id="1-工具在但命令可能找不到">1. 工具在，但命令可能找不到</h2>
-<p><strong>PATH</strong>是终端找命令时查找的目录列表，像通讯录。没有登记电话号码不等于那个人不存在。本机JDK21已安装，但当前终端直接找不到<code>java</code>和<code>javac</code>；因此课程脚本读取项目配置中的完整路径，不改系统环境。</p>
-<p>先在根目录执行<code>.\check-java.ps1</code>，记录实际版本；再执行README的HelloJava命令。PowerShell若限制脚本，使用README给出的单次<code>powershell.exe -ExecutionPolicy Bypass -File ...</code>入口，无需更改全局策略。</p>
-<h2 id="2-编译命令逐项拆开">2. 编译命令逐项拆开</h2>
-<p>在某个源码目录中，按环境说明设置<code>$jdk</code>，再执行：</p>
-<pre><code class="language-powershell">&amp; &quot;$jdk\bin\javac.exe&quot; --release 8 -encoding UTF-8 -d .\out .\HelloJava.java
-if ($LASTEXITCODE -eq 0) {
-    &amp; &quot;$jdk\bin\java.exe&quot; -cp .\out HelloJava
-}
-</code></pre>
-<p><code>&amp;</code>让PowerShell启动引号中的程序；不是Java语法。<code>-d</code>是放编译产物的目录，<code>-cp</code>是运行时查找类的目录。<strong>类名</strong>在这里是<code>HelloJava</code>，运行时不写扩展名。<code>$LASTEXITCODE</code>记录上个外部程序的退出状态；这里等于0才继续，防止编译失败仍执行旧文件。</p>
-<p><strong>当前目录</strong>是相对路径的起点。<code>Get-Location</code>看位置，<code>Get-ChildItem</code>看文件。教材命令中的示例路径不能原样当成你电脑的真实地址。</p>
-<h2 id="3-程序的名字要对应">3. 程序的名字要对应</h2>
-<p>先采用一文件一个<code>public class</code>的约定：<code>HelloJava.java</code>里面是<code>public class HelloJava</code>。大小写也要对应。<code>main</code>必须按当前模板准确写为<code>public static void main(String[] args)</code>；写成<code>Main</code>是不同名字。</p>
-<p><strong>命令行参数</strong>是在启动类名后给程序的数据，像把待办事项随启动请求一起交进去。<code>ArgsDemo</code>先只显示参数个数，不访问不存在的第一个参数；数组细节L10讲。</p>
-<h2 id="4-读报错不要只看最后一行">4. 读报错不要只看最后一行</h2>
-<p>编译诊断通常包含文件、位置、说明。先读第一条有意义的错误，再定位原语句；后面许多诊断可能只是前一处错误引发的连锁结果。</p>
-<p><code>error_lab/MissingSemicolon.java</code>和<code>WrongFileName.java</code>预期编译失败；<code>MissingMain.java</code>可以编译，但启动失败；<code>RuntimeCrash.java</code>在运行时报告异常；<code>WrongFormula.java</code>正常结束但面积算错。它们是实验标本，不是待修复的课程样例。复制到my_code再修，保留原标本。</p>
-<h2 id="动手实验">动手实验</h2>
-<ol>
-<li>编译HelloJava后在my_code副本中故意写错；确认新编译失败时课程脚本不会输出上次的“你好，Java！”。</li>
-<li>用<code>-ProgramArgs @('red','blue')</code>运行ArgsDemo，再用无参数运行，比较结果。</li>
-<li>按error_lab/README逐个观察失败阶段，记录完整诊断。不要把5个错误标本一起编译。</li>
-</ol>
-<h2 id="本课过关">本课过关</h2>
-<p>能解释两步命令，自己定位一处文件名问题；能保留原始错误证据、修复自己的副本并重新运行；不把运行旧class当作修复成功。</p>
-<h2 id="示例入口">示例入口</h2>
-<p><a href="page-8dc288399ce5.html">逐个示例与运行命令</a>。</p>
-<h2 id="学完交什么">学完交什么</h2>
-<p>完成<a href="page-95000a110447.html">本课练习</a>，代码写入<a href="page-612a839fdbf1.html">my_code</a>，附命令、输入和结果。先做题，再看<a href="page-702232ba7bff.html">参考答案</a>。批改后将结论保存到<a href="page-e8601bdcb726.html">进度追踪</a>。</p>
-<p>下一课：<a href="l03-lesson.html">L03 程序结构、变量与类型</a>。</p><div class="pager"><a rel="prev" href="page-2bd2136ce2bb.html">← 上一页：L01 练习</a><a rel="next" href="page-8dc288399ce5.html">下一页：L02 示例 →</a></div><p class="footer">课程原创配套讲解与习题 · 阅读教材 → 动手 → 订正 → 更新进度</p></article></main></div><script src="assets/course.js?v=1c1950cb02ee"></script></body></html>
+<p>本课按上述教材正文范围编写，阅读与关键页面看图核对记录见<a href="page-526e3b952094.html">页码对应说明</a>。正文PDF页序与书页差18，前言、目录不能套用。选读内容不作为额外卡关要求。</p>
+<h2 id="接下来怎么交">接下来怎么交</h2>
+<p>在<a href="page-95000a110447.html">练习.md</a>中直接填写原有题号下的答案，代码放<a href="page-612a839fdbf1.html">my_code</a>。本讲义的随堂检查用于帮助你起步；正式必做仍以练习中的题号为准，不因本次重写额外要求你重新提交旧答案。</p>
+<p>原有<a href="page-8dc288399ce5.html">独立示例及命令</a>可以在学过相应小节后对照。完成以后再看<a href="page-702232ba7bff.html">参考答案与解析</a>，寻找自己的思路与参考思路第一次不同的地方。材料编译通过不代表学生过关；作答仍需单独批改并保存到<a href="page-e8601bdcb726.html">进度追踪</a>。</p>
+<p>下一课：<a href="l03-lesson.html">L03 程序结构、变量与类型</a>。</p><div class="pager"><a rel="prev" href="page-2bd2136ce2bb.html">← 上一页：L01 练习</a><a rel="next" href="page-8dc288399ce5.html">下一页：L02 示例 →</a></div><p class="footer">课程原创讲义与习题 · 讲义学习 → 动手练习 → 订正 · 教材深化</p></article></main></div><script src="assets/course.js?v=1c1950cb02ee"></script></body></html>

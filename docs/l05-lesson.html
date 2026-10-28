@@ -1,21 +1,290 @@
 <!doctype html><html lang="zh-CN" data-theme="dark"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>L05 讲义 · 字符串与文本处理 · Java陪读</title><link rel="stylesheet" href="assets/course.css?v=1c1950cb02ee"></head><body id="top" data-reading-mode="pages" data-nav-doc="doc-23e9eec49f15"><header class="top"><a class="brand" href="index.html"><span>JAVA</span>一起把基础写扎实</a><div class="tools"><span class="tag">CORE JAVA · VOL. I · 10TH</span><a id="reading-mode" href="index.html">分课阅读</a><button id="theme" aria-label="切换浅色与深色">明 / 暗</button></div></header><div class="layout"><aside><input id="navsearch" class="navsearch" aria-label="筛选课程导航" placeholder="筛选课号、讲义、练习…"><nav aria-label="课程导航"><div class="navlabel">课程入口</div><a class="navlink" href="index.html" data-doc="home" data-page="index.html" data-kind="home" data-lesson="">课程首页</a><a class="navlink" href="course-info.html" data-doc="doc-b33563055168" data-page="course-info.html" data-kind="guide" data-lesson="">课程说明</a><div class="navlabel">附录 · 先把基础讲清楚</div><a class="navlink" href="page-4cc100767b13.html" data-doc="doc-4cc100767b13" data-page="page-4cc100767b13.html" data-kind="guide" data-lesson="">零基础起飞</a><a class="navlink" href="page-3f83fca99eef.html" data-doc="doc-3f83fca99eef" data-page="page-3f83fca99eef.html" data-kind="guide" data-lesson="">术语表</a><a class="navlink" href="page-b984dae871b4.html" data-doc="doc-b984dae871b4" data-page="page-b984dae871b4.html" data-kind="guide" data-lesson="">运行环境</a><a class="navlink" href="page-526e3b952094.html" data-doc="doc-526e3b952094" data-page="page-526e3b952094.html" data-kind="guide" data-lesson="">书本与PDF页码</a><div class="navlabel">讲义</div><a class="navlink" href="l01-lesson.html" data-doc="doc-9accd0bf9b7f" data-page="l01-lesson.html" data-kind="lesson" data-lesson="L01">L01 · 认识 Java 与程序运行</a><a class="navlink" href="l02-lesson.html" data-doc="doc-27ed48622bd4" data-page="l02-lesson.html" data-kind="lesson" data-lesson="L02">L02 · 编译、运行与读报错</a><a class="navlink" href="l03-lesson.html" data-doc="doc-6b1b497ed36e" data-page="l03-lesson.html" data-kind="lesson" data-lesson="L03">L03 · 程序结构、变量与类型</a><a class="navlink" href="l04-lesson.html" data-doc="doc-441c97ad53bb" data-page="l04-lesson.html" data-kind="lesson" data-lesson="L04">L04 · 运算符与类型转换</a><a class="navlink" href="l05-lesson.html" data-doc="doc-23e9eec49f15" data-page="l05-lesson.html" data-kind="lesson" data-lesson="L05" aria-current="page">L05 · 字符串与文本处理</a><a class="navlink" href="l06-lesson.html" data-doc="doc-6892ef8761d4" data-page="l06-lesson.html" data-kind="lesson" data-lesson="L06">L06 · 键盘输入、格式化与文件</a><a class="navlink" href="l07-lesson.html" data-doc="doc-b1469f212770" data-page="l07-lesson.html" data-kind="lesson" data-lesson="L07">L07 · 程序如何作选择</a><a class="navlink" href="l08-lesson.html" data-doc="doc-a6ec0be7c981" data-page="l08-lesson.html" data-kind="lesson" data-lesson="L08">L08 · 让程序重复做事</a><a class="navlink" href="l09-lesson.html" data-doc="doc-33c8ceac7e88" data-page="l09-lesson.html" data-kind="lesson" data-lesson="L09">L09 · switch、循环跳转与大数值</a><a class="navlink" href="l10-lesson.html" data-doc="doc-dd1d0b22dbf0" data-page="l10-lesson.html" data-kind="lesson" data-lesson="L10">L10 · 数组与成绩统计器</a><div class="navlabel">练习</div><a class="navlink" href="page-2bd2136ce2bb.html" data-doc="doc-2bd2136ce2bb" data-page="page-2bd2136ce2bb.html" data-kind="exercise" data-lesson="L01">L01 · 认识 Java 与程序运行</a><a class="navlink" href="page-95000a110447.html" data-doc="doc-95000a110447" data-page="page-95000a110447.html" data-kind="exercise" data-lesson="L02">L02 · 编译、运行与读报错</a><a class="navlink" href="page-20353e11686c.html" data-doc="doc-20353e11686c" data-page="page-20353e11686c.html" data-kind="exercise" data-lesson="L03">L03 · 程序结构、变量与类型</a><a class="navlink" href="page-7d5e3415eb77.html" data-doc="doc-7d5e3415eb77" data-page="page-7d5e3415eb77.html" data-kind="exercise" data-lesson="L04">L04 · 运算符与类型转换</a><a class="navlink" href="page-279cca6b26ab.html" data-doc="doc-279cca6b26ab" data-page="page-279cca6b26ab.html" data-kind="exercise" data-lesson="L05">L05 · 字符串与文本处理</a><a class="navlink" href="page-ac312fcdaf24.html" data-doc="doc-ac312fcdaf24" data-page="page-ac312fcdaf24.html" data-kind="exercise" data-lesson="L06">L06 · 键盘输入、格式化与文件</a><a class="navlink" href="page-59c311bedabe.html" data-doc="doc-59c311bedabe" data-page="page-59c311bedabe.html" data-kind="exercise" data-lesson="L07">L07 · 程序如何作选择</a><a class="navlink" href="page-d18029bb4803.html" data-doc="doc-d18029bb4803" data-page="page-d18029bb4803.html" data-kind="exercise" data-lesson="L08">L08 · 让程序重复做事</a><a class="navlink" href="page-a7b6badbcc8e.html" data-doc="doc-a7b6badbcc8e" data-page="page-a7b6badbcc8e.html" data-kind="exercise" data-lesson="L09">L09 · switch、循环跳转与大数值</a><a class="navlink" href="page-edb3747d12d2.html" data-doc="doc-edb3747d12d2" data-page="page-edb3747d12d2.html" data-kind="exercise" data-lesson="L10">L10 · 数组与成绩统计器</a><div class="navlabel">参考答案 · 先独立作答</div><a class="navlink" href="page-8ac64aceb665.html" data-doc="doc-8ac64aceb665" data-page="page-8ac64aceb665.html" data-kind="answers" data-lesson="L01">L01 · 认识 Java 与程序运行</a><a class="navlink" href="page-702232ba7bff.html" data-doc="doc-702232ba7bff" data-page="page-702232ba7bff.html" data-kind="answers" data-lesson="L02">L02 · 编译、运行与读报错</a><a class="navlink" href="page-c068f2bbb9af.html" data-doc="doc-c068f2bbb9af" data-page="page-c068f2bbb9af.html" data-kind="answers" data-lesson="L03">L03 · 程序结构、变量与类型</a><a class="navlink" href="page-f0ad7e277387.html" data-doc="doc-f0ad7e277387" data-page="page-f0ad7e277387.html" data-kind="answers" data-lesson="L04">L04 · 运算符与类型转换</a><a class="navlink" href="page-21329cb1f07a.html" data-doc="doc-21329cb1f07a" data-page="page-21329cb1f07a.html" data-kind="answers" data-lesson="L05">L05 · 字符串与文本处理</a><a class="navlink" href="page-1d5374d4cbf3.html" data-doc="doc-1d5374d4cbf3" data-page="page-1d5374d4cbf3.html" data-kind="answers" data-lesson="L06">L06 · 键盘输入、格式化与文件</a><a class="navlink" href="page-c1f9ec907b08.html" data-doc="doc-c1f9ec907b08" data-page="page-c1f9ec907b08.html" data-kind="answers" data-lesson="L07">L07 · 程序如何作选择</a><a class="navlink" href="page-af8cd7604511.html" data-doc="doc-af8cd7604511" data-page="page-af8cd7604511.html" data-kind="answers" data-lesson="L08">L08 · 让程序重复做事</a><a class="navlink" href="page-8cff2b23cfcc.html" data-doc="doc-8cff2b23cfcc" data-page="page-8cff2b23cfcc.html" data-kind="answers" data-lesson="L09">L09 · switch、循环跳转与大数值</a><a class="navlink" href="page-4a36dc3be0b6.html" data-doc="doc-4a36dc3be0b6" data-page="page-4a36dc3be0b6.html" data-kind="answers" data-lesson="L10">L10 · 数组与成绩统计器</a><div class="navlabel">示例代码与运行命令</div><a class="navlink" href="page-88947e1a9eb7.html" data-doc="doc-88947e1a9eb7" data-page="page-88947e1a9eb7.html" data-kind="code" data-lesson="L01">L01 · 认识 Java 与程序运行</a><a class="navlink" href="page-8dc288399ce5.html" data-doc="doc-8dc288399ce5" data-page="page-8dc288399ce5.html" data-kind="code" data-lesson="L02">L02 · 编译、运行与读报错</a><a class="navlink" href="page-d9c576e49900.html" data-doc="doc-d9c576e49900" data-page="page-d9c576e49900.html" data-kind="code" data-lesson="L03">L03 · 程序结构、变量与类型</a><a class="navlink" href="page-8083ebb8dc8a.html" data-doc="doc-8083ebb8dc8a" data-page="page-8083ebb8dc8a.html" data-kind="code" data-lesson="L04">L04 · 运算符与类型转换</a><a class="navlink" href="page-d9dddbc70e06.html" data-doc="doc-d9dddbc70e06" data-page="page-d9dddbc70e06.html" data-kind="code" data-lesson="L05">L05 · 字符串与文本处理</a><a class="navlink" href="page-6d5a15d068b7.html" data-doc="doc-6d5a15d068b7" data-page="page-6d5a15d068b7.html" data-kind="code" data-lesson="L06">L06 · 键盘输入、格式化与文件</a><a class="navlink" href="page-16bbc7816c2e.html" data-doc="doc-16bbc7816c2e" data-page="page-16bbc7816c2e.html" data-kind="code" data-lesson="L07">L07 · 程序如何作选择</a><a class="navlink" href="page-539c04050fe3.html" data-doc="doc-539c04050fe3" data-page="page-539c04050fe3.html" data-kind="code" data-lesson="L08">L08 · 让程序重复做事</a><a class="navlink" href="page-a8fac8cdd2df.html" data-doc="doc-a8fac8cdd2df" data-page="page-a8fac8cdd2df.html" data-kind="code" data-lesson="L09">L09 · switch、循环跳转与大数值</a><a class="navlink" href="page-b1915ed3b0b5.html" data-doc="doc-b1915ed3b0b5" data-page="page-b1915ed3b0b5.html" data-kind="code" data-lesson="L10">L10 · 数组与成绩统计器</a><div class="navlabel">查阅与接续</div><a class="navlink" href="page-0ef3cebffbed.html" data-doc="doc-0ef3cebffbed" data-page="page-0ef3cebffbed.html" data-kind="guide" data-lesson="">全书路线 · 35课</a><a class="navlink" href="page-fea294d77afe.html" data-doc="doc-fea294d77afe" data-page="page-fea294d77afe.html" data-kind="guide" data-lesson="">447条教材索引</a><a class="navlink" href="page-32d80fdb4bb7.html" data-doc="doc-32d80fdb4bb7" data-page="page-32d80fdb4bb7.html" data-kind="guide" data-lesson="">AI批改与进度追踪</a><a class="navlink" href="page-e8601bdcb726.html" data-doc="doc-e8601bdcb726" data-page="page-e8601bdcb726.html" data-kind="guide" data-lesson="">个人进度模板</a><a class="navlink" href="page-7def9b47aa03.html" data-doc="doc-7def9b47aa03" data-page="page-7def9b47aa03.html" data-kind="guide" data-lesson="">维护与打包</a><a class="navlink" href="page-a54ff182c7e8.html" data-doc="doc-a54ff182c7e8" data-page="page-a54ff182c7e8.html" data-kind="guide" data-lesson="">课程写作约定</a><div class="navlabel">连续阅读 · 可选</div><a class="navlink" href="全一册.html" data-doc="combined" data-page="全一册.html" data-kind="combined" data-lesson="">全一册（连续阅读）</a></nav><p class="side-note">按课阅读，逐项练习。<br>个人作答直接写入练习.md。<br>教材PDF需自备。</p></aside><main><article><div class="crumb">Java入门课程 / 按课学习</div><span class="edition">分课阅读 · 第1–3章 · 10课已备 · 双页码</span><nav class="lesson-tabs" aria-label="本课内容切换"><a href="l05-lesson.html" aria-current="page">讲义</a><a href="page-d9dddbc70e06.html">示例</a><a href="page-279cca6b26ab.html">练习</a><a href="page-21329cb1f07a.html">参考答案</a></nav><h1 id="l05-讲义-字符串与文本处理">L05 讲义 · 字符串与文本处理</h1><details class="page-toc"><summary>本页目录</summary><div class="toc">
 <ul>
-<li><a href="l05-lesson.html#这一课要解决什么问题">这一课要解决什么问题</a></li>
-<li><a href="l05-lesson.html#1-string与不变性">1. String与不变性</a></li>
-<li><a href="l05-lesson.html#2-内容比较用equals">2. 内容比较用equals</a></li>
-<li><a href="l05-lesson.html#3-下标从0终点不包含">3. 下标从0，终点不包含</a></li>
-<li><a href="l05-lesson.html#4-unicode与stringbuilder">4. Unicode与StringBuilder</a></li>
-<li><a href="l05-lesson.html#动手实验">动手实验</a></li>
-<li><a href="l05-lesson.html#本课过关">本课过关</a></li>
-<li><a href="l05-lesson.html#示例入口">示例入口</a></li>
-<li><a href="l05-lesson.html#学完交什么">学完交什么</a></li>
+<li><a href="l05-lesson.html#0-这课分几步学">0. 这课分几步学</a><ul>
+<li><a href="l05-lesson.html#怎么把讲义中的程序跑起来">怎么把讲义中的程序跑起来</a></li>
+</ul>
+</li>
+<li><a href="l05-lesson.html#1-文本不只是给数字换一种输出">1. 文本不只是给数字换一种输出</a></li>
+<li><a href="l05-lesson.html#2-调用一个方法到底交出和拿回什么">2. 调用一个方法，到底交出和拿回什么</a></li>
+<li><a href="l05-lesson.html#3-trim-没效果先分清忽略结果与重新赋值">3. trim 没效果？先分清忽略结果与重新赋值</a></li>
+<li><a href="l05-lesson.html#4-两份内容相同是否就是同一对象">4. 两份内容相同，是否就是同一对象</a><ul>
+<li><a href="l05-lesson.html#空字符串和-null">空字符串和 null</a></li>
+</ul>
+</li>
+<li><a href="l05-lesson.html#5-字符编号长度与最后一个位置不同">5. 字符编号：长度与最后一个位置不同</a></li>
+<li><a href="l05-lesson.html#6-从哪一步变成文本拼接">6. + 从哪一步变成文本拼接</a></li>
+<li><a href="l05-lesson.html#7-构建器明确要反复追加的工具">7. 构建器：明确要反复追加的工具</a></li>
+<li><a href="l05-lesson.html#8-length-为什么不总是屏幕上的字数">8. length 为什么不总是屏幕上的字数</a></li>
+<li><a href="l05-lesson.html#对齐367368学会读一条api不靠记住所有名字">对齐3.6.7–3.6.8：学会读一条API，不靠记住所有名字</a></li>
+<li><a href="l05-lesson.html#教材366的进阶路线暂缓不等于省略">教材3.6.6的进阶路线，暂缓不等于省略</a></li>
+<li><a href="l05-lesson.html#教材深化会做以后再带着问题读">教材深化：会做以后，再带着问题读</a></li>
+<li><a href="l05-lesson.html#接下来怎么交">接下来怎么交</a></li>
 </ul>
 </div>
 </details>
 <blockquote>
-<p>前置：L04：表达式与比较。
-页码：<strong>书本 p45–55 / PDF p63–73</strong>。见<a href="page-526e3b952094.html">页码说明</a>。</p>
+<p><strong>定位：不打开教材，也能跟着本讲义理解、操作并开始完成本课练习。</strong> PDF 用来在学会以后深化；前课学过的概念可按链接回看。
+前置：L03–L04：能跟踪变量赋值，知道参数是交给操作的数据，表达式可以得到结果。
+教材对应：<strong>书本 p45–55 / PDF p63–73</strong>。页码含义见<a href="page-526e3b952094.html">页码对应说明</a>。</p>
 </blockquote>
+<h2 id="0-这课分几步学">0. 这课分几步学</h2>
+<p>第一次学第 1–4 节：方法、引用、不可变、比较；第二次学第 5–7 节：编号、截取、拼接和构建器。第 8 节再看 Unicode 边界，不必第一遍实现复杂文字算法。</p>
+<h3 id="怎么把讲义中的程序跑起来">怎么把讲义中的程序跑起来</h3>
+<p>带有 <code>public class</code>、完整大括号和 <code>main</code> 的 Java 代码框是完整程序。标为“片段”的短代码只替换 main 里面相应部分，不能单独当文件运行。每个完整程序另建一个文件，不能把两个 public class 或两个 main 随手拼在一起。</p>
+<p>在 VS Code 中打开整个 <code>D:\Code\Java</code> 文件夹。在本课 <code>my_code</code> 文件夹新建 <code>TextOperations.java</code>，文件名要与 <code>public class</code> 后的名字相同；保存为 UTF-8。没有显示后缀、不会新建文件或打开终端，先看<a href="page-4cc100767b13.html">零基础起飞</a>，无需先读 PDF。</p>
+<p>打开“终端 → 新建终端”，确认使用 <strong>PowerShell</strong>。以下命令从课程根目录开始输入，提示符本身不用抄：</p>
+<pre><code class="language-powershell">Set-Location 'D:\Code\Java'
+.\java.ps1 -Source '.\L05_第03章C_字符串\my_code\TextOperations.java'
+</code></pre>
+<p>这是课程提供的“编译成功才启动”工具。它每次在 <code>.build</code> 中另建输出目录，生成 class 后才运行；不要手动执行以前留下的 class。后面的完整程序同样操作，只换末尾文件名。需要键盘输入时，运行后在终端键入数据并回车；程序没有显示新提示符，可能正在等输入。出现脚本策略提示时，在同一根目录把运行一行改为：</p>
+<pre><code class="language-powershell">powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\java.ps1 -Source '.\L05_第03章C_字符串\my_code\TextOperations.java'
+</code></pre>
+<p>每次实验留三项记录：<strong>预测、实际输出、解释第一次出现差异的步骤</strong>。看到程序自己的输出才算实际启动；没有报错不等于题目做对。</p>
+<h2 id="1-文本不只是给数字换一种输出">1. 文本不只是给数字换一种输出</h2>
+<p>程序要保存姓名、消息、课程名称。<strong>字符串</strong>是一段文本，Java 用 String 表示它。例如 <code>String name="Li Ming";</code>建立一个保存文本引用的变量。</p>
+<p><strong>对象</strong>可以先理解为运行中具有类型和相关操作的一项数据实体。String 对象代表一段文本。类 String 规定这种数据怎样使用；具体的 "Li Ming" 是一段实际文本。类与对象的完整设计以后再学，本课先要分清“变量”与“变量找到的文本”。</p>
+<p><strong>引用</strong>是程序用来找到对象的值。类比一张取件凭证：变量保存凭证，凭证能找到包裹；把凭证复制两份，包裹不一定变成两份。类比不表示你可以看到真实地址或任意加减地址；Java 引用没有这样的指针算术。</p>
+<pre><code class="language-text">变量 name ──引用──&gt; String 对象：Li Ming
+</code></pre>
+<h2 id="2-调用一个方法到底交出和拿回什么">2. 调用一个方法，到底交出和拿回什么</h2>
+<p><strong>方法调用</strong>是请求一个现成操作做一次工作。先读成 <code>对象.操作(输入)</code>。有些操作返回一个结果，有些只做动作；不能看到调用结束就认为原变量已经被改。</p>
+<pre><code class="language-java">public class TextOperations {
+    public static void main(String[] args) {
+        String word = &quot;Java&quot;;
+        int length = word.length();
+        String part = word.substring(1, 3);
+        System.out.println(length);
+        System.out.println(part);
+        System.out.println(word);
+    }
+}
+</code></pre>
+<p>输出 4、av、Java。拆开第二个调用：</p>
+<table>
+<thead>
+<tr>
+<th>部分</th>
+<th>在本例的含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>word</td>
+<td>通过它找到要操作的文本</td>
+</tr>
+<tr>
+<td>substring</td>
+<td>操作的名字：取一段子串</td>
+</tr>
+<tr>
+<td>(1, 3)</td>
+<td>交给操作的两个编号参数</td>
+</tr>
+<tr>
+<td>返回结果</td>
+<td>得到文本 av</td>
+</tr>
+<tr>
+<td>String part =</td>
+<td>将结果的引用保存到 part</td>
+</tr>
+</tbody>
+</table>
+<p><code>length()</code>没有参数，括号仍要保留，表示调用；结果是 int 长度。括号中的逗号分隔参数，不是字符串正文。</p>
+<p>这一课遇到方法时先问四句：对谁操作、交给它什么、它返回什么、是否改变原对象。API 是工具提供的使用约定，包含这些信息；不是神秘的新编程语言。</p>
+<h2 id="3-trim-没效果先分清忽略结果与重新赋值">3. trim 没效果？先分清忽略结果与重新赋值</h2>
+<p><strong>不可变</strong>在 String 上指对象建立后的文本内容不会被这些方法改写。想得到另一段文本，使用返回结果；变量本身仍可以指向另一个对象。</p>
+<pre><code class="language-java">public class TrimWalk {
+    public static void main(String[] args) {
+        String original = &quot;  Java  &quot;;
+        original.trim();
+        System.out.println(&quot;original=[&quot; + original + &quot;]&quot;);
+        String cleaned = original.trim();
+        System.out.println(&quot;cleaned=[&quot; + cleaned + &quot;]&quot;);
+        System.out.println(&quot;still original=[&quot; + original + &quot;]&quot;);
+        original = cleaned;
+        System.out.println(&quot;reassigned=[&quot; + original + &quot;]&quot;);
+    }
+}
+</code></pre>
+<p>输出的方括号是我们主动加的，用来让两侧空格可见：</p>
+<pre><code class="language-text">original=[  Java  ]
+cleaned=[Java]
+still original=[  Java  ]
+reassigned=[Java]
+</code></pre>
+<p>按三个时刻画图：</p>
+<pre><code class="language-text">① original ──&gt; [  Java  ]
+   调用 trim 并丢弃结果：original 仍指向这段原文本
+
+② original ──&gt; [  Java  ]
+   cleaned  ──&gt; [Java]      把处理结果另存下来
+
+③ original ──┐
+             ├─&gt; [Java]    重新给变量赋值，不是改写原文本
+   cleaned ──┘
+</code></pre>
+<p>类比给照片另做裁剪版：得到裁剪结果与让某个标签指向裁剪版，是两个动作。不要从类比推断所有方法必然分配新对象；例如无需裁剪时 trim 可以返回原对象，本课关心的是内容不被改写及返回值的使用。</p>
+<p>Java 8 的 trim 按自己的字符规则去两端相应空白，不等于去除任意 Unicode 空白，也不会删除姓名中间的空格。先用普通空格做练习。</p>
+<p>随堂实验：去掉最后的 original=cleaned，预测最后一行；再把原始文本改为 "  Li Ming  "，中间空格应该保留。</p>
+<h2 id="4-两份内容相同是否就是同一对象">4. 两份内容相同，是否就是同一对象</h2>
+<p><strong>内容相等</strong>问文本是否一样；<strong>同一对象</strong>问两个引用是否找到同一个对象。两个文件都写着 Java，不能据此说它们就是同一个文件。类比说明问题不同，不是说 String 对象真是磁盘文件。</p>
+<pre><code class="language-java">public class TextEqualityWalk {
+    public static void main(String[] args) {
+        String first = &quot;Java&quot;;
+        String alias = first;
+        String other = new String(&quot;Java&quot;);
+        System.out.println(first == alias);
+        System.out.println(first == other);
+        System.out.println(first.equals(other));
+        System.out.println(first.equals(&quot;java&quot;));
+    }
+}
+</code></pre>
+<p>输出 true、false、true、false。<code>new String("Java")</code>在这里明确建立另一个 String 对象；平常不必为了比较文字特意这样创建，本例用它把两种问题分开。</p>
+<pre><code class="language-text">first ─┐
+       ├─&gt; 对象 A：Java
+alias ─┘
+other ───&gt; 对象 B：Java
+</code></pre>
+<p>引用的 == 比较是否同一对象；String.equals 比较文本内容，默认区分大小写。给用户输入的命令作内容判断，不能用“我试过两个字面量 == 为真”证明可以使用 ==。字面量可能共享对象，那恰好掩盖了错误。</p>
+<h3 id="空字符串和-null">空字符串和 null</h3>
+<p><code>""</code>是确实存在、但长度为 0 的文本；<code>null</code>表示引用没有指向对象。空箱子与没有箱子可帮助记差别，但 null 不是一个内容叫“空”的特殊 String。</p>
+<p><code>"".length()</code>得到 0；若变量 absent 为 null，调用 <code>absent.length()</code>会产生空指针异常。这里有一个容易误读的错误：源码直接写 <code>null.length()</code>本身不是合法的这类调用实验；应先有 String 变量，再让它的值为 null，在副本观察运行失败。</p>
+<p><code>"yes".equals(answer)</code>以确定存在的字面量作调用者，即使 answer 是 null 也能返回 false。这只是这个调用的安全性质，不代表别的 null 操作都安全。</p>
+<h2 id="5-字符编号长度与最后一个位置不同">5. 字符编号：长度与最后一个位置不同</h2>
+<p>给 Java 的四个代码单元编号：</p>
+<pre><code class="language-text">位置：     0   1   2   3
+文本：    [J] [a] [v] [a]
+边界：   0   1   2   3   4
+</code></pre>
+<p><strong>下标</strong>是访问位置用的编号，Java 从 0 开始。length() 是 4，合法 charAt 下标是 0–3。</p>
+<p><strong>子串</strong>是原文本里连续的一段。<code>substring(begin,end)</code>包含 begin，不包含 end，选中位置 begin 到 end−1。像在格子边界上插两张卡，拿走两卡之间的格子。</p>
+<table>
+<thead>
+<tr>
+<th>调用</th>
+<th>选中哪些位置</th>
+<th>结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>charAt(0)</td>
+<td>单个位置 0</td>
+<td>'J'</td>
+</tr>
+<tr>
+<td>substring(1,3)</td>
+<td>1、2</td>
+<td>"av"</td>
+</tr>
+<tr>
+<td>substring(0,4)</td>
+<td>0、1、2、3</td>
+<td>"Java"</td>
+</tr>
+<tr>
+<td>substring(2,2)</td>
+<td>没有格子</td>
+<td>""</td>
+</tr>
+</tbody>
+</table>
+<p>begin 和 end 相同可以得到空串；但倒过来、超过长度或使用负位置会违反范围。<code>charAt(length())</code>是在第四格之后取字符，应运行时失败；<code>substring(length(),length())</code>却可以得到空串，两个方法的边界条件不同。</p>
+<p>先做纸上题："Li Ming"长度为 7，前两个单元在哪些位置？应取 substring(0,2)，不是 substring(1,2)。若不画下标，很容易把人的“第一个”直接写成 1。</p>
+<h2 id="6-从哪一步变成文本拼接">6. + 从哪一步变成文本拼接</h2>
+<p><strong>拼接</strong>是把几段文本接成一段。当 + 的运算涉及 String 时会进行字符串拼接：</p>
+<pre><code class="language-text">&quot;score=&quot; + 80 + 5      → &quot;score=80&quot; + 5 → &quot;score=805&quot;
+&quot;score=&quot; + (80 + 5)    → &quot;score=&quot; + 85 → &quot;score=85&quot;
+80 + 5 + &quot; points&quot;     → 85 + &quot; points&quot; → &quot;85 points&quot;
+</code></pre>
+<p>先算哪个部分，由语法规则与括号决定，不是由“看起来像分数相加”决定。先算数值，再加标签，可以减少混淆。</p>
+<p>练习 NameCard 的路径：先保存 raw；另建 cleaned=raw.trim()；先输出带方括号的两份文本检查空格；再加长度和前两个位置的子串。这样一旦截取不对，就能分清是 trim、下标还是输出的问题。</p>
+<h2 id="7-构建器明确要反复追加的工具">7. 构建器：明确要反复追加的工具</h2>
+<p><strong>StringBuilder</strong>是可以改变内容的文本构建工具。像草稿板逐段追加，最后交出一份 String 结果。它与不可变 String 的操作性质不同，不能见到“文本方法”就一律以为不改变原对象。</p>
+<pre><code class="language-java">public class BuilderWalk {
+    public static void main(String[] args) {
+        StringBuilder draft = new StringBuilder();
+        draft.append(&quot;Java&quot;);
+        System.out.println(&quot;step1=[&quot; + draft.toString() + &quot;]&quot;);
+        draft.append(&quot; &quot;);
+        draft.append(&quot;course&quot;);
+        String result = draft.toString();
+        System.out.println(&quot;result=[&quot; + result + &quot;]&quot;);
+        draft.append(&quot;!&quot;);
+        System.out.println(&quot;saved=[&quot; + result + &quot;]&quot;);
+        System.out.println(&quot;draft=[&quot; + draft.toString() + &quot;]&quot;);
+    }
+}
+</code></pre>
+<p>输出 step1=[Java]、result=[Java course]、saved=[Java course]、draft=[Java course!]。append 改变构建器；toString 得到当前的 String 文本，之后改构建器不让已保存的 result 自动跟随。</p>
+<p>先把每次操作分成独立行。以后见到 <code>draft.append("Java").append(" course")</code>，它是连续调用，不必为了少写行数提前模仿。</p>
+<h2 id="8-length-为什么不总是屏幕上的字数">8. length 为什么不总是屏幕上的字数</h2>
+<p><strong>码点</strong>是 Unicode 分配给字符的编号；<strong>代码单元</strong>是 UTF-16 表示采用的单位。一个码点可能需要一个或两个代码单元；人眼看到的一个图形还可能由多个码点组合。</p>
+<pre><code class="language-java">public class UnicodeWalk {
+    public static void main(String[] args) {
+        String text = &quot;A😀中&quot;;
+        System.out.println(text.length());
+        System.out.println(text.codePointCount(0, text.length()));
+    }
+}
+</code></pre>
+<p>本例代码单元长度 4，码点数 3。charAt 一次取一个代码单元，不能保证取到整个 emoji。这里不要求写通用文字切分器，也不要把 codePointCount 一概称为视觉字数。</p>
+<p>本课过关：能画变量到文本的关系，解释忽略返回值、重新赋值与不变性的差别；内容比较选 equals；正确截取指定文本；知道空串与 null 不同。Unicode 的复杂遍历只作深化。</p>
+<h2 id="对齐367368学会读一条api不靠记住所有名字">对齐3.6.7–3.6.8：学会读一条API，不靠记住所有名字</h2>
+<p>教材不只列字符串方法，还教如何读文档。以<code>int indexOf(String str)</code>为例：最前int是返回类型，indexOf是方法名，括号说明要交一个String参数。形参名str是文档里的名字，不要求调用方变量也取这个名字。</p>
+<p>假设<code>String title="Java course";</code>，调用title.indexOf("course")得到5；调用title.indexOf("Python")得到−1。它返回位置，不返回找到的正文；没找到时不要把−1直接交给substring作合法下标。</p>
+<p>阅读步骤：先在<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html">String官方API</a>定位类；找Method Summary中的方法名；再读参数、返回值和Throws里的失败条件。页面样式可以不同，读的内容相同。教材条目旁的版本数字说明何时加入，不是要求你下载这个版本。</p>
+<p>常见任务的小字典：</p>
+<table>
+<thead>
+<tr>
+<th>任务</th>
+<th>可以查什么</th>
+<th>先核对的边界</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>判断前缀/后缀</td>
+<td>startsWith、endsWith</td>
+<td>区分大小写，结果是boolean</td>
+</tr>
+<tr>
+<td>忽略大小写比较简单文本</td>
+<td>equalsIgnoreCase</td>
+<td>不等于任意语言的排序规则</td>
+</tr>
+<tr>
+<td>找位置</td>
+<td>indexOf、lastIndexOf</td>
+<td>找不到为−1</td>
+</tr>
+<tr>
+<td>换一段正文</td>
+<td>replace</td>
+<td>String原对象不改变</td>
+</tr>
+<tr>
+<td>统一大小写</td>
+<td>toLowerCase、toUpperCase</td>
+<td>大小写规则可能受地区影响</td>
+</tr>
+<tr>
+<td>用分隔符连接</td>
+<td>String.join</td>
+<td>分隔符是你明确提供的文字</td>
+</tr>
+</tbody>
+</table>
+<p>看到CharSequence参数时，本阶段可先交String，它是可接受的类型；接口体系第6章再展开。不需要为会调用一个方法先背完继承结构。</p>
+<p>构建器除append外还可insert、delete、setCharAt。它们与String的不可变操作不同；delete也采用起点含、终点不含的范围。第一遍先熟练append与toString，其余会查，不增加本课必交工作。</p>
+<h2 id="教材366的进阶路线暂缓不等于省略">教材3.6.6的进阶路线，暂缓不等于省略</h2>
+<p>String的codePointAt接收代码单元下标；想从第几个码点定位，可用offsetByCodePoints换成相应下标。后续学过循环与数组，再看codePoints().toArray()或按码点前进。</p>
+<p>例如"A😀中"中第1个码点是emoji，位置按从0计数；再往后一个码点的代码单元位置是3，而不是2。先把“码点编号”与“代码单元编号”分两行画出来。本课不要求用未学的Stream写遍历。</p>
+<h2 id="教材深化会做以后再带着问题读">教材深化：会做以后，再带着问题读</h2>
+<p>下面是教材定位表，不是完成正文和基础练习的先决条件。先用讲义做出本课任务，再读对应页，把教材的术语、更多例子与自己已经观察到的现象联系起来；看不懂的细节可以留作问题。</p>
 <table>
 <thead>
 <tr>
@@ -58,31 +327,8 @@
 </tr>
 </tbody>
 </table>
-<h2 id="这一课要解决什么问题">这一课要解决什么问题</h2>
-<p>电脑怎样保存姓名、拼接消息、比较文本、截取一部分？不要把字符串当成C++字符数组照搬。</p>
-<h2 id="1-string与不变性">1. String与不变性</h2>
-<p><strong>字符串</strong>是一段文本，例如<code>"Java"</code>；Java用<code>String</code>类表示它。<strong>方法调用</strong>是请求某个对象或类完成一个操作，写法先读成“对象.操作(参数)”。参数是交给操作的数据，返回值是操作得到的结果。</p>
-<pre><code class="language-java">String name = &quot;  Java  &quot;;
-name.trim();
-System.out.println(name);
-name = name.trim();
-</code></pre>
-<p><strong>不可变</strong>表示已经建立的String对象内容不会被这些操作改写。<code>trim()</code>返回去掉首尾相应空白的新结果；不接住结果，name还是原来的引用。这里的<strong>引用</strong>可类比找到对象的凭证，但不是能自己做地址算术的指针。重新给变量赋值与修改原对象不是一回事。</p>
-<h2 id="2-内容比较用equals">2. 内容比较用equals</h2>
-<p><code>a.equals(b)</code>比较字符串内容；引用上的<code>==</code>比较是否指向同一对象。一些字面量可能共享对象，导致<code>==</code>偶尔看似能比内容，不能因此拿它判断用户输入的文本。</p>
-<p>空字符串<code>""</code>是存在但没有内容的String；<code>null</code>是没有指向对象。<code>null.length()</code>会报异常，不是0。已知常量时可写<code>"yes".equals(answer)</code>，answer为null也不会因为调用者为null而报错；不要因此认为所有null操作都安全。</p>
-<h2 id="3-下标从0终点不包含">3. 下标从0，终点不包含</h2>
-<p><code>"Java".charAt(0)</code>得到'J'。<code>substring(1,3)</code>取下标1、2，得到<code>"av"</code>；结束下标不包含，像从起点格子走到终点前停下。<code>length()</code>是代码单元个数，合法charAt下标从0到length()-1。空串没有可取的第0个元素。</p>
-<p><code>"score="+80+5</code>会先拼接成文本再继续拼接，得到<code>score=805</code>；要先求和写<code>"score="+(80+5)</code>。</p>
-<h2 id="4-unicode与stringbuilder">4. Unicode与StringBuilder</h2>
-<p>String内部使用UTF-16代码单元语义；emoji等补充字符可能占两个代码单元。运行UnicodeDemo，比较length和codePointCount。<strong>码点</strong>是Unicode给字符分配的编号；它与“视觉上一个字形”也不总是一对一。先知道边界，本课不要求实现通用字素切分。</p>
-<p>反复拼很多片段时，可以用<strong>StringBuilder</strong>这个可变文本构建工具，像先在草稿板上逐段追加，最后<code>toString()</code>交出String。<code>append</code>会改变构建器，区别于String上的不可变操作。先运行示例，不要求在还没学循环时优化所有字符串。</p>
-<h2 id="动手实验">动手实验</h2>
-<p>运行StringDemo和UnicodeDemo；在自己副本里故意调用<code>charAt(length())</code>，区分编译成功与运行越界。读取教材3.6.7、3.6.8的API条目时，先找方法名字、参数、返回结果及前提；不要一次背全部方法。</p>
-<h2 id="本课过关">本课过关</h2>
-<p>能解释equals、null、空串和不变性；准确计算子串范围；对包含空格与中文的文本完成题目指定处理。</p>
-<h2 id="示例入口">示例入口</h2>
-<p><a href="page-d9dddbc70e06.html">逐个示例与运行命令</a>。</p>
-<h2 id="学完交什么">学完交什么</h2>
-<p>完成<a href="page-279cca6b26ab.html">本课练习</a>，代码写入<a href="page-f3fbee0e1a6b.html">my_code</a>，附命令、输入和结果。先做题，再看<a href="page-21329cb1f07a.html">参考答案</a>。批改后将结论保存到<a href="page-e8601bdcb726.html">进度追踪</a>。</p>
-<p>下一课：<a href="l06-lesson.html">L06 键盘输入、格式化与文件</a>。</p><div class="pager"><a rel="prev" href="page-7d5e3415eb77.html">← 上一页：L04 练习</a><a rel="next" href="page-d9dddbc70e06.html">下一页：L05 示例 →</a></div><p class="footer">课程原创配套讲解与习题 · 阅读教材 → 动手 → 订正 → 更新进度</p></article></main></div><script src="assets/course.js?v=1c1950cb02ee"></script></body></html>
+<p>本课按上述教材正文范围编写，阅读与关键页面看图核对记录见<a href="page-526e3b952094.html">页码对应说明</a>。正文PDF页序与书页差18，前言、目录不能套用。选读内容不作为额外卡关要求。</p>
+<h2 id="接下来怎么交">接下来怎么交</h2>
+<p>在<a href="page-279cca6b26ab.html">练习.md</a>中直接填写原有题号下的答案，代码放<a href="page-f3fbee0e1a6b.html">my_code</a>。本讲义的随堂检查用于帮助你起步；正式必做仍以练习中的题号为准，不因本次重写额外要求你重新提交旧答案。</p>
+<p>原有<a href="page-d9dddbc70e06.html">独立示例及命令</a>可以在学过相应小节后对照。完成以后再看<a href="page-21329cb1f07a.html">参考答案与解析</a>，寻找自己的思路与参考思路第一次不同的地方。材料编译通过不代表学生过关；作答仍需单独批改并保存到<a href="page-e8601bdcb726.html">进度追踪</a>。</p>
+<p>下一课：<a href="l06-lesson.html">L06 键盘输入、格式化与文件</a>。</p><div class="pager"><a rel="prev" href="page-7d5e3415eb77.html">← 上一页：L04 练习</a><a rel="next" href="page-d9dddbc70e06.html">下一页：L05 示例 →</a></div><p class="footer">课程原创讲义与习题 · 讲义学习 → 动手练习 → 订正 · 教材深化</p></article></main></div><script src="assets/course.js?v=1c1950cb02ee"></script></body></html>

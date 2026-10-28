@@ -13,7 +13,8 @@
 <p>教材：《Java核心技术 卷Ⅰ：基础知识（原书第10版）》中文版。课程作者：凉开水；AI 协助编写。创建于 2026-10-27。</p>
 <p><a href="https://github.com/liang-kai-shui/java-core-course">GitHub仓库</a> · <a href="https://liang-kai-shui.github.io/java-core-course/">在线阅读</a> · 代码采用<a href="https://github.com/liang-kai-shui/java-core-course/blob/main/LICENSE">MIT协议</a>，文档采用<a href="https://github.com/liang-kai-shui/java-core-course/blob/main/LICENSE-DOCS">CC BY-NC-SA 4.0</a>。</p>
 <p><strong>第一次学习：<a href="page-4cc100767b13.html">零基础起飞</a> → <a href="l01-lesson.html">L01 讲义</a> → <a href="page-2bd2136ce2bb.html">直接在L01练习里作答</a>。</strong></p>
-<p>本课程沿用 C++ 学习项目的方式：先用白话解释一个知识点解决什么问题，再精读教材、手敲示例、改参数观察现象、完成练习，最后由 AI 批改并持续记录进度。不假设你已经会 C++，也不根据“以前看过”推定已经掌握。</p>
+<p><strong>讲义是可以独立学习的正文，PDF教材用于学会之后深化。</strong> 每课先用具体问题建立需求，再讲白话概念、拆语法、走完整程序、做单步修改，带到独立练习；完成基础任务不以先读PDF为条件。课程沿教材章节顺序推进，但不会把关键解释留在教材中。不假设你已经会 C++，也不根据“以前看过”推定已经掌握。</p>
+<p>现在 L01–L10 已按这个定位重写：讲义中的完整程序可以单独运行，短片段与完整程序分开；执行表、引用图、输入队列和项目阶段帮助理解过程。练习附起步提示，参考答案解释思路与常见错法。材料准备完成仍需通过实际学习与反馈检验，不能保证每个人一遍读完就掌握。</p>
 <h2 id="如果你对电脑操作也不熟">如果你对电脑操作也不熟</h2>
 <p>先读<a href="page-4cc100767b13.html">《零基础起飞》</a>。它从电脑、文件、扩展名、路径讲起，带你打开任务管理器和PowerShell、新建源码、编译运行、观察class文件，再处理中文和旧结果问题。每个阶段都有具体操作、应看到的结果及排错办法，可以分几次完成。</p>
 <p>第一次出现的名词，先说清“是什么、为什么需要、可以怎样类比”，再用操作建立认识。类比只帮助理解，不能替代真实规则；不能把“写一行定义”当作已经教会，也不把任务管理器、当前位置、保存等电脑操作默认为人人会。</p>
@@ -29,11 +30,11 @@
 <h2 id="怎样使用">怎样使用</h2>
 <ol>
 <li>第一次先读 <a href="page-4cc100767b13.html">零基础起飞</a>、<a href="page-b984dae871b4.html">环境说明</a> 和 <a href="page-526e3b952094.html">页码对应说明</a>。</li>
-<li>每课先读讲义的“要解决的问题”，按双页码表精读或略读教材。</li>
+<li>按讲义的学习段阅读、手敲完整程序，先预测、再运行、解释差异。不会时回到讲义对应步骤；基础练习所需解释由讲义提供。</li>
 <li>在 <code>my_code/</code> 里新建文件手敲示例，先预测结果再运行；保留原 <code>code/</code> 示例。</li>
 <li><strong>直接在每课的 <code>练习.md</code> 里写答案，按 <code>Ctrl+S</code> 保存。</strong> 代码写入 <code>my_code/</code>，在题目下记录源码路径、命令和结果；不必另建 <code>作答.md</code>。已有作答文件仍可继续使用。</li>
 <li>完成后告诉 AI 课号并提供作答；AI 先读 <a href="page-e8601bdcb726.html">进度追踪</a>，按 <a href="page-32d80fdb4bb7.html">批改指南</a> 批改。</li>
-<li>按提示订正，复核通过后进入下一课。参考答案在各课 <code>参考答案/</code>，先独立思考再看。</li>
+<li>按提示订正，复核通过后进入下一课。参考答案在各课 <code>参考答案/</code>，先独立思考再看。想理解得更深时，按讲义末尾“教材深化”的双页码表阅读PDF，对照更正式的论述、更多案例与细节；这不增加基础过关条件。</li>
 </ol>
 <p>本书不是按章配置成套习题的入门课本，因此本项目练习均为原创配套题，<strong>不是教材原题或官方答案</strong>。</p>
 <p>本地个人练习与公开课程分开维护：本地 <code>练习.md</code> 保留你的答案；公开网页、压缩包和GitHub发布目录从独立的空白题目模板构建，不会因为重新打包而清掉答案，也不会把你的作答混入公开习题。</p>
@@ -61,4 +62,4 @@
 </ul>
 <h2 id="学习纪律">学习纪律</h2>
 <p>先自己写、先预测、再运行。报错保留从第一行开始的完整文本。提交时写明输入、期望、实际结果。卡住时先写出思路，AI默认给提示；你明确需要完整答案时可以直接说明。</p>
-<p>不要因为见过C++的相似写法就跳过验证：Java的boolean、字符串比较、数组引用和按值传参都有自己的规则。</p><div class="pager"><a rel="prev" href="index.html">← 课程首页</a><a rel="next" href="page-4cc100767b13.html">下一页：零基础起飞 →</a></div><p class="footer">课程原创配套讲解与习题 · 阅读教材 → 动手 → 订正 → 更新进度</p></article></main></div><script src="assets/course.js?v=1c1950cb02ee"></script></body></html>
+<p>不要因为见过C++的相似写法就跳过验证：Java的boolean、字符串比较、数组引用和按值传参都有自己的规则。</p><div class="pager"><a rel="prev" href="index.html">← 课程首页</a><a rel="next" href="page-4cc100767b13.html">下一页：零基础起飞 →</a></div><p class="footer">课程原创讲义与习题 · 讲义学习 → 动手练习 → 订正 · 教材深化</p></article></main></div><script src="assets/course.js?v=1c1950cb02ee"></script></body></html>

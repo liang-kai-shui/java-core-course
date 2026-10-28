@@ -1,20 +1,318 @@
 <!doctype html><html lang="zh-CN" data-theme="dark"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>L09 讲义 · switch、循环跳转与大数值 · Java陪读</title><link rel="stylesheet" href="assets/course.css?v=1c1950cb02ee"></head><body id="top" data-reading-mode="pages" data-nav-doc="doc-33c8ceac7e88"><header class="top"><a class="brand" href="index.html"><span>JAVA</span>一起把基础写扎实</a><div class="tools"><span class="tag">CORE JAVA · VOL. I · 10TH</span><a id="reading-mode" href="index.html">分课阅读</a><button id="theme" aria-label="切换浅色与深色">明 / 暗</button></div></header><div class="layout"><aside><input id="navsearch" class="navsearch" aria-label="筛选课程导航" placeholder="筛选课号、讲义、练习…"><nav aria-label="课程导航"><div class="navlabel">课程入口</div><a class="navlink" href="index.html" data-doc="home" data-page="index.html" data-kind="home" data-lesson="">课程首页</a><a class="navlink" href="course-info.html" data-doc="doc-b33563055168" data-page="course-info.html" data-kind="guide" data-lesson="">课程说明</a><div class="navlabel">附录 · 先把基础讲清楚</div><a class="navlink" href="page-4cc100767b13.html" data-doc="doc-4cc100767b13" data-page="page-4cc100767b13.html" data-kind="guide" data-lesson="">零基础起飞</a><a class="navlink" href="page-3f83fca99eef.html" data-doc="doc-3f83fca99eef" data-page="page-3f83fca99eef.html" data-kind="guide" data-lesson="">术语表</a><a class="navlink" href="page-b984dae871b4.html" data-doc="doc-b984dae871b4" data-page="page-b984dae871b4.html" data-kind="guide" data-lesson="">运行环境</a><a class="navlink" href="page-526e3b952094.html" data-doc="doc-526e3b952094" data-page="page-526e3b952094.html" data-kind="guide" data-lesson="">书本与PDF页码</a><div class="navlabel">讲义</div><a class="navlink" href="l01-lesson.html" data-doc="doc-9accd0bf9b7f" data-page="l01-lesson.html" data-kind="lesson" data-lesson="L01">L01 · 认识 Java 与程序运行</a><a class="navlink" href="l02-lesson.html" data-doc="doc-27ed48622bd4" data-page="l02-lesson.html" data-kind="lesson" data-lesson="L02">L02 · 编译、运行与读报错</a><a class="navlink" href="l03-lesson.html" data-doc="doc-6b1b497ed36e" data-page="l03-lesson.html" data-kind="lesson" data-lesson="L03">L03 · 程序结构、变量与类型</a><a class="navlink" href="l04-lesson.html" data-doc="doc-441c97ad53bb" data-page="l04-lesson.html" data-kind="lesson" data-lesson="L04">L04 · 运算符与类型转换</a><a class="navlink" href="l05-lesson.html" data-doc="doc-23e9eec49f15" data-page="l05-lesson.html" data-kind="lesson" data-lesson="L05">L05 · 字符串与文本处理</a><a class="navlink" href="l06-lesson.html" data-doc="doc-6892ef8761d4" data-page="l06-lesson.html" data-kind="lesson" data-lesson="L06">L06 · 键盘输入、格式化与文件</a><a class="navlink" href="l07-lesson.html" data-doc="doc-b1469f212770" data-page="l07-lesson.html" data-kind="lesson" data-lesson="L07">L07 · 程序如何作选择</a><a class="navlink" href="l08-lesson.html" data-doc="doc-a6ec0be7c981" data-page="l08-lesson.html" data-kind="lesson" data-lesson="L08">L08 · 让程序重复做事</a><a class="navlink" href="l09-lesson.html" data-doc="doc-33c8ceac7e88" data-page="l09-lesson.html" data-kind="lesson" data-lesson="L09" aria-current="page">L09 · switch、循环跳转与大数值</a><a class="navlink" href="l10-lesson.html" data-doc="doc-dd1d0b22dbf0" data-page="l10-lesson.html" data-kind="lesson" data-lesson="L10">L10 · 数组与成绩统计器</a><div class="navlabel">练习</div><a class="navlink" href="page-2bd2136ce2bb.html" data-doc="doc-2bd2136ce2bb" data-page="page-2bd2136ce2bb.html" data-kind="exercise" data-lesson="L01">L01 · 认识 Java 与程序运行</a><a class="navlink" href="page-95000a110447.html" data-doc="doc-95000a110447" data-page="page-95000a110447.html" data-kind="exercise" data-lesson="L02">L02 · 编译、运行与读报错</a><a class="navlink" href="page-20353e11686c.html" data-doc="doc-20353e11686c" data-page="page-20353e11686c.html" data-kind="exercise" data-lesson="L03">L03 · 程序结构、变量与类型</a><a class="navlink" href="page-7d5e3415eb77.html" data-doc="doc-7d5e3415eb77" data-page="page-7d5e3415eb77.html" data-kind="exercise" data-lesson="L04">L04 · 运算符与类型转换</a><a class="navlink" href="page-279cca6b26ab.html" data-doc="doc-279cca6b26ab" data-page="page-279cca6b26ab.html" data-kind="exercise" data-lesson="L05">L05 · 字符串与文本处理</a><a class="navlink" href="page-ac312fcdaf24.html" data-doc="doc-ac312fcdaf24" data-page="page-ac312fcdaf24.html" data-kind="exercise" data-lesson="L06">L06 · 键盘输入、格式化与文件</a><a class="navlink" href="page-59c311bedabe.html" data-doc="doc-59c311bedabe" data-page="page-59c311bedabe.html" data-kind="exercise" data-lesson="L07">L07 · 程序如何作选择</a><a class="navlink" href="page-d18029bb4803.html" data-doc="doc-d18029bb4803" data-page="page-d18029bb4803.html" data-kind="exercise" data-lesson="L08">L08 · 让程序重复做事</a><a class="navlink" href="page-a7b6badbcc8e.html" data-doc="doc-a7b6badbcc8e" data-page="page-a7b6badbcc8e.html" data-kind="exercise" data-lesson="L09">L09 · switch、循环跳转与大数值</a><a class="navlink" href="page-edb3747d12d2.html" data-doc="doc-edb3747d12d2" data-page="page-edb3747d12d2.html" data-kind="exercise" data-lesson="L10">L10 · 数组与成绩统计器</a><div class="navlabel">参考答案 · 先独立作答</div><a class="navlink" href="page-8ac64aceb665.html" data-doc="doc-8ac64aceb665" data-page="page-8ac64aceb665.html" data-kind="answers" data-lesson="L01">L01 · 认识 Java 与程序运行</a><a class="navlink" href="page-702232ba7bff.html" data-doc="doc-702232ba7bff" data-page="page-702232ba7bff.html" data-kind="answers" data-lesson="L02">L02 · 编译、运行与读报错</a><a class="navlink" href="page-c068f2bbb9af.html" data-doc="doc-c068f2bbb9af" data-page="page-c068f2bbb9af.html" data-kind="answers" data-lesson="L03">L03 · 程序结构、变量与类型</a><a class="navlink" href="page-f0ad7e277387.html" data-doc="doc-f0ad7e277387" data-page="page-f0ad7e277387.html" data-kind="answers" data-lesson="L04">L04 · 运算符与类型转换</a><a class="navlink" href="page-21329cb1f07a.html" data-doc="doc-21329cb1f07a" data-page="page-21329cb1f07a.html" data-kind="answers" data-lesson="L05">L05 · 字符串与文本处理</a><a class="navlink" href="page-1d5374d4cbf3.html" data-doc="doc-1d5374d4cbf3" data-page="page-1d5374d4cbf3.html" data-kind="answers" data-lesson="L06">L06 · 键盘输入、格式化与文件</a><a class="navlink" href="page-c1f9ec907b08.html" data-doc="doc-c1f9ec907b08" data-page="page-c1f9ec907b08.html" data-kind="answers" data-lesson="L07">L07 · 程序如何作选择</a><a class="navlink" href="page-af8cd7604511.html" data-doc="doc-af8cd7604511" data-page="page-af8cd7604511.html" data-kind="answers" data-lesson="L08">L08 · 让程序重复做事</a><a class="navlink" href="page-8cff2b23cfcc.html" data-doc="doc-8cff2b23cfcc" data-page="page-8cff2b23cfcc.html" data-kind="answers" data-lesson="L09">L09 · switch、循环跳转与大数值</a><a class="navlink" href="page-4a36dc3be0b6.html" data-doc="doc-4a36dc3be0b6" data-page="page-4a36dc3be0b6.html" data-kind="answers" data-lesson="L10">L10 · 数组与成绩统计器</a><div class="navlabel">示例代码与运行命令</div><a class="navlink" href="page-88947e1a9eb7.html" data-doc="doc-88947e1a9eb7" data-page="page-88947e1a9eb7.html" data-kind="code" data-lesson="L01">L01 · 认识 Java 与程序运行</a><a class="navlink" href="page-8dc288399ce5.html" data-doc="doc-8dc288399ce5" data-page="page-8dc288399ce5.html" data-kind="code" data-lesson="L02">L02 · 编译、运行与读报错</a><a class="navlink" href="page-d9c576e49900.html" data-doc="doc-d9c576e49900" data-page="page-d9c576e49900.html" data-kind="code" data-lesson="L03">L03 · 程序结构、变量与类型</a><a class="navlink" href="page-8083ebb8dc8a.html" data-doc="doc-8083ebb8dc8a" data-page="page-8083ebb8dc8a.html" data-kind="code" data-lesson="L04">L04 · 运算符与类型转换</a><a class="navlink" href="page-d9dddbc70e06.html" data-doc="doc-d9dddbc70e06" data-page="page-d9dddbc70e06.html" data-kind="code" data-lesson="L05">L05 · 字符串与文本处理</a><a class="navlink" href="page-6d5a15d068b7.html" data-doc="doc-6d5a15d068b7" data-page="page-6d5a15d068b7.html" data-kind="code" data-lesson="L06">L06 · 键盘输入、格式化与文件</a><a class="navlink" href="page-16bbc7816c2e.html" data-doc="doc-16bbc7816c2e" data-page="page-16bbc7816c2e.html" data-kind="code" data-lesson="L07">L07 · 程序如何作选择</a><a class="navlink" href="page-539c04050fe3.html" data-doc="doc-539c04050fe3" data-page="page-539c04050fe3.html" data-kind="code" data-lesson="L08">L08 · 让程序重复做事</a><a class="navlink" href="page-a8fac8cdd2df.html" data-doc="doc-a8fac8cdd2df" data-page="page-a8fac8cdd2df.html" data-kind="code" data-lesson="L09">L09 · switch、循环跳转与大数值</a><a class="navlink" href="page-b1915ed3b0b5.html" data-doc="doc-b1915ed3b0b5" data-page="page-b1915ed3b0b5.html" data-kind="code" data-lesson="L10">L10 · 数组与成绩统计器</a><div class="navlabel">查阅与接续</div><a class="navlink" href="page-0ef3cebffbed.html" data-doc="doc-0ef3cebffbed" data-page="page-0ef3cebffbed.html" data-kind="guide" data-lesson="">全书路线 · 35课</a><a class="navlink" href="page-fea294d77afe.html" data-doc="doc-fea294d77afe" data-page="page-fea294d77afe.html" data-kind="guide" data-lesson="">447条教材索引</a><a class="navlink" href="page-32d80fdb4bb7.html" data-doc="doc-32d80fdb4bb7" data-page="page-32d80fdb4bb7.html" data-kind="guide" data-lesson="">AI批改与进度追踪</a><a class="navlink" href="page-e8601bdcb726.html" data-doc="doc-e8601bdcb726" data-page="page-e8601bdcb726.html" data-kind="guide" data-lesson="">个人进度模板</a><a class="navlink" href="page-7def9b47aa03.html" data-doc="doc-7def9b47aa03" data-page="page-7def9b47aa03.html" data-kind="guide" data-lesson="">维护与打包</a><a class="navlink" href="page-a54ff182c7e8.html" data-doc="doc-a54ff182c7e8" data-page="page-a54ff182c7e8.html" data-kind="guide" data-lesson="">课程写作约定</a><div class="navlabel">连续阅读 · 可选</div><a class="navlink" href="全一册.html" data-doc="combined" data-page="全一册.html" data-kind="combined" data-lesson="">全一册（连续阅读）</a></nav><p class="side-note">按课阅读，逐项练习。<br>个人作答直接写入练习.md。<br>教材PDF需自备。</p></aside><main><article><div class="crumb">Java入门课程 / 按课学习</div><span class="edition">分课阅读 · 第1–3章 · 10课已备 · 双页码</span><nav class="lesson-tabs" aria-label="本课内容切换"><a href="l09-lesson.html" aria-current="page">讲义</a><a href="page-a8fac8cdd2df.html">示例</a><a href="page-a7b6badbcc8e.html">练习</a><a href="page-8cff2b23cfcc.html">参考答案</a></nav><h1 id="l09-讲义-switch循环跳转与大数值">L09 讲义 · switch、循环跳转与大数值</h1><details class="page-toc"><summary>本页目录</summary><div class="toc">
 <ul>
-<li><a href="l09-lesson.html#这一课要解决什么问题">这一课要解决什么问题</a></li>
-<li><a href="l09-lesson.html#1-switch按一个值选择分支">1. switch按一个值选择分支</a></li>
-<li><a href="l09-lesson.html#2-break和continue">2. break和continue</a></li>
-<li><a href="l09-lesson.html#3-biginteger与bigdecimal">3. BigInteger与BigDecimal</a></li>
-<li><a href="l09-lesson.html#动手实验">动手实验</a></li>
-<li><a href="l09-lesson.html#本课过关">本课过关</a></li>
-<li><a href="l09-lesson.html#示例入口">示例入口</a></li>
-<li><a href="l09-lesson.html#学完交什么">学完交什么</a></li>
+<li><a href="l09-lesson.html#0-这课分几步学">0. 这课分几步学</a><ul>
+<li><a href="l09-lesson.html#怎么把讲义中的程序跑起来">怎么把讲义中的程序跑起来</a></li>
+</ul>
+</li>
+<li><a href="l09-lesson.html#1-已知几个选项如何分派工作">1. 已知几个选项，如何分派工作</a></li>
+<li><a href="l09-lesson.html#2-case-匹配入口不给每段自动加墙">2. case 匹配入口，不给每段自动加墙</a></li>
+<li><a href="l09-lesson.html#3-星期题的有效范围也要表达">3. 星期题的有效范围也要表达</a></li>
+<li><a href="l09-lesson.html#4-break结束最内层对应结构">4. break：结束最内层对应结构</a></li>
+<li><a href="l09-lesson.html#5-continue跳过本轮剩下部分">5. continue：跳过本轮剩下部分</a></li>
+<li><a href="l09-lesson.html#6-超出-long-的整数先换一种表示工具">6. 超出 long 的整数，先换一种表示工具</a></li>
+<li><a href="l09-lesson.html#7-十进制计算先别把输入变成近似-double">7. 十进制计算：先别把输入变成近似 double</a></li>
+<li><a href="l09-lesson.html#8-13-为什么需要舍入约定">8. 1/3 为什么需要舍入约定</a></li>
+<li><a href="l09-lesson.html#9-数值相等写法细节也相等吗">9. 数值相等，写法细节也相等吗</a></li>
+<li><a href="l09-lesson.html#对照385386作者的取舍与本课的训练分开">对照3.8.5–3.8.6：作者的取舍与本课的训练分开</a></li>
+<li><a href="l09-lesson.html#对齐39把普通运算改成大数方法算法仍然可追踪">对齐3.9：把普通运算改成大数方法，算法仍然可追踪</a></li>
+<li><a href="l09-lesson.html#教材深化会做以后再带着问题读">教材深化：会做以后，再带着问题读</a></li>
+<li><a href="l09-lesson.html#接下来怎么交">接下来怎么交</a></li>
 </ul>
 </div>
 </details>
 <blockquote>
-<p>前置：L08：for、while、迭代过程。
-页码：<strong>书本 p72–78 / PDF p90–96</strong>。见<a href="page-526e3b952094.html">页码说明</a>。</p>
+<p><strong>定位：不打开教材，也能跟着本讲义理解、操作并开始完成本课练习。</strong> PDF 用来在学会以后深化；前课学过的概念可按链接回看。
+前置：L08：能逐轮追踪 for 和 while；L05：理解对象操作的返回结果需要保存。
+教材对应：<strong>书本 p72–78 / PDF p90–96</strong>。页码含义见<a href="page-526e3b952094.html">页码对应说明</a>。</p>
 </blockquote>
+<h2 id="0-这课分几步学">0. 这课分几步学</h2>
+<p>第 1–3 节处理有限选项；第 4–5 节追踪跳转；第 6–9 节单独学习大数。三段任务不同，可以分开完成；标签跳转与新版本 switch 先作选读。</p>
+<h3 id="怎么把讲义中的程序跑起来">怎么把讲义中的程序跑起来</h3>
+<p>带有 <code>public class</code>、完整大括号和 <code>main</code> 的 Java 代码框是完整程序。标为“片段”的短代码只替换 main 里面相应部分，不能单独当文件运行。每个完整程序另建一个文件，不能把两个 public class 或两个 main 随手拼在一起。</p>
+<p>在 VS Code 中打开整个 <code>D:\Code\Java</code> 文件夹。在本课 <code>my_code</code> 文件夹新建 <code>MenuChoiceWalk.java</code>，文件名要与 <code>public class</code> 后的名字相同；保存为 UTF-8。没有显示后缀、不会新建文件或打开终端，先看<a href="page-4cc100767b13.html">零基础起飞</a>，无需先读 PDF。</p>
+<p>打开“终端 → 新建终端”，确认使用 <strong>PowerShell</strong>。以下命令从课程根目录开始输入，提示符本身不用抄：</p>
+<pre><code class="language-powershell">Set-Location 'D:\Code\Java'
+.\java.ps1 -Source '.\L09_第03章G_多重选择与大数值\my_code\MenuChoiceWalk.java'
+</code></pre>
+<p>这是课程提供的“编译成功才启动”工具。它每次在 <code>.build</code> 中另建输出目录，生成 class 后才运行；不要手动执行以前留下的 class。后面的完整程序同样操作，只换末尾文件名。需要键盘输入时，运行后在终端键入数据并回车；程序没有显示新提示符，可能正在等输入。出现脚本策略提示时，在同一根目录把运行一行改为：</p>
+<pre><code class="language-powershell">powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\java.ps1 -Source '.\L09_第03章G_多重选择与大数值\my_code\MenuChoiceWalk.java'
+</code></pre>
+<p>每次实验留三项记录：<strong>预测、实际输出、解释第一次出现差异的步骤</strong>。看到程序自己的输出才算实际启动；没有报错不等于题目做对。</p>
+<h2 id="1-已知几个选项如何分派工作">1. 已知几个选项，如何分派工作</h2>
+<p>用 if 可以判断任意真假问题，如分数是否达到 60。若任务是按一个命令值选操作，例如 1 看课程、2 看进度、其他提示无效，可以用 <strong>switch</strong>把选项集中列出来。</p>
+<p>像服务台根据号码分派，但 switch 不会理解“最接近的号码”，必须按允许的匹配规则选择。先用 int，避免一开始混入太多类型。</p>
+<pre><code class="language-java">import java.util.Scanner;
+
+public class MenuChoiceWalk {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int choice = in.nextInt();
+        switch (choice) {
+            case 1:
+                System.out.println(&quot;course&quot;);
+                break;
+            case 2:
+                System.out.println(&quot;progress&quot;);
+                break;
+            default:
+                System.out.println(&quot;invalid&quot;);
+        }
+        System.out.println(&quot;finished&quot;);
+    }
+}
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>部分</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>switch(choice)</td>
+<td>本次根据哪个值分派</td>
+</tr>
+<tr>
+<td>case 1:</td>
+<td>值是1时，从这里进入</td>
+</tr>
+<tr>
+<td>case 2:</td>
+<td>值是2时，从这里进入</td>
+</tr>
+<tr>
+<td>default:</td>
+<td>无匹配 case 时从这里进入</td>
+</tr>
+<tr>
+<td>break</td>
+<td>结束当前 switch，来到整个结构之后</td>
+</tr>
+</tbody>
+</table>
+<p>输入 1 输出 course、finished；输入 2 输出 progress、finished；输入 9 输出 invalid、finished。与 if 一样，完成选择不代表程序结束。</p>
+<h2 id="2-case-匹配入口不给每段自动加墙">2. case 匹配入口，不给每段自动加墙</h2>
+<p>传统 Java 8 冒号 switch 中，命中一个 case 后，没有 break 就可能接着执行后面的语句，叫<strong>贯穿</strong>。</p>
+<p>把副本中 case 1 后的 break 去掉，只改这一个位置。输入 1 的路线变成：</p>
+<pre><code class="language-text">匹配 case 1 → 输出 course → 继续到后面的语句
+                           → 输出 progress → 遇 break 离开
+                           → 输出 finished
+</code></pre>
+<p>它不会到 case 2 时重新问一次 choice 是否等于 2。case 是入口标记，这种代码的执行不是一排各自独立的 if。</p>
+<p>若两个值本来就做同一件事，可以有意合并：</p>
+<pre><code class="language-text">case 6:
+case 7:
+    System.out.println(&quot;weekend&quot;);
+    break;
+</code></pre>
+<p>6、7 都从相应标记进入，最终执行共同的输出。写这种合并要有清楚目的，不能靠“偶然漏 break”实现不明意图。</p>
+<h2 id="3-星期题的有效范围也要表达">3. 星期题的有效范围也要表达</h2>
+<p>练习 Weekday 接收 1–7，1–5 为 weekday，6–7 为 weekend，其他 invalid。可以列出 1–5 共用一段，再列 6、7，default 表示其他整数；也可以先用 if 拒绝范围，再 switch 分派。</p>
+<p>起步先只实现 1、6、default，跑通后补齐其余 case。不要写 <code>case day&gt;=6</code>，case 不是条件表达式；想检查区间，if 往往更直接。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">测试值</th>
+<th>检查目的</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">0、8</td>
+<td>范围外</td>
+</tr>
+<tr>
+<td style="text-align: right;">1、5</td>
+<td>工作日两端</td>
+</tr>
+<tr>
+<td style="text-align: right;">6、7</td>
+<td>周末两项</td>
+</tr>
+</tbody>
+</table>
+<p>传统 switch 还支持某些其他类型，包括 String 和枚举，但不是任意 double 或任意 boolean 条件。较新的 Java 有箭头规则等语法，本课程普通程序保持教材的 Java 8 风格，不把两个版本混成一张模板。</p>
+<h2 id="4-break结束最内层对应结构">4. break：结束最内层对应结构</h2>
+<p>在循环中，break 离开最内层包住它的循环。它不是“结束整个程序”；循环之后的操作仍会执行。</p>
+<pre><code class="language-java">public class BreakWalk {
+    public static void main(String[] args) {
+        int sum = 0;
+        for (int n = 1; n &lt;= 5; n++) {
+            if (n &gt; 3) {
+                break;
+            }
+            sum += n;
+        }
+        System.out.println(&quot;sum=&quot; + sum);
+        System.out.println(&quot;finished&quot;);
+    }
+}
+</code></pre>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">n</th>
+<th>n&gt;3</th>
+<th>本轮动作</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">1</td>
+<td>false</td>
+<td>sum=1</td>
+</tr>
+<tr>
+<td style="text-align: right;">2</td>
+<td>false</td>
+<td>sum=3</td>
+</tr>
+<tr>
+<td style="text-align: right;">3</td>
+<td>false</td>
+<td>sum=6</td>
+</tr>
+<tr>
+<td style="text-align: right;">4</td>
+<td>true</td>
+<td>直接离开，不累加4，也不做该 for 的更新</td>
+</tr>
+</tbody>
+</table>
+<p>输出 sum=6、finished。在嵌套结构中，switch 里的普通 break 通常只离开该 switch，不会越过外层循环；先找它对应的最近可中断结构。</p>
+<h2 id="5-continue跳过本轮剩下部分">5. continue：跳过本轮剩下部分</h2>
+<p><strong>continue</strong>不离开整个循环。它省去本轮余下操作，然后按该循环的继续规则走。</p>
+<pre><code class="language-java">public class ContinueWalk {
+    public static void main(String[] args) {
+        int sum = 0;
+        for (int n = 1; n &lt;= 5; n++) {
+            if (n % 2 == 0) {
+                continue;
+            }
+            sum += n;
+        }
+        System.out.println(sum);
+    }
+}
+</code></pre>
+<p>偶数 2、4 跳过累加，参与的是 1、3、5，结果 9。for 的 continue 会转到更新部分，再检查条件；不会永远停在 2。</p>
+<p>while 则返回条件检查。如果更新写在 continue 后面，某些路径就可能永远跳过更新：</p>
+<pre><code class="language-text">int n=1;
+while(n&lt;=5) {
+    if(n==2) { continue; } // n=2 时到不了下方 n++
+    n++;
+}
+</code></pre>
+<p>这是纸上找错，不必长时间运行。解决时让每条继续路径都确实向结束前进，或选择更合适的 for。</p>
+<p>练习 E2 先列 1–20：大于15要结束，3的倍数要跳过，其余才累加。写出实际参与的 <code>1,2,4,5,7,8,10,11,13,14</code>，总和75，再根据这个顺序安排 break、continue 与加法。</p>
+<p>本课标签 break/continue 只作阅读补充；先会解释普通单层跳转，不要求用标签替代清楚的循环结构。</p>
+<h2 id="6-超出-long-的整数先换一种表示工具">6. 超出 long 的整数，先换一种表示工具</h2>
+<p>long 仍有上限。<strong>BigInteger</strong>是标准库大整数类型，能表示远超 long 的整数；“大”仍受可用内存与资源约束，不是无限容量。</p>
+<pre><code class="language-java">import java.math.BigInteger;
+
+public class BigIntegerWalk {
+    public static void main(String[] args) {
+        BigInteger first = new BigInteger(&quot;99999999999999999999&quot;);
+        BigInteger second = new BigInteger(&quot;1&quot;);
+        BigInteger result = first.add(second);
+        System.out.println(first);
+        System.out.println(result);
+    }
+}
+</code></pre>
+<p>输出原数，以及 100000000000000000000。数字放在字符串里，交给构造操作解释为十进制大整数；不要先写成超出 long 的整数字面量再想着转换。</p>
+<p><code>add</code>是相加，<code>subtract</code>相减，<code>multiply</code>相乘。对象不能在这里直接写 first+second 完成大整数加法；要用该类型提供的方法。</p>
+<p>这些对象不可变。first.add(second) 返回结果，不会把 first 的原值改掉。想让变量改指向结果，写 first=first.add(second)，与字符串接收处理结果的思路相同。</p>
+<h2 id="7-十进制计算先别把输入变成近似-double">7. 十进制计算：先别把输入变成近似 double</h2>
+<p>double 能方便计算，但很多十进制小数不能精确表示。<strong>BigDecimal</strong>提供十进制数值表示及明确的精度、舍入操作，适合需要控制十进制规则的任务。它不会替你制定业务上的规则。</p>
+<pre><code class="language-java">import java.math.BigDecimal;
+import java.math.RoundingMode;
+
+public class DecimalWalk {
+    public static void main(String[] args) {
+        BigDecimal first = new BigDecimal(&quot;0.1&quot;);
+        BigDecimal second = new BigDecimal(&quot;0.2&quot;);
+        BigDecimal result = first.add(second);
+        System.out.println(&quot;sum=&quot; + result);
+        BigDecimal third = BigDecimal.ONE.divide(
+            new BigDecimal(&quot;3&quot;), 2, RoundingMode.HALF_UP);
+        System.out.println(&quot;third=&quot; + third);
+    }
+}
+</code></pre>
+<p>输出 sum=0.3、third=0.33。<strong>构造</strong>是按给定参数建立对象；第一行的 "0.1"直接表达十进制值，而 <code>new BigDecimal(0.1)</code>收到的是已经被 double 近似表示的值，会保留那份近似的细节。</p>
+<p>像先把原始尺寸抄错，再用高精度尺制作，工具更精细也不能恢复原记录。类比解释输入信息已经不同，真实差别来自两个构造方法接收不同类型的参数。</p>
+<p><code>BigDecimal.valueOf(0.1)</code>是常见的另一入口，使用 double 的标准字符串表示转换，与 <code>new BigDecimal(0.1)</code>不同；本课需要明确十进制文本时，优先直接用字符串构造。</p>
+<h2 id="8-13-为什么需要舍入约定">8. 1/3 为什么需要舍入约定</h2>
+<p>1/3 的十进制展开无限循环，不可能用有限小数位完整写完。上面的 divide 逐项读成：</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>本例意思</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>new BigDecimal("3")</td>
+<td>除数</td>
+</tr>
+<tr>
+<td>2</td>
+<td>结果保留两位小数，即这里的 scale</td>
+</tr>
+<tr>
+<td>RoundingMode.HALF_UP</td>
+<td>指定取舍方式，本例0.333…得到0.33</td>
+</tr>
+</tbody>
+</table>
+<p><strong>舍入</strong>是按规则把不能全部保留的位数取舍。HALF_UP 是趋近最近值、恰好中间时向远离零的方向取，正数入门可用常说的“四舍五入”理解；涉及负数或其他业务时仍按具体规则判断。</p>
+<p>在副本中只把 2 改为 4，预测 0.3333；再改为0，预测0。若使用不带这套舍入约定的精确 divide，而结果不能有限终止，会报告算术异常，不是 BigDecimal 不会做除法。</p>
+<h2 id="9-数值相等写法细节也相等吗">9. 数值相等，写法细节也相等吗</h2>
+<p>对于 BigDecimal 的 1.0 与 1.00，数值相同，表示的小数位数不同。equals 把 scale 等表示信息也考虑在内；compareTo 用于数值大小比较。</p>
+<pre><code class="language-java">import java.math.BigDecimal;
+
+public class DecimalCompare {
+    public static void main(String[] args) {
+        BigDecimal first = new BigDecimal(&quot;1.0&quot;);
+        BigDecimal second = new BigDecimal(&quot;1.00&quot;);
+        System.out.println(first.equals(second));
+        System.out.println(first.compareTo(second));
+    }
+}
+</code></pre>
+<p>输出 false、0。compareTo 返回负数表示较小、0表示数值相等、正数表示较大；比较时看符号，不要求所有类型都固定返回−1或1。</p>
+<p>练习 Money 分两次写：先从文本建立0.1、0.2，保存加法结果并输出；确认后再加入1/3与舍入。不要一开始同时修改构造方式、输出和舍入位数。</p>
+<p>本课过关：能逐步画出 switch 贯穿、break 和 continue 的落点；用文本建立大数并保存方法返回值；解释有限小数与舍入的必要性。BigDecimal 更完整的使用约定见<a href="https://docs.oracle.com/javase/8/docs/api/java/math/BigDecimal.html">官方说明</a>，不要求入门就背全部方法。</p>
+<h2 id="对照385386作者的取舍与本课的训练分开">对照3.8.5–3.8.6：作者的取舍与本课的训练分开</h2>
+<p>教材对传统switch贯穿持谨慎态度，介绍了<code>-Xlint:fallthrough</code>检查；不表示Java禁止switch。课程保留它，是为了能读懂教材与已有代码，并通过漏break实验真正理解后果。</p>
+<p>当你从MenuChoiceWalk中删除break，启用相应警告时可能看到fallthrough警告；它正是这个故意实验要观察的现象，不能要求所有错误变体也零警告。正常标本仍应保持清楚、无意外警告。</p>
+<p>教材还展示带标签的break：标签放在目标语句前，break加标签名会离开该带标签的语句。标签不是程序任意跳入某行的地址；普通break只离开最近的对应循环或switch。带标签continue的目标必须是循环，再按该循环继续规则执行。第一遍会读控制路线即可，不把标签作为必写技巧。</p>
+<h2 id="对齐39把普通运算改成大数方法算法仍然可追踪">对齐3.9：把普通运算改成大数方法，算法仍然可追踪</h2>
+<p>教材将前一节组合数程序改成BigInteger版本。下面换成“从30名同学选15人”的原创小程序，展示valueOf、乘、除和结果保存：</p>
+<pre><code class="language-java">import java.math.BigInteger;
+
+public class TeamCombinations {
+    public static void main(String[] args) {
+        int n = 30;
+        int k = 15;
+        BigInteger result = BigInteger.valueOf(1);
+        for (int i = 1; i &lt;= k; i++) {
+            BigInteger factor = BigInteger.valueOf(n - i + 1);
+            BigInteger divisor = BigInteger.valueOf(i);
+            result = result.multiply(factor).divide(divisor);
+        }
+        System.out.println(result);
+    }
+}
+</code></pre>
+<p>valueOf把一个long范围内的普通整数值变成大整数对象。multiply先给一个结果，再在那个结果上divide；最终赋回result。初值1与逐轮乘除顺序没变，只是运算工具由基本类型换成对象方法。</p>
+<p>输出155117520。将n改5、k改2，应为10；k改0应为1。这里约定0&lt;=k&lt;=n且n不大到破坏普通计数器，不把示例当成任意输入都已校验的通用工具。</p>
+<p>BigDecimal在原书API中介绍十进制计算与舍入；本课的字符串构造、明确scale及equals辨析属于为零基础补足的使用细节。原书还给出<code>BigDecimal.valueOf(1234,2)</code>表示12.34，scale在这个例子中控制小数点的位置；它与“允许几位有效数字”不是同一概念。</p>
+<h2 id="教材深化会做以后再带着问题读">教材深化：会做以后，再带着问题读</h2>
+<p>下面是教材定位表，不是完成正文和基础练习的先决条件。先用讲义做出本课任务，再读对应页，把教材的术语、更多例子与自己已经观察到的现象联系起来；看不懂的细节可以留作问题。</p>
 <table>
 <thead>
 <tr>
@@ -45,33 +343,8 @@
 </tr>
 </tbody>
 </table>
-<h2 id="这一课要解决什么问题">这一课要解决什么问题</h2>
-<p>有限的几个选项怎样分派？循环中想提前结束怎么办？整数或小数超出基本类型能力时用什么？</p>
-<h2 id="1-switch按一个值选择分支">1. switch按一个值选择分支</h2>
-<p><strong>多重选择</strong>是按同一个值匹配若干选项。传统Java8写法中，<code>case</code>标出选项，<code>default</code>处理未匹配情况，<code>break</code>结束当前switch。没有break时可能继续执行后面的语句，叫<strong>贯穿</strong>；它有时是有意合并分支，但初学要明确标注。</p>
-<pre><code class="language-java">switch (day) {
-    case 6:
-    case 7:
-        System.out.println(&quot;weekend&quot;);
-        break;
-    default:
-        System.out.println(&quot;weekday&quot;);
-}
-</code></pre>
-<p>示例假定day在1–7内；若任务要求验证范围，必须先处理0、8等非法值。switch适合离散选项，不直接写<code>case score &gt;= 60</code>。新版箭头语法另行补充，首批练习采用教材风格。</p>
-<h2 id="2-break和continue">2. break和continue</h2>
-<p>循环里的<code>break</code>结束最内层对应循环；<code>continue</code>跳过本轮剩余部分，转入下一轮。for中的continue会先走更新部分；while里若把更新放在continue之后，可能永远跳过更新导致死循环。</p>
-<p>不要说continue“退出循环”；它只退出这一轮。多层嵌套和带标签跳转先会读，本课选做，不要求靠标签重写普通题。</p>
-<h2 id="3-biginteger与bigdecimal">3. BigInteger与BigDecimal</h2>
-<p><strong>大整数</strong><code>BigInteger</code>用于超出long范围的整数，仍受可用内存与资源限制；不是无限大。<code>new BigInteger("...")</code>从十进制文本建立值。相加写<code>a.add(b)</code>，不能写<code>a+b</code>。</p>
-<p><strong>十进制数</strong><code>BigDecimal</code>适合明确控制十进制表示与舍入。需要精确表示0.1时用<code>new BigDecimal("0.1")</code>，避免先把0.1变成近似double再交给构造器。<code>BigDecimal.valueOf(0.1)</code>也是常见选择，但必须分清它与<code>new BigDecimal(0.1)</code>。</p>
-<p>这些数值对象的运算返回结果，<code>a.add(b)</code>不改原a，需要保存结果。除法不一定有有限小数，<code>1/3</code>要指定保留位数和<strong>舍入规则</strong>，如<code>divide(three,2,RoundingMode.HALF_UP)</code>；本课用它观察“保留2位按规则取舍”，不泛称所有金额都采用同一规则。<code>equals</code>还比较scale等表示细节，数值比较用<code>compareTo</code>并检查是否为0。</p>
-<h2 id="动手实验">动手实验</h2>
-<p>运行MenuDemo的1、2、其他选项；在副本删break预测后续输出。运行SkipAndStopDemo，逐项解释哪些数被跳过、何时停止。运行BigNumberDemo，观察大数加法、0.1+0.2和1/3；再去掉divide中的舍入约定，理解为什么不能假设所有除法都精确终止。</p>
-<h2 id="本课过关">本课过关</h2>
-<p>能说明switch贯穿，区分break与continue，用字符串建立BigDecimal并解释为什么保存运算结果。大数值练习提供步骤，不要求提前掌握完整类设计。</p>
-<h2 id="示例入口">示例入口</h2>
-<p><a href="page-a8fac8cdd2df.html">逐个示例与运行命令</a>。</p>
-<h2 id="学完交什么">学完交什么</h2>
-<p>完成<a href="page-a7b6badbcc8e.html">本课练习</a>，代码写入<a href="page-690be1402f69.html">my_code</a>，附命令、输入和结果。先做题，再看<a href="page-8cff2b23cfcc.html">参考答案</a>。批改后将结论保存到<a href="page-e8601bdcb726.html">进度追踪</a>。</p>
-<p>下一课：<a href="l10-lesson.html">L10 数组与成绩统计器</a>。</p><div class="pager"><a rel="prev" href="page-d18029bb4803.html">← 上一页：L08 练习</a><a rel="next" href="page-a8fac8cdd2df.html">下一页：L09 示例 →</a></div><p class="footer">课程原创配套讲解与习题 · 阅读教材 → 动手 → 订正 → 更新进度</p></article></main></div><script src="assets/course.js?v=1c1950cb02ee"></script></body></html>
+<p>本课按上述教材正文范围编写，阅读与关键页面看图核对记录见<a href="page-526e3b952094.html">页码对应说明</a>。正文PDF页序与书页差18，前言、目录不能套用。选读内容不作为额外卡关要求。</p>
+<h2 id="接下来怎么交">接下来怎么交</h2>
+<p>在<a href="page-a7b6badbcc8e.html">练习.md</a>中直接填写原有题号下的答案，代码放<a href="page-690be1402f69.html">my_code</a>。本讲义的随堂检查用于帮助你起步；正式必做仍以练习中的题号为准，不因本次重写额外要求你重新提交旧答案。</p>
+<p>原有<a href="page-a8fac8cdd2df.html">独立示例及命令</a>可以在学过相应小节后对照。完成以后再看<a href="page-8cff2b23cfcc.html">参考答案与解析</a>，寻找自己的思路与参考思路第一次不同的地方。材料编译通过不代表学生过关；作答仍需单独批改并保存到<a href="page-e8601bdcb726.html">进度追踪</a>。</p>
+<p>下一课：<a href="l10-lesson.html">L10 数组与成绩统计器</a>。</p><div class="pager"><a rel="prev" href="page-d18029bb4803.html">← 上一页：L08 练习</a><a rel="next" href="page-a8fac8cdd2df.html">下一页：L09 示例 →</a></div><p class="footer">课程原创讲义与习题 · 讲义学习 → 动手练习 → 订正 · 教材深化</p></article></main></div><script src="assets/course.js?v=1c1950cb02ee"></script></body></html>

@@ -1,20 +1,429 @@
 <!doctype html><html lang="zh-CN" data-theme="dark"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>L08 讲义 · 让程序重复做事 · Java陪读</title><link rel="stylesheet" href="assets/course.css?v=1c1950cb02ee"></head><body id="top" data-reading-mode="pages" data-nav-doc="doc-a6ec0be7c981"><header class="top"><a class="brand" href="index.html"><span>JAVA</span>一起把基础写扎实</a><div class="tools"><span class="tag">CORE JAVA · VOL. I · 10TH</span><a id="reading-mode" href="index.html">分课阅读</a><button id="theme" aria-label="切换浅色与深色">明 / 暗</button></div></header><div class="layout"><aside><input id="navsearch" class="navsearch" aria-label="筛选课程导航" placeholder="筛选课号、讲义、练习…"><nav aria-label="课程导航"><div class="navlabel">课程入口</div><a class="navlink" href="index.html" data-doc="home" data-page="index.html" data-kind="home" data-lesson="">课程首页</a><a class="navlink" href="course-info.html" data-doc="doc-b33563055168" data-page="course-info.html" data-kind="guide" data-lesson="">课程说明</a><div class="navlabel">附录 · 先把基础讲清楚</div><a class="navlink" href="page-4cc100767b13.html" data-doc="doc-4cc100767b13" data-page="page-4cc100767b13.html" data-kind="guide" data-lesson="">零基础起飞</a><a class="navlink" href="page-3f83fca99eef.html" data-doc="doc-3f83fca99eef" data-page="page-3f83fca99eef.html" data-kind="guide" data-lesson="">术语表</a><a class="navlink" href="page-b984dae871b4.html" data-doc="doc-b984dae871b4" data-page="page-b984dae871b4.html" data-kind="guide" data-lesson="">运行环境</a><a class="navlink" href="page-526e3b952094.html" data-doc="doc-526e3b952094" data-page="page-526e3b952094.html" data-kind="guide" data-lesson="">书本与PDF页码</a><div class="navlabel">讲义</div><a class="navlink" href="l01-lesson.html" data-doc="doc-9accd0bf9b7f" data-page="l01-lesson.html" data-kind="lesson" data-lesson="L01">L01 · 认识 Java 与程序运行</a><a class="navlink" href="l02-lesson.html" data-doc="doc-27ed48622bd4" data-page="l02-lesson.html" data-kind="lesson" data-lesson="L02">L02 · 编译、运行与读报错</a><a class="navlink" href="l03-lesson.html" data-doc="doc-6b1b497ed36e" data-page="l03-lesson.html" data-kind="lesson" data-lesson="L03">L03 · 程序结构、变量与类型</a><a class="navlink" href="l04-lesson.html" data-doc="doc-441c97ad53bb" data-page="l04-lesson.html" data-kind="lesson" data-lesson="L04">L04 · 运算符与类型转换</a><a class="navlink" href="l05-lesson.html" data-doc="doc-23e9eec49f15" data-page="l05-lesson.html" data-kind="lesson" data-lesson="L05">L05 · 字符串与文本处理</a><a class="navlink" href="l06-lesson.html" data-doc="doc-6892ef8761d4" data-page="l06-lesson.html" data-kind="lesson" data-lesson="L06">L06 · 键盘输入、格式化与文件</a><a class="navlink" href="l07-lesson.html" data-doc="doc-b1469f212770" data-page="l07-lesson.html" data-kind="lesson" data-lesson="L07">L07 · 程序如何作选择</a><a class="navlink" href="l08-lesson.html" data-doc="doc-a6ec0be7c981" data-page="l08-lesson.html" data-kind="lesson" data-lesson="L08" aria-current="page">L08 · 让程序重复做事</a><a class="navlink" href="l09-lesson.html" data-doc="doc-33c8ceac7e88" data-page="l09-lesson.html" data-kind="lesson" data-lesson="L09">L09 · switch、循环跳转与大数值</a><a class="navlink" href="l10-lesson.html" data-doc="doc-dd1d0b22dbf0" data-page="l10-lesson.html" data-kind="lesson" data-lesson="L10">L10 · 数组与成绩统计器</a><div class="navlabel">练习</div><a class="navlink" href="page-2bd2136ce2bb.html" data-doc="doc-2bd2136ce2bb" data-page="page-2bd2136ce2bb.html" data-kind="exercise" data-lesson="L01">L01 · 认识 Java 与程序运行</a><a class="navlink" href="page-95000a110447.html" data-doc="doc-95000a110447" data-page="page-95000a110447.html" data-kind="exercise" data-lesson="L02">L02 · 编译、运行与读报错</a><a class="navlink" href="page-20353e11686c.html" data-doc="doc-20353e11686c" data-page="page-20353e11686c.html" data-kind="exercise" data-lesson="L03">L03 · 程序结构、变量与类型</a><a class="navlink" href="page-7d5e3415eb77.html" data-doc="doc-7d5e3415eb77" data-page="page-7d5e3415eb77.html" data-kind="exercise" data-lesson="L04">L04 · 运算符与类型转换</a><a class="navlink" href="page-279cca6b26ab.html" data-doc="doc-279cca6b26ab" data-page="page-279cca6b26ab.html" data-kind="exercise" data-lesson="L05">L05 · 字符串与文本处理</a><a class="navlink" href="page-ac312fcdaf24.html" data-doc="doc-ac312fcdaf24" data-page="page-ac312fcdaf24.html" data-kind="exercise" data-lesson="L06">L06 · 键盘输入、格式化与文件</a><a class="navlink" href="page-59c311bedabe.html" data-doc="doc-59c311bedabe" data-page="page-59c311bedabe.html" data-kind="exercise" data-lesson="L07">L07 · 程序如何作选择</a><a class="navlink" href="page-d18029bb4803.html" data-doc="doc-d18029bb4803" data-page="page-d18029bb4803.html" data-kind="exercise" data-lesson="L08">L08 · 让程序重复做事</a><a class="navlink" href="page-a7b6badbcc8e.html" data-doc="doc-a7b6badbcc8e" data-page="page-a7b6badbcc8e.html" data-kind="exercise" data-lesson="L09">L09 · switch、循环跳转与大数值</a><a class="navlink" href="page-edb3747d12d2.html" data-doc="doc-edb3747d12d2" data-page="page-edb3747d12d2.html" data-kind="exercise" data-lesson="L10">L10 · 数组与成绩统计器</a><div class="navlabel">参考答案 · 先独立作答</div><a class="navlink" href="page-8ac64aceb665.html" data-doc="doc-8ac64aceb665" data-page="page-8ac64aceb665.html" data-kind="answers" data-lesson="L01">L01 · 认识 Java 与程序运行</a><a class="navlink" href="page-702232ba7bff.html" data-doc="doc-702232ba7bff" data-page="page-702232ba7bff.html" data-kind="answers" data-lesson="L02">L02 · 编译、运行与读报错</a><a class="navlink" href="page-c068f2bbb9af.html" data-doc="doc-c068f2bbb9af" data-page="page-c068f2bbb9af.html" data-kind="answers" data-lesson="L03">L03 · 程序结构、变量与类型</a><a class="navlink" href="page-f0ad7e277387.html" data-doc="doc-f0ad7e277387" data-page="page-f0ad7e277387.html" data-kind="answers" data-lesson="L04">L04 · 运算符与类型转换</a><a class="navlink" href="page-21329cb1f07a.html" data-doc="doc-21329cb1f07a" data-page="page-21329cb1f07a.html" data-kind="answers" data-lesson="L05">L05 · 字符串与文本处理</a><a class="navlink" href="page-1d5374d4cbf3.html" data-doc="doc-1d5374d4cbf3" data-page="page-1d5374d4cbf3.html" data-kind="answers" data-lesson="L06">L06 · 键盘输入、格式化与文件</a><a class="navlink" href="page-c1f9ec907b08.html" data-doc="doc-c1f9ec907b08" data-page="page-c1f9ec907b08.html" data-kind="answers" data-lesson="L07">L07 · 程序如何作选择</a><a class="navlink" href="page-af8cd7604511.html" data-doc="doc-af8cd7604511" data-page="page-af8cd7604511.html" data-kind="answers" data-lesson="L08">L08 · 让程序重复做事</a><a class="navlink" href="page-8cff2b23cfcc.html" data-doc="doc-8cff2b23cfcc" data-page="page-8cff2b23cfcc.html" data-kind="answers" data-lesson="L09">L09 · switch、循环跳转与大数值</a><a class="navlink" href="page-4a36dc3be0b6.html" data-doc="doc-4a36dc3be0b6" data-page="page-4a36dc3be0b6.html" data-kind="answers" data-lesson="L10">L10 · 数组与成绩统计器</a><div class="navlabel">示例代码与运行命令</div><a class="navlink" href="page-88947e1a9eb7.html" data-doc="doc-88947e1a9eb7" data-page="page-88947e1a9eb7.html" data-kind="code" data-lesson="L01">L01 · 认识 Java 与程序运行</a><a class="navlink" href="page-8dc288399ce5.html" data-doc="doc-8dc288399ce5" data-page="page-8dc288399ce5.html" data-kind="code" data-lesson="L02">L02 · 编译、运行与读报错</a><a class="navlink" href="page-d9c576e49900.html" data-doc="doc-d9c576e49900" data-page="page-d9c576e49900.html" data-kind="code" data-lesson="L03">L03 · 程序结构、变量与类型</a><a class="navlink" href="page-8083ebb8dc8a.html" data-doc="doc-8083ebb8dc8a" data-page="page-8083ebb8dc8a.html" data-kind="code" data-lesson="L04">L04 · 运算符与类型转换</a><a class="navlink" href="page-d9dddbc70e06.html" data-doc="doc-d9dddbc70e06" data-page="page-d9dddbc70e06.html" data-kind="code" data-lesson="L05">L05 · 字符串与文本处理</a><a class="navlink" href="page-6d5a15d068b7.html" data-doc="doc-6d5a15d068b7" data-page="page-6d5a15d068b7.html" data-kind="code" data-lesson="L06">L06 · 键盘输入、格式化与文件</a><a class="navlink" href="page-16bbc7816c2e.html" data-doc="doc-16bbc7816c2e" data-page="page-16bbc7816c2e.html" data-kind="code" data-lesson="L07">L07 · 程序如何作选择</a><a class="navlink" href="page-539c04050fe3.html" data-doc="doc-539c04050fe3" data-page="page-539c04050fe3.html" data-kind="code" data-lesson="L08">L08 · 让程序重复做事</a><a class="navlink" href="page-a8fac8cdd2df.html" data-doc="doc-a8fac8cdd2df" data-page="page-a8fac8cdd2df.html" data-kind="code" data-lesson="L09">L09 · switch、循环跳转与大数值</a><a class="navlink" href="page-b1915ed3b0b5.html" data-doc="doc-b1915ed3b0b5" data-page="page-b1915ed3b0b5.html" data-kind="code" data-lesson="L10">L10 · 数组与成绩统计器</a><div class="navlabel">查阅与接续</div><a class="navlink" href="page-0ef3cebffbed.html" data-doc="doc-0ef3cebffbed" data-page="page-0ef3cebffbed.html" data-kind="guide" data-lesson="">全书路线 · 35课</a><a class="navlink" href="page-fea294d77afe.html" data-doc="doc-fea294d77afe" data-page="page-fea294d77afe.html" data-kind="guide" data-lesson="">447条教材索引</a><a class="navlink" href="page-32d80fdb4bb7.html" data-doc="doc-32d80fdb4bb7" data-page="page-32d80fdb4bb7.html" data-kind="guide" data-lesson="">AI批改与进度追踪</a><a class="navlink" href="page-e8601bdcb726.html" data-doc="doc-e8601bdcb726" data-page="page-e8601bdcb726.html" data-kind="guide" data-lesson="">个人进度模板</a><a class="navlink" href="page-7def9b47aa03.html" data-doc="doc-7def9b47aa03" data-page="page-7def9b47aa03.html" data-kind="guide" data-lesson="">维护与打包</a><a class="navlink" href="page-a54ff182c7e8.html" data-doc="doc-a54ff182c7e8" data-page="page-a54ff182c7e8.html" data-kind="guide" data-lesson="">课程写作约定</a><div class="navlabel">连续阅读 · 可选</div><a class="navlink" href="全一册.html" data-doc="combined" data-page="全一册.html" data-kind="combined" data-lesson="">全一册（连续阅读）</a></nav><p class="side-note">按课阅读，逐项练习。<br>个人作答直接写入练习.md。<br>教材PDF需自备。</p></aside><main><article><div class="crumb">Java入门课程 / 按课学习</div><span class="edition">分课阅读 · 第1–3章 · 10课已备 · 双页码</span><nav class="lesson-tabs" aria-label="本课内容切换"><a href="l08-lesson.html" aria-current="page">讲义</a><a href="page-539c04050fe3.html">示例</a><a href="page-d18029bb4803.html">练习</a><a href="page-af8cd7604511.html">参考答案</a></nav><h1 id="l08-讲义-让程序重复做事">L08 讲义 · 让程序重复做事</h1><details class="page-toc"><summary>本页目录</summary><div class="toc">
 <ul>
-<li><a href="l08-lesson.html#这一课要解决什么问题">这一课要解决什么问题</a></li>
-<li><a href="l08-lesson.html#1-while的三个要素">1. while的三个要素</a></li>
-<li><a href="l08-lesson.html#2-for把计数规则放在一起">2. for把计数规则放在一起</a></li>
-<li><a href="l08-lesson.html#3-初值与空情况">3. 初值与空情况</a></li>
-<li><a href="l08-lesson.html#动手实验">动手实验</a></li>
-<li><a href="l08-lesson.html#本课过关">本课过关</a></li>
-<li><a href="l08-lesson.html#示例入口">示例入口</a></li>
-<li><a href="l08-lesson.html#学完交什么">学完交什么</a></li>
+<li><a href="l08-lesson.html#0-这课分几步学">0. 这课分几步学</a><ul>
+<li><a href="l08-lesson.html#怎么把讲义中的程序跑起来">怎么把讲义中的程序跑起来</a></li>
+</ul>
+</li>
+<li><a href="l08-lesson.html#1-重复三遍可以复制重复几遍由输入决定呢">1. 重复三遍可以复制，重复几遍由输入决定呢</a></li>
+<li><a href="l08-lesson.html#2-while先问再做再回去问">2. while：先问，再做，再回去问</a><ul>
+<li><a href="l08-lesson.html#只改一处的三个实验">只改一处的三个实验</a></li>
+</ul>
+</li>
+<li><a href="l08-lesson.html#3-更新初值与变量位置决定累计能否保留">3. 更新、初值与变量位置，决定累计能否保留</a></li>
+<li><a href="l08-lesson.html#4-do-while先做一次之后再问">4. do-while：先做一次，之后再问</a></li>
+<li><a href="l08-lesson.html#5-for把计数的三项规则摆在一起">5. for：把计数的三项规则摆在一起</a></li>
+<li><a href="l08-lesson.html#6-从-0-开始与从-1-开始分别在数什么">6. 从 0 开始与从 1 开始，分别在数什么</a></li>
+<li><a href="l08-lesson.html#7-嵌套每到一行都完整走一遍列">7. 嵌套：每到一行，都完整走一遍列</a></li>
+<li><a href="l08-lesson.html#8-从矩形走到三角形不先抄答案">8. 从矩形走到三角形，不先抄答案</a></li>
+<li><a href="l08-lesson.html#9-独立求和先做最小可检查的版本">9. 独立求和，先做最小可检查的版本</a></li>
+<li><a href="l08-lesson.html#10-看症状回到第一处状态差异">10. 看症状，回到第一处状态差异</a></li>
+<li><a href="l08-lesson.html#回到教材案例循环规则不只负责数123">回到教材案例：循环规则不只负责数1、2、3</a><ul>
+<li><a href="l08-lesson.html#383达到目标才停次数事先未知">3.8.3：达到目标才停，次数事先未知</a></li>
+<li><a href="l08-lesson.html#384同一个for也能计算递推结果">3.8.4：同一个for也能计算递推结果</a></li>
+</ul>
+</li>
+<li><a href="l08-lesson.html#教材深化会做以后再带着问题读">教材深化：会做以后，再带着问题读</a></li>
+<li><a href="l08-lesson.html#接下来怎么交">接下来怎么交</a></li>
 </ul>
 </div>
 </details>
 <blockquote>
-<p>前置：L07：条件与代码块。
-页码：<strong>书本 p66–72 / PDF p84–90</strong>。见<a href="page-526e3b952094.html">页码说明</a>。</p>
+<p><strong>定位：不打开教材，也能跟着本讲义理解、操作并开始完成本课练习。</strong> PDF 用来在学会以后深化；前课学过的概念可按链接回看。
+前置：L07：理解条件真假、代码块、分支与变量作用域；L04 会用 += 和 ++。
+教材对应：<strong>书本 p66–72 / PDF p84–90</strong>。页码含义见<a href="page-526e3b952094.html">页码对应说明</a>。</p>
 </blockquote>
+<h2 id="0-这课分几步学">0. 这课分几步学</h2>
+<p>建议分三次：第 1–3 节追踪 while；第 4–6 节比较 do/for、边界与变量位置；第 7–9 节再做嵌套和独立练习。每次先手算一小轮，不必一次读完。</p>
+<h3 id="怎么把讲义中的程序跑起来">怎么把讲义中的程序跑起来</h3>
+<p>带有 <code>public class</code>、完整大括号和 <code>main</code> 的 Java 代码框是完整程序。标为“片段”的短代码只替换 main 里面相应部分，不能单独当文件运行。每个完整程序另建一个文件，不能把两个 public class 或两个 main 随手拼在一起。</p>
+<p>在 VS Code 中打开整个 <code>D:\Code\Java</code> 文件夹。在本课 <code>my_code</code> 文件夹新建 <code>WhileTrace.java</code>，文件名要与 <code>public class</code> 后的名字相同；保存为 UTF-8。没有显示后缀、不会新建文件或打开终端，先看<a href="page-4cc100767b13.html">零基础起飞</a>，无需先读 PDF。</p>
+<p>打开“终端 → 新建终端”，确认使用 <strong>PowerShell</strong>。以下命令从课程根目录开始输入，提示符本身不用抄：</p>
+<pre><code class="language-powershell">Set-Location 'D:\Code\Java'
+.\java.ps1 -Source '.\L08_第03章F_循环\my_code\WhileTrace.java'
+</code></pre>
+<p>这是课程提供的“编译成功才启动”工具。它每次在 <code>.build</code> 中另建输出目录，生成 class 后才运行；不要手动执行以前留下的 class。后面的完整程序同样操作，只换末尾文件名。需要键盘输入时，运行后在终端键入数据并回车；程序没有显示新提示符，可能正在等输入。出现脚本策略提示时，在同一根目录把运行一行改为：</p>
+<pre><code class="language-powershell">powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\java.ps1 -Source '.\L08_第03章F_循环\my_code\WhileTrace.java'
+</code></pre>
+<p>每次实验留三项记录：<strong>预测、实际输出、解释第一次出现差异的步骤</strong>。看到程序自己的输出才算实际启动；没有报错不等于题目做对。</p>
+<h2 id="1-重复三遍可以复制重复几遍由输入决定呢">1. 重复三遍可以复制，重复几遍由输入决定呢</h2>
+<p>若要输出三次 Hello，可以写三条语句；若要一千次，要改一千处吗？若次数来自用户输入，写源码时甚至不知道要复制多少次。</p>
+<p><strong>循环</strong>用一套条件与操作表达重复。<strong>循环体</strong>是每轮要执行的代码，<strong>迭代</strong>是其中一轮。像按清单逐件处理，但程序不会自己知道“都处理完了”，终止规则必须写清。</p>
+<p>每个循环先问三个问题：从什么状态开始；什么条件下继续；每轮如何向结束前进。条件只是这次能否进入，不是电脑替你保存的总次数。</p>
+<h2 id="2-while先问再做再回去问">2. while：先问，再做，再回去问</h2>
+<pre><code class="language-java">public class WhileTrace {
+    public static void main(String[] args) {
+        int i = 1;
+        int sum = 0;
+        while (i &lt;= 3) {
+            sum = sum + i;
+            System.out.println(&quot;i=&quot; + i + &quot;, sum=&quot; + sum);
+            i = i + 1;
+        }
+        System.out.println(&quot;after: i=&quot; + i + &quot;, sum=&quot; + sum);
+    }
+}
+</code></pre>
+<p><strong>累加器</strong>是保存“到目前为止总和”的变量，这里是 sum。可以类比同一个篮子不断放入新东西；每轮换空篮子就不能保留总量。</p>
+<p>先逐行看第一次：i 建为 1，sum 建为 0；条件 1&lt;=3 真；右边 0+1 得 1，写回 sum；打印；i 由 1 变为 2；回到条件，不回到最初声明。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">条件检查前 i</th>
+<th>条件结果</th>
+<th style="text-align: right;">进入前 sum</th>
+<th style="text-align: right;">累加后 sum</th>
+<th style="text-align: right;">更新后 i</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">1</td>
+<td>true</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr>
+<td style="text-align: right;">2</td>
+<td>true</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr>
+<td style="text-align: right;">3</td>
+<td>true</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr>
+<td style="text-align: right;">4</td>
+<td>false</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">不再执行</td>
+<td style="text-align: right;">仍是 4</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="language-text">建立 i=1、sum=0
+        ↓
+   检查 i&lt;=3 ── false ──&gt; 输出 after，继续后文
+        │ true
+        ↓
+   累加 → 打印 → i 加 1
+        └────────────────&gt; 再检查条件
+</code></pre>
+<p>应看到：</p>
+<pre><code class="language-text">i=1, sum=1
+i=2, sum=3
+i=3, sum=6
+after: i=4, sum=6
+</code></pre>
+<p>循环体三次，条件四次。最后一次检查虽然失败，也真实发生；只是循环体没再执行。退出值 i=4 不代表循环体曾用 4 累加。</p>
+<h3 id="只改一处的三个实验">只改一处的三个实验</h3>
+<ol>
+<li>把条件上界 3 改 1：循环体一次，退出 i=2，sum=1。</li>
+<li>改 0，起点仍 1：第一次就失败，sum 仍 0。</li>
+<li>恢复上界 3，把 &lt;= 改 &lt;：只累计 1、2，sum=3。</li>
+</ol>
+<p>先填预测，再运行。若预测错，沿表找到第一次不同的条件检查，不要只修改最终输出文本。</p>
+<h2 id="3-更新初值与变量位置决定累计能否保留">3. 更新、初值与变量位置，决定累计能否保留</h2>
+<p>若删去 i=i+1，i 始终为 1，条件反复为真。while 不会自动增加计数器；若运行了已知无限的副本，在终端 Ctrl+C 停止，保留原程序。</p>
+<p>若把 <code>int sum=0;</code>放进循环体，每轮都会重新建立零初值。下面片段替换原循环相关部分：</p>
+<pre><code class="language-text">int i = 1;
+while (i &lt;= 3) {
+    int sum = 0;
+    sum += i;
+    System.out.println(sum);
+    i++;
+}
+</code></pre>
+<p>输出变成 1、2、3。不是加法坏了，而是前一轮的累计没有带入下一轮。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">本轮 i</th>
+<th>外部初始化：sum 进入→离开</th>
+<th>每轮重新初始化：进入→离开</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">1</td>
+<td>0→1</td>
+<td>0→1</td>
+</tr>
+<tr>
+<td style="text-align: right;">2</td>
+<td>1→3</td>
+<td>0→2</td>
+</tr>
+<tr>
+<td style="text-align: right;">3</td>
+<td>3→6</td>
+<td>0→3</td>
+</tr>
+</tbody>
+</table>
+<p>累加通常从 0 开始，因为还没处理数据，总和为 0。累乘通常从 1 开始，否则每次乘都还是零。找最大值则不能无脑从 0 开始：全负数据会被一个不存在的 0 压住，数组课再处理。</p>
+<p>while 后也不能随手加分号。<code>while(i&lt;=3);</code>的空语句成了循环体，更新在后面的块中永远轮不到。不要为了试它让程序长时间空转，先纸上分析即可。</p>
+<h2 id="4-do-while先做一次之后再问">4. do-while：先做一次，之后再问</h2>
+<pre><code class="language-java">public class CheckTiming {
+    public static void main(String[] args) {
+        int first = 0;
+        while (first &gt; 0) {
+            System.out.println(&quot;while body&quot;);
+            first--;
+        }
+        int second = 0;
+        do {
+            System.out.println(&quot;do body&quot;);
+            second--;
+        } while (second &gt; 0);
+        System.out.println(&quot;second=&quot; + second);
+    }
+}
+</code></pre>
+<p>只输出 do body、second=-1。while 首次检查 0&gt;0 假；do 先输出、减一，再检查 −1&gt;0 假。</p>
+<table>
+<thead>
+<tr>
+<th>形式</th>
+<th>第一次动作之前检查吗</th>
+<th>正常流程可能零次吗</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>while</td>
+<td>是</td>
+<td>可以</td>
+</tr>
+<tr>
+<td>do-while</td>
+<td>否</td>
+<td>不可以，先进入一次</td>
+</tr>
+</tbody>
+</table>
+<p>do 的结尾 <code>while(...);</code>有必需分号，与 while 后误写空体的分号位置不同。像先尝试一次操作再决定是否继续；如果任务规定没有数据就不能处理，先做一次未必合适。</p>
+<h2 id="5-for把计数的三项规则摆在一起">5. for：把计数的三项规则摆在一起</h2>
+<pre><code class="language-java">public class ForTrace {
+    public static void main(String[] args) {
+        for (int round = 0; round &lt; 3; round++) {
+            System.out.println(&quot;round=&quot; + round);
+        }
+        System.out.println(&quot;finished&quot;);
+    }
+}
+</code></pre>
+<p>输出 round=0、round=1、round=2，最后 finished。分成四块：</p>
+<pre><code class="language-text">for (int round = 0;   round &lt; 3;   round++) {
+     初始化一次         每次问       每轮体后更新
+    循环体
+}
+</code></pre>
+<p>顺序不是从左到右扫一遍就结束，而是：初始化一次 → 检查 → 体 → 更新 → 检查 → …… → 条件假后离开。</p>
+<table>
+<thead>
+<tr>
+<th>次序</th>
+<th style="text-align: right;">round</th>
+<th>执行什么</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>初始化</td>
+<td style="text-align: right;">0</td>
+<td>只做一次</td>
+</tr>
+<tr>
+<td>第一次检查真</td>
+<td style="text-align: right;">0</td>
+<td>输出 0，再更新成 1</td>
+</tr>
+<tr>
+<td>第二次检查真</td>
+<td style="text-align: right;">1</td>
+<td>输出 1，再更新成 2</td>
+</tr>
+<tr>
+<td>第三次检查真</td>
+<td style="text-align: right;">2</td>
+<td>输出 2，再更新成 3</td>
+</tr>
+<tr>
+<td>第四次检查假</td>
+<td style="text-align: right;">3</td>
+<td>不进体，也不再做本轮更新</td>
+</tr>
+</tbody>
+</table>
+<p>变量名 round 不会自动让它成为计数器。换成 i 或 times 也一样，规则来自你的初始化、条件与更新。</p>
+<p>round 在 for 初始化处声明，作用域限于这个 for 的条件、更新和循环体。结束后输出 round 会编译失败；若确实需要退出值，可事先在外层声明，再把初始化部分留空，但两个分号仍保留。</p>
+<h2 id="6-从-0-开始与从-1-开始分别在数什么">6. 从 0 开始与从 1 开始，分别在数什么</h2>
+<table>
+<thead>
+<tr>
+<th>任务</th>
+<th>起点</th>
+<th>继续条件</th>
+<th>进入时看到的数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>重复三次，用零起编号</td>
+<td>i=0</td>
+<td>i&lt;3</td>
+<td>0、1、2</td>
+</tr>
+<tr>
+<td>求 1 到 3 的和</td>
+<td>i=1</td>
+<td>i&lt;=3</td>
+<td>1、2、3</td>
+</tr>
+</tbody>
+</table>
+<p>两者次数相同，但用于计算的数据不同。不能机械规定“循环一定从 0”或“&lt;= 一定错”。数组从 0 编号，到 L10 才把长度与访问位置连起来。</p>
+<p><strong>步长</strong>是每轮计数改变多少，例如 i+=2 每次跨两格。片段 <code>for(int n=2;n&lt;=10;n+=2)</code>会经过 2、4、6、8、10；更新到 12 后失败，不要求恰好停在上界。</p>
+<p>若步长 3、起点 0，条件写 n!=10 会跳过 10；选择上界判断通常写 n&lt;10 更符合任务。终止要靠推演，不能想当然“迟早走到”。</p>
+<p>本课先用普通上界、单独更新，下一课再讲 break 与 continue。复杂金融或组合数背景不是理解循环的先决知识。</p>
+<h2 id="7-嵌套每到一行都完整走一遍列">7. 嵌套：每到一行，都完整走一遍列</h2>
+<p><strong>嵌套循环</strong>是在一个循环体里再放循环。像外层选教室，内层逐个点这个教室的座位。每换教室，座位从头点起；类比强调内层重启，不保证每个嵌套任务执行次数都相乘成某个固定平方。</p>
+<pre><code class="language-java">public class RectangleRows {
+    public static void main(String[] args) {
+        for (int row = 1; row &lt;= 2; row++) {
+            for (int column = 1; column &lt;= 3; column++) {
+                System.out.print(&quot;*&quot;);
+            }
+            System.out.println();
+        }
+    }
+}
+</code></pre>
+<p><code>print</code>只输出内容，不自动换行；不带参数的 println 输出一次换行。所以结果是两行，每行三个星号：</p>
+<pre><code class="language-text">***
+***
+</code></pre>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">外层 row</th>
+<th>内层 column 依次取值</th>
+<th>完成本行后</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">1</td>
+<td>1、2、3；到4时结束内层</td>
+<td>换行</td>
+</tr>
+<tr>
+<td style="text-align: right;">2</td>
+<td>重新从1开始，再到2、3</td>
+<td>换行</td>
+</tr>
+<tr>
+<td style="text-align: right;">3</td>
+<td>外层条件假</td>
+<td>不再创建内层</td>
+</tr>
+</tbody>
+</table>
+<p>星号输出 2×3=6 次，换行只有 2 次。把 println() 移到内层，每个星就占一行；把它移到所有循环之后，会把六个星挤在同一行。</p>
+<p>每次只移动这条换行语句，先预测三种布局。此时可以靠输出直接看见“某条语句属于哪层循环”。</p>
+<h2 id="8-从矩形走到三角形不先抄答案">8. 从矩形走到三角形，不先抄答案</h2>
+<p>练习 E2 要求三行：</p>
+<pre><code class="language-text">*
+**
+***
+</code></pre>
+<p>先列每行的配方：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">当前行 row</th>
+<th style="text-align: right;">本行星号数</th>
+<th style="text-align: right;">内层需要循环几次</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+</tr>
+</tbody>
+</table>
+<p>外层仍从第 1 行走到第 3 行，内层的上界不再是固定 3，而是“当前行数”。换行仍应在本行所有星号之后。</p>
+<p>起步时先让程序只输出每行 row，确认 1、2、3；再在每行里输出相应数量的星；最后去掉调试数字。若输出是正方形，检查内层上界是否还固定为 3；若只有一长行，检查换行位置。</p>
+<h2 id="9-独立求和先做最小可检查的版本">9. 独立求和，先做最小可检查的版本</h2>
+<p>E1 要读 n，分别写 for 版与 while 版。先固定 n=3，让循环里额外打印“当前数、累计值”，手算到 6；确认后再接入 Scanner，并去掉调试输出。</p>
+<p>题目 n=0 表示没有任何整数要加，总和应为 0。不要为了“至少进一次”改用 do-while。n=1 验证恰好一次，n=5 验证普通多次，n=10000 验证允许上界；本题总和 50005000 能装进 int，不需无根据换更复杂工具。</p>
+<p>for 与 while 两个版本是两份独立程序，类名也不同，不能在同一文件粘上两个 public class。正式提交仍按原题名，讲义新建的追踪程序只是随堂实验。</p>
+<h2 id="10-看症状回到第一处状态差异">10. 看症状，回到第一处状态差异</h2>
+<table>
+<thead>
+<tr>
+<th>现象</th>
+<th>优先查什么</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>一次不进</td>
+<td>首次检查是否已 false</td>
+</tr>
+<tr>
+<td>少一项或多一项</td>
+<td>起点、&lt; 与 &lt;= 是否配套</td>
+</tr>
+<tr>
+<td>不停输出</td>
+<td>更新是否存在、方向是否正确、是否被跳过</td>
+</tr>
+<tr>
+<td>只剩最后一项</td>
+<td>累加器是否每轮被清零</td>
+</tr>
+<tr>
+<td>循环后变量找不到</td>
+<td>变量是否只在 for 或块内声明</td>
+</tr>
+<tr>
+<td>图形只成一列</td>
+<td>换行是否放进最内层</td>
+</tr>
+</tbody>
+</table>
+<p>过关需能完整填写状态表、解释末次失败检查、选择正确初值与更新、独立写两种求和和三角形。学会“会读→会改→会写”三层后，再用教材的投资、组合数案例拓展应用。</p>
+<h2 id="回到教材案例循环规则不只负责数123">回到教材案例：循环规则不只负责数1、2、3</h2>
+<h3 id="383达到目标才停次数事先未知">3.8.3：达到目标才停，次数事先未知</h3>
+<p>教材Retirement的变量包括目标、每轮存入量、利率、余额和年份。重点是状态如何更新，不要求先有金融知识：先增加本轮投入，再按更新后的余额计算该轮增长，随后年份加一；达到目标才停止。</p>
+<p>在简化的教学数字中，目标250、每轮加入100、增长率10%，初始余额0。第一轮先到100再增10，余额110；第二轮先到210再增21，余额231；第三轮到331再增33.1，余额364.1，随后条件失败。</p>
+<p>这个表能解释while为什么不是“预先知道要做三次”，以及交换“加投入”和“计算增长”会改变结果。原书也说明其模型省略现实因素，本课只把它当状态更新案例，不据此制定实际理财安排。</p>
+<p>教材Retirement2先执行更新并显示，再询问用户是否继续，回答N才再来一次。它用do-while的原因是用户先看到本轮状态，才有信息作下一步选择；不是为了“所有循环都至少跑一次”。</p>
+<h3 id="384同一个for也能计算递推结果">3.8.4：同一个for也能计算递推结果</h3>
+<p>教材用组合数示范“计数器变化，同时累计一个计算结果”。换一个原创场景：5人选2人，不分顺序。初值result=1，第1轮乘5除1得到5，第2轮乘4除2得到10。</p>
+<p>这里累乘初值1，与求和初值0的理由不同；k=0时零轮，保留1表示一种什么都不选的方式。n、k大时普通int可能溢出，L09再用BigInteger把同类步骤接起来。</p>
+<p>教材还提醒不要靠double每次加0.1，等于10才停止：0.1的表示误差可能使它跳过精确的10。用整数计数器控制次数更清楚。本课不实际长时间运行这种错误循环。</p>
+<h2 id="教材深化会做以后再带着问题读">教材深化：会做以后，再带着问题读</h2>
+<p>下面是教材定位表，不是完成正文和基础练习的先决条件。先用讲义做出本课任务，再读对应页，把教材的术语、更多例子与自己已经观察到的现象联系起来；看不懂的细节可以留作问题。</p>
 <table>
 <thead>
 <tr>
@@ -39,34 +448,8 @@
 </tr>
 </tbody>
 </table>
-<h2 id="这一课要解决什么问题">这一课要解决什么问题</h2>
-<p>输出100行、累加一组数或反复读取输入，不应该复制粘贴100份代码。循环用一段规则表达重复。</p>
-<h2 id="1-while的三个要素">1. while的三个要素</h2>
-<p><strong>循环</strong>是在条件满足时重复执行代码，像按清单逐件检查货物。务必找出：初始状态、继续条件、如何前进。</p>
-<pre><code class="language-java">int i = 1;
-int sum = 0;
-while (i &lt;= 5) {
-    sum += i;
-    i++;
-}
-</code></pre>
-<p>逐轮写表：进入时i=1，sum变成1，i变成2；下一轮sum变成3。退出时i=6，sum=15。遗漏i++可能永远满足条件。<strong>迭代</strong>就是循环的一轮，不是某个新的Java关键字。</p>
-<p><code>do { ... } while(condition);</code>至少执行一次，while可能一次不执行。读教材投资示例时先看状态怎么变化，不急于套金融背景；<code>double</code>只用于教学计算，不据此推出财务金额都适合浮点数。</p>
-<h2 id="2-for把计数规则放在一起">2. for把计数规则放在一起</h2>
-<pre><code class="language-java">for (int i = 1; i &lt;= 5; i++) {
-    System.out.println(i);
-}
-</code></pre>
-<p>顺序是初始化一次→检查条件→循环体→更新→再检查。这里i的作用域限于for及其循环体。需要恰好n次且从0编号，常用<code>i=0; i&lt;n; i++</code>；需要1到n的值，常用<code>i=1; i&lt;=n; i++</code>，不要不看目的机械替换符号。</p>
-<h2 id="3-初值与空情况">3. 初值与空情况</h2>
-<p>累加从0开始，是因为没有任何数时总和为0。求最大值不能总从0开始：若输入全负数，会得到不存在的0；数组课将处理这一点。<code>n=0</code>时循环可能不进入，程序仍需给出题目规定结果。</p>
-<p>嵌套循环像钟表的时针与分针：外层每前进一次，内层完成一整轮。NestedDemo的两行三列共执行6次输出。不要只把两个上限相加；同时也别把一切嵌套循环都不加条件地说成固定平方复杂度。</p>
-<h2 id="动手实验">动手实验</h2>
-<p>先手算SumDemo在n=0、1、5时的结果，再分别用while和for观察；运行CountdownDemo看do-while。把<code>&lt;=</code>改成<code>&lt;</code>看少了哪一项；在自己的副本中故意去掉更新语句时，先预测会不会停，若运行需用Ctrl+C停止，不把卡住当成终端坏了。</p>
-<h2 id="本课过关">本课过关</h2>
-<p>能画出一轮状态变化，写出终止条件，验证0/1/普通值，解释for执行顺序和嵌套次数。下一课才系统讲break/continue与switch。</p>
-<h2 id="示例入口">示例入口</h2>
-<p><a href="page-539c04050fe3.html">逐个示例与运行命令</a>。</p>
-<h2 id="学完交什么">学完交什么</h2>
-<p>完成<a href="page-d18029bb4803.html">本课练习</a>，代码写入<a href="page-27df85f65585.html">my_code</a>，附命令、输入和结果。先做题，再看<a href="page-af8cd7604511.html">参考答案</a>。批改后将结论保存到<a href="page-e8601bdcb726.html">进度追踪</a>。</p>
-<p>下一课：<a href="l09-lesson.html">L09 switch、循环跳转与大数值</a>。</p><div class="pager"><a rel="prev" href="page-59c311bedabe.html">← 上一页：L07 练习</a><a rel="next" href="page-539c04050fe3.html">下一页：L08 示例 →</a></div><p class="footer">课程原创配套讲解与习题 · 阅读教材 → 动手 → 订正 → 更新进度</p></article></main></div><script src="assets/course.js?v=1c1950cb02ee"></script></body></html>
+<p>本课按上述教材正文范围编写，阅读与关键页面看图核对记录见<a href="page-526e3b952094.html">页码对应说明</a>。正文PDF页序与书页差18，前言、目录不能套用。选读内容不作为额外卡关要求。</p>
+<h2 id="接下来怎么交">接下来怎么交</h2>
+<p>在<a href="page-d18029bb4803.html">练习.md</a>中直接填写原有题号下的答案，代码放<a href="page-27df85f65585.html">my_code</a>。本讲义的随堂检查用于帮助你起步；正式必做仍以练习中的题号为准，不因本次重写额外要求你重新提交旧答案。</p>
+<p>原有<a href="page-539c04050fe3.html">独立示例及命令</a>可以在学过相应小节后对照。完成以后再看<a href="page-af8cd7604511.html">参考答案与解析</a>，寻找自己的思路与参考思路第一次不同的地方。材料编译通过不代表学生过关；作答仍需单独批改并保存到<a href="page-e8601bdcb726.html">进度追踪</a>。</p>
+<p>下一课：<a href="l09-lesson.html">L09 switch、循环跳转与大数值</a>。</p><div class="pager"><a rel="prev" href="page-59c311bedabe.html">← 上一页：L07 练习</a><a rel="next" href="page-539c04050fe3.html">下一页：L08 示例 →</a></div><p class="footer">课程原创讲义与习题 · 讲义学习 → 动手练习 → 订正 · 教材深化</p></article></main></div><script src="assets/course.js?v=1c1950cb02ee"></script></body></html>

@@ -1,0 +1,548 @@
+{
+  "FirstGreeting": [
+    {
+      "stdout": "你好，Java！\n这是我自己运行的程序。\n"
+    }
+  ],
+  "EnvironmentPeek": [
+    {
+      "stdout_regex": "java.version=\\S+\\nos.name=.+\\n"
+    }
+  ],
+  "RectangleCheck": [
+    {
+      "stdout": "5\n",
+      "name": "intentional-wrong-formula"
+    },
+    {
+      "stdout": "6\n",
+      "name": "correct-area",
+      "replace": [
+        [
+          "2 + 3",
+          "2 * 3"
+        ]
+      ]
+    }
+  ],
+  "RunSteps": [
+    {
+      "stdout": "version A\n"
+    },
+    {
+      "name": "missing-semicolon",
+      "kind": "compile_error",
+      "replace": [
+        [
+          "System.out.println(\"version A\");",
+          "System.out.println(\"version A\")"
+        ]
+      ]
+    }
+  ],
+  "LaunchCount": [
+    {
+      "stdout": "count=0\n"
+    },
+    {
+      "stdout": "count=2\n",
+      "args": [
+        "red",
+        "blue"
+      ],
+      "name": "two"
+    },
+    {
+      "stdout": "count=1\n",
+      "args": [
+        "Li Ming"
+      ],
+      "name": "one-spaced-argument"
+    }
+  ],
+  "CountNotebook": [
+    {
+      "stdout": "3\n4\n"
+    }
+  ],
+  "ProfileWalk": [
+    {
+      "stdout": "name=Java learner\nage=18\nheight=1.75\nstarted=true\ngroup=A\npopulation=3000000000\n"
+    }
+  ],
+  "WeekPlan": [
+    {
+      "stdout": "14\n"
+    },
+    {
+      "stdout": "21\n",
+      "name": "three-weeks",
+      "replace": [
+        [
+          "weeks = 2",
+          "weeks = 3"
+        ]
+      ]
+    }
+  ],
+  "TypeEdges": [
+    {
+      "stdout": "2147483647\n-2147483648\n1\n2\n"
+    },
+    {
+      "name": "unicode-00A0-is-not-newline",
+      "replace": [
+        [
+          "int maximum =",
+          "// \\u00A0 is not a line terminator\n        int maximum ="
+        ]
+      ],
+      "stdout": "2147483647\n-2147483648\n1\n2\n"
+    },
+    {
+      "name": "unicode-000A-ends-comment",
+      "replace": [
+        [
+          "int maximum =",
+          "// \\u000A unexpected text after line break\n        int maximum ="
+        ]
+      ],
+      "kind": "compile_error"
+    },
+    {
+      "name": "floating-special-values",
+      "replace": [
+        [
+          "System.out.println(\"😀\".length());",
+          "System.out.println(\"😀\".length());\n        System.out.println(1.0 / 0.0);\n        System.out.println(0.0 / 0.0);\n        System.out.println(Double.isNaN(0.0 / 0.0));"
+        ]
+      ],
+      "stdout": "2147483647\n-2147483648\n1\n2\nInfinity\nNaN\ntrue\n"
+    }
+  ],
+  "DivisionSteps": [
+    {
+      "stdout": "3\n3.5\n3.0\n3.5\n"
+    }
+  ],
+  "SecondsWalk": [
+    {
+      "stdout": "hours=1\nminutes=1\nseconds=11\n"
+    },
+    {
+      "stdout": "hours=0\nminutes=0\nseconds=0\n",
+      "name": "seconds-0",
+      "replace": [
+        [
+          "total = 3671",
+          "total = 0"
+        ]
+      ]
+    },
+    {
+      "stdout": "hours=0\nminutes=0\nseconds=59\n",
+      "name": "seconds-59",
+      "replace": [
+        [
+          "total = 3671",
+          "total = 59"
+        ]
+      ]
+    },
+    {
+      "stdout": "hours=0\nminutes=1\nseconds=0\n",
+      "name": "seconds-60",
+      "replace": [
+        [
+          "total = 3671",
+          "total = 60"
+        ]
+      ]
+    },
+    {
+      "stdout": "hours=1\nminutes=0\nseconds=0\n",
+      "name": "seconds-3600",
+      "replace": [
+        [
+          "total = 3671",
+          "total = 3600"
+        ]
+      ]
+    }
+  ],
+  "MultiplicationWidth": [
+    {
+      "stdout": "-727379968\n1000000000000\n"
+    }
+  ],
+  "IncrementSteps": [
+    {
+      "stdout": "n=6\nfirst=4\nsecond=6\n"
+    }
+  ],
+  "ShortCircuitWalk": [
+    {
+      "stdout": "false\n"
+    },
+    {
+      "stdout": "true\n",
+      "name": "nonzero",
+      "replace": [
+        [
+          "divisor = 0",
+          "divisor = 2"
+        ]
+      ]
+    },
+    {
+      "name": "non-short-circuit",
+      "replace": [
+        [
+          "&&",
+          "&"
+        ]
+      ],
+      "kind": "runtime_error",
+      "exception": "ArithmeticException"
+    }
+  ],
+  "TextOperations": [
+    {
+      "stdout": "4\nav\nJava\n"
+    }
+  ],
+  "TrimWalk": [
+    {
+      "stdout": "original=[  Java  ]\ncleaned=[Java]\nstill original=[  Java  ]\nreassigned=[Java]\n"
+    }
+  ],
+  "TextEqualityWalk": [
+    {
+      "stdout": "true\nfalse\ntrue\nfalse\n"
+    }
+  ],
+  "BuilderWalk": [
+    {
+      "stdout": "step1=[Java]\nresult=[Java course]\nsaved=[Java course]\ndraft=[Java course!]\n"
+    }
+  ],
+  "UnicodeWalk": [
+    {
+      "stdout": "4\n3\n"
+    }
+  ],
+  "ReadOneAge": [
+    {
+      "stdout": "请输入年龄，然后回车：\nage=18\n",
+      "stdin": "18\n"
+    }
+  ],
+  "ReadFullName": [
+    {
+      "stdout": "请输入姓名：\nname=[Li Ming]\n",
+      "stdin": "Li Ming\n"
+    },
+    {
+      "stdout": "请输入姓名：\nname=[]\n",
+      "stdin": "\n",
+      "name": "empty-line"
+    }
+  ],
+  "AgeThenName": [
+    {
+      "stdout": "Li Ming:18\n",
+      "stdin": "18\nLi Ming\n"
+    }
+  ],
+  "BillWalk": [
+    {
+      "stdout": "name=Li Ming\ntotal=37.50\n",
+      "stdin": "Li Ming\n12.5\n3\n"
+    },
+    {
+      "stdout": "name=Zero\ntotal=0.00\n",
+      "stdin": "Zero\n12.5\n0\n",
+      "name": "zero"
+    },
+    {
+      "stdout": "name=Decimal\ntotal=0.30\n",
+      "stdin": "Decimal\n0.1\n3\n",
+      "name": "decimal"
+    }
+  ],
+  "FileRoundTrip": [
+    {
+      "stdout_regex": "text=你好，Java！\\nfile=.+lecture-file-lab[\\\\/]note.txt\\n",
+      "files_text": {
+        ".build/lecture-file-lab/note.txt": "你好，Java！\n"
+      }
+    }
+  ],
+  "PassChoice": [
+    {
+      "stdout": "retry\nfinished\n",
+      "stdin": "59\n",
+      "name": "59"
+    },
+    {
+      "stdout": "pass\nfinished\n",
+      "stdin": "60\n",
+      "name": "60"
+    }
+  ],
+  "IndependentOrChain": [
+    {
+      "stdout": "independent:\npassed\nexcellent\nchain:\nexcellent\n"
+    }
+  ],
+  "GradeBoundary": [
+    {
+      "stdout": "invalid\n",
+      "stdin": "-1\n",
+      "name": "-1"
+    },
+    {
+      "stdout": "retry\n",
+      "stdin": "0\n",
+      "name": "0"
+    },
+    {
+      "stdout": "retry\n",
+      "stdin": "59\n",
+      "name": "59"
+    },
+    {
+      "stdout": "pass\n",
+      "stdin": "60\n",
+      "name": "60"
+    },
+    {
+      "stdout": "pass\n",
+      "stdin": "89\n",
+      "name": "89"
+    },
+    {
+      "stdout": "excellent\n",
+      "stdin": "90\n",
+      "name": "90"
+    },
+    {
+      "stdout": "excellent\n",
+      "stdin": "100\n",
+      "name": "100"
+    },
+    {
+      "stdout": "invalid\n",
+      "stdin": "101\n",
+      "name": "101"
+    }
+  ],
+  "WhileTrace": [
+    {
+      "stdout": "i=1, sum=1\ni=2, sum=3\ni=3, sum=6\nafter: i=4, sum=6\n"
+    },
+    {
+      "stdout": "i=1, sum=1\nafter: i=2, sum=1\n",
+      "name": "upper-one",
+      "replace": [
+        [
+          "i <= 3",
+          "i <= 1"
+        ]
+      ]
+    },
+    {
+      "stdout": "after: i=1, sum=0\n",
+      "name": "upper-zero",
+      "replace": [
+        [
+          "i <= 3",
+          "i <= 0"
+        ]
+      ]
+    },
+    {
+      "stdout": "i=1, sum=1\ni=2, sum=3\nafter: i=3, sum=3\n",
+      "name": "exclusive-upper",
+      "replace": [
+        [
+          "i <= 3",
+          "i < 3"
+        ]
+      ]
+    }
+  ],
+  "CheckTiming": [
+    {
+      "stdout": "do body\nsecond=-1\n"
+    }
+  ],
+  "ForTrace": [
+    {
+      "stdout": "round=0\nround=1\nround=2\nfinished\n"
+    }
+  ],
+  "RectangleRows": [
+    {
+      "stdout": "***\n***\n"
+    }
+  ],
+  "MenuChoiceWalk": [
+    {
+      "stdout": "course\nfinished\n",
+      "stdin": "1\n",
+      "name": "1"
+    },
+    {
+      "stdout": "progress\nfinished\n",
+      "stdin": "2\n",
+      "name": "2"
+    },
+    {
+      "stdout": "invalid\nfinished\n",
+      "stdin": "9\n",
+      "name": "9"
+    },
+    {
+      "name": "fallthrough",
+      "replace": [
+        [
+          "System.out.println(\"course\");\n                break;",
+          "System.out.println(\"course\");"
+        ]
+      ],
+      "stdout": "course\nprogress\nfinished\n",
+      "stdin": "1\n",
+      "expected_warning": "[fallthrough]"
+    }
+  ],
+  "BreakWalk": [
+    {
+      "stdout": "sum=6\nfinished\n"
+    }
+  ],
+  "ContinueWalk": [
+    {
+      "stdout": "9\n"
+    }
+  ],
+  "BigIntegerWalk": [
+    {
+      "stdout": "99999999999999999999\n100000000000000000000\n"
+    }
+  ],
+  "DecimalWalk": [
+    {
+      "stdout": "sum=0.3\nthird=0.33\n"
+    },
+    {
+      "stdout": "sum=0.3\nthird=0.3333\n",
+      "name": "four-places",
+      "replace": [
+        [
+          "new BigDecimal(\"3\"), 2",
+          "new BigDecimal(\"3\"), 4"
+        ]
+      ]
+    }
+  ],
+  "DecimalCompare": [
+    {
+      "stdout": "false\n0\n"
+    }
+  ],
+  "ArrayFirstSteps": [
+    {
+      "stdout": "length=3\ninitial=0\n70\n80\n90\n"
+    }
+  ],
+  "ArrayAliasWalk": [
+    {
+      "stdout": "[99, 80, 90]\n[99, 80, 90]\n"
+    },
+    {
+      "stdout": "[70, 80, 90]\n[0]\n",
+      "name": "reassign-alias",
+      "replace": [
+        [
+          "alias[0] = 99;",
+          "alias = new int[1];"
+        ]
+      ]
+    }
+  ],
+  "ArrayCopyWalk": [
+    {
+      "stdout": "original=[70, 80, 90]\ncopy=[99, 80, 90]\n"
+    }
+  ],
+  "ArrayLoopWalk": [
+    {
+      "stdout": "i=0, sum=70\ni=1, sum=150\ni=2, sum=240\nfirst=70\n"
+    }
+  ],
+  "SortCopyWalk": [
+    {
+      "stdout": "original=[90, 0, 60]\nsorted=[0, 60, 90]\nindex=1\n"
+    },
+    {
+      "name": "no-boolean-sort",
+      "replace": [
+        [
+          "import java.util.Arrays;\n\npublic class SortCopyWalk {\n    public static void main(String[] args) {\n        int[] original = {90, 0, 60};\n        int[] sorted = Arrays.copyOf(original, original.length);\n        Arrays.sort(sorted);\n        System.out.println(\"original=\" + Arrays.toString(original));\n        System.out.println(\"sorted=\" + Arrays.toString(sorted));\n        System.out.println(\"index=\" + Arrays.binarySearch(sorted, 60));\n    }\n}\n",
+          "public class SortCopyWalk { public static void main(String[] args) { java.util.Arrays.sort(new boolean[]{true, false}); } }\n"
+        ]
+      ],
+      "kind": "compile_error"
+    },
+    {
+      "name": "no-boolean-binarySearch",
+      "replace": [
+        [
+          "import java.util.Arrays;\n\npublic class SortCopyWalk {\n    public static void main(String[] args) {\n        int[] original = {90, 0, 60};\n        int[] sorted = Arrays.copyOf(original, original.length);\n        Arrays.sort(sorted);\n        System.out.println(\"original=\" + Arrays.toString(original));\n        System.out.println(\"sorted=\" + Arrays.toString(sorted));\n        System.out.println(\"index=\" + Arrays.binarySearch(sorted, 60));\n    }\n}\n",
+          "public class SortCopyWalk { public static void main(String[] args) { java.util.Arrays.binarySearch(new boolean[]{true, false}, true); } }\n"
+        ]
+      ],
+      "kind": "compile_error"
+    }
+  ],
+  "RaggedWalk": [
+    {
+      "stdout": "row=0, sum=3\nrow=1, sum=12\nrow=2, sum=0\ntotal=15\n"
+    }
+  ],
+  "SizeChoice": [
+    {
+      "stdout": "MEDIUM\n"
+    }
+  ],
+  "TeamCombinations": [
+    {
+      "stdout": "155117520\n"
+    },
+    {
+      "name": "small",
+      "replace": [
+        [
+          "n = 30",
+          "n = 5"
+        ],
+        [
+          "k = 15",
+          "k = 2"
+        ]
+      ],
+      "stdout": "10\n"
+    },
+    {
+      "name": "choose-zero",
+      "replace": [
+        [
+          "k = 15",
+          "k = 0"
+        ]
+      ],
+      "stdout": "1\n"
+    }
+  ]
+}

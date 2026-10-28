@@ -1,20 +1,342 @@
 <!doctype html><html lang="zh-CN" data-theme="dark"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>L06 讲义 · 键盘输入、格式化与文件 · Java陪读</title><link rel="stylesheet" href="assets/course.css?v=1c1950cb02ee"></head><body id="top" data-reading-mode="pages" data-nav-doc="doc-6892ef8761d4"><header class="top"><a class="brand" href="index.html"><span>JAVA</span>一起把基础写扎实</a><div class="tools"><span class="tag">CORE JAVA · VOL. I · 10TH</span><a id="reading-mode" href="index.html">分课阅读</a><button id="theme" aria-label="切换浅色与深色">明 / 暗</button></div></header><div class="layout"><aside><input id="navsearch" class="navsearch" aria-label="筛选课程导航" placeholder="筛选课号、讲义、练习…"><nav aria-label="课程导航"><div class="navlabel">课程入口</div><a class="navlink" href="index.html" data-doc="home" data-page="index.html" data-kind="home" data-lesson="">课程首页</a><a class="navlink" href="course-info.html" data-doc="doc-b33563055168" data-page="course-info.html" data-kind="guide" data-lesson="">课程说明</a><div class="navlabel">附录 · 先把基础讲清楚</div><a class="navlink" href="page-4cc100767b13.html" data-doc="doc-4cc100767b13" data-page="page-4cc100767b13.html" data-kind="guide" data-lesson="">零基础起飞</a><a class="navlink" href="page-3f83fca99eef.html" data-doc="doc-3f83fca99eef" data-page="page-3f83fca99eef.html" data-kind="guide" data-lesson="">术语表</a><a class="navlink" href="page-b984dae871b4.html" data-doc="doc-b984dae871b4" data-page="page-b984dae871b4.html" data-kind="guide" data-lesson="">运行环境</a><a class="navlink" href="page-526e3b952094.html" data-doc="doc-526e3b952094" data-page="page-526e3b952094.html" data-kind="guide" data-lesson="">书本与PDF页码</a><div class="navlabel">讲义</div><a class="navlink" href="l01-lesson.html" data-doc="doc-9accd0bf9b7f" data-page="l01-lesson.html" data-kind="lesson" data-lesson="L01">L01 · 认识 Java 与程序运行</a><a class="navlink" href="l02-lesson.html" data-doc="doc-27ed48622bd4" data-page="l02-lesson.html" data-kind="lesson" data-lesson="L02">L02 · 编译、运行与读报错</a><a class="navlink" href="l03-lesson.html" data-doc="doc-6b1b497ed36e" data-page="l03-lesson.html" data-kind="lesson" data-lesson="L03">L03 · 程序结构、变量与类型</a><a class="navlink" href="l04-lesson.html" data-doc="doc-441c97ad53bb" data-page="l04-lesson.html" data-kind="lesson" data-lesson="L04">L04 · 运算符与类型转换</a><a class="navlink" href="l05-lesson.html" data-doc="doc-23e9eec49f15" data-page="l05-lesson.html" data-kind="lesson" data-lesson="L05">L05 · 字符串与文本处理</a><a class="navlink" href="l06-lesson.html" data-doc="doc-6892ef8761d4" data-page="l06-lesson.html" data-kind="lesson" data-lesson="L06" aria-current="page">L06 · 键盘输入、格式化与文件</a><a class="navlink" href="l07-lesson.html" data-doc="doc-b1469f212770" data-page="l07-lesson.html" data-kind="lesson" data-lesson="L07">L07 · 程序如何作选择</a><a class="navlink" href="l08-lesson.html" data-doc="doc-a6ec0be7c981" data-page="l08-lesson.html" data-kind="lesson" data-lesson="L08">L08 · 让程序重复做事</a><a class="navlink" href="l09-lesson.html" data-doc="doc-33c8ceac7e88" data-page="l09-lesson.html" data-kind="lesson" data-lesson="L09">L09 · switch、循环跳转与大数值</a><a class="navlink" href="l10-lesson.html" data-doc="doc-dd1d0b22dbf0" data-page="l10-lesson.html" data-kind="lesson" data-lesson="L10">L10 · 数组与成绩统计器</a><div class="navlabel">练习</div><a class="navlink" href="page-2bd2136ce2bb.html" data-doc="doc-2bd2136ce2bb" data-page="page-2bd2136ce2bb.html" data-kind="exercise" data-lesson="L01">L01 · 认识 Java 与程序运行</a><a class="navlink" href="page-95000a110447.html" data-doc="doc-95000a110447" data-page="page-95000a110447.html" data-kind="exercise" data-lesson="L02">L02 · 编译、运行与读报错</a><a class="navlink" href="page-20353e11686c.html" data-doc="doc-20353e11686c" data-page="page-20353e11686c.html" data-kind="exercise" data-lesson="L03">L03 · 程序结构、变量与类型</a><a class="navlink" href="page-7d5e3415eb77.html" data-doc="doc-7d5e3415eb77" data-page="page-7d5e3415eb77.html" data-kind="exercise" data-lesson="L04">L04 · 运算符与类型转换</a><a class="navlink" href="page-279cca6b26ab.html" data-doc="doc-279cca6b26ab" data-page="page-279cca6b26ab.html" data-kind="exercise" data-lesson="L05">L05 · 字符串与文本处理</a><a class="navlink" href="page-ac312fcdaf24.html" data-doc="doc-ac312fcdaf24" data-page="page-ac312fcdaf24.html" data-kind="exercise" data-lesson="L06">L06 · 键盘输入、格式化与文件</a><a class="navlink" href="page-59c311bedabe.html" data-doc="doc-59c311bedabe" data-page="page-59c311bedabe.html" data-kind="exercise" data-lesson="L07">L07 · 程序如何作选择</a><a class="navlink" href="page-d18029bb4803.html" data-doc="doc-d18029bb4803" data-page="page-d18029bb4803.html" data-kind="exercise" data-lesson="L08">L08 · 让程序重复做事</a><a class="navlink" href="page-a7b6badbcc8e.html" data-doc="doc-a7b6badbcc8e" data-page="page-a7b6badbcc8e.html" data-kind="exercise" data-lesson="L09">L09 · switch、循环跳转与大数值</a><a class="navlink" href="page-edb3747d12d2.html" data-doc="doc-edb3747d12d2" data-page="page-edb3747d12d2.html" data-kind="exercise" data-lesson="L10">L10 · 数组与成绩统计器</a><div class="navlabel">参考答案 · 先独立作答</div><a class="navlink" href="page-8ac64aceb665.html" data-doc="doc-8ac64aceb665" data-page="page-8ac64aceb665.html" data-kind="answers" data-lesson="L01">L01 · 认识 Java 与程序运行</a><a class="navlink" href="page-702232ba7bff.html" data-doc="doc-702232ba7bff" data-page="page-702232ba7bff.html" data-kind="answers" data-lesson="L02">L02 · 编译、运行与读报错</a><a class="navlink" href="page-c068f2bbb9af.html" data-doc="doc-c068f2bbb9af" data-page="page-c068f2bbb9af.html" data-kind="answers" data-lesson="L03">L03 · 程序结构、变量与类型</a><a class="navlink" href="page-f0ad7e277387.html" data-doc="doc-f0ad7e277387" data-page="page-f0ad7e277387.html" data-kind="answers" data-lesson="L04">L04 · 运算符与类型转换</a><a class="navlink" href="page-21329cb1f07a.html" data-doc="doc-21329cb1f07a" data-page="page-21329cb1f07a.html" data-kind="answers" data-lesson="L05">L05 · 字符串与文本处理</a><a class="navlink" href="page-1d5374d4cbf3.html" data-doc="doc-1d5374d4cbf3" data-page="page-1d5374d4cbf3.html" data-kind="answers" data-lesson="L06">L06 · 键盘输入、格式化与文件</a><a class="navlink" href="page-c1f9ec907b08.html" data-doc="doc-c1f9ec907b08" data-page="page-c1f9ec907b08.html" data-kind="answers" data-lesson="L07">L07 · 程序如何作选择</a><a class="navlink" href="page-af8cd7604511.html" data-doc="doc-af8cd7604511" data-page="page-af8cd7604511.html" data-kind="answers" data-lesson="L08">L08 · 让程序重复做事</a><a class="navlink" href="page-8cff2b23cfcc.html" data-doc="doc-8cff2b23cfcc" data-page="page-8cff2b23cfcc.html" data-kind="answers" data-lesson="L09">L09 · switch、循环跳转与大数值</a><a class="navlink" href="page-4a36dc3be0b6.html" data-doc="doc-4a36dc3be0b6" data-page="page-4a36dc3be0b6.html" data-kind="answers" data-lesson="L10">L10 · 数组与成绩统计器</a><div class="navlabel">示例代码与运行命令</div><a class="navlink" href="page-88947e1a9eb7.html" data-doc="doc-88947e1a9eb7" data-page="page-88947e1a9eb7.html" data-kind="code" data-lesson="L01">L01 · 认识 Java 与程序运行</a><a class="navlink" href="page-8dc288399ce5.html" data-doc="doc-8dc288399ce5" data-page="page-8dc288399ce5.html" data-kind="code" data-lesson="L02">L02 · 编译、运行与读报错</a><a class="navlink" href="page-d9c576e49900.html" data-doc="doc-d9c576e49900" data-page="page-d9c576e49900.html" data-kind="code" data-lesson="L03">L03 · 程序结构、变量与类型</a><a class="navlink" href="page-8083ebb8dc8a.html" data-doc="doc-8083ebb8dc8a" data-page="page-8083ebb8dc8a.html" data-kind="code" data-lesson="L04">L04 · 运算符与类型转换</a><a class="navlink" href="page-d9dddbc70e06.html" data-doc="doc-d9dddbc70e06" data-page="page-d9dddbc70e06.html" data-kind="code" data-lesson="L05">L05 · 字符串与文本处理</a><a class="navlink" href="page-6d5a15d068b7.html" data-doc="doc-6d5a15d068b7" data-page="page-6d5a15d068b7.html" data-kind="code" data-lesson="L06">L06 · 键盘输入、格式化与文件</a><a class="navlink" href="page-16bbc7816c2e.html" data-doc="doc-16bbc7816c2e" data-page="page-16bbc7816c2e.html" data-kind="code" data-lesson="L07">L07 · 程序如何作选择</a><a class="navlink" href="page-539c04050fe3.html" data-doc="doc-539c04050fe3" data-page="page-539c04050fe3.html" data-kind="code" data-lesson="L08">L08 · 让程序重复做事</a><a class="navlink" href="page-a8fac8cdd2df.html" data-doc="doc-a8fac8cdd2df" data-page="page-a8fac8cdd2df.html" data-kind="code" data-lesson="L09">L09 · switch、循环跳转与大数值</a><a class="navlink" href="page-b1915ed3b0b5.html" data-doc="doc-b1915ed3b0b5" data-page="page-b1915ed3b0b5.html" data-kind="code" data-lesson="L10">L10 · 数组与成绩统计器</a><div class="navlabel">查阅与接续</div><a class="navlink" href="page-0ef3cebffbed.html" data-doc="doc-0ef3cebffbed" data-page="page-0ef3cebffbed.html" data-kind="guide" data-lesson="">全书路线 · 35课</a><a class="navlink" href="page-fea294d77afe.html" data-doc="doc-fea294d77afe" data-page="page-fea294d77afe.html" data-kind="guide" data-lesson="">447条教材索引</a><a class="navlink" href="page-32d80fdb4bb7.html" data-doc="doc-32d80fdb4bb7" data-page="page-32d80fdb4bb7.html" data-kind="guide" data-lesson="">AI批改与进度追踪</a><a class="navlink" href="page-e8601bdcb726.html" data-doc="doc-e8601bdcb726" data-page="page-e8601bdcb726.html" data-kind="guide" data-lesson="">个人进度模板</a><a class="navlink" href="page-7def9b47aa03.html" data-doc="doc-7def9b47aa03" data-page="page-7def9b47aa03.html" data-kind="guide" data-lesson="">维护与打包</a><a class="navlink" href="page-a54ff182c7e8.html" data-doc="doc-a54ff182c7e8" data-page="page-a54ff182c7e8.html" data-kind="guide" data-lesson="">课程写作约定</a><div class="navlabel">连续阅读 · 可选</div><a class="navlink" href="全一册.html" data-doc="combined" data-page="全一册.html" data-kind="combined" data-lesson="">全一册（连续阅读）</a></nav><p class="side-note">按课阅读，逐项练习。<br>个人作答直接写入练习.md。<br>教材PDF需自备。</p></aside><main><article><div class="crumb">Java入门课程 / 按课学习</div><span class="edition">分课阅读 · 第1–3章 · 10课已备 · 双页码</span><nav class="lesson-tabs" aria-label="本课内容切换"><a href="l06-lesson.html" aria-current="page">讲义</a><a href="page-6d5a15d068b7.html">示例</a><a href="page-ac312fcdaf24.html">练习</a><a href="page-1d5374d4cbf3.html">参考答案</a></nav><h1 id="l06-讲义-键盘输入格式化与文件">L06 讲义 · 键盘输入、格式化与文件</h1><details class="page-toc"><summary>本页目录</summary><div class="toc">
 <ul>
-<li><a href="l06-lesson.html#这一课要解决什么问题">这一课要解决什么问题</a></li>
-<li><a href="l06-lesson.html#1-scanner像一位读入助手">1. Scanner像一位读入助手</a></li>
-<li><a href="l06-lesson.html#2-格式化输出">2. 格式化输出</a></li>
-<li><a href="l06-lesson.html#3-文件有路径也有编码">3. 文件有路径，也有编码</a></li>
-<li><a href="l06-lesson.html#动手实验">动手实验</a></li>
-<li><a href="l06-lesson.html#本课过关">本课过关</a></li>
-<li><a href="l06-lesson.html#示例入口">示例入口</a></li>
-<li><a href="l06-lesson.html#学完交什么">学完交什么</a></li>
+<li><a href="l06-lesson.html#0-这课分几步学">0. 这课分几步学</a><ul>
+<li><a href="l06-lesson.html#怎么把讲义中的程序跑起来">怎么把讲义中的程序跑起来</a></li>
+</ul>
+</li>
+<li><a href="l06-lesson.html#1-程序为什么停着不动">1. 程序为什么停着不动</a></li>
+<li><a href="l06-lesson.html#2-读一个片段还是读整行">2. 读一个片段，还是读整行</a></li>
+<li><a href="l06-lesson.html#3-读完整数后姓名为什么突然变成空串">3. 读完整数后，姓名为什么突然变成空串</a></li>
+<li><a href="l06-lesson.html#4-先约定输入布局再写对应读取">4. 先约定输入布局，再写对应读取</a></li>
+<li><a href="l06-lesson.html#5-账单数值计算与显示格式分开">5. 账单：数值计算与显示格式分开</a></li>
+<li><a href="l06-lesson.html#6-文件在哪里源码目录与工作目录分开">6. 文件在哪里：源码目录与工作目录分开</a></li>
+<li><a href="l06-lesson.html#7-用printwriter写文本再用scanner读回教材373">7. 用PrintWriter写文本，再用Scanner读回（教材3.7.3）</a><ul>
+<li><a href="l06-lesson.html#格式化与密码输入的阅读层次">格式化与密码输入的阅读层次</a></li>
+</ul>
+</li>
+<li><a href="l06-lesson.html#8-看懂原有-fileutf8demo再做-e3">8. 看懂原有 FileUtf8Demo，再做 E3</a></li>
+<li><a href="l06-lesson.html#9-症状检查与过关">9. 症状检查与过关</a></li>
+<li><a href="l06-lesson.html#教材深化会做以后再带着问题读">教材深化：会做以后，再带着问题读</a></li>
+<li><a href="l06-lesson.html#接下来怎么交">接下来怎么交</a></li>
 </ul>
 </div>
 </details>
 <blockquote>
-<p>前置：L05：String、equals、方法调用的使用方式。
-页码：<strong>书本 p55–63 / PDF p73–81</strong>。见<a href="page-526e3b952094.html">页码说明</a>。</p>
+<p><strong>定位：不打开教材，也能跟着本讲义理解、操作并开始完成本课练习。</strong> PDF 用来在学会以后深化；前课学过的概念可按链接回看。
+前置：L05：能读对象.方法(参数)，理解 String 与方法返回值。
+教材对应：<strong>书本 p55–63 / PDF p73–81</strong>。页码含义见<a href="page-526e3b952094.html">页码对应说明</a>。</p>
 </blockquote>
+<h2 id="0-这课分几步学">0. 这课分几步学</h2>
+<p>分三次：第 1–4 节只处理键盘和换行；第 5 节输出格式；第 6–8 节再读写文件。基础键盘任务与文件体验分开，不要求一次学会异常体系。</p>
+<h3 id="怎么把讲义中的程序跑起来">怎么把讲义中的程序跑起来</h3>
+<p>带有 <code>public class</code>、完整大括号和 <code>main</code> 的 Java 代码框是完整程序。标为“片段”的短代码只替换 main 里面相应部分，不能单独当文件运行。每个完整程序另建一个文件，不能把两个 public class 或两个 main 随手拼在一起。</p>
+<p>在 VS Code 中打开整个 <code>D:\Code\Java</code> 文件夹。在本课 <code>my_code</code> 文件夹新建 <code>ReadOneAge.java</code>，文件名要与 <code>public class</code> 后的名字相同；保存为 UTF-8。没有显示后缀、不会新建文件或打开终端，先看<a href="page-4cc100767b13.html">零基础起飞</a>，无需先读 PDF。</p>
+<p>打开“终端 → 新建终端”，确认使用 <strong>PowerShell</strong>。以下命令从课程根目录开始输入，提示符本身不用抄：</p>
+<pre><code class="language-powershell">Set-Location 'D:\Code\Java'
+.\java.ps1 -Source '.\L06_第03章D_输入输出\my_code\ReadOneAge.java'
+</code></pre>
+<p>这是课程提供的“编译成功才启动”工具。它每次在 <code>.build</code> 中另建输出目录，生成 class 后才运行；不要手动执行以前留下的 class。后面的完整程序同样操作，只换末尾文件名。需要键盘输入时，运行后在终端键入数据并回车；程序没有显示新提示符，可能正在等输入。出现脚本策略提示时，在同一根目录把运行一行改为：</p>
+<pre><code class="language-powershell">powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\java.ps1 -Source '.\L06_第03章D_输入输出\my_code\ReadOneAge.java'
+</code></pre>
+<p>每次实验留三项记录：<strong>预测、实际输出、解释第一次出现差异的步骤</strong>。看到程序自己的输出才算实际启动；没有报错不等于题目做对。</p>
+<h2 id="1-程序为什么停着不动">1. 程序为什么停着不动</h2>
+<p>前面把数据写在源码里，换一个年龄就得改程序。现在让同一程序运行时接收不同输入。</p>
+<p><strong>输入</strong>是数据进入程序，<strong>输出</strong>是结果离开程序。<strong>流</strong>可以先理解为按顺序传送数据的通道；System.in 通常接收终端键盘输入，System.out 通常向终端输出。通道类比强调顺序，不代表每读一次电脑就自动给你一整行。</p>
+<p><strong>Scanner</strong>是从文本来源中识别数字或片段的标准库工具。import 让程序知道我们使用哪一个现成类，new 建立一个本次读入工具；第 4 章再学习自己设计类和对象。</p>
+<pre><code class="language-java">import java.util.Scanner;
+
+public class ReadOneAge {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        System.out.println(&quot;请输入年龄，然后回车：&quot;);
+        int age = in.nextInt();
+        System.out.println(&quot;age=&quot; + age);
+    }
+}
+</code></pre>
+<p>运行后先看到提示；此时没有 PowerShell 新提示符，程序正在等待输入。在同一个终端输入 18 并回车，才看到 age=18。不要把 18 写到源码窗口，也不要把“等待”当成编译卡住。</p>
+<table>
+<thead>
+<tr>
+<th>行为</th>
+<th>程序状态</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>建立 Scanner</td>
+<td>准备读取标准输入</td>
+</tr>
+<tr>
+<td>打印提示</td>
+<td>尚未有年龄数据</td>
+</tr>
+<tr>
+<td>执行 nextInt</td>
+<td>等待或读取下一份整数文本，得到 int</td>
+</tr>
+<tr>
+<td>赋给 age</td>
+<td>保存读取结果</td>
+</tr>
+<tr>
+<td>打印 age</td>
+<td>使用这次输入</td>
+</tr>
+</tbody>
+</table>
+<p>如果输入 hello，nextInt 不能把它变成整数，会出现输入不匹配异常。本课先约定有效输入，不要求设计自动纠错菜单；但要知道这不是 Java 无法显示中文。</p>
+<h2 id="2-读一个片段还是读整行">2. 读一个片段，还是读整行</h2>
+<p><strong>分隔符</strong>是用来区分片段的边界。Scanner 默认的片段分隔通常是空格、制表、换行等空白。</p>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>尝试得到什么</th>
+<th>输入 Li Ming 时</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>next()</td>
+<td>下一个空白分隔片段</td>
+<td>首次得到 Li</td>
+</tr>
+<tr>
+<td>nextInt()</td>
+<td>把下个片段读成 int</td>
+<td>不是整数，不能成功</td>
+</tr>
+<tr>
+<td>nextDouble()</td>
+<td>按地区规则读成 double</td>
+<td>不是数值，不能成功</td>
+</tr>
+<tr>
+<td>nextLine()</td>
+<td>当前位置到本行末的正文，并跨过行分隔符</td>
+<td>若在行首，得到 Li Ming</td>
+</tr>
+</tbody>
+</table>
+<p>新建第二个完整程序，先只读整行：</p>
+<pre><code class="language-java">import java.util.Scanner;
+
+public class ReadFullName {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        System.out.println(&quot;请输入姓名：&quot;);
+        String name = in.nextLine();
+        System.out.println(&quot;name=[&quot; + name + &quot;]&quot;);
+    }
+}
+</code></pre>
+<p>输入 Li Ming，输出 name=[Li Ming]。再输入空行，会得到 name=[]；空串是本次实际读到的正文，不等于没有调用成功。把 nextLine 改成 next，仅改这一处，预测带空格姓名的结果，再运行。</p>
+<h2 id="3-读完整数后姓名为什么突然变成空串">3. 读完整数后，姓名为什么突然变成空串</h2>
+<p>关键是“接着上次位置继续读”，不是每个读取都重置到新一行。假设你依次输入年龄和姓名：</p>
+<pre><code class="language-text">18↵
+Li Ming↵
+</code></pre>
+<p>先把输入想成等待读取的队伍：</p>
+<pre><code class="language-text">[1][8][本行结束][L][i][空格][M][i][n][g][本行结束]
+</code></pre>
+<p>nextInt 解析并取走 18 后，当前位置尚在数字所在行末的分隔位置。紧接着 nextLine 读“这一行剩余的正文”，这里剩余正文为空，于是立刻得到空串，并越过行结束。</p>
+<pre><code class="language-text">第一次 nextInt  → 18
+第一次 nextLine → &quot;&quot;       读取数字这一行剩余的内容
+第二次 nextLine → &quot;Li Ming&quot; 真正读下一行
+</code></pre>
+<p>这是解释读取位置的简化队列，不是声称 Scanner 或终端内部恰好使用这幅内存布局。</p>
+<h2 id="4-先约定输入布局再写对应读取">4. 先约定输入布局，再写对应读取</h2>
+<p>本题明确约定“年龄一行，姓名下一行”：</p>
+<pre><code class="language-java">import java.util.Scanner;
+
+public class AgeThenName {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int age = in.nextInt();
+        in.nextLine();
+        String name = in.nextLine();
+        System.out.println(name + &quot;:&quot; + age);
+    }
+}
+</code></pre>
+<p>输入上面的两行，输出 Li Ming:18。中间那次 nextLine 的结果故意不保存，因为本题不需要数字所在行的剩余正文。</p>
+<p>先预测：如果用户把 <code>18 Li Ming</code>写在同一行，中间那次 nextLine 会拿走什么？会拿走数字之后包括姓名的剩余正文，所以这个方案不能无条件套在所有输入布局上。</p>
+<p>随堂实验顺序：正确输入两行 → 删除中间读取，看空串 → 恢复 → 输入同一行并观察为何需要另一个协议。不要背成“nextInt 后永远加一个 nextLine 就对”。</p>
+<h2 id="5-账单数值计算与显示格式分开">5. 账单：数值计算与显示格式分开</h2>
+<p><strong>格式化</strong>是把一个值按要求排成文字，例如保留两位小数。格式化不会把 double 内部的二进制近似数变成精确十进制金额。</p>
+<pre><code class="language-java">import java.util.Locale;
+import java.util.Scanner;
+
+public class BillWalk {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        in.useLocale(Locale.US);
+        String name = in.nextLine();
+        double price = in.nextDouble();
+        int count = in.nextInt();
+        double total = price * count;
+        System.out.println(&quot;name=&quot; + name);
+        System.out.printf(Locale.US, &quot;total=%.2f%n&quot;, total);
+    }
+}
+</code></pre>
+<p>输入三行 Li Ming、12.5、3，得到：</p>
+<pre><code class="language-text">name=Li Ming
+total=37.50
+</code></pre>
+<p>这里先读整行姓名，再读数字，没有“数字后立即读姓名”的衔接问题。Locale 表示地区格式规则；本例用 US 明确小数点为点号，避免运行环境差异改变练习。</p>
+<p>拆开 printf 的参数：</p>
+<table>
+<thead>
+<tr>
+<th>部分</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Locale.US</td>
+<td>按这一地区规则格式化</td>
+</tr>
+<tr>
+<td>"total=%.2f%n"</td>
+<td>模板：标签、浮点数两位小数、换行</td>
+</tr>
+<tr>
+<td>total</td>
+<td>填进模板中 %f 位置的数值</td>
+</tr>
+</tbody>
+</table>
+<p>常用 <code>%d</code>放整数，<code>%s</code>放文本，<code>%f</code>放浮点数，<code>%.2f</code>指定小数位，<code>%n</code>换行。想输出百分号本身用 <code>%%</code>。说明符与值类型要匹配；把整数交给 %f 不是自动变成浮点数的万能写法。</p>
+<p>测试数量 0：总额 0.00；价格 0.1、数量 3：显示 0.30。显示正常不证明内部值完全精确，L09 会引入十进制运算工具。</p>
+<h2 id="6-文件在哪里源码目录与工作目录分开">6. 文件在哪里：源码目录与工作目录分开</h2>
+<p><strong>文件路径</strong>说明要读写哪个文件。相对路径从运行进程的工作目录开始计算，不自动从 <code>.java</code> 所在文件夹开始。</p>
+<p>从课程根目录运行，<code>note.txt</code>指根目录的文件；从本课 my_code 运行，同一个相对名字会指向那里。课程脚本不替你切到源码目录。</p>
+<p><strong>文本编码</strong>规定字符怎样对应字节。像发信双方使用同一套编号字典；写入按 UTF-8、读取按另一种规则，可能错解。类比说明约定一致，不表示每个字母一定只占一个字节。</p>
+<p>文件体验放在自己的实验目录，使用新文件名。下面程序将覆盖固定实验路径同名文件，先确认这个路径不存放你的重要内容。</p>
+<h2 id="7-用printwriter写文本再用scanner读回教材373">7. 用PrintWriter写文本，再用Scanner读回（教材3.7.3）</h2>
+<p>PrintWriter是把文本写到指定目标的工具，可以像System.out一样使用print、println、printf。路径只表示位置，打开写入工具后才真正进行文件操作。</p>
+<pre><code class="language-java">import java.io.IOException;
+import java.io.PrintWriter;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.Scanner;
+
+public class FileRoundTrip {
+    public static void main(String[] args) throws IOException {
+        Path folder = Paths.get(&quot;.build&quot;, &quot;lecture-file-lab&quot;);
+        Files.createDirectories(folder);
+        Path file = folder.resolve(&quot;note.txt&quot;);
+        PrintWriter writer = new PrintWriter(file.toString(), &quot;UTF-8&quot;);
+        writer.println(&quot;你好，Java！&quot;);
+        writer.close();
+        Scanner reader = new Scanner(file, &quot;UTF-8&quot;);
+        String text = reader.nextLine();
+        reader.close();
+        System.out.println(&quot;text=&quot; + text);
+        System.out.println(&quot;file=&quot; + file.toAbsolutePath());
+    }
+}
+</code></pre>
+<p>从课程根目录运行，输出text=你好，Java！，以及<code>.build\lecture-file-lab\note.txt</code>的绝对位置。打开该路径应看到同样正文。本程序会覆盖同名实验文件，只用于新建的练习目标。</p>
+<table>
+<thead>
+<tr>
+<th>部分</th>
+<th>本次读法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Paths.get、resolve</td>
+<td>指定目录和文件位置</td>
+</tr>
+<tr>
+<td>Files.createDirectories</td>
+<td>确保实验目录存在；这是课程补的准备动作</td>
+</tr>
+<tr>
+<td>new PrintWriter(文件名,编码)</td>
+<td>建立按UTF-8写文本的工具</td>
+</tr>
+<tr>
+<td>println</td>
+<td>写正文并换行</td>
+</tr>
+<tr>
+<td>close</td>
+<td>完成并关闭；写入关闭也让缓冲内容送到目标</td>
+</tr>
+<tr>
+<td>new Scanner(file,编码)</td>
+<td>从这个文件读取，而非从键盘读取</td>
+</tr>
+<tr>
+<td>reader.nextLine</td>
+<td>按前面学过的整行规则取得正文</td>
+</tr>
+<tr>
+<td>throws IOException</td>
+<td>允许把本方法的文件操作错误向上报告</td>
+</tr>
+</tbody>
+</table>
+<p>本例先写完关闭，再打开读取，保证读取的不是尚未完整写出的内容。简单正常路径中明确调用close；若中途出错，关闭还需要更完整的管理，下一节原示例展示try资源语法，异常体系第7章再学。</p>
+<p>特别注意构造参数的类型：<code>new Scanner("note.txt")</code>把这几个字母当输入正文，<strong>不会打开文件</strong>。要读文件，使用本例的Path入口。工作目录可通过<code>System.getProperty("user.dir")</code>观察，但它也不应被误当源码目录。</p>
+<p>教材还展示shell重定向。本课程使用PowerShell，它不能直接照搬cmd的<code>&lt;</code>输入重定向语法；先用以上文件工具完成本课，不把不同shell的命令混写。</p>
+<h3 id="格式化与密码输入的阅读层次">格式化与密码输入的阅读层次</h3>
+<p>教材3.7.2的宽度与标志也有具体用处：<code>[%8.2f]</code>中8是最小显示宽度，.2是小数位，方括号让补空格可见；<code>%,.2f</code>在Locale.US下加入分组逗号；String.format返回格式化文本但不立即输出。比如给12.5用8位两小数格式，正文12.50长5，前面会有3个空格。宽度太小不会自动把数字砍短。</p>
+<p>原书日期时间格式表用于认识旧代码；普通数值与文本格式要会用，其余查表，不背全部字母。</p>
+<p>3.7.1的Console用于无回显密码输入，与Scanner的可见文本不同。在某些IDE或非交互环境下System.console()会是null；不能直接对它调用方法。密码工具与char[]清理留作选读，不在此要求提前设计登录系统。</p>
+<h2 id="8-看懂原有-fileutf8demo再做-e3">8. 看懂原有 FileUtf8Demo，再做 E3</h2>
+<p>code 中的 FileUtf8Demo 与上例目的类似，但路径来自启动参数，并使用 PrintWriter 和 Scanner。</p>
+<p>其中 <code>try (...) { ... }</code>建立一次资源使用范围，结束时自动关闭放在括号里的文件工具；<strong>资源</strong>是打开后需要管理的文件通道等。像用完水龙头要关上，实际规则是自动调用相应关闭操作，而不是修复文件内容。</p>
+<p>它还使用 if 判断参数数量、return 提前结束。先把它们读成“参数不足则说明用法并结束”，L07 再系统学分支。不要因为这份体验程序提前使用了一些语法，就要求自己现在独立写出每一行。</p>
+<p>从根目录运行原例：</p>
+<pre><code class="language-powershell">.\java.ps1 -Source '.\L06_第03章D_输入输出\code\FileUtf8Demo.java' -ProgramArgs @('.build/file-lab/my-note.txt')
+</code></pre>
+<p>E3 的交付是目标路径、输出、文件正文及编码解释。普通键盘输入例在 main 结束时整段程序结束；不要为了模仿文件的关闭操作，在还要继续读取 System.in 的流程中提前关闭标准输入。</p>
+<h2 id="9-症状检查与过关">9. 症状检查与过关</h2>
+<table>
+<thead>
+<tr>
+<th>现象</th>
+<th>首先核对</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>程序像停住</td>
+<td>是否正等 nextInt 或 nextLine，输入后是否回车</td>
+</tr>
+<tr>
+<td>姓名只有 Li</td>
+<td>用的是 next 还是 nextLine</td>
+</tr>
+<tr>
+<td>姓名突然空白</td>
+<td>前一次读数后，当前位置是否仍在本行末</td>
+</tr>
+<tr>
+<td>12.5 读取失败</td>
+<td>输入格式与 Locale 约定是否一致</td>
+</tr>
+<tr>
+<td>文件找不到</td>
+<td>实际工作目录与打印的绝对位置</td>
+</tr>
+<tr>
+<td>文件中文乱码</td>
+<td>写入、读取、编辑器是否使用一致编码</td>
+</tr>
+</tbody>
+</table>
+<p>过关时应能独立读多词姓名、计算并格式化账单，解释两次不同的 nextLine 各读走什么；文件体验能说明数据落在哪里。复杂异常恢复不列作本课隐藏要求。方法细节可按需查 <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Scanner.html">Scanner 官方说明</a>。</p>
+<h2 id="教材深化会做以后再带着问题读">教材深化：会做以后，再带着问题读</h2>
+<p>下面是教材定位表，不是完成正文和基础练习的先决条件。先用讲义做出本课任务，再读对应页，把教材的术语、更多例子与自己已经观察到的现象联系起来；看不懂的细节可以留作问题。</p>
 <table>
 <thead>
 <tr>
@@ -45,29 +367,8 @@
 </tr>
 </tbody>
 </table>
-<h2 id="这一课要解决什么问题">这一课要解决什么问题</h2>
-<p>让程序接收你输入的数据，打印清楚的结果，并把文本写入文件。</p>
-<h2 id="1-scanner像一位读入助手">1. Scanner像一位读入助手</h2>
-<p><strong>输入流</strong>可以先理解为按顺序到来的数据通道，<code>System.in</code>通常连接键盘输入。<strong>Scanner</strong>是帮助从通道里读数或文本的工具；<code>new Scanner(System.in)</code>建立这位读入助手，<code>import java.util.Scanner</code>让你能写短类名。<code>new</code>的对象构造机制第4章讲，此处只掌握使用方式。</p>
-<p><code>nextInt()</code>读一个整数，<code>nextDouble()</code>读一个浮点数；<code>next()</code>读一个空白分隔的片段，<code>nextLine()</code>读当前行剩余内容并跨过行分隔符。输入<code>Li Ming</code>，next不能一次读到完整姓名。</p>
-<pre><code class="language-java">int age = in.nextInt();
-in.nextLine(); // 消耗数字后这一行剩余的内容
-String name = in.nextLine();
-</code></pre>
-<p>为什么要中间这一行？数字读取通常把数字后面的换行留在通道里；紧接着nextLine会先读到数字所在行的剩余部分。如果那部分只有换行，结果就是空串。注意：这一行不一定只剩换行，若同一行还有别的数据，也会一起被读走；本课约定年龄和姓名分别各占一行。</p>
-<p><code>Locale.US</code>在数值输入示例里明确使用点作小数分隔，避免系统地区设置改变实验。这里只把Locale看成“地区格式规则”，不要求先学国际化框架。</p>
-<h2 id="2-格式化输出">2. 格式化输出</h2>
-<p><strong>格式化</strong>是把数值按约定排成文字。<code>printf("%.2f%n", price)</code>中的<code>%.2f</code>用两位小数显示浮点数，<code>%d</code>显示整数，<code>%s</code>显示文本，<code>%n</code>换行。显示两位不等于底层值变成精确的两位小数。格式说明符与参数类型必须匹配。</p>
-<h2 id="3-文件有路径也有编码">3. 文件有路径，也有编码</h2>
-<p><code>Paths.get("note.txt")</code>表示相对当前工作目录的路径，不一定是源码所在目录。课程脚本不替你切换到源码文件夹；从根目录启动时相对文件就落在根目录。</p>
-<p><strong>编码</strong>是文字变成字节的规则，读写双方一致才能避免乱码。FileUtf8Demo用UTF-8明确写入、读回一个文件；路径由命令行参数指定。<strong>资源</strong>指打开后需要管理的文件通道等，<code>try (...) { ... }</code>会在结束时关闭本例的文件工具；第7章再系统讲异常与资源管理。示例的<code>throws IOException</code>表示本方法可能把此类文件错误交给调用方；不是“自动修好错误”。</p>
-<p>示例将内容写到你给出的目标路径，会覆盖同名文件；请只在自己新建的实验目录里使用不同文件名。不要把教材PDF路径交给它。</p>
-<h2 id="动手实验">动手实验</h2>
-<p>运行InputDemo，依次输入年龄、完整姓名、单价、数量，按练习的顺序每项一行；先预测账单。FileUtf8Demo使用课程给出的<code>.build/file-lab/note.txt</code>路径，运行后打开文件确认内容，再换一个新名字测试。使用参数或代码中明确的路径定位文件，别靠搜索猜。</p>
-<h2 id="本课过关">本课过关</h2>
-<p>能正确接收带空格的姓名与小数，解释nextInt/nextLine衔接；能说明工作目录、文本编码与文件位置。复杂非法输入恢复在第7章后展开，本课不作隐藏要求。</p>
-<h2 id="示例入口">示例入口</h2>
-<p><a href="page-6d5a15d068b7.html">逐个示例与运行命令</a>。</p>
-<h2 id="学完交什么">学完交什么</h2>
-<p>完成<a href="page-ac312fcdaf24.html">本课练习</a>，代码写入<a href="page-7fc7bf220376.html">my_code</a>，附命令、输入和结果。先做题，再看<a href="page-1d5374d4cbf3.html">参考答案</a>。批改后将结论保存到<a href="page-e8601bdcb726.html">进度追踪</a>。</p>
-<p>下一课：<a href="l07-lesson.html">L07 程序如何作选择</a>。</p><div class="pager"><a rel="prev" href="page-279cca6b26ab.html">← 上一页：L05 练习</a><a rel="next" href="page-6d5a15d068b7.html">下一页：L06 示例 →</a></div><p class="footer">课程原创配套讲解与习题 · 阅读教材 → 动手 → 订正 → 更新进度</p></article></main></div><script src="assets/course.js?v=1c1950cb02ee"></script></body></html>
+<p>本课按上述教材正文范围编写，阅读与关键页面看图核对记录见<a href="page-526e3b952094.html">页码对应说明</a>。正文PDF页序与书页差18，前言、目录不能套用。选读内容不作为额外卡关要求。</p>
+<h2 id="接下来怎么交">接下来怎么交</h2>
+<p>在<a href="page-ac312fcdaf24.html">练习.md</a>中直接填写原有题号下的答案，代码放<a href="page-7fc7bf220376.html">my_code</a>。本讲义的随堂检查用于帮助你起步；正式必做仍以练习中的题号为准，不因本次重写额外要求你重新提交旧答案。</p>
+<p>原有<a href="page-6d5a15d068b7.html">独立示例及命令</a>可以在学过相应小节后对照。完成以后再看<a href="page-1d5374d4cbf3.html">参考答案与解析</a>，寻找自己的思路与参考思路第一次不同的地方。材料编译通过不代表学生过关；作答仍需单独批改并保存到<a href="page-e8601bdcb726.html">进度追踪</a>。</p>
+<p>下一课：<a href="l07-lesson.html">L07 程序如何作选择</a>。</p><div class="pager"><a rel="prev" href="page-279cca6b26ab.html">← 上一页：L05 练习</a><a rel="next" href="page-6d5a15d068b7.html">下一页：L06 示例 →</a></div><p class="footer">课程原创讲义与习题 · 讲义学习 → 动手练习 → 订正 · 教材深化</p></article></main></div><script src="assets/course.js?v=1c1950cb02ee"></script></body></html>
