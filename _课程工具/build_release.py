@@ -18,7 +18,7 @@ DOCS = ROOT / 'docs'
 OUT = ROOT / 'outputs'
 COURSE = json.loads((ROOT / '_课程工具/course.json').read_text(encoding='utf-8'))
 EXERCISES = json.loads((ROOT / '_课程工具/exercises.json').read_text(encoding='utf-8'))
-ROOT_FILES = ['README.md', 'AGENTS.md', '学习路线图.md', '教材目录.md', '页码对应说明.md',
+ROOT_FILES = ['README.md', '开始学习.html', 'AGENTS.md', '学习路线图.md', '教材目录.md', '页码对应说明.md',
               '环境说明.md', '给其他LLM的批改指南.md', '学习进度模板.md', '维护与打包.md',
               'java.ps1', 'check-java.ps1', '.gitignore', '.gitattributes', 'LICENSE', 'LICENSE-DOCS', '.java-course.example.json', '.vscode/tasks.json', '.vscode/extensions.json']
 
@@ -88,7 +88,7 @@ def export_public_snapshot(files):
         destination = publish / rel
         destination.parent.mkdir(parents=True, exist_ok=True)
         if rel.suffix == '.md':
-            destination.write_text(public_text(rel), encoding='utf-8')
+            destination.write_text(public_text(rel), encoding='utf-8', newline='\n')
         else:
             destination.write_bytes((ROOT / rel).read_bytes())
         names.append(rel.as_posix())
@@ -99,7 +99,8 @@ def export_public_snapshot(files):
             destination.parent.mkdir(parents=True, exist_ok=True)
             destination.write_bytes(source.read_bytes())
             names.append(rel.as_posix())
-    (publish / '.java-course.json').write_text('{"jdkHome":"","release":"8"}\n', encoding='utf-8')
+    (publish / '.java-course.json').write_text('{"jdkHome":"","release":"8"}\n', encoding='utf-8', newline='\n')
+    names.append('.java-course.json')
     # A previous export manifest allows stale generated files to be identified; never touch .git or personal submissions.
     manifest_path = publish / '.publication-files.json'
     previous = json.loads(manifest_path.read_text(encoding='utf-8')) if manifest_path.exists() else []
@@ -109,6 +110,11 @@ def export_public_snapshot(files):
         if stale.is_file():
             stale.unlink()
     manifest_path.write_text(json.dumps(sorted(names), ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+    actual = {p.relative_to(publish).as_posix() for p in publish.rglob('*')
+              if p.is_file() and '.git' not in p.relative_to(publish).parts}
+    unexpected = actual - set(names) - {'.publication-files.json'}
+    assert not unexpected, ('Publication folder has extra files; preserve them outside it before sharing: '
+                            + ', '.join(sorted(unexpected)))
     return publish
 
 class Rewrite(HTMLParser):
@@ -280,7 +286,7 @@ class Links(HTMLParser):
 
 def verify_links():
     pages = {}
-    for p in DOCS.glob('*.html'):
+    for p in [ROOT / '开始学习.html', *DOCS.glob('*.html')]:
         parser = Links(); parser.feed(p.read_text(encoding='utf-8')); pages[p.resolve()] = parser
         assert len(parser.ids) == len(set(parser.ids)), f'Duplicate anchors: {p}'
     count = 0
@@ -372,13 +378,20 @@ def main():
         for rel, template in EXERCISES.items():
             assert z.read(base + rel).decode('utf-8') == template, 'Exercise archive must contain only the blank canonical template.'
         validation['archive_files'] = len(z.namelist())
+        archive_names = {name.removeprefix(base) for name in z.namelist()}
     publish = export_public_snapshot(files)
+    published_names = set(json.loads((publish / '.publication-files.json').read_text(encoding='utf-8')))
+    assert archive_names == published_names, 'ZIP and publication folder must contain the same course files.'
+    with zipfile.ZipFile(archive) as z:
+        assert all(z.read(base + name) == (publish / name).read_bytes() for name in published_names), 'ZIP/publication content differs.'
     digest = hashlib.sha256(archive.read_bytes()).hexdigest()
     archive.with_suffix('.zip.sha256').write_text(digest + '  ' + archive.name + '\n', encoding='utf-8')
     validation.update({'archive': archive.name, 'sha256': digest, 'bytes': archive.stat().st_size,
                        'course_source_checks': {'sources': report['sources'], 'cases': report['cases'], 'passed': report['passed']},
                        'textbook_included': False, 'personal_progress_included': False})
     validation.update({'publication_directory': publish.name, 'blank_exercises_verified': len(EXERCISES)})
+    validation.update({'publication_files': len(published_names), 'publication_matches_archive': True,
+                       'publication_extra_files': [], 'start_entry': '开始学习.html'})
     (OUT / '打包校验.json').write_text(json.dumps(validation, ensure_ascii=False, indent=2), encoding='utf-8')
     print(json.dumps(validation, ensure_ascii=False, indent=2))
 

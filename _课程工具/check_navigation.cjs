@@ -40,6 +40,12 @@ fs.mkdirSync(output, {recursive: true});
       if (!(await page.locator('article h1').textContent()).includes(title)) throw Error('Wrong page title.');
     }
 
+    if (!process.env.COURSE_BASE_URL) {
+      await page.goto(pathToFileURL(path.join(root, '开始学习.html')).href);
+      await page.waitForURL(url => decodeURIComponent(url.pathname).endsWith('/docs/index.html'));
+      await selected('index.html');
+      results.push('double-click entry opens the offline homepage');
+    }
     await page.goto(base + 'index.html');
     await selected('index.html');
     if (await page.locator('.course-card').count() !== 10) throw Error('Missing lesson overview cards.');

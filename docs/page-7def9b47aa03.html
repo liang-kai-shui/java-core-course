@@ -17,13 +17,14 @@
 <li>用已安装Markdown模块的Python运行 <code>python _课程工具/build_release.py</code>，生成离线网页和ZIP。缺模块时才用 <code>python -m pip install -r _课程工具/requirements.txt</code>；不要求每次重新安装。构建核对两份验证报告与源文件摘要，防止材料改动后沿用旧验证。</li>
 </ol>
 <p>网页导航改动后，运行 <code>node _课程工具/check_navigation.cjs</code>。该检查需要开发环境安装Playwright及浏览器；可用<code>COURSE_BROWSER</code>指定现有浏览器可执行文件，<code>NODE_PATH</code>指向已有Node包目录。不属于普通学习者的安装要求。检查包含独立页面、当前项、历史前进后退、课内页签、连续阅读深链接与滚动、手机宽度；报告在outputs中。</p>
-<p>源码验证使用标准库和JDK。网页构建使用Python Markdown；pypdf仅供抽取教材书签。当前电脑系统Python已安装Markdown，Codex自带Python与系统Python的软件包互不相同，不要把“某个解释器没有包”当成电脑完全没有包。</p>
+<p>源码验证使用标准库和JDK。网页构建使用Python Markdown；pypdf仅供抽取教材书签。维护时确认所用Python解释器安装了所需模块；普通学习无需这些依赖。</p>
 <h2 id="分发范围">分发范围</h2>
 <p>构建器按白名单收集课程文档、示例、错误标本、参考答案和工具。每课练习使用 <code>exercises.json</code> 中的空白模板，不读取本地练习中的个人答案。排除教材PDF、扫描图、个人进度、作答、my_code源码、批改记录、缓存、编译产物及本机JDK绝对配置。公开包用学习进度模板替代个人记录，重新使用时按实际情况建立进度追踪.md。</p>
-<p><code>docs/</code>是可双击的纯本地阅读器，不加载网络资源。完整课程源码与网页打入 <code>outputs/Java入门课程-第1-3章.zip</code>；附SHA-256与内部链接/ZIP完整性校验报告。</p>
+<p>根目录 <code>开始学习.html</code> 是双击入口，打开 <code>docs/index.html</code>。<code>docs/</code>是纯本地阅读器，不加载网络资源。完整课程源码与网页打入 <code>outputs/Java入门课程-第1-3章.zip</code>；附SHA-256与内部链接/ZIP完整性校验报告。ZIP与可分发版的课程文件逐一比对，文件清单和内容必须一致。</p>
+<p><code>可分发版/</code>只存放发布文件与其Git记录。构建会检查清单外文件，即使文件被Git忽略也会报出；维护者应先把教材、个人作答或其他私有文件移到该目录外保留，再打包。构建器不会自动删除这些文件。<code>.publication-files.json</code>记录生成文件，用来清理上次构建遗留的旧生成物，不是个人进度。</p>
 <p>构建只更新生成物；不得覆盖学生作答或个人进度。不要把一次性种子脚本当作日常维护工具反复运行。</p>
 <h2 id="github-发布">GitHub 发布</h2>
-<p>公开仓库：<a href="https://github.com/liang-kai-shui/java-core-course">liang-kai-shui/java-core-course</a>。在线阅读：<a href="https://liang-kai-shui.github.io/java-core-course/">GitHub Pages</a>。沿用C++课程的代码MIT、文档CC BY-NC-SA 4.0协议。</p>
+<p>公开仓库：<a href="https://github.com/liang-kai-shui/java-core-course">liang-kai-shui/java-core-course</a>。在线阅读：<a href="https://lksme.dpdns.org/java-core-course/">课程网站</a>。沿用C++课程的代码MIT、文档CC BY-NC-SA 4.0协议。</p>
 <p>构建时同步生成根目录 <code>可分发版/</code>，这是独立的公开Git仓库；已存在的 <code>.git/</code> 不会被构建器覆盖。本地个人学习目录与教材不加入该仓库。维护者在本地课程根目录修改并验证，再构建公开版本；推送前检查可分发版的Git差异。</p>
 <pre><code class="language-powershell">python _课程工具/verify_course.py
 python _课程工具/verify_lecture_examples.py

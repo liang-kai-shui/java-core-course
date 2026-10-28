@@ -11,7 +11,8 @@
 </div>
 </details>
 <p>教材：《Java核心技术 卷Ⅰ：基础知识（原书第10版）》中文版。课程作者：凉开水；AI 协助编写。创建于 2026-10-27。</p>
-<p><a href="https://github.com/liang-kai-shui/java-core-course">GitHub仓库</a> · <a href="https://liang-kai-shui.github.io/java-core-course/">在线阅读</a> · 代码采用<a href="https://github.com/liang-kai-shui/java-core-course/blob/main/LICENSE">MIT协议</a>，文档采用<a href="https://github.com/liang-kai-shui/java-core-course/blob/main/LICENSE-DOCS">CC BY-NC-SA 4.0</a>。</p>
+<p><a href="https://github.com/liang-kai-shui/java-core-course">GitHub仓库</a> · <a href="https://lksme.dpdns.org/java-core-course/">在线阅读</a> · <a href="../docs/index.html">离线课程首页</a> · 代码采用<a href="https://github.com/liang-kai-shui/java-core-course/blob/main/LICENSE">MIT协议</a>，文档采用<a href="https://github.com/liang-kai-shui/java-core-course/blob/main/LICENSE-DOCS">CC BY-NC-SA 4.0</a>。</p>
+<p>下载后先解压整个文件夹，<strong>双击根目录的 <a href="../%E5%BC%80%E5%A7%8B%E5%AD%A6%E4%B9%A0.html">开始学习.html</a></strong> 即可打开离线课程。阅读网页不需要安装 Python、启动服务器或连接网络。写代码时再按<a href="page-b984dae871b4.html">环境说明</a>准备 JDK。</p>
 <p><strong>第一次学习：<a href="page-4cc100767b13.html">零基础起飞</a> → <a href="l01-lesson.html">L01 讲义</a> → <a href="page-2bd2136ce2bb.html">直接在L01练习里作答</a>。</strong></p>
 <p><strong>讲义是可以独立学习的正文，PDF教材用于学会之后深化。</strong> 每课先用具体问题建立需求，再讲白话概念、拆语法、走完整程序、做单步修改，带到独立练习；完成基础任务不以先读PDF为条件。课程沿教材章节顺序推进，但不会把关键解释留在教材中。不假设你已经会 C++，也不根据“以前看过”推定已经掌握。</p>
 <p>现在 L01–L10 已按这个定位重写：讲义中的完整程序可以单独运行，短片段与完整程序分开；执行表、引用图、输入队列和项目阶段帮助理解过程。练习附起步提示，参考答案解释思路与常见错法。材料准备完成仍需通过实际学习与反馈检验，不能保证每个人一遍读完就掌握。</p>
@@ -22,8 +23,8 @@
 <ul>
 <li>第1–3章的10课：讲义、原创练习、独立示例、错误实验和单独存放的参考答案。</li>
 <li>全书35课路线图、447条教材书签索引、双页码说明。</li>
-<li>本地运行工具、VS Code任务、给其他LLM的批改指南与个人进度记录。</li>
-<li><code>docs/index.html</code> 离线网页；<code>docs/全一册.html</code> 单文件阅读版；可分发ZIP在 <code>outputs/</code>。</li>
+<li>本地运行工具、VS Code任务、给其他LLM的批改指南与空白进度模板。</li>
+<li><code>docs/index.html</code> 离线网页；<code>docs/全一册.html</code> 单文件阅读版。可直接下载仓库 ZIP；维护者重新打包生成的ZIP放在工作目录的 <code>outputs/</code>，不随课程重复套装。</li>
 </ul>
 <p>网页按C++课程的方式组织：<strong>课程首页→独立讲义/示例/练习/参考答案</strong>。左侧分组导航会标出当前页面，每课顶部可切换内容，底部可按上一页/下一页学习。<code>全一册</code>是单独的连续阅读选项；在其中滚动时，左侧也会跟随当前内容更新，点击左侧条目即可回到独立页面。</p>
 <p>后续 L11–L35 目前为规划，尚未编写讲义。<strong>材料备好与学生过关分别记录</strong>，不会因助手运行过示例就把你的课次标成完成。</p>
@@ -33,7 +34,7 @@
 <li>按讲义的学习段阅读、手敲完整程序，先预测、再运行、解释差异。不会时回到讲义对应步骤；基础练习所需解释由讲义提供。</li>
 <li>在 <code>my_code/</code> 里新建文件手敲示例，先预测结果再运行；保留原 <code>code/</code> 示例。</li>
 <li><strong>直接在每课的 <code>练习.md</code> 里写答案，按 <code>Ctrl+S</code> 保存。</strong> 代码写入 <code>my_code/</code>，在题目下记录源码路径、命令和结果；不必另建 <code>作答.md</code>。已有作答文件仍可继续使用。</li>
-<li>完成后告诉 AI 课号并提供作答；AI 先读 <a href="page-e8601bdcb726.html">进度追踪</a>，按 <a href="page-32d80fdb4bb7.html">批改指南</a> 批改。</li>
+<li>首次学习时将<a href="page-e8601bdcb726.html">学习进度模板</a>复制为根目录的 <code>进度追踪.md</code>；已有记录就接续使用。完成后告诉 AI 课号并提供作答，AI 先读进度记录，按<a href="page-32d80fdb4bb7.html">批改指南</a>批改。</li>
 <li>按提示订正，复核通过后进入下一课。参考答案在各课 <code>参考答案/</code>，先独立思考再看。想理解得更深时，按讲义末尾“教材深化”的双页码表阅读PDF，对照更正式的论述、更多案例与细节；这不增加基础过关条件。</li>
 </ol>
 <p>本书不是按章配置成套习题的入门课本，因此本项目练习均为原创配套题，<strong>不是教材原题或官方答案</strong>。</p>
@@ -46,12 +47,47 @@
 <p>若当前进程的脚本执行策略阻止运行，可用以下单次命令，不改系统执行策略：</p>
 <pre><code class="language-powershell">powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\java.ps1 -Source '.\L01_第01章_认识Java\code\HelloJava.java'
 </code></pre>
-<p>VS Code直接打开整个 <code>D:\Code\Java</code> 文件夹，打开一个本课程独立 <code>.java</code> 文件后按 <code>Ctrl+Shift+B</code>，调用项目任务。别把PDF当作工作区，也别只打开父目录后套用其他项目的运行配置。</p>
-<p>本机检测到 GraalVM JDK 21.0.12；命令行PATH未找到 <code>java</code>/<code>javac</code>。项目脚本优先读取 <code>.java-course.json</code>，不修改全局环境。示例采用 Java 8 语法/API，在本机 JDK 21 上以 <code>--release 8</code> 编译。<code>java.ps1</code>面向当前无package的单文件程序；后续多文件工程会另设运行入口。</p>
+<p>VS Code选择“文件 → 打开文件夹”，打开解压后的课程根目录（能看见 <code>java.ps1</code> 和各课文件夹的那一层）。打开一个本课程独立 <code>.java</code> 文件后按 <code>Ctrl+Shift+B</code>，调用项目任务。</p>
+<p>建议使用 JDK 21。项目脚本优先读取 <code>.java-course.json</code>，再检查已有环境和常见安装目录，不修改全局环境；找不到 JDK 时按<a href="page-b984dae871b4.html">环境说明</a>填写自己的安装路径。公开版的 <code>jdkHome</code> 留空。示例采用 Java 8 语法/API，课程验证使用 JDK 21 的 <code>--release 8</code> 编译，并在 JDK 21 上运行。<code>java.ps1</code>面向当前无package的单文件程序；后续多文件工程会另设运行入口。</p>
 <h2 id="页码约定">页码约定</h2>
 <p>每课同时写 <strong>书本 pX–Y / PDF pA–B</strong>。例如书本 p63 对应本地PDF第81页。正文换算：<strong>PDF页 = 书本页 + 18</strong>。前置封面、前言、目录不能套用这个公式。</p>
 <p>原教材：<code>Java核心技术卷1基础知识原书第10版 .pdf</code>，文件名在 <code>.pdf</code> 前确实带一个空格，保留不变。教材须自备；公开仓库、离线包不含PDF或扫描图片。核对记录与范围边界见 <a href="page-526e3b952094.html">页码对应说明</a>。</p>
 <h2 id="目录入口">目录入口</h2>
+<table>
+<thead>
+<tr>
+<th>位置</th>
+<th>用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>开始学习.html</code> / <code>docs/</code></td>
+<td>双击入口与离线网页；生成的网页用于阅读，修改课程请编辑 Markdown 源文件</td>
+</tr>
+<tr>
+<td><code>L01_…</code> 至 <code>L10_…</code></td>
+<td>按课学习；每课有 <code>讲义.md</code>、<code>练习.md</code>、<code>code/</code>、<code>my_code/</code> 和 <code>参考答案/</code></td>
+</tr>
+<tr>
+<td><code>附录/</code></td>
+<td>零基础起飞与术语表</td>
+</tr>
+<tr>
+<td>根目录 Markdown</td>
+<td>路线、页码、运行环境、进度模板和AI批改说明</td>
+</tr>
+<tr>
+<td><code>java.ps1</code> / <code>check-java.ps1</code></td>
+<td>运行程序与检查 JDK</td>
+</tr>
+<tr>
+<td><code>_课程工具/</code> / <code>维护与打包.md</code></td>
+<td>课程维护者使用的验证、网页生成和打包工具；普通学习无需运行</td>
+</tr>
+</tbody>
+</table>
+<p>直接在各课 <code>练习.md</code> 中作答，代码写入 <code>my_code/</code>。网页中显示的是公开空白题目，保存个人答案请使用编辑器。已作答的文件夹作为自己的学习副本保留；更新课程时先备份答案和进度，避免整包覆盖。公开分发不含教材、个人进度或个人代码。</p>
 <ul>
 <li><a href="page-0ef3cebffbed.html">学习路线图</a>：顺序、内容、双页码、当前是否有材料。</li>
 <li><a href="page-fea294d77afe.html">教材目录</a>：按关键词找章节；前置页不标书本阿拉伯页码。</li>
