@@ -1,0 +1,259 @@
+<!doctype html><html lang="zh-CN" data-theme="dark"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>S01 讲义 · 文件里为什么要套class和main · Java陪读</title><link rel="stylesheet" href="assets/course.css?v=1c1950cb02ee"></head><body id="top" data-reading-mode="pages" data-nav-doc="doc-07ae4fcc72ce"><header class="top"><a class="brand" href="index.html"><span>JAVA</span>一起把基础写扎实</a><div class="tools"><span class="tag">CORE JAVA · VOL. I · 10TH</span><a id="reading-mode" href="index.html">分课阅读</a><button id="theme" aria-label="切换浅色与深色">明 / 暗</button></div></header><div class="layout"><aside><input id="navsearch" class="navsearch" aria-label="筛选课程导航" placeholder="筛选课号、讲义、练习…"><nav aria-label="课程导航"><div class="navlabel">课程入口</div><a class="navlink" href="index.html" data-doc="home" data-page="index.html" data-kind="home" data-lesson="">课程首页</a><a class="navlink" href="course-info.html" data-doc="doc-b33563055168" data-page="course-info.html" data-kind="guide" data-lesson="">课程说明</a><div class="navlabel">附录 · 先把基础讲清楚</div><a class="navlink" href="page-4cc100767b13.html" data-doc="doc-4cc100767b13" data-page="page-4cc100767b13.html" data-kind="guide" data-lesson="">零基础起飞</a><a class="navlink" href="page-3f83fca99eef.html" data-doc="doc-3f83fca99eef" data-page="page-3f83fca99eef.html" data-kind="guide" data-lesson="">术语表</a><a class="navlink" href="page-d70bb9fd9f2b.html" data-doc="doc-d70bb9fd9f2b" data-page="page-d70bb9fd9f2b.html" data-kind="guide" data-lesson="">类、文件与JAR总图</a><a class="navlink" href="page-b984dae871b4.html" data-doc="doc-b984dae871b4" data-page="page-b984dae871b4.html" data-kind="guide" data-lesson="">运行环境</a><a class="navlink" href="page-526e3b952094.html" data-doc="doc-526e3b952094" data-page="page-526e3b952094.html" data-kind="guide" data-lesson="">书本与PDF页码</a><div class="navlabel">讲义</div><a class="navlink" href="l01-lesson.html" data-doc="doc-9accd0bf9b7f" data-page="l01-lesson.html" data-kind="lesson" data-lesson="L01">L01 · 认识 Java 与程序运行</a><a class="navlink" href="l02-lesson.html" data-doc="doc-27ed48622bd4" data-page="l02-lesson.html" data-kind="lesson" data-lesson="L02">L02 · 编译、运行与读报错</a><a class="navlink" href="s01-lesson.html" data-doc="doc-07ae4fcc72ce" data-page="s01-lesson.html" data-kind="lesson" data-lesson="S01" aria-current="page">S01 · 文件里为什么要套class和main</a><a class="navlink" href="l03-lesson.html" data-doc="doc-6b1b497ed36e" data-page="l03-lesson.html" data-kind="lesson" data-lesson="L03">L03 · 程序结构、变量与类型</a><a class="navlink" href="l04-lesson.html" data-doc="doc-441c97ad53bb" data-page="l04-lesson.html" data-kind="lesson" data-lesson="L04">L04 · 运算符与类型转换</a><a class="navlink" href="s02-lesson.html" data-doc="doc-f99e9428bbe8" data-page="s02-lesson.html" data-kind="lesson" data-lesson="S02">S02 · 类、对象、变量和new到底是谁</a><a class="navlink" href="l05-lesson.html" data-doc="doc-23e9eec49f15" data-page="l05-lesson.html" data-kind="lesson" data-lesson="L05">L05 · 字符串与文本处理</a><a class="navlink" href="l06-lesson.html" data-doc="doc-6892ef8761d4" data-page="l06-lesson.html" data-kind="lesson" data-lesson="L06">L06 · 键盘输入、格式化与文件</a><a class="navlink" href="l07-lesson.html" data-doc="doc-b1469f212770" data-page="l07-lesson.html" data-kind="lesson" data-lesson="L07">L07 · 程序如何作选择</a><a class="navlink" href="l08-lesson.html" data-doc="doc-a6ec0be7c981" data-page="l08-lesson.html" data-kind="lesson" data-lesson="L08">L08 · 让程序重复做事</a><a class="navlink" href="l09-lesson.html" data-doc="doc-33c8ceac7e88" data-page="l09-lesson.html" data-kind="lesson" data-lesson="L09">L09 · switch、循环跳转与大数值</a><a class="navlink" href="l10-lesson.html" data-doc="doc-dd1d0b22dbf0" data-page="l10-lesson.html" data-kind="lesson" data-lesson="L10">L10 · 数组与成绩统计器</a><a class="navlink" href="s03-lesson.html" data-doc="doc-9c6f386b2d27" data-page="s03-lesson.html" data-kind="lesson" data-lesson="S03">S03 · 字段、构造器、this、static与方法参数</a><a class="navlink" href="s04-lesson.html" data-doc="doc-9231422a5acf" data-page="s04-lesson.html" data-kind="lesson" data-lesson="S04">S04 · 多个文件怎样组成程序：package、import与classpath</a><a class="navlink" href="s05-lesson.html" data-doc="doc-df48e2e727ee" data-page="s05-lesson.html" data-kind="lesson" data-lesson="S05">S05 · JAR是什么：把程序装箱，再找到入口</a><a class="navlink" href="s06-lesson.html" data-doc="doc-905501ade8a7" data-page="s06-lesson.html" data-kind="lesson" data-lesson="S06">S06 · 库JAR、资源与真实项目目录</a><div class="navlabel">练习</div><a class="navlink" href="page-2bd2136ce2bb.html" data-doc="doc-2bd2136ce2bb" data-page="page-2bd2136ce2bb.html" data-kind="exercise" data-lesson="L01">L01 · 认识 Java 与程序运行</a><a class="navlink" href="page-95000a110447.html" data-doc="doc-95000a110447" data-page="page-95000a110447.html" data-kind="exercise" data-lesson="L02">L02 · 编译、运行与读报错</a><a class="navlink" href="page-025659571603.html" data-doc="doc-025659571603" data-page="page-025659571603.html" data-kind="exercise" data-lesson="S01">S01 · 文件里为什么要套class和main</a><a class="navlink" href="page-20353e11686c.html" data-doc="doc-20353e11686c" data-page="page-20353e11686c.html" data-kind="exercise" data-lesson="L03">L03 · 程序结构、变量与类型</a><a class="navlink" href="page-7d5e3415eb77.html" data-doc="doc-7d5e3415eb77" data-page="page-7d5e3415eb77.html" data-kind="exercise" data-lesson="L04">L04 · 运算符与类型转换</a><a class="navlink" href="page-a32ae623c39e.html" data-doc="doc-a32ae623c39e" data-page="page-a32ae623c39e.html" data-kind="exercise" data-lesson="S02">S02 · 类、对象、变量和new到底是谁</a><a class="navlink" href="page-279cca6b26ab.html" data-doc="doc-279cca6b26ab" data-page="page-279cca6b26ab.html" data-kind="exercise" data-lesson="L05">L05 · 字符串与文本处理</a><a class="navlink" href="page-ac312fcdaf24.html" data-doc="doc-ac312fcdaf24" data-page="page-ac312fcdaf24.html" data-kind="exercise" data-lesson="L06">L06 · 键盘输入、格式化与文件</a><a class="navlink" href="page-59c311bedabe.html" data-doc="doc-59c311bedabe" data-page="page-59c311bedabe.html" data-kind="exercise" data-lesson="L07">L07 · 程序如何作选择</a><a class="navlink" href="page-d18029bb4803.html" data-doc="doc-d18029bb4803" data-page="page-d18029bb4803.html" data-kind="exercise" data-lesson="L08">L08 · 让程序重复做事</a><a class="navlink" href="page-a7b6badbcc8e.html" data-doc="doc-a7b6badbcc8e" data-page="page-a7b6badbcc8e.html" data-kind="exercise" data-lesson="L09">L09 · switch、循环跳转与大数值</a><a class="navlink" href="page-edb3747d12d2.html" data-doc="doc-edb3747d12d2" data-page="page-edb3747d12d2.html" data-kind="exercise" data-lesson="L10">L10 · 数组与成绩统计器</a><a class="navlink" href="page-e322277cbd7b.html" data-doc="doc-e322277cbd7b" data-page="page-e322277cbd7b.html" data-kind="exercise" data-lesson="S03">S03 · 字段、构造器、this、static与方法参数</a><a class="navlink" href="page-d287d966e612.html" data-doc="doc-d287d966e612" data-page="page-d287d966e612.html" data-kind="exercise" data-lesson="S04">S04 · 多个文件怎样组成程序：package、import与classpath</a><a class="navlink" href="page-43c58052c6b0.html" data-doc="doc-43c58052c6b0" data-page="page-43c58052c6b0.html" data-kind="exercise" data-lesson="S05">S05 · JAR是什么：把程序装箱，再找到入口</a><a class="navlink" href="page-e906847bea99.html" data-doc="doc-e906847bea99" data-page="page-e906847bea99.html" data-kind="exercise" data-lesson="S06">S06 · 库JAR、资源与真实项目目录</a><div class="navlabel">参考答案 · 先独立作答</div><a class="navlink" href="page-8ac64aceb665.html" data-doc="doc-8ac64aceb665" data-page="page-8ac64aceb665.html" data-kind="answers" data-lesson="L01">L01 · 认识 Java 与程序运行</a><a class="navlink" href="page-702232ba7bff.html" data-doc="doc-702232ba7bff" data-page="page-702232ba7bff.html" data-kind="answers" data-lesson="L02">L02 · 编译、运行与读报错</a><a class="navlink" href="page-2184b08c58ad.html" data-doc="doc-2184b08c58ad" data-page="page-2184b08c58ad.html" data-kind="answers" data-lesson="S01">S01 · 文件里为什么要套class和main</a><a class="navlink" href="page-c068f2bbb9af.html" data-doc="doc-c068f2bbb9af" data-page="page-c068f2bbb9af.html" data-kind="answers" data-lesson="L03">L03 · 程序结构、变量与类型</a><a class="navlink" href="page-f0ad7e277387.html" data-doc="doc-f0ad7e277387" data-page="page-f0ad7e277387.html" data-kind="answers" data-lesson="L04">L04 · 运算符与类型转换</a><a class="navlink" href="page-d18bec83d313.html" data-doc="doc-d18bec83d313" data-page="page-d18bec83d313.html" data-kind="answers" data-lesson="S02">S02 · 类、对象、变量和new到底是谁</a><a class="navlink" href="page-21329cb1f07a.html" data-doc="doc-21329cb1f07a" data-page="page-21329cb1f07a.html" data-kind="answers" data-lesson="L05">L05 · 字符串与文本处理</a><a class="navlink" href="page-1d5374d4cbf3.html" data-doc="doc-1d5374d4cbf3" data-page="page-1d5374d4cbf3.html" data-kind="answers" data-lesson="L06">L06 · 键盘输入、格式化与文件</a><a class="navlink" href="page-c1f9ec907b08.html" data-doc="doc-c1f9ec907b08" data-page="page-c1f9ec907b08.html" data-kind="answers" data-lesson="L07">L07 · 程序如何作选择</a><a class="navlink" href="page-af8cd7604511.html" data-doc="doc-af8cd7604511" data-page="page-af8cd7604511.html" data-kind="answers" data-lesson="L08">L08 · 让程序重复做事</a><a class="navlink" href="page-8cff2b23cfcc.html" data-doc="doc-8cff2b23cfcc" data-page="page-8cff2b23cfcc.html" data-kind="answers" data-lesson="L09">L09 · switch、循环跳转与大数值</a><a class="navlink" href="page-4a36dc3be0b6.html" data-doc="doc-4a36dc3be0b6" data-page="page-4a36dc3be0b6.html" data-kind="answers" data-lesson="L10">L10 · 数组与成绩统计器</a><a class="navlink" href="page-b0534e20c53b.html" data-doc="doc-b0534e20c53b" data-page="page-b0534e20c53b.html" data-kind="answers" data-lesson="S03">S03 · 字段、构造器、this、static与方法参数</a><a class="navlink" href="page-d03973535ad4.html" data-doc="doc-d03973535ad4" data-page="page-d03973535ad4.html" data-kind="answers" data-lesson="S04">S04 · 多个文件怎样组成程序：package、import与classpath</a><a class="navlink" href="page-fdc65757ba69.html" data-doc="doc-fdc65757ba69" data-page="page-fdc65757ba69.html" data-kind="answers" data-lesson="S05">S05 · JAR是什么：把程序装箱，再找到入口</a><a class="navlink" href="page-b1b954c3d4f0.html" data-doc="doc-b1b954c3d4f0" data-page="page-b1b954c3d4f0.html" data-kind="answers" data-lesson="S06">S06 · 库JAR、资源与真实项目目录</a><div class="navlabel">示例代码与运行命令</div><a class="navlink" href="page-88947e1a9eb7.html" data-doc="doc-88947e1a9eb7" data-page="page-88947e1a9eb7.html" data-kind="code" data-lesson="L01">L01 · 认识 Java 与程序运行</a><a class="navlink" href="page-8dc288399ce5.html" data-doc="doc-8dc288399ce5" data-page="page-8dc288399ce5.html" data-kind="code" data-lesson="L02">L02 · 编译、运行与读报错</a><a class="navlink" href="page-b2bb7e2f7933.html" data-doc="doc-b2bb7e2f7933" data-page="page-b2bb7e2f7933.html" data-kind="code" data-lesson="S01">S01 · 文件里为什么要套class和main</a><a class="navlink" href="page-d9c576e49900.html" data-doc="doc-d9c576e49900" data-page="page-d9c576e49900.html" data-kind="code" data-lesson="L03">L03 · 程序结构、变量与类型</a><a class="navlink" href="page-8083ebb8dc8a.html" data-doc="doc-8083ebb8dc8a" data-page="page-8083ebb8dc8a.html" data-kind="code" data-lesson="L04">L04 · 运算符与类型转换</a><a class="navlink" href="page-b0c1e185ccc1.html" data-doc="doc-b0c1e185ccc1" data-page="page-b0c1e185ccc1.html" data-kind="code" data-lesson="S02">S02 · 类、对象、变量和new到底是谁</a><a class="navlink" href="page-d9dddbc70e06.html" data-doc="doc-d9dddbc70e06" data-page="page-d9dddbc70e06.html" data-kind="code" data-lesson="L05">L05 · 字符串与文本处理</a><a class="navlink" href="page-6d5a15d068b7.html" data-doc="doc-6d5a15d068b7" data-page="page-6d5a15d068b7.html" data-kind="code" data-lesson="L06">L06 · 键盘输入、格式化与文件</a><a class="navlink" href="page-16bbc7816c2e.html" data-doc="doc-16bbc7816c2e" data-page="page-16bbc7816c2e.html" data-kind="code" data-lesson="L07">L07 · 程序如何作选择</a><a class="navlink" href="page-539c04050fe3.html" data-doc="doc-539c04050fe3" data-page="page-539c04050fe3.html" data-kind="code" data-lesson="L08">L08 · 让程序重复做事</a><a class="navlink" href="page-a8fac8cdd2df.html" data-doc="doc-a8fac8cdd2df" data-page="page-a8fac8cdd2df.html" data-kind="code" data-lesson="L09">L09 · switch、循环跳转与大数值</a><a class="navlink" href="page-b1915ed3b0b5.html" data-doc="doc-b1915ed3b0b5" data-page="page-b1915ed3b0b5.html" data-kind="code" data-lesson="L10">L10 · 数组与成绩统计器</a><a class="navlink" href="page-719d97a1566c.html" data-doc="doc-719d97a1566c" data-page="page-719d97a1566c.html" data-kind="code" data-lesson="S03">S03 · 字段、构造器、this、static与方法参数</a><a class="navlink" href="page-ef3878a507dd.html" data-doc="doc-ef3878a507dd" data-page="page-ef3878a507dd.html" data-kind="code" data-lesson="S04">S04 · 多个文件怎样组成程序：package、import与classpath</a><a class="navlink" href="page-fb0a10271c89.html" data-doc="doc-fb0a10271c89" data-page="page-fb0a10271c89.html" data-kind="code" data-lesson="S05">S05 · JAR是什么：把程序装箱，再找到入口</a><a class="navlink" href="page-26bc1e6eae6d.html" data-doc="doc-26bc1e6eae6d" data-page="page-26bc1e6eae6d.html" data-kind="code" data-lesson="S06">S06 · 库JAR、资源与真实项目目录</a><div class="navlabel">查阅与接续</div><a class="navlink" href="page-0ef3cebffbed.html" data-doc="doc-0ef3cebffbed" data-page="page-0ef3cebffbed.html" data-kind="guide" data-lesson="">全书路线 · 60单元</a><a class="navlink" href="page-fea294d77afe.html" data-doc="doc-fea294d77afe" data-page="page-fea294d77afe.html" data-kind="guide" data-lesson="">447条教材索引</a><a class="navlink" href="page-32d80fdb4bb7.html" data-doc="doc-32d80fdb4bb7" data-page="page-32d80fdb4bb7.html" data-kind="guide" data-lesson="">AI批改与进度追踪</a><a class="navlink" href="page-e8601bdcb726.html" data-doc="doc-e8601bdcb726" data-page="page-e8601bdcb726.html" data-kind="guide" data-lesson="">个人进度模板</a><a class="navlink" href="page-7def9b47aa03.html" data-doc="doc-7def9b47aa03" data-page="page-7def9b47aa03.html" data-kind="guide" data-lesson="">维护与打包</a><a class="navlink" href="page-c776ae1256e8.html" data-doc="doc-c776ae1256e8" data-page="page-c776ae1256e8.html" data-kind="guide" data-lesson="">课程设计与C++对照</a><a class="navlink" href="page-a54ff182c7e8.html" data-doc="doc-a54ff182c7e8" data-page="page-a54ff182c7e8.html" data-kind="guide" data-lesson="">课程写作约定</a><div class="navlabel">连续阅读 · 可选</div><a class="navlink" href="全一册.html" data-doc="combined" data-page="全一册.html" data-kind="combined" data-lesson="">全一册（连续阅读）</a></nav><p class="side-note">按课阅读，逐项练习。<br>个人作答直接写入练习.md。<br>教材PDF需自备。</p></aside><main><article><div class="crumb">Java入门课程 / 按课学习</div><span class="edition">基础与结构篇 · 16单元已备 · 双页码</span><nav class="lesson-tabs" aria-label="本课内容切换"><a href="s01-lesson.html" aria-current="page">讲义</a><a href="page-b2bb7e2f7933.html">示例</a><a href="page-025659571603.html">练习</a><a href="page-2184b08c58ad.html">参考答案</a></nav><h1 id="s01-讲义-文件里为什么要套class和main">S01 讲义 · 文件里为什么要套class和main</h1><details class="page-toc"><summary>本页目录</summary><div class="toc">
+<ul>
+<li><a href="s01-lesson.html#0-先把问题说清楚">0. 先把问题说清楚</a></li>
+<li><a href="s01-lesson.html#1-文档办事部件的设计操作流程是三个层次">1. 文档、办事部件的设计、操作流程，是三个层次</a></li>
+<li><a href="s01-lesson.html#2-亲手让程序走进另一个方法再回来">2. 亲手让程序“走进另一个方法，再回来”</a></li>
+<li><a href="s01-lesson.html#3-定义方法和调用方法为什么写法不同">3. 定义方法和调用方法，为什么写法不同</a></li>
+<li><a href="s01-lesson.html#4-把入口那一行拆开而不是一次背六个词">4. 把入口那一行拆开，而不是一次背六个词</a></li>
+<li><a href="s01-lesson.html#5-systemoutprintln为什么有两个点">5. System.out.println为什么有两个点</a></li>
+<li><a href="s01-lesson.html#6-和cpython比较时只比较这一次普通启动">6. 和C++、Python比较时，只比较这一次普通启动</a></li>
+<li><a href="s01-lesson.html#7-一次只破坏一个地方先判断失败阶段">7. 一次只破坏一个地方，先判断失败阶段</a></li>
+<li><a href="s01-lesson.html#8-你现在能独立做的事">8. 你现在能独立做的事</a></li>
+<li><a href="s01-lesson.html#教材深化与独立作业">教材深化与独立作业</a></li>
+</ul>
+</div>
+</details>
+<blockquote>
+<p>前置：L01–L02：会保存文本并启动一个程序；不要求会变量、对象或C++。
+教材对应：<strong>书本 p28–31 / PDF p46–49</strong>（3.1；4.4.5（书本 p115–116 / PDF p133–134））。本课讲解、比喻、程序与题目为课程原创。</p>
+</blockquote>
+<h2 id="0-先把问题说清楚">0. 先把问题说清楚</h2>
+<p>你只想显示一句话，却被要求写两层大括号、<code>class</code>、<code>public static void main</code>。如果只记“固定外壳”，以后看到另一个方法、另一个类或一个JAR，就又不知道从哪读起。</p>
+<p>这课只解决三件事：<strong>文件保存文字；类组织成员；方法组织一次可以调用的操作。</strong> <code>main</code>是本课程所用普通应用的入口方法。先不创建自己的对象，S02会把对象单独讲清。</p>
+<p>建议分两次：第一次看层级和调用路线；第二次拆入口、比较别的语言并做错误实验。不要为了读本课先去背整个面向对象术语表。</p>
+<h2 id="1-文档办事部件的设计操作流程是三个层次">1. 文档、办事部件的设计、操作流程，是三个层次</h2>
+<p>想象为校园借书系统写一份工作设计：文档保存文字；设计中列出某个部件能做的操作；每项操作再列步骤。</p>
+<table>
+<thead>
+<tr>
+<th>Java里的东西</th>
+<th>类比</th>
+<th>它真正负责什么</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>CorridorRoute.java</code></td>
+<td>保存设计文字的文档</td>
+<td>磁盘上的源码文件</td>
+</tr>
+<tr>
+<td><code>class CorridorRoute</code></td>
+<td>一个部件的设计定义</td>
+<td>声明一种类型并组织它的成员</td>
+</tr>
+<tr>
+<td>方法 <code>main</code>、<code>greet</code></td>
+<td>有名字的操作流程</td>
+<td>接到调用后执行方法体</td>
+</tr>
+<tr>
+<td><code>println(...)</code>语句</td>
+<td>流程中的一步</td>
+<td>这一步请求输出</td>
+</tr>
+</tbody>
+</table>
+<p><strong>类比边界</strong>：Java的类不是磁盘文件夹，也不是电脑里的一名员工。一个文件可以写多个非public顶层类；一个类可以有多个方法。类的定义本身不会让所有方法自动执行。</p>
+<p>先观察下面这一棵树，竖线表示“写在谁的内部”，不表示执行先后：</p>
+<pre><code class="language-text">源码文件 CorridorRoute.java
+└─ 类 CorridorRoute
+   ├─ 方法 main
+   │  ├─ 输出1
+   │  ├─ 调用greet
+   │  └─ 输出3
+   └─ 方法 greet
+      └─ 输出2
+</code></pre>
+<p>你以后读代码，先找所属层级，再找执行路线。看到一段代码写在页面下方，不能据此认定它最后才执行。</p>
+<h2 id="2-亲手让程序走进另一个方法再回来">2. 亲手让程序“走进另一个方法，再回来”</h2>
+<p>在本课<code>my_code</code>新建<code>CorridorRoute.java</code>，保存下面的完整程序：</p>
+<pre><code class="language-java">public class CorridorRoute {
+    public static void main(String[] args) {
+        System.out.println(&quot;1. open&quot;);
+        greet();
+        System.out.println(&quot;3. close&quot;);
+    }
+
+    public static void greet() {
+        System.out.println(&quot;2. hello&quot;);
+    }
+}
+</code></pre>
+<p>在VS Code打开课程根文件夹，选择“终端→新建终端”，用PowerShell。从根目录输入：</p>
+<pre><code class="language-powershell">.\java.ps1 -Source '.\S01_结构基础_类与方法\my_code\CorridorRoute.java'
+</code></pre>
+<p>运行脚本会隔离编译输出，编译失败就停止。成功应依次显示<code>1. open</code>、<code>2. hello</code>、<code>3. close</code>。若策略阻止脚本，在同一根目录用：</p>
+<pre><code class="language-powershell">powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\java.ps1 -Source '.\S01_结构基础_类与方法\my_code\CorridorRoute.java'
+</code></pre>
+<p>跟着一次调用走：</p>
+<table>
+<thead>
+<tr>
+<th>走到哪里</th>
+<th>此时做什么</th>
+<th>下一步到哪里</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>启动器选择CorridorRoute</td>
+<td>调用约定的main</td>
+<td>main第一条语句</td>
+</tr>
+<tr>
+<td>main第一条输出</td>
+<td>显示1</td>
+<td><code>greet();</code></td>
+</tr>
+<tr>
+<td><code>greet();</code></td>
+<td>暂停main后续步骤，进入greet</td>
+<td>greet里的输出</td>
+</tr>
+<tr>
+<td>greet的右花括号</td>
+<td>本次greet结束</td>
+<td>回main，继续调用之后的语句</td>
+</tr>
+<tr>
+<td>main最后输出</td>
+<td>显示3</td>
+<td>main结束</td>
+</tr>
+</tbody>
+</table>
+<p>类比按“办理欢迎事项”的工作单去执行一次子流程，办完回到调用位置。类比只说明控制流，不表示每个方法会启动新进程或新线程。</p>
+<h2 id="3-定义方法和调用方法为什么写法不同">3. 定义方法和调用方法，为什么写法不同</h2>
+<p>看两行局部写法，<strong>它们是片段，不是独立程序</strong>：</p>
+<pre><code class="language-text">public static void greet() { ... }   定义：这项操作怎样做
+greet();                             调用：现在做一次
+</code></pre>
+<p>定义带方法体，调用只交出方法名及括号中的输入。此例没有输入，仍保留<code>()</code>。花括号表示方法体；调用后面的分号结束调用语句。不能把整个方法定义塞进main；Java普通方法不能直接定义在另一个方法内部。</p>
+<p><code>greet</code>写在main后面，编译器仍知道它属于同一个类，因此本例不需要先写一份C++函数原型。Java普通方法定义写在类里；此处没有<code>.h</code>头文件，也没有<code>CorridorRoute::greet</code>式类外定义。</p>
+<p><strong>预测实验A</strong>：只删掉<code>greet();</code>这一行，第二行输出还出现吗？不会。定义仍在，但没有调用它。</p>
+<p><strong>预测实验B</strong>：恢复后，把调用复制一次。预计<code>1、2、2、3</code>。增加调用次数不会增加类的定义数量。</p>
+<p><strong>预测实验C</strong>：把整个greet定义移到main定义之前，保持两者在同一对类花括号内。输出仍是<code>1、2、3</code>，因为启动仍从main开始。</p>
+<h2 id="4-把入口那一行拆开而不是一次背六个词">4. 把入口那一行拆开，而不是一次背六个词</h2>
+<pre><code class="language-text">public   static   void   main   (String[] args)
+可访问   类的方法  无返回值 入口名   接收启动文本的参数
+</code></pre>
+<ul>
+<li><strong>public</strong>：此方法是公开可访问的。它不表示“所有本地变量都公开”，访问范围由各处声明分别决定。</li>
+<li><strong>static</strong>：调用此方法不需要先创建这个类的一个实例。像先到总服务台发出开馆指令，再由流程建立所需具体部件；不是说“运行中不能有对象”或“数值不能变化”。</li>
+<li><strong>void</strong>：这次方法调用不交回结果值。它仍可以输出文字；“没有返回值”与“没有任何效果”不同。</li>
+<li><strong>main</strong>：在本课<code>java 类名</code>启动方式中，启动器按约定找这个名字。我们取名<code>greet</code>不会让它自动变入口。</li>
+<li><strong>String[] args</strong>：接收启动时的一组文本。<code>String</code>是文本类型，<code>[]</code>表示数组，<code>args</code>是程序员取的参数名。暂不使用也要保持入口形状；数组在L10详细学习。</li>
+</ul>
+<p>本课程固定以Java 8语法/API学习，并用JDK 21编译运行这个入口。其他版本或启动模式可能有其他规则，不从本课模板推导所有Java系统都只能如此启动。</p>
+<h2 id="5-systemoutprintln为什么有两个点">5. <code>System.out.println</code>为什么有两个点</h2>
+<p>不要把它当成一个不可拆的咒语，也不要把点两边都叫“函数”。</p>
+<pre><code class="language-text">System       .out                    .println(&quot;hello&quot;)
+标准库的类    找到它提供的标准输出字段    对这个输出对象调用打印方法
+</code></pre>
+<p><code>System</code>是类名，<code>out</code>是其静态字段，通常引用标准输出对象；<code>println</code>是这个对象的方法。JDK替你提供了这项输出能力，不需要自己先<code>new System</code>。</p>
+<p>像找到总服务台上标为“输出”的设备，再按设备的“打印并换行”操作。边界是：字段不是实际硬件按钮，<code>out</code>也可以被程序安排成其他输出目标。现在只使用默认终端输出。</p>
+<p>括号里的<code>"hello"</code>是交给打印方法的文本；引号属于源码的表示法，正常不打印引号。两个点都涉及成员访问，但<code>out</code>与<code>println</code>的成员种类不同。</p>
+<h2 id="6-和cpython比较时只比较这一次普通启动">6. 和C++、Python比较时，只比较这一次普通启动</h2>
+<table>
+<thead>
+<tr>
+<th>问题</th>
+<th>本课程的Java</th>
+<th>常见C++程序</th>
+<th>常见Python脚本</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>普通操作写在哪里</td>
+<td>类的方法内部</td>
+<td>可写在自由函数main中，也可使用类</td>
+<td>可以写在模块顶层，也可定义函数/类</td>
+</tr>
+<tr>
+<td>启动点</td>
+<td>指定类的约定main</td>
+<td>程序入口main函数</td>
+<td>执行模块的顶层代码</td>
+</tr>
+<tr>
+<td>类是Java独有的吗</td>
+<td>不是，Java强调按类组织普通代码</td>
+<td>也支持类和对象</td>
+<td>也支持类和对象</td>
+</tr>
+<tr>
+<td>这是否等于文件里必须只有一个类</td>
+<td>不等于</td>
+<td>不等于</td>
+<td>不等于</td>
+</tr>
+</tbody>
+</table>
+<p>这张表只帮助你看见结构差异，不要求你先会另外两门语言。Java也有基本类型，不能把“普通代码围绕类组织”夸成“Java里一切都是对象”。</p>
+<h2 id="7-一次只破坏一个地方先判断失败阶段">7. 一次只破坏一个地方，先判断失败阶段</h2>
+<p>先复制正确文件到自己的新实验目录，保留原件。每项改完先预测，再编译；失败时不继续启动旧class。</p>
+<table>
+<thead>
+<tr>
+<th>只改这一处</th>
+<th>应观察到什么</th>
+<th>先查什么</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>文件改名Wrong.java，public类名不变</td>
+<td>javac编译失败</td>
+<td>文件名与public顶层类名匹配</td>
+</tr>
+<tr>
+<td>main改为mian</td>
+<td>编译可以成功，普通启动失败</td>
+<td>入口方法的精确名字</td>
+</tr>
+<tr>
+<td>删除main前的static</td>
+<td>实例方法本身可合法定义，但本课启动找不到约定入口</td>
+<td>是否满足本课入口形状</td>
+</tr>
+<tr>
+<td>把greet定义放进main内部</td>
+<td>编译失败</td>
+<td>花括号层级，方法应与main并列</td>
+</tr>
+</tbody>
+</table>
+<p>不是每个类都需要main。以后<code>Student</code>只表示学生资料，启动类<code>App</code>使用它即可；也允许多个类各有main，启动命令只选择其中一个，不会把所有main轮流执行。</p>
+<h2 id="8-你现在能独立做的事">8. 你现在能独立做的事</h2>
+<p>不看完整程序，写一个类、两个并列静态方法，让main先后调用另一个方法两次，并说明每一行输出来自谁。能画“文件→类→方法→语句”的包含关系，也能画“main→调用→返回”的执行路线，两张图各回答一个问题。</p>
+<p>过关看这两种关系是否分清；不把背出public的英文翻译当作已经理解类结构。对象、字段、构造器将分别在S02、S03用实际状态变化讲清。</p>
+<h2 id="教材深化与独立作业">教材深化与独立作业</h2>
+<p>先完成讲义中的预测和程序，再读教材；PDF不作为基础过关前置。</p>
+<table>
+<thead>
+<tr>
+<th>阅读内容</th>
+<th>书本页</th>
+<th>PDF页</th>
+<th>带着什么问题深化</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>3.1 简单程序</td>
+<td>28–31</td>
+<td>46–49</td>
+<td>精读类与main的层级，回想移动方法定义实验</td>
+</tr>
+<tr>
+<td>4.4.5 main方法</td>
+<td>115–116</td>
+<td>133–134</td>
+<td>精读为何入口用static，区分可有多个main与本次选择一个入口</td>
+</tr>
+</tbody>
+</table>
+<p>完成<a href="page-025659571603.html">练习</a>，直接在题目下作答，代码写入<a href="page-f161a8abcb88.html">my_code</a>。参考答案另放在<a href="page-2184b08c58ad.html">答案与解析</a>，先独立完成再看。材料验证不代表学生过关。</p>
+<p>下一步：<a href="l03-lesson.html"> L03 · 程序结构、变量与类型 </a>。课次备好不代表你已通过本课。</p><div class="pager"><a rel="prev" href="page-95000a110447.html">← 上一页：L02 练习</a><a rel="next" href="page-b2bb7e2f7933.html">下一页：S01 示例 →</a></div><p class="footer">课程原创讲义与习题 · 讲义学习 → 动手练习 → 订正 · 教材深化</p></article></main></div><script src="assets/course.js?v=1c1950cb02ee"></script></body></html>

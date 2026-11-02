@@ -35,6 +35,23 @@
       ]
     },
     {
+      "id": "S01",
+      "folder": "S01_结构基础_类与方法",
+      "title": "文件里为什么要套class和main",
+      "section": "3.1；4.4.5（书本 p115–116 / PDF p133–134）",
+      "book_start": 28,
+      "book_end": 31,
+      "pdf_start": 46,
+      "pdf_end": 49,
+      "questions": [
+        "Q1",
+        "Q2",
+        "E1",
+        "E2",
+        "E3"
+      ]
+    },
+    {
       "id": "L03",
       "folder": "L03_第03章A_程序结构与变量类型",
       "title": "程序结构、变量与类型",
@@ -60,6 +77,23 @@
       "book_end": 45,
       "pdf_start": 56,
       "pdf_end": 63,
+      "questions": [
+        "Q1",
+        "Q2",
+        "E1",
+        "E2",
+        "E3"
+      ]
+    },
+    {
+      "id": "S02",
+      "folder": "S02_结构基础_对象与引用",
+      "title": "类、对象、变量和new到底是谁",
+      "section": "4.1–4.3（本课先建立对象模型，日期案例后续深化）",
+      "book_start": 91,
+      "book_end": 112,
+      "pdf_start": 109,
+      "pdf_end": 130,
       "questions": [
         "Q1",
         "Q2",
@@ -169,9 +203,78 @@
         "P1",
         "P2"
       ]
+    },
+    {
+      "id": "S03",
+      "folder": "S03_结构基础_类成员与方法",
+      "title": "字段、构造器、this、static与方法参数",
+      "section": "4.3–4.6；对象关系回看4.1–4.2",
+      "book_start": 103,
+      "book_end": 130,
+      "pdf_start": 121,
+      "pdf_end": 148,
+      "questions": [
+        "Q1",
+        "Q2",
+        "E1",
+        "E2",
+        "E3"
+      ]
+    },
+    {
+      "id": "S04",
+      "folder": "S04_结构基础_文件包与类路径",
+      "title": "多个文件怎样组成程序：package、import与classpath",
+      "section": "4.3.2；4.7–4.8（中间4.4–4.6已在S03学习）",
+      "book_start": 105,
+      "book_end": 139,
+      "pdf_start": 123,
+      "pdf_end": 157,
+      "questions": [
+        "Q1",
+        "Q2",
+        "E1",
+        "E2",
+        "E3"
+      ]
+    },
+    {
+      "id": "S05",
+      "folder": "S05_结构基础_JAR与启动",
+      "title": "JAR是什么：把程序装箱，再找到入口",
+      "section": "13.1.1–13.1.3；作为课程结构基础提前学习，不包含本章全部部署主题",
+      "book_start": 580,
+      "book_end": 583,
+      "pdf_start": 598,
+      "pdf_end": 601,
+      "questions": [
+        "Q1",
+        "Q2",
+        "E1",
+        "E2",
+        "E3"
+      ]
+    },
+    {
+      "id": "S06",
+      "folder": "S06_结构基础_依赖与资源",
+      "title": "库JAR、资源与真实项目目录",
+      "section": "13.1.4–13.1.5；类路径配合4.8（书本 p137–139 / PDF p155–157）",
+      "book_start": 583,
+      "book_end": 586,
+      "pdf_start": 601,
+      "pdf_end": 604,
+      "questions": [
+        "Q1",
+        "Q2",
+        "E1",
+        "E2",
+        "E3"
+      ]
     }
   ],
-  "planned_lessons": 35,
+  "planned_lessons": 60,
   "pdf_pages": 729,
-  "offset": 18
+  "offset": 18,
+  "edition": "结构与对象重构版 · 2026-11-02"
 }

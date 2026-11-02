@@ -23,4 +23,5 @@
 - 本机 JDK 配置见 环境说明.md 和 .java-course.json。优先用 java.ps1，不修改全局 PATH、JAVA_HOME 或其他项目编辑器设置。
 - 更新内容后运行 python _课程工具/verify_course.py，再运行 python _课程工具/build_release.py。后者需 Markdown 包；普通学习不需要 Python。
 - 修改讲义完整内联程序后另运行 python _课程工具/verify_lecture_examples.py；每个完整程序隔离编译、核对输出，标为片段及故意失败实验不得混作正常整程序。命令说明与页面呈现亦需检查，不能只测试code目录。
+- S01–S06为穿插的结构基础课，现有学习顺序与材料范围以_课程工具/course.json和学习路线图为准。普通单文件用java.ps1，S04–S06多文件包项目用project.ps1；更新项目后运行python _课程工具/verify_projects.py，核对包目录、classpath、JAR入口、依赖、资源及预期失败。Java-source框按标记的项目文件一起验证，不当作单文件样本。
 - 对外发布前排除个人进度、作答、批改、构建产物、工具临时目录及教材。发布仓库位于可分发版，个人学习目录不整体提交；用户已授权创建并推送liang-kai-shui/java-core-course。

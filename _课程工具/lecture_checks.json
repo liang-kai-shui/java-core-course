@@ -335,6 +335,16 @@
       "stdout": "invalid\n",
       "stdin": "101\n",
       "name": "101"
+    },
+    {
+      "name": "semicolon-before-else-is-a-different-failure",
+      "replace": [
+        [
+          "if (score < 0 || score > 100) {",
+          "if (score < 0 || score > 100); {"
+        ]
+      ],
+      "kind": "compile_error"
     }
   ],
   "WhileTrace": [
@@ -454,6 +464,16 @@
   "ArrayFirstSteps": [
     {
       "stdout": "length=3\ninitial=0\n70\n80\n90\n"
+    },
+    {
+      "name": "length-is-not-resizable",
+      "replace": [
+        [
+          "scores[0] = 70;",
+          "scores.length = 4;"
+        ]
+      ],
+      "kind": "compile_error"
     }
   ],
   "ArrayAliasWalk": [
@@ -543,6 +563,147 @@
         ]
       ],
       "stdout": "1\n"
+    }
+  ],
+  "CorridorRoute": [
+    {
+      "name": "base",
+      "stdout": "1. open\n2. hello\n3. close\n"
+    },
+    {
+      "name": "definition-is-not-call",
+      "replace": [
+        [
+          "        greet();\n",
+          ""
+        ]
+      ],
+      "stdout": "1. open\n3. close\n"
+    },
+    {
+      "name": "two-calls",
+      "replace": [
+        [
+          "        greet();",
+          "        greet();\n        greet();"
+        ]
+      ],
+      "stdout": "1. open\n2. hello\n2. hello\n3. close\n"
+    },
+    {
+      "name": "file-and-public-class-mismatch",
+      "replace": [
+        [
+          "public class CorridorRoute",
+          "public class DifferentName"
+        ]
+      ],
+      "kind": "compile_error"
+    },
+    {
+      "name": "mian-is-not-entry",
+      "replace": [
+        [
+          "void main(String[] args)",
+          "void mian(String[] args)"
+        ]
+      ],
+      "kind": "launch_error",
+      "exception": "Main method"
+    },
+    {
+      "name": "instance-main-is-not-this-launch-entry",
+      "replace": [
+        [
+          "public static void main",
+          "public void main"
+        ]
+      ],
+      "kind": "launch_error",
+      "exception": "Main method"
+    }
+  ],
+  "CardBoard": [
+    {
+      "name": "base",
+      "stdout": "Mei\nLin\ntrue\nfalse\n"
+    },
+    {
+      "name": "new-is-not-alias",
+      "replace": [
+        [
+          "ReaderCard alias = first;",
+          "ReaderCard alias = new ReaderCard(\"Lin\");"
+        ]
+      ],
+      "stdout": "Lin\nLin\nfalse\nfalse\n"
+    },
+    {
+      "name": "null-has-no-receiver",
+      "replace": [
+        [
+          "ReaderCard alias = first;",
+          "ReaderCard alias = null;"
+        ]
+      ],
+      "kind": "runtime_error",
+      "exception": "NullPointerException"
+    },
+    {
+      "name": "unassigned-local-is-not-null",
+      "replace": [
+        [
+          "ReaderCard alias = first;",
+          "ReaderCard alias;"
+        ]
+      ],
+      "kind": "compile_error"
+    },
+    {
+      "name": "private-field-is-not-public",
+      "replace": [
+        [
+          "first.getName()",
+          "first.name"
+        ]
+      ],
+      "kind": "compile_error"
+    }
+  ],
+  "ObjectWorkshop": [
+    {
+      "name": "base",
+      "stdout": "Lin:5\nMei:0\ncreated=2\nnumber=2\nLin:6\ncreated=3\n"
+    },
+    {
+      "name": "change-receiver",
+      "replace": [
+        [
+          "first.add(3);",
+          "second.add(3);"
+        ]
+      ],
+      "stdout": "Lin:2\nMei:3\ncreated=2\nnumber=2\nLin:3\ncreated=3\n"
+    },
+    {
+      "name": "no-implicit-zero-arg",
+      "replace": [
+        [
+          "new PointsCard(\"Mei\")",
+          "new PointsCard()"
+        ]
+      ],
+      "kind": "compile_error"
+    },
+    {
+      "name": "static-has-no-implicit-card",
+      "replace": [
+        [
+          "return created;",
+          "return points;"
+        ]
+      ],
+      "kind": "compile_error"
     }
   ]
 }

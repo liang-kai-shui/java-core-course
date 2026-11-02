@@ -637,5 +637,44 @@
         "stdout": "original=[90, 0, 60]\nsum=150\naverage=50.00\nmax=90\nmin=0\npassed=2\nsorted=[0, 60, 90]\n"
       }
     ]
+  },
+  {
+    "path": "S01_结构基础_类与方法/code/CorridorRoute.java",
+    "class": "CorridorRoute",
+    "kind": "normal",
+    "stdout": "1. open\n2. hello\n3. close\n",
+    "cases": []
+  },
+  {
+    "path": "S01_结构基础_类与方法/参考答案/CampusGreeting.java",
+    "class": "CampusGreeting",
+    "kind": "normal",
+    "stdout": "Java\none step at a time\n"
+  },
+  {
+    "path": "S02_结构基础_对象与引用/code/CardBoard.java",
+    "class": "CardBoard",
+    "kind": "normal",
+    "stdout": "Mei\nLin\ntrue\nfalse\n",
+    "cases": []
+  },
+  {
+    "path": "S02_结构基础_对象与引用/参考答案/LampBoard.java",
+    "class": "LampBoard",
+    "kind": "normal",
+    "stdout": "true\nfalse\n"
+  },
+  {
+    "path": "S03_结构基础_类成员与方法/code/ObjectWorkshop.java",
+    "class": "ObjectWorkshop",
+    "kind": "normal",
+    "stdout": "Lin:5\nMei:0\ncreated=2\nnumber=2\nLin:6\ncreated=3\n",
+    "cases": []
+  },
+  {
+    "path": "S03_结构基础_类成员与方法/参考答案/BookingBoard.java",
+    "class": "BookingBoard",
+    "kind": "normal",
+    "stdout": "false\ntrue\nfalse\ntrue\n0\n"
   }
 ]

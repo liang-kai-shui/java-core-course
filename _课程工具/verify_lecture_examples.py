@@ -40,11 +40,11 @@ def check_case(index, example, case, jdk, suffix, build):
     else:
         assert not compiled['stderr'].strip(), result
     run_command = [str(jdk / 'bin' / ('java' + suffix)), '-Dfile.encoding=UTF-8',
-                   '-Dstdout.encoding=UTF-8', '-Dstderr.encoding=UTF-8',
+                   '-Dstdout.encoding=UTF-8', '-Dstderr.encoding=UTF-8', '-Duser.language=en',
                    '-cp', str(classes), example['class'], *case.get('args', [])]
     run = invoke(run_command, work, case.get('stdin', ''))
     result.update(run_command=run_command, stdin=case.get('stdin', ''), run=run)
-    if case.get('kind') == 'runtime_error':
+    if case.get('kind') in ['runtime_error', 'launch_error']:
         assert run['exit_code'] != 0 and case['exception'] in run['stderr'], result
     else:
         assert run['exit_code'] == 0, result

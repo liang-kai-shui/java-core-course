@@ -1,0 +1,216 @@
+<!doctype html><html lang="zh-CN" data-theme="dark"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>S06 讲义 · 库JAR、资源与真实项目目录 · Java陪读</title><link rel="stylesheet" href="assets/course.css?v=1c1950cb02ee"></head><body id="top" data-reading-mode="pages" data-nav-doc="doc-905501ade8a7"><header class="top"><a class="brand" href="index.html"><span>JAVA</span>一起把基础写扎实</a><div class="tools"><span class="tag">CORE JAVA · VOL. I · 10TH</span><a id="reading-mode" href="index.html">分课阅读</a><button id="theme" aria-label="切换浅色与深色">明 / 暗</button></div></header><div class="layout"><aside><input id="navsearch" class="navsearch" aria-label="筛选课程导航" placeholder="筛选课号、讲义、练习…"><nav aria-label="课程导航"><div class="navlabel">课程入口</div><a class="navlink" href="index.html" data-doc="home" data-page="index.html" data-kind="home" data-lesson="">课程首页</a><a class="navlink" href="course-info.html" data-doc="doc-b33563055168" data-page="course-info.html" data-kind="guide" data-lesson="">课程说明</a><div class="navlabel">附录 · 先把基础讲清楚</div><a class="navlink" href="page-4cc100767b13.html" data-doc="doc-4cc100767b13" data-page="page-4cc100767b13.html" data-kind="guide" data-lesson="">零基础起飞</a><a class="navlink" href="page-3f83fca99eef.html" data-doc="doc-3f83fca99eef" data-page="page-3f83fca99eef.html" data-kind="guide" data-lesson="">术语表</a><a class="navlink" href="page-d70bb9fd9f2b.html" data-doc="doc-d70bb9fd9f2b" data-page="page-d70bb9fd9f2b.html" data-kind="guide" data-lesson="">类、文件与JAR总图</a><a class="navlink" href="page-b984dae871b4.html" data-doc="doc-b984dae871b4" data-page="page-b984dae871b4.html" data-kind="guide" data-lesson="">运行环境</a><a class="navlink" href="page-526e3b952094.html" data-doc="doc-526e3b952094" data-page="page-526e3b952094.html" data-kind="guide" data-lesson="">书本与PDF页码</a><div class="navlabel">讲义</div><a class="navlink" href="l01-lesson.html" data-doc="doc-9accd0bf9b7f" data-page="l01-lesson.html" data-kind="lesson" data-lesson="L01">L01 · 认识 Java 与程序运行</a><a class="navlink" href="l02-lesson.html" data-doc="doc-27ed48622bd4" data-page="l02-lesson.html" data-kind="lesson" data-lesson="L02">L02 · 编译、运行与读报错</a><a class="navlink" href="s01-lesson.html" data-doc="doc-07ae4fcc72ce" data-page="s01-lesson.html" data-kind="lesson" data-lesson="S01">S01 · 文件里为什么要套class和main</a><a class="navlink" href="l03-lesson.html" data-doc="doc-6b1b497ed36e" data-page="l03-lesson.html" data-kind="lesson" data-lesson="L03">L03 · 程序结构、变量与类型</a><a class="navlink" href="l04-lesson.html" data-doc="doc-441c97ad53bb" data-page="l04-lesson.html" data-kind="lesson" data-lesson="L04">L04 · 运算符与类型转换</a><a class="navlink" href="s02-lesson.html" data-doc="doc-f99e9428bbe8" data-page="s02-lesson.html" data-kind="lesson" data-lesson="S02">S02 · 类、对象、变量和new到底是谁</a><a class="navlink" href="l05-lesson.html" data-doc="doc-23e9eec49f15" data-page="l05-lesson.html" data-kind="lesson" data-lesson="L05">L05 · 字符串与文本处理</a><a class="navlink" href="l06-lesson.html" data-doc="doc-6892ef8761d4" data-page="l06-lesson.html" data-kind="lesson" data-lesson="L06">L06 · 键盘输入、格式化与文件</a><a class="navlink" href="l07-lesson.html" data-doc="doc-b1469f212770" data-page="l07-lesson.html" data-kind="lesson" data-lesson="L07">L07 · 程序如何作选择</a><a class="navlink" href="l08-lesson.html" data-doc="doc-a6ec0be7c981" data-page="l08-lesson.html" data-kind="lesson" data-lesson="L08">L08 · 让程序重复做事</a><a class="navlink" href="l09-lesson.html" data-doc="doc-33c8ceac7e88" data-page="l09-lesson.html" data-kind="lesson" data-lesson="L09">L09 · switch、循环跳转与大数值</a><a class="navlink" href="l10-lesson.html" data-doc="doc-dd1d0b22dbf0" data-page="l10-lesson.html" data-kind="lesson" data-lesson="L10">L10 · 数组与成绩统计器</a><a class="navlink" href="s03-lesson.html" data-doc="doc-9c6f386b2d27" data-page="s03-lesson.html" data-kind="lesson" data-lesson="S03">S03 · 字段、构造器、this、static与方法参数</a><a class="navlink" href="s04-lesson.html" data-doc="doc-9231422a5acf" data-page="s04-lesson.html" data-kind="lesson" data-lesson="S04">S04 · 多个文件怎样组成程序：package、import与classpath</a><a class="navlink" href="s05-lesson.html" data-doc="doc-df48e2e727ee" data-page="s05-lesson.html" data-kind="lesson" data-lesson="S05">S05 · JAR是什么：把程序装箱，再找到入口</a><a class="navlink" href="s06-lesson.html" data-doc="doc-905501ade8a7" data-page="s06-lesson.html" data-kind="lesson" data-lesson="S06" aria-current="page">S06 · 库JAR、资源与真实项目目录</a><div class="navlabel">练习</div><a class="navlink" href="page-2bd2136ce2bb.html" data-doc="doc-2bd2136ce2bb" data-page="page-2bd2136ce2bb.html" data-kind="exercise" data-lesson="L01">L01 · 认识 Java 与程序运行</a><a class="navlink" href="page-95000a110447.html" data-doc="doc-95000a110447" data-page="page-95000a110447.html" data-kind="exercise" data-lesson="L02">L02 · 编译、运行与读报错</a><a class="navlink" href="page-025659571603.html" data-doc="doc-025659571603" data-page="page-025659571603.html" data-kind="exercise" data-lesson="S01">S01 · 文件里为什么要套class和main</a><a class="navlink" href="page-20353e11686c.html" data-doc="doc-20353e11686c" data-page="page-20353e11686c.html" data-kind="exercise" data-lesson="L03">L03 · 程序结构、变量与类型</a><a class="navlink" href="page-7d5e3415eb77.html" data-doc="doc-7d5e3415eb77" data-page="page-7d5e3415eb77.html" data-kind="exercise" data-lesson="L04">L04 · 运算符与类型转换</a><a class="navlink" href="page-a32ae623c39e.html" data-doc="doc-a32ae623c39e" data-page="page-a32ae623c39e.html" data-kind="exercise" data-lesson="S02">S02 · 类、对象、变量和new到底是谁</a><a class="navlink" href="page-279cca6b26ab.html" data-doc="doc-279cca6b26ab" data-page="page-279cca6b26ab.html" data-kind="exercise" data-lesson="L05">L05 · 字符串与文本处理</a><a class="navlink" href="page-ac312fcdaf24.html" data-doc="doc-ac312fcdaf24" data-page="page-ac312fcdaf24.html" data-kind="exercise" data-lesson="L06">L06 · 键盘输入、格式化与文件</a><a class="navlink" href="page-59c311bedabe.html" data-doc="doc-59c311bedabe" data-page="page-59c311bedabe.html" data-kind="exercise" data-lesson="L07">L07 · 程序如何作选择</a><a class="navlink" href="page-d18029bb4803.html" data-doc="doc-d18029bb4803" data-page="page-d18029bb4803.html" data-kind="exercise" data-lesson="L08">L08 · 让程序重复做事</a><a class="navlink" href="page-a7b6badbcc8e.html" data-doc="doc-a7b6badbcc8e" data-page="page-a7b6badbcc8e.html" data-kind="exercise" data-lesson="L09">L09 · switch、循环跳转与大数值</a><a class="navlink" href="page-edb3747d12d2.html" data-doc="doc-edb3747d12d2" data-page="page-edb3747d12d2.html" data-kind="exercise" data-lesson="L10">L10 · 数组与成绩统计器</a><a class="navlink" href="page-e322277cbd7b.html" data-doc="doc-e322277cbd7b" data-page="page-e322277cbd7b.html" data-kind="exercise" data-lesson="S03">S03 · 字段、构造器、this、static与方法参数</a><a class="navlink" href="page-d287d966e612.html" data-doc="doc-d287d966e612" data-page="page-d287d966e612.html" data-kind="exercise" data-lesson="S04">S04 · 多个文件怎样组成程序：package、import与classpath</a><a class="navlink" href="page-43c58052c6b0.html" data-doc="doc-43c58052c6b0" data-page="page-43c58052c6b0.html" data-kind="exercise" data-lesson="S05">S05 · JAR是什么：把程序装箱，再找到入口</a><a class="navlink" href="page-e906847bea99.html" data-doc="doc-e906847bea99" data-page="page-e906847bea99.html" data-kind="exercise" data-lesson="S06">S06 · 库JAR、资源与真实项目目录</a><div class="navlabel">参考答案 · 先独立作答</div><a class="navlink" href="page-8ac64aceb665.html" data-doc="doc-8ac64aceb665" data-page="page-8ac64aceb665.html" data-kind="answers" data-lesson="L01">L01 · 认识 Java 与程序运行</a><a class="navlink" href="page-702232ba7bff.html" data-doc="doc-702232ba7bff" data-page="page-702232ba7bff.html" data-kind="answers" data-lesson="L02">L02 · 编译、运行与读报错</a><a class="navlink" href="page-2184b08c58ad.html" data-doc="doc-2184b08c58ad" data-page="page-2184b08c58ad.html" data-kind="answers" data-lesson="S01">S01 · 文件里为什么要套class和main</a><a class="navlink" href="page-c068f2bbb9af.html" data-doc="doc-c068f2bbb9af" data-page="page-c068f2bbb9af.html" data-kind="answers" data-lesson="L03">L03 · 程序结构、变量与类型</a><a class="navlink" href="page-f0ad7e277387.html" data-doc="doc-f0ad7e277387" data-page="page-f0ad7e277387.html" data-kind="answers" data-lesson="L04">L04 · 运算符与类型转换</a><a class="navlink" href="page-d18bec83d313.html" data-doc="doc-d18bec83d313" data-page="page-d18bec83d313.html" data-kind="answers" data-lesson="S02">S02 · 类、对象、变量和new到底是谁</a><a class="navlink" href="page-21329cb1f07a.html" data-doc="doc-21329cb1f07a" data-page="page-21329cb1f07a.html" data-kind="answers" data-lesson="L05">L05 · 字符串与文本处理</a><a class="navlink" href="page-1d5374d4cbf3.html" data-doc="doc-1d5374d4cbf3" data-page="page-1d5374d4cbf3.html" data-kind="answers" data-lesson="L06">L06 · 键盘输入、格式化与文件</a><a class="navlink" href="page-c1f9ec907b08.html" data-doc="doc-c1f9ec907b08" data-page="page-c1f9ec907b08.html" data-kind="answers" data-lesson="L07">L07 · 程序如何作选择</a><a class="navlink" href="page-af8cd7604511.html" data-doc="doc-af8cd7604511" data-page="page-af8cd7604511.html" data-kind="answers" data-lesson="L08">L08 · 让程序重复做事</a><a class="navlink" href="page-8cff2b23cfcc.html" data-doc="doc-8cff2b23cfcc" data-page="page-8cff2b23cfcc.html" data-kind="answers" data-lesson="L09">L09 · switch、循环跳转与大数值</a><a class="navlink" href="page-4a36dc3be0b6.html" data-doc="doc-4a36dc3be0b6" data-page="page-4a36dc3be0b6.html" data-kind="answers" data-lesson="L10">L10 · 数组与成绩统计器</a><a class="navlink" href="page-b0534e20c53b.html" data-doc="doc-b0534e20c53b" data-page="page-b0534e20c53b.html" data-kind="answers" data-lesson="S03">S03 · 字段、构造器、this、static与方法参数</a><a class="navlink" href="page-d03973535ad4.html" data-doc="doc-d03973535ad4" data-page="page-d03973535ad4.html" data-kind="answers" data-lesson="S04">S04 · 多个文件怎样组成程序：package、import与classpath</a><a class="navlink" href="page-fdc65757ba69.html" data-doc="doc-fdc65757ba69" data-page="page-fdc65757ba69.html" data-kind="answers" data-lesson="S05">S05 · JAR是什么：把程序装箱，再找到入口</a><a class="navlink" href="page-b1b954c3d4f0.html" data-doc="doc-b1b954c3d4f0" data-page="page-b1b954c3d4f0.html" data-kind="answers" data-lesson="S06">S06 · 库JAR、资源与真实项目目录</a><div class="navlabel">示例代码与运行命令</div><a class="navlink" href="page-88947e1a9eb7.html" data-doc="doc-88947e1a9eb7" data-page="page-88947e1a9eb7.html" data-kind="code" data-lesson="L01">L01 · 认识 Java 与程序运行</a><a class="navlink" href="page-8dc288399ce5.html" data-doc="doc-8dc288399ce5" data-page="page-8dc288399ce5.html" data-kind="code" data-lesson="L02">L02 · 编译、运行与读报错</a><a class="navlink" href="page-b2bb7e2f7933.html" data-doc="doc-b2bb7e2f7933" data-page="page-b2bb7e2f7933.html" data-kind="code" data-lesson="S01">S01 · 文件里为什么要套class和main</a><a class="navlink" href="page-d9c576e49900.html" data-doc="doc-d9c576e49900" data-page="page-d9c576e49900.html" data-kind="code" data-lesson="L03">L03 · 程序结构、变量与类型</a><a class="navlink" href="page-8083ebb8dc8a.html" data-doc="doc-8083ebb8dc8a" data-page="page-8083ebb8dc8a.html" data-kind="code" data-lesson="L04">L04 · 运算符与类型转换</a><a class="navlink" href="page-b0c1e185ccc1.html" data-doc="doc-b0c1e185ccc1" data-page="page-b0c1e185ccc1.html" data-kind="code" data-lesson="S02">S02 · 类、对象、变量和new到底是谁</a><a class="navlink" href="page-d9dddbc70e06.html" data-doc="doc-d9dddbc70e06" data-page="page-d9dddbc70e06.html" data-kind="code" data-lesson="L05">L05 · 字符串与文本处理</a><a class="navlink" href="page-6d5a15d068b7.html" data-doc="doc-6d5a15d068b7" data-page="page-6d5a15d068b7.html" data-kind="code" data-lesson="L06">L06 · 键盘输入、格式化与文件</a><a class="navlink" href="page-16bbc7816c2e.html" data-doc="doc-16bbc7816c2e" data-page="page-16bbc7816c2e.html" data-kind="code" data-lesson="L07">L07 · 程序如何作选择</a><a class="navlink" href="page-539c04050fe3.html" data-doc="doc-539c04050fe3" data-page="page-539c04050fe3.html" data-kind="code" data-lesson="L08">L08 · 让程序重复做事</a><a class="navlink" href="page-a8fac8cdd2df.html" data-doc="doc-a8fac8cdd2df" data-page="page-a8fac8cdd2df.html" data-kind="code" data-lesson="L09">L09 · switch、循环跳转与大数值</a><a class="navlink" href="page-b1915ed3b0b5.html" data-doc="doc-b1915ed3b0b5" data-page="page-b1915ed3b0b5.html" data-kind="code" data-lesson="L10">L10 · 数组与成绩统计器</a><a class="navlink" href="page-719d97a1566c.html" data-doc="doc-719d97a1566c" data-page="page-719d97a1566c.html" data-kind="code" data-lesson="S03">S03 · 字段、构造器、this、static与方法参数</a><a class="navlink" href="page-ef3878a507dd.html" data-doc="doc-ef3878a507dd" data-page="page-ef3878a507dd.html" data-kind="code" data-lesson="S04">S04 · 多个文件怎样组成程序：package、import与classpath</a><a class="navlink" href="page-fb0a10271c89.html" data-doc="doc-fb0a10271c89" data-page="page-fb0a10271c89.html" data-kind="code" data-lesson="S05">S05 · JAR是什么：把程序装箱，再找到入口</a><a class="navlink" href="page-26bc1e6eae6d.html" data-doc="doc-26bc1e6eae6d" data-page="page-26bc1e6eae6d.html" data-kind="code" data-lesson="S06">S06 · 库JAR、资源与真实项目目录</a><div class="navlabel">查阅与接续</div><a class="navlink" href="page-0ef3cebffbed.html" data-doc="doc-0ef3cebffbed" data-page="page-0ef3cebffbed.html" data-kind="guide" data-lesson="">全书路线 · 60单元</a><a class="navlink" href="page-fea294d77afe.html" data-doc="doc-fea294d77afe" data-page="page-fea294d77afe.html" data-kind="guide" data-lesson="">447条教材索引</a><a class="navlink" href="page-32d80fdb4bb7.html" data-doc="doc-32d80fdb4bb7" data-page="page-32d80fdb4bb7.html" data-kind="guide" data-lesson="">AI批改与进度追踪</a><a class="navlink" href="page-e8601bdcb726.html" data-doc="doc-e8601bdcb726" data-page="page-e8601bdcb726.html" data-kind="guide" data-lesson="">个人进度模板</a><a class="navlink" href="page-7def9b47aa03.html" data-doc="doc-7def9b47aa03" data-page="page-7def9b47aa03.html" data-kind="guide" data-lesson="">维护与打包</a><a class="navlink" href="page-c776ae1256e8.html" data-doc="doc-c776ae1256e8" data-page="page-c776ae1256e8.html" data-kind="guide" data-lesson="">课程设计与C++对照</a><a class="navlink" href="page-a54ff182c7e8.html" data-doc="doc-a54ff182c7e8" data-page="page-a54ff182c7e8.html" data-kind="guide" data-lesson="">课程写作约定</a><div class="navlabel">连续阅读 · 可选</div><a class="navlink" href="全一册.html" data-doc="combined" data-page="全一册.html" data-kind="combined" data-lesson="">全一册（连续阅读）</a></nav><p class="side-note">按课阅读，逐项练习。<br>个人作答直接写入练习.md。<br>教材PDF需自备。</p></aside><main><article><div class="crumb">Java入门课程 / 按课学习</div><span class="edition">基础与结构篇 · 16单元已备 · 双页码</span><nav class="lesson-tabs" aria-label="本课内容切换"><a href="s06-lesson.html" aria-current="page">讲义</a><a href="page-26bc1e6eae6d.html">示例</a><a href="page-e906847bea99.html">练习</a><a href="page-b1b954c3d4f0.html">参考答案</a></nav><h1 id="s06-讲义-库jar资源与真实项目目录">S06 讲义 · 库JAR、资源与真实项目目录</h1><details class="page-toc"><summary>本页目录</summary><div class="toc">
+<ul>
+<li><a href="s06-lesson.html#0-只把主程序装进箱子为什么到另一台电脑就坏了">0. 只把主程序装进箱子，为什么到另一台电脑就坏了</a></li>
+<li><a href="s06-lesson.html#1-一张职责地图相似的文件夹名称不等于相同规则">1. 一张职责地图：相似的文件夹名称不等于相同规则</a></li>
+<li><a href="s06-lesson.html#2-两份完整源码和一个数据文件">2. 两份完整源码和一个数据文件</a></li>
+<li><a href="s06-lesson.html#3-先把新语法翻译成这一次能用的读法">3. 先把新语法翻译成这一次能用的读法</a></li>
+<li><a href="s06-lesson.html#4-资源路径从哪里开始与notetxt的工作目录不同">4. 资源路径从哪里开始，与note.txt的工作目录不同</a></li>
+<li><a href="s06-lesson.html#5-运行与打包让工具执行完整链路">5. 运行与打包：让工具执行完整链路</a></li>
+<li><a href="s06-lesson.html#6-手动观察两种classpath与清单条目">6. 手动观察两种classpath与清单条目</a></li>
+<li><a href="s06-lesson.html#7-发出去的一份程序为何可能有多个jar">7. 发出去的一份程序，为何可能有多个JAR</a></li>
+<li><a href="s06-lesson.html#8-源码资源构建结果哪些该改">8. 源码、资源、构建结果，哪些该改</a></li>
+<li><a href="s06-lesson.html#9-本课过关">9. 本课过关</a></li>
+<li><a href="s06-lesson.html#教材深化与独立作业">教材深化与独立作业</a></li>
+</ul>
+</div>
+</details>
+<blockquote>
+<p>前置：S04–S05；L06的Scanner、UTF-8文件读写和try资源范围；S03的方法返回值。
+教材对应：<strong>书本 p583–586 / PDF p601–604</strong>（13.1.4–13.1.5；类路径配合4.8（书本 p137–139 / PDF p155–157））。本课讲解、比喻、程序与题目为课程原创。</p>
+</blockquote>
+<h2 id="0-只把主程序装进箱子为什么到另一台电脑就坏了">0. 只把主程序装进箱子，为什么到另一台电脑就坏了</h2>
+<p>你的主类调用了别人写的LabelMaker，又需要一行放在message.txt里的文字。它们一个提供可执行的类，一个提供数据；两者都不是多写一个import就会自动出现。</p>
+<p>本课把程序拆成三个角色：<strong>应用类负责流程，库类提供能力，资源文件提供随程序分发的数据。</strong> 先解释每项归属，再编译、打包、离开原目录运行。这样能检验它是否偷偷依赖开发目录里的文件。</p>
+<h2 id="1-一张职责地图相似的文件夹名称不等于相同规则">1. 一张职责地图：相似的文件夹名称不等于相同规则</h2>
+<pre><code class="language-text">project/
+├─ src/campus/app/LibraryApp.java       应用源码
+├─ library-src/campus/lib/LabelMaker.java  演示“别人提供”的库源码
+└─ resources/campus/app/message.txt    应用资源，UTF-8文本
+
+构建后：
+release/
+├─ app.jar                            应用class + message.txt + 清单
+└─ lib/
+   └─ labels.jar                      库class
+</code></pre>
+<p>这里library-src只是为了让你看到库的来历；实际使用第三方库可能只拿到JAR，而不在当前项目维护其源码。<code>src</code>、<code>resources</code>、<code>lib</code>是本项目的目录约定，名字本身不会触发下载、编译或加载动作。</p>
+<p>把库JAR想成另一个供应方的部件箱，资源像本产品随箱附的文字说明。类比边界：真正加载时仍按类路径、资源路径和清单规则查找，不因为文件夹恰好叫lib就自动找到所有依赖。</p>
+<h2 id="2-两份完整源码和一个数据文件">2. 两份完整源码和一个数据文件</h2>
+<p>先把本课code/project复制到my_code/project，已有副本不覆盖。库只提供一个静态文本操作：</p>
+
+
+<pre><code class="language-java-source">package campus.lib;
+
+public class LabelMaker {
+    public static String decorate(String text) {
+        return &quot;[&quot; + text + &quot;]&quot;;
+    }
+}
+</code></pre>
+<p>应用负责找到资源、读一行、交给库处理并输出：</p>
+
+
+<pre><code class="language-java-source">package campus.app;
+
+import campus.lib.LabelMaker;
+import java.io.InputStream;
+import java.util.Scanner;
+
+public class LibraryApp {
+    public static void main(String[] args) {
+        InputStream stream = LibraryApp.class.getResourceAsStream(&quot;/campus/app/message.txt&quot;);
+        if (stream == null) {
+            throw new IllegalStateException(&quot;missing resource&quot;);
+        }
+        try (Scanner in = new Scanner(stream, &quot;UTF-8&quot;)) {
+            String text = in.nextLine();
+            System.out.println(LabelMaker.decorate(text));
+        }
+    }
+}
+</code></pre>
+<p>resources/campus/app/message.txt的第一行是：</p>
+<pre><code class="language-text">讲义先学，教材深化。
+</code></pre>
+<p>末尾保留换行，以UTF-8保存。此程序约定资源存在且至少有一行；没有内容的文件与含一行空文本不同，Scanner读不存在的下一行会失败。先用明确存在的一行做主实验。</p>
+<h2 id="3-先把新语法翻译成这一次能用的读法">3. 先把新语法翻译成这一次能用的读法</h2>
+<p><strong>InputStream</strong>表示字节输入流；这里是JAR里资源条目提供的读取通道。不是另一个字符串，也不是当前磁盘路径。</p>
+<p><strong><code>LibraryApp.class</code></strong>在Java源码中是类字面量，得到表示LibraryApp类型的Class对象，借它请求关联资源。<strong>它与磁盘上同名的LibraryApp.class字节码文件不是同一语法角色</strong>：前者是源码表达式，后者是文件名。不是对文件名直接调用方法，也没有打开一个以“class”命名的目录。</p>
+<p><code>getResourceAsStream(...)</code>找到资源后返回可读流，找不到返回null。因此先检查；<code>throw new IllegalStateException(...)</code>表示主动报告运行失败并停止正常路线，帮助把“找不到资源”与后续读取问题分开。异常体系留到对应章节，这里已给出可用读法，不要求先学完整继承结构。</p>
+<p><code>try (Scanner ... ) { ... }</code>为读取工具建立资源使用范围，退出时自动关闭它；它不是“出错了就假装成功”。Scanner的close也会关闭其输入流。L06先学习文件正常读写，这里用已经解释的资源语法避免忘关。</p>
+<h2 id="4-资源路径从哪里开始与notetxt的工作目录不同">4. 资源路径从哪里开始，与note.txt的工作目录不同</h2>
+<p>本例以<code>/</code>开头，表示相对于类路径或归档内部的根：</p>
+<pre><code class="language-text">app.jar
+└─ campus/app/message.txt  ← &quot;/campus/app/message.txt&quot;定位这里
+</code></pre>
+<p>它不是Windows的C盘根目录，也不自动加上src/resources。<strong>构建要把resources里的内容复制到正确条目位置</strong>，而不是把resources这个外壳一起塞进根。</p>
+<p>如果写成<code>LibraryApp.class.getResourceAsStream("message.txt")</code>，没有前导斜杠，则相对于LibraryApp所属包定位；本例仍会得到campus/app/message.txt。两种写法起点不同，结果碰巧相同；换到别的包时需重新计算。</p>
+<table>
+<thead>
+<tr>
+<th>代码或命令中的路径</th>
+<th>起点与职责</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Paths.get("note.txt")</td>
+<td>普通文件路径，通常从进程工作目录解释</td>
+</tr>
+<tr>
+<td>类资源名 /campus/app/message.txt</td>
+<td>应用资源根，可能在JAR内部</td>
+</tr>
+<tr>
+<td>-cp classes;lib/labels.jar</td>
+<td>查找类的入口清单</td>
+</tr>
+<tr>
+<td>清单Class-Path: lib/labels.jar</td>
+<td>按归档清单规则相对主JAR定位依赖</td>
+</tr>
+</tbody>
+</table>
+<p>资源名使用<code>/</code>，不按Windows路径去写反斜杠。JAR中的资源也不一定对应能用普通文件工具打开的独立磁盘文件，因此先用流读取，不把资源URL随手硬转成本地文件路径。</p>
+<h2 id="5-运行与打包让工具执行完整链路">5. 运行与打包：让工具执行完整链路</h2>
+<p>在课程根目录的PowerShell运行自己的副本：</p>
+<pre><code class="language-powershell">.\project.ps1 -Project S06 -SourceRoot '.\S06_结构基础_依赖与资源\my_code\project' -Mode Run
+.\project.ps1 -Project S06 -SourceRoot '.\S06_结构基础_依赖与资源\my_code\project' -Mode Jar
+</code></pre>
+<p>两次都应显示<code>[讲义先学，教材深化。]</code>。Build模式会打印生成位置，List模式列出应用JAR内部条目。新生成目录位于课程.build，不混入自己的源码；失败时停止，不启动旧JAR。</p>
+<p>工具实际完成：</p>
+<table>
+<thead>
+<tr>
+<th>顺序</th>
+<th>输入</th>
+<th>产物或用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>library-src下LabelMaker.java</td>
+<td>编译为库class</td>
+</tr>
+<tr>
+<td>2</td>
+<td>库class</td>
+<td>打包lib/labels.jar</td>
+</tr>
+<tr>
+<td>3</td>
+<td>应用源码，加库JAR作为编译classpath</td>
+<td>生成LibraryApp.class</td>
+</tr>
+<tr>
+<td>4</td>
+<td>应用class与resources内容</td>
+<td>打包app.jar，并写入口、依赖位置</td>
+</tr>
+<tr>
+<td>5</td>
+<td>app.jar与lib/labels.jar这一组</td>
+<td>从新目录启动验证</td>
+</tr>
+</tbody>
+</table>
+<p>这不是把库“复制到import那一行”。<strong>编译时</strong>需要能解析库类型，<strong>运行时</strong>需要能加载库类型；两阶段都要提供适当的类路径。</p>
+<h2 id="6-手动观察两种classpath与清单条目">6. 手动观察两种classpath与清单条目</h2>
+<p>本段展示构建目录里的命令形状，<strong>是路径读法示例，不是直接复制的完整命令</strong>：</p>
+<pre><code class="language-text">javac --release 8 -cp &quot;某次构建/lib/labels.jar&quot; -d &quot;某次构建/classes&quot; 应用源文件路径
+java -cp &quot;某次构建/classes;某次构建/lib/labels.jar&quot; campus.app.LibraryApp
+</code></pre>
+<p>Windows的多个classpath入口用分号连接，并把整段放在引号中，否则PowerShell可能把分号当自己的命令分隔符。Linux/macOS通常用冒号；不要把Windows这条命令原封不动当作所有系统的语法。</p>
+<p>classpath指向库JAR本身，不是只写它所在的lib目录。<code>lib/*</code>可以在类路径规则下代表该层JAR集合，但不会递归收集所有源码和子文件夹；第一遍先明确列每一个需要的JAR。</p>
+<p>应用JAR的清单包含：</p>
+<pre><code class="language-text">Manifest-Version: 1.0
+Main-Class: campus.app.LibraryApp
+Class-Path: lib/labels.jar
+</code></pre>
+<p>Main-Class选入口，Class-Path告诉这份归档还用哪个库。这里不是Windows-cp那样的分号清单；多个清单依赖条目按清单规范用空格分隔。本例只有一个相对项。</p>
+<p><strong><code>java -jar</code>不会把另写的普通-cp当作补充应用类路径来使用。</strong> 本课为JAR启动明确写清单Class-Path；另一种做法是不用-jar，直接-cp提供完整集合并给主类。不要混用两种启动约定以后靠运气成功。</p>
+<h2 id="7-发出去的一份程序为何可能有多个jar">7. 发出去的一份程序，为何可能有多个JAR</h2>
+<p>本例是分开分发依赖的应用：app.jar没有把labels.jar里的类展开合并，lib/labels.jar仍需随它一起交付。</p>
+<p>把Build生成目录中的<strong>app.jar与lib子目录</strong>复制到一个新建的实验文件夹。在那个新位置的PowerShell，用本机java工具完整路径执行<code>java -jar .\app.jar</code>；应有相同输出。实际命令用自己的JDK路径，不要指向开发期的classes目录。</p>
+<p>如果只复制app.jar，预期执行到调用LabelMaker时报告依赖类缺失；此时入口可能已经加载，不能笼统说“没有main”。如果资源条目遗漏，程序会明确报告missing resource，这又与缺库不同。</p>
+<p>某些工具能生成将依赖合并的所谓fat/uber JAR，但<strong>普通jar打包不自动合并所有第三方库，也不自动把JVM装进去</strong>。本课先用可以展开检查的分发目录理解真实需求。</p>
+<h2 id="8-源码资源构建结果哪些该改">8. 源码、资源、构建结果，哪些该改</h2>
+<p>改源码或资源后要重新编译/打包，再测试新产物。只改src里的文字，旧app.jar不自动更新。个人代码和实验放my_code；code保留原件；.build是可再生结果。</p>
+<p>以后看到Maven的pom.xml或Gradle构建文件，先理解它们会描述依赖、版本、源目录与构建任务，不是另一种类定义。依赖标识、包名、JAR文件名也不一定彼此相同。这里先不要求安装构建系统，避免新的工具遮住已经能理解的class与JAR链路。</p>
+<h2 id="9-本课过关">9. 本课过关</h2>
+<p>独立说明“缺入口、缺库、缺资源、运行旧产物”分别应查哪一处。能在离开源码目录以后运行这一组分发文件；能解释资源的查找起点，区分源码中的.class表达式与磁盘字节码文件名。做到这些，再去学更大的框架，才不必把整个项目当作一个神秘按钮。</p>
+<h2 id="教材深化与独立作业">教材深化与独立作业</h2>
+<p>先完成讲义中的预测和程序，再读教材；PDF不作为基础过关前置。</p>
+<table>
+<thead>
+<tr>
+<th>阅读内容</th>
+<th>书本页</th>
+<th>PDF页</th>
+<th>带着什么问题深化</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4.8 类路径中的JAR</td>
+<td>137–139</td>
+<td>155–157</td>
+<td>对照编译与运行的依赖入口，不改全局CLASSPATH</td>
+</tr>
+<tr>
+<td>13.1.4 资源</td>
+<td>583–585</td>
+<td>601–603</td>
+<td>精读相对/绝对资源名，照书中建议移到新目录验证</td>
+</tr>
+<tr>
+<td>13.1.5 包密封</td>
+<td>585–586</td>
+<td>603–604</td>
+<td>选读归档访问边界；本课不要求配置密封包</td>
+</tr>
+</tbody>
+</table>
+<p>完成<a href="page-e906847bea99.html">练习</a>，直接在题目下作答，代码写入<a href="page-7b6deacca8da.html">my_code</a>。参考答案另放在<a href="page-b1b954c3d4f0.html">答案与解析</a>，先独立完成再看。材料验证不代表学生过关。</p>
+<p>本阶段之后的教材路线见<a href="page-0ef3cebffbed.html">学习路线图</a>；未提供正文的课次明确标为规划。</p><div class="pager"><a rel="prev" href="page-43c58052c6b0.html">← 上一页：S05 练习</a><a rel="next" href="page-26bc1e6eae6d.html">下一页：S06 示例 →</a></div><p class="footer">课程原创讲义与习题 · 讲义学习 → 动手练习 → 订正 · 教材深化</p></article></main></div><script src="assets/course.js?v=1c1950cb02ee"></script></body></html>

@@ -18,9 +18,9 @@ DOCS = ROOT / 'docs'
 OUT = ROOT / 'outputs'
 COURSE = json.loads((ROOT / '_课程工具/course.json').read_text(encoding='utf-8'))
 EXERCISES = json.loads((ROOT / '_课程工具/exercises.json').read_text(encoding='utf-8'))
-ROOT_FILES = ['README.md', '开始学习.html', 'AGENTS.md', '学习路线图.md', '教材目录.md', '页码对应说明.md',
+ROOT_FILES = ['README.md', '开始学习.html', 'AGENTS.md', '学习路线图.md', '课程设计与C++对照.md', '教材目录.md', '页码对应说明.md',
               '环境说明.md', '给其他LLM的批改指南.md', '学习进度模板.md', '维护与打包.md',
-              'java.ps1', 'check-java.ps1', '.gitignore', '.gitattributes', 'LICENSE', 'LICENSE-DOCS', '.java-course.example.json', '.vscode/tasks.json', '.vscode/extensions.json']
+              'java.ps1', 'project.ps1', 'check-java.ps1', '.gitignore', '.gitattributes', 'LICENSE', 'LICENSE-DOCS', '.java-course.example.json', '.vscode/tasks.json', '.vscode/extensions.json']
 
 CSS = '''
 :root{color-scheme:dark;--bg:#111c21;--panel:#16252c;--text:#e5ede9;--muted:#99afa9;--line:#2b4148;--accent:#b9d78b;--gold:#dfbd7c;--code:#0c171c}
@@ -57,7 +57,7 @@ def collect_files():
         for rel in ['讲义.md', '练习.md', 'my_code/README.md']:
             files.add((folder / rel).relative_to(ROOT))
         for sub in ['code', '参考答案', 'error_lab']:
-            files.update(p.relative_to(ROOT) for p in (folder / sub).glob('*') if p.suffix in ['.md', '.java'])
+            files.update(p.relative_to(ROOT) for p in (folder / sub).rglob('*') if p.is_file() and p.suffix in ['.md', '.java', '.txt', '.properties', '.mf'])
     return sorted(files, key=lambda p: p.as_posix())
 
 def doc_name(rel):
@@ -163,11 +163,11 @@ def render(rel, names, combined=False):
     text = public_text(rel)
     body = md.convert(text)
     if rel.name == 'README.md' and rel.parent.name == 'code' or rel.name == '答案.md':
-        sources = sorted((ROOT / rel.parent).glob('*.java'))
+        sources = sorted((ROOT / rel.parent).rglob('*.java'))
         if sources:
             body += '<h2>本目录源码 · 点击展开</h2>'
             for source in sources:
-                body += '<details><summary>' + html.escape(source.name) + '</summary><pre><code>'
+                body += '<details><summary>' + html.escape(source.relative_to(ROOT / rel.parent).as_posix()) + '</summary><pre><code>'
                 body += html.escape(source.read_text(encoding='utf-8')) + '</code></pre></details>'
     parser = Rewrite(rel, names, combined)
     parser.feed(body)
@@ -198,6 +198,7 @@ def navigation(names, active, combined=False):
     text += link('home', '课程首页', 'home') + link('README.md', '课程说明')
     text += '<div class="navlabel">附录 · 先把基础讲清楚</div>'
     for rel, label in [('附录/零基础起飞.md', '零基础起飞'), ('附录/术语表.md', '术语表'),
+                       ('附录/程序结构总图.md', '类、文件与JAR总图'),
                        ('环境说明.md', '运行环境'), ('页码对应说明.md', '书本与PDF页码')]:
         text += link(rel, label)
     for group, relative, kind in [('讲义', '讲义.md', 'lesson'), ('练习', '练习.md', 'exercise'),
@@ -207,9 +208,9 @@ def navigation(names, active, combined=False):
         for lesson in COURSE['lessons']:
             text += link(Path(lesson['folder']) / relative, lesson['id'] + ' · ' + lesson['title'], kind, lesson['id'])
     text += '<div class="navlabel">查阅与接续</div>'
-    for rel, label in [('学习路线图.md', '全书路线 · 35课'), ('教材目录.md', '447条教材索引'),
+    for rel, label in [('学习路线图.md', f'全书路线 · {COURSE["planned_lessons"]}单元'), ('教材目录.md', '447条教材索引'),
                        ('给其他LLM的批改指南.md', 'AI批改与进度追踪'), ('学习进度模板.md', '个人进度模板'),
-                       ('维护与打包.md', '维护与打包'), ('AGENTS.md', '课程写作约定')]:
+                       ('维护与打包.md', '维护与打包'), ('课程设计与C++对照.md', '课程设计与C++对照'), ('AGENTS.md', '课程写作约定')]:
         text += link(rel, label)
     text += '<div class="navlabel">连续阅读 · 可选</div>' + link('combined', '全一册（连续阅读）', 'combined')
     text += '</nav><p class="side-note">按课阅读，逐项练习。<br>个人作答直接写入练习.md。<br>教材PDF需自备。</p>'
@@ -254,6 +255,11 @@ def page_pager(names, rel):
 def home_content(names):
     content = '<h1>Java 入门课程</h1><p>跟着讲义理解、动手并完成基础练习，再读《Java核心技术 卷Ⅰ：基础知识》第10版深化。课程从电脑与程序的基础讲起，每课的讲义、示例、练习和参考答案分别阅读。</p>'
     content += f'<div class="start-links"><a href="{names[Path("附录/零基础起飞.md")]}">第一次学：零基础起飞 →</a><a href="{names[Path("README.md")]}">课程说明</a><a href="{names[Path("学习路线图.md")]}">学习路线</a></div>'
+    content += '<h2>先解开Java结构的困惑</h2><p>类、对象、文件、包与JAR属于不同层次。新课先用比喻和关系图解释，再编译、观察产物、故意改错。无需先会C++。</p><div class="start-links">'
+    for id, label in [('S01','class与main'),('S02','对象与new'),('S03','this与static'),('S04','文件、包与路径'),('S05','JAR与入口'),('S06','依赖与资源')]:
+        unit = next(item for item in COURSE['lessons'] if item['id'] == id)
+        content += f'<a href="{names[Path(unit["folder"]) / "讲义.md"]}">{id} · {label}</a>'
+    content += '</div><p>推荐顺序：L01 → L02 → S01 → L03 → L04 → S02 → L05–L10 → S03–S06。<a href="' + names[Path('附录/程序结构总图.md')] + '">查看程序结构总图</a>。</p>'
     content += '<h2>按课开始学习</h2><p>先读讲义，再运行示例、独立练习，最后复核答案。左侧也可直接切换到指定课次的讲义或练习。</p><div class="course-cards">'
     for lesson in COURSE['lessons']:
         folder = Path(lesson['folder'])
@@ -261,7 +267,7 @@ def home_content(names):
         for label, part in [('讲义', '讲义.md'), ('示例', 'code/README.md'), ('练习', '练习.md'), ('参考答案', '参考答案/答案.md')]:
             content += f'<a href="{names[folder / part]}">{label}</a>'
         content += '</div></section>'
-    content += '</div><h2>学习与记录</h2><p>第1–3章共10课材料已备。L11–L35为后续规划，材料状态与学习是否过关分别记录。文字答案直接写在本地练习.md，代码写在my_code。</p>'
+    content += f'</div><h2>学习与记录</h2><p>基础10课与结构6课，共{len(COURSE["lessons"])}单元已备；全书{COURSE["planned_lessons"]}单元路线中，其余仍为规划。文字答案直接写在本地练习.md，代码写在my_code。材料备好不代表学习过关。</p>'
     content += '<details><summary>需要把所有内容连续阅读？</summary><p>可以使用<a href="全一册.html">全一册（连续阅读）</a>。日常学习使用上方分课入口，点击左侧导航也会打开相应的独立页面。</p></details>'
     return content
 
@@ -270,7 +276,7 @@ def shell(title, nav, content, pager='', inline=False, active='home'):
     script = '<script>' + JS + '</script>' if inline else f'<script src="assets/course.js?v={ASSET_VERSION}"></script>'
     mode_label = '切回分课阅读' if inline else '分课阅读'
     mode = 'combined' if inline else 'pages'
-    edition = '连续阅读 · 全一册 · 左侧可切回独立页面' if inline else '分课阅读 · 第1–3章 · 10课已备 · 双页码'
+    edition = '连续阅读 · 全一册 · 左侧可切回独立页面' if inline else f'基础与结构篇 · {len(COURSE["lessons"])}单元已备 · 双页码'
     return '<!doctype html><html lang="zh-CN" data-theme="dark"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>' + html.escape(title) + ' · Java陪读</title>' + styles + f'</head><body id="top" data-reading-mode="{mode}" data-nav-doc="{nav_key(active)}">' + \
         '<header class="top"><a class="brand" href="index.html"><span>JAVA</span>一起把基础写扎实</a><div class="tools"><span class="tag">CORE JAVA · VOL. I · 10TH</span><a id="reading-mode" href="index.html">' + mode_label + '</a><button id="theme" aria-label="切换浅色与深色">明 / 暗</button></div></header>' + \
         '<div class="layout"><aside>' + nav + '</aside><main><article><div class="crumb">Java入门课程 / 按课学习</div><span class="edition">' + edition + '</span>' + content + pager + '<p class="footer">课程原创讲义与习题 · 讲义学习 → 动手练习 → 订正 · 教材深化</p></article></main></div>' + script + '</body></html>'
@@ -316,6 +322,16 @@ def main():
     assert lecture_report['manifest_sha256'] == hashlib.sha256((ROOT / '_课程工具/lecture_checks.json').read_bytes()).hexdigest()
     for rel, digest in lecture_report['lecture_sha256'].items():
         assert hashlib.sha256((ROOT / rel).read_bytes()).hexdigest() == digest, 'Lecture changed after verification: ' + rel
+    project_report = json.loads((OUT / '项目结构验证.json').read_text(encoding='utf-8'))
+    assert project_report['passed'], 'Verify classpath/JAR projects before building.'
+    assert project_report['manifest_sha256'] == hashlib.sha256((ROOT / '_课程工具/projects.json').read_bytes()).hexdigest()
+    assert project_report['runner_sha256'] == hashlib.sha256((ROOT / 'project.ps1').read_bytes()).hexdigest()
+    for rel, digest in {**project_report['source_sha256'], **project_report['lecture_sha256']}.items():
+        assert hashlib.sha256((ROOT / rel).read_bytes()).hexdigest() == digest, 'Project changed after verification: ' + rel
+    command_report = json.loads((OUT / '讲义命令验证.json').read_text(encoding='utf-8'))
+    assert command_report['passed'], 'Verify literal command instructions before building.'
+    for result in command_report['results']:
+        assert hashlib.sha256((ROOT / result['lecture']).read_bytes()).hexdigest() == result['sha256'], 'Command lecture changed after verification: ' + result['lecture']
     files = collect_files()
     expected_exercises = {(Path(lesson['folder']) / '练习.md').as_posix() for lesson in COURSE['lessons']}
     assert set(EXERCISES) == expected_exercises, 'Publication templates must cover exactly the authored lessons.'
@@ -355,8 +371,8 @@ def main():
     (DOCS / '.nojekyll').write_text('', encoding='utf-8')
     validation = verify_links()
     OUT.mkdir(exist_ok=True)
-    archive = OUT / 'Java入门课程-第1-3章.zip'
-    base = 'Java入门课程-第1-3章/'
+    archive = OUT / 'Java课程-基础与结构篇.zip'
+    base = 'Java课程-基础与结构篇/'
     with zipfile.ZipFile(archive, 'w', zipfile.ZIP_DEFLATED) as z:
         for rel in files:
             if rel.suffix == '.md':
@@ -392,6 +408,10 @@ def main():
     validation.update({'publication_directory': publish.name, 'blank_exercises_verified': len(EXERCISES)})
     validation.update({'publication_files': len(published_names), 'publication_matches_archive': True,
                        'publication_extra_files': [], 'start_entry': '开始学习.html'})
+    validation.update({'authored_units': len(COURSE['lessons']), 'planned_units': COURSE['planned_lessons'] - len(COURSE['lessons']),
+                       'lecture_checks': {'programs': lecture_report['programs'], 'cases': lecture_report['cases'], 'passed': lecture_report['passed']},
+                       'project_checks': {'projects': project_report['projects'], 'checks': project_report['checks'], 'passed': project_report['passed']},
+                       'literal_command_blocks': command_report['blocks']})
     (OUT / '打包校验.json').write_text(json.dumps(validation, ensure_ascii=False, indent=2), encoding='utf-8')
     print(json.dumps(validation, ensure_ascii=False, indent=2))
 

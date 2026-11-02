@@ -1,0 +1,67 @@
+[
+  {
+    "id": "S04",
+    "root": "S04_结构基础_文件包与类路径/code/project",
+    "main": "campus.app.Main",
+    "sources": [
+      "src/campus/text/Greeting.java",
+      "src/campus/app/Main.java"
+    ],
+    "library_sources": [],
+    "stdout": "Hello, Lin\n",
+    "cases": [
+      {
+        "args": [
+          "Mei"
+        ],
+        "stdout": "Hello, Mei\n"
+      },
+      {
+        "args": [
+          "Li Ming"
+        ],
+        "stdout": "Hello, Li Ming\n"
+      }
+    ],
+    "resources": []
+  },
+  {
+    "id": "S05",
+    "root": "S05_结构基础_JAR与启动/code/project",
+    "main": "campus.app.JarMain",
+    "sources": [
+      "src/campus/text/JarGreeting.java",
+      "src/campus/app/JarMain.java"
+    ],
+    "library_sources": [],
+    "stdout": "packed: Lin\n",
+    "cases": [
+      {
+        "args": [
+          "Mei"
+        ],
+        "stdout": "packed: Mei\n"
+      }
+    ],
+    "resources": []
+  },
+  {
+    "id": "S06",
+    "root": "S06_结构基础_依赖与资源/code/project",
+    "main": "campus.app.LibraryApp",
+    "sources": [
+      "src/campus/app/LibraryApp.java"
+    ],
+    "library_sources": [
+      "library-src/campus/lib/LabelMaker.java"
+    ],
+    "stdout": "[讲义先学，教材深化。]\n",
+    "cases": [],
+    "resources": [
+      {
+        "source": "resources/campus/app/message.txt",
+        "target": "campus/app/message.txt"
+      }
+    ]
+  }
+]

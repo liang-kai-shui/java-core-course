@@ -9,9 +9,11 @@ const course = JSON.parse(fs.readFileSync(path.join(__dirname, 'course.json'), '
 const hash = source => crypto.createHash('sha256').update(source).digest('hex').slice(0, 12);
 const doc = source => 'doc-' + hash(source);
 const file = source => 'page-' + hash(source) + '.html';
-const exercise = index => file(course.lessons[index - 1].folder + '/练习.md');
-const answers = index => file(course.lessons[index - 1].folder + '/参考答案/答案.md');
-const code = index => file(course.lessons[index - 1].folder + '/code/README.md');
+const unit = id => course.lessons.find(item => item.id === id);
+const standard = index => unit('L' + String(index).padStart(2, '0'));
+const exercise = index => file(standard(index).folder + '/练习.md');
+const answers = index => file(standard(index).folder + '/参考答案/答案.md');
+const code = index => file(standard(index).folder + '/code/README.md');
 const base = process.env.COURSE_BASE_URL || pathToFileURL(path.join(root, 'docs', 'index.html')).href.replace(/index\.html$/, '');
 const output = path.join(root, 'outputs');
 fs.mkdirSync(output, {recursive: true});
@@ -48,9 +50,9 @@ fs.mkdirSync(output, {recursive: true});
     }
     await page.goto(base + 'index.html');
     await selected('index.html');
-    if (await page.locator('.course-card').count() !== 10) throw Error('Missing lesson overview cards.');
+    if (await page.locator('.course-card').count() !== course.lessons.length) throw Error('Missing lesson overview cards.');
     for (const kind of ['lesson', 'exercise', 'answers', 'code']) {
-      if (await page.locator(`aside .navlink[data-kind="${kind}"]`).count() !== 10) throw Error('Missing sidebar group: ' + kind);
+      if (await page.locator(`aside .navlink[data-kind="${kind}"]`).count() !== course.lessons.length) throw Error('Missing sidebar group: ' + kind);
     }
     results.push('homepage and four independent lesson groups');
     await page.screenshot({path: path.join(output, '导航-首页.png')});
@@ -77,7 +79,10 @@ fs.mkdirSync(output, {recursive: true});
     await page.locator('.pager a[rel="next"]').click();
     await independent(exercise(2), 'L02 练习');
     await page.locator('.pager a[rel="next"]').click();
+    await independent('s01-lesson.html', 'S01');
+    for (let step = 0; step < 3; step++) await page.locator('.pager a[rel="next"]').click();
     await independent('l03-lesson.html', 'L03');
+    results.push('S01 is a real learning unit between L02 and L03');
     results.push('lesson tabs and meaningful previous/next pages');
 
     await page.goto(base + exercise(6));
@@ -99,7 +104,7 @@ fs.mkdirSync(output, {recursive: true});
     await selected('l06-lesson.html');
     results.push('normal in-page headings keep the current document selected');
 
-    const oldHash = doc(course.lessons[7].folder + '/练习.md');
+    const oldHash = doc(unit('L08').folder + '/练习.md');
     await page.goto(base + encodeURIComponent('全一册.html') + '#' + oldHash);
     await selected(exercise(8), true);
     if (await page.locator('script[src],link[rel="stylesheet"]').count()) throw Error('Single-file reader should inline its own resources.');
@@ -107,9 +112,9 @@ fs.mkdirSync(output, {recursive: true});
     const nestedHash = await page.locator('#' + oldHash + ' h2').first().getAttribute('id');
     await page.goto(base + encodeURIComponent('全一册.html') + '#' + nestedHash);
     await selected(exercise(8), true);
-    await page.evaluate(id => document.getElementById(id).scrollIntoView(), doc(course.lessons[2].folder + '/讲义.md'));
+    await page.evaluate(id => document.getElementById(id).scrollIntoView(), doc(unit('L03').folder + '/讲义.md'));
     await selected('l03-lesson.html', true);
-    await page.evaluate(id => document.getElementById(id).scrollIntoView(), doc(course.lessons[2].folder + '/练习.md'));
+    await page.evaluate(id => document.getElementById(id).scrollIntoView(), doc(unit('L03').folder + '/练习.md'));
     await selected(exercise(3), true);
     await page.screenshot({path: path.join(output, '导航-全一册当前项.png')});
     await page.locator('#reading-mode').click();
@@ -119,6 +124,19 @@ fs.mkdirSync(output, {recursive: true});
     await nav('l06-lesson.html').click();
     await independent('l06-lesson.html', 'L06');
     results.push('old continuous-reader deep link, scroll tracking and exits to real pages');
+
+    for (const id of ['S01','S02','S03','S04','S05','S06']) {
+      const target = id.toLowerCase() + '-lesson.html';
+      await page.goto(base + target);
+      await independent(target, id);
+      await page.locator('.lesson-tabs').getByRole('link', {name: '练习', exact: true}).click();
+      await selected(file(unit(id).folder + '/练习.md'));
+      await page.reload();
+      await selected(file(unit(id).folder + '/练习.md'));
+    }
+    await page.goto(base + file(unit('S06').folder + '/code/README.md'));
+    if (!(await page.locator('details summary').allTextContents()).some(text => text.includes('LabelMaker.java'))) throw Error('Nested library sources are not visible.');
+    results.push('all six structure units, exercise refresh and nested project sources');
 
     for (const name of fs.readdirSync(path.join(root, 'docs')).filter(name => name.endsWith('.html'))) {
       const html = fs.readFileSync(path.join(root, 'docs', name), 'utf8');

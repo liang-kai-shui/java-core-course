@@ -91,11 +91,20 @@ def main():
                 for sub in ['code', '参考答案', 'error_lab']
                 for p in (ROOT / lesson['folder'] / sub).glob('*.java')}
     assert authored == {item['path'] for item in items}, 'Manifest must cover every authored Java source.'
+    projects = json.loads((ROOT / '_课程工具/projects.json').read_text(encoding='utf-8'))
+    project_sources = {(Path(project['root']) / rel).as_posix() for project in projects
+                       for rel in project['sources'] + project['library_sources']}
+    all_sources = {p.relative_to(ROOT).as_posix() for lesson in course['lessons']
+                   for sub in ['code', '参考答案', 'error_lab']
+                   for p in (ROOT / lesson['folder'] / sub).rglob('*.java')}
+    assert all_sources == authored | project_sources, 'Every multi-file source needs a project fixture.'
     for lesson in course['lessons']:
         assert lesson['book_start'] + 18 == lesson['pdf_start']
         assert lesson['book_end'] + 18 == lesson['pdf_end']
         for kind in ['讲义.md', '练习.md']:
             content = (ROOT / lesson['folder'] / kind).read_text(encoding='utf-8')
+            assert not any(ord(ch) < 32 and ch not in '\t\r\n' for ch in content), 'Invisible control character: ' + lesson['id']
+            assert 'D:CodeJava' not in content and 'C:Program Files' not in content, 'Broken literal path: ' + lesson['id']
             assert f'书本 p{lesson["book_start"]}–{lesson["book_end"]}' in content
             assert f'PDF p{lesson["pdf_start"]}–{lesson["pdf_end"]}' in content
         answer = (ROOT / lesson['folder'] / '参考答案/答案.md').read_text(encoding='utf-8')
