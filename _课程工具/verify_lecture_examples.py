@@ -16,6 +16,12 @@ def check_case(index, example, case, jdk, suffix, build):
     work = build / f'{index:03}-{example["class"]}'
     classes = work / 'classes'
     classes.mkdir(parents=True)
+    # Explicit test inputs live only in this isolated case directory.
+    for rel, value in case.get('input_files', {}).items():
+        target = (work / rel).resolve()
+        assert target.is_relative_to(work.resolve()) and not target.is_relative_to(classes.resolve()), rel
+        target.parent.mkdir(parents=True, exist_ok=True)
+        target.write_text(value, encoding='utf-8')
     code = example['code']
     for before, after in case.get('replace', []):
         assert before in code, (example['class'], before)
@@ -40,7 +46,7 @@ def check_case(index, example, case, jdk, suffix, build):
     else:
         assert not compiled['stderr'].strip(), result
     run_command = [str(jdk / 'bin' / ('java' + suffix)), '-Dfile.encoding=UTF-8',
-                   '-Dstdout.encoding=UTF-8', '-Dstderr.encoding=UTF-8', '-Duser.language=en',
+                   '-Dstdout.encoding=UTF-8', '-Dstderr.encoding=UTF-8', '-Duser.language=en', *case.get('jvm_args', []),
                    '-cp', str(classes), example['class'], *case.get('args', [])]
     run = invoke(run_command, work, case.get('stdin', ''))
     result.update(run_command=run_command, stdin=case.get('stdin', ''), run=run)
@@ -81,6 +87,8 @@ def main():
     assert len(names) == len(set(names)) and set(names) == set(checks), 'Inline fixture coverage mismatch'
     jdk, suffix = find_jdk()
     build = ROOT / '.build' / ('lecture-verify-' + uuid.uuid4().hex)
+    # Create the shared parent before workers create their isolated case roots.
+    build.mkdir(parents=True)
     results, failures = [], []
     tasks = [(example, case) for example in examples for case in checks[example['class']]]
     with concurrent.futures.ThreadPoolExecutor(max_workers=3) as pool:

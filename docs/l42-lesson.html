@@ -1,0 +1,621 @@
+<!doctype html><html lang="zh-CN" data-theme="dark"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>L42 讲义 · 事件：先注册动作，再沿通知路线改变状态 · Java陪读</title><link rel="stylesheet" href="assets/course.css?v=1c1950cb02ee"></head><body id="top" data-reading-mode="pages" data-nav-doc="doc-a4fc0c712b42"><header class="top"><a class="brand" href="index.html"><span>JAVA</span>一起把基础写扎实</a><div class="tools"><span class="tag">CORE JAVA · VOL. I · 10TH</span><a id="reading-mode" href="index.html">分课阅读</a><button id="theme" aria-label="切换浅色与深色">明 / 暗</button></div></header><div class="layout"><aside><input id="navsearch" class="navsearch" aria-label="筛选课程导航" placeholder="筛选课号、讲义、练习…"><nav aria-label="课程导航"><div class="navlabel">课程入口</div><a class="navlink" href="index.html" data-doc="home" data-page="index.html" data-kind="home" data-lesson="">课程首页</a><a class="navlink" href="course-info.html" data-doc="doc-b33563055168" data-page="course-info.html" data-kind="guide" data-lesson="">课程说明</a><div class="navlabel">附录 · 先把基础讲清楚</div><a class="navlink" href="page-4cc100767b13.html" data-doc="doc-4cc100767b13" data-page="page-4cc100767b13.html" data-kind="guide" data-lesson="">零基础起飞</a><a class="navlink" href="page-3f83fca99eef.html" data-doc="doc-3f83fca99eef" data-page="page-3f83fca99eef.html" data-kind="guide" data-lesson="">术语表</a><a class="navlink" href="page-d70bb9fd9f2b.html" data-doc="doc-d70bb9fd9f2b" data-page="page-d70bb9fd9f2b.html" data-kind="guide" data-lesson="">类、文件与JAR总图</a><a class="navlink" href="page-b984dae871b4.html" data-doc="doc-b984dae871b4" data-page="page-b984dae871b4.html" data-kind="guide" data-lesson="">运行环境</a><a class="navlink" href="page-526e3b952094.html" data-doc="doc-526e3b952094" data-page="page-526e3b952094.html" data-kind="guide" data-lesson="">书本与PDF页码</a><div class="navlabel">讲义</div><a class="navlink" href="l01-lesson.html" data-doc="doc-9accd0bf9b7f" data-page="l01-lesson.html" data-kind="lesson" data-lesson="L01">L01 · 认识 Java 与程序运行</a><a class="navlink" href="l02-lesson.html" data-doc="doc-27ed48622bd4" data-page="l02-lesson.html" data-kind="lesson" data-lesson="L02">L02 · 编译、运行与读报错</a><a class="navlink" href="s01-lesson.html" data-doc="doc-07ae4fcc72ce" data-page="s01-lesson.html" data-kind="lesson" data-lesson="S01">S01 · 文件里为什么要套class和main</a><a class="navlink" href="l03-lesson.html" data-doc="doc-6b1b497ed36e" data-page="l03-lesson.html" data-kind="lesson" data-lesson="L03">L03 · 程序结构、变量与类型</a><a class="navlink" href="l04-lesson.html" data-doc="doc-441c97ad53bb" data-page="l04-lesson.html" data-kind="lesson" data-lesson="L04">L04 · 运算符与类型转换</a><a class="navlink" href="s02-lesson.html" data-doc="doc-f99e9428bbe8" data-page="s02-lesson.html" data-kind="lesson" data-lesson="S02">S02 · 类、对象、变量和new到底是谁</a><a class="navlink" href="l05-lesson.html" data-doc="doc-23e9eec49f15" data-page="l05-lesson.html" data-kind="lesson" data-lesson="L05">L05 · 字符串与文本处理</a><a class="navlink" href="l06-lesson.html" data-doc="doc-6892ef8761d4" data-page="l06-lesson.html" data-kind="lesson" data-lesson="L06">L06 · 键盘输入、格式化与文件</a><a class="navlink" href="l07-lesson.html" data-doc="doc-b1469f212770" data-page="l07-lesson.html" data-kind="lesson" data-lesson="L07">L07 · 程序如何作选择</a><a class="navlink" href="l08-lesson.html" data-doc="doc-a6ec0be7c981" data-page="l08-lesson.html" data-kind="lesson" data-lesson="L08">L08 · 让程序重复做事</a><a class="navlink" href="l09-lesson.html" data-doc="doc-33c8ceac7e88" data-page="l09-lesson.html" data-kind="lesson" data-lesson="L09">L09 · switch、循环跳转与大数值</a><a class="navlink" href="l10-lesson.html" data-doc="doc-dd1d0b22dbf0" data-page="l10-lesson.html" data-kind="lesson" data-lesson="L10">L10 · 数组与成绩统计器</a><a class="navlink" href="s03-lesson.html" data-doc="doc-9c6f386b2d27" data-page="s03-lesson.html" data-kind="lesson" data-lesson="S03">S03 · 字段、构造器、this、static与方法参数</a><a class="navlink" href="s04-lesson.html" data-doc="doc-9231422a5acf" data-page="s04-lesson.html" data-kind="lesson" data-lesson="S04">S04 · 多个文件怎样组成程序：package、import与classpath</a><a class="navlink" href="s05-lesson.html" data-doc="doc-df48e2e727ee" data-page="s05-lesson.html" data-kind="lesson" data-lesson="S05">S05 · JAR是什么：把程序装箱，再找到入口</a><a class="navlink" href="s06-lesson.html" data-doc="doc-905501ade8a7" data-page="s06-lesson.html" data-kind="lesson" data-lesson="S06">S06 · 库JAR、资源与真实项目目录</a><a class="navlink" href="l11-lesson.html" data-doc="doc-845785c4db47" data-page="l11-lesson.html" data-kind="lesson" data-lesson="L11">L11 · 对象行为、日期API与不可变值</a><a class="navlink" href="l12-lesson.html" data-doc="doc-4f729bb30e20" data-page="l12-lesson.html" data-kind="lesson" data-lesson="L12">L12 · 封装：把数据规则放进自定义类</a><a class="navlink" href="l13-lesson.html" data-doc="doc-df814286c80a" data-page="l13-lesson.html" data-kind="lesson" data-lesson="L13">L13 · 静态成员与工厂：谁属于整类</a><a class="navlink" href="l14-lesson.html" data-doc="doc-79c7f5b20729" data-page="l14-lesson.html" data-kind="lesson" data-lesson="L14">L14 · 按值传参：改对象与换变量是两回事</a><a class="navlink" href="l15-lesson.html" data-doc="doc-7c70bd26bd7d" data-page="l15-lesson.html" data-kind="lesson" data-lesson="L15">L15 · 构造器：多种入口，同一套有效状态</a><a class="navlink" href="l16-lesson.html" data-doc="doc-7727ba20829d" data-page="l16-lesson.html" data-kind="lesson" data-lesson="L16">L16 · 初始化次序与资源生存：出生和收尾分开</a><a class="navlink" href="l17-lesson.html" data-doc="doc-0d85b509b859" data-page="l17-lesson.html" data-kind="lesson" data-lesson="L17">L17 · 包访问边界、类路径与Javadoc</a><a class="navlink" href="l18-lesson.html" data-doc="doc-c58b7e68effd" data-page="l18-lesson.html" data-kind="lesson" data-lesson="L18">L18 · 阶段项目：由对象规则设计学习计划</a><a class="navlink" href="l19-lesson.html" data-doc="doc-ebe9805ad060" data-page="l19-lesson.html" data-kind="lesson" data-lesson="L19">L19 · 继承、覆盖与子类构造：先证明是一种</a><a class="navlink" href="l20-lesson.html" data-doc="doc-0b912f2f38e2" data-page="l20-lesson.html" data-kind="lesson" data-lesson="L20">L20 · 多态：声明类型管入口，实际类型管覆盖实现</a><a class="navlink" href="l21-lesson.html" data-doc="doc-7ad176e71273" data-page="l21-lesson.html" data-kind="lesson" data-lesson="L21">L21 · Object：身份、相等、散列与显示各管什么</a><a class="navlink" href="l22-lesson.html" data-doc="doc-c38eac074cde" data-page="l22-lesson.html" data-kind="lesson" data-lesson="L22">L22 · ArrayList与包装类型：容量不是已有元素</a><a class="navlink" href="l23-lesson.html" data-doc="doc-6c4ec6b99d2c" data-page="l23-lesson.html" data-kind="lesson" data-lesson="L23">L23 · 可变参数与枚举：一组输入和一组合法状态</a><a class="navlink" href="l24-lesson.html" data-doc="doc-18d3c7c32854" data-page="l24-lesson.html" data-kind="lesson" data-lesson="L24">L24 · 反射：先拿类型说明，再有边界地操作</a><a class="navlink" href="l25-lesson.html" data-doc="doc-e336c7c46f0d" data-page="l25-lesson.html" data-kind="lesson" data-lesson="L25">L25 · 接口：约定能力，再选择实现</a><a class="navlink" href="l26-lesson.html" data-doc="doc-5aa2503796aa" data-page="l26-lesson.html" data-kind="lesson" data-lesson="L26">L26 · 回调、比较器与克隆：传动作和复制状态分开</a><a class="navlink" href="l27-lesson.html" data-doc="doc-e39c19f717d1" data-page="l27-lesson.html" data-kind="lesson" data-lesson="L27">L27 · Lambda：把一个动作交出去，何时执行由调用决定</a><a class="navlink" href="l28-lesson.html" data-doc="doc-9d97ade8be44" data-page="l28-lesson.html" data-kind="lesson" data-lesson="L28">L28 · 内部类：名字写在里面，对象和引用还要分别画</a><a class="navlink" href="l29-lesson.html" data-doc="doc-ab0388a71208" data-page="l29-lesson.html" data-kind="lesson" data-lesson="L29">L29 · 动态代理：把一次接口调用经过的路走清楚</a><a class="navlink" href="l30-lesson.html" data-doc="doc-fae988de356b" data-page="l30-lesson.html" data-kind="lesson" data-lesson="L30">L30 · 异常：正常结果交不出时，沿另一条路线报告</a><a class="navlink" href="l31-lesson.html" data-doc="doc-b2b843b701eb" data-page="l31-lesson.html" data-kind="lesson" data-lesson="L31">L31 · 捕获、finally与自动关闭：正常和失败两条路都走</a><a class="navlink" href="l32-lesson.html" data-doc="doc-1830fc8ff479" data-page="l32-lesson.html" data-kind="lesson" data-lesson="L32">L32 · 断言、日志与调试：让问题留下能核对的证据</a><a class="navlink" href="l33-lesson.html" data-doc="doc-c580b3410cd8" data-page="l33-lesson.html" data-kind="lesson" data-lesson="L33">L33 · 泛型：类型填空，而不是到处强转</a><a class="navlink" href="l34-lesson.html" data-doc="doc-c0eebf63ccd7" data-page="l34-lesson.html" data-kind="lesson" data-lesson="L34">L34 · 擦除与桥接：编译期的约定，运行期保留什么</a><a class="navlink" href="l35-lesson.html" data-doc="doc-55f73a6b1287" data-page="l35-lesson.html" data-kind="lesson" data-lesson="L35">L35 · 通配符：不确定的元素类型，仍然能安全合作</a><a class="navlink" href="l36-lesson.html" data-doc="doc-28232796ef49" data-page="l36-lesson.html" data-kind="lesson" data-lesson="L36">L36 · 集合与迭代器：走过一个元素，再决定是否删除</a><a class="navlink" href="l37-lesson.html" data-doc="doc-b69bf7bec650" data-page="l37-lesson.html" data-kind="lesson" data-lesson="L37">L37 · Set与队列：去重、顺序、优先级是不同约定</a><a class="navlink" href="l38-lesson.html" data-doc="doc-945d97e7e8ec" data-page="l38-lesson.html" data-kind="lesson" data-lesson="L38">L38 · Map：按键找值，更新与视图要看共享关系</a><a class="navlink" href="l39-lesson.html" data-doc="doc-654dbe3c1516" data-page="l39-lesson.html" data-kind="lesson" data-lesson="L39">L39 · 视图与算法：看起来是列表，修改能力却不一样</a><a class="navlink" href="l40-lesson.html" data-doc="doc-ddec79a7152a" data-page="l40-lesson.html" data-kind="lesson" data-lesson="L40">L40 · Swing起步：窗口、内容组件与事件线程</a><a class="navlink" href="l41-lesson.html" data-doc="doc-ea52d170428c" data-page="l41-lesson.html" data-kind="lesson" data-lesson="L41">L41 · Java 2D：坐标、画笔、文字基线与图像</a><a class="navlink" href="l42-lesson.html" data-doc="doc-a4fc0c712b42" data-page="l42-lesson.html" data-kind="lesson" data-lesson="L42" aria-current="page">L42 · 事件：先注册动作，再沿通知路线改变状态</a><a class="navlink" href="l43-lesson.html" data-doc="doc-ce9f7218e58d" data-page="l43-lesson.html" data-kind="lesson" data-lesson="L43">L43 · 表单基础：模型、布局、文本与选择控件</a><a class="navlink" href="l44-lesson.html" data-doc="doc-2608b8c20af8" data-page="l44-lesson.html" data-kind="lesson" data-lesson="L44">L44 · 菜单、共享动作与复杂布局：同一操作，多处入口</a><a class="navlink" href="l45-lesson.html" data-doc="doc-09c793b56fab" data-page="l45-lesson.html" data-kind="lesson" data-lesson="L45">L45 · 对话框：先分清确认、取消与真正提交</a><a class="navlink" href="l46-lesson.html" data-doc="doc-dbe5dd1deede" data-page="l46-lesson.html" data-kind="lesson" data-lesson="L46">L46 · 交付一个能搬走的程序：JAR清单、资源与密封</a><a class="navlink" href="l47-lesson.html" data-doc="doc-dd99345a108b" data-page="l47-lesson.html" data-kind="lesson" data-lesson="L47">L47 · 配置不是代码：默认值、首选项与插件发现</a><a class="navlink" href="l48-lesson.html" data-doc="doc-d98e4f3902cb" data-page="l48-lesson.html" data-kind="lesson" data-lesson="L48">L48 · 读懂旧部署，完成今天的独立应用交付</a><a class="navlink" href="l49-lesson.html" data-doc="doc-0f04f88b9b83" data-page="l49-lesson.html" data-kind="lesson" data-lesson="L49">L49 · 一个程序中的多条执行路线：启动、等待与中断</a><a class="navlink" href="l50-lesson.html" data-doc="doc-3a9440fb52cb" data-page="l50-lesson.html" data-kind="lesson" data-lesson="L50">L50 · 线程是在等谁：状态、守护属性与失败报告</a><a class="navlink" href="l51-lesson.html" data-doc="doc-1e0c5d6ff38b" data-page="l51-lesson.html" data-kind="lesson" data-lesson="L51">L51 · 共享状态：先守住完整规则，再选择锁和条件</a><a class="navlink" href="l52-lesson.html" data-doc="doc-62378068053a" data-page="l52-lesson.html" data-kind="lesson" data-lesson="L52">L52 · 把数据交给谁：阻塞队列、原子更新与并发容器</a><a class="navlink" href="l53-lesson.html" data-doc="doc-09b301d9ca0d" data-page="l53-lesson.html" data-kind="lesson" data-lesson="L53">L53 · 任务有结果以后：Future、执行器、组合与界面后台工作</a><a class="navlink" href="l54-lesson.html" data-doc="doc-fc1b278fdd1e" data-page="l54-lesson.html" data-kind="lesson" data-lesson="L54">L54 · 全书综合：把规则、文件、后台报告装进一个可交付项目</a><div class="navlabel">练习</div><a class="navlink" href="page-2bd2136ce2bb.html" data-doc="doc-2bd2136ce2bb" data-page="page-2bd2136ce2bb.html" data-kind="exercise" data-lesson="L01">L01 · 认识 Java 与程序运行</a><a class="navlink" href="page-95000a110447.html" data-doc="doc-95000a110447" data-page="page-95000a110447.html" data-kind="exercise" data-lesson="L02">L02 · 编译、运行与读报错</a><a class="navlink" href="page-025659571603.html" data-doc="doc-025659571603" data-page="page-025659571603.html" data-kind="exercise" data-lesson="S01">S01 · 文件里为什么要套class和main</a><a class="navlink" href="page-20353e11686c.html" data-doc="doc-20353e11686c" data-page="page-20353e11686c.html" data-kind="exercise" data-lesson="L03">L03 · 程序结构、变量与类型</a><a class="navlink" href="page-7d5e3415eb77.html" data-doc="doc-7d5e3415eb77" data-page="page-7d5e3415eb77.html" data-kind="exercise" data-lesson="L04">L04 · 运算符与类型转换</a><a class="navlink" href="page-a32ae623c39e.html" data-doc="doc-a32ae623c39e" data-page="page-a32ae623c39e.html" data-kind="exercise" data-lesson="S02">S02 · 类、对象、变量和new到底是谁</a><a class="navlink" href="page-279cca6b26ab.html" data-doc="doc-279cca6b26ab" data-page="page-279cca6b26ab.html" data-kind="exercise" data-lesson="L05">L05 · 字符串与文本处理</a><a class="navlink" href="page-ac312fcdaf24.html" data-doc="doc-ac312fcdaf24" data-page="page-ac312fcdaf24.html" data-kind="exercise" data-lesson="L06">L06 · 键盘输入、格式化与文件</a><a class="navlink" href="page-59c311bedabe.html" data-doc="doc-59c311bedabe" data-page="page-59c311bedabe.html" data-kind="exercise" data-lesson="L07">L07 · 程序如何作选择</a><a class="navlink" href="page-d18029bb4803.html" data-doc="doc-d18029bb4803" data-page="page-d18029bb4803.html" data-kind="exercise" data-lesson="L08">L08 · 让程序重复做事</a><a class="navlink" href="page-a7b6badbcc8e.html" data-doc="doc-a7b6badbcc8e" data-page="page-a7b6badbcc8e.html" data-kind="exercise" data-lesson="L09">L09 · switch、循环跳转与大数值</a><a class="navlink" href="page-edb3747d12d2.html" data-doc="doc-edb3747d12d2" data-page="page-edb3747d12d2.html" data-kind="exercise" data-lesson="L10">L10 · 数组与成绩统计器</a><a class="navlink" href="page-e322277cbd7b.html" data-doc="doc-e322277cbd7b" data-page="page-e322277cbd7b.html" data-kind="exercise" data-lesson="S03">S03 · 字段、构造器、this、static与方法参数</a><a class="navlink" href="page-d287d966e612.html" data-doc="doc-d287d966e612" data-page="page-d287d966e612.html" data-kind="exercise" data-lesson="S04">S04 · 多个文件怎样组成程序：package、import与classpath</a><a class="navlink" href="page-43c58052c6b0.html" data-doc="doc-43c58052c6b0" data-page="page-43c58052c6b0.html" data-kind="exercise" data-lesson="S05">S05 · JAR是什么：把程序装箱，再找到入口</a><a class="navlink" href="page-e906847bea99.html" data-doc="doc-e906847bea99" data-page="page-e906847bea99.html" data-kind="exercise" data-lesson="S06">S06 · 库JAR、资源与真实项目目录</a><a class="navlink" href="page-e85c81171b52.html" data-doc="doc-e85c81171b52" data-page="page-e85c81171b52.html" data-kind="exercise" data-lesson="L11">L11 · 对象行为、日期API与不可变值</a><a class="navlink" href="page-24c92f9c4feb.html" data-doc="doc-24c92f9c4feb" data-page="page-24c92f9c4feb.html" data-kind="exercise" data-lesson="L12">L12 · 封装：把数据规则放进自定义类</a><a class="navlink" href="page-0125df7f0c14.html" data-doc="doc-0125df7f0c14" data-page="page-0125df7f0c14.html" data-kind="exercise" data-lesson="L13">L13 · 静态成员与工厂：谁属于整类</a><a class="navlink" href="page-4a6d9c7415c4.html" data-doc="doc-4a6d9c7415c4" data-page="page-4a6d9c7415c4.html" data-kind="exercise" data-lesson="L14">L14 · 按值传参：改对象与换变量是两回事</a><a class="navlink" href="page-8a04d6ecb2db.html" data-doc="doc-8a04d6ecb2db" data-page="page-8a04d6ecb2db.html" data-kind="exercise" data-lesson="L15">L15 · 构造器：多种入口，同一套有效状态</a><a class="navlink" href="page-829fe3339f06.html" data-doc="doc-829fe3339f06" data-page="page-829fe3339f06.html" data-kind="exercise" data-lesson="L16">L16 · 初始化次序与资源生存：出生和收尾分开</a><a class="navlink" href="page-38ffa6a11208.html" data-doc="doc-38ffa6a11208" data-page="page-38ffa6a11208.html" data-kind="exercise" data-lesson="L17">L17 · 包访问边界、类路径与Javadoc</a><a class="navlink" href="page-395bfb26d46a.html" data-doc="doc-395bfb26d46a" data-page="page-395bfb26d46a.html" data-kind="exercise" data-lesson="L18">L18 · 阶段项目：由对象规则设计学习计划</a><a class="navlink" href="page-1064e1f9e0d0.html" data-doc="doc-1064e1f9e0d0" data-page="page-1064e1f9e0d0.html" data-kind="exercise" data-lesson="L19">L19 · 继承、覆盖与子类构造：先证明是一种</a><a class="navlink" href="page-c21ab195b869.html" data-doc="doc-c21ab195b869" data-page="page-c21ab195b869.html" data-kind="exercise" data-lesson="L20">L20 · 多态：声明类型管入口，实际类型管覆盖实现</a><a class="navlink" href="page-70f80ee634b2.html" data-doc="doc-70f80ee634b2" data-page="page-70f80ee634b2.html" data-kind="exercise" data-lesson="L21">L21 · Object：身份、相等、散列与显示各管什么</a><a class="navlink" href="page-f9ef26bde0c2.html" data-doc="doc-f9ef26bde0c2" data-page="page-f9ef26bde0c2.html" data-kind="exercise" data-lesson="L22">L22 · ArrayList与包装类型：容量不是已有元素</a><a class="navlink" href="page-08fa789c8a28.html" data-doc="doc-08fa789c8a28" data-page="page-08fa789c8a28.html" data-kind="exercise" data-lesson="L23">L23 · 可变参数与枚举：一组输入和一组合法状态</a><a class="navlink" href="page-5378209b7b54.html" data-doc="doc-5378209b7b54" data-page="page-5378209b7b54.html" data-kind="exercise" data-lesson="L24">L24 · 反射：先拿类型说明，再有边界地操作</a><a class="navlink" href="page-07b0ad5e7c29.html" data-doc="doc-07b0ad5e7c29" data-page="page-07b0ad5e7c29.html" data-kind="exercise" data-lesson="L25">L25 · 接口：约定能力，再选择实现</a><a class="navlink" href="page-2192d7522291.html" data-doc="doc-2192d7522291" data-page="page-2192d7522291.html" data-kind="exercise" data-lesson="L26">L26 · 回调、比较器与克隆：传动作和复制状态分开</a><a class="navlink" href="page-9b677343ba54.html" data-doc="doc-9b677343ba54" data-page="page-9b677343ba54.html" data-kind="exercise" data-lesson="L27">L27 · Lambda：把一个动作交出去，何时执行由调用决定</a><a class="navlink" href="page-22da40e7d9cf.html" data-doc="doc-22da40e7d9cf" data-page="page-22da40e7d9cf.html" data-kind="exercise" data-lesson="L28">L28 · 内部类：名字写在里面，对象和引用还要分别画</a><a class="navlink" href="page-f8c1c0f1ff73.html" data-doc="doc-f8c1c0f1ff73" data-page="page-f8c1c0f1ff73.html" data-kind="exercise" data-lesson="L29">L29 · 动态代理：把一次接口调用经过的路走清楚</a><a class="navlink" href="page-fa3782140c8e.html" data-doc="doc-fa3782140c8e" data-page="page-fa3782140c8e.html" data-kind="exercise" data-lesson="L30">L30 · 异常：正常结果交不出时，沿另一条路线报告</a><a class="navlink" href="page-280805768a62.html" data-doc="doc-280805768a62" data-page="page-280805768a62.html" data-kind="exercise" data-lesson="L31">L31 · 捕获、finally与自动关闭：正常和失败两条路都走</a><a class="navlink" href="page-67656565d1f9.html" data-doc="doc-67656565d1f9" data-page="page-67656565d1f9.html" data-kind="exercise" data-lesson="L32">L32 · 断言、日志与调试：让问题留下能核对的证据</a><a class="navlink" href="page-868ff73600c3.html" data-doc="doc-868ff73600c3" data-page="page-868ff73600c3.html" data-kind="exercise" data-lesson="L33">L33 · 泛型：类型填空，而不是到处强转</a><a class="navlink" href="page-371bc6555cfe.html" data-doc="doc-371bc6555cfe" data-page="page-371bc6555cfe.html" data-kind="exercise" data-lesson="L34">L34 · 擦除与桥接：编译期的约定，运行期保留什么</a><a class="navlink" href="page-cb97f5fa132b.html" data-doc="doc-cb97f5fa132b" data-page="page-cb97f5fa132b.html" data-kind="exercise" data-lesson="L35">L35 · 通配符：不确定的元素类型，仍然能安全合作</a><a class="navlink" href="page-ce18847a3564.html" data-doc="doc-ce18847a3564" data-page="page-ce18847a3564.html" data-kind="exercise" data-lesson="L36">L36 · 集合与迭代器：走过一个元素，再决定是否删除</a><a class="navlink" href="page-f80bc2329d12.html" data-doc="doc-f80bc2329d12" data-page="page-f80bc2329d12.html" data-kind="exercise" data-lesson="L37">L37 · Set与队列：去重、顺序、优先级是不同约定</a><a class="navlink" href="page-4da4705ed676.html" data-doc="doc-4da4705ed676" data-page="page-4da4705ed676.html" data-kind="exercise" data-lesson="L38">L38 · Map：按键找值，更新与视图要看共享关系</a><a class="navlink" href="page-f0b9de240228.html" data-doc="doc-f0b9de240228" data-page="page-f0b9de240228.html" data-kind="exercise" data-lesson="L39">L39 · 视图与算法：看起来是列表，修改能力却不一样</a><a class="navlink" href="page-a4a15839371e.html" data-doc="doc-a4a15839371e" data-page="page-a4a15839371e.html" data-kind="exercise" data-lesson="L40">L40 · Swing起步：窗口、内容组件与事件线程</a><a class="navlink" href="page-d6f2626eea1b.html" data-doc="doc-d6f2626eea1b" data-page="page-d6f2626eea1b.html" data-kind="exercise" data-lesson="L41">L41 · Java 2D：坐标、画笔、文字基线与图像</a><a class="navlink" href="page-37c036ffec6e.html" data-doc="doc-37c036ffec6e" data-page="page-37c036ffec6e.html" data-kind="exercise" data-lesson="L42">L42 · 事件：先注册动作，再沿通知路线改变状态</a><a class="navlink" href="page-210c14550de0.html" data-doc="doc-210c14550de0" data-page="page-210c14550de0.html" data-kind="exercise" data-lesson="L43">L43 · 表单基础：模型、布局、文本与选择控件</a><a class="navlink" href="page-61b7bb8f8bdb.html" data-doc="doc-61b7bb8f8bdb" data-page="page-61b7bb8f8bdb.html" data-kind="exercise" data-lesson="L44">L44 · 菜单、共享动作与复杂布局：同一操作，多处入口</a><a class="navlink" href="page-74ed665596b1.html" data-doc="doc-74ed665596b1" data-page="page-74ed665596b1.html" data-kind="exercise" data-lesson="L45">L45 · 对话框：先分清确认、取消与真正提交</a><a class="navlink" href="page-1bdc61f743de.html" data-doc="doc-1bdc61f743de" data-page="page-1bdc61f743de.html" data-kind="exercise" data-lesson="L46">L46 · 交付一个能搬走的程序：JAR清单、资源与密封</a><a class="navlink" href="page-3c66eb6f6eeb.html" data-doc="doc-3c66eb6f6eeb" data-page="page-3c66eb6f6eeb.html" data-kind="exercise" data-lesson="L47">L47 · 配置不是代码：默认值、首选项与插件发现</a><a class="navlink" href="page-61e4ec49f207.html" data-doc="doc-61e4ec49f207" data-page="page-61e4ec49f207.html" data-kind="exercise" data-lesson="L48">L48 · 读懂旧部署，完成今天的独立应用交付</a><a class="navlink" href="page-badfce4151ca.html" data-doc="doc-badfce4151ca" data-page="page-badfce4151ca.html" data-kind="exercise" data-lesson="L49">L49 · 一个程序中的多条执行路线：启动、等待与中断</a><a class="navlink" href="page-8979b18b3f9c.html" data-doc="doc-8979b18b3f9c" data-page="page-8979b18b3f9c.html" data-kind="exercise" data-lesson="L50">L50 · 线程是在等谁：状态、守护属性与失败报告</a><a class="navlink" href="page-52b7f6e8df75.html" data-doc="doc-52b7f6e8df75" data-page="page-52b7f6e8df75.html" data-kind="exercise" data-lesson="L51">L51 · 共享状态：先守住完整规则，再选择锁和条件</a><a class="navlink" href="page-fe413e1d95c0.html" data-doc="doc-fe413e1d95c0" data-page="page-fe413e1d95c0.html" data-kind="exercise" data-lesson="L52">L52 · 把数据交给谁：阻塞队列、原子更新与并发容器</a><a class="navlink" href="page-a0cc48ef56f4.html" data-doc="doc-a0cc48ef56f4" data-page="page-a0cc48ef56f4.html" data-kind="exercise" data-lesson="L53">L53 · 任务有结果以后：Future、执行器、组合与界面后台工作</a><a class="navlink" href="page-fbe647104da7.html" data-doc="doc-fbe647104da7" data-page="page-fbe647104da7.html" data-kind="exercise" data-lesson="L54">L54 · 全书综合：把规则、文件、后台报告装进一个可交付项目</a><div class="navlabel">参考答案 · 先独立作答</div><a class="navlink" href="page-8ac64aceb665.html" data-doc="doc-8ac64aceb665" data-page="page-8ac64aceb665.html" data-kind="answers" data-lesson="L01">L01 · 认识 Java 与程序运行</a><a class="navlink" href="page-702232ba7bff.html" data-doc="doc-702232ba7bff" data-page="page-702232ba7bff.html" data-kind="answers" data-lesson="L02">L02 · 编译、运行与读报错</a><a class="navlink" href="page-2184b08c58ad.html" data-doc="doc-2184b08c58ad" data-page="page-2184b08c58ad.html" data-kind="answers" data-lesson="S01">S01 · 文件里为什么要套class和main</a><a class="navlink" href="page-c068f2bbb9af.html" data-doc="doc-c068f2bbb9af" data-page="page-c068f2bbb9af.html" data-kind="answers" data-lesson="L03">L03 · 程序结构、变量与类型</a><a class="navlink" href="page-f0ad7e277387.html" data-doc="doc-f0ad7e277387" data-page="page-f0ad7e277387.html" data-kind="answers" data-lesson="L04">L04 · 运算符与类型转换</a><a class="navlink" href="page-d18bec83d313.html" data-doc="doc-d18bec83d313" data-page="page-d18bec83d313.html" data-kind="answers" data-lesson="S02">S02 · 类、对象、变量和new到底是谁</a><a class="navlink" href="page-21329cb1f07a.html" data-doc="doc-21329cb1f07a" data-page="page-21329cb1f07a.html" data-kind="answers" data-lesson="L05">L05 · 字符串与文本处理</a><a class="navlink" href="page-1d5374d4cbf3.html" data-doc="doc-1d5374d4cbf3" data-page="page-1d5374d4cbf3.html" data-kind="answers" data-lesson="L06">L06 · 键盘输入、格式化与文件</a><a class="navlink" href="page-c1f9ec907b08.html" data-doc="doc-c1f9ec907b08" data-page="page-c1f9ec907b08.html" data-kind="answers" data-lesson="L07">L07 · 程序如何作选择</a><a class="navlink" href="page-af8cd7604511.html" data-doc="doc-af8cd7604511" data-page="page-af8cd7604511.html" data-kind="answers" data-lesson="L08">L08 · 让程序重复做事</a><a class="navlink" href="page-8cff2b23cfcc.html" data-doc="doc-8cff2b23cfcc" data-page="page-8cff2b23cfcc.html" data-kind="answers" data-lesson="L09">L09 · switch、循环跳转与大数值</a><a class="navlink" href="page-4a36dc3be0b6.html" data-doc="doc-4a36dc3be0b6" data-page="page-4a36dc3be0b6.html" data-kind="answers" data-lesson="L10">L10 · 数组与成绩统计器</a><a class="navlink" href="page-b0534e20c53b.html" data-doc="doc-b0534e20c53b" data-page="page-b0534e20c53b.html" data-kind="answers" data-lesson="S03">S03 · 字段、构造器、this、static与方法参数</a><a class="navlink" href="page-d03973535ad4.html" data-doc="doc-d03973535ad4" data-page="page-d03973535ad4.html" data-kind="answers" data-lesson="S04">S04 · 多个文件怎样组成程序：package、import与classpath</a><a class="navlink" href="page-fdc65757ba69.html" data-doc="doc-fdc65757ba69" data-page="page-fdc65757ba69.html" data-kind="answers" data-lesson="S05">S05 · JAR是什么：把程序装箱，再找到入口</a><a class="navlink" href="page-b1b954c3d4f0.html" data-doc="doc-b1b954c3d4f0" data-page="page-b1b954c3d4f0.html" data-kind="answers" data-lesson="S06">S06 · 库JAR、资源与真实项目目录</a><a class="navlink" href="page-8a546ad3b54c.html" data-doc="doc-8a546ad3b54c" data-page="page-8a546ad3b54c.html" data-kind="answers" data-lesson="L11">L11 · 对象行为、日期API与不可变值</a><a class="navlink" href="page-9673553737b6.html" data-doc="doc-9673553737b6" data-page="page-9673553737b6.html" data-kind="answers" data-lesson="L12">L12 · 封装：把数据规则放进自定义类</a><a class="navlink" href="page-ef2893acadf8.html" data-doc="doc-ef2893acadf8" data-page="page-ef2893acadf8.html" data-kind="answers" data-lesson="L13">L13 · 静态成员与工厂：谁属于整类</a><a class="navlink" href="page-287e958fcdae.html" data-doc="doc-287e958fcdae" data-page="page-287e958fcdae.html" data-kind="answers" data-lesson="L14">L14 · 按值传参：改对象与换变量是两回事</a><a class="navlink" href="page-23afb86dad40.html" data-doc="doc-23afb86dad40" data-page="page-23afb86dad40.html" data-kind="answers" data-lesson="L15">L15 · 构造器：多种入口，同一套有效状态</a><a class="navlink" href="page-e4979df9413f.html" data-doc="doc-e4979df9413f" data-page="page-e4979df9413f.html" data-kind="answers" data-lesson="L16">L16 · 初始化次序与资源生存：出生和收尾分开</a><a class="navlink" href="page-2cdc42b2eda9.html" data-doc="doc-2cdc42b2eda9" data-page="page-2cdc42b2eda9.html" data-kind="answers" data-lesson="L17">L17 · 包访问边界、类路径与Javadoc</a><a class="navlink" href="page-b8a15ce36bbe.html" data-doc="doc-b8a15ce36bbe" data-page="page-b8a15ce36bbe.html" data-kind="answers" data-lesson="L18">L18 · 阶段项目：由对象规则设计学习计划</a><a class="navlink" href="page-6f6d6a280325.html" data-doc="doc-6f6d6a280325" data-page="page-6f6d6a280325.html" data-kind="answers" data-lesson="L19">L19 · 继承、覆盖与子类构造：先证明是一种</a><a class="navlink" href="page-f33d28a0e675.html" data-doc="doc-f33d28a0e675" data-page="page-f33d28a0e675.html" data-kind="answers" data-lesson="L20">L20 · 多态：声明类型管入口，实际类型管覆盖实现</a><a class="navlink" href="page-e929753e6454.html" data-doc="doc-e929753e6454" data-page="page-e929753e6454.html" data-kind="answers" data-lesson="L21">L21 · Object：身份、相等、散列与显示各管什么</a><a class="navlink" href="page-211c7c0d4c66.html" data-doc="doc-211c7c0d4c66" data-page="page-211c7c0d4c66.html" data-kind="answers" data-lesson="L22">L22 · ArrayList与包装类型：容量不是已有元素</a><a class="navlink" href="page-3d653038be9d.html" data-doc="doc-3d653038be9d" data-page="page-3d653038be9d.html" data-kind="answers" data-lesson="L23">L23 · 可变参数与枚举：一组输入和一组合法状态</a><a class="navlink" href="page-4b9d7ec12c35.html" data-doc="doc-4b9d7ec12c35" data-page="page-4b9d7ec12c35.html" data-kind="answers" data-lesson="L24">L24 · 反射：先拿类型说明，再有边界地操作</a><a class="navlink" href="page-795f97e03166.html" data-doc="doc-795f97e03166" data-page="page-795f97e03166.html" data-kind="answers" data-lesson="L25">L25 · 接口：约定能力，再选择实现</a><a class="navlink" href="page-b7872e4b302a.html" data-doc="doc-b7872e4b302a" data-page="page-b7872e4b302a.html" data-kind="answers" data-lesson="L26">L26 · 回调、比较器与克隆：传动作和复制状态分开</a><a class="navlink" href="page-e2e6f5353bf2.html" data-doc="doc-e2e6f5353bf2" data-page="page-e2e6f5353bf2.html" data-kind="answers" data-lesson="L27">L27 · Lambda：把一个动作交出去，何时执行由调用决定</a><a class="navlink" href="page-f54ae487bc86.html" data-doc="doc-f54ae487bc86" data-page="page-f54ae487bc86.html" data-kind="answers" data-lesson="L28">L28 · 内部类：名字写在里面，对象和引用还要分别画</a><a class="navlink" href="page-e3090b4f0906.html" data-doc="doc-e3090b4f0906" data-page="page-e3090b4f0906.html" data-kind="answers" data-lesson="L29">L29 · 动态代理：把一次接口调用经过的路走清楚</a><a class="navlink" href="page-0b21f9997815.html" data-doc="doc-0b21f9997815" data-page="page-0b21f9997815.html" data-kind="answers" data-lesson="L30">L30 · 异常：正常结果交不出时，沿另一条路线报告</a><a class="navlink" href="page-cbe62aee5874.html" data-doc="doc-cbe62aee5874" data-page="page-cbe62aee5874.html" data-kind="answers" data-lesson="L31">L31 · 捕获、finally与自动关闭：正常和失败两条路都走</a><a class="navlink" href="page-48f39637b674.html" data-doc="doc-48f39637b674" data-page="page-48f39637b674.html" data-kind="answers" data-lesson="L32">L32 · 断言、日志与调试：让问题留下能核对的证据</a><a class="navlink" href="page-3ba4f84b076e.html" data-doc="doc-3ba4f84b076e" data-page="page-3ba4f84b076e.html" data-kind="answers" data-lesson="L33">L33 · 泛型：类型填空，而不是到处强转</a><a class="navlink" href="page-64c417745a2f.html" data-doc="doc-64c417745a2f" data-page="page-64c417745a2f.html" data-kind="answers" data-lesson="L34">L34 · 擦除与桥接：编译期的约定，运行期保留什么</a><a class="navlink" href="page-b927db432046.html" data-doc="doc-b927db432046" data-page="page-b927db432046.html" data-kind="answers" data-lesson="L35">L35 · 通配符：不确定的元素类型，仍然能安全合作</a><a class="navlink" href="page-df102638d536.html" data-doc="doc-df102638d536" data-page="page-df102638d536.html" data-kind="answers" data-lesson="L36">L36 · 集合与迭代器：走过一个元素，再决定是否删除</a><a class="navlink" href="page-dbfc35586609.html" data-doc="doc-dbfc35586609" data-page="page-dbfc35586609.html" data-kind="answers" data-lesson="L37">L37 · Set与队列：去重、顺序、优先级是不同约定</a><a class="navlink" href="page-7d593ae7e61b.html" data-doc="doc-7d593ae7e61b" data-page="page-7d593ae7e61b.html" data-kind="answers" data-lesson="L38">L38 · Map：按键找值，更新与视图要看共享关系</a><a class="navlink" href="page-fc1a9d5ae1c5.html" data-doc="doc-fc1a9d5ae1c5" data-page="page-fc1a9d5ae1c5.html" data-kind="answers" data-lesson="L39">L39 · 视图与算法：看起来是列表，修改能力却不一样</a><a class="navlink" href="page-ec1d53706200.html" data-doc="doc-ec1d53706200" data-page="page-ec1d53706200.html" data-kind="answers" data-lesson="L40">L40 · Swing起步：窗口、内容组件与事件线程</a><a class="navlink" href="page-bc5639a4a49d.html" data-doc="doc-bc5639a4a49d" data-page="page-bc5639a4a49d.html" data-kind="answers" data-lesson="L41">L41 · Java 2D：坐标、画笔、文字基线与图像</a><a class="navlink" href="page-13ee36b440f5.html" data-doc="doc-13ee36b440f5" data-page="page-13ee36b440f5.html" data-kind="answers" data-lesson="L42">L42 · 事件：先注册动作，再沿通知路线改变状态</a><a class="navlink" href="page-225b3f153d75.html" data-doc="doc-225b3f153d75" data-page="page-225b3f153d75.html" data-kind="answers" data-lesson="L43">L43 · 表单基础：模型、布局、文本与选择控件</a><a class="navlink" href="page-1dfd13428be0.html" data-doc="doc-1dfd13428be0" data-page="page-1dfd13428be0.html" data-kind="answers" data-lesson="L44">L44 · 菜单、共享动作与复杂布局：同一操作，多处入口</a><a class="navlink" href="page-b6e5f53d8a48.html" data-doc="doc-b6e5f53d8a48" data-page="page-b6e5f53d8a48.html" data-kind="answers" data-lesson="L45">L45 · 对话框：先分清确认、取消与真正提交</a><a class="navlink" href="page-9122333d99ce.html" data-doc="doc-9122333d99ce" data-page="page-9122333d99ce.html" data-kind="answers" data-lesson="L46">L46 · 交付一个能搬走的程序：JAR清单、资源与密封</a><a class="navlink" href="page-3695e709e654.html" data-doc="doc-3695e709e654" data-page="page-3695e709e654.html" data-kind="answers" data-lesson="L47">L47 · 配置不是代码：默认值、首选项与插件发现</a><a class="navlink" href="page-28f862b5f2a6.html" data-doc="doc-28f862b5f2a6" data-page="page-28f862b5f2a6.html" data-kind="answers" data-lesson="L48">L48 · 读懂旧部署，完成今天的独立应用交付</a><a class="navlink" href="page-c0aba21ca071.html" data-doc="doc-c0aba21ca071" data-page="page-c0aba21ca071.html" data-kind="answers" data-lesson="L49">L49 · 一个程序中的多条执行路线：启动、等待与中断</a><a class="navlink" href="page-a19bcaf126c1.html" data-doc="doc-a19bcaf126c1" data-page="page-a19bcaf126c1.html" data-kind="answers" data-lesson="L50">L50 · 线程是在等谁：状态、守护属性与失败报告</a><a class="navlink" href="page-6f365ddef389.html" data-doc="doc-6f365ddef389" data-page="page-6f365ddef389.html" data-kind="answers" data-lesson="L51">L51 · 共享状态：先守住完整规则，再选择锁和条件</a><a class="navlink" href="page-5b21ef33e559.html" data-doc="doc-5b21ef33e559" data-page="page-5b21ef33e559.html" data-kind="answers" data-lesson="L52">L52 · 把数据交给谁：阻塞队列、原子更新与并发容器</a><a class="navlink" href="page-2756e6ac633d.html" data-doc="doc-2756e6ac633d" data-page="page-2756e6ac633d.html" data-kind="answers" data-lesson="L53">L53 · 任务有结果以后：Future、执行器、组合与界面后台工作</a><a class="navlink" href="page-e278d9daf42f.html" data-doc="doc-e278d9daf42f" data-page="page-e278d9daf42f.html" data-kind="answers" data-lesson="L54">L54 · 全书综合：把规则、文件、后台报告装进一个可交付项目</a><div class="navlabel">示例代码与运行命令</div><a class="navlink" href="page-88947e1a9eb7.html" data-doc="doc-88947e1a9eb7" data-page="page-88947e1a9eb7.html" data-kind="code" data-lesson="L01">L01 · 认识 Java 与程序运行</a><a class="navlink" href="page-8dc288399ce5.html" data-doc="doc-8dc288399ce5" data-page="page-8dc288399ce5.html" data-kind="code" data-lesson="L02">L02 · 编译、运行与读报错</a><a class="navlink" href="page-b2bb7e2f7933.html" data-doc="doc-b2bb7e2f7933" data-page="page-b2bb7e2f7933.html" data-kind="code" data-lesson="S01">S01 · 文件里为什么要套class和main</a><a class="navlink" href="page-d9c576e49900.html" data-doc="doc-d9c576e49900" data-page="page-d9c576e49900.html" data-kind="code" data-lesson="L03">L03 · 程序结构、变量与类型</a><a class="navlink" href="page-8083ebb8dc8a.html" data-doc="doc-8083ebb8dc8a" data-page="page-8083ebb8dc8a.html" data-kind="code" data-lesson="L04">L04 · 运算符与类型转换</a><a class="navlink" href="page-b0c1e185ccc1.html" data-doc="doc-b0c1e185ccc1" data-page="page-b0c1e185ccc1.html" data-kind="code" data-lesson="S02">S02 · 类、对象、变量和new到底是谁</a><a class="navlink" href="page-d9dddbc70e06.html" data-doc="doc-d9dddbc70e06" data-page="page-d9dddbc70e06.html" data-kind="code" data-lesson="L05">L05 · 字符串与文本处理</a><a class="navlink" href="page-6d5a15d068b7.html" data-doc="doc-6d5a15d068b7" data-page="page-6d5a15d068b7.html" data-kind="code" data-lesson="L06">L06 · 键盘输入、格式化与文件</a><a class="navlink" href="page-16bbc7816c2e.html" data-doc="doc-16bbc7816c2e" data-page="page-16bbc7816c2e.html" data-kind="code" data-lesson="L07">L07 · 程序如何作选择</a><a class="navlink" href="page-539c04050fe3.html" data-doc="doc-539c04050fe3" data-page="page-539c04050fe3.html" data-kind="code" data-lesson="L08">L08 · 让程序重复做事</a><a class="navlink" href="page-a8fac8cdd2df.html" data-doc="doc-a8fac8cdd2df" data-page="page-a8fac8cdd2df.html" data-kind="code" data-lesson="L09">L09 · switch、循环跳转与大数值</a><a class="navlink" href="page-b1915ed3b0b5.html" data-doc="doc-b1915ed3b0b5" data-page="page-b1915ed3b0b5.html" data-kind="code" data-lesson="L10">L10 · 数组与成绩统计器</a><a class="navlink" href="page-719d97a1566c.html" data-doc="doc-719d97a1566c" data-page="page-719d97a1566c.html" data-kind="code" data-lesson="S03">S03 · 字段、构造器、this、static与方法参数</a><a class="navlink" href="page-ef3878a507dd.html" data-doc="doc-ef3878a507dd" data-page="page-ef3878a507dd.html" data-kind="code" data-lesson="S04">S04 · 多个文件怎样组成程序：package、import与classpath</a><a class="navlink" href="page-fb0a10271c89.html" data-doc="doc-fb0a10271c89" data-page="page-fb0a10271c89.html" data-kind="code" data-lesson="S05">S05 · JAR是什么：把程序装箱，再找到入口</a><a class="navlink" href="page-26bc1e6eae6d.html" data-doc="doc-26bc1e6eae6d" data-page="page-26bc1e6eae6d.html" data-kind="code" data-lesson="S06">S06 · 库JAR、资源与真实项目目录</a><a class="navlink" href="page-3477fe710a50.html" data-doc="doc-3477fe710a50" data-page="page-3477fe710a50.html" data-kind="code" data-lesson="L11">L11 · 对象行为、日期API与不可变值</a><a class="navlink" href="page-5b64d7760027.html" data-doc="doc-5b64d7760027" data-page="page-5b64d7760027.html" data-kind="code" data-lesson="L12">L12 · 封装：把数据规则放进自定义类</a><a class="navlink" href="page-2ba20b846133.html" data-doc="doc-2ba20b846133" data-page="page-2ba20b846133.html" data-kind="code" data-lesson="L13">L13 · 静态成员与工厂：谁属于整类</a><a class="navlink" href="page-8ce9222d41ec.html" data-doc="doc-8ce9222d41ec" data-page="page-8ce9222d41ec.html" data-kind="code" data-lesson="L14">L14 · 按值传参：改对象与换变量是两回事</a><a class="navlink" href="page-18cedd886076.html" data-doc="doc-18cedd886076" data-page="page-18cedd886076.html" data-kind="code" data-lesson="L15">L15 · 构造器：多种入口，同一套有效状态</a><a class="navlink" href="page-2a2b65cd20ac.html" data-doc="doc-2a2b65cd20ac" data-page="page-2a2b65cd20ac.html" data-kind="code" data-lesson="L16">L16 · 初始化次序与资源生存：出生和收尾分开</a><a class="navlink" href="page-17742578f7c9.html" data-doc="doc-17742578f7c9" data-page="page-17742578f7c9.html" data-kind="code" data-lesson="L17">L17 · 包访问边界、类路径与Javadoc</a><a class="navlink" href="page-cc84ffaeaa16.html" data-doc="doc-cc84ffaeaa16" data-page="page-cc84ffaeaa16.html" data-kind="code" data-lesson="L18">L18 · 阶段项目：由对象规则设计学习计划</a><a class="navlink" href="page-263ffd0165d3.html" data-doc="doc-263ffd0165d3" data-page="page-263ffd0165d3.html" data-kind="code" data-lesson="L19">L19 · 继承、覆盖与子类构造：先证明是一种</a><a class="navlink" href="page-2c4fa57ff7aa.html" data-doc="doc-2c4fa57ff7aa" data-page="page-2c4fa57ff7aa.html" data-kind="code" data-lesson="L20">L20 · 多态：声明类型管入口，实际类型管覆盖实现</a><a class="navlink" href="page-0e2f7bffdfa4.html" data-doc="doc-0e2f7bffdfa4" data-page="page-0e2f7bffdfa4.html" data-kind="code" data-lesson="L21">L21 · Object：身份、相等、散列与显示各管什么</a><a class="navlink" href="page-0cb5171199ad.html" data-doc="doc-0cb5171199ad" data-page="page-0cb5171199ad.html" data-kind="code" data-lesson="L22">L22 · ArrayList与包装类型：容量不是已有元素</a><a class="navlink" href="page-23fda07e3589.html" data-doc="doc-23fda07e3589" data-page="page-23fda07e3589.html" data-kind="code" data-lesson="L23">L23 · 可变参数与枚举：一组输入和一组合法状态</a><a class="navlink" href="page-9cf1243ed8e3.html" data-doc="doc-9cf1243ed8e3" data-page="page-9cf1243ed8e3.html" data-kind="code" data-lesson="L24">L24 · 反射：先拿类型说明，再有边界地操作</a><a class="navlink" href="page-8f96f943f2f5.html" data-doc="doc-8f96f943f2f5" data-page="page-8f96f943f2f5.html" data-kind="code" data-lesson="L25">L25 · 接口：约定能力，再选择实现</a><a class="navlink" href="page-4d4497e3d69e.html" data-doc="doc-4d4497e3d69e" data-page="page-4d4497e3d69e.html" data-kind="code" data-lesson="L26">L26 · 回调、比较器与克隆：传动作和复制状态分开</a><a class="navlink" href="page-0b95b10fafbe.html" data-doc="doc-0b95b10fafbe" data-page="page-0b95b10fafbe.html" data-kind="code" data-lesson="L27">L27 · Lambda：把一个动作交出去，何时执行由调用决定</a><a class="navlink" href="page-ec2ae888e9ea.html" data-doc="doc-ec2ae888e9ea" data-page="page-ec2ae888e9ea.html" data-kind="code" data-lesson="L28">L28 · 内部类：名字写在里面，对象和引用还要分别画</a><a class="navlink" href="page-150e73587e87.html" data-doc="doc-150e73587e87" data-page="page-150e73587e87.html" data-kind="code" data-lesson="L29">L29 · 动态代理：把一次接口调用经过的路走清楚</a><a class="navlink" href="page-ccf5f25340bf.html" data-doc="doc-ccf5f25340bf" data-page="page-ccf5f25340bf.html" data-kind="code" data-lesson="L30">L30 · 异常：正常结果交不出时，沿另一条路线报告</a><a class="navlink" href="page-79d7aa40c818.html" data-doc="doc-79d7aa40c818" data-page="page-79d7aa40c818.html" data-kind="code" data-lesson="L31">L31 · 捕获、finally与自动关闭：正常和失败两条路都走</a><a class="navlink" href="page-9b802b2349b9.html" data-doc="doc-9b802b2349b9" data-page="page-9b802b2349b9.html" data-kind="code" data-lesson="L32">L32 · 断言、日志与调试：让问题留下能核对的证据</a><a class="navlink" href="page-4401407881e7.html" data-doc="doc-4401407881e7" data-page="page-4401407881e7.html" data-kind="code" data-lesson="L33">L33 · 泛型：类型填空，而不是到处强转</a><a class="navlink" href="page-547eda2cdf7f.html" data-doc="doc-547eda2cdf7f" data-page="page-547eda2cdf7f.html" data-kind="code" data-lesson="L34">L34 · 擦除与桥接：编译期的约定，运行期保留什么</a><a class="navlink" href="page-50e4dbfb71d5.html" data-doc="doc-50e4dbfb71d5" data-page="page-50e4dbfb71d5.html" data-kind="code" data-lesson="L35">L35 · 通配符：不确定的元素类型，仍然能安全合作</a><a class="navlink" href="page-601f067ec7ea.html" data-doc="doc-601f067ec7ea" data-page="page-601f067ec7ea.html" data-kind="code" data-lesson="L36">L36 · 集合与迭代器：走过一个元素，再决定是否删除</a><a class="navlink" href="page-1ae6d08c0bab.html" data-doc="doc-1ae6d08c0bab" data-page="page-1ae6d08c0bab.html" data-kind="code" data-lesson="L37">L37 · Set与队列：去重、顺序、优先级是不同约定</a><a class="navlink" href="page-17e29e3c7d6a.html" data-doc="doc-17e29e3c7d6a" data-page="page-17e29e3c7d6a.html" data-kind="code" data-lesson="L38">L38 · Map：按键找值，更新与视图要看共享关系</a><a class="navlink" href="page-7ba892cc6817.html" data-doc="doc-7ba892cc6817" data-page="page-7ba892cc6817.html" data-kind="code" data-lesson="L39">L39 · 视图与算法：看起来是列表，修改能力却不一样</a><a class="navlink" href="page-5a5b38cceb86.html" data-doc="doc-5a5b38cceb86" data-page="page-5a5b38cceb86.html" data-kind="code" data-lesson="L40">L40 · Swing起步：窗口、内容组件与事件线程</a><a class="navlink" href="page-b160f6d433c5.html" data-doc="doc-b160f6d433c5" data-page="page-b160f6d433c5.html" data-kind="code" data-lesson="L41">L41 · Java 2D：坐标、画笔、文字基线与图像</a><a class="navlink" href="page-deb15ddedd4b.html" data-doc="doc-deb15ddedd4b" data-page="page-deb15ddedd4b.html" data-kind="code" data-lesson="L42">L42 · 事件：先注册动作，再沿通知路线改变状态</a><a class="navlink" href="page-06e48164e975.html" data-doc="doc-06e48164e975" data-page="page-06e48164e975.html" data-kind="code" data-lesson="L43">L43 · 表单基础：模型、布局、文本与选择控件</a><a class="navlink" href="page-af8e63185fc7.html" data-doc="doc-af8e63185fc7" data-page="page-af8e63185fc7.html" data-kind="code" data-lesson="L44">L44 · 菜单、共享动作与复杂布局：同一操作，多处入口</a><a class="navlink" href="page-1e2f4a672384.html" data-doc="doc-1e2f4a672384" data-page="page-1e2f4a672384.html" data-kind="code" data-lesson="L45">L45 · 对话框：先分清确认、取消与真正提交</a><a class="navlink" href="page-bfaeba76dd51.html" data-doc="doc-bfaeba76dd51" data-page="page-bfaeba76dd51.html" data-kind="code" data-lesson="L46">L46 · 交付一个能搬走的程序：JAR清单、资源与密封</a><a class="navlink" href="page-923654b84ffa.html" data-doc="doc-923654b84ffa" data-page="page-923654b84ffa.html" data-kind="code" data-lesson="L47">L47 · 配置不是代码：默认值、首选项与插件发现</a><a class="navlink" href="page-44917deb11df.html" data-doc="doc-44917deb11df" data-page="page-44917deb11df.html" data-kind="code" data-lesson="L48">L48 · 读懂旧部署，完成今天的独立应用交付</a><a class="navlink" href="page-4e545fdfe3e5.html" data-doc="doc-4e545fdfe3e5" data-page="page-4e545fdfe3e5.html" data-kind="code" data-lesson="L49">L49 · 一个程序中的多条执行路线：启动、等待与中断</a><a class="navlink" href="page-1b41043ca5a5.html" data-doc="doc-1b41043ca5a5" data-page="page-1b41043ca5a5.html" data-kind="code" data-lesson="L50">L50 · 线程是在等谁：状态、守护属性与失败报告</a><a class="navlink" href="page-545cf9e07d36.html" data-doc="doc-545cf9e07d36" data-page="page-545cf9e07d36.html" data-kind="code" data-lesson="L51">L51 · 共享状态：先守住完整规则，再选择锁和条件</a><a class="navlink" href="page-06bcbce3b9de.html" data-doc="doc-06bcbce3b9de" data-page="page-06bcbce3b9de.html" data-kind="code" data-lesson="L52">L52 · 把数据交给谁：阻塞队列、原子更新与并发容器</a><a class="navlink" href="page-fc9e989408ec.html" data-doc="doc-fc9e989408ec" data-page="page-fc9e989408ec.html" data-kind="code" data-lesson="L53">L53 · 任务有结果以后：Future、执行器、组合与界面后台工作</a><a class="navlink" href="page-5e9a1d2426f8.html" data-doc="doc-5e9a1d2426f8" data-page="page-5e9a1d2426f8.html" data-kind="code" data-lesson="L54">L54 · 全书综合：把规则、文件、后台报告装进一个可交付项目</a><div class="navlabel">查阅与接续</div><a class="navlink" href="page-0ef3cebffbed.html" data-doc="doc-0ef3cebffbed" data-page="page-0ef3cebffbed.html" data-kind="guide" data-lesson="">全书路线 · 60单元</a><a class="navlink" href="page-fea294d77afe.html" data-doc="doc-fea294d77afe" data-page="page-fea294d77afe.html" data-kind="guide" data-lesson="">447条教材索引</a><a class="navlink" href="page-32d80fdb4bb7.html" data-doc="doc-32d80fdb4bb7" data-page="page-32d80fdb4bb7.html" data-kind="guide" data-lesson="">AI批改与进度追踪</a><a class="navlink" href="page-e8601bdcb726.html" data-doc="doc-e8601bdcb726" data-page="page-e8601bdcb726.html" data-kind="guide" data-lesson="">个人进度模板</a><a class="navlink" href="page-7def9b47aa03.html" data-doc="doc-7def9b47aa03" data-page="page-7def9b47aa03.html" data-kind="guide" data-lesson="">维护与打包</a><a class="navlink" href="page-c776ae1256e8.html" data-doc="doc-c776ae1256e8" data-page="page-c776ae1256e8.html" data-kind="guide" data-lesson="">课程设计与C++对照</a><a class="navlink" href="page-a54ff182c7e8.html" data-doc="doc-a54ff182c7e8" data-page="page-a54ff182c7e8.html" data-kind="guide" data-lesson="">课程写作约定</a><div class="navlabel">连续阅读 · 可选</div><a class="navlink" href="全一册.html" data-doc="combined" data-page="全一册.html" data-kind="combined" data-lesson="">全一册（连续阅读）</a></nav><p class="side-note">按课阅读，逐项练习。<br>个人作答直接写入练习.md。<br>教材PDF需自备。</p></aside><main><article><div class="crumb">Java入门课程 / 按课学习</div><span class="edition">全书陪读 · 60单元 · 双页码</span><nav class="lesson-tabs" aria-label="本课内容切换"><a href="l42-lesson.html" aria-current="page">讲义</a><a href="page-deb15ddedd4b.html">示例</a><a href="page-37c036ffec6e.html">练习</a><a href="page-13ee36b440f5.html">参考答案</a></nav><h1 id="l42-讲义-事件先注册动作再沿通知路线改变状态">L42 讲义 · 事件：先注册动作，再沿通知路线改变状态</h1><details class="page-toc"><summary>本页目录</summary><div class="toc">
+<ul>
+<li><a href="l42-lesson.html#学完要能做什么">学完要能做什么</a></li>
+<li><a href="l42-lesson.html#1-点击按钮后发生了什么源监听器事件对象">1. 点击按钮后发生了什么：源、监听器、事件对象</a></li>
+<li><a href="l42-lesson.html#2-注册顺序不是承诺实测先注册的反而后收到">2. 注册顺序不是承诺：实测先注册的反而后收到</a></li>
+<li><a href="l42-lesson.html#3-同一个契约的三种写法类匿名类lambda">3. 同一个契约的三种写法：类、匿名类、Lambda</a></li>
+<li><a href="l42-lesson.html#4-一个命令多个入口action">4. 一个命令、多个入口：Action</a></li>
+<li><a href="l42-lesson.html#5-键盘也能触发同一个动作keystrokeinputmapactionmap">5. 键盘也能触发同一个动作：KeyStroke、InputMap、ActionMap</a></li>
+<li><a href="l42-lesson.html#6-鼠标点击移动拖动是不同通知">6. 鼠标：点击、移动、拖动是不同通知</a></li>
+<li><a href="l42-lesson.html#7-语义事件与底层事件一次点击下面还有一层">7. 语义事件与底层事件：一次点击下面还有一层</a></li>
+<li><a href="l42-lesson.html#8-运行与排错">8. 运行与排错</a></li>
+<li><a href="l42-lesson.html#教材深化">教材深化</a></li>
+<li><a href="l42-lesson.html#独立练习与过关">独立练习与过关</a></li>
+</ul>
+</div>
+</details>
+<blockquote>
+<p>前置：L40 Swing窗口与EDT；L27 Lambda与方法引用；L28 内部类；L30 异常声明
+教材主线：11.1–11.4；<strong>书本 p439–468 / PDF p457–486</strong>。讲解、类比、案例与练习均为课程原创。</p>
+</blockquote>
+<h2 id="学完要能做什么">学完要能做什么</h2>
+<p>能说清事件源、监听器、事件对象三者的分工；能给一个按钮注册、移除监听器，并解释为什么不能依赖通知顺序；能用监听器类、匿名类、Lambda 三种写法实现同一个接口；能用 <code>Action</code> 把一个命令接到按钮和键盘两个入口；能区分 <code>MouseListener</code> 与 <code>MouseMotionListener</code>，说清点击、移动、拖动的差别；能判断 <code>ActionEvent</code> 这类语义事件与 <code>MouseEvent</code> 这类底层事件的关系。</p>
+<p>本课有七个可运行样本：</p>
+<table>
+<thead>
+<tr>
+<th>文件</th>
+<th>本次只观察什么</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../L42_%E7%AC%AC11%E7%AB%A0_%E4%BA%8B%E4%BB%B6%E7%9B%91%E5%90%AC%E5%8A%A8%E4%BD%9C%E4%B8%8E%E9%BC%A0%E6%A0%87/code/ButtonEventRoute.java">ButtonEventRoute.java</a></td>
+<td>一次点击如何变成计数和标签文字</td>
+</tr>
+<tr>
+<td><a href="../L42_%E7%AC%AC11%E7%AB%A0_%E4%BA%8B%E4%BB%B6%E7%9B%91%E5%90%AC%E5%8A%A8%E4%BD%9C%E4%B8%8E%E9%BC%A0%E6%A0%87/code/ListenerRegistrationOrder.java">ListenerRegistrationOrder.java</a></td>
+<td>多个监听器的实际通知顺序，以及移除后的变化</td>
+</tr>
+<tr>
+<td><a href="../L42_%E7%AC%AC11%E7%AB%A0_%E4%BA%8B%E4%BB%B6%E7%9B%91%E5%90%AC%E5%8A%A8%E4%BD%9C%E4%B8%8E%E9%BC%A0%E6%A0%87/code/ListenerStyles.java">ListenerStyles.java</a></td>
+<td>类、匿名类、Lambda 三种写法实现同一接口</td>
+</tr>
+<tr>
+<td><a href="../L42_%E7%AC%AC11%E7%AB%A0_%E4%BA%8B%E4%BB%B6%E7%9B%91%E5%90%AC%E5%8A%A8%E4%BD%9C%E4%B8%8E%E9%BC%A0%E6%A0%87/code/SharedActionBinding.java">SharedActionBinding.java</a></td>
+<td>一个 <code>Action</code> 同时接到两个按钮和一组键</td>
+</tr>
+<tr>
+<td><a href="../L42_%E7%AC%AC11%E7%AB%A0_%E4%BA%8B%E4%BB%B6%E7%9B%91%E5%90%AC%E5%8A%A8%E4%BD%9C%E4%B8%8E%E9%BC%A0%E6%A0%87/code/InputMapConditions.java">InputMapConditions.java</a></td>
+<td>三张输入映射里，绑定到底存在哪一张</td>
+</tr>
+<tr>
+<td><a href="../L42_%E7%AC%AC11%E7%AB%A0_%E4%BA%8B%E4%BB%B6%E7%9B%91%E5%90%AC%E5%8A%A8%E4%BD%9C%E4%B8%8E%E9%BC%A0%E6%A0%87/code/MouseModelRoute.java">MouseModelRoute.java</a></td>
+<td>点击与拖动如何改模型，再请求重画</td>
+</tr>
+<tr>
+<td><a href="../L42_%E7%AC%AC11%E7%AB%A0_%E4%BA%8B%E4%BB%B6%E7%9B%91%E5%90%AC%E5%8A%A8%E4%BD%9C%E4%B8%8E%E9%BC%A0%E6%A0%87/code/SwingTimerTicks.java">SwingTimerTicks.java</a></td>
+<td>时间到也是一种动作事件，回调在 EDT 上</td>
+</tr>
+</tbody>
+</table>
+<h2 id="1-点击按钮后发生了什么源监听器事件对象">1. 点击按钮后发生了什么：源、监听器、事件对象</h2>
+<p>按钮被点击时，按钮自己并不知道你想做什么。它只负责把“我被点了”这件事包装成一个 <code>ActionEvent</code> 对象，然后交给事先注册在它身上的监听器。教材 p439–440 把这套机制叫事件委托模型：事件源负责产生并分发事件，监听器负责响应。</p>
+<p>可以把它想成快递柜：柜子（事件源）只管把包裹（事件对象）放进格口，并通知你留过的手机号（监听器）；包裹里写了寄件信息（<code>getSource</code>、<code>getActionCommand</code>），你拿到后决定怎么处理。类比边界是：监听器不是“柜子的一个部件”，它是独立对象，同一个监听器可以注册到多个事件源上；事件源也不关心监听器内部做什么。</p>
+<pre><code class="language-java">import java.awt.EventQueue;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+public class ButtonEventRoute {
+    static class StepPanel extends JPanel {
+        private static final long serialVersionUID = 1L;
+        private int count;
+        private final JLabel label = new JLabel(&quot;0&quot;);
+        private final JButton button = new JButton(&quot;记录一步&quot;);
+        StepPanel() {
+            add(label); add(button);
+            button.addActionListener(event -&gt; { count++; label.setText(Integer.toString(count)); });
+        }
+    }
+    public static void main(String[] args) throws Exception {
+        if (args.length &gt; 0 &amp;&amp; args[0].equals(&quot;--check&quot;)) EventQueue.invokeAndWait(() -&gt; {
+            StepPanel panel = new StepPanel(); panel.button.doClick(0); panel.button.doClick(0);
+            System.out.println(&quot;count=&quot; + panel.count); System.out.println(&quot;label=&quot; + panel.label.getText());
+        }); else EventQueue.invokeLater(() -&gt; {
+            JFrame frame = new JFrame(&quot;事件路线&quot;); frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            frame.add(new StepPanel()); frame.pack(); frame.setLocationByPlatform(true); frame.setVisible(true);
+        });
+    }
+}
+</code></pre>
+<p>无参数运行后点两次按钮，标签从 0 变到 2；<code>--check</code> 用 <code>doClick(0)</code> 模拟两次点击，输出 <code>count=2</code>、<code>label=2</code>。<code>doClick(0)</code> 是按钮提供的“程序化点击”，它同步触发 <code>ActionEvent</code>，所以检查里不需要真的用鼠标。</p>
+<table>
+<thead>
+<tr>
+<th>时刻</th>
+<th>事件源（按钮）</th>
+<th>监听器</th>
+<th>面板状态</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>构造时</td>
+<td>创建按钮</td>
+<td><code>addActionListener</code> 注册</td>
+<td>count=0，标签"0"</td>
+</tr>
+<tr>
+<td>第1次点击</td>
+<td>创建 ActionEvent 并分发</td>
+<td><code>actionPerformed</code> 执行</td>
+<td>count=1，标签"1"</td>
+</tr>
+<tr>
+<td>第2次点击</td>
+<td>再创建并分发</td>
+<td>再执行一次</td>
+<td>count=2，标签"2"</td>
+</tr>
+<tr>
+<td><code>setText</code> 后</td>
+<td>按钮不管</td>
+<td>监听器结束</td>
+<td>组件请求重绘，稍后由 EDT 画</td>
+</tr>
+</tbody>
+</table>
+<p>注意最后一行：<code>label.setText</code> 只是改了组件状态并请求重绘，不是立刻把像素画上去；真正重绘仍发生在 EDT 的下一次处理中。这与 L40 的“绘制是回调”是同一条规则。</p>
+<p>三个角色各有一个常用方法：<code>event.getSource()</code> 返回事件源（这里就是按钮），<code>event.getActionCommand()</code> 返回命令字符串（按钮默认是标签文字，可用 <code>setActionCommand</code> 改）。教材 p446 提醒：用 <code>getSource()</code> 在一堆 <code>if/else</code> 里分辨按钮，是可行但不推荐的写法；更好的做法是让每个入口带着自己的上下文（下一节的 <code>Action</code>）。</p>
+<p>只改一处的实验：把 <code>count++</code> 改成 <code>count += 2</code>，预测两次点击后的 <code>count</code> 与标签；再改回。若你同时改了点击次数，就无法判断变化来自哪一处。</p>
+<p>独立小任务：给面板再加一个“清零”按钮，点击后把 <code>count</code> 设回 0 并更新标签；要求两个按钮的监听器都能访问同一份状态，说明你把状态放在了哪一层。</p>
+<h2 id="2-注册顺序不是承诺实测先注册的反而后收到">2. 注册顺序不是承诺：实测先注册的反而后收到</h2>
+<p>一个按钮可以注册多个监听器，教材 p441 说点击时“按钮会调用所有监听器的 <code>actionPerformed</code>”。但“按什么顺序调用”并没有写进 <code>ActionListener</code> 的契约。先写一个实验看清楚。</p>
+<pre><code class="language-java">import java.awt.EventQueue;
+import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.List;
+import javax.swing.JButton;
+
+public class ListenerRegistrationOrder {
+    public static void main(String[] args) throws Exception {
+        EventQueue.invokeAndWait(() -&gt; {
+            JButton button = new JButton(&quot;go&quot;);
+            List&lt;String&gt; log = new ArrayList&lt;&gt;();
+            ActionListener first = event -&gt; log.add(&quot;first&quot;);
+            ActionListener second = event -&gt; log.add(&quot;second&quot;);
+            ActionListener third = event -&gt; log.add(&quot;third&quot;);
+            button.addActionListener(first);
+            button.addActionListener(second);
+            button.addActionListener(third);
+            button.doClick(0);
+            System.out.println(String.join(&quot;,&quot;, log));
+            button.removeActionListener(second);
+            button.doClick(0);
+            System.out.println(String.join(&quot;,&quot;, log));
+        });
+    }
+}
+</code></pre>
+<p>先预测两行输出，再运行。实际是：</p>
+<pre><code class="language-text">third,second,first
+third,second,first,third,first
+</code></pre>
+<p>第一行是“后注册的先通知”，与大多数人以为的 <code>first,second,third</code> 相反。这不是你写错了：Swing 的按钮把监听器放在 <code>EventListenerList</code> 里，分发时从数组尾部向前走，所以当前实现表现为逆序。第二行在第一轮之后追加了移除 <code>second</code> 后的第二轮：只剩 <code>third</code> 和 <code>first</code>，日志里就是 <code>...,third,first</code>。</p>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>已注册</th>
+<th>点击后日志追加</th>
+<th>完整日志</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>第一次</td>
+<td>first,second,third</td>
+<td>third,second,first</td>
+<td>third,second,first</td>
+</tr>
+<tr>
+<td>移除second</td>
+<td>first,third</td>
+<td>third,first</td>
+<td>third,second,first,third,first</td>
+</tr>
+</tbody>
+</table>
+<p>这个实验最重要的结论不是“记住逆序”，而是：<strong>不要依赖监听器顺序</strong>。规范不保证顺序，换组件、换 JDK 实现、换成别的监听器列表都可能改变。如果两件事有先后依赖，应该让一个监听器按顺序调用两个方法，而不是注册两个监听器赌顺序。</p>
+<p><code>removeActionListener</code> 移除的是同一个对象引用；如果你注册的是 Lambda，每次写的 Lambda 都是不同对象，之后用另一个“看起来一样”的 Lambda 是移除不掉的。要移除，就把监听器先存进变量，注册和移除用同一个变量。</p>
+<p>只改一处的实验：把 <code>third</code> 的注册移到最前，预测新顺序，再运行。你会发现输出仍然是“后注册的先通知”，只是数组里的先后变了。</p>
+<p>独立小任务：写两个监听器，一个把计数加一，另一个把计数乘二；用两次点击验证“顺序不同结果不同”，然后改成单个监听器内部按固定顺序调用两个方法，说明为什么后者可控。</p>
+<h2 id="3-同一个契约的三种写法类匿名类lambda">3. 同一个契约的三种写法：类、匿名类、Lambda</h2>
+<p><code>ActionListener</code> 只有一个方法 <code>actionPerformed(ActionEvent)</code>，所以它可以用三种写法实现：独立的监听器类、匿名内部类、Lambda。教材 p445 的建议是：动作简单、每个监听器只做一件事时用 Lambda；有状态、要复用、要移除时用类。</p>
+<pre><code class="language-java">import java.awt.EventQueue;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.JButton;
+
+public class ListenerStyles {
+    static class Counter implements ActionListener {
+        private int count;
+        public void actionPerformed(ActionEvent event) { count++; }
+    }
+
+    public static void main(String[] args) throws Exception {
+        EventQueue.invokeAndWait(() -&gt; {
+            Counter counter = new Counter();
+            JButton byClass = new JButton(&quot;class&quot;);
+            JButton byAnonymous = new JButton(&quot;anonymous&quot;);
+            JButton byLambda = new JButton(&quot;lambda&quot;);
+            byClass.addActionListener(counter);
+            byAnonymous.addActionListener(new ActionListener() {
+                public void actionPerformed(ActionEvent event) { counter.count++; }
+            });
+            byLambda.addActionListener(event -&gt; counter.count++);
+            byClass.doClick(0);
+            byAnonymous.doClick(0);
+            byLambda.doClick(0);
+            System.out.println(&quot;count=&quot; + counter.count);
+        });
+    }
+}
+</code></pre>
+<p>输出 <code>count=3</code>：三个按钮各点一次，三种写法都在改同一份 <code>counter.count</code>。语法不同，契约相同——这也是 Lambda 能替代匿名类的前提。</p>
+<table>
+<thead>
+<tr>
+<th>写法</th>
+<th>什么时候用</th>
+<th>能不能移除</th>
+<th>典型问题</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>独立类</td>
+<td>有状态、要复用、要作为字段</td>
+<td>能，注册与移除同一对象</td>
+<td>需要把外部状态传进去</td>
+</tr>
+<tr>
+<td>匿名类</td>
+<td>老代码、需要覆盖多个方法</td>
+<td>难，没有变量就找不到对象</td>
+<td>代码冗长；<code>this</code> 指向匿名类</td>
+</tr>
+<tr>
+<td>Lambda</td>
+<td>一句话动作</td>
+<td>能，但必须先存变量</td>
+<td>捕获的局部变量必须 effectively final</td>
+</tr>
+</tbody>
+</table>
+<p><code>ListenerStyles</code> 里的 Lambda 直接访问了 <code>counter</code>（一个引用变量），因为 <code>counter</code> 从未被重新赋值，满足“有效 final”。如果后面写 <code>counter = new Counter()</code>，Lambda 就编译不过。教材 p448 还提到一个历史差异：匿名类里的 <code>this</code> 指匿名类自身，Lambda 里的 <code>this</code> 指外围对象；这也是新代码偏向 Lambda 的原因之一。</p>
+<p>只改一处的实验：把 <code>byLambda.addActionListener(event -&gt; counter.count++)</code> 改成 <code>event -&gt; System.out.println("lambda")</code>，预测 <code>count</code> 变成多少。你会发现“点了按钮”不等于“计数一定增加”，取决于监听器做了什么。</p>
+<p>独立小任务：把 <code>Counter</code> 改成带初始值的类 <code>Counter(int start)</code>，三种写法都让它从 10 开始计数，验证最终是 13；说明状态放在监听器对象里和放在外部面板里各有什么代价。</p>
+<h2 id="4-一个命令多个入口action">4. 一个命令、多个入口：Action</h2>
+<p>按钮、菜单项、快捷键往往执行同一件事。如果给每个入口各写一个 Lambda，命令的启用状态、名称、图标就要维护三份。教材 p453–454 给出的办法是 <code>Action</code>：把“命令的名称、图标、参数、启用状态、执行体”打包成一个对象，再让多个入口共享它。</p>
+<p><code>Action</code> 是接口，它扩展自 <code>ActionListener</code>，所以任何需要 <code>ActionListener</code> 的地方都能用 <code>Action</code>。实际编程中通常继承 <code>AbstractAction</code>，它已经实现了除 <code>actionPerformed</code> 之外的方法；名称、图标等用 <code>putValue</code> 存进一个名/值表。</p>
+<pre><code class="language-java">import java.awt.EventQueue;
+import java.awt.event.ActionEvent;
+import javax.swing.AbstractAction;
+import javax.swing.Action;
+import javax.swing.JButton;
+import javax.swing.JComponent;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.KeyStroke;
+public class SharedActionBinding {
+    public static void main(String[] args) throws Exception {
+        EventQueue.invokeAndWait(() -&gt; {
+            JLabel label = new JLabel(&quot;A&quot;); JPanel panel = new JPanel();
+            Action action = new AbstractAction(&quot;Blue&quot;) {
+                private static final long serialVersionUID = 1L;
+                public void actionPerformed(ActionEvent event) { label.setText(&quot;B&quot;); }
+            };
+            JButton first = new JButton(action), second = new JButton(action);
+            panel.add(first); panel.add(second); panel.add(label);
+            panel.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke(&quot;ctrl B&quot;), &quot;course.blue&quot;);
+            panel.getActionMap().put(&quot;course.blue&quot;, action);
+            first.doClick(0); System.out.println(label.getText());
+            Object key = panel.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).get(KeyStroke.getKeyStroke(&quot;ctrl B&quot;));
+            System.out.println(&quot;bound=&quot; + (panel.getActionMap().get(key) == action));
+            action.setEnabled(false); System.out.println(&quot;enabled=&quot; + first.isEnabled() + &quot;:&quot; + second.isEnabled());
+        });
+    }
+}
+</code></pre>
+<p>输出：</p>
+<pre><code class="language-text">B
+bound=true
+enabled=false:false
+</code></pre>
+<p>第一行：点第一个按钮，共享动作把标签从 A 改成 B。第二行：<code>ctrl B</code> 在输入映射里对应动作键 <code>course.blue</code>，动作映射里这个键又指回同一个 <code>action</code>，所以 <code>bound=true</code>——键盘入口与按钮入口确实是同一个对象。第三行：停用动作后，两个由它创建的按钮一起变成不可用；不需要逐个 <code>setEnabled</code>。</p>
+<table>
+<thead>
+<tr>
+<th>入口</th>
+<th>绑定方式</th>
+<th>共享的是什么</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>按钮</td>
+<td><code>new JButton(action)</code></td>
+<td>同一个 Action 对象</td>
+</tr>
+<tr>
+<td>菜单项</td>
+<td><code>new JMenuItem(action)</code>（第12章）</td>
+<td>同上</td>
+</tr>
+<tr>
+<td>快捷键</td>
+<td><code>InputMap</code> + <code>ActionMap</code></td>
+<td>同上</td>
+</tr>
+</tbody>
+</table>
+<p><code>new JButton(action)</code> 会从动作里读 <code>Action.NAME</code> 作为按钮文字、读 <code>SMALL_ICON</code> 作为图标、把 <code>SHORT_DESCRIPTION</code> 设为工具提示，并自动把动作注册成监听器。这就是“一个命令、多个入口”能成立的原因。</p>
+<p>只改一处的实验：把 <code>action.setEnabled(false)</code> 改成 <code>first.setEnabled(false)</code>，预测最后一行输出。前者停的是“命令”，后者只停“一个按钮”，这正是 Action 与组件要分开的理由。</p>
+<p>独立小任务：给同一个 Action 再加第三个按钮，并把 <code>Action.NAME</code> 改成“变蓝”；运行后说明按钮文字从哪里来，以及停用动作时三个按钮是否一起变灰。</p>
+<h2 id="5-键盘也能触发同一个动作keystrokeinputmapactionmap">5. 键盘也能触发同一个动作：KeyStroke、InputMap、ActionMap</h2>
+<p>按钮点击之外，用户还可能按 <code>Ctrl+B</code>。Swing 的键盘绑定分两层：<code>InputMap</code> 把“按键”映射到一个<strong>动作键</strong>（任意对象，习惯用字符串），<code>ActionMap</code> 再把动作键映射到 <code>Action</code>。教材 p456–457 特意提醒：不要把会显示、会被翻译的动作名当作映射键，最好用一个内部名字，例如 <code>course.blue</code>。</p>
+<pre><code class="language-java">import java.awt.EventQueue;
+import javax.swing.JComponent;
+import javax.swing.JPanel;
+import javax.swing.KeyStroke;
+
+public class InputMapConditions {
+    public static void main(String[] args) throws Exception {
+        EventQueue.invokeAndWait(() -&gt; {
+            JPanel panel = new JPanel();
+            KeyStroke ctrlB = KeyStroke.getKeyStroke(&quot;ctrl B&quot;);
+            panel.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(ctrlB, &quot;course.blue&quot;);
+            System.out.println(&quot;window=&quot; + panel.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).get(ctrlB));
+            System.out.println(&quot;focused=&quot; + panel.getInputMap(JComponent.WHEN_FOCUSED).get(ctrlB));
+            System.out.println(&quot;ancestor=&quot; + panel.getInputMap(JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT).get(ctrlB));
+        });
+    }
+}
+</code></pre>
+<p>输出：</p>
+<pre><code class="language-text">window=course.blue
+focused=null
+ancestor=null
+</code></pre>
+<p>同一个按键在三张输入映射里是三个独立的表：只往 <code>WHEN_IN_FOCUSED_WINDOW</code> 放，另外两张查出来就是 <code>null</code>。这不是“绑定失败”，而是你只注册了一张表。</p>
+<table>
+<thead>
+<tr>
+<th>条件</th>
+<th>什么时候生效</th>
+<th>适合放什么</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>WHEN_FOCUSED</code></td>
+<td>这个组件自己拥有键盘焦点</td>
+<td>输入框内的快捷键</td>
+</tr>
+<tr>
+<td><code>WHEN_ANCESTOR_OF_FOCUSED_COMPONENT</code></td>
+<td>这个组件是拥有焦点组件的祖先</td>
+<td>面板级的命令</td>
+</tr>
+<tr>
+<td><code>WHEN_IN_FOCUSED_WINDOW</code></td>
+<td>这个组件在拥有焦点的窗口里</td>
+<td>整个窗口都能用的快捷键</td>
+</tr>
+</tbody>
+</table>
+<p>教材 p456 还讲了查找顺序：先看焦点组件的 <code>WHEN_FOCUSED</code>，再沿父链找 <code>WHEN_ANCESTOR_OF_FOCUSED_COMPONENT</code>，最后在窗口内所有可视且启用的组件中找 <code>WHEN_IN_FOCUSED_WINDOW</code>；找到一个已启用的动作就停止。把 <code>"none"</code> 放进映射可以取消一个按键绑定。</p>
+<p>只改一处的实验：把 <code>.put(...)</code> 的目标从 <code>WHEN_IN_FOCUSED_WINDOW</code> 换成 <code>WHEN_FOCUSED</code>，预测三行输出分别变成什么。再运行 <code>SharedActionBinding</code>，把 <code>ctrl B</code> 真的按一次，观察标签是否变化（真实按键需要窗口有焦点）。</p>
+<p>独立小任务：给同一个动作再绑 <code>ctrl Shift B</code>，并说明 <code>KeyStroke.getKeyStroke</code> 的字符串里修饰符、键名的书写规则；写错键名时它返回 <code>null</code> 还是抛异常，用一个小程序验证。</p>
+<h2 id="6-鼠标点击移动拖动是不同通知">6. 鼠标：点击、移动、拖动是不同通知</h2>
+<p>按钮和菜单会自己处理鼠标，你只有在“自己画、自己判断点到了哪里”时才需要直接监听鼠标。教材 p459 把鼠标监听拆成两个接口：<code>MouseListener</code> 管按下、释放、点击、进入、离开；<code>MouseMotionListener</code> 管移动和拖动。拆开是为了效率——只关心点击的组件不必被高频的移动事件淹没。</p>
+<pre><code class="language-java">import java.awt.Dimension;
+import java.awt.EventQueue;
+import java.awt.Graphics;
+import java.awt.event.InputEvent;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+public class MouseModelRoute {
+    static class PointPanel extends JPanel {
+        private static final long serialVersionUID = 1L;
+        int x = 20, y = 20;
+        PointPanel() {
+            MouseAdapter handler = new MouseAdapter() {
+                public void mousePressed(MouseEvent e) { moveTo(e); }
+                public void mouseDragged(MouseEvent e) { moveTo(e); }
+            };
+            addMouseListener(handler); addMouseMotionListener(handler);
+        }
+        void moveTo(MouseEvent e) { x = e.getX(); y = e.getY(); repaint(); }
+        @Override public Dimension getPreferredSize() { return new Dimension(300, 180); }
+        @Override protected void paintComponent(Graphics g) { super.paintComponent(g); g.fillOval(x - 5, y - 5, 10, 10); }
+    }
+    public static void main(String[] args) throws Exception {
+        if (args.length &gt; 0 &amp;&amp; args[0].equals(&quot;--check&quot;)) EventQueue.invokeAndWait(() -&gt; {
+            PointPanel panel = new PointPanel();
+            panel.dispatchEvent(new MouseEvent(panel, MouseEvent.MOUSE_PRESSED, 1L, 0, 30, 40, 1, false, MouseEvent.BUTTON1));
+            panel.dispatchEvent(new MouseEvent(panel, MouseEvent.MOUSE_DRAGGED, 2L, InputEvent.BUTTON1_DOWN_MASK, 50, 60, 0, false, MouseEvent.NOBUTTON));
+            System.out.println(panel.x + &quot;:&quot; + panel.y);
+        }); else EventQueue.invokeLater(() -&gt; {
+            JFrame frame = new JFrame(&quot;鼠标模型&quot;); frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); frame.add(new PointPanel()); frame.pack(); frame.setLocationByPlatform(true); frame.setVisible(true);
+        });
+    }
+}
+</code></pre>
+<p><code>--check</code> 往面板里派发两个鼠标事件：先按下 (30,40)，再拖动到 (50,60)，输出 <code>50:60</code>。面板的字段 <code>x/y</code> 是模型，<code>paintComponent</code> 只按模型画圆；每次 <code>moveTo</code> 改完模型调用 <code>repaint()</code>，而不是自己拿画笔去画。</p>
+<table>
+<thead>
+<tr>
+<th>事件</th>
+<th>触发时机</th>
+<th>本课用它做什么</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>mousePressed</code></td>
+<td>按下</td>
+<td>记录起点</td>
+</tr>
+<tr>
+<td><code>mouseReleased</code></td>
+<td>松开</td>
+<td>通常与 pressed 配对</td>
+</tr>
+<tr>
+<td><code>mouseClicked</code></td>
+<td>按下并在同一组件内松开</td>
+<td>双击/多击判断（<code>getClickCount</code>）</td>
+</tr>
+<tr>
+<td><code>mouseEntered/Exited</code></td>
+<td>进入/离开组件</td>
+<td>悬停效果</td>
+</tr>
+<tr>
+<td><code>mouseMoved</code></td>
+<td>未按键移动</td>
+<td>光标形状、悬停提示</td>
+</tr>
+<tr>
+<td><code>mouseDragged</code></td>
+<td>按住移动</td>
+<td>拖动对象</td>
+</tr>
+</tbody>
+</table>
+<p>几次通知的先后是 <code>pressed → released → clicked</code>；拖动的过程中不会产生 <code>clicked</code>。<code>getX()/getY()</code> 是相对<strong>事件源组件</strong>左上角的坐标，不是屏幕坐标；<code>getPoint()</code> 把两者打包成 <code>Point</code>。<code>getClickCount()</code> 返回连击次数，判断双击通常写 <code>&gt;= 2</code>，因为三击时它会是 3。</p>
+<p>鼠标按键与修饰键用 <code>getModifiersEx()</code> 的位掩码判断，例如右键：</p>
+<pre><code class="language-text">if ((event.getModifiersEx() &amp; InputEvent.BUTTON3_DOWN_MASK) != 0) { ... }
+</code></pre>
+<p>教材 p460 提醒：老 API 的 <code>BUTTON2_MASK</code> 与 <code>ALT_MASK</code> 数值相同，是为了让单键鼠标用修饰键模拟其它键；新代码应该用 <code>*_DOWN_MASK</code> 这一组。<code>getModifiersExText(...)</code> 可以把掩码转成可读字符串，适合写日志。</p>
+<p><code>MouseAdapter</code> 是适配器类的一个例子：它实现了 <code>MouseListener</code> 的全部 5 个方法（都是空实现），你只覆盖关心的那几个。窗口监听也是同样的套路：<code>WindowListener</code> 有 7 个方法，<code>WindowAdapter</code> 全部空实现，只覆盖 <code>windowClosing</code> 即可。教材 p452 特别提醒：覆盖时方法名拼错，编译器不会报错（因为你只是新增了一个方法），所以一定要写 <code>@Override</code>，让编译器替你检查。</p>
+<p>只改一处的实验：把 <code>mouseDragged</code> 里的 <code>moveTo(e)</code> 删掉，只保留 <code>mousePressed</code>，再真实拖动。小圆点不会跟着走——按下时它跳了一次，之后不再更新。这能区分“事件来了”和“模型被更新”。</p>
+<p>独立小任务：给面板加一个 <code>mouseClicked</code>，双击时把圆点移回 (20,20)；记录单击与双击分别触发了几次 <code>mousePressed</code>、<code>mouseClicked</code>，说明为什么双击判断通常写在 <code>clicked</code> 而不是 <code>pressed</code> 里。</p>
+<h2 id="7-语义事件与底层事件一次点击下面还有一层">7. 语义事件与底层事件：一次点击下面还有一层</h2>
+<p>教材 p466–467 把 AWT 事件分成两类：</p>
+<ul>
+<li><strong>语义事件</strong>：已经表达了用户意图，例如 <code>ActionEvent</code>（按钮点击、菜单选择、回车、定时器到点）、<code>AdjustmentEvent</code>（滚动条）、<code>ItemEvent</code>（勾选）。</li>
+<li><strong>底层事件</strong>：构成这些意图的原始动作，例如 <code>KeyEvent</code>、<code>MouseEvent</code>、<code>MouseWheelEvent</code>、<code>FocusEvent</code>、<code>WindowEvent</code>。</li>
+</ul>
+<p>一次“按钮点击”在底层可能是 <code>mousePressed</code>、<code>mouseReleased</code>、<code>mouseClicked</code> 三个 <code>MouseEvent</code>，但按钮把它们翻译成了一个 <code>ActionEvent</code>。所以监听 <code>ActionListener</code> 的代码不需要关心用户是用鼠标点的、用空格键激活的，还是程序调用 <code>doClick</code> 触发的——这三种在 <code>ActionEvent</code> 层面没有区别。</p>
+<p>所有事件对象都继承 <code>java.util.EventObject</code>；AWT 事件再继承 <code>AWTEvent</code>。<code>EventObject</code> 提供 <code>getSource()</code>，<code>AWTEvent</code> 提供 <code>getID()</code> 等通用信息，具体子类再加自己的字段（<code>ActionEvent.getActionCommand</code>、<code>MouseEvent.getX</code>）。</p>
+<p><code>Timer</code> 是“语义事件”的一个好例子：它没有鼠标键盘，时间到了就向监听器发一个 <code>ActionEvent</code>，并且这个回调在 EDT 上执行。</p>
+<pre><code class="language-java">import java.awt.EventQueue;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.Timer;
+public class SwingTimerTicks {
+    static class TickCounter implements ActionListener {
+        private int ticks;
+        private final Timer timer = new Timer(10, this);
+        void start() { timer.start(); }
+        public void actionPerformed(ActionEvent event) {
+            ticks++;
+            if (ticks == 2) { timer.stop(); System.out.println(&quot;ticks=&quot; + ticks + &quot; edt=&quot; + EventQueue.isDispatchThread()); }
+        }
+    }
+    public static void main(String[] args) { EventQueue.invokeLater(() -&gt; new TickCounter().start()); }
+}
+</code></pre>
+<p>输出 <code>ticks=2 edt=true</code>：定时器触发两次后自己停下，回调确实跑在 EDT 上。<code>new Timer(10, this)</code> 的第一个参数是毫秒间隔，第二个是 <code>ActionListener</code>；<code>timer.stop()</code> 之后不会再触发。定时器的事件不是“精确到毫秒的闹钟”，间隔只是“至少这么久之后排队”，EDT 忙的时候会顺延——这与 L40 的“不要在 EDT 上做耗时工作”是同一条约束。</p>
+<table>
+<thead>
+<tr>
+<th>层次</th>
+<th>例子</th>
+<th>监听接口</th>
+<th>你能拿到什么</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>语义</td>
+<td>按钮点击、菜单、回车、Timer</td>
+<td><code>ActionListener</code></td>
+<td>命令字符串、修饰键</td>
+</tr>
+<tr>
+<td>底层</td>
+<td>鼠标、键盘、焦点、窗口</td>
+<td><code>MouseListener</code>、<code>KeyListener</code>、<code>WindowListener</code> 等</td>
+<td>坐标、键码、窗口状态</td>
+</tr>
+</tbody>
+</table>
+<p>只改一处的实验：把 <code>if (ticks == 2)</code> 改成 <code>ticks == 3</code>，预测输出；再把间隔 10 改成 500，观察它仍然只影响“多久之后排队”，不影响回调在 EDT 上执行这一事实。</p>
+<p>独立小任务：用 <code>Timer</code> 做一个 5 秒倒计时标签，每 1000 毫秒更新一次，到 0 时停止并显示“完成”；说明为什么更新标签的代码可以直接写在 <code>actionPerformed</code> 里，而不需要再 <code>invokeLater</code>。</p>
+<h2 id="8-运行与排错">8. 运行与排错</h2>
+<p>所有命令都在课程根目录 PowerShell 输入，单文件用 <code>java.ps1</code>；复制到 <code>my_code/</code> 后把命令里的 <code>code</code> 换成 <code>my_code</code>。<code>--check</code> 用 <code>doClick</code>、<code>dispatchEvent</code> 这类程序化方式触发事件，能验证监听器与模型，但不能替代真实鼠标、键盘和焦点检查。</p>
+<table>
+<thead>
+<tr>
+<th>现象</th>
+<th>先查哪里</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>点了按钮没反应</td>
+<td>有没有 <code>addActionListener</code>；按钮是否 <code>setEnabled(false)</code>；监听器里是否抛了异常被吞掉</td>
+</tr>
+<tr>
+<td>点一次计数加了两</td>
+<td>同一个监听器注册了两次，或两个监听器都在改同一份状态</td>
+</tr>
+<tr>
+<td>想移除监听器却移除不掉</td>
+<td>注册和移除是不是同一个对象；每次写的 Lambda 都是新对象</td>
+</tr>
+<tr>
+<td>快捷键没反应</td>
+<td>绑定在哪个 <code>InputMap</code>；窗口是否有焦点；按键字符串是否写对（<code>ctrl B</code> 与 <code>Ctrl+B</code>）</td>
+</tr>
+<tr>
+<td>键盘命令执行了两次</td>
+<td>同一按键同时绑在两张会生效的映射上，或父子组件都绑了</td>
+</tr>
+<tr>
+<td>鼠标坐标对不上</td>
+<td><code>getX/getY</code> 相对事件源组件；事件源可能不是你监听的面板</td>
+</tr>
+<tr>
+<td>拖动到组件外还在触发</td>
+<td><code>mouseDragged</code> 本来就会继续送到原组件，这是预期行为</td>
+</tr>
+<tr>
+<td>关闭窗口没走自定义逻辑</td>
+<td>用了 <code>WindowAdapter</code> 但方法名拼错；加 <code>@Override</code> 让编译器检查</td>
+</tr>
+<tr>
+<td>双击逻辑不触发</td>
+<td>判断写在 <code>mousePressed</code> 而不是 <code>mouseClicked</code>；或用了 <code>== 2</code> 漏掉三击</td>
+</tr>
+<tr>
+<td>界面在事件里卡住</td>
+<td>监听器里做了耗时工作，阻塞 EDT</td>
+</tr>
+</tbody>
+</table>
+<p>最后用一句完整的话回答本课：事件委托模型里，事件源产生事件对象并通知注册过的监听器，监听器改模型、再请求重绘；一个动作可以用 <code>Action</code> 打包后接到按钮和键盘多个入口；<code>ActionEvent</code> 是语义事件，鼠标键盘是底层事件；不要依赖监听器的通知顺序，也不要在监听器里阻塞 EDT。</p>
+<h2 id="教材深化">教材深化</h2>
+<p>先用讲义完成基础操作，再到教材核对正式表述。这里的阅读不额外增加基础过关条件。</p>
+<table>
+<thead>
+<tr>
+<th>小节与层次</th>
+<th>书本页</th>
+<th>PDF页</th>
+<th>深化时观察什么</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>11.1 事件处理基础·深化</td>
+<td>439–450</td>
+<td>457–468</td>
+<td>委托模型、按钮示例、Lambda 化、观感切换</td>
+</tr>
+<tr>
+<td>11.1.4 适配器类·深化</td>
+<td>450–453</td>
+<td>468–471</td>
+<td>七个窗口方法、WindowAdapter、@Override</td>
+</tr>
+<tr>
+<td>11.2 动作·深化</td>
+<td>453–459</td>
+<td>471–477</td>
+<td>Action/AbstractAction、名值表、输入映射与按键</td>
+</tr>
+<tr>
+<td>11.3 鼠标事件·深化</td>
+<td>459–465</td>
+<td>477–483</td>
+<td>两个监听接口、点击计数、修饰符掩码、光标</td>
+</tr>
+<tr>
+<td>11.4 事件继承层次·深化</td>
+<td>465–468</td>
+<td>483–486</td>
+<td>语义与底层事件、监听器与适配器对照表</td>
+</tr>
+</tbody>
+</table>
+<p>教材主线见上表；本课问题情境和分步实验为原创补充。普通程序保持Java 8语法/API，在本机JDK 21上以<code>--release 8</code>编译；现代版本差异在正文单独说明，不等同于已在Java 8 JVM运行。教材p445 的 EventHandler 用法、p447 的观感切换属于历史/选读内容，本课只作了解。</p>
+<h2 id="独立练习与过关">独立练习与过关</h2>
+<p>打开<a href="page-37c036ffec6e.html">练习</a>，直接写在题下；独立程序保存在<a href="page-d6e7a4c30014.html">my_code</a>。先预测，再运行并保存实际输入、输出和命令；完成后对照<a href="page-13ee36b440f5.html">参考解析</a>。全部必做题有独立解释、E题程序和边界验证，且能解释第一次分歧发生在哪一步，才具备判定本课通过的证据。讲义生成和助手测试通过不代表你已掌握。</p><div class="pager"><a rel="prev" href="page-d6f2626eea1b.html">← 上一页：L41 练习</a><a rel="next" href="page-deb15ddedd4b.html">下一页：L42 示例 →</a></div><p class="footer">课程原创讲义与习题 · 讲义学习 → 动手练习 → 订正 · 教材深化</p></article></main></div><script src="assets/course.js?v=1c1950cb02ee"></script></body></html>

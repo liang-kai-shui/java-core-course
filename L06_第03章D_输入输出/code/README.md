@@ -13,3 +13,11 @@
 ```powershell
 .\java.ps1 -Source 'L06_第03章D_输入输出/code/InputDemo.java'
 ```
+
+
+## 全部源码入口
+
+这些文件的职责、运行位置与实验见讲义；project子目录文件共同编译，不逐个当main启动。
+
+- [FileUtf8Demo.java](FileUtf8Demo.java)
+- [InputDemo.java](InputDemo.java)

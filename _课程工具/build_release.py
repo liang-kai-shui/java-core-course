@@ -58,6 +58,14 @@ def collect_files():
             files.add((folder / rel).relative_to(ROOT))
         for sub in ['code', '参考答案', 'error_lab']:
             files.update(p.relative_to(ROOT) for p in (folder / sub).rglob('*') if p.is_file() and p.suffix in ['.md', '.java', '.txt', '.properties', '.mf'])
+    # ServiceLoader descriptions have interface names instead of a file suffix.
+    # Include only resources explicitly registered for an authored project.
+    for project in json.loads((ROOT / '_课程工具/projects.json').read_text(encoding='utf-8')):
+        project_root = (ROOT / project['root']).resolve()
+        for resource in project['resources']:
+            source = (project_root / resource['source']).resolve()
+            assert source.is_relative_to(project_root) and source.suffix.lower() != '.pdf'
+            files.add(source.relative_to(ROOT))
     return sorted(files, key=lambda p: p.as_posix())
 
 def doc_name(rel):
@@ -267,7 +275,7 @@ def home_content(names):
         for label, part in [('讲义', '讲义.md'), ('示例', 'code/README.md'), ('练习', '练习.md'), ('参考答案', '参考答案/答案.md')]:
             content += f'<a href="{names[folder / part]}">{label}</a>'
         content += '</div></section>'
-    content += f'</div><h2>学习与记录</h2><p>基础10课与结构6课，共{len(COURSE["lessons"])}单元已备；全书{COURSE["planned_lessons"]}单元路线中，其余仍为规划。文字答案直接写在本地练习.md，代码写在my_code。材料备好不代表学习过关。</p>'
+    content += f'</div><h2>学习与记录</h2><p>L01–L54与S01–S06，共{len(COURSE["lessons"])}单元，覆盖教材14章及附录查阅。文字答案直接写在本地练习.md，代码写在my_code。材料备好不代表学习过关。</p>'
     content += '<details><summary>需要把所有内容连续阅读？</summary><p>可以使用<a href="全一册.html">全一册（连续阅读）</a>。日常学习使用上方分课入口，点击左侧导航也会打开相应的独立页面。</p></details>'
     return content
 
@@ -276,7 +284,7 @@ def shell(title, nav, content, pager='', inline=False, active='home'):
     script = '<script>' + JS + '</script>' if inline else f'<script src="assets/course.js?v={ASSET_VERSION}"></script>'
     mode_label = '切回分课阅读' if inline else '分课阅读'
     mode = 'combined' if inline else 'pages'
-    edition = '连续阅读 · 全一册 · 左侧可切回独立页面' if inline else f'基础与结构篇 · {len(COURSE["lessons"])}单元已备 · 双页码'
+    edition = '连续阅读 · 全一册 · 左侧可切回独立页面' if inline else f'全书陪读 · {len(COURSE["lessons"])}单元 · 双页码'
     return '<!doctype html><html lang="zh-CN" data-theme="dark"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>' + html.escape(title) + ' · Java陪读</title>' + styles + f'</head><body id="top" data-reading-mode="{mode}" data-nav-doc="{nav_key(active)}">' + \
         '<header class="top"><a class="brand" href="index.html"><span>JAVA</span>一起把基础写扎实</a><div class="tools"><span class="tag">CORE JAVA · VOL. I · 10TH</span><a id="reading-mode" href="index.html">' + mode_label + '</a><button id="theme" aria-label="切换浅色与深色">明 / 暗</button></div></header>' + \
         '<div class="layout"><aside>' + nav + '</aside><main><article><div class="crumb">Java入门课程 / 按课学习</div><span class="edition">' + edition + '</span>' + content + pager + '<p class="footer">课程原创讲义与习题 · 讲义学习 → 动手练习 → 订正 · 教材深化</p></article></main></div>' + script + '</body></html>'
@@ -338,7 +346,7 @@ def main():
     for lesson in COURSE['lessons']:
         template = EXERCISES[(Path(lesson['folder']) / '练习.md').as_posix()]
         assert all('## ' + question in template for question in lesson['questions'])
-        assert '直接在这个' in template and '作答副本' not in template
+        assert '直接在' in template and '作答副本' not in template
     names = {rel: doc_name(rel) for rel in files if rel.suffix == '.md'}
     (DOCS / 'assets').mkdir(parents=True, exist_ok=True)
     (DOCS / 'assets/course.css').write_text(CSS, encoding='utf-8')
@@ -371,8 +379,8 @@ def main():
     (DOCS / '.nojekyll').write_text('', encoding='utf-8')
     validation = verify_links()
     OUT.mkdir(exist_ok=True)
-    archive = OUT / 'Java课程-基础与结构篇.zip'
-    base = 'Java课程-基础与结构篇/'
+    archive = OUT / 'Java课程-全书陪读版.zip'
+    base = 'Java课程-全书陪读版/'
     with zipfile.ZipFile(archive, 'w', zipfile.ZIP_DEFLATED) as z:
         for rel in files:
             if rel.suffix == '.md':

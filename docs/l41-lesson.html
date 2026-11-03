@@ -1,0 +1,617 @@
+<!doctype html><html lang="zh-CN" data-theme="dark"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>L41 讲义 · Java 2D：坐标、画笔、文字基线与图像 · Java陪读</title><link rel="stylesheet" href="assets/course.css?v=1c1950cb02ee"></head><body id="top" data-reading-mode="pages" data-nav-doc="doc-ea52d170428c"><header class="top"><a class="brand" href="index.html"><span>JAVA</span>一起把基础写扎实</a><div class="tools"><span class="tag">CORE JAVA · VOL. I · 10TH</span><a id="reading-mode" href="index.html">分课阅读</a><button id="theme" aria-label="切换浅色与深色">明 / 暗</button></div></header><div class="layout"><aside><input id="navsearch" class="navsearch" aria-label="筛选课程导航" placeholder="筛选课号、讲义、练习…"><nav aria-label="课程导航"><div class="navlabel">课程入口</div><a class="navlink" href="index.html" data-doc="home" data-page="index.html" data-kind="home" data-lesson="">课程首页</a><a class="navlink" href="course-info.html" data-doc="doc-b33563055168" data-page="course-info.html" data-kind="guide" data-lesson="">课程说明</a><div class="navlabel">附录 · 先把基础讲清楚</div><a class="navlink" href="page-4cc100767b13.html" data-doc="doc-4cc100767b13" data-page="page-4cc100767b13.html" data-kind="guide" data-lesson="">零基础起飞</a><a class="navlink" href="page-3f83fca99eef.html" data-doc="doc-3f83fca99eef" data-page="page-3f83fca99eef.html" data-kind="guide" data-lesson="">术语表</a><a class="navlink" href="page-d70bb9fd9f2b.html" data-doc="doc-d70bb9fd9f2b" data-page="page-d70bb9fd9f2b.html" data-kind="guide" data-lesson="">类、文件与JAR总图</a><a class="navlink" href="page-b984dae871b4.html" data-doc="doc-b984dae871b4" data-page="page-b984dae871b4.html" data-kind="guide" data-lesson="">运行环境</a><a class="navlink" href="page-526e3b952094.html" data-doc="doc-526e3b952094" data-page="page-526e3b952094.html" data-kind="guide" data-lesson="">书本与PDF页码</a><div class="navlabel">讲义</div><a class="navlink" href="l01-lesson.html" data-doc="doc-9accd0bf9b7f" data-page="l01-lesson.html" data-kind="lesson" data-lesson="L01">L01 · 认识 Java 与程序运行</a><a class="navlink" href="l02-lesson.html" data-doc="doc-27ed48622bd4" data-page="l02-lesson.html" data-kind="lesson" data-lesson="L02">L02 · 编译、运行与读报错</a><a class="navlink" href="s01-lesson.html" data-doc="doc-07ae4fcc72ce" data-page="s01-lesson.html" data-kind="lesson" data-lesson="S01">S01 · 文件里为什么要套class和main</a><a class="navlink" href="l03-lesson.html" data-doc="doc-6b1b497ed36e" data-page="l03-lesson.html" data-kind="lesson" data-lesson="L03">L03 · 程序结构、变量与类型</a><a class="navlink" href="l04-lesson.html" data-doc="doc-441c97ad53bb" data-page="l04-lesson.html" data-kind="lesson" data-lesson="L04">L04 · 运算符与类型转换</a><a class="navlink" href="s02-lesson.html" data-doc="doc-f99e9428bbe8" data-page="s02-lesson.html" data-kind="lesson" data-lesson="S02">S02 · 类、对象、变量和new到底是谁</a><a class="navlink" href="l05-lesson.html" data-doc="doc-23e9eec49f15" data-page="l05-lesson.html" data-kind="lesson" data-lesson="L05">L05 · 字符串与文本处理</a><a class="navlink" href="l06-lesson.html" data-doc="doc-6892ef8761d4" data-page="l06-lesson.html" data-kind="lesson" data-lesson="L06">L06 · 键盘输入、格式化与文件</a><a class="navlink" href="l07-lesson.html" data-doc="doc-b1469f212770" data-page="l07-lesson.html" data-kind="lesson" data-lesson="L07">L07 · 程序如何作选择</a><a class="navlink" href="l08-lesson.html" data-doc="doc-a6ec0be7c981" data-page="l08-lesson.html" data-kind="lesson" data-lesson="L08">L08 · 让程序重复做事</a><a class="navlink" href="l09-lesson.html" data-doc="doc-33c8ceac7e88" data-page="l09-lesson.html" data-kind="lesson" data-lesson="L09">L09 · switch、循环跳转与大数值</a><a class="navlink" href="l10-lesson.html" data-doc="doc-dd1d0b22dbf0" data-page="l10-lesson.html" data-kind="lesson" data-lesson="L10">L10 · 数组与成绩统计器</a><a class="navlink" href="s03-lesson.html" data-doc="doc-9c6f386b2d27" data-page="s03-lesson.html" data-kind="lesson" data-lesson="S03">S03 · 字段、构造器、this、static与方法参数</a><a class="navlink" href="s04-lesson.html" data-doc="doc-9231422a5acf" data-page="s04-lesson.html" data-kind="lesson" data-lesson="S04">S04 · 多个文件怎样组成程序：package、import与classpath</a><a class="navlink" href="s05-lesson.html" data-doc="doc-df48e2e727ee" data-page="s05-lesson.html" data-kind="lesson" data-lesson="S05">S05 · JAR是什么：把程序装箱，再找到入口</a><a class="navlink" href="s06-lesson.html" data-doc="doc-905501ade8a7" data-page="s06-lesson.html" data-kind="lesson" data-lesson="S06">S06 · 库JAR、资源与真实项目目录</a><a class="navlink" href="l11-lesson.html" data-doc="doc-845785c4db47" data-page="l11-lesson.html" data-kind="lesson" data-lesson="L11">L11 · 对象行为、日期API与不可变值</a><a class="navlink" href="l12-lesson.html" data-doc="doc-4f729bb30e20" data-page="l12-lesson.html" data-kind="lesson" data-lesson="L12">L12 · 封装：把数据规则放进自定义类</a><a class="navlink" href="l13-lesson.html" data-doc="doc-df814286c80a" data-page="l13-lesson.html" data-kind="lesson" data-lesson="L13">L13 · 静态成员与工厂：谁属于整类</a><a class="navlink" href="l14-lesson.html" data-doc="doc-79c7f5b20729" data-page="l14-lesson.html" data-kind="lesson" data-lesson="L14">L14 · 按值传参：改对象与换变量是两回事</a><a class="navlink" href="l15-lesson.html" data-doc="doc-7c70bd26bd7d" data-page="l15-lesson.html" data-kind="lesson" data-lesson="L15">L15 · 构造器：多种入口，同一套有效状态</a><a class="navlink" href="l16-lesson.html" data-doc="doc-7727ba20829d" data-page="l16-lesson.html" data-kind="lesson" data-lesson="L16">L16 · 初始化次序与资源生存：出生和收尾分开</a><a class="navlink" href="l17-lesson.html" data-doc="doc-0d85b509b859" data-page="l17-lesson.html" data-kind="lesson" data-lesson="L17">L17 · 包访问边界、类路径与Javadoc</a><a class="navlink" href="l18-lesson.html" data-doc="doc-c58b7e68effd" data-page="l18-lesson.html" data-kind="lesson" data-lesson="L18">L18 · 阶段项目：由对象规则设计学习计划</a><a class="navlink" href="l19-lesson.html" data-doc="doc-ebe9805ad060" data-page="l19-lesson.html" data-kind="lesson" data-lesson="L19">L19 · 继承、覆盖与子类构造：先证明是一种</a><a class="navlink" href="l20-lesson.html" data-doc="doc-0b912f2f38e2" data-page="l20-lesson.html" data-kind="lesson" data-lesson="L20">L20 · 多态：声明类型管入口，实际类型管覆盖实现</a><a class="navlink" href="l21-lesson.html" data-doc="doc-7ad176e71273" data-page="l21-lesson.html" data-kind="lesson" data-lesson="L21">L21 · Object：身份、相等、散列与显示各管什么</a><a class="navlink" href="l22-lesson.html" data-doc="doc-c38eac074cde" data-page="l22-lesson.html" data-kind="lesson" data-lesson="L22">L22 · ArrayList与包装类型：容量不是已有元素</a><a class="navlink" href="l23-lesson.html" data-doc="doc-6c4ec6b99d2c" data-page="l23-lesson.html" data-kind="lesson" data-lesson="L23">L23 · 可变参数与枚举：一组输入和一组合法状态</a><a class="navlink" href="l24-lesson.html" data-doc="doc-18d3c7c32854" data-page="l24-lesson.html" data-kind="lesson" data-lesson="L24">L24 · 反射：先拿类型说明，再有边界地操作</a><a class="navlink" href="l25-lesson.html" data-doc="doc-e336c7c46f0d" data-page="l25-lesson.html" data-kind="lesson" data-lesson="L25">L25 · 接口：约定能力，再选择实现</a><a class="navlink" href="l26-lesson.html" data-doc="doc-5aa2503796aa" data-page="l26-lesson.html" data-kind="lesson" data-lesson="L26">L26 · 回调、比较器与克隆：传动作和复制状态分开</a><a class="navlink" href="l27-lesson.html" data-doc="doc-e39c19f717d1" data-page="l27-lesson.html" data-kind="lesson" data-lesson="L27">L27 · Lambda：把一个动作交出去，何时执行由调用决定</a><a class="navlink" href="l28-lesson.html" data-doc="doc-9d97ade8be44" data-page="l28-lesson.html" data-kind="lesson" data-lesson="L28">L28 · 内部类：名字写在里面，对象和引用还要分别画</a><a class="navlink" href="l29-lesson.html" data-doc="doc-ab0388a71208" data-page="l29-lesson.html" data-kind="lesson" data-lesson="L29">L29 · 动态代理：把一次接口调用经过的路走清楚</a><a class="navlink" href="l30-lesson.html" data-doc="doc-fae988de356b" data-page="l30-lesson.html" data-kind="lesson" data-lesson="L30">L30 · 异常：正常结果交不出时，沿另一条路线报告</a><a class="navlink" href="l31-lesson.html" data-doc="doc-b2b843b701eb" data-page="l31-lesson.html" data-kind="lesson" data-lesson="L31">L31 · 捕获、finally与自动关闭：正常和失败两条路都走</a><a class="navlink" href="l32-lesson.html" data-doc="doc-1830fc8ff479" data-page="l32-lesson.html" data-kind="lesson" data-lesson="L32">L32 · 断言、日志与调试：让问题留下能核对的证据</a><a class="navlink" href="l33-lesson.html" data-doc="doc-c580b3410cd8" data-page="l33-lesson.html" data-kind="lesson" data-lesson="L33">L33 · 泛型：类型填空，而不是到处强转</a><a class="navlink" href="l34-lesson.html" data-doc="doc-c0eebf63ccd7" data-page="l34-lesson.html" data-kind="lesson" data-lesson="L34">L34 · 擦除与桥接：编译期的约定，运行期保留什么</a><a class="navlink" href="l35-lesson.html" data-doc="doc-55f73a6b1287" data-page="l35-lesson.html" data-kind="lesson" data-lesson="L35">L35 · 通配符：不确定的元素类型，仍然能安全合作</a><a class="navlink" href="l36-lesson.html" data-doc="doc-28232796ef49" data-page="l36-lesson.html" data-kind="lesson" data-lesson="L36">L36 · 集合与迭代器：走过一个元素，再决定是否删除</a><a class="navlink" href="l37-lesson.html" data-doc="doc-b69bf7bec650" data-page="l37-lesson.html" data-kind="lesson" data-lesson="L37">L37 · Set与队列：去重、顺序、优先级是不同约定</a><a class="navlink" href="l38-lesson.html" data-doc="doc-945d97e7e8ec" data-page="l38-lesson.html" data-kind="lesson" data-lesson="L38">L38 · Map：按键找值，更新与视图要看共享关系</a><a class="navlink" href="l39-lesson.html" data-doc="doc-654dbe3c1516" data-page="l39-lesson.html" data-kind="lesson" data-lesson="L39">L39 · 视图与算法：看起来是列表，修改能力却不一样</a><a class="navlink" href="l40-lesson.html" data-doc="doc-ddec79a7152a" data-page="l40-lesson.html" data-kind="lesson" data-lesson="L40">L40 · Swing起步：窗口、内容组件与事件线程</a><a class="navlink" href="l41-lesson.html" data-doc="doc-ea52d170428c" data-page="l41-lesson.html" data-kind="lesson" data-lesson="L41" aria-current="page">L41 · Java 2D：坐标、画笔、文字基线与图像</a><a class="navlink" href="l42-lesson.html" data-doc="doc-a4fc0c712b42" data-page="l42-lesson.html" data-kind="lesson" data-lesson="L42">L42 · 事件：先注册动作，再沿通知路线改变状态</a><a class="navlink" href="l43-lesson.html" data-doc="doc-ce9f7218e58d" data-page="l43-lesson.html" data-kind="lesson" data-lesson="L43">L43 · 表单基础：模型、布局、文本与选择控件</a><a class="navlink" href="l44-lesson.html" data-doc="doc-2608b8c20af8" data-page="l44-lesson.html" data-kind="lesson" data-lesson="L44">L44 · 菜单、共享动作与复杂布局：同一操作，多处入口</a><a class="navlink" href="l45-lesson.html" data-doc="doc-09c793b56fab" data-page="l45-lesson.html" data-kind="lesson" data-lesson="L45">L45 · 对话框：先分清确认、取消与真正提交</a><a class="navlink" href="l46-lesson.html" data-doc="doc-dbe5dd1deede" data-page="l46-lesson.html" data-kind="lesson" data-lesson="L46">L46 · 交付一个能搬走的程序：JAR清单、资源与密封</a><a class="navlink" href="l47-lesson.html" data-doc="doc-dd99345a108b" data-page="l47-lesson.html" data-kind="lesson" data-lesson="L47">L47 · 配置不是代码：默认值、首选项与插件发现</a><a class="navlink" href="l48-lesson.html" data-doc="doc-d98e4f3902cb" data-page="l48-lesson.html" data-kind="lesson" data-lesson="L48">L48 · 读懂旧部署，完成今天的独立应用交付</a><a class="navlink" href="l49-lesson.html" data-doc="doc-0f04f88b9b83" data-page="l49-lesson.html" data-kind="lesson" data-lesson="L49">L49 · 一个程序中的多条执行路线：启动、等待与中断</a><a class="navlink" href="l50-lesson.html" data-doc="doc-3a9440fb52cb" data-page="l50-lesson.html" data-kind="lesson" data-lesson="L50">L50 · 线程是在等谁：状态、守护属性与失败报告</a><a class="navlink" href="l51-lesson.html" data-doc="doc-1e0c5d6ff38b" data-page="l51-lesson.html" data-kind="lesson" data-lesson="L51">L51 · 共享状态：先守住完整规则，再选择锁和条件</a><a class="navlink" href="l52-lesson.html" data-doc="doc-62378068053a" data-page="l52-lesson.html" data-kind="lesson" data-lesson="L52">L52 · 把数据交给谁：阻塞队列、原子更新与并发容器</a><a class="navlink" href="l53-lesson.html" data-doc="doc-09b301d9ca0d" data-page="l53-lesson.html" data-kind="lesson" data-lesson="L53">L53 · 任务有结果以后：Future、执行器、组合与界面后台工作</a><a class="navlink" href="l54-lesson.html" data-doc="doc-fc1b278fdd1e" data-page="l54-lesson.html" data-kind="lesson" data-lesson="L54">L54 · 全书综合：把规则、文件、后台报告装进一个可交付项目</a><div class="navlabel">练习</div><a class="navlink" href="page-2bd2136ce2bb.html" data-doc="doc-2bd2136ce2bb" data-page="page-2bd2136ce2bb.html" data-kind="exercise" data-lesson="L01">L01 · 认识 Java 与程序运行</a><a class="navlink" href="page-95000a110447.html" data-doc="doc-95000a110447" data-page="page-95000a110447.html" data-kind="exercise" data-lesson="L02">L02 · 编译、运行与读报错</a><a class="navlink" href="page-025659571603.html" data-doc="doc-025659571603" data-page="page-025659571603.html" data-kind="exercise" data-lesson="S01">S01 · 文件里为什么要套class和main</a><a class="navlink" href="page-20353e11686c.html" data-doc="doc-20353e11686c" data-page="page-20353e11686c.html" data-kind="exercise" data-lesson="L03">L03 · 程序结构、变量与类型</a><a class="navlink" href="page-7d5e3415eb77.html" data-doc="doc-7d5e3415eb77" data-page="page-7d5e3415eb77.html" data-kind="exercise" data-lesson="L04">L04 · 运算符与类型转换</a><a class="navlink" href="page-a32ae623c39e.html" data-doc="doc-a32ae623c39e" data-page="page-a32ae623c39e.html" data-kind="exercise" data-lesson="S02">S02 · 类、对象、变量和new到底是谁</a><a class="navlink" href="page-279cca6b26ab.html" data-doc="doc-279cca6b26ab" data-page="page-279cca6b26ab.html" data-kind="exercise" data-lesson="L05">L05 · 字符串与文本处理</a><a class="navlink" href="page-ac312fcdaf24.html" data-doc="doc-ac312fcdaf24" data-page="page-ac312fcdaf24.html" data-kind="exercise" data-lesson="L06">L06 · 键盘输入、格式化与文件</a><a class="navlink" href="page-59c311bedabe.html" data-doc="doc-59c311bedabe" data-page="page-59c311bedabe.html" data-kind="exercise" data-lesson="L07">L07 · 程序如何作选择</a><a class="navlink" href="page-d18029bb4803.html" data-doc="doc-d18029bb4803" data-page="page-d18029bb4803.html" data-kind="exercise" data-lesson="L08">L08 · 让程序重复做事</a><a class="navlink" href="page-a7b6badbcc8e.html" data-doc="doc-a7b6badbcc8e" data-page="page-a7b6badbcc8e.html" data-kind="exercise" data-lesson="L09">L09 · switch、循环跳转与大数值</a><a class="navlink" href="page-edb3747d12d2.html" data-doc="doc-edb3747d12d2" data-page="page-edb3747d12d2.html" data-kind="exercise" data-lesson="L10">L10 · 数组与成绩统计器</a><a class="navlink" href="page-e322277cbd7b.html" data-doc="doc-e322277cbd7b" data-page="page-e322277cbd7b.html" data-kind="exercise" data-lesson="S03">S03 · 字段、构造器、this、static与方法参数</a><a class="navlink" href="page-d287d966e612.html" data-doc="doc-d287d966e612" data-page="page-d287d966e612.html" data-kind="exercise" data-lesson="S04">S04 · 多个文件怎样组成程序：package、import与classpath</a><a class="navlink" href="page-43c58052c6b0.html" data-doc="doc-43c58052c6b0" data-page="page-43c58052c6b0.html" data-kind="exercise" data-lesson="S05">S05 · JAR是什么：把程序装箱，再找到入口</a><a class="navlink" href="page-e906847bea99.html" data-doc="doc-e906847bea99" data-page="page-e906847bea99.html" data-kind="exercise" data-lesson="S06">S06 · 库JAR、资源与真实项目目录</a><a class="navlink" href="page-e85c81171b52.html" data-doc="doc-e85c81171b52" data-page="page-e85c81171b52.html" data-kind="exercise" data-lesson="L11">L11 · 对象行为、日期API与不可变值</a><a class="navlink" href="page-24c92f9c4feb.html" data-doc="doc-24c92f9c4feb" data-page="page-24c92f9c4feb.html" data-kind="exercise" data-lesson="L12">L12 · 封装：把数据规则放进自定义类</a><a class="navlink" href="page-0125df7f0c14.html" data-doc="doc-0125df7f0c14" data-page="page-0125df7f0c14.html" data-kind="exercise" data-lesson="L13">L13 · 静态成员与工厂：谁属于整类</a><a class="navlink" href="page-4a6d9c7415c4.html" data-doc="doc-4a6d9c7415c4" data-page="page-4a6d9c7415c4.html" data-kind="exercise" data-lesson="L14">L14 · 按值传参：改对象与换变量是两回事</a><a class="navlink" href="page-8a04d6ecb2db.html" data-doc="doc-8a04d6ecb2db" data-page="page-8a04d6ecb2db.html" data-kind="exercise" data-lesson="L15">L15 · 构造器：多种入口，同一套有效状态</a><a class="navlink" href="page-829fe3339f06.html" data-doc="doc-829fe3339f06" data-page="page-829fe3339f06.html" data-kind="exercise" data-lesson="L16">L16 · 初始化次序与资源生存：出生和收尾分开</a><a class="navlink" href="page-38ffa6a11208.html" data-doc="doc-38ffa6a11208" data-page="page-38ffa6a11208.html" data-kind="exercise" data-lesson="L17">L17 · 包访问边界、类路径与Javadoc</a><a class="navlink" href="page-395bfb26d46a.html" data-doc="doc-395bfb26d46a" data-page="page-395bfb26d46a.html" data-kind="exercise" data-lesson="L18">L18 · 阶段项目：由对象规则设计学习计划</a><a class="navlink" href="page-1064e1f9e0d0.html" data-doc="doc-1064e1f9e0d0" data-page="page-1064e1f9e0d0.html" data-kind="exercise" data-lesson="L19">L19 · 继承、覆盖与子类构造：先证明是一种</a><a class="navlink" href="page-c21ab195b869.html" data-doc="doc-c21ab195b869" data-page="page-c21ab195b869.html" data-kind="exercise" data-lesson="L20">L20 · 多态：声明类型管入口，实际类型管覆盖实现</a><a class="navlink" href="page-70f80ee634b2.html" data-doc="doc-70f80ee634b2" data-page="page-70f80ee634b2.html" data-kind="exercise" data-lesson="L21">L21 · Object：身份、相等、散列与显示各管什么</a><a class="navlink" href="page-f9ef26bde0c2.html" data-doc="doc-f9ef26bde0c2" data-page="page-f9ef26bde0c2.html" data-kind="exercise" data-lesson="L22">L22 · ArrayList与包装类型：容量不是已有元素</a><a class="navlink" href="page-08fa789c8a28.html" data-doc="doc-08fa789c8a28" data-page="page-08fa789c8a28.html" data-kind="exercise" data-lesson="L23">L23 · 可变参数与枚举：一组输入和一组合法状态</a><a class="navlink" href="page-5378209b7b54.html" data-doc="doc-5378209b7b54" data-page="page-5378209b7b54.html" data-kind="exercise" data-lesson="L24">L24 · 反射：先拿类型说明，再有边界地操作</a><a class="navlink" href="page-07b0ad5e7c29.html" data-doc="doc-07b0ad5e7c29" data-page="page-07b0ad5e7c29.html" data-kind="exercise" data-lesson="L25">L25 · 接口：约定能力，再选择实现</a><a class="navlink" href="page-2192d7522291.html" data-doc="doc-2192d7522291" data-page="page-2192d7522291.html" data-kind="exercise" data-lesson="L26">L26 · 回调、比较器与克隆：传动作和复制状态分开</a><a class="navlink" href="page-9b677343ba54.html" data-doc="doc-9b677343ba54" data-page="page-9b677343ba54.html" data-kind="exercise" data-lesson="L27">L27 · Lambda：把一个动作交出去，何时执行由调用决定</a><a class="navlink" href="page-22da40e7d9cf.html" data-doc="doc-22da40e7d9cf" data-page="page-22da40e7d9cf.html" data-kind="exercise" data-lesson="L28">L28 · 内部类：名字写在里面，对象和引用还要分别画</a><a class="navlink" href="page-f8c1c0f1ff73.html" data-doc="doc-f8c1c0f1ff73" data-page="page-f8c1c0f1ff73.html" data-kind="exercise" data-lesson="L29">L29 · 动态代理：把一次接口调用经过的路走清楚</a><a class="navlink" href="page-fa3782140c8e.html" data-doc="doc-fa3782140c8e" data-page="page-fa3782140c8e.html" data-kind="exercise" data-lesson="L30">L30 · 异常：正常结果交不出时，沿另一条路线报告</a><a class="navlink" href="page-280805768a62.html" data-doc="doc-280805768a62" data-page="page-280805768a62.html" data-kind="exercise" data-lesson="L31">L31 · 捕获、finally与自动关闭：正常和失败两条路都走</a><a class="navlink" href="page-67656565d1f9.html" data-doc="doc-67656565d1f9" data-page="page-67656565d1f9.html" data-kind="exercise" data-lesson="L32">L32 · 断言、日志与调试：让问题留下能核对的证据</a><a class="navlink" href="page-868ff73600c3.html" data-doc="doc-868ff73600c3" data-page="page-868ff73600c3.html" data-kind="exercise" data-lesson="L33">L33 · 泛型：类型填空，而不是到处强转</a><a class="navlink" href="page-371bc6555cfe.html" data-doc="doc-371bc6555cfe" data-page="page-371bc6555cfe.html" data-kind="exercise" data-lesson="L34">L34 · 擦除与桥接：编译期的约定，运行期保留什么</a><a class="navlink" href="page-cb97f5fa132b.html" data-doc="doc-cb97f5fa132b" data-page="page-cb97f5fa132b.html" data-kind="exercise" data-lesson="L35">L35 · 通配符：不确定的元素类型，仍然能安全合作</a><a class="navlink" href="page-ce18847a3564.html" data-doc="doc-ce18847a3564" data-page="page-ce18847a3564.html" data-kind="exercise" data-lesson="L36">L36 · 集合与迭代器：走过一个元素，再决定是否删除</a><a class="navlink" href="page-f80bc2329d12.html" data-doc="doc-f80bc2329d12" data-page="page-f80bc2329d12.html" data-kind="exercise" data-lesson="L37">L37 · Set与队列：去重、顺序、优先级是不同约定</a><a class="navlink" href="page-4da4705ed676.html" data-doc="doc-4da4705ed676" data-page="page-4da4705ed676.html" data-kind="exercise" data-lesson="L38">L38 · Map：按键找值，更新与视图要看共享关系</a><a class="navlink" href="page-f0b9de240228.html" data-doc="doc-f0b9de240228" data-page="page-f0b9de240228.html" data-kind="exercise" data-lesson="L39">L39 · 视图与算法：看起来是列表，修改能力却不一样</a><a class="navlink" href="page-a4a15839371e.html" data-doc="doc-a4a15839371e" data-page="page-a4a15839371e.html" data-kind="exercise" data-lesson="L40">L40 · Swing起步：窗口、内容组件与事件线程</a><a class="navlink" href="page-d6f2626eea1b.html" data-doc="doc-d6f2626eea1b" data-page="page-d6f2626eea1b.html" data-kind="exercise" data-lesson="L41">L41 · Java 2D：坐标、画笔、文字基线与图像</a><a class="navlink" href="page-37c036ffec6e.html" data-doc="doc-37c036ffec6e" data-page="page-37c036ffec6e.html" data-kind="exercise" data-lesson="L42">L42 · 事件：先注册动作，再沿通知路线改变状态</a><a class="navlink" href="page-210c14550de0.html" data-doc="doc-210c14550de0" data-page="page-210c14550de0.html" data-kind="exercise" data-lesson="L43">L43 · 表单基础：模型、布局、文本与选择控件</a><a class="navlink" href="page-61b7bb8f8bdb.html" data-doc="doc-61b7bb8f8bdb" data-page="page-61b7bb8f8bdb.html" data-kind="exercise" data-lesson="L44">L44 · 菜单、共享动作与复杂布局：同一操作，多处入口</a><a class="navlink" href="page-74ed665596b1.html" data-doc="doc-74ed665596b1" data-page="page-74ed665596b1.html" data-kind="exercise" data-lesson="L45">L45 · 对话框：先分清确认、取消与真正提交</a><a class="navlink" href="page-1bdc61f743de.html" data-doc="doc-1bdc61f743de" data-page="page-1bdc61f743de.html" data-kind="exercise" data-lesson="L46">L46 · 交付一个能搬走的程序：JAR清单、资源与密封</a><a class="navlink" href="page-3c66eb6f6eeb.html" data-doc="doc-3c66eb6f6eeb" data-page="page-3c66eb6f6eeb.html" data-kind="exercise" data-lesson="L47">L47 · 配置不是代码：默认值、首选项与插件发现</a><a class="navlink" href="page-61e4ec49f207.html" data-doc="doc-61e4ec49f207" data-page="page-61e4ec49f207.html" data-kind="exercise" data-lesson="L48">L48 · 读懂旧部署，完成今天的独立应用交付</a><a class="navlink" href="page-badfce4151ca.html" data-doc="doc-badfce4151ca" data-page="page-badfce4151ca.html" data-kind="exercise" data-lesson="L49">L49 · 一个程序中的多条执行路线：启动、等待与中断</a><a class="navlink" href="page-8979b18b3f9c.html" data-doc="doc-8979b18b3f9c" data-page="page-8979b18b3f9c.html" data-kind="exercise" data-lesson="L50">L50 · 线程是在等谁：状态、守护属性与失败报告</a><a class="navlink" href="page-52b7f6e8df75.html" data-doc="doc-52b7f6e8df75" data-page="page-52b7f6e8df75.html" data-kind="exercise" data-lesson="L51">L51 · 共享状态：先守住完整规则，再选择锁和条件</a><a class="navlink" href="page-fe413e1d95c0.html" data-doc="doc-fe413e1d95c0" data-page="page-fe413e1d95c0.html" data-kind="exercise" data-lesson="L52">L52 · 把数据交给谁：阻塞队列、原子更新与并发容器</a><a class="navlink" href="page-a0cc48ef56f4.html" data-doc="doc-a0cc48ef56f4" data-page="page-a0cc48ef56f4.html" data-kind="exercise" data-lesson="L53">L53 · 任务有结果以后：Future、执行器、组合与界面后台工作</a><a class="navlink" href="page-fbe647104da7.html" data-doc="doc-fbe647104da7" data-page="page-fbe647104da7.html" data-kind="exercise" data-lesson="L54">L54 · 全书综合：把规则、文件、后台报告装进一个可交付项目</a><div class="navlabel">参考答案 · 先独立作答</div><a class="navlink" href="page-8ac64aceb665.html" data-doc="doc-8ac64aceb665" data-page="page-8ac64aceb665.html" data-kind="answers" data-lesson="L01">L01 · 认识 Java 与程序运行</a><a class="navlink" href="page-702232ba7bff.html" data-doc="doc-702232ba7bff" data-page="page-702232ba7bff.html" data-kind="answers" data-lesson="L02">L02 · 编译、运行与读报错</a><a class="navlink" href="page-2184b08c58ad.html" data-doc="doc-2184b08c58ad" data-page="page-2184b08c58ad.html" data-kind="answers" data-lesson="S01">S01 · 文件里为什么要套class和main</a><a class="navlink" href="page-c068f2bbb9af.html" data-doc="doc-c068f2bbb9af" data-page="page-c068f2bbb9af.html" data-kind="answers" data-lesson="L03">L03 · 程序结构、变量与类型</a><a class="navlink" href="page-f0ad7e277387.html" data-doc="doc-f0ad7e277387" data-page="page-f0ad7e277387.html" data-kind="answers" data-lesson="L04">L04 · 运算符与类型转换</a><a class="navlink" href="page-d18bec83d313.html" data-doc="doc-d18bec83d313" data-page="page-d18bec83d313.html" data-kind="answers" data-lesson="S02">S02 · 类、对象、变量和new到底是谁</a><a class="navlink" href="page-21329cb1f07a.html" data-doc="doc-21329cb1f07a" data-page="page-21329cb1f07a.html" data-kind="answers" data-lesson="L05">L05 · 字符串与文本处理</a><a class="navlink" href="page-1d5374d4cbf3.html" data-doc="doc-1d5374d4cbf3" data-page="page-1d5374d4cbf3.html" data-kind="answers" data-lesson="L06">L06 · 键盘输入、格式化与文件</a><a class="navlink" href="page-c1f9ec907b08.html" data-doc="doc-c1f9ec907b08" data-page="page-c1f9ec907b08.html" data-kind="answers" data-lesson="L07">L07 · 程序如何作选择</a><a class="navlink" href="page-af8cd7604511.html" data-doc="doc-af8cd7604511" data-page="page-af8cd7604511.html" data-kind="answers" data-lesson="L08">L08 · 让程序重复做事</a><a class="navlink" href="page-8cff2b23cfcc.html" data-doc="doc-8cff2b23cfcc" data-page="page-8cff2b23cfcc.html" data-kind="answers" data-lesson="L09">L09 · switch、循环跳转与大数值</a><a class="navlink" href="page-4a36dc3be0b6.html" data-doc="doc-4a36dc3be0b6" data-page="page-4a36dc3be0b6.html" data-kind="answers" data-lesson="L10">L10 · 数组与成绩统计器</a><a class="navlink" href="page-b0534e20c53b.html" data-doc="doc-b0534e20c53b" data-page="page-b0534e20c53b.html" data-kind="answers" data-lesson="S03">S03 · 字段、构造器、this、static与方法参数</a><a class="navlink" href="page-d03973535ad4.html" data-doc="doc-d03973535ad4" data-page="page-d03973535ad4.html" data-kind="answers" data-lesson="S04">S04 · 多个文件怎样组成程序：package、import与classpath</a><a class="navlink" href="page-fdc65757ba69.html" data-doc="doc-fdc65757ba69" data-page="page-fdc65757ba69.html" data-kind="answers" data-lesson="S05">S05 · JAR是什么：把程序装箱，再找到入口</a><a class="navlink" href="page-b1b954c3d4f0.html" data-doc="doc-b1b954c3d4f0" data-page="page-b1b954c3d4f0.html" data-kind="answers" data-lesson="S06">S06 · 库JAR、资源与真实项目目录</a><a class="navlink" href="page-8a546ad3b54c.html" data-doc="doc-8a546ad3b54c" data-page="page-8a546ad3b54c.html" data-kind="answers" data-lesson="L11">L11 · 对象行为、日期API与不可变值</a><a class="navlink" href="page-9673553737b6.html" data-doc="doc-9673553737b6" data-page="page-9673553737b6.html" data-kind="answers" data-lesson="L12">L12 · 封装：把数据规则放进自定义类</a><a class="navlink" href="page-ef2893acadf8.html" data-doc="doc-ef2893acadf8" data-page="page-ef2893acadf8.html" data-kind="answers" data-lesson="L13">L13 · 静态成员与工厂：谁属于整类</a><a class="navlink" href="page-287e958fcdae.html" data-doc="doc-287e958fcdae" data-page="page-287e958fcdae.html" data-kind="answers" data-lesson="L14">L14 · 按值传参：改对象与换变量是两回事</a><a class="navlink" href="page-23afb86dad40.html" data-doc="doc-23afb86dad40" data-page="page-23afb86dad40.html" data-kind="answers" data-lesson="L15">L15 · 构造器：多种入口，同一套有效状态</a><a class="navlink" href="page-e4979df9413f.html" data-doc="doc-e4979df9413f" data-page="page-e4979df9413f.html" data-kind="answers" data-lesson="L16">L16 · 初始化次序与资源生存：出生和收尾分开</a><a class="navlink" href="page-2cdc42b2eda9.html" data-doc="doc-2cdc42b2eda9" data-page="page-2cdc42b2eda9.html" data-kind="answers" data-lesson="L17">L17 · 包访问边界、类路径与Javadoc</a><a class="navlink" href="page-b8a15ce36bbe.html" data-doc="doc-b8a15ce36bbe" data-page="page-b8a15ce36bbe.html" data-kind="answers" data-lesson="L18">L18 · 阶段项目：由对象规则设计学习计划</a><a class="navlink" href="page-6f6d6a280325.html" data-doc="doc-6f6d6a280325" data-page="page-6f6d6a280325.html" data-kind="answers" data-lesson="L19">L19 · 继承、覆盖与子类构造：先证明是一种</a><a class="navlink" href="page-f33d28a0e675.html" data-doc="doc-f33d28a0e675" data-page="page-f33d28a0e675.html" data-kind="answers" data-lesson="L20">L20 · 多态：声明类型管入口，实际类型管覆盖实现</a><a class="navlink" href="page-e929753e6454.html" data-doc="doc-e929753e6454" data-page="page-e929753e6454.html" data-kind="answers" data-lesson="L21">L21 · Object：身份、相等、散列与显示各管什么</a><a class="navlink" href="page-211c7c0d4c66.html" data-doc="doc-211c7c0d4c66" data-page="page-211c7c0d4c66.html" data-kind="answers" data-lesson="L22">L22 · ArrayList与包装类型：容量不是已有元素</a><a class="navlink" href="page-3d653038be9d.html" data-doc="doc-3d653038be9d" data-page="page-3d653038be9d.html" data-kind="answers" data-lesson="L23">L23 · 可变参数与枚举：一组输入和一组合法状态</a><a class="navlink" href="page-4b9d7ec12c35.html" data-doc="doc-4b9d7ec12c35" data-page="page-4b9d7ec12c35.html" data-kind="answers" data-lesson="L24">L24 · 反射：先拿类型说明，再有边界地操作</a><a class="navlink" href="page-795f97e03166.html" data-doc="doc-795f97e03166" data-page="page-795f97e03166.html" data-kind="answers" data-lesson="L25">L25 · 接口：约定能力，再选择实现</a><a class="navlink" href="page-b7872e4b302a.html" data-doc="doc-b7872e4b302a" data-page="page-b7872e4b302a.html" data-kind="answers" data-lesson="L26">L26 · 回调、比较器与克隆：传动作和复制状态分开</a><a class="navlink" href="page-e2e6f5353bf2.html" data-doc="doc-e2e6f5353bf2" data-page="page-e2e6f5353bf2.html" data-kind="answers" data-lesson="L27">L27 · Lambda：把一个动作交出去，何时执行由调用决定</a><a class="navlink" href="page-f54ae487bc86.html" data-doc="doc-f54ae487bc86" data-page="page-f54ae487bc86.html" data-kind="answers" data-lesson="L28">L28 · 内部类：名字写在里面，对象和引用还要分别画</a><a class="navlink" href="page-e3090b4f0906.html" data-doc="doc-e3090b4f0906" data-page="page-e3090b4f0906.html" data-kind="answers" data-lesson="L29">L29 · 动态代理：把一次接口调用经过的路走清楚</a><a class="navlink" href="page-0b21f9997815.html" data-doc="doc-0b21f9997815" data-page="page-0b21f9997815.html" data-kind="answers" data-lesson="L30">L30 · 异常：正常结果交不出时，沿另一条路线报告</a><a class="navlink" href="page-cbe62aee5874.html" data-doc="doc-cbe62aee5874" data-page="page-cbe62aee5874.html" data-kind="answers" data-lesson="L31">L31 · 捕获、finally与自动关闭：正常和失败两条路都走</a><a class="navlink" href="page-48f39637b674.html" data-doc="doc-48f39637b674" data-page="page-48f39637b674.html" data-kind="answers" data-lesson="L32">L32 · 断言、日志与调试：让问题留下能核对的证据</a><a class="navlink" href="page-3ba4f84b076e.html" data-doc="doc-3ba4f84b076e" data-page="page-3ba4f84b076e.html" data-kind="answers" data-lesson="L33">L33 · 泛型：类型填空，而不是到处强转</a><a class="navlink" href="page-64c417745a2f.html" data-doc="doc-64c417745a2f" data-page="page-64c417745a2f.html" data-kind="answers" data-lesson="L34">L34 · 擦除与桥接：编译期的约定，运行期保留什么</a><a class="navlink" href="page-b927db432046.html" data-doc="doc-b927db432046" data-page="page-b927db432046.html" data-kind="answers" data-lesson="L35">L35 · 通配符：不确定的元素类型，仍然能安全合作</a><a class="navlink" href="page-df102638d536.html" data-doc="doc-df102638d536" data-page="page-df102638d536.html" data-kind="answers" data-lesson="L36">L36 · 集合与迭代器：走过一个元素，再决定是否删除</a><a class="navlink" href="page-dbfc35586609.html" data-doc="doc-dbfc35586609" data-page="page-dbfc35586609.html" data-kind="answers" data-lesson="L37">L37 · Set与队列：去重、顺序、优先级是不同约定</a><a class="navlink" href="page-7d593ae7e61b.html" data-doc="doc-7d593ae7e61b" data-page="page-7d593ae7e61b.html" data-kind="answers" data-lesson="L38">L38 · Map：按键找值，更新与视图要看共享关系</a><a class="navlink" href="page-fc1a9d5ae1c5.html" data-doc="doc-fc1a9d5ae1c5" data-page="page-fc1a9d5ae1c5.html" data-kind="answers" data-lesson="L39">L39 · 视图与算法：看起来是列表，修改能力却不一样</a><a class="navlink" href="page-ec1d53706200.html" data-doc="doc-ec1d53706200" data-page="page-ec1d53706200.html" data-kind="answers" data-lesson="L40">L40 · Swing起步：窗口、内容组件与事件线程</a><a class="navlink" href="page-bc5639a4a49d.html" data-doc="doc-bc5639a4a49d" data-page="page-bc5639a4a49d.html" data-kind="answers" data-lesson="L41">L41 · Java 2D：坐标、画笔、文字基线与图像</a><a class="navlink" href="page-13ee36b440f5.html" data-doc="doc-13ee36b440f5" data-page="page-13ee36b440f5.html" data-kind="answers" data-lesson="L42">L42 · 事件：先注册动作，再沿通知路线改变状态</a><a class="navlink" href="page-225b3f153d75.html" data-doc="doc-225b3f153d75" data-page="page-225b3f153d75.html" data-kind="answers" data-lesson="L43">L43 · 表单基础：模型、布局、文本与选择控件</a><a class="navlink" href="page-1dfd13428be0.html" data-doc="doc-1dfd13428be0" data-page="page-1dfd13428be0.html" data-kind="answers" data-lesson="L44">L44 · 菜单、共享动作与复杂布局：同一操作，多处入口</a><a class="navlink" href="page-b6e5f53d8a48.html" data-doc="doc-b6e5f53d8a48" data-page="page-b6e5f53d8a48.html" data-kind="answers" data-lesson="L45">L45 · 对话框：先分清确认、取消与真正提交</a><a class="navlink" href="page-9122333d99ce.html" data-doc="doc-9122333d99ce" data-page="page-9122333d99ce.html" data-kind="answers" data-lesson="L46">L46 · 交付一个能搬走的程序：JAR清单、资源与密封</a><a class="navlink" href="page-3695e709e654.html" data-doc="doc-3695e709e654" data-page="page-3695e709e654.html" data-kind="answers" data-lesson="L47">L47 · 配置不是代码：默认值、首选项与插件发现</a><a class="navlink" href="page-28f862b5f2a6.html" data-doc="doc-28f862b5f2a6" data-page="page-28f862b5f2a6.html" data-kind="answers" data-lesson="L48">L48 · 读懂旧部署，完成今天的独立应用交付</a><a class="navlink" href="page-c0aba21ca071.html" data-doc="doc-c0aba21ca071" data-page="page-c0aba21ca071.html" data-kind="answers" data-lesson="L49">L49 · 一个程序中的多条执行路线：启动、等待与中断</a><a class="navlink" href="page-a19bcaf126c1.html" data-doc="doc-a19bcaf126c1" data-page="page-a19bcaf126c1.html" data-kind="answers" data-lesson="L50">L50 · 线程是在等谁：状态、守护属性与失败报告</a><a class="navlink" href="page-6f365ddef389.html" data-doc="doc-6f365ddef389" data-page="page-6f365ddef389.html" data-kind="answers" data-lesson="L51">L51 · 共享状态：先守住完整规则，再选择锁和条件</a><a class="navlink" href="page-5b21ef33e559.html" data-doc="doc-5b21ef33e559" data-page="page-5b21ef33e559.html" data-kind="answers" data-lesson="L52">L52 · 把数据交给谁：阻塞队列、原子更新与并发容器</a><a class="navlink" href="page-2756e6ac633d.html" data-doc="doc-2756e6ac633d" data-page="page-2756e6ac633d.html" data-kind="answers" data-lesson="L53">L53 · 任务有结果以后：Future、执行器、组合与界面后台工作</a><a class="navlink" href="page-e278d9daf42f.html" data-doc="doc-e278d9daf42f" data-page="page-e278d9daf42f.html" data-kind="answers" data-lesson="L54">L54 · 全书综合：把规则、文件、后台报告装进一个可交付项目</a><div class="navlabel">示例代码与运行命令</div><a class="navlink" href="page-88947e1a9eb7.html" data-doc="doc-88947e1a9eb7" data-page="page-88947e1a9eb7.html" data-kind="code" data-lesson="L01">L01 · 认识 Java 与程序运行</a><a class="navlink" href="page-8dc288399ce5.html" data-doc="doc-8dc288399ce5" data-page="page-8dc288399ce5.html" data-kind="code" data-lesson="L02">L02 · 编译、运行与读报错</a><a class="navlink" href="page-b2bb7e2f7933.html" data-doc="doc-b2bb7e2f7933" data-page="page-b2bb7e2f7933.html" data-kind="code" data-lesson="S01">S01 · 文件里为什么要套class和main</a><a class="navlink" href="page-d9c576e49900.html" data-doc="doc-d9c576e49900" data-page="page-d9c576e49900.html" data-kind="code" data-lesson="L03">L03 · 程序结构、变量与类型</a><a class="navlink" href="page-8083ebb8dc8a.html" data-doc="doc-8083ebb8dc8a" data-page="page-8083ebb8dc8a.html" data-kind="code" data-lesson="L04">L04 · 运算符与类型转换</a><a class="navlink" href="page-b0c1e185ccc1.html" data-doc="doc-b0c1e185ccc1" data-page="page-b0c1e185ccc1.html" data-kind="code" data-lesson="S02">S02 · 类、对象、变量和new到底是谁</a><a class="navlink" href="page-d9dddbc70e06.html" data-doc="doc-d9dddbc70e06" data-page="page-d9dddbc70e06.html" data-kind="code" data-lesson="L05">L05 · 字符串与文本处理</a><a class="navlink" href="page-6d5a15d068b7.html" data-doc="doc-6d5a15d068b7" data-page="page-6d5a15d068b7.html" data-kind="code" data-lesson="L06">L06 · 键盘输入、格式化与文件</a><a class="navlink" href="page-16bbc7816c2e.html" data-doc="doc-16bbc7816c2e" data-page="page-16bbc7816c2e.html" data-kind="code" data-lesson="L07">L07 · 程序如何作选择</a><a class="navlink" href="page-539c04050fe3.html" data-doc="doc-539c04050fe3" data-page="page-539c04050fe3.html" data-kind="code" data-lesson="L08">L08 · 让程序重复做事</a><a class="navlink" href="page-a8fac8cdd2df.html" data-doc="doc-a8fac8cdd2df" data-page="page-a8fac8cdd2df.html" data-kind="code" data-lesson="L09">L09 · switch、循环跳转与大数值</a><a class="navlink" href="page-b1915ed3b0b5.html" data-doc="doc-b1915ed3b0b5" data-page="page-b1915ed3b0b5.html" data-kind="code" data-lesson="L10">L10 · 数组与成绩统计器</a><a class="navlink" href="page-719d97a1566c.html" data-doc="doc-719d97a1566c" data-page="page-719d97a1566c.html" data-kind="code" data-lesson="S03">S03 · 字段、构造器、this、static与方法参数</a><a class="navlink" href="page-ef3878a507dd.html" data-doc="doc-ef3878a507dd" data-page="page-ef3878a507dd.html" data-kind="code" data-lesson="S04">S04 · 多个文件怎样组成程序：package、import与classpath</a><a class="navlink" href="page-fb0a10271c89.html" data-doc="doc-fb0a10271c89" data-page="page-fb0a10271c89.html" data-kind="code" data-lesson="S05">S05 · JAR是什么：把程序装箱，再找到入口</a><a class="navlink" href="page-26bc1e6eae6d.html" data-doc="doc-26bc1e6eae6d" data-page="page-26bc1e6eae6d.html" data-kind="code" data-lesson="S06">S06 · 库JAR、资源与真实项目目录</a><a class="navlink" href="page-3477fe710a50.html" data-doc="doc-3477fe710a50" data-page="page-3477fe710a50.html" data-kind="code" data-lesson="L11">L11 · 对象行为、日期API与不可变值</a><a class="navlink" href="page-5b64d7760027.html" data-doc="doc-5b64d7760027" data-page="page-5b64d7760027.html" data-kind="code" data-lesson="L12">L12 · 封装：把数据规则放进自定义类</a><a class="navlink" href="page-2ba20b846133.html" data-doc="doc-2ba20b846133" data-page="page-2ba20b846133.html" data-kind="code" data-lesson="L13">L13 · 静态成员与工厂：谁属于整类</a><a class="navlink" href="page-8ce9222d41ec.html" data-doc="doc-8ce9222d41ec" data-page="page-8ce9222d41ec.html" data-kind="code" data-lesson="L14">L14 · 按值传参：改对象与换变量是两回事</a><a class="navlink" href="page-18cedd886076.html" data-doc="doc-18cedd886076" data-page="page-18cedd886076.html" data-kind="code" data-lesson="L15">L15 · 构造器：多种入口，同一套有效状态</a><a class="navlink" href="page-2a2b65cd20ac.html" data-doc="doc-2a2b65cd20ac" data-page="page-2a2b65cd20ac.html" data-kind="code" data-lesson="L16">L16 · 初始化次序与资源生存：出生和收尾分开</a><a class="navlink" href="page-17742578f7c9.html" data-doc="doc-17742578f7c9" data-page="page-17742578f7c9.html" data-kind="code" data-lesson="L17">L17 · 包访问边界、类路径与Javadoc</a><a class="navlink" href="page-cc84ffaeaa16.html" data-doc="doc-cc84ffaeaa16" data-page="page-cc84ffaeaa16.html" data-kind="code" data-lesson="L18">L18 · 阶段项目：由对象规则设计学习计划</a><a class="navlink" href="page-263ffd0165d3.html" data-doc="doc-263ffd0165d3" data-page="page-263ffd0165d3.html" data-kind="code" data-lesson="L19">L19 · 继承、覆盖与子类构造：先证明是一种</a><a class="navlink" href="page-2c4fa57ff7aa.html" data-doc="doc-2c4fa57ff7aa" data-page="page-2c4fa57ff7aa.html" data-kind="code" data-lesson="L20">L20 · 多态：声明类型管入口，实际类型管覆盖实现</a><a class="navlink" href="page-0e2f7bffdfa4.html" data-doc="doc-0e2f7bffdfa4" data-page="page-0e2f7bffdfa4.html" data-kind="code" data-lesson="L21">L21 · Object：身份、相等、散列与显示各管什么</a><a class="navlink" href="page-0cb5171199ad.html" data-doc="doc-0cb5171199ad" data-page="page-0cb5171199ad.html" data-kind="code" data-lesson="L22">L22 · ArrayList与包装类型：容量不是已有元素</a><a class="navlink" href="page-23fda07e3589.html" data-doc="doc-23fda07e3589" data-page="page-23fda07e3589.html" data-kind="code" data-lesson="L23">L23 · 可变参数与枚举：一组输入和一组合法状态</a><a class="navlink" href="page-9cf1243ed8e3.html" data-doc="doc-9cf1243ed8e3" data-page="page-9cf1243ed8e3.html" data-kind="code" data-lesson="L24">L24 · 反射：先拿类型说明，再有边界地操作</a><a class="navlink" href="page-8f96f943f2f5.html" data-doc="doc-8f96f943f2f5" data-page="page-8f96f943f2f5.html" data-kind="code" data-lesson="L25">L25 · 接口：约定能力，再选择实现</a><a class="navlink" href="page-4d4497e3d69e.html" data-doc="doc-4d4497e3d69e" data-page="page-4d4497e3d69e.html" data-kind="code" data-lesson="L26">L26 · 回调、比较器与克隆：传动作和复制状态分开</a><a class="navlink" href="page-0b95b10fafbe.html" data-doc="doc-0b95b10fafbe" data-page="page-0b95b10fafbe.html" data-kind="code" data-lesson="L27">L27 · Lambda：把一个动作交出去，何时执行由调用决定</a><a class="navlink" href="page-ec2ae888e9ea.html" data-doc="doc-ec2ae888e9ea" data-page="page-ec2ae888e9ea.html" data-kind="code" data-lesson="L28">L28 · 内部类：名字写在里面，对象和引用还要分别画</a><a class="navlink" href="page-150e73587e87.html" data-doc="doc-150e73587e87" data-page="page-150e73587e87.html" data-kind="code" data-lesson="L29">L29 · 动态代理：把一次接口调用经过的路走清楚</a><a class="navlink" href="page-ccf5f25340bf.html" data-doc="doc-ccf5f25340bf" data-page="page-ccf5f25340bf.html" data-kind="code" data-lesson="L30">L30 · 异常：正常结果交不出时，沿另一条路线报告</a><a class="navlink" href="page-79d7aa40c818.html" data-doc="doc-79d7aa40c818" data-page="page-79d7aa40c818.html" data-kind="code" data-lesson="L31">L31 · 捕获、finally与自动关闭：正常和失败两条路都走</a><a class="navlink" href="page-9b802b2349b9.html" data-doc="doc-9b802b2349b9" data-page="page-9b802b2349b9.html" data-kind="code" data-lesson="L32">L32 · 断言、日志与调试：让问题留下能核对的证据</a><a class="navlink" href="page-4401407881e7.html" data-doc="doc-4401407881e7" data-page="page-4401407881e7.html" data-kind="code" data-lesson="L33">L33 · 泛型：类型填空，而不是到处强转</a><a class="navlink" href="page-547eda2cdf7f.html" data-doc="doc-547eda2cdf7f" data-page="page-547eda2cdf7f.html" data-kind="code" data-lesson="L34">L34 · 擦除与桥接：编译期的约定，运行期保留什么</a><a class="navlink" href="page-50e4dbfb71d5.html" data-doc="doc-50e4dbfb71d5" data-page="page-50e4dbfb71d5.html" data-kind="code" data-lesson="L35">L35 · 通配符：不确定的元素类型，仍然能安全合作</a><a class="navlink" href="page-601f067ec7ea.html" data-doc="doc-601f067ec7ea" data-page="page-601f067ec7ea.html" data-kind="code" data-lesson="L36">L36 · 集合与迭代器：走过一个元素，再决定是否删除</a><a class="navlink" href="page-1ae6d08c0bab.html" data-doc="doc-1ae6d08c0bab" data-page="page-1ae6d08c0bab.html" data-kind="code" data-lesson="L37">L37 · Set与队列：去重、顺序、优先级是不同约定</a><a class="navlink" href="page-17e29e3c7d6a.html" data-doc="doc-17e29e3c7d6a" data-page="page-17e29e3c7d6a.html" data-kind="code" data-lesson="L38">L38 · Map：按键找值，更新与视图要看共享关系</a><a class="navlink" href="page-7ba892cc6817.html" data-doc="doc-7ba892cc6817" data-page="page-7ba892cc6817.html" data-kind="code" data-lesson="L39">L39 · 视图与算法：看起来是列表，修改能力却不一样</a><a class="navlink" href="page-5a5b38cceb86.html" data-doc="doc-5a5b38cceb86" data-page="page-5a5b38cceb86.html" data-kind="code" data-lesson="L40">L40 · Swing起步：窗口、内容组件与事件线程</a><a class="navlink" href="page-b160f6d433c5.html" data-doc="doc-b160f6d433c5" data-page="page-b160f6d433c5.html" data-kind="code" data-lesson="L41">L41 · Java 2D：坐标、画笔、文字基线与图像</a><a class="navlink" href="page-deb15ddedd4b.html" data-doc="doc-deb15ddedd4b" data-page="page-deb15ddedd4b.html" data-kind="code" data-lesson="L42">L42 · 事件：先注册动作，再沿通知路线改变状态</a><a class="navlink" href="page-06e48164e975.html" data-doc="doc-06e48164e975" data-page="page-06e48164e975.html" data-kind="code" data-lesson="L43">L43 · 表单基础：模型、布局、文本与选择控件</a><a class="navlink" href="page-af8e63185fc7.html" data-doc="doc-af8e63185fc7" data-page="page-af8e63185fc7.html" data-kind="code" data-lesson="L44">L44 · 菜单、共享动作与复杂布局：同一操作，多处入口</a><a class="navlink" href="page-1e2f4a672384.html" data-doc="doc-1e2f4a672384" data-page="page-1e2f4a672384.html" data-kind="code" data-lesson="L45">L45 · 对话框：先分清确认、取消与真正提交</a><a class="navlink" href="page-bfaeba76dd51.html" data-doc="doc-bfaeba76dd51" data-page="page-bfaeba76dd51.html" data-kind="code" data-lesson="L46">L46 · 交付一个能搬走的程序：JAR清单、资源与密封</a><a class="navlink" href="page-923654b84ffa.html" data-doc="doc-923654b84ffa" data-page="page-923654b84ffa.html" data-kind="code" data-lesson="L47">L47 · 配置不是代码：默认值、首选项与插件发现</a><a class="navlink" href="page-44917deb11df.html" data-doc="doc-44917deb11df" data-page="page-44917deb11df.html" data-kind="code" data-lesson="L48">L48 · 读懂旧部署，完成今天的独立应用交付</a><a class="navlink" href="page-4e545fdfe3e5.html" data-doc="doc-4e545fdfe3e5" data-page="page-4e545fdfe3e5.html" data-kind="code" data-lesson="L49">L49 · 一个程序中的多条执行路线：启动、等待与中断</a><a class="navlink" href="page-1b41043ca5a5.html" data-doc="doc-1b41043ca5a5" data-page="page-1b41043ca5a5.html" data-kind="code" data-lesson="L50">L50 · 线程是在等谁：状态、守护属性与失败报告</a><a class="navlink" href="page-545cf9e07d36.html" data-doc="doc-545cf9e07d36" data-page="page-545cf9e07d36.html" data-kind="code" data-lesson="L51">L51 · 共享状态：先守住完整规则，再选择锁和条件</a><a class="navlink" href="page-06bcbce3b9de.html" data-doc="doc-06bcbce3b9de" data-page="page-06bcbce3b9de.html" data-kind="code" data-lesson="L52">L52 · 把数据交给谁：阻塞队列、原子更新与并发容器</a><a class="navlink" href="page-fc9e989408ec.html" data-doc="doc-fc9e989408ec" data-page="page-fc9e989408ec.html" data-kind="code" data-lesson="L53">L53 · 任务有结果以后：Future、执行器、组合与界面后台工作</a><a class="navlink" href="page-5e9a1d2426f8.html" data-doc="doc-5e9a1d2426f8" data-page="page-5e9a1d2426f8.html" data-kind="code" data-lesson="L54">L54 · 全书综合：把规则、文件、后台报告装进一个可交付项目</a><div class="navlabel">查阅与接续</div><a class="navlink" href="page-0ef3cebffbed.html" data-doc="doc-0ef3cebffbed" data-page="page-0ef3cebffbed.html" data-kind="guide" data-lesson="">全书路线 · 60单元</a><a class="navlink" href="page-fea294d77afe.html" data-doc="doc-fea294d77afe" data-page="page-fea294d77afe.html" data-kind="guide" data-lesson="">447条教材索引</a><a class="navlink" href="page-32d80fdb4bb7.html" data-doc="doc-32d80fdb4bb7" data-page="page-32d80fdb4bb7.html" data-kind="guide" data-lesson="">AI批改与进度追踪</a><a class="navlink" href="page-e8601bdcb726.html" data-doc="doc-e8601bdcb726" data-page="page-e8601bdcb726.html" data-kind="guide" data-lesson="">个人进度模板</a><a class="navlink" href="page-7def9b47aa03.html" data-doc="doc-7def9b47aa03" data-page="page-7def9b47aa03.html" data-kind="guide" data-lesson="">维护与打包</a><a class="navlink" href="page-c776ae1256e8.html" data-doc="doc-c776ae1256e8" data-page="page-c776ae1256e8.html" data-kind="guide" data-lesson="">课程设计与C++对照</a><a class="navlink" href="page-a54ff182c7e8.html" data-doc="doc-a54ff182c7e8" data-page="page-a54ff182c7e8.html" data-kind="guide" data-lesson="">课程写作约定</a><div class="navlabel">连续阅读 · 可选</div><a class="navlink" href="全一册.html" data-doc="combined" data-page="全一册.html" data-kind="combined" data-lesson="">全一册（连续阅读）</a></nav><p class="side-note">按课阅读，逐项练习。<br>个人作答直接写入练习.md。<br>教材PDF需自备。</p></aside><main><article><div class="crumb">Java入门课程 / 按课学习</div><span class="edition">全书陪读 · 60单元 · 双页码</span><nav class="lesson-tabs" aria-label="本课内容切换"><a href="l41-lesson.html" aria-current="page">讲义</a><a href="page-b160f6d433c5.html">示例</a><a href="page-d6f2626eea1b.html">练习</a><a href="page-bc5639a4a49d.html">参考答案</a></nav><h1 id="l41-讲义-java-2d坐标画笔文字基线与图像">L41 讲义 · Java 2D：坐标、画笔、文字基线与图像</h1><details class="page-toc"><summary>本页目录</summary><div class="toc">
+<ul>
+<li><a href="l41-lesson.html#学完要能做什么">学完要能做什么</a></li>
+<li><a href="l41-lesson.html#1-形状对象不是画面drawfill与画笔状态">1. 形状对象不是画面：draw、fill与画笔状态</a></li>
+<li><a href="l41-lesson.html#2-四个参数与外接矩形float和double到底差在哪">2. 四个参数与外接矩形：Float和Double到底差在哪</a></li>
+<li><a href="l41-lesson.html#3-只知道对角或中心时先规范化再画">3. 只知道对角或中心时：先规范化，再画</a></li>
+<li><a href="l41-lesson.html#4-颜色只作用于后续绘制fill与draw还差一像素">4. 颜色只作用于后续绘制：fill与draw还差一像素</a></li>
+<li><a href="l41-lesson.html#5-文字放在基线上fontderivefont与居中">5. 文字放在基线上：Font、deriveFont与居中</a></li>
+<li><a href="l41-lesson.html#6-图像先证明读进来了再谈平铺">6. 图像：先证明读进来了，再谈平铺</a></li>
+<li><a href="l41-lesson.html#7-运行与排错">7. 运行与排错</a></li>
+<li><a href="l41-lesson.html#教材深化">教材深化</a></li>
+<li><a href="l41-lesson.html#独立练习与过关">独立练习与过关</a></li>
+</ul>
+</div>
+</details>
+<blockquote>
+<p>前置：L40 Swing窗口与paintComponent；L20 多态与声明类型；L28 静态嵌套类
+教材主线：10.5–10.8；<strong>书本 p419–438 / PDF p437–456</strong>。讲解、类比、案例与练习均为课程原创。</p>
+</blockquote>
+<h2 id="学完要能做什么">学完要能做什么</h2>
+<p>能用 <code>Graphics2D</code> 画轮廓和填充，说清形状的四个参数分别是什么；能解释 <code>Rectangle2D.Float</code> 与 <code>Rectangle2D.Double</code> 的关系；能从任意两个对角或“中心加一个角”正确构造图形；能说明 <code>setColor</code> 只影响后续绘制，以及 <code>fill</code> 与 <code>draw</code> 在边界上的差别；能按基线而不是字框顶部放置文字，并用字体度量把文字居中；能判断图像到底有没有读成功，再安全地平铺。</p>
+<p>本课有九个可运行样本，按顺序看，不要一次全跑：</p>
+<table>
+<thead>
+<tr>
+<th>文件</th>
+<th>本次只观察什么</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../L41_%E7%AC%AC10%E7%AB%A0B_%E5%9B%BE%E5%BD%A2%E6%96%87%E5%AD%97%E4%B8%8E%E5%9B%BE%E5%83%8F/code/ShapePaintLab.java">ShapePaintLab.java</a></td>
+<td>形状对象、画笔状态与实际像素是三层</td>
+</tr>
+<tr>
+<td><a href="../L41_%E7%AC%AC10%E7%AB%A0B_%E5%9B%BE%E5%BD%A2%E6%96%87%E5%AD%97%E4%B8%8E%E5%9B%BE%E5%83%8F/code/RectParamsProbe.java">RectParamsProbe.java</a></td>
+<td>四个参数、外接框、<code>Float</code> 与 <code>Double</code></td>
+</tr>
+<tr>
+<td><a href="../L41_%E7%AC%AC10%E7%AB%A0B_%E5%9B%BE%E5%BD%A2%E6%96%87%E5%AD%97%E4%B8%8E%E5%9B%BE%E5%83%8F/code/DiagonalRectangle.java">DiagonalRectangle.java</a></td>
+<td>两个对角点如何规范化成矩形</td>
+</tr>
+<tr>
+<td><a href="../L41_%E7%AC%AC10%E7%AB%A0B_%E5%9B%BE%E5%BD%A2%E6%96%87%E5%AD%97%E4%B8%8E%E5%9B%BE%E5%83%8F/code/CircleFromCenter.java">CircleFromCenter.java</a></td>
+<td>中心加一点构造圆；负宽高为什么成空图</td>
+</tr>
+<tr>
+<td><a href="../L41_%E7%AC%AC10%E7%AB%A0B_%E5%9B%BE%E5%BD%A2%E6%96%87%E5%AD%97%E4%B8%8E%E5%9B%BE%E5%83%8F/code/FillVersusDrawPixels.java">FillVersusDrawPixels.java</a></td>
+<td><code>fill</code> 与 <code>draw</code> 在边界上的真实像素差别</td>
+</tr>
+<tr>
+<td><a href="../L41_%E7%AC%AC10%E7%AB%A0B_%E5%9B%BE%E5%BD%A2%E6%96%87%E5%AD%97%E4%B8%8E%E5%9B%BE%E5%83%8F/code/FontOverloadTrap.java">FontOverloadTrap.java</a></td>
+<td><code>deriveFont(14)</code> 与 <code>deriveFont(14.0f)</code> 选到不同重载</td>
+</tr>
+<tr>
+<td><a href="../L41_%E7%AC%AC10%E7%AB%A0B_%E5%9B%BE%E5%BD%A2%E6%96%87%E5%AD%97%E4%B8%8E%E5%9B%BE%E5%83%8F/code/TextBaselineMeasure.java">TextBaselineMeasure.java</a></td>
+<td>基线、度量框与居中公式</td>
+</tr>
+<tr>
+<td><a href="../L41_%E7%AC%AC10%E7%AB%A0B_%E5%9B%BE%E5%BD%A2%E6%96%87%E5%AD%97%E4%B8%8E%E5%9B%BE%E5%83%8F/code/PositiveTileImage.java">PositiveTileImage.java</a></td>
+<td>图像读入、正尺寸检查与平铺循环</td>
+</tr>
+<tr>
+<td><a href="../L41_%E7%AC%AC10%E7%AB%A0B_%E5%9B%BE%E5%BD%A2%E6%96%87%E5%AD%97%E4%B8%8E%E5%9B%BE%E5%83%8F/code/ImageLoadBoundary.java">ImageLoadBoundary.java</a></td>
+<td>“没有解码器”与“文件打不开”是两种失败</td>
+</tr>
+</tbody>
+</table>
+<h2 id="1-形状对象不是画面drawfill与画笔状态">1. 形状对象不是画面：draw、fill与画笔状态</h2>
+<p><code>Rectangle2D</code> 对象里只有坐标和宽高，它不包含颜色，也不等于屏幕上的那块红色。真正把形状变成像素的，是 <code>Graphics2D</code> 的 <code>draw</code>（描边）或 <code>fill</code>（填内部）。教材 p420 的说法是：先创建一个实现了 <code>Shape</code> 接口的对象，再调用 <code>Graphics2D.draw</code>。</p>
+<p>像手里有一张画好尺寸的图纸：图纸本身不显示，得拿笔在展示板上描出来。类比边界是：<code>Graphics2D</code> 不只是“笔”，它还保存颜色、字体、裁剪区等一组状态；这些状态不会跟着形状对象走。</p>
+<pre><code class="language-java">import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.EventQueue;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.geom.Ellipse2D;
+import java.awt.geom.Rectangle2D;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+import java.io.UncheckedIOException;
+import javax.imageio.ImageIO;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+public class ShapePaintLab {
+    static class Scene extends JPanel {
+        private static final long serialVersionUID = 1L;
+        Scene() { setBackground(Color.WHITE); }
+        @Override public Dimension getPreferredSize() { return new Dimension(360, 220); }
+        @Override protected void paintComponent(Graphics g) {
+            super.paintComponent(g);
+            Graphics2D copy = (Graphics2D) g.create();
+            try {
+                copy.setColor(Color.RED); copy.fill(new Rectangle2D.Double(20, 20, 120, 70));
+                copy.setColor(Color.BLUE); copy.fill(new Ellipse2D.Double(180, 20, 120, 70));
+                copy.setColor(Color.BLACK); copy.drawLine(20, 130, 300, 130); copy.drawString(&quot;Java 2D&quot;, 20, 180);
+            } finally { copy.dispose(); }
+        }
+    }
+    public static void main(String[] args) throws Exception {
+        if (args.length &gt; 0 &amp;&amp; args[0].equals(&quot;--check&quot;)) {
+            EventQueue.invokeAndWait(() -&gt; {
+                Scene panel = new Scene(); panel.setSize(360, 220);
+                BufferedImage image = new BufferedImage(360, 220, BufferedImage.TYPE_INT_RGB);
+                Graphics2D g = image.createGraphics(); try { panel.printAll(g); } finally { g.dispose(); }
+                System.out.println(&quot;rectangle=&quot; + (image.getRGB(30, 30) == Color.RED.getRGB()));
+                System.out.println(&quot;ellipse=&quot; + (image.getRGB(240, 55) == Color.BLUE.getRGB()));
+                if (args.length &gt; 1) {
+                    try { ImageIO.write(image, &quot;png&quot;, new File(args[1])); }
+                    catch (IOException ex) { throw new UncheckedIOException(ex); }
+                }
+            });
+        } else EventQueue.invokeLater(() -&gt; {
+            JFrame frame = new JFrame(&quot;形状与坐标&quot;); frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            frame.add(new Scene()); frame.pack(); frame.setLocationByPlatform(true); frame.setVisible(true);
+        });
+    }
+}
+</code></pre>
+<p>无参数运行会打开窗口：左边红矩形，右边蓝椭圆，下方一条黑线和“Java 2D”文字。在课程根目录 PowerShell 运行：</p>
+<pre><code class="language-powershell">.\java.ps1 -Source './L41_第10章B_图形文字与图像/code/ShapePaintLab.java'
+</code></pre>
+<p><code>--check</code> 不建窗口，只在 EDT 里把面板画到内存图片上，检查两个内部像素：<code>rectangle=true</code>、<code>ellipse=true</code>。像素点选在图形内部，不选抗锯齿的边缘，因为边缘是混合色，不能拿来做固定值断言。</p>
+<table>
+<thead>
+<tr>
+<th>时刻</th>
+<th>画笔颜色</th>
+<th>动作</th>
+<th>结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>进入paintComponent</td>
+<td>默认</td>
+<td><code>super.paintComponent</code> 用背景铺底</td>
+<td>整块白</td>
+</tr>
+<tr>
+<td>第一次setColor</td>
+<td>RED</td>
+<td><code>fill</code> 左上(20,20)宽120高70</td>
+<td>左红块</td>
+</tr>
+<tr>
+<td>第二次setColor</td>
+<td>BLUE</td>
+<td><code>fill</code> 椭圆外接框(180,20,120,70)</td>
+<td>右蓝椭圆</td>
+</tr>
+<tr>
+<td>第三次setColor</td>
+<td>BLACK</td>
+<td>画线、画字</td>
+<td>前两块仍是原色</td>
+</tr>
+</tbody>
+</table>
+<p>第三行最能说明问题：把颜色改成黑色，并不会把已经画好的红矩形“重涂”成黑色；<code>setColor</code> 只改这支笔之后的行为。要换色重画，必须重绘整个区域并重新按顺序执行。</p>
+<p><code>g.create()</code> 复制一份当前绘制环境，<code>finally</code> 里 <code>dispose()</code> 释放副本；Swing 传进来的原 <code>g</code> 不能随手释放。这不是仪式：<code>create</code> 出来的副本带有独立的颜色、字体、裁剪状态，释放它不会破坏外面的绘制。</p>
+<p>只改一处的实验：把红矩形 <code>fill</code> 换成 <code>draw</code>，再看窗口——矩形只剩边框。再把检查点 (30,30) 换成边框上的 (20,20)，体会“内部点”和“边线点”不是一回事。</p>
+<p>独立小任务：在同一个面板里画第三个图形（例如一条从左上到右下的对角线），要求它在黑线之后仍保持自己的颜色；说明你的代码顺序为什么能得到这个结果。</p>
+<h2 id="2-四个参数与外接矩形float和double到底差在哪">2. 四个参数与外接矩形：Float和Double到底差在哪</h2>
+<p><code>new Rectangle2D.Double(x, y, w, h)</code> 的四个参数是：左上角 x、左上角 y、宽、高。<strong>不是</strong>左上角和右下角。教材 p421–423 反复强调这一点，因为一旦把右下角当参数传进去，宽高就变成负数，图形直接为空。</p>
+<pre><code class="language-java">import java.awt.geom.Rectangle2D;
+
+public class RectParamsProbe {
+    public static void main(String[] args) {
+        Rectangle2D.Double rect = new Rectangle2D.Double(100, 50, 80, 40);
+        System.out.println(&quot;x=&quot; + rect.getX() + &quot; y=&quot; + rect.getY());
+        System.out.println(&quot;w=&quot; + rect.getWidth() + &quot; h=&quot; + rect.getHeight());
+        System.out.println(&quot;maxX=&quot; + rect.getMaxX() + &quot; maxY=&quot; + rect.getMaxY());
+        System.out.println(&quot;center=&quot; + rect.getCenterX() + &quot;,&quot; + rect.getCenterY());
+        Rectangle2D upcast = new Rectangle2D.Float(100F, 50F, 80F, 40F);
+        System.out.println(&quot;float-width=&quot; + upcast.getWidth());
+        rect.setRect(0, 0, -80, -40);
+        System.out.println(&quot;empty=&quot; + rect.isEmpty());
+    }
+}
+</code></pre>
+<p>输出：</p>
+<pre><code class="language-text">x=100.0 y=50.0
+w=80.0 h=40.0
+maxX=180.0 maxY=90.0
+center=140.0,70.0
+float-width=80.0
+empty=true
+</code></pre>
+<p><code>maxX</code> 是 <code>x + w = 180</code>，它表示“右边界坐标”，不是“最后一个被填充的像素列”；第 4 节会看到 <code>fill</code> 实际只填到 179。<code>getCenterX</code> 是 <code>x + w/2</code>。</p>
+<p>最后两行是这节的重点：<code>upcast</code> 是 <code>Rectangle2D.Float</code> 对象，但声明成 <code>Rectangle2D</code>，<code>getWidth()</code> 仍返回 <code>double</code> 的 <code>80.0</code>。教材 p421 说得很清楚：<code>Rectangle2D</code> 的方法参数和返回值都是 <code>double</code>，即使对象内部用 <code>float</code> 存坐标。这就是为什么 <code>float f = rect.getWidth();</code> 编译不过，必须写 <code>(float) rect.getWidth()</code>。</p>
+<table>
+<thead>
+<tr>
+<th>写法</th>
+<th>内部存储</th>
+<th>构造参数</th>
+<th>方法返回</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>new Rectangle2D.Double(...)</code></td>
+<td>double</td>
+<td>double</td>
+<td>double</td>
+</tr>
+<tr>
+<td><code>new Rectangle2D.Float(...)</code></td>
+<td>float</td>
+<td>float</td>
+<td>double</td>
+</tr>
+<tr>
+<td>变量声明 <code>Rectangle2D r</code></td>
+<td>看实际对象</td>
+<td>—</td>
+<td>double</td>
+</tr>
+</tbody>
+</table>
+<p><code>Float</code>/<code>Double</code> 是 <code>Rectangle2D</code> 的<strong>静态嵌套子类</strong>，不是 <code>java.lang.Double</code> 那个包装类；它们存在的理由只是让“省空间的 float 坐标”和“省事的 double 坐标”共用一个父类型。教材 p421 还提到：<code>Rectangle2D.Float</code> 有一个自己的 <code>setRect(float...)</code>，一旦用父类型变量接收就调不到它，但父类的 <code>setRect(double...)</code> 仍然可用。</p>
+<p>图 10-11 的继承关系值得记一眼：<code>Rectangle2D</code>、<code>Ellipse2D</code> 都继承 <code>RectangularShape</code>（都有外接矩形），<code>Line2D</code> 直接实现 <code>Shape</code>；<code>Point2D</code> 只是坐标点，<strong>不是</strong> <code>Shape</code>，不能直接交给 <code>draw</code>。教材里从 Java 1.0 留下的 <code>Rectangle</code>、<code>Point</code> 用整数坐标，属于历史类，新代码不必优先使用。</p>
+<p>只改一处的实验：把 <code>new Rectangle2D.Double(100, 50, 80, 40)</code> 改成 <code>(100, 50, 180, 90)</code>，先预测 <code>maxX</code> 和 <code>center</code> 再运行。你会发现宽高不是“右下角”，而是长度。</p>
+<p>独立小任务：用 <code>Ellipse2D.Double</code> 画一个外接框为 <code>(150, 200, 100, 50)</code> 的椭圆，写出它的中心、左边界、右边界；再说明“椭圆没有宽高、只有半径”这句话哪里不准确。</p>
+<h2 id="3-只知道对角或中心时先规范化再画">3. 只知道对角或中心时：先规范化，再画</h2>
+<p>实际画图时，你手里往往不是左上角加宽高，而是两个对角点，或者“圆心加一个角”。直接拿这两个点相减，顺序一反就得到负宽高。</p>
+<pre><code class="language-java">import java.awt.geom.Rectangle2D;
+public class DiagonalRectangle {
+    public static void main(String[] args) {
+        Rectangle2D rect = new Rectangle2D.Double();
+        rect.setFrameFromDiagonal(100, 60, 20, 10);
+        System.out.println(rect.getX() + &quot;:&quot; + rect.getY() + &quot;:&quot; + rect.getWidth() + &quot;:&quot; + rect.getHeight());
+        System.out.println(rect.getCenterX() + &quot;:&quot; + rect.getCenterY());
+    }
+}
+</code></pre>
+<p>输出 <code>20.0:10.0:80.0:50.0</code> 和 <code>60.0:35.0</code>。输入先给右下 (100,60)、再给左上 (20,10)，<code>setFrameFromDiagonal</code> 自动取两个方向的最小值作起点，宽高取距离。你把两个点的顺序换过来，结果应当完全相同。</p>
+<pre><code class="language-java">import java.awt.geom.Ellipse2D;
+import java.awt.geom.Rectangle2D;
+
+public class CircleFromCenter {
+    public static void main(String[] args) {
+        Ellipse2D circle = new Ellipse2D.Double();
+        circle.setFrameFromCenter(100, 80, 130, 110);
+        System.out.println(&quot;x=&quot; + circle.getX() + &quot; y=&quot; + circle.getY() + &quot; w=&quot; + circle.getWidth() + &quot; h=&quot; + circle.getHeight());
+        Rectangle2D naive = new Rectangle2D.Double(100, 60, 20 - 100, 10 - 60);
+        System.out.println(&quot;naive-empty=&quot; + naive.isEmpty());
+        System.out.println(&quot;naive-w=&quot; + naive.getWidth());
+    }
+}
+</code></pre>
+<p>输出：</p>
+<pre><code class="language-text">x=70.0 y=50.0 w=60.0 h=60.0
+naive-empty=true
+naive-w=-80.0
+</code></pre>
+<p><code>setFrameFromCenter(cx, cy, cornerX, cornerY)</code> 接收中心和“外接框上的一个角”，宽 = 2×|cornerX−cx| = 60，高 = 2×|cornerY−cy| = 60，于是左上角是 (100−30, 80−30) = (70,50)。这也说明：给中心和一个角，就能唯一确定一个以该中心对称的外接框；如果你给的点不在对角方向，算出来的框会和你想象的不同。</p>
+<p><code>naive</code> 那两行是反例：把右下角当宽高传，宽变成 −80，<code>isEmpty()</code> 为 <code>true</code>。空几何不是 <code>null</code>：对象存在，只是没有面积，<code>draw</code> 不会帮你补出一个可见正方形。</p>
+<table>
+<thead>
+<tr>
+<th>已知条件</th>
+<th>正确入口</th>
+<th>常见错法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>左上角 + 宽高</td>
+<td><code>new Rectangle2D.Double(x, y, w, h)</code></td>
+<td>把右下角当宽高</td>
+</tr>
+<tr>
+<td>任意两个对角</td>
+<td><code>setFrameFromDiagonal(...)</code></td>
+<td>直接相减，顺序反了</td>
+</tr>
+<tr>
+<td>中心 + 宽高</td>
+<td><code>(cx-w/2, cy-h/2, w, h)</code></td>
+<td>把中心当左上角</td>
+</tr>
+<tr>
+<td>中心 + 一个角</td>
+<td><code>setFrameFromCenter(...)</code></td>
+<td>把角当成宽高</td>
+</tr>
+</tbody>
+</table>
+<p>只改一处的实验：把 <code>setFrameFromCenter(100, 80, 130, 110)</code> 的最后一个点改成 <code>(130, 80)</code>，预测高度是多少、图形是否还可见。这个实验能暴露“角点必须在两个方向都偏离中心”。</p>
+<p>独立小任务：用 <code>setFrameFromCenter</code> 画一个外接框 120×80 的椭圆，写出它的左上角和两个对角点；再用 <code>setFrameFromDiagonal</code> 用这两个对角点重建，验证两次得到同一个框。</p>
+<h2 id="4-颜色只作用于后续绘制fill与draw还差一像素">4. 颜色只作用于后续绘制：fill与draw还差一像素</h2>
+<p><code>setColor</code> 与 <code>setPaint</code> 都是改“这支笔”的状态，不影响已经画好的像素。教材 p426 还给了一个很容易被忽略的细节：<code>fill</code> 在右侧和下方会少画一个像素。</p>
+<pre><code class="language-java">import java.awt.Color;
+import java.awt.Graphics2D;
+import java.awt.geom.Rectangle2D;
+import java.awt.image.BufferedImage;
+
+public class FillVersusDrawPixels {
+    static BufferedImage blank() {
+        BufferedImage image = new BufferedImage(32, 32, BufferedImage.TYPE_INT_RGB);
+        Graphics2D paint = image.createGraphics();
+        try {
+            paint.setColor(Color.WHITE);
+            paint.fillRect(0, 0, 32, 32);
+        } finally {
+            paint.dispose();
+        }
+        return image;
+    }
+
+    public static void main(String[] args) {
+        Rectangle2D rect = new Rectangle2D.Double(0, 0, 10, 20);
+        BufferedImage filled = blank();
+        Graphics2D fillPen = filled.createGraphics();
+        try {
+            fillPen.setColor(Color.RED);
+            fillPen.fill(rect);
+        } finally {
+            fillPen.dispose();
+        }
+        BufferedImage drawn = blank();
+        Graphics2D drawPen = drawn.createGraphics();
+        try {
+            drawPen.setColor(Color.RED);
+            drawPen.draw(rect);
+        } finally {
+            drawPen.dispose();
+        }
+        System.out.println(&quot;fill-inside=&quot; + (filled.getRGB(9, 19) == Color.RED.getRGB()));
+        System.out.println(&quot;fill-right-edge=&quot; + (filled.getRGB(10, 20) == Color.RED.getRGB()));
+        System.out.println(&quot;draw-edge=&quot; + (drawn.getRGB(10, 20) == Color.RED.getRGB()));
+        System.out.println(&quot;draw-inside=&quot; + (drawn.getRGB(9, 19) == Color.RED.getRGB()));
+    }
+}
+</code></pre>
+<p>输出四行：</p>
+<pre><code class="language-text">fill-inside=true
+fill-right-edge=false
+draw-edge=true
+draw-inside=false
+</code></pre>
+<p>矩形是 <code>(0,0,10,20)</code>，<code>fill</code> 填的是 x=0..9、y=0..19，所以 (9,19) 是红的，(10,20) 不是——右边界和下边界那一条被让出去了。<code>draw</code> 正好相反：它画的是边界线，(10,20) 在线上所以是红的，而 (9,19) 在内部、不在 1 像素宽的边线上，所以不是红的。</p>
+<p>这也解释了为什么不能用“图形内部点”去检查 <code>draw</code> 的结果，也不能用“边线上一点”去检查 <code>fill</code>。本课后面的检查点都按这个规则选。</p>
+<table>
+<thead>
+<tr>
+<th>操作</th>
+<th>覆盖范围</th>
+<th>适合检查的点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>fill(rect)</code></td>
+<td>内部，右/下边界让出一像素</td>
+<td>内部，如 (9,19)</td>
+</tr>
+<tr>
+<td><code>draw(rect)</code></td>
+<td>1 像素宽的边界线</td>
+<td>边界，如 (10,20)</td>
+</tr>
+</tbody>
+</table>
+<p>颜色的来源有三种常见写法：<code>Color.RED</code> 这类 13 个预定义常量、<code>new Color(r, g, b)</code>（0–255）、以及 <code>SystemColor.window</code> 这类跟系统主题走的颜色。改组件底色用 <code>setBackground</code>，它影响 <code>super.paintComponent</code> 铺的那层；<code>setForeground</code> 只是组件的默认前景色，不会自动改你已经画上去的像素。<code>brighter()</code>/<code>darker()</code> 返回新颜色对象，不是原地修改。</p>
+<p>只改一处的实验：把 <code>fill</code> 的矩形宽从 10 改成 11，预测 (10,20) 是否变红（x 方向多了一列），再预测 y 方向；分开验证，别一次改两个方向。</p>
+<p>独立小任务：画一个 3 像素宽的红色边框（提示：<code>draw</code> 的线宽由 <code>BasicStroke</code> 控制，属于本课“选读”，你也可以画两个嵌套矩形来模拟），并说明你的检查点为什么选在边框上。</p>
+<h2 id="5-文字放在基线上fontderivefont与居中">5. 文字放在基线上：Font、deriveFont与居中</h2>
+<p><code>drawString(text, x, y)</code> 的 y 是<strong>基线</strong>，不是文字框顶部。字母 g、p 的下降部分在基线以下，大写字母在基线以上；<code>getStringBounds</code> 返回的矩形正是以基线为参照，顶部 y 是负数。教材 p431 的图 10-13 把基线、上坡度、下坡度、行间距、字高画在一起，值得对照。</p>
+<pre><code class="language-java">import java.awt.Font;
+
+public class FontOverloadTrap {
+    public static void main(String[] args) {
+        Font base = new Font(&quot;SansSerif&quot;, Font.PLAIN, 12);
+        Font byStyle = base.deriveFont(14);
+        Font bySize = base.deriveFont(14.0f);
+        System.out.println(&quot;style-arg: style=&quot; + byStyle.getStyle() + &quot; size=&quot; + byStyle.getSize2D());
+        System.out.println(&quot;size-arg: style=&quot; + bySize.getStyle() + &quot; size=&quot; + bySize.getSize2D());
+        Font italic = base.deriveFont(Font.ITALIC);
+        System.out.println(&quot;italic=&quot; + italic.isItalic() + &quot; size=&quot; + italic.getSize2D());
+    }
+}
+</code></pre>
+<p>输出：</p>
+<pre><code class="language-text">style-arg: style=0 size=12.0
+size-arg: style=0 size=14.0
+italic=true size=12.0
+</code></pre>
+<p><code>deriveFont(14.0f)</code> 走 float 重载，改的是字号；<code>deriveFont(Font.ITALIC)</code> 走 int 重载，改的是风格。这两行说明重载选择由<strong>参数类型</strong>决定，不是由数字看起来像什么决定。</p>
+<p>教材 p430 的警告说：<code>deriveFont(14)</code> 会把 14 当风格位，结果是斜体。在本机 JDK 21 上实测，14 不是一个合法的风格组合，JDK 把它规整成了 <code>PLAIN</code>（<code>style=0</code>、<code>isItalic()=false</code>），字号保持 12。所以“int 重载改的是风格而不是字号”这个结论仍然成立，但“结果一定是斜体”这句具体描述不能照抄；不同 JDK 版本对非法风格位的处理可能不同，写代码时应当传 <code>Font.BOLD</code> 这类有名字的常量，而不是裸数字。</p>
+<p>字体名也有两类：<code>SansSerif</code>、<code>Serif</code>、<code>Monospaced</code>、<code>Dialog</code>、<code>DialogInput</code> 是逻辑名，由系统映射到本机实际字体；<code>Arial</code> 这类是物理名，换一台机器不一定存在。教材 p429 的程序用 <code>GraphicsEnvironment.getAvailableFontFamilyNames()</code> 列出本机字体，这个方法的结果随机器变化，不能把某台机器的清单当成标准答案。</p>
+<pre><code class="language-java">import java.awt.Color;
+import java.awt.Font;
+import java.awt.Graphics2D;
+import java.awt.geom.Rectangle2D;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+import javax.imageio.ImageIO;
+public class TextBaselineMeasure {
+    public static void main(String[] args) throws IOException {
+        BufferedImage image = new BufferedImage(320, 120, BufferedImage.TYPE_INT_RGB); Graphics2D g = image.createGraphics();
+        try {
+            g.setColor(Color.WHITE); g.fillRect(0, 0, 320, 120);
+            Font font = new Font(&quot;SansSerif&quot;, Font.BOLD, 12).deriveFont(24.0f); g.setFont(font);
+            String text = &quot;Java pg&quot;; Rectangle2D bounds = font.getStringBounds(text, g.getFontRenderContext());
+            double x = (320 - bounds.getWidth()) / 2; double top = (120 - bounds.getHeight()) / 2; double baseY = top - bounds.getY();
+            g.setColor(Color.BLACK); g.drawString(text, (float) x, (float) baseY);
+            g.setColor(Color.GRAY); g.drawLine(0, (int) baseY, 319, (int) baseY);
+            g.setColor(Color.BLUE); g.draw(new Rectangle2D.Double(x, top, bounds.getWidth(), bounds.getHeight()));
+            System.out.println(&quot;inside=&quot; + (x &gt;= 0 &amp;&amp; top &gt;= 0 &amp;&amp; x + bounds.getWidth() &lt;= 320 &amp;&amp; top + bounds.getHeight() &lt;= 120));
+        } finally { g.dispose(); }
+        if (args.length &gt; 1) ImageIO.write(image, &quot;png&quot;, new File(args[1]));
+    }
+}
+</code></pre>
+<p>输出 <code>inside=true</code>。这段代码把三件事放在一张图上：黑色文字、灰色基线、蓝色度量框。<code>bounds.getY()</code> 是负数（基线到度量框顶部的距离取负），<code>baseY = top - bounds.getY()</code> 等于 <code>top + 上坡度</code>，正好把文字框顶对齐到 <code>top</code>。</p>
+<p>居中公式可以拆成三步，别背成一串：</p>
+<table>
+<thead>
+<tr>
+<th>步骤</th>
+<th>式子</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>水平位置</td>
+<td><code>x = (画布宽 - bounds宽) / 2</code></td>
+<td>两侧留白相等</td>
+</tr>
+<tr>
+<td>框顶位置</td>
+<td><code>top = (画布高 - bounds高) / 2</code></td>
+<td>上下留白相等</td>
+</tr>
+<tr>
+<td>基线位置</td>
+<td><code>baseY = top - bounds.getY()</code></td>
+<td>从框顶下移上坡度</td>
+</tr>
+</tbody>
+</table>
+<p>只改一处的实验：把字号从 <code>24.0f</code> 改成 <code>36.0f</code>，先预测文字是否还完整落在画布里，再运行。字号变大后宽高都变，<code>x</code> 和 <code>baseY</code> 必须重新算；只把原来的 y 加 12 是错的。</p>
+<p>独立小任务：把文字改成含中文的“学习 Java”，用 <code>inside</code> 检查它是否仍在画布内；再说明为什么换字体后同一串文字的宽度可能变化，而你的公式不需要改。</p>
+<h2 id="6-图像先证明读进来了再谈平铺">6. 图像：先证明读进来了，再谈平铺</h2>
+<p>教材 p435 用 <code>new ImageIcon(filename).getImage()</code> 取图，p436 的平铺程序只判断 <code>image == null</code>。这在“文件不存在”时不保险：<code>ImageIcon</code> 可能给你一个引用不为 <code>null</code>、但宽高为 −1 的图像，后面拿它做步长就会出问题。</p>
+<p>课程用 <code>ImageIO.read</code> 走一条能明确报告失败的路线：文件打不开抛 <code>IOException</code>，内容没有可用解码器返回 <code>null</code>，两种都要在进入绘制循环前处理。</p>
+<pre><code class="language-java">import java.awt.Color;
+import java.awt.Graphics2D;
+import java.awt.image.BufferedImage;
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import javax.imageio.ImageIO;
+public class PositiveTileImage {
+    public static void main(String[] args) throws IOException {
+        BufferedImage tile = new BufferedImage(8, 8, BufferedImage.TYPE_INT_RGB); Graphics2D pen = tile.createGraphics();
+        try { pen.setColor(Color.ORANGE); pen.fillRect(0, 0, 8, 8); } finally { pen.dispose(); }
+        ByteArrayOutputStream bytes = new ByteArrayOutputStream(); ImageIO.write(tile, &quot;png&quot;, bytes);
+        BufferedImage loaded = ImageIO.read(new ByteArrayInputStream(bytes.toByteArray()));
+        if (loaded == null || loaded.getWidth() &lt;= 0 || loaded.getHeight() &lt;= 0) throw new IOException(&quot;invalid image&quot;);
+        BufferedImage output = new BufferedImage(20, 20, BufferedImage.TYPE_INT_RGB); Graphics2D g = output.createGraphics();
+        try { for (int y = 0; y &lt; 20; y += loaded.getHeight()) for (int x = 0; x &lt; 20; x += loaded.getWidth()) g.drawImage(loaded, x, y, null); }
+        finally { g.dispose(); }
+        System.out.println(&quot;size=&quot; + loaded.getWidth() + &quot;x&quot; + loaded.getHeight());
+        System.out.println(&quot;tiled=&quot; + (output.getRGB(19, 19) == Color.ORANGE.getRGB()));
+    }
+}
+</code></pre>
+<p>输出 <code>size=8x8</code> 和 <code>tiled=true</code>。这里没有外部图片文件：先造一张 8×8 的橙色图，编码成 PNG 字节再解码回来，模拟“从文件读入”的完整路径。<code>ByteArrayOutputStream</code> 暂存字节，<code>ByteArrayInputStream</code> 当作读取来源；换成真实文件时，把读取来源换成 <code>new File(路径)</code> 即可。</p>
+<p>平铺循环的关键是<strong>步长必须为正</strong>：<code>x += loaded.getWidth()</code>，宽高已经检查过大于 0，循环才会前进。画布 20 不能被 8 整除，最后一块超出边界的部分由绘图裁剪，不需要循环恰好停在 20。</p>
+<pre><code class="language-java">import java.awt.image.BufferedImage;
+import java.io.ByteArrayInputStream;
+import java.io.File;
+import java.io.IOException;
+import javax.imageio.ImageIO;
+public class ImageLoadBoundary {
+    public static void main(String[] args) {
+        try {
+            BufferedImage image = args.length == 0 ? ImageIO.read(new ByteArrayInputStream(new byte[] {1, 2, 3})) : ImageIO.read(new File(args[0]));
+            if (image == null) System.out.println(&quot;unsupported&quot;);
+            else if (image.getWidth() &lt;= 0 || image.getHeight() &lt;= 0) System.out.println(&quot;bad-size&quot;);
+            else System.out.println(&quot;size=&quot; + image.getWidth() + &quot;:&quot; + image.getHeight());
+        } catch (IOException e) { System.out.println(&quot;io-error&quot;); }
+    }
+}
+</code></pre>
+<p>默认把三个普通字节当图像解码，<code>ImageIO.read</code> 返回 <code>null</code>，输出 <code>unsupported</code>；传入一个不存在的路径则走 <code>catch</code>，输出 <code>io-error</code>。这两条路都必须处理：<code>null</code> 不代表“文件没问题”，<code>IOException</code> 也不代表“格式不支持”。</p>
+<table>
+<thead>
+<tr>
+<th>输入</th>
+<th>结果</th>
+<th>下一步</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>合法 PNG</td>
+<td><code>size=宽:高</code></td>
+<td>可以绘制</td>
+</tr>
+<tr>
+<td>字节不是图像</td>
+<td><code>unsupported</code>（null）</td>
+<td>报告格式问题，别继续</td>
+</tr>
+<tr>
+<td>路径不存在/无权限</td>
+<td><code>io-error</code>（IOException）</td>
+<td>报告文件问题，别继续</td>
+</tr>
+<tr>
+<td>宽或高 ≤ 0</td>
+<td><code>bad-size</code></td>
+<td>不能拿来做步长</td>
+</tr>
+</tbody>
+</table>
+<p><code>drawImage(image, x, y, null)</code> 的最后一个参数是 <code>ImageObserver</code>，普通内存图像传 <code>null</code> 即可；教材 p437 提醒这个调用可能在图像还没画完时就返回，但 <code>ImageIO.read</code> 返回的 <code>BufferedImage</code> 已经完整解码，不存在“画一半”的问题。要缩放就传目标宽高：<code>drawImage(img, x, y, w, h, null)</code>，它会拉伸，保持比例需要自己先算统一比例。</p>
+<p>只改一处的实验：把平铺画布从 20 改成 16，预测横向、纵向各铺几块；再把 <code>ImageIO.read</code> 的来源换成一个纯文本文件，确认输出是 <code>unsupported</code> 而不是崩溃。</p>
+<p>独立小任务：把自己 <code>my_code</code> 里的一张图片读进来，打印宽高，再按原尺寸平铺到 200×150 的画布；如果读取失败，分别记录是 <code>null</code> 还是异常，不要用扩展名判断成功。</p>
+<h2 id="7-运行与排错">7. 运行与排错</h2>
+<p>所有命令都在课程根目录 PowerShell 输入，单文件用 <code>java.ps1</code>；复制到 <code>my_code/</code> 后把命令里的 <code>code</code> 换成 <code>my_code</code>。<code>--check</code> 只做离屏像素检查，真实窗口、字体观感、缩放效果必须无参数运行观察。源码文件名与 public 类名一致。</p>
+<table>
+<thead>
+<tr>
+<th>现象</th>
+<th>先查哪里</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>屏幕上什么都没有</td>
+<td>形状是否只 <code>new</code> 没 <code>draw/fill</code>；<code>paintComponent</code> 是否被调用；窗口是否 <code>pack</code></td>
+</tr>
+<tr>
+<td>图形位置不对</td>
+<td>四个参数是否把右下角当宽高；坐标原点在内容区左上，y 向下</td>
+</tr>
+<tr>
+<td>图形不可见但坐标没错</td>
+<td>宽或高是否为负/零；是否画在可视区外</td>
+</tr>
+<tr>
+<td>矩形边框一像素差异</td>
+<td><code>fill</code> 与 <code>draw</code> 的覆盖范围不同，检查点要按操作选</td>
+</tr>
+<tr>
+<td>文字位置偏上/偏下</td>
+<td>y 是基线；居中要减 <code>bounds.getY()</code>，不是直接减高度</td>
+</tr>
+<tr>
+<td>文字超出画布</td>
+<td>字号变了但位置没重算；字体换过宽度也变</td>
+</tr>
+<tr>
+<td><code>ImageIcon</code> 图显示不出来</td>
+<td>文件路径相对工作目录；先打印 <code>getWidth(null)</code> 是否为 −1</td>
+</tr>
+<tr>
+<td>平铺死循环/卡住</td>
+<td>图像宽高是否为 0 或负；步长是否为正</td>
+</tr>
+<tr>
+<td>中文变方框</td>
+<td>逻辑字体未必包含全部汉字；换 <code>Dialog</code> 或指定字体，先查本机字体清单</td>
+</tr>
+</tbody>
+</table>
+<p>最后用一句完整的话回答本课：Java 2D 里，形状对象只描述几何，<code>Graphics2D</code> 保存这支笔的颜色、字体等状态，<code>draw</code> 描边、<code>fill</code> 填内部，颜色只影响后续绘制；文字按基线定位，居中要靠字体度量反推；图像先确认读入且尺寸为正，再进入绘制或平铺循环。</p>
+<h2 id="教材深化">教材深化</h2>
+<p>先用讲义完成基础操作，再到教材核对正式表述。这里的阅读不额外增加基础过关条件。</p>
+<table>
+<thead>
+<tr>
+<th>小节与层次</th>
+<th>书本页</th>
+<th>PDF页</th>
+<th>深化时观察什么</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>10.5 处理2D图形·深化</td>
+<td>419–426</td>
+<td>437–444</td>
+<td>Shape接口、Float/Double、外接框、对角与中心构造</td>
+</tr>
+<tr>
+<td>10.6 使用颜色·深化</td>
+<td>426–428</td>
+<td>444–446</td>
+<td>setPaint、fill边界、Color构造与SystemColor</td>
+</tr>
+<tr>
+<td>10.7 文本特殊字体·深化</td>
+<td>429–435</td>
+<td>447–453</td>
+<td>逻辑字体、deriveFont重载、基线度量与居中</td>
+</tr>
+<tr>
+<td>10.8 显示图像·深化/补全</td>
+<td>435–438</td>
+<td>453–456</td>
+<td>ImageIcon与ImageIO的差别、正尺寸、平铺与缩放</td>
+</tr>
+</tbody>
+</table>
+<p>教材主线见上表；本课问题情境和分步实验为原创补充。普通程序保持Java 8语法/API，在本机JDK 21上以<code>--release 8</code>编译；现代版本差异在正文单独说明，不等同于已在Java 8 JVM运行。教材p430“deriveFont(14)得到斜体”的说法已按本机JDK实测标注，不原样照抄。</p>
+<h2 id="独立练习与过关">独立练习与过关</h2>
+<p>打开<a href="page-d6f2626eea1b.html">练习</a>，直接写在题下；独立程序保存在<a href="page-7bec502d5c52.html">my_code</a>。先预测，再运行并保存实际输入、输出和命令；完成后对照<a href="page-bc5639a4a49d.html">参考解析</a>。全部必做题有独立解释、E题程序和边界验证，且能解释第一次分歧发生在哪一步，才具备判定本课通过的证据。讲义生成和助手测试通过不代表你已掌握。</p><div class="pager"><a rel="prev" href="page-a4a15839371e.html">← 上一页：L40 练习</a><a rel="next" href="page-b160f6d433c5.html">下一页：L41 示例 →</a></div><p class="footer">课程原创讲义与习题 · 讲义学习 → 动手练习 → 订正 · 教材深化</p></article></main></div><script src="assets/course.js?v=1c1950cb02ee"></script></body></html>

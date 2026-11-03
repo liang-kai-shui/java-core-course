@@ -41,29 +41,19 @@
     ]
   },
   {
-    "path": "L02_第02章_编译运行与错误/error_lab/MissingSemicolon.java",
-    "class": "MissingSemicolon",
-    "kind": "compile_error",
-    "stdout": null,
-    "stdin": "",
-    "args": [],
-    "contains": null,
-    "cases": []
-  },
-  {
-    "path": "L02_第02章_编译运行与错误/error_lab/WrongFileName.java",
-    "class": "WrongFileName",
-    "kind": "compile_error",
-    "stdout": null,
-    "stdin": "",
-    "args": [],
-    "contains": null,
-    "cases": []
-  },
-  {
     "path": "L02_第02章_编译运行与错误/error_lab/MissingMain.java",
     "class": "MissingMain",
     "kind": "launch_error",
+    "stdout": null,
+    "stdin": "",
+    "args": [],
+    "contains": null,
+    "cases": []
+  },
+  {
+    "path": "L02_第02章_编译运行与错误/error_lab/MissingSemicolon.java",
+    "class": "MissingSemicolon",
+    "kind": "compile_error",
     "stdout": null,
     "stdin": "",
     "args": [],
@@ -81,10 +71,30 @@
     "cases": []
   },
   {
+    "path": "L02_第02章_编译运行与错误/error_lab/WrongFileName.java",
+    "class": "WrongFileName",
+    "kind": "compile_error",
+    "stdout": null,
+    "stdin": "",
+    "args": [],
+    "contains": null,
+    "cases": []
+  },
+  {
     "path": "L02_第02章_编译运行与错误/error_lab/WrongFormula.java",
     "class": "WrongFormula",
     "kind": "logic_error",
     "stdout": "14\n",
+    "stdin": "",
+    "args": [],
+    "contains": null,
+    "cases": []
+  },
+  {
+    "path": "L03_第03章A_程序结构与变量类型/code/UnicodeDemo.java",
+    "class": "UnicodeDemo",
+    "kind": "normal",
+    "stdout": "chinese units=1\nemoji units=2\nemoji code points=1\n",
     "stdin": "",
     "args": [],
     "contains": null,
@@ -101,10 +111,10 @@
     "cases": []
   },
   {
-    "path": "L03_第03章A_程序结构与变量类型/code/UnicodeDemo.java",
-    "class": "UnicodeDemo",
+    "path": "L03_第03章A_程序结构与变量类型/参考答案/Profile.java",
+    "class": "Profile",
     "kind": "normal",
-    "stdout": "chinese units=1\nemoji units=2\nemoji code points=1\n",
+    "stdout": "nickname=Java learner\nage=18\nheight=1.75\nstarted=true\nDAYS_PER_WEEK=7\n",
     "stdin": "",
     "args": [],
     "contains": null,
@@ -131,6 +141,26 @@
     "cases": []
   },
   {
+    "path": "L04_第03章B_运算符与类型转换/参考答案/Average.java",
+    "class": "Average",
+    "kind": "normal",
+    "stdout": "81.0\n",
+    "stdin": "",
+    "args": [],
+    "contains": null,
+    "cases": []
+  },
+  {
+    "path": "L04_第03章B_运算符与类型转换/参考答案/TimeSplit.java",
+    "class": "TimeSplit",
+    "kind": "normal",
+    "stdout": "hours=1\nminutes=1\nseconds=11\n",
+    "stdin": "",
+    "args": [],
+    "contains": null,
+    "cases": []
+  },
+  {
     "path": "L05_第03章C_字符串/code/StringDemo.java",
     "class": "StringDemo",
     "kind": "normal",
@@ -151,11 +181,21 @@
     "cases": []
   },
   {
-    "path": "L06_第03章D_输入输出/code/InputDemo.java",
-    "class": "InputDemo",
+    "path": "L05_第03章C_字符串/参考答案/NameCard.java",
+    "class": "NameCard",
     "kind": "normal",
-    "stdout": "年龄、姓名、单价、数量，各一行：\nname=Li Ming, age=18\ntotal=37.50\n",
-    "stdin": "18\nLi Ming\n12.5\n3\n",
+    "stdout": "name=Li Ming\nlength=7\nprefix=Li\n",
+    "stdin": "",
+    "args": [],
+    "contains": null,
+    "cases": []
+  },
+  {
+    "path": "L05_第03章C_字符串/参考答案/TextCompare.java",
+    "class": "TextCompare",
+    "kind": "normal",
+    "stdout": "false\ntrue\nJava course\n",
+    "stdin": "",
     "args": [],
     "contains": null,
     "cases": []
@@ -174,6 +214,45 @@
       {
         "args": [],
         "stdout": "usage: FileUtf8Demo <new-experiment-file>\n"
+      }
+    ]
+  },
+  {
+    "path": "L06_第03章D_输入输出/code/InputDemo.java",
+    "class": "InputDemo",
+    "kind": "normal",
+    "stdout": "年龄、姓名、单价、数量，各一行：\nname=Li Ming, age=18\ntotal=37.50\n",
+    "stdin": "18\nLi Ming\n12.5\n3\n",
+    "args": [],
+    "contains": null,
+    "cases": []
+  },
+  {
+    "path": "L06_第03章D_输入输出/参考答案/AgeName.java",
+    "class": "AgeName",
+    "kind": "normal",
+    "stdout": "Li Ming:18\n",
+    "stdin": "18\nLi Ming\n",
+    "args": [],
+    "contains": null,
+    "cases": []
+  },
+  {
+    "path": "L06_第03章D_输入输出/参考答案/Bill.java",
+    "class": "Bill",
+    "kind": "normal",
+    "stdout": "name=Li Ming\ntotal=37.50\n",
+    "stdin": "Li Ming\n12.5\n3\n",
+    "args": [],
+    "contains": null,
+    "cases": [
+      {
+        "stdin": "A B\n0.1\n3\n",
+        "stdout": "name=A B\ntotal=0.30\n"
+      },
+      {
+        "stdin": "小明 同学\n12.5\n0\n",
+        "stdout": "name=小明 同学\ntotal=0.00\n"
       }
     ]
   },
@@ -233,209 +312,6 @@
     ]
   },
   {
-    "path": "L08_第03章F_循环/code/SumDemo.java",
-    "class": "SumDemo",
-    "kind": "normal",
-    "stdout": "while=15\nfor=15\n",
-    "stdin": "",
-    "args": [],
-    "contains": null,
-    "cases": [
-      {
-        "args": [
-          "0"
-        ],
-        "stdout": "while=0\nfor=0\n"
-      },
-      {
-        "args": [
-          "1"
-        ],
-        "stdout": "while=1\nfor=1\n"
-      }
-    ]
-  },
-  {
-    "path": "L08_第03章F_循环/code/CountdownDemo.java",
-    "class": "CountdownDemo",
-    "kind": "normal",
-    "stdout": "left=0\n",
-    "stdin": "",
-    "args": [],
-    "contains": null,
-    "cases": []
-  },
-  {
-    "path": "L08_第03章F_循环/code/NestedDemo.java",
-    "class": "NestedDemo",
-    "kind": "normal",
-    "stdout": "1,1\n1,2\n1,3\n2,1\n2,2\n2,3\n",
-    "stdin": "",
-    "args": [],
-    "contains": null,
-    "cases": []
-  },
-  {
-    "path": "L09_第03章G_多重选择与大数值/code/MenuDemo.java",
-    "class": "MenuDemo",
-    "kind": "normal",
-    "stdout": "start\n",
-    "stdin": "",
-    "args": [],
-    "contains": null,
-    "cases": [
-      {
-        "args": [
-          "2"
-        ],
-        "stdout": "help\n"
-      },
-      {
-        "args": [
-          "9"
-        ],
-        "stdout": "unknown\n"
-      }
-    ]
-  },
-  {
-    "path": "L09_第03章G_多重选择与大数值/code/SkipAndStopDemo.java",
-    "class": "SkipAndStopDemo",
-    "kind": "normal",
-    "stdout": "1\n3\n5\n7\n",
-    "stdin": "",
-    "args": [],
-    "contains": null,
-    "cases": []
-  },
-  {
-    "path": "L09_第03章G_多重选择与大数值/code/BigNumberDemo.java",
-    "class": "BigNumberDemo",
-    "kind": "normal",
-    "stdout": "9223372036854775809\n0.3\n0.33\nequals=false\ncompare=0\n",
-    "stdin": "",
-    "args": [],
-    "contains": null,
-    "cases": []
-  },
-  {
-    "path": "L10_第03章H_数组与阶段项目/code/ArrayDemo.java",
-    "class": "ArrayDemo",
-    "kind": "normal",
-    "stdout": "original=[9, 1, 2]\nsorted copy=[1, 2, 9]\nafter foreach=[9, 1, 2]\nindex of 2=1\n",
-    "stdin": "",
-    "args": [],
-    "contains": null,
-    "cases": []
-  },
-  {
-    "path": "L10_第03章H_数组与阶段项目/code/NestedArrayDemo.java",
-    "class": "NestedArrayDemo",
-    "kind": "normal",
-    "stdout": "sum=15\n",
-    "stdin": "",
-    "args": [],
-    "contains": null,
-    "cases": []
-  },
-  {
-    "path": "L10_第03章H_数组与阶段项目/code/ArgsEcho.java",
-    "class": "ArgsEcho",
-    "kind": "normal",
-    "stdout": "count=2\nred\nblue\n",
-    "stdin": "",
-    "args": [
-      "red",
-      "blue"
-    ],
-    "contains": null,
-    "cases": [
-      {
-        "args": [],
-        "stdout": "count=0\n"
-      }
-    ]
-  },
-  {
-    "path": "L03_第03章A_程序结构与变量类型/参考答案/Profile.java",
-    "class": "Profile",
-    "kind": "normal",
-    "stdout": "nickname=Java learner\nage=18\nheight=1.75\nstarted=true\nDAYS_PER_WEEK=7\n",
-    "stdin": "",
-    "args": [],
-    "contains": null,
-    "cases": []
-  },
-  {
-    "path": "L04_第03章B_运算符与类型转换/参考答案/TimeSplit.java",
-    "class": "TimeSplit",
-    "kind": "normal",
-    "stdout": "hours=1\nminutes=1\nseconds=11\n",
-    "stdin": "",
-    "args": [],
-    "contains": null,
-    "cases": []
-  },
-  {
-    "path": "L04_第03章B_运算符与类型转换/参考答案/Average.java",
-    "class": "Average",
-    "kind": "normal",
-    "stdout": "81.0\n",
-    "stdin": "",
-    "args": [],
-    "contains": null,
-    "cases": []
-  },
-  {
-    "path": "L05_第03章C_字符串/参考答案/NameCard.java",
-    "class": "NameCard",
-    "kind": "normal",
-    "stdout": "name=Li Ming\nlength=7\nprefix=Li\n",
-    "stdin": "",
-    "args": [],
-    "contains": null,
-    "cases": []
-  },
-  {
-    "path": "L05_第03章C_字符串/参考答案/TextCompare.java",
-    "class": "TextCompare",
-    "kind": "normal",
-    "stdout": "false\ntrue\nJava course\n",
-    "stdin": "",
-    "args": [],
-    "contains": null,
-    "cases": []
-  },
-  {
-    "path": "L06_第03章D_输入输出/参考答案/Bill.java",
-    "class": "Bill",
-    "kind": "normal",
-    "stdout": "name=Li Ming\ntotal=37.50\n",
-    "stdin": "Li Ming\n12.5\n3\n",
-    "args": [],
-    "contains": null,
-    "cases": [
-      {
-        "stdin": "A B\n0.1\n3\n",
-        "stdout": "name=A B\ntotal=0.30\n"
-      },
-      {
-        "stdin": "小明 同学\n12.5\n0\n",
-        "stdout": "name=小明 同学\ntotal=0.00\n"
-      }
-    ]
-  },
-  {
-    "path": "L06_第03章D_输入输出/参考答案/AgeName.java",
-    "class": "AgeName",
-    "kind": "normal",
-    "stdout": "Li Ming:18\n",
-    "stdin": "18\nLi Ming\n",
-    "args": [],
-    "contains": null,
-    "cases": []
-  },
-  {
     "path": "L07_第03章E_条件分支/参考答案/Ticket.java",
     "class": "Ticket",
     "kind": "normal",
@@ -479,6 +355,49 @@
       {
         "stdin": "121\n",
         "stdout": "invalid\n"
+      }
+    ]
+  },
+  {
+    "path": "L08_第03章F_循环/code/CountdownDemo.java",
+    "class": "CountdownDemo",
+    "kind": "normal",
+    "stdout": "left=0\n",
+    "stdin": "",
+    "args": [],
+    "contains": null,
+    "cases": []
+  },
+  {
+    "path": "L08_第03章F_循环/code/NestedDemo.java",
+    "class": "NestedDemo",
+    "kind": "normal",
+    "stdout": "1,1\n1,2\n1,3\n2,1\n2,2\n2,3\n",
+    "stdin": "",
+    "args": [],
+    "contains": null,
+    "cases": []
+  },
+  {
+    "path": "L08_第03章F_循环/code/SumDemo.java",
+    "class": "SumDemo",
+    "kind": "normal",
+    "stdout": "while=15\nfor=15\n",
+    "stdin": "",
+    "args": [],
+    "contains": null,
+    "cases": [
+      {
+        "args": [
+          "0"
+        ],
+        "stdout": "while=0\nfor=0\n"
+      },
+      {
+        "args": [
+          "1"
+        ],
+        "stdout": "while=1\nfor=1\n"
       }
     ]
   },
@@ -539,6 +458,69 @@
     "cases": []
   },
   {
+    "path": "L09_第03章G_多重选择与大数值/code/BigNumberDemo.java",
+    "class": "BigNumberDemo",
+    "kind": "normal",
+    "stdout": "9223372036854775809\n0.3\n0.33\nequals=false\ncompare=0\n",
+    "stdin": "",
+    "args": [],
+    "contains": null,
+    "cases": []
+  },
+  {
+    "path": "L09_第03章G_多重选择与大数值/code/MenuDemo.java",
+    "class": "MenuDemo",
+    "kind": "normal",
+    "stdout": "start\n",
+    "stdin": "",
+    "args": [],
+    "contains": null,
+    "cases": [
+      {
+        "args": [
+          "2"
+        ],
+        "stdout": "help\n"
+      },
+      {
+        "args": [
+          "9"
+        ],
+        "stdout": "unknown\n"
+      }
+    ]
+  },
+  {
+    "path": "L09_第03章G_多重选择与大数值/code/SkipAndStopDemo.java",
+    "class": "SkipAndStopDemo",
+    "kind": "normal",
+    "stdout": "1\n3\n5\n7\n",
+    "stdin": "",
+    "args": [],
+    "contains": null,
+    "cases": []
+  },
+  {
+    "path": "L09_第03章G_多重选择与大数值/参考答案/FilteredSum.java",
+    "class": "FilteredSum",
+    "kind": "normal",
+    "stdout": "sum=75\n",
+    "stdin": "",
+    "args": [],
+    "contains": null,
+    "cases": []
+  },
+  {
+    "path": "L09_第03章G_多重选择与大数值/参考答案/Money.java",
+    "class": "Money",
+    "kind": "normal",
+    "stdout": "0.3\n0.33\n",
+    "stdin": "",
+    "args": [],
+    "contains": null,
+    "cases": []
+  },
+  {
     "path": "L09_第03章G_多重选择与大数值/参考答案/Weekday.java",
     "class": "Weekday",
     "kind": "normal",
@@ -570,20 +552,38 @@
     ]
   },
   {
-    "path": "L09_第03章G_多重选择与大数值/参考答案/FilteredSum.java",
-    "class": "FilteredSum",
+    "path": "L10_第03章H_数组与阶段项目/code/ArgsEcho.java",
+    "class": "ArgsEcho",
     "kind": "normal",
-    "stdout": "sum=75\n",
+    "stdout": "count=2\nred\nblue\n",
+    "stdin": "",
+    "args": [
+      "red",
+      "blue"
+    ],
+    "contains": null,
+    "cases": [
+      {
+        "args": [],
+        "stdout": "count=0\n"
+      }
+    ]
+  },
+  {
+    "path": "L10_第03章H_数组与阶段项目/code/ArrayDemo.java",
+    "class": "ArrayDemo",
+    "kind": "normal",
+    "stdout": "original=[9, 1, 2]\nsorted copy=[1, 2, 9]\nafter foreach=[9, 1, 2]\nindex of 2=1\n",
     "stdin": "",
     "args": [],
     "contains": null,
     "cases": []
   },
   {
-    "path": "L09_第03章G_多重选择与大数值/参考答案/Money.java",
-    "class": "Money",
+    "path": "L10_第03章H_数组与阶段项目/code/NestedArrayDemo.java",
+    "class": "NestedArrayDemo",
     "kind": "normal",
-    "stdout": "0.3\n0.33\n",
+    "stdout": "sum=15\n",
     "stdin": "",
     "args": [],
     "contains": null,
@@ -639,11 +639,1450 @@
     ]
   },
   {
+    "path": "L11_第04章A_对象行为与日期/code/DateSteps.java",
+    "class": "DateSteps",
+    "kind": "normal",
+    "stdout": "2024-12-31\n2025-01-01\nyear=2025, month=1, day=1\n2024-12-31 2025-01-01 2025-01-02\n"
+  },
+  {
+    "path": "L11_第04章A_对象行为与日期/code/MonthExitWalk.java",
+    "class": "MonthExitWalk",
+    "kind": "normal",
+    "stdout": "2025-04-27 7\n2025-04-28 1\n2025-04-29 2\n2025-04-30 3\ncount=4, next=2025-05-01\n"
+  },
+  {
+    "path": "L11_第04章A_对象行为与日期/参考答案/FiveDates.java",
+    "class": "FiveDates",
+    "kind": "normal",
+    "stdout": "2025-01-30 4\n2025-01-31 5\n2025-02-01 6\n2025-02-02 7\n2025-02-03 1\n"
+  },
+  {
+    "path": "L12_第04章B_封装与自定义类/code/BorrowDesk.java",
+    "class": "BorrowDesk",
+    "kind": "normal",
+    "stdout": "小林:0/2\ntrue\ntrue\nfalse\n小林:2/2\n"
+  },
+  {
+    "path": "L12_第04章B_封装与自定义类/code/DefensiveScoreCopy.java",
+    "class": "DefensiveScoreCopy",
+    "kind": "normal",
+    "stdout": "input=1\nview=2\ninside=70\n"
+  },
+  {
+    "path": "L12_第04章B_封装与自定义类/参考答案/ReturnDesk.java",
+    "class": "ReturnDesk",
+    "kind": "normal",
+    "stdout": "false:0\ntrue:1\ntrue:2\nfalse:2\ntrue:1\nfalse\nfalse\n"
+  },
+  {
+    "path": "L13_第04章C_静态成员与工厂/code/FactoryReuseWalk.java",
+    "class": "FactoryReuseWalk",
+    "kind": "normal",
+    "stdout": "true\nfalse\nJava\n"
+  },
+  {
+    "path": "L13_第04章C_静态成员与工厂/code/TicketOffice.java",
+    "class": "TicketOffice",
+    "kind": "normal",
+    "stdout": "1:普通\n2:访客\nissued=2\n"
+  },
+  {
+    "path": "L13_第04章C_静态成员与工厂/参考答案/CardFactories.java",
+    "class": "CardFactories",
+    "kind": "normal",
+    "stdout": "100:学生\n101:教师\n102:学生\ncount=3\n"
+  },
+  {
+    "path": "L14_第04章D_按值传参/code/ArraySwapRoutes.java",
+    "class": "ArraySwapRoutes",
+    "kind": "normal",
+    "stdout": "[1, 2]/[8, 9]\ntrue\n[2, 1]\ntrue\nfalse\n[2, 1]\n"
+  },
+  {
+    "path": "L14_第04章D_按值传参/code/ParameterFrames.java",
+    "class": "ParameterFrames",
+    "kind": "normal",
+    "stdout": "inside-before=7\ninside-after=21\nmain-after=7\n"
+  },
+  {
+    "path": "L14_第04章D_按值传参/code/ReferenceRebinding.java",
+    "class": "ReferenceRebinding",
+    "kind": "normal",
+    "stdout": "before=5\ninside=99\nafter=5\n"
+  },
+  {
+    "path": "L14_第04章D_按值传参/code/ReturnedReference.java",
+    "class": "ReturnedReference",
+    "kind": "normal",
+    "stdout": "ignored=5\nnew=6\nalias=5\n"
+  },
+  {
+    "path": "L14_第04章D_按值传参/code/SharedCounterEdit.java",
+    "class": "SharedCounterEdit",
+    "kind": "normal",
+    "stdout": "before=5\noriginal=8\nalias=8\n"
+  },
+  {
+    "path": "L14_第04章D_按值传参/code/StringReturnRoutes.java",
+    "class": "StringReturnRoutes",
+    "kind": "normal",
+    "stdout": "inside=Java!\nmain=Java\nresult=Java!\nstill=Java\n"
+  },
+  {
+    "path": "L14_第04章D_按值传参/code/ValuePassing.java",
+    "class": "ValuePassing",
+    "kind": "normal",
+    "stdout": "3:8\n8:20\n"
+  },
+  {
+    "path": "L14_第04章D_按值传参/参考答案/ResetComparison.java",
+    "class": "ResetComparison",
+    "kind": "normal",
+    "stdout": "7:0\n0:0\n0:7\n"
+  },
+  {
+    "path": "L14_第04章D_按值传参/参考答案/SafeElementSwap.java",
+    "class": "SafeElementSwap",
+    "kind": "normal",
+    "stdout": "true\n[7, 9, 4]\ntrue\nfalse\nfalse\n[7, 9, 4]\nfalse\nfalse\n"
+  },
+  {
+    "path": "L14_第04章D_按值传参/参考答案/TextResultPractice.java",
+    "class": "TextResultPractice",
+    "kind": "normal",
+    "stdout": "Hi\nHi!\nHi\n!\nA B!\n"
+  },
+  {
+    "path": "L15_第04章E_构造器重载与委托/code/DefaultConstructorDoor.java",
+    "class": "DefaultConstructorDoor",
+    "kind": "normal",
+    "stdout": "默认\n数组\n"
+  },
+  {
+    "path": "L15_第04章E_构造器重载与委托/code/PlanConstructors.java",
+    "class": "PlanConstructors",
+    "kind": "normal",
+    "stdout": "未命名:1\n字符串:1\n数组:3\n"
+  },
+  {
+    "path": "L15_第04章E_构造器重载与委托/参考答案/PracticeConstructors.java",
+    "class": "PracticeConstructors",
+    "kind": "normal",
+    "stdout": "每日练习:2\n循环:2\n数组:4\n边界:2\n边界:2\n边界:1\n"
+  },
+  {
+    "path": "L16_第04章F_初始化与资源生存/code/ExplicitCloseWalk.java",
+    "class": "ExplicitCloseWalk",
+    "kind": "normal",
+    "stdout": "open\nwork\nclosed\nafter\n"
+  },
+  {
+    "path": "L16_第04章F_初始化与资源生存/code/InitSequence.java",
+    "class": "InitSequence",
+    "kind": "normal",
+    "stdout": "static\nfield\nblock:4\nbody:默认\nouter\nfield\nblock:4\nbody:自选\n"
+  },
+  {
+    "path": "L16_第04章F_初始化与资源生存/参考答案/PackageBirth.java",
+    "class": "PackageBirth",
+    "kind": "normal",
+    "stdout": "10:默认\n11:教材\nnext=12\n"
+  },
+  {
+    "path": "L17_第04章G_包边界与文档/code/DocumentedCost.java",
+    "class": "DocumentedCost",
+    "kind": "normal",
+    "stdout": "12\n"
+  },
+  {
+    "path": "L17_第04章G_包边界与文档/code/MinuteUnitContract.java",
+    "class": "MinuteUnitContract",
+    "kind": "normal",
+    "stdout": "0\n0\n120\n128849018820\n"
+  },
+  {
+    "path": "L17_第04章G_包边界与文档/参考答案/MinuteDocs.java",
+    "class": "MinuteDocs",
+    "kind": "normal",
+    "stdout": "120\n0\n0\n128849018820\n"
+  },
+  {
+    "path": "L18_第04章H_类设计阶段项目/code/GoalAliasWalk.java",
+    "class": "GoalAliasWalk",
+    "kind": "normal",
+    "stdout": "3:3\n3:0\n"
+  },
+  {
+    "path": "L18_第04章H_类设计阶段项目/code/StudySprint.java",
+    "class": "StudySprint",
+    "kind": "normal",
+    "stdout": "数组@2025-03-01 0/30\ntrue\ntrue\n数组@2025-03-01 30/30\nfalse\n"
+  },
+  {
+    "path": "L18_第04章H_类设计阶段项目/参考答案/StudyPortfolio.java",
+    "class": "StudyPortfolio",
+    "kind": "normal",
+    "stdout": "阅读 7/10\n练习 20/20\nfalse\nfalse\ntrue\nfalse\n阅读 10/10\n"
+  },
+  {
+    "path": "L19_第05章A_继承覆盖与构造/code/ConstructorDispatchTrap.java",
+    "class": "ConstructorDispatchTrap",
+    "kind": "normal",
+    "stdout": "during=0\nafter=7\n"
+  },
+  {
+    "path": "L19_第05章A_继承覆盖与构造/code/InheritanceRoute.java",
+    "class": "InheritanceRoute",
+    "kind": "normal",
+    "stdout": "parent:实验课\nchild:2\n实验课=5\n"
+  },
+  {
+    "path": "L19_第05章A_继承覆盖与构造/参考答案/ColorPrice.java",
+    "class": "ColorPrice",
+    "kind": "normal",
+    "stdout": "11\n3\n2\n"
+  },
+  {
+    "path": "L20_第05章B_多态抽象与访问控制/code/ArrayStoreCheckpoint.java",
+    "class": "ArrayStoreCheckpoint",
+    "kind": "normal",
+    "stdout": "before\nstored=1\n"
+  },
+  {
+    "path": "L20_第05章B_多态抽象与访问控制/code/DispatchNotices.java",
+    "class": "DispatchNotices",
+    "kind": "normal",
+    "stdout": "mail:作业\nsite:提醒\nmail:提醒\n"
+  },
+  {
+    "path": "L20_第05章B_多态抽象与访问控制/code/OverloadDispatchSteps.java",
+    "class": "OverloadDispatchSteps",
+    "kind": "normal",
+    "stdout": "general:cat\nspecific:cat\n"
+  },
+  {
+    "path": "L20_第05章B_多态抽象与访问控制/参考答案/DeliveryFees.java",
+    "class": "DeliveryFees",
+    "kind": "normal",
+    "stdout": "步行:0\n单车:2\n3\n"
+  },
+  {
+    "path": "L21_第05章C_对象相等与显示/code/BookmarkEquality.java",
+    "class": "BookmarkEquality",
+    "kind": "normal",
+    "stdout": "false\ntrue\ntrue\nB7@12\n"
+  },
+  {
+    "path": "L21_第05章C_对象相等与显示/code/EqualityEntryTrap.java",
+    "class": "EqualityEntryTrap",
+    "kind": "normal",
+    "stdout": "true\nfalse\n"
+  },
+  {
+    "path": "L21_第05章C_对象相等与显示/参考答案/SeatEquality.java",
+    "class": "SeatEquality",
+    "kind": "normal",
+    "stdout": "true\nfalse\nfalse\ntrue\nA1#3\ntrue\ntrue\ntrue\nfalse\n"
+  },
+  {
+    "path": "L22_第05章D_数组列表与包装类型/code/ListAndBoxing.java",
+    "class": "ListAndBoxing",
+    "kind": "normal",
+    "stdout": "0\n[12, 15, 20]\n[12, 20]\nsum=32\ntrue\n"
+  },
+  {
+    "path": "L22_第05章D_数组列表与包装类型/code/RemoveAndUnboxRoutes.java",
+    "class": "RemoveAndUnboxRoutes",
+    "kind": "normal",
+    "stdout": "[9, 7]\n[9, 7]\n3\n"
+  },
+  {
+    "path": "L22_第05章D_数组列表与包装类型/参考答案/ScoreListAverage.java",
+    "class": "ScoreListAverage",
+    "kind": "normal",
+    "stdout": "90.0\n无成绩\n100.0\n"
+  },
+  {
+    "path": "L23_第05章E_可变参数与枚举/code/PhasesAndArguments.java",
+    "class": "PhasesAndArguments",
+    "kind": "normal",
+    "stdout": "0\n7\nTODO:待办\nDOING:进行中\nDONE:完成\ntrue\n"
+  },
+  {
+    "path": "L23_第05章E_可变参数与枚举/code/VarargsAliasWalk.java",
+    "class": "VarargsAliasWalk",
+    "kind": "normal",
+    "stdout": "[4, 4]\n"
+  },
+  {
+    "path": "L23_第05章E_可变参数与枚举/参考答案/MoodCounter.java",
+    "class": "MoodCounter",
+    "kind": "normal",
+    "stdout": "0\n2\nCALM:平静\nFOCUSED:专注\nTIRED:疲惫\n0\n2\n"
+  },
+  {
+    "path": "L24_第05章F_反射与继承设计/code/InvocationFailureRoute.java",
+    "class": "InvocationFailureRoute",
+    "kind": "normal",
+    "stdout": "cause=IllegalArgumentException\n"
+  },
+  {
+    "path": "L24_第05章F_反射与继承设计/code/ReflectionWorkshop.java",
+    "class": "ReflectionWorkshop",
+    "kind": "normal",
+    "stdout": "true\nReadingNote\nprivate\n复习!\n"
+  },
+  {
+    "path": "L24_第05章F_反射与继承设计/code/TypedArrayResize.java",
+    "class": "TypedArrayResize",
+    "kind": "normal",
+    "stdout": "[2, 4, 0, 0]\n[A, null]\n[]\n"
+  },
+  {
+    "path": "L24_第05章F_反射与继承设计/参考答案/CardReflection.java",
+    "class": "CardReflection",
+    "kind": "normal",
+    "stdout": "卡:林\n"
+  },
+  {
+    "path": "L25_第06章A_接口契约与默认方法/code/DefaultConflictChoice.java",
+    "class": "DefaultConflictChoice",
+    "kind": "normal",
+    "stdout": "left/right\n"
+  },
+  {
+    "path": "L25_第06章A_接口契约与默认方法/code/NaturalLessonOrder.java",
+    "class": "NaturalLessonOrder",
+    "kind": "normal",
+    "stdout": "早:1\n后:3\n"
+  },
+  {
+    "path": "L25_第06章A_接口契约与默认方法/code/TaskContracts.java",
+    "class": "TaskContracts",
+    "kind": "normal",
+    "stdout": "task:泛型\n学习\n"
+  },
+  {
+    "path": "L25_第06章A_接口契约与默认方法/参考答案/ExamContract.java",
+    "class": "ExamContract",
+    "kind": "normal",
+    "stdout": "59:false\n60:true\n100:true\n"
+  },
+  {
+    "path": "L26_第06章B_回调比较器与克隆/code/CallbackRoute.java",
+    "class": "CallbackRoute",
+    "kind": "normal",
+    "stdout": "prepare:阅读\nrecord:阅读\nfinish:阅读\n"
+  },
+  {
+    "path": "L26_第06章B_回调比较器与克隆/code/CallbackStateOwner.java",
+    "class": "CallbackStateOwner",
+    "kind": "normal",
+    "stdout": "before=0\nafter=2\n"
+  },
+  {
+    "path": "L26_第06章B_回调比较器与克隆/code/CloneLedger.java",
+    "class": "CloneLedger",
+    "kind": "normal",
+    "stdout": "[1, 2]\n[9, 2]\n"
+  },
+  {
+    "path": "L26_第06章B_回调比较器与克隆/code/LengthOrder.java",
+    "class": "LengthOrder",
+    "kind": "normal",
+    "stdout": "[a, bb, cc, ddd]\n"
+  },
+  {
+    "path": "L26_第06章B_回调比较器与克隆/参考答案/CallbackSorting.java",
+    "class": "CallbackSorting",
+    "kind": "normal",
+    "stdout": "完成:数组\n[a, bb, ccc]\n[1, 2]\n[9, 2]\n"
+  },
+  {
+    "path": "L27_第06章C_Lambda与方法引用/code/CapturedReferenceState.java",
+    "class": "CapturedReferenceState",
+    "kind": "normal",
+    "stdout": "1\n0\n"
+  },
+  {
+    "path": "L27_第06章C_Lambda与方法引用/code/LambdaTiming.java",
+    "class": "LambdaTiming",
+    "kind": "normal",
+    "stdout": "created\n复习\n第0次\n第1次\n第2次\n"
+  },
+  {
+    "path": "L27_第06章C_Lambda与方法引用/code/MethodReferenceForms.java",
+    "class": "MethodReferenceForms",
+    "kind": "normal",
+    "stdout": "hello\n12\ntrue\n2\n"
+  },
+  {
+    "path": "L27_第06章C_Lambda与方法引用/code/PredicateAndOrdering.java",
+    "class": "PredicateAndOrdering",
+    "kind": "normal",
+    "stdout": "[b, aa, bb, null]\n"
+  },
+  {
+    "path": "L27_第06章C_Lambda与方法引用/参考答案/LambdaPractice.java",
+    "class": "LambdaPractice",
+    "kind": "normal",
+    "stdout": "练习0\n练习1\n标签:数组\n"
+  },
+  {
+    "path": "L28_第06章D_内部类与所属对象/code/LocalActionForms.java",
+    "class": "LocalActionForms",
+    "kind": "normal",
+    "stdout": "外!\n内/外\n外\n"
+  },
+  {
+    "path": "L28_第06章D_内部类与所属对象/code/MemberRooms.java",
+    "class": "MemberRooms",
+    "kind": "normal",
+    "stdout": "读者/东馆\n2..9\n"
+  },
+  {
+    "path": "L28_第06章D_内部类与所属对象/code/TwoOuterLinks.java",
+    "class": "TwoOuterLinks",
+    "kind": "normal",
+    "stdout": "青禾\n海风\ntrue\n"
+  },
+  {
+    "path": "L28_第06章D_内部类与所属对象/参考答案/SchoolRooms.java",
+    "class": "SchoolRooms",
+    "kind": "normal",
+    "stdout": "林@青禾\n梅@海风\n2\n"
+  },
+  {
+    "path": "L29_第06章E_动态代理/code/ManualProxyBeforeDynamic.java",
+    "class": "ManualProxyBeforeDynamic",
+    "kind": "normal",
+    "stdout": "before\nafter\nsent:数组\n"
+  },
+  {
+    "path": "L29_第06章E_动态代理/code/ProxyRoute.java",
+    "class": "ProxyRoute",
+    "kind": "normal",
+    "stdout": "before:send\nafter:send\nsent:复习\ntrue\nNoticeProxy\n"
+  },
+  {
+    "path": "L29_第06章E_动态代理/参考答案/TwiceProxy.java",
+    "class": "TwiceProxy",
+    "kind": "normal",
+    "stdout": "call:twice\n0\ncall:twice\n6\ncall:twice\n-4\ntrue\n"
+  },
+  {
+    "path": "L30_第07章A_异常分类与报告/code/ExceptionRoutes.java",
+    "class": "ExceptionRoutes",
+    "kind": "normal",
+    "stdout": "ok:15\nbad:不是整数 cause=NumberFormatException\nbad:必须为正 cause=none\n"
+  },
+  {
+    "path": "L30_第07章A_异常分类与报告/code/FailedAssignmentRoute.java",
+    "class": "FailedAssignmentRoute",
+    "kind": "normal",
+    "stdout": "caught\nsaved=7\n"
+  },
+  {
+    "path": "L30_第07章A_异常分类与报告/参考答案/PageParsing.java",
+    "class": "PageParsing",
+    "kind": "normal",
+    "stdout": "ok:24\nbad:不是有效int页码:NumberFormatException\nbad:页码必须为正:none\nbad:页码必须为正:none\nok:1\nok:2147483647\n"
+  },
+  {
+    "path": "L31_第07章B_捕获与资源关闭/code/ResourceExitRoutes.java",
+    "class": "ResourceExitRoutes",
+    "kind": "normal",
+    "stdout": "open:A\nopen:B\nwork\nclose:B\nclose:A\nfinally\ncontinue\n---\nopen:A\nopen:B\nwork\nclose:B\nclose:A\ncaught:body suppressed=1\nfinally\ncontinue\n"
+  },
+  {
+    "path": "L31_第07章B_捕获与资源关闭/code/ReturnThroughFinally.java",
+    "class": "ReturnThroughFinally",
+    "kind": "normal",
+    "stdout": "finally=2\nreturned=1\n"
+  },
+  {
+    "path": "L31_第07章B_捕获与资源关闭/参考答案/ReaderLineCount.java",
+    "class": "ReaderLineCount",
+    "kind": "normal",
+    "stdout": "2\n0\n1\n3\n"
+  },
+  {
+    "path": "L32_第07章C_断言日志与调试/code/AreaCheckpoints.java",
+    "class": "AreaCheckpoints",
+    "kind": "normal",
+    "stdout": "2:3 expected=6 actual=6 mismatch=false\n0:3 expected=0 actual=0 mismatch=false\n"
+  },
+  {
+    "path": "L32_第07章C_断言日志与调试/code/LoggingPipeline.java",
+    "class": "LoggingPipeline",
+    "kind": "normal",
+    "stdout": "FINE:step\nINFO:ready L32\nWARNING:read|IOException\n"
+  },
+  {
+    "path": "L32_第07章C_断言日志与调试/code/RuntimeAssertions.java",
+    "class": "RuntimeAssertions",
+    "kind": "normal",
+    "stdout": "enabled=false\n3.0\n"
+  },
+  {
+    "path": "L32_第07章C_断言日志与调试/参考答案/TaskAudit.java",
+    "class": "TaskAudit",
+    "kind": "normal",
+    "stdout": "INFO:数组:20\nWARNING:negative minutes\narea=6\n"
+  },
+  {
+    "path": "L33_第08章A_泛型类方法与限定/code/BoundedMinimum.java",
+    "class": "BoundedMinimum",
+    "kind": "normal",
+    "stdout": "A\n-5\n"
+  },
+  {
+    "path": "L33_第08章A_泛型类方法与限定/code/GenericFirstMethod.java",
+    "class": "GenericFirstMethod",
+    "kind": "normal",
+    "stdout": "A\n4\n"
+  },
+  {
+    "path": "L33_第08章A_泛型类方法与限定/code/GenericParcelDemo.java",
+    "class": "GenericParcelDemo",
+    "kind": "normal",
+    "stdout": "Java\n20\n"
+  },
+  {
+    "path": "L33_第08章A_泛型类方法与限定/code/ObjectBoxNeed.java",
+    "class": "ObjectBoxNeed",
+    "kind": "normal",
+    "stdout": "Java\nread-failed\n"
+  },
+  {
+    "path": "L33_第08章A_泛型类方法与限定/参考答案/PairPractice.java",
+    "class": "PairPractice",
+    "kind": "normal",
+    "stdout": "读:练\n练:读\n读:练\nB\n1\nempty rejected\n"
+  },
+  {
+    "path": "L34_第08章B_擦除桥接与限制/code/BridgeInspection.java",
+    "class": "BridgeInspection",
+    "kind": "normal",
+    "stdout": "child\nnormal=1 bridge=1\n"
+  },
+  {
+    "path": "L34_第08章B_擦除桥接与限制/code/ErasureIdentity.java",
+    "class": "ErasureIdentity",
+    "kind": "normal",
+    "stdout": "true\ntrue\n"
+  },
+  {
+    "path": "L34_第08章B_擦除桥接与限制/code/RawPollutionCheckpoint.java",
+    "class": "RawPollutionCheckpoint",
+    "kind": "normal",
+    "stdout": "Java\n"
+  },
+  {
+    "path": "L34_第08章B_擦除桥接与限制/code/TypedFactories.java",
+    "class": "TypedFactories",
+    "kind": "normal",
+    "stdout": "ready\n2\n"
+  },
+  {
+    "path": "L34_第08章B_擦除桥接与限制/参考答案/SafeBatch.java",
+    "class": "SafeBatch",
+    "kind": "normal",
+    "stdout": "Java\n2\nnull\n0\nnegative rejected\n"
+  },
+  {
+    "path": "L35_第08章C_通配符与泛型反射/code/GenericDeclarationInfo.java",
+    "class": "GenericDeclarationInfo",
+    "kind": "normal",
+    "stdout": "java.lang.Object\njava.lang.String\njava.lang.Object\n0\n"
+  },
+  {
+    "path": "L35_第08章C_通配符与泛型反射/code/NumberReaderWalk.java",
+    "class": "NumberReaderWalk",
+    "kind": "normal",
+    "stdout": "3.0\n2.0\n0.0\n"
+  },
+  {
+    "path": "L35_第08章C_通配符与泛型反射/code/ParentComparableMinimum.java",
+    "class": "ParentComparableMinimum",
+    "kind": "normal",
+    "stdout": "2025-01-01\n"
+  },
+  {
+    "path": "L35_第08章C_通配符与泛型反射/code/WildcardCaptureSwap.java",
+    "class": "WildcardCaptureSwap",
+    "kind": "normal",
+    "stdout": "[B, A]\n"
+  },
+  {
+    "path": "L35_第08章C_通配符与泛型反射/code/WildcardCopy.java",
+    "class": "WildcardCopy",
+    "kind": "normal",
+    "stdout": "[1, 2]\n[1, 2, 3]\n"
+  },
+  {
+    "path": "L35_第08章C_通配符与泛型反射/参考答案/NumberTotals.java",
+    "class": "NumberTotals",
+    "kind": "normal",
+    "stdout": "3.0\n2.0\n0.0\n[1, 2]\n[1, 2]\n[2, 1]\nneed two\n"
+  },
+  {
+    "path": "L36_第09章A_集合接口与迭代器/code/IteratorFilterWalk.java",
+    "class": "IteratorFilterWalk",
+    "kind": "normal",
+    "stdout": "true\ntrue\nvisit:读\nvisit:skip\nvisit:练\n[读, 练]\n"
+  },
+  {
+    "path": "L36_第09章A_集合接口与迭代器/code/IteratorInvalidation.java",
+    "class": "IteratorInvalidation",
+    "kind": "normal",
+    "stdout": "A\n"
+  },
+  {
+    "path": "L36_第09章A_集合接口与迭代器/code/ListCursorGaps.java",
+    "class": "ListCursorGaps",
+    "kind": "normal",
+    "stdout": "A\nC\n[A, B, c]\nc\n[A, B]\nnextIndex=2\n"
+  },
+  {
+    "path": "L36_第09章A_集合接口与迭代器/参考答案/BlankFilter.java",
+    "class": "BlankFilter",
+    "kind": "normal",
+    "stdout": "[A, B]\n[A, X, b]\n[]\n[]\n"
+  },
+  {
+    "path": "L37_第09章B_集合顺序与队列/code/DequeTwoProtocols.java",
+    "class": "DequeTwoProtocols",
+    "kind": "normal",
+    "stdout": "A\nB\nB\nA\nnull\n"
+  },
+  {
+    "path": "L37_第09章B_集合顺序与队列/code/PriorityDrill.java",
+    "class": "PriorityDrill",
+    "kind": "normal",
+    "stdout": "1\n1\n2\n3\nnull\n"
+  },
+  {
+    "path": "L37_第09章B_集合顺序与队列/code/SetOrderChoices.java",
+    "class": "SetOrderChoices",
+    "kind": "normal",
+    "stdout": "true\ntrue\nfalse\n[bb, a]\n[a, bb]\n[a]\n"
+  },
+  {
+    "path": "L37_第09章B_集合顺序与队列/参考答案/UniqueNames.java",
+    "class": "UniqueNames",
+    "kind": "normal",
+    "stdout": "[梅, 林, 周]\n[a, bb, cc]\n[]\n[]\n"
+  },
+  {
+    "path": "L38_第09章C_映射更新与视图/code/MapAccessOrder.java",
+    "class": "MapAccessOrder",
+    "kind": "normal",
+    "stdout": "[A, B]\n[B, A]\n"
+  },
+  {
+    "path": "L38_第09章C_映射更新与视图/code/MapAssociationSteps.java",
+    "class": "MapAssociationSteps",
+    "kind": "normal",
+    "stdout": "null\n10\n1\n20\n0\nnull\ntrue\n"
+  },
+  {
+    "path": "L38_第09章C_映射更新与视图/code/MapNullUpdateRoutes.java",
+    "class": "MapNullUpdateRoutes",
+    "kind": "normal",
+    "stdout": "{read=2, code=1}\nfalse\ntrue\ntrue\n"
+  },
+  {
+    "path": "L38_第09章C_映射更新与视图/code/MapWindowAndSnapshot.java",
+    "class": "MapWindowAndSnapshot",
+    "kind": "normal",
+    "stdout": "{B=2}\n[A, B]\n"
+  },
+  {
+    "path": "L38_第09章C_映射更新与视图/code/SpecializedMapKeys.java",
+    "class": "SpecializedMapKeys",
+    "kind": "normal",
+    "stdout": "1\n2\n{TODO=2, DONE=1}\n"
+  },
+  {
+    "path": "L38_第09章C_映射更新与视图/参考答案/WordLedger.java",
+    "class": "WordLedger",
+    "kind": "normal",
+    "stdout": "read=2\ncode=1\ntest=1\n{read=2, test=1}\n[read, code, test]\n{}\nfalse\ntrue\n"
+  },
+  {
+    "path": "L39_第09章D_视图算法与转换/code/BitFlagsAndEnumeration.java",
+    "class": "BitFlagsAndEnumeration",
+    "kind": "normal",
+    "stdout": "length=10\ncount=2\nlength=3\ncount=1\n[A, B]\n"
+  },
+  {
+    "path": "L39_第09章D_视图算法与转换/code/CollectionAlgorithmSteps.java",
+    "class": "CollectionAlgorithmSteps",
+    "kind": "normal",
+    "stdout": "[A, B, ?]\n[?, B, A]\n2\n"
+  },
+  {
+    "path": "L39_第09章D_视图算法与转换/code/FixedViewAndSnapshot.java",
+    "class": "FixedViewAndSnapshot",
+    "kind": "normal",
+    "stdout": "[X, B]\n[X, Y]\n[X, B]\n"
+  },
+  {
+    "path": "L39_第09章D_视图算法与转换/code/SubListDeletion.java",
+    "class": "SubListDeletion",
+    "kind": "normal",
+    "stdout": "[B, C]\n[A, D]\n[]\n"
+  },
+  {
+    "path": "L39_第09章D_视图算法与转换/code/TypedArrayConversion.java",
+    "class": "TypedArrayConversion",
+    "kind": "normal",
+    "stdout": "[A, B]\n[A, B, null, old]\ntrue\n"
+  },
+  {
+    "path": "L39_第09章D_视图算法与转换/参考答案/SortedInsert.java",
+    "class": "SortedInsert",
+    "kind": "normal",
+    "stdout": "[10, 20, 25, 30]\n[30, 10, 20]\n[25]\n[5, 10, 20, 30]\n[10, 20, 30, 40]\n[10, 20, 30]\n[10, 20, 25, 30]\n[A, B, null, old]\n"
+  },
+  {
+    "path": "L40_第10章A_窗口组件与事件线程/code/ComponentTreeProbe.java",
+    "class": "ComponentTreeProbe",
+    "kind": "normal",
+    "stdout": "card-children=2\nbody-children=1\nbody-in-card=true\n",
+    "stdin": "",
+    "args": [],
+    "contains": null,
+    "cases": []
+  },
+  {
+    "path": "L40_第10章A_窗口组件与事件线程/code/ContentPaneShape.java",
+    "class": "ContentPaneShape",
+    "kind": "normal",
+    "stdout": "content=JPanel\nglass=JPanel\nmenu-bar=absent\nlayered-children=1\n",
+    "stdin": "",
+    "args": [],
+    "contains": null,
+    "cases": []
+  },
+  {
+    "path": "L40_第10章A_窗口组件与事件线程/code/EdtCallSequence.java",
+    "class": "EdtCallSequence",
+    "kind": "normal",
+    "stdout": "before\nedt=true\nafter\n"
+  },
+  {
+    "path": "L40_第10章A_窗口组件与事件线程/code/FirstStudyFrame.java",
+    "class": "FirstStudyFrame",
+    "kind": "normal",
+    "stdout": "edt=true\ncomponents=1\npreferred=320x180\n",
+    "args": [
+      "--check"
+    ]
+  },
+  {
+    "path": "L40_第10章A_窗口组件与事件线程/code/MinimalFrame.java",
+    "class": "MinimalFrame",
+    "kind": "normal",
+    "stdout": "preferred=320x180\nactual-before=0x0\nactual-after=360x200\n",
+    "stdin": "",
+    "args": [
+      "--check"
+    ],
+    "contains": null,
+    "cases": []
+  },
+  {
+    "path": "L40_第10章A_窗口组件与事件线程/code/RepaintFromState.java",
+    "class": "RepaintFromState",
+    "kind": "normal",
+    "stdout": "painted=true\n",
+    "args": [
+      "--check"
+    ]
+  },
+  {
+    "path": "L40_第10章A_窗口组件与事件线程/参考答案/MyStudyWindow.java",
+    "class": "MyStudyWindow",
+    "kind": "normal",
+    "stdout": "1\n360x200\n",
+    "args": [
+      "--check"
+    ]
+  },
+  {
+    "path": "L40_第10章A_窗口组件与事件线程/参考答案/NestedContent.java",
+    "class": "NestedContent",
+    "kind": "normal",
+    "stdout": "card=2\nbody=1\nparent=true\n",
+    "stdin": "",
+    "args": [
+      "--check"
+    ],
+    "contains": null,
+    "cases": []
+  },
+  {
+    "path": "L41_第10章B_图形文字与图像/code/CircleFromCenter.java",
+    "class": "CircleFromCenter",
+    "kind": "normal",
+    "stdout": "x=70.0 y=50.0 w=60.0 h=60.0\nnaive-empty=true\nnaive-w=-80.0\n",
+    "stdin": "",
+    "args": [],
+    "contains": null,
+    "cases": []
+  },
+  {
+    "path": "L41_第10章B_图形文字与图像/code/DiagonalRectangle.java",
+    "class": "DiagonalRectangle",
+    "kind": "normal",
+    "stdout": "20.0:10.0:80.0:50.0\n60.0:35.0\n"
+  },
+  {
+    "path": "L41_第10章B_图形文字与图像/code/FillVersusDrawPixels.java",
+    "class": "FillVersusDrawPixels",
+    "kind": "normal",
+    "stdout": "fill-inside=true\nfill-right-edge=false\ndraw-edge=true\ndraw-inside=false\n",
+    "stdin": "",
+    "args": [],
+    "contains": null,
+    "cases": []
+  },
+  {
+    "path": "L41_第10章B_图形文字与图像/code/FontOverloadTrap.java",
+    "class": "FontOverloadTrap",
+    "kind": "normal",
+    "stdout": "style-arg: style=0 size=12.0\nsize-arg: style=0 size=14.0\nitalic=true size=12.0\n",
+    "stdin": "",
+    "args": [],
+    "contains": null,
+    "cases": []
+  },
+  {
+    "path": "L41_第10章B_图形文字与图像/code/ImageLoadBoundary.java",
+    "class": "ImageLoadBoundary",
+    "kind": "normal",
+    "stdout": "unsupported\n"
+  },
+  {
+    "path": "L41_第10章B_图形文字与图像/code/PositiveTileImage.java",
+    "class": "PositiveTileImage",
+    "kind": "normal",
+    "stdout": "size=8x8\ntiled=true\n"
+  },
+  {
+    "path": "L41_第10章B_图形文字与图像/code/RectParamsProbe.java",
+    "class": "RectParamsProbe",
+    "kind": "normal",
+    "stdout": "x=100.0 y=50.0\nw=80.0 h=40.0\nmaxX=180.0 maxY=90.0\ncenter=140.0,70.0\nfloat-width=80.0\nempty=true\n",
+    "stdin": "",
+    "args": [],
+    "contains": null,
+    "cases": []
+  },
+  {
+    "path": "L41_第10章B_图形文字与图像/code/ShapePaintLab.java",
+    "class": "ShapePaintLab",
+    "kind": "normal",
+    "stdout": "rectangle=true\nellipse=true\n",
+    "args": [
+      "--check"
+    ]
+  },
+  {
+    "path": "L41_第10章B_图形文字与图像/code/TextBaselineMeasure.java",
+    "class": "TextBaselineMeasure",
+    "kind": "normal",
+    "stdout": "inside=true\n"
+  },
+  {
+    "path": "L41_第10章B_图形文字与图像/参考答案/CenteredTitle.java",
+    "class": "CenteredTitle",
+    "kind": "normal",
+    "stdout": "inside=true\n",
+    "stdin": "",
+    "args": [
+      "--check"
+    ],
+    "contains": null,
+    "cases": []
+  },
+  {
+    "path": "L41_第10章B_图形文字与图像/参考答案/StudyBadge.java",
+    "class": "StudyBadge",
+    "kind": "normal",
+    "stdout": "fill=true\nbackground=true\n",
+    "args": [
+      "--check"
+    ]
+  },
+  {
+    "path": "L42_第11章_事件监听动作与鼠标/code/ButtonEventRoute.java",
+    "class": "ButtonEventRoute",
+    "kind": "normal",
+    "stdout": "count=2\nlabel=2\n",
+    "args": [
+      "--check"
+    ]
+  },
+  {
+    "path": "L42_第11章_事件监听动作与鼠标/code/InputMapConditions.java",
+    "class": "InputMapConditions",
+    "kind": "normal",
+    "stdout": "window=course.blue\nfocused=null\nancestor=null\n",
+    "stdin": "",
+    "args": [],
+    "contains": null,
+    "cases": []
+  },
+  {
+    "path": "L42_第11章_事件监听动作与鼠标/code/ListenerRegistrationOrder.java",
+    "class": "ListenerRegistrationOrder",
+    "kind": "normal",
+    "stdout": "third,second,first\nthird,second,first,third,first\n",
+    "stdin": "",
+    "args": [],
+    "contains": null,
+    "cases": []
+  },
+  {
+    "path": "L42_第11章_事件监听动作与鼠标/code/ListenerStyles.java",
+    "class": "ListenerStyles",
+    "kind": "normal",
+    "stdout": "count=3\n",
+    "stdin": "",
+    "args": [],
+    "contains": null,
+    "cases": []
+  },
+  {
+    "path": "L42_第11章_事件监听动作与鼠标/code/MouseModelRoute.java",
+    "class": "MouseModelRoute",
+    "kind": "normal",
+    "stdout": "50:60\n",
+    "args": [
+      "--check"
+    ]
+  },
+  {
+    "path": "L42_第11章_事件监听动作与鼠标/code/SharedActionBinding.java",
+    "class": "SharedActionBinding",
+    "kind": "normal",
+    "stdout": "B\nbound=true\nenabled=false:false\n"
+  },
+  {
+    "path": "L42_第11章_事件监听动作与鼠标/code/SwingTimerTicks.java",
+    "class": "SwingTimerTicks",
+    "kind": "normal",
+    "stdout": "ticks=2 edt=true\n"
+  },
+  {
+    "path": "L42_第11章_事件监听动作与鼠标/参考答案/ResettableSteps.java",
+    "class": "ResettableSteps",
+    "kind": "normal",
+    "stdout": "label=1\ncount=1\nbound=2\nenabled=false\n",
+    "args": [
+      "--check"
+    ]
+  },
+  {
+    "path": "L42_第11章_事件监听动作与鼠标/参考答案/TwoListeners.java",
+    "class": "TwoListeners",
+    "kind": "normal",
+    "stdout": "count=2\nsource=true\n",
+    "stdin": "",
+    "args": [
+      "--check"
+    ],
+    "contains": null,
+    "cases": []
+  },
+  {
+    "path": "L43_第12章A_模型布局与输入控件/code/CourseEntryForm.java",
+    "class": "CourseEntryForm",
+    "kind": "normal",
+    "stdout": "数组|\nstatus=empty\n",
+    "args": [
+      "--check"
+    ]
+  },
+  {
+    "path": "L43_第12章A_模型布局与输入控件/code/IndependentAndExclusive.java",
+    "class": "IndependentAndExclusive",
+    "kind": "normal",
+    "stdout": "true:true\nfalse:true\nLARGE\n"
+  },
+  {
+    "path": "L43_第12章A_模型布局与输入控件/code/NestedLayoutSizes.java",
+    "class": "NestedLayoutSizes",
+    "kind": "normal",
+    "stdout": "wider=true\ncenterTaller=true\n"
+  },
+  {
+    "path": "L43_第12章A_模型布局与输入控件/code/PasswordArrayLifecycle.java",
+    "class": "PasswordArrayLifecycle",
+    "kind": "normal",
+    "stdout": "length=4\ncleared=true\nmasked=false\n"
+  },
+  {
+    "path": "L43_第12章A_模型布局与输入控件/code/SelectionModelChanges.java",
+    "class": "SelectionModelChanges",
+    "kind": "normal",
+    "stdout": "练习\n80\nnone\n"
+  },
+  {
+    "path": "L43_第12章A_模型布局与输入控件/code/SharedTextDocument.java",
+    "class": "SharedTextDocument",
+    "kind": "normal",
+    "stdout": "AB\nAB\ntrue\n"
+  },
+  {
+    "path": "L43_第12章A_模型布局与输入控件/参考答案/ReadingForm.java",
+    "class": "ReadingForm",
+    "kind": "normal",
+    "stdout": "数组:练习:30:true\nempty\n数组:练习:0:true\n数组:练习:60:true\nno mode\n",
+    "args": [
+      "--check"
+    ]
+  },
+  {
+    "path": "L44_第12章B_菜单布局与焦点/code/GridBagRows.java",
+    "class": "GridBagRows",
+    "kind": "normal",
+    "stdout": "grows=true\n"
+  },
+  {
+    "path": "L44_第12章B_菜单布局与焦点/code/GroupLayoutRows.java",
+    "class": "GroupLayoutRows",
+    "kind": "normal",
+    "stdout": "sameX=true\nrows=true\n"
+  },
+  {
+    "path": "L44_第12章B_菜单布局与焦点/code/MenuWorkbench.java",
+    "class": "MenuWorkbench",
+    "kind": "normal",
+    "stdout": "2\nfalse:false\n",
+    "args": [
+      "--check"
+    ]
+  },
+  {
+    "path": "L44_第12章B_菜单布局与焦点/code/PopupChoices.java",
+    "class": "PopupChoices",
+    "kind": "normal",
+    "stdout": "true\nfalse:true\n",
+    "args": [
+      "--check"
+    ]
+  },
+  {
+    "path": "L44_第12章B_菜单布局与焦点/code/VerticalStack.java",
+    "class": "VerticalStack",
+    "kind": "normal",
+    "stdout": "visible=2\nemptyHeight=4\n"
+  },
+  {
+    "path": "L44_第12章B_菜单布局与焦点/参考答案/NotesActions.java",
+    "class": "NotesActions",
+    "kind": "normal",
+    "stdout": "0\nfalse:false\ntrue\n",
+    "args": [
+      "--check"
+    ]
+  },
+  {
+    "path": "L45_第12章C_对话框选择器与排错/code/ColorCommitRule.java",
+    "class": "ColorCommitRule",
+    "kind": "normal",
+    "stdout": "true\ntrue\n",
+    "args": [
+      "--check"
+    ]
+  },
+  {
+    "path": "L45_第12章C_对话框选择器与排错/code/ComponentTreeWalk.java",
+    "class": "ComponentTreeWalk",
+    "kind": "normal",
+    "stdout": "root\n  row\n    label\n"
+  },
+  {
+    "path": "L45_第12章C_对话框选择器与排错/code/FileChoicePolicy.java",
+    "class": "FileChoicePolicy",
+    "kind": "normal",
+    "stdout": "true\nfalse\n",
+    "args": [
+      "--check"
+    ]
+  },
+  {
+    "path": "L45_第12章C_对话框选择器与排错/code/InputCommitRoute.java",
+    "class": "InputCommitRoute",
+    "kind": "normal",
+    "stdout": "cancel\nempty\n数组\n",
+    "args": [
+      "--check"
+    ]
+  },
+  {
+    "path": "L45_第12章C_对话框选择器与排错/code/NameDialogTransaction.java",
+    "class": "NameDialogTransaction",
+    "kind": "normal",
+    "stdout": "false\ntrue:数组\nfalse\n",
+    "args": [
+      "--check"
+    ]
+  },
+  {
+    "path": "L45_第12章C_对话框选择器与排错/参考答案/NamePolicy.java",
+    "class": "NamePolicy",
+    "kind": "normal",
+    "stdout": "true\ntrue\nabcdefghijkl\ntrue\n循环\n"
+  },
+  {
+    "path": "L46_第13章A_JAR清单资源与密封/code/ManifestSections.java",
+    "class": "ManifestSections",
+    "kind": "normal",
+    "stdout": "campus.app.Main\nlib/text.jar\ntrue\n"
+  },
+  {
+    "path": "L46_第13章A_JAR清单资源与密封/code/SealingOriginCheck.java",
+    "class": "SealingOriginCheck",
+    "kind": "normal",
+    "stdout": "sealed=true\nmixed-origin=rejected\n"
+  },
+  {
+    "path": "L46_第13章A_JAR清单资源与密封/参考答案/JarEntryCount.java",
+    "class": "JarEntryCount",
+    "kind": "normal",
+    "stdout": "1.0\ncampus/about.txt\n65\n"
+  },
+  {
+    "path": "L47_第13章B_配置首选项与服务加载/code/ConfigFallbackSteps.java",
+    "class": "ConfigFallbackSteps",
+    "kind": "normal",
+    "stdout": "数组\n300\n200\n"
+  },
+  {
+    "path": "L47_第13章B_配置首选项与服务加载/code/ConfigRoundTrip.java",
+    "class": "ConfigRoundTrip",
+    "kind": "normal",
+    "stdout": "数组\nnull\n300\n"
+  },
+  {
+    "path": "L47_第13章B_配置首选项与服务加载/code/ConfigUtf8File.java",
+    "class": "ConfigUtf8File",
+    "kind": "normal",
+    "stdout": "path-required\n"
+  },
+  {
+    "path": "L47_第13章B_配置首选项与服务加载/code/MemoryPreferenceTree.java",
+    "class": "MemoryPreferenceTree",
+    "kind": "normal",
+    "stdout": "/com/example/course/window\n420\n300\n"
+  },
+  {
+    "path": "L47_第13章B_配置首选项与服务加载/参考答案/WindowWidthRule.java",
+    "class": "WindowWidthRule",
+    "kind": "normal",
+    "stdout": "300\n300\n300\n200\n1600\n300\n"
+  },
+  {
+    "path": "L48_第13章C_旧部署阅读与现代交付/code/SessionLifecycle.java",
+    "class": "SessionLifecycle",
+    "kind": "normal",
+    "stdout": "true\nfalse\ntrue\nfalse\ntrue\n"
+  },
+  {
+    "path": "L48_第13章C_旧部署阅读与现代交付/code/StandaloneStudyChart.java",
+    "class": "StandaloneStudyChart",
+    "kind": "normal",
+    "stdout": "bars=2\npainted=true\n",
+    "args": [
+      "--check"
+    ]
+  },
+  {
+    "path": "L48_第13章C_旧部署阅读与现代交付/参考答案/ReleaseFacts.java",
+    "class": "ReleaseFacts",
+    "kind": "normal",
+    "stdout": "entry=campus.app.DeployMain\nresource=campus/app/title.txt\nbytecode-target=8\ntested-runtime=21\n"
+  },
+  {
+    "path": "L49_第14章A_线程启动与中断/code/InterruptFlagReads.java",
+    "class": "InterruptFlagReads",
+    "kind": "normal",
+    "stdout": "true\ntrue\ntrue\nfalse\n"
+  },
+  {
+    "path": "L49_第14章A_线程启动与中断/code/InterruptPropagation.java",
+    "class": "InterruptPropagation",
+    "kind": "normal",
+    "stdout": "cancelled=true\nreleased\n"
+  },
+  {
+    "path": "L49_第14章A_线程启动与中断/code/InterruptWaitRoute.java",
+    "class": "InterruptWaitRoute",
+    "kind": "normal",
+    "stdout": "catch=false\nrestored=true\ncleanup\ndone\n"
+  },
+  {
+    "path": "L49_第14章A_线程启动与中断/code/StartVersusRun.java",
+    "class": "StartVersusRun",
+    "kind": "normal",
+    "stdout": "run:main\nstart:helper\njoined\n"
+  },
+  {
+    "path": "L49_第14章A_线程启动与中断/参考答案/JoinedSums.java",
+    "class": "JoinedSums",
+    "kind": "normal",
+    "stdout": "5050\n20100\n0\n"
+  },
+  {
+    "path": "L50_第14章B_线程状态与属性/code/BlockingStateSnapshots.java",
+    "class": "BlockingStateSnapshots",
+    "kind": "normal",
+    "stdout": "BLOCKED\nWAITING\nTIMED_WAITING\n"
+  },
+  {
+    "path": "L50_第14章B_线程状态与属性/code/DaemonLifetime.java",
+    "class": "DaemonLifetime",
+    "kind": "normal",
+    "stdout": "daemon=true\nclean-finish\n"
+  },
+  {
+    "path": "L50_第14章B_线程状态与属性/code/StableThreadStates.java",
+    "class": "StableThreadStates",
+    "kind": "normal",
+    "stdout": "NEW\nTERMINATED\n"
+  },
+  {
+    "path": "L50_第14章B_线程状态与属性/参考答案/LoaderFailure.java",
+    "class": "LoaderFailure",
+    "kind": "normal",
+    "stdout": "loader:IllegalArgumentException\nmain-alive\n"
+  },
+  {
+    "path": "L51_第14章C_共享状态锁与条件/code/ConditionMailbox.java",
+    "class": "ConditionMailbox",
+    "kind": "normal",
+    "stdout": "sum=3\nclosed=true\n"
+  },
+  {
+    "path": "L51_第14章C_共享状态锁与条件/code/LocalTaskNotes.java",
+    "class": "LocalTaskNotes",
+    "kind": "normal",
+    "stdout": "A\nB\nmain-size=0\n"
+  },
+  {
+    "path": "L51_第14章C_共享状态锁与条件/code/LockedCredits.java",
+    "class": "LockedCredits",
+    "kind": "normal",
+    "stdout": "2000\ntrue\nnegative-rejected\n"
+  },
+  {
+    "path": "L51_第14章C_共享状态锁与条件/code/LostUpdateSchedule.java",
+    "class": "LostUpdateSchedule",
+    "kind": "normal",
+    "stdout": "count=1\n"
+  },
+  {
+    "path": "L51_第14章C_共享状态锁与条件/code/MonitorOneShot.java",
+    "class": "MonitorOneShot",
+    "kind": "normal",
+    "stdout": "ready:数组\n"
+  },
+  {
+    "path": "L51_第14章C_共享状态锁与条件/code/ReadWriteCatalog.java",
+    "class": "ReadWriteCatalog",
+    "kind": "normal",
+    "stdout": "1:1\n"
+  },
+  {
+    "path": "L51_第14章C_共享状态锁与条件/code/SynchronizedCounter.java",
+    "class": "SynchronizedCounter",
+    "kind": "normal",
+    "stdout": "2000\n"
+  },
+  {
+    "path": "L51_第14章C_共享状态锁与条件/code/TimedLockAttempt.java",
+    "class": "TimedLockAttempt",
+    "kind": "normal",
+    "stdout": "acquired=false\n"
+  },
+  {
+    "path": "L51_第14章C_共享状态锁与条件/code/VolatilePublishOnce.java",
+    "class": "VolatilePublishOnce",
+    "kind": "normal",
+    "stdout": "42\nsize=1\n"
+  },
+  {
+    "path": "L51_第14章C_共享状态锁与条件/参考答案/OrderedPairLocks.java",
+    "class": "OrderedPairLocks",
+    "kind": "normal",
+    "stdout": "2:2\n"
+  },
+  {
+    "path": "L52_第14章D_队列原子类与并发集合/code/AtomicStatistics.java",
+    "class": "AtomicStatistics",
+    "kind": "normal",
+    "stdout": "2000\n1999\n2000\n"
+  },
+  {
+    "path": "L52_第14章D_队列原子类与并发集合/code/BoundedMessageFlow.java",
+    "class": "BoundedMessageFlow",
+    "kind": "normal",
+    "stdout": "sum=6\n"
+  },
+  {
+    "path": "L52_第14章D_队列原子类与并发集合/code/ConcurrentViewsAndReduction.java",
+    "class": "ConcurrentViewsAndReduction",
+    "kind": "normal",
+    "stdout": "5\nB\nnull\n0\n1:false\ntrue\n"
+  },
+  {
+    "path": "L52_第14章D_队列原子类与并发集合/code/ConcurrentWordUpdates.java",
+    "class": "ConcurrentWordUpdates",
+    "kind": "normal",
+    "stdout": "2000\n2000\ntrue\nfirst-return-is-null\n"
+  },
+  {
+    "path": "L52_第14章D_队列原子类与并发集合/code/ParallelArraySteps.java",
+    "class": "ParallelArraySteps",
+    "kind": "normal",
+    "stdout": "[1, 2, 3]\n[0, 2, 4]\n[1, 3, 6]\n"
+  },
+  {
+    "path": "L52_第14章D_队列原子类与并发集合/code/QueueFailurePolicies.java",
+    "class": "QueueFailurePolicies",
+    "kind": "normal",
+    "stdout": "true\nfalse\nA\nnull\nempty-error\nfalse\n"
+  },
+  {
+    "path": "L52_第14章D_队列原子类与并发集合/code/SnapshotAndSynchronizedWalk.java",
+    "class": "SnapshotAndSynchronizedWalk",
+    "kind": "normal",
+    "stdout": "A\nsnapshot-remove-rejected\n2\n2\n"
+  },
+  {
+    "path": "L52_第14章D_队列原子类与并发集合/code/SpecializedQueueRoutes.java",
+    "class": "SpecializedQueueRoutes",
+    "kind": "normal",
+    "stdout": "1:2\nnull\nready\n5\n"
+  },
+  {
+    "path": "L52_第14章D_队列原子类与并发集合/参考答案/QueueTenSum.java",
+    "class": "QueueTenSum",
+    "kind": "normal",
+    "stdout": "55\n"
+  },
+  {
+    "path": "L53_第14章E_Future执行器与SwingWorker/code/CompletionOrderGate.java",
+    "class": "CompletionOrderGate",
+    "kind": "normal",
+    "stdout": "fast\nslow\n"
+  },
+  {
+    "path": "L53_第14章E_Future执行器与SwingWorker/code/ComposedTaskStages.java",
+    "class": "ComposedTaskStages",
+    "kind": "normal",
+    "stdout": "[数组]\nfallback\n3\nfirst\n"
+  },
+  {
+    "path": "L53_第14章E_Future执行器与SwingWorker/code/ForkJoinCount.java",
+    "class": "ForkJoinCount",
+    "kind": "normal",
+    "stdout": "2\n0\n"
+  },
+  {
+    "path": "L53_第14章E_Future执行器与SwingWorker/code/FutureResultRoutes.java",
+    "class": "FutureResultRoutes",
+    "kind": "normal",
+    "stdout": "42\nIllegalArgumentException\n"
+  },
+  {
+    "path": "L53_第14章E_Future执行器与SwingWorker/code/FutureTimeoutAndCancellation.java",
+    "class": "FutureTimeoutAndCancellation",
+    "kind": "normal",
+    "stdout": "timeout\ncancelled=false\ncancelled\ntask-cause=InterruptedException\n"
+  },
+  {
+    "path": "L53_第14章E_Future执行器与SwingWorker/code/LatchAndBarrierRounds.java",
+    "class": "LatchAndBarrierRounds",
+    "kind": "normal",
+    "stdout": "latch=3\nround=3\nround=5\n"
+  },
+  {
+    "path": "L53_第14章E_Future执行器与SwingWorker/code/ScheduledTaskSteps.java",
+    "class": "ScheduledTaskSteps",
+    "kind": "normal",
+    "stdout": "7\nrepeated=true\n"
+  },
+  {
+    "path": "L53_第14章E_Future执行器与SwingWorker/code/SynchronizerShapes.java",
+    "class": "SynchronizerShapes",
+    "kind": "normal",
+    "stdout": "permits=2\nright:left\nphase=1\nterminated=true\n"
+  },
+  {
+    "path": "L53_第14章E_Future执行器与SwingWorker/code/WorkerProgressView.java",
+    "class": "WorkerProgressView",
+    "kind": "normal",
+    "stdout": "done=5050\nbackground=true\ndone-edt=true\n",
+    "args": [
+      "--check"
+    ],
+    "cases": [
+      {
+        "args": [
+          "--cancel-check"
+        ],
+        "stdout": "cancelled\nbackground=true\ndone-edt=true\n"
+      },
+      {
+        "args": [
+          "--fail-check"
+        ],
+        "stdout": "failed=IllegalStateException\nbackground=true\ndone-edt=true\n"
+      }
+    ]
+  },
+  {
+    "path": "L53_第14章E_Future执行器与SwingWorker/参考答案/SquaresExecutor.java",
+    "class": "SquaresExecutor",
+    "kind": "normal",
+    "stdout": "14\nIllegalStateException\n"
+  },
+  {
+    "path": "L54_全书综合_学习记录项目/code/SnapshotReportWarmup.java",
+    "class": "SnapshotReportWarmup",
+    "kind": "normal",
+    "stdout": "50\nlive-size=3\n"
+  },
+  {
+    "path": "L54_全书综合_学习记录项目/参考答案/EmptyStudyReport.java",
+    "class": "EmptyStudyReport",
+    "kind": "normal",
+    "stdout": "0\n50\n"
+  },
+  {
     "path": "S01_结构基础_类与方法/code/CorridorRoute.java",
     "class": "CorridorRoute",
     "kind": "normal",
     "stdout": "1. open\n2. hello\n3. close\n",
     "cases": []
+  },
+  {
+    "path": "S01_结构基础_类与方法/code/NestedCallSteps.java",
+    "class": "NestedCallSteps",
+    "kind": "normal",
+    "stdout": "1.main\n2.prepare\n3.course\n4.prepare\n5.main\n"
+  },
+  {
+    "path": "S01_结构基础_类与方法/code/OutputRequestSteps.java",
+    "class": "OutputRequestSteps",
+    "kind": "normal",
+    "stdout": "AB\nC\n"
   },
   {
     "path": "S01_结构基础_类与方法/参考答案/CampusGreeting.java",
@@ -659,10 +2098,40 @@
     "cases": []
   },
   {
+    "path": "S02_结构基础_对象与引用/code/ClassLiteralCards.java",
+    "class": "ClassLiteralCards",
+    "kind": "normal",
+    "stdout": "two-objects=true\nsame-type=true\nsame-description=true\n"
+  },
+  {
+    "path": "S02_结构基础_对象与引用/code/ReferenceAbsence.java",
+    "class": "ReferenceAbsence",
+    "kind": "normal",
+    "stdout": "true\nlength=0\nno-card\n"
+  },
+  {
     "path": "S02_结构基础_对象与引用/参考答案/LampBoard.java",
     "class": "LampBoard",
     "kind": "normal",
     "stdout": "true\nfalse\n"
+  },
+  {
+    "path": "S03_结构基础_类成员与方法/code/ConstructorDoorSteps.java",
+    "class": "ConstructorDoorSteps",
+    "kind": "normal",
+    "stdout": "core:Lin:0\nouter\ncore:Mei:4\ncreated=2\n"
+  },
+  {
+    "path": "S03_结构基础_类成员与方法/code/FieldAndLocalDefaults.java",
+    "class": "FieldAndLocalDefaults",
+    "kind": "normal",
+    "stdout": "0\nfalse\nnull\n"
+  },
+  {
+    "path": "S03_结构基础_类成员与方法/code/MemberOwnership.java",
+    "class": "MemberOwnership",
+    "kind": "normal",
+    "stdout": "Lin:5\nMei:0\ncreated=2\n"
   },
   {
     "path": "S03_结构基础_类成员与方法/code/ObjectWorkshop.java",

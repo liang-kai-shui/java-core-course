@@ -704,6 +704,2036 @@
         ]
       ],
       "kind": "compile_error"
+    },
+    {
+      "name": "duplicate-parameter-name",
+      "replace": [
+        [
+          "this.points = points;",
+          "int points = points;"
+        ]
+      ],
+      "kind": "compile_error"
+    }
+  ],
+  "DateSteps": [
+    {
+      "name": "base",
+      "stdout": "2024-12-31\n2025-01-01\nyear=2025, month=1, day=1\n2024-12-31 2025-01-01 2025-01-02\n"
+    },
+    {
+      "name": "leap-boundary",
+      "replace": [
+        [
+          "LocalDate.of(2024, 12, 31)",
+          "LocalDate.of(2024, 2, 28)"
+        ]
+      ],
+      "stdout": "2024-02-28\n2024-02-29\nyear=2024, month=2, day=29\n2024-02-28 2024-02-29 2024-03-01\n"
+    }
+  ],
+  "BorrowDesk": [
+    {
+      "name": "base",
+      "stdout": "小林:0/2\ntrue\ntrue\nfalse\n小林:2/2\n"
+    },
+    {
+      "name": "zero-capacity",
+      "replace": [
+        [
+          "new Borrower(\"小林\", 2)",
+          "new Borrower(\"小林\", 0)"
+        ]
+      ],
+      "stdout": "小林:0/0\nfalse\nfalse\nfalse\n小林:0/0\n"
+    }
+  ],
+  "TicketOffice": [
+    {
+      "name": "base",
+      "stdout": "1:普通\n2:访客\nissued=2\n"
+    },
+    {
+      "name": "number-vs-count",
+      "replace": [
+        [
+          "nextId = 1",
+          "nextId = 100"
+        ]
+      ],
+      "stdout": "100:普通\n101:访客\nissued=101\n"
+    }
+  ],
+  "ValuePassing": [
+    {
+      "name": "base",
+      "stdout": "3:8\n8:20\n"
+    },
+    {
+      "name": "modify-vs-rebind",
+      "replace": [
+        [
+          "box = new Box(99);",
+          "box.value = 99;"
+        ]
+      ],
+      "stdout": "3:99\n99:20\n"
+    }
+  ],
+  "PlanConstructors": [
+    {
+      "name": "base",
+      "stdout": "未命名:1\n字符串:1\n数组:3\n"
+    },
+    {
+      "name": "nonpositive-hours",
+      "replace": [
+        [
+          "new LessonPlan(\"数组\", 3)",
+          "new LessonPlan(\"数组\", 0)"
+        ]
+      ],
+      "stdout": "未命名:1\n字符串:1\n数组:1\n"
+    }
+  ],
+  "InitSequence": [
+    {
+      "name": "base",
+      "stdout": "static\nfield\nblock:4\nbody:默认\nouter\nfield\nblock:4\nbody:自选\n"
+    },
+    {
+      "name": "changed-initial-value",
+      "replace": [
+        [
+          "return 3;",
+          "return 8;"
+        ]
+      ],
+      "stdout": "static\nfield\nblock:9\nbody:默认\nouter\nfield\nblock:9\nbody:自选\n"
+    }
+  ],
+  "DocumentedCost": [
+    {
+      "name": "base",
+      "stdout": "12\n"
+    },
+    {
+      "name": "negative-input",
+      "replace": [
+        [
+          "sheets(4, 3)",
+          "sheets(-4, 3)"
+        ]
+      ],
+      "stdout": "0\n"
+    }
+  ],
+  "StudySprint": [
+    {
+      "name": "base",
+      "stdout": "数组@2025-03-01 0/30\ntrue\ntrue\n数组@2025-03-01 30/30\nfalse\n"
+    },
+    {
+      "name": "negative-first-entry",
+      "replace": [
+        [
+          "goal.record(20));",
+          "goal.record(-1));"
+        ]
+      ],
+      "stdout": "数组@2025-03-01 0/30\nfalse\nfalse\n数组@2025-03-01 0/30\ntrue\n"
+    }
+  ],
+  "InheritanceRoute": [
+    {
+      "name": "base",
+      "stdout": "parent:实验课\nchild:2\n实验课=5\n"
+    },
+    {
+      "name": "zero-lab",
+      "replace": [
+        [
+          "new LabCourse(\"实验课\", 3, 2)",
+          "new LabCourse(\"实验课\", 3, 0)"
+        ]
+      ],
+      "stdout": "parent:实验课\nchild:0\n实验课=3\n"
+    },
+    {
+      "name": "missing-super",
+      "replace": [
+        [
+          "super(title, baseHours);",
+          ""
+        ]
+      ],
+      "kind": "compile_error"
+    }
+  ],
+  "DispatchNotices": [
+    {
+      "name": "base",
+      "stdout": "mail:作业\nsite:提醒\nmail:提醒\n"
+    },
+    {
+      "name": "another-implementation",
+      "replace": [
+        [
+          "new SiteNotice(\"提醒\")",
+          "new MailNotice(\"提醒\")"
+        ]
+      ],
+      "stdout": "mail:作业\nmail:提醒\nmail:提醒\n"
+    },
+    {
+      "name": "array-store-check",
+      "replace": [
+        [
+          "NoticeBase[] notices = {new MailNotice(\"作业\"), new SiteNotice(\"提醒\")};",
+          "NoticeBase[] notices = new MailNotice[1]; notices[0] = new SiteNotice(\"提醒\");"
+        ]
+      ],
+      "kind": "runtime_error",
+      "exception": "ArrayStoreException"
+    }
+  ],
+  "BookmarkEquality": [
+    {
+      "name": "base",
+      "stdout": "false\ntrue\ntrue\nB7@12\n"
+    },
+    {
+      "name": "different-page",
+      "replace": [
+        [
+          "BookmarkKey b = new BookmarkKey(\"B7\", 12);",
+          "BookmarkKey b = new BookmarkKey(\"B7\", 13);"
+        ]
+      ],
+      "stdout": "false\nfalse\nfalse\nB7@12\n"
+    },
+    {
+      "name": "hash-collision",
+      "replace": [
+        [
+          "BookmarkKey a = new BookmarkKey(\"B7\", 12);",
+          "BookmarkKey a = new BookmarkKey(\"Aa\", 12);"
+        ],
+        [
+          "BookmarkKey b = new BookmarkKey(\"B7\", 12);",
+          "BookmarkKey b = new BookmarkKey(\"BB\", 12);"
+        ]
+      ],
+      "stdout": "false\nfalse\ntrue\nAa@12\n"
+    }
+  ],
+  "ListAndBoxing": [
+    {
+      "name": "base",
+      "stdout": "0\n[12, 15, 20]\n[12, 20]\nsum=32\ntrue\n"
+    },
+    {
+      "name": "capacity-is-not-size",
+      "replace": [
+        [
+          "System.out.println(scores.size());",
+          "scores.set(0, 5);"
+        ]
+      ],
+      "kind": "runtime_error",
+      "exception": "IndexOutOfBoundsException"
+    },
+    {
+      "name": "tail-insertion",
+      "replace": [
+        [
+          "scores.add(1, 15);",
+          "scores.add(scores.size(), 15);"
+        ]
+      ],
+      "stdout": "0\n[12, 20, 15]\n[12, 20]\nsum=32\ntrue\n"
+    }
+  ],
+  "PhasesAndArguments": [
+    {
+      "name": "base",
+      "stdout": "0\n7\nTODO:待办\nDOING:进行中\nDONE:完成\ntrue\n"
+    },
+    {
+      "name": "one-more-argument",
+      "replace": [
+        [
+          "sum(3, 4)",
+          "sum(3, 4, 5)"
+        ]
+      ],
+      "stdout": "0\n12\nTODO:待办\nDOING:进行中\nDONE:完成\ntrue\n"
+    },
+    {
+      "name": "unknown-enum-name",
+      "replace": [
+        [
+          "Phase.valueOf(\"DOING\")",
+          "Phase.valueOf(\"doing\")"
+        ]
+      ],
+      "kind": "runtime_error",
+      "exception": "IllegalArgumentException"
+    }
+  ],
+  "ReflectionWorkshop": [
+    {
+      "name": "base",
+      "stdout": "true\nReadingNote\nprivate\n复习!\n"
+    },
+    {
+      "name": "missing-class",
+      "replace": [
+        [
+          "Class.forName(\"ReadingNote\")",
+          "Class.forName(\"MissingReadingNote\")"
+        ]
+      ],
+      "stdout": "reflection-failed:ClassNotFoundException\n"
+    },
+    {
+      "name": "private-access-rejected",
+      "replace": [
+        [
+          "field.setAccessible(true);",
+          ""
+        ]
+      ],
+      "stdout": "true\nReadingNote\nprivate\nreflection-failed:IllegalAccessException\n"
+    }
+  ],
+  "TypedArrayResize": [
+    {
+      "name": "base",
+      "stdout": "[2, 4, 0, 0]\n[A, null]\n[]\n"
+    },
+    {
+      "name": "shrink",
+      "replace": [
+        [
+          "resize(numbers, 4)",
+          "resize(numbers, 1)"
+        ]
+      ],
+      "stdout": "[2]\n[A, null]\n[]\n"
+    }
+  ],
+  "TaskContracts": [
+    {
+      "name": "base",
+      "stdout": "task:泛型\n学习\n"
+    },
+    {
+      "name": "unfulfilled-contract",
+      "replace": [
+        [
+          "@Override public String name() { return title; }",
+          ""
+        ]
+      ],
+      "kind": "compile_error"
+    }
+  ],
+  "NaturalLessonOrder": [
+    {
+      "name": "base",
+      "stdout": "早:1\n后:3\n"
+    },
+    {
+      "name": "extreme-priorities",
+      "replace": [
+        [
+          "new RankedLesson(\"后\", 3)",
+          "new RankedLesson(\"后\", Integer.MAX_VALUE)"
+        ],
+        [
+          "new RankedLesson(\"早\", 1)",
+          "new RankedLesson(\"早\", Integer.MIN_VALUE)"
+        ]
+      ],
+      "stdout": "早:-2147483648\n后:2147483647\n"
+    }
+  ],
+  "CallbackRoute": [
+    {
+      "name": "base",
+      "stdout": "prepare:阅读\nrecord:阅读\nfinish:阅读\n"
+    }
+  ],
+  "LengthOrder": [
+    {
+      "name": "base",
+      "stdout": "[a, bb, cc, ddd]\n"
+    },
+    {
+      "name": "descending-length",
+      "replace": [
+        [
+          "Integer.compare(first.length(), second.length())",
+          "Integer.compare(second.length(), first.length())"
+        ]
+      ],
+      "stdout": "[ddd, bb, cc, a]\n"
+    }
+  ],
+  "CloneLedger": [
+    {
+      "name": "base",
+      "stdout": "[1, 2]\n[9, 2]\n"
+    },
+    {
+      "name": "shallow-copy-shares-array",
+      "replace": [
+        [
+          "copy.marks = marks.clone();",
+          ""
+        ]
+      ],
+      "stdout": "[9, 2]\n[9, 2]\n"
+    }
+  ],
+  "LambdaTiming": [
+    {
+      "name": "base",
+      "stdout": "created\n复习\n第0次\n第1次\n第2次\n"
+    },
+    {
+      "name": "not-invoked",
+      "replace": [
+        [
+          "repeat(3,",
+          "repeat(0,"
+        ]
+      ],
+      "stdout": "created\n复习\n"
+    },
+    {
+      "name": "reassigned-captured-variable",
+      "replace": [
+        [
+          "action.run();",
+          "message = \"别的\"; action.run();"
+        ]
+      ],
+      "kind": "compile_error"
+    }
+  ],
+  "MethodReferenceForms": [
+    {
+      "name": "base",
+      "stdout": "hello\n12\ntrue\n2\n"
+    }
+  ],
+  "PredicateAndOrdering": [
+    {
+      "name": "base",
+      "stdout": "[b, aa, bb, null]\n"
+    },
+    {
+      "name": "null-first",
+      "replace": [
+        [
+          "Comparator.nullsLast(core)",
+          "Comparator.nullsFirst(core)"
+        ]
+      ],
+      "stdout": "[null, b, aa, bb]\n"
+    }
+  ],
+  "MemberRooms": [
+    {
+      "name": "base",
+      "stdout": "读者/东馆\n2..9\n"
+    },
+    {
+      "name": "different-outer",
+      "replace": [
+        [
+          "new MemberRooms(\"东馆\")",
+          "new MemberRooms(\"西馆\")"
+        ]
+      ],
+      "stdout": "读者/西馆\n2..9\n"
+    },
+    {
+      "name": "all-negative-range",
+      "replace": [
+        [
+          "new int[] {7, 2, 9}",
+          "new int[] {-7, -2, -9}"
+        ]
+      ],
+      "stdout": "读者/东馆\n-9..-2\n"
+    },
+    {
+      "name": "empty-has-no-range",
+      "replace": [
+        [
+          "new int[] {7, 2, 9}",
+          "new int[] {}"
+        ]
+      ],
+      "kind": "runtime_error",
+      "exception": "IllegalArgumentException"
+    }
+  ],
+  "LocalActionForms": [
+    {
+      "name": "base",
+      "stdout": "外!\n内/外\n外\n"
+    }
+  ],
+  "ProxyRoute": [
+    {
+      "name": "base",
+      "stdout": "before:send\nafter:send\nsent:复习\ntrue\nNoticeProxy\n"
+    },
+    {
+      "name": "different-business-input",
+      "replace": [
+        [
+          "proxy.send(\"复习\")",
+          "proxy.send(\"数组\")"
+        ]
+      ],
+      "stdout": "before:send\nafter:send\nsent:数组\ntrue\nNoticeProxy\n"
+    }
+  ],
+  "ExceptionRoutes": [
+    {
+      "name": "base",
+      "stdout": "ok:15\nbad:不是整数 cause=NumberFormatException\nbad:必须为正 cause=none\n"
+    },
+    {
+      "name": "zero-input",
+      "replace": [
+        [
+          "{\"15\", \"x\", \"-1\"}",
+          "{\"0\", \"x\", \"-1\"}"
+        ]
+      ],
+      "stdout": "bad:必须为正 cause=none\nbad:不是整数 cause=NumberFormatException\nbad:必须为正 cause=none\n"
+    },
+    {
+      "name": "unreported-checked",
+      "replace": [
+        [
+          "static int parse(String text) throws InvalidMinutesException",
+          "static int parse(String text)"
+        ]
+      ],
+      "kind": "compile_error"
+    }
+  ],
+  "ResourceExitRoutes": [
+    {
+      "name": "base",
+      "stdout": "open:A\nopen:B\nwork\nclose:B\nclose:A\nfinally\ncontinue\n---\nopen:A\nopen:B\nwork\nclose:B\nclose:A\ncaught:body suppressed=1\nfinally\ncontinue\n"
+    },
+    {
+      "name": "close-only-failure",
+      "replace": [
+        [
+          "use(true, true);",
+          "use(false, true);"
+        ]
+      ],
+      "stdout": "open:A\nopen:B\nwork\nclose:B\nclose:A\nfinally\ncontinue\n---\nopen:A\nopen:B\nwork\nclose:B\nclose:A\ncaught:close-B suppressed=0\nfinally\ncontinue\n"
+    },
+    {
+      "name": "body-only-failure",
+      "replace": [
+        [
+          "use(true, true);",
+          "use(true, false);"
+        ]
+      ],
+      "stdout": "open:A\nopen:B\nwork\nclose:B\nclose:A\nfinally\ncontinue\n---\nopen:A\nopen:B\nwork\nclose:B\nclose:A\ncaught:body suppressed=0\nfinally\ncontinue\n"
+    }
+  ],
+  "LoggingPipeline": [
+    {
+      "name": "base",
+      "stdout": "FINE:step\nINFO:ready L32\nWARNING:read|IOException\n"
+    },
+    {
+      "name": "handler-threshold",
+      "replace": [
+        [
+          "handler.setLevel(Level.FINE);",
+          "handler.setLevel(Level.WARNING);"
+        ]
+      ],
+      "stdout": "WARNING:read|IOException\n"
+    }
+  ],
+  "RuntimeAssertions": [
+    {
+      "name": "base",
+      "stdout": "enabled=false\n3.0\n"
+    },
+    {
+      "name": "enabled-same-class",
+      "jvm_args": [
+        "-ea"
+      ],
+      "stdout": "enabled=true\n3.0\n"
+    },
+    {
+      "name": "disabled-negative",
+      "args": [
+        "-1"
+      ],
+      "stdout": "enabled=false\nNaN\n"
+    },
+    {
+      "name": "enabled-negative",
+      "jvm_args": [
+        "-ea"
+      ],
+      "args": [
+        "-1"
+      ],
+      "kind": "runtime_error",
+      "exception": "AssertionError"
+    }
+  ],
+  "ParameterFrames": [
+    {
+      "name": "base",
+      "stdout": "inside-before=7\ninside-after=21\nmain-after=7\n"
+    },
+    {
+      "name": "change-only-formula",
+      "replace": [
+        [
+          "received * 3",
+          "received * 4"
+        ]
+      ],
+      "stdout": "inside-before=7\ninside-after=28\nmain-after=7\n"
+    }
+  ],
+  "SharedCounterEdit": [
+    {
+      "name": "base",
+      "stdout": "before=5\noriginal=8\nalias=8\n"
+    },
+    {
+      "name": "separate-object",
+      "replace": [
+        [
+          "VisitCounter alias = original;",
+          "VisitCounter alias = new VisitCounter(5);"
+        ]
+      ],
+      "stdout": "before=5\noriginal=8\nalias=5\n"
+    }
+  ],
+  "ReferenceRebinding": [
+    {
+      "name": "base",
+      "stdout": "before=5\ninside=99\nafter=5\n"
+    }
+  ],
+  "ReturnedReference": [
+    {
+      "name": "base",
+      "stdout": "ignored=5\nnew=6\nalias=5\n"
+    }
+  ],
+  "ArraySwapRoutes": [
+    {
+      "name": "base",
+      "stdout": "[1, 2]/[8, 9]\ntrue\n[2, 1]\ntrue\nfalse\n[2, 1]\n"
+    }
+  ],
+  "StringReturnRoutes": [
+    {
+      "name": "base",
+      "stdout": "inside=Java!\nmain=Java\nresult=Java!\nstill=Java\n"
+    },
+    {
+      "name": "empty-is-a-value",
+      "replace": [
+        [
+          "String text = \"Java\";",
+          "String text = \"\";"
+        ]
+      ],
+      "stdout": "inside=!\nmain=\nresult=!\nstill=\n"
+    }
+  ],
+  "NestedCallSteps": [
+    {
+      "name": "base",
+      "stdout": "1.main\n2.prepare\n3.course\n4.prepare\n5.main\n"
+    },
+    {
+      "name": "one-extra-call",
+      "replace": [
+        [
+          "        prepare();",
+          "        prepare();\n        prepare();"
+        ]
+      ],
+      "stdout": "1.main\n2.prepare\n3.course\n4.prepare\n2.prepare\n3.course\n4.prepare\n5.main\n"
+    }
+  ],
+  "OutputRequestSteps": [
+    {
+      "name": "base",
+      "stdout": "AB\nC\n"
+    },
+    {
+      "name": "one-newline-change",
+      "replace": [
+        [
+          "System.out.print(\"A\")",
+          "System.out.println(\"A\")"
+        ]
+      ],
+      "stdout": "A\nB\nC\n"
+    }
+  ],
+  "ClassLiteralCards": [
+    {
+      "name": "base",
+      "stdout": "two-objects=true\nsame-type=true\nsame-description=true\n"
+    },
+    {
+      "name": "alias-not-another-instance",
+      "replace": [
+        [
+          "TypeCard second = new TypeCard(\"Lin\");",
+          "TypeCard second = first;"
+        ]
+      ],
+      "stdout": "two-objects=false\nsame-type=true\nsame-description=true\n"
+    }
+  ],
+  "ReferenceAbsence": [
+    {
+      "name": "base",
+      "stdout": "true\nlength=0\nno-card\n"
+    },
+    {
+      "name": "null-invocation",
+      "replace": [
+        [
+          "if (missing != null)",
+          "if (true)"
+        ]
+      ],
+      "kind": "runtime_error",
+      "exception": "NullPointerException"
+    },
+    {
+      "name": "not-assigned-before-read",
+      "replace": [
+        [
+          "ProfileCard missing = null;",
+          "ProfileCard missing;"
+        ]
+      ],
+      "kind": "compile_error"
+    }
+  ],
+  "MemberOwnership": [
+    {
+      "name": "base",
+      "stdout": "Lin:5\nMei:0\ncreated=2\n"
+    },
+    {
+      "name": "only-target-changes",
+      "replace": [
+        [
+          "a.add(3);",
+          "b.add(3);"
+        ]
+      ],
+      "stdout": "Lin:2\nMei:3\ncreated=2\n"
+    }
+  ],
+  "ConstructorDoorSteps": [
+    {
+      "name": "base",
+      "stdout": "core:Lin:0\nouter\ncore:Mei:4\ncreated=2\n"
+    },
+    {
+      "name": "different-default-not-another-object",
+      "replace": [
+        [
+          "this(owner, 0)",
+          "this(owner, 2)"
+        ]
+      ],
+      "stdout": "core:Lin:2\nouter\ncore:Mei:4\ncreated=2\n"
+    }
+  ],
+  "FieldAndLocalDefaults": [
+    {
+      "name": "base",
+      "stdout": "0\nfalse\nnull\n"
+    },
+    {
+      "name": "local-read-before-assignment",
+      "replace": [
+        [
+          "System.out.println(state.number);",
+          "System.out.println(local);"
+        ]
+      ],
+      "kind": "compile_error"
+    }
+  ],
+  "MonthExitWalk": [
+    {
+      "name": "base",
+      "stdout": "2025-04-27 7\n2025-04-28 1\n2025-04-29 2\n2025-04-30 3\ncount=4, next=2025-05-01\n"
+    },
+    {
+      "name": "only-last-day",
+      "replace": [
+        [
+          "2025, 4, 27",
+          "2025, 4, 30"
+        ]
+      ],
+      "stdout": "2025-04-30 3\ncount=1, next=2025-05-01\n"
+    }
+  ],
+  "DefensiveScoreCopy": [
+    {
+      "name": "base",
+      "stdout": "input=1\nview=2\ninside=70\n"
+    },
+    {
+      "name": "leak-input",
+      "replace": [
+        [
+          "this.values = values.clone();",
+          "this.values = values;"
+        ]
+      ],
+      "stdout": "input=1\nview=2\ninside=1\n"
+    },
+    {
+      "name": "leak-output",
+      "replace": [
+        [
+          "return values.clone();",
+          "return values;"
+        ]
+      ],
+      "stdout": "input=1\nview=2\ninside=2\n"
+    }
+  ],
+  "FactoryReuseWalk": [
+    {
+      "name": "base",
+      "stdout": "true\nfalse\nJava\n"
+    },
+    {
+      "name": "fresh-second",
+      "replace": [
+        [
+          "Notice b = Notice.shared();",
+          "Notice b = Notice.fresh();"
+        ]
+      ],
+      "stdout": "false\nfalse\nJava\n"
+    }
+  ],
+  "DefaultConstructorDoor": [
+    {
+      "name": "base",
+      "stdout": "默认\n数组\n"
+    },
+    {
+      "name": "missing-noarg",
+      "replace": [
+        [
+          "new NamedDoor(\"数组\")",
+          "new NamedDoor()"
+        ]
+      ],
+      "kind": "compile_error"
+    }
+  ],
+  "ExplicitCloseWalk": [
+    {
+      "name": "base",
+      "stdout": "open\nwork\nclosed\nafter\n"
+    },
+    {
+      "name": "no-work",
+      "replace": [
+        [
+          "handle.work();",
+          "System.out.println(handle != null);"
+        ]
+      ],
+      "stdout": "open\ntrue\nclosed\nafter\n"
+    }
+  ],
+  "MinuteUnitContract": [
+    {
+      "name": "base",
+      "stdout": "0\n0\n120\n128849018820\n"
+    }
+  ],
+  "GoalAliasWalk": [
+    {
+      "name": "base",
+      "stdout": "3:3\n3:0\n"
+    },
+    {
+      "name": "huge",
+      "replace": [
+        [
+          ".record(3)",
+          ".record(Integer.MAX_VALUE)"
+        ]
+      ],
+      "stdout": "10:10\n10:0\n"
+    }
+  ],
+  "ConstructorDispatchTrap": [
+    {
+      "name": "base",
+      "stdout": "during=0\nafter=7\n"
+    },
+    {
+      "name": "different-initializer",
+      "replace": [
+        [
+          "bonus = 7",
+          "bonus = 9"
+        ]
+      ],
+      "stdout": "during=0\nafter=9\n"
+    }
+  ],
+  "OverloadDispatchSteps": [
+    {
+      "name": "base",
+      "stdout": "general:cat\nspecific:cat\n"
+    },
+    {
+      "name": "wider-view",
+      "replace": [
+        [
+          "kind(b)",
+          "kind((AnimalVoice) b)"
+        ]
+      ],
+      "stdout": "general:cat\ngeneral:cat\n"
+    }
+  ],
+  "ArrayStoreCheckpoint": [
+    {
+      "name": "base",
+      "stdout": "before\nstored=1\n"
+    },
+    {
+      "name": "wrong-component",
+      "replace": [
+        [
+          "view[0] = Integer.valueOf(1);",
+          "view[0] = \"dog\";"
+        ]
+      ],
+      "kind": "runtime_error",
+      "exception": "ArrayStoreException"
+    }
+  ],
+  "EqualityEntryTrap": [
+    {
+      "name": "base",
+      "stdout": "true\nfalse\n"
+    },
+    {
+      "name": "annotation-catches-overload",
+      "replace": [
+        [
+          "public boolean equals(WrongKey",
+          "@Override public boolean equals(WrongKey"
+        ]
+      ],
+      "kind": "compile_error"
+    }
+  ],
+  "RemoveAndUnboxRoutes": [
+    {
+      "name": "base",
+      "stdout": "[9, 7]\n[9, 7]\n3\n"
+    },
+    {
+      "name": "distinguish-zero",
+      "replace": [
+        [
+          "byIndex.remove(1)",
+          "byIndex.remove(0)"
+        ],
+        [
+          "Integer.valueOf(1)",
+          "Integer.valueOf(0)"
+        ]
+      ],
+      "stdout": "[1, 7]\n[9, 1, 7]\n3\n"
+    },
+    {
+      "name": "null-unbox",
+      "replace": [
+        [
+          "Integer boxed = 3;",
+          "Integer boxed = null;"
+        ]
+      ],
+      "kind": "runtime_error",
+      "exception": "NullPointerException"
+    }
+  ],
+  "VarargsAliasWalk": [
+    {
+      "name": "base",
+      "stdout": "[4, 4]\n"
+    },
+    {
+      "name": "rebind-parameter",
+      "replace": [
+        [
+          "values[0]++;",
+          "values = new int[]{99};"
+        ]
+      ],
+      "stdout": "[3, 4]\n"
+    }
+  ],
+  "InvocationFailureRoute": [
+    {
+      "name": "base",
+      "stdout": "cause=IllegalArgumentException\n"
+    },
+    {
+      "name": "missing-member",
+      "replace": [
+        [
+          "getMethod(\"load\",",
+          "getMethod(\"missing\","
+        ]
+      ],
+      "stdout": "lookup=NoSuchMethodException\n"
+    },
+    {
+      "name": "valid-target",
+      "replace": [
+        [
+          "new CheckedLabel(), \"\"",
+          "new CheckedLabel(), \"Java\""
+        ]
+      ],
+      "stdout": "book:Java\n"
+    }
+  ],
+  "DefaultConflictChoice": [
+    {
+      "name": "base",
+      "stdout": "left/right\n"
+    },
+    {
+      "name": "choose-right",
+      "replace": [
+        [
+          "LeftLabel.super.label() + \"/\" + RightLabel.super.label()",
+          "RightLabel.super.label()"
+        ]
+      ],
+      "stdout": "right\n"
+    }
+  ],
+  "CallbackStateOwner": [
+    {
+      "name": "base",
+      "stdout": "before=0\nafter=2\n"
+    }
+  ],
+  "CapturedReferenceState": [
+    {
+      "name": "base",
+      "stdout": "1\n0\n"
+    },
+    {
+      "name": "cannot-rebind",
+      "replace": [
+        [
+          "names.add(\"林\");",
+          "names = new ArrayList<>();"
+        ]
+      ],
+      "kind": "compile_error"
+    }
+  ],
+  "TwoOuterLinks": [
+    {
+      "name": "base",
+      "stdout": "青禾\n海风\ntrue\n"
+    }
+  ],
+  "ManualProxyBeforeDynamic": [
+    {
+      "name": "base",
+      "stdout": "before\nafter\nsent:数组\n"
+    }
+  ],
+  "FailedAssignmentRoute": [
+    {
+      "name": "base",
+      "stdout": "caught\nsaved=7\n"
+    },
+    {
+      "name": "success-right-side",
+      "replace": [
+        [
+          "parseInt(\"bad\")",
+          "parseInt(\"12\")"
+        ]
+      ],
+      "stdout": "after\nsaved=12\n"
+    }
+  ],
+  "ReturnThroughFinally": [
+    {
+      "name": "base",
+      "stdout": "finally=2\nreturned=1\n"
+    }
+  ],
+  "AreaCheckpoints": [
+    {
+      "name": "base",
+      "stdout": "2:3 expected=6 actual=6 mismatch=false\n0:3 expected=0 actual=0 mismatch=false\n"
+    },
+    {
+      "name": "wrong-formula",
+      "replace": [
+        [
+          "width * height",
+          "width + height"
+        ]
+      ],
+      "stdout": "2:3 expected=6 actual=5 mismatch=true\n0:3 expected=0 actual=3 mismatch=true\n"
+    }
+  ],
+  "GenericParcelDemo": [
+    {
+      "name": "base",
+      "stdout": "Java\n20\n"
+    },
+    {
+      "name": "wrong-type",
+      "replace": [
+        [
+          "new Parcel<>(\"Java\")",
+          "new Parcel<>(20)"
+        ]
+      ],
+      "kind": "compile_error"
+    }
+  ],
+  "GenericFirstMethod": [
+    {
+      "name": "base",
+      "stdout": "A\n4\n"
+    },
+    {
+      "name": "empty",
+      "replace": [
+        [
+          "new String[]{\"A\", \"B\"}",
+          "new String[0]"
+        ]
+      ],
+      "kind": "runtime_error",
+      "exception": "IllegalArgumentException"
+    }
+  ],
+  "BoundedMinimum": [
+    {
+      "name": "base",
+      "stdout": "A\n-5\n"
+    },
+    {
+      "name": "changed-minimum",
+      "replace": [
+        [
+          "\"C\", \"A\", \"B\"",
+          "\"C\", \"Z\", \"B\""
+        ]
+      ],
+      "stdout": "B\n-5\n"
+    }
+  ],
+  "ErasureIdentity": [
+    {
+      "name": "base",
+      "stdout": "true\ntrue\n"
+    }
+  ],
+  "BridgeInspection": [
+    {
+      "name": "base",
+      "stdout": "child\nnormal=1 bridge=1\n"
+    }
+  ],
+  "TypedFactories": [
+    {
+      "name": "base",
+      "stdout": "ready\n2\n"
+    },
+    {
+      "name": "zero",
+      "replace": [
+        [
+          "makeArray(2,",
+          "makeArray(0,"
+        ]
+      ],
+      "stdout": "ready\n0\n"
+    },
+    {
+      "name": "new-type-parameter",
+      "replace": [
+        [
+          "return factory.get();",
+          "return new T();"
+        ]
+      ],
+      "kind": "compile_error"
+    }
+  ],
+  "RawPollutionCheckpoint": [
+    {
+      "name": "base",
+      "stdout": "Java\n"
+    },
+    {
+      "name": "raw-pollution",
+      "replace": [
+        [
+          "safe.add(\"Java\");",
+          "List raw = safe; raw.add(Integer.valueOf(1));"
+        ]
+      ],
+      "expected_warning": "unchecked",
+      "kind": "runtime_error",
+      "exception": "ClassCastException"
+    }
+  ],
+  "WildcardCopy": [
+    {
+      "name": "base",
+      "stdout": "[1, 2]\n[1, 2, 3]\n"
+    }
+  ],
+  "WildcardCaptureSwap": [
+    {
+      "name": "base",
+      "stdout": "[B, A]\n"
+    }
+  ],
+  "ParentComparableMinimum": [
+    {
+      "name": "base",
+      "stdout": "2025-01-01\n"
+    }
+  ],
+  "GenericDeclarationInfo": [
+    {
+      "name": "base",
+      "stdout": "java.lang.Object\njava.lang.String\njava.lang.Object\n0\n"
+    }
+  ],
+  "IteratorFilterWalk": [
+    {
+      "name": "base",
+      "stdout": "true\ntrue\nvisit:读\nvisit:skip\nvisit:练\n[读, 练]\n"
+    },
+    {
+      "name": "remove-before-next",
+      "replace": [
+        [
+          "System.out.println(it.hasNext());",
+          "it.remove();"
+        ]
+      ],
+      "kind": "runtime_error",
+      "exception": "IllegalStateException"
+    }
+  ],
+  "ListCursorGaps": [
+    {
+      "name": "base",
+      "stdout": "A\nC\n[A, B, c]\nc\n[A, B]\nnextIndex=2\n"
+    },
+    {
+      "name": "remove-after-add",
+      "replace": [
+        [
+          "it.add(\"B\");",
+          "it.add(\"B\"); it.remove();"
+        ]
+      ],
+      "kind": "runtime_error",
+      "exception": "IllegalStateException"
+    }
+  ],
+  "IteratorInvalidation": [
+    {
+      "name": "base",
+      "stdout": "A\n"
+    },
+    {
+      "name": "external-add",
+      "replace": [
+        [
+          "// controlled external change here",
+          "values.add(\"C\");"
+        ]
+      ],
+      "kind": "runtime_error",
+      "exception": "ConcurrentModificationException"
+    }
+  ],
+  "SetOrderChoices": [
+    {
+      "name": "base",
+      "stdout": "true\ntrue\nfalse\n[bb, a]\n[a, bb]\n[a]\n"
+    }
+  ],
+  "DequeTwoProtocols": [
+    {
+      "name": "base",
+      "stdout": "A\nB\nB\nA\nnull\n"
+    },
+    {
+      "name": "empty-pop",
+      "replace": [
+        [
+          "System.out.println(queue.poll());",
+          "System.out.println(queue.pop());"
+        ]
+      ],
+      "kind": "runtime_error",
+      "exception": "NoSuchElementException"
+    }
+  ],
+  "PriorityDrill": [
+    {
+      "name": "base",
+      "stdout": "1\n1\n2\n3\nnull\n"
+    }
+  ],
+  "MapAssociationSteps": [
+    {
+      "name": "base",
+      "stdout": "null\n10\n1\n20\n0\nnull\ntrue\n"
+    }
+  ],
+  "MapNullUpdateRoutes": [
+    {
+      "name": "base",
+      "stdout": "{read=2, code=1}\nfalse\ntrue\ntrue\n"
+    }
+  ],
+  "MapWindowAndSnapshot": [
+    {
+      "name": "base",
+      "stdout": "{B=2}\n[A, B]\n"
+    },
+    {
+      "name": "cannot-add-key-alone",
+      "replace": [
+        [
+          "keys.remove(\"A\");",
+          "keys.add(\"C\");"
+        ]
+      ],
+      "kind": "runtime_error",
+      "exception": "UnsupportedOperationException"
+    }
+  ],
+  "MapAccessOrder": [
+    {
+      "name": "base",
+      "stdout": "[A, B]\n[B, A]\n"
+    }
+  ],
+  "SpecializedMapKeys": [
+    {
+      "name": "base",
+      "stdout": "1\n2\n{TODO=2, DONE=1}\n"
+    }
+  ],
+  "FixedViewAndSnapshot": [
+    {
+      "name": "base",
+      "stdout": "[X, B]\n[X, Y]\n[X, B]\n"
+    },
+    {
+      "name": "fixed-no-add",
+      "replace": [
+        [
+          "fixed.set(0, \"X\");",
+          "fixed.add(\"X\");"
+        ]
+      ],
+      "kind": "runtime_error",
+      "exception": "UnsupportedOperationException"
+    },
+    {
+      "name": "readonly-no-set",
+      "replace": [
+        [
+          "fixed.set(0, \"X\");",
+          "readonly.set(0, \"X\");"
+        ]
+      ],
+      "kind": "runtime_error",
+      "exception": "UnsupportedOperationException"
+    }
+  ],
+  "SubListDeletion": [
+    {
+      "name": "base",
+      "stdout": "[B, C]\n[A, D]\n[]\n"
+    }
+  ],
+  "CollectionAlgorithmSteps": [
+    {
+      "name": "base",
+      "stdout": "[A, B, ?]\n[?, B, A]\n2\n"
+    },
+    {
+      "name": "capacity-not-size",
+      "replace": [
+        [
+          "new ArrayList<>(Collections.nCopies(3, \"?\"))",
+          "new ArrayList<>(3)"
+        ]
+      ],
+      "kind": "runtime_error",
+      "exception": "IndexOutOfBoundsException"
+    }
+  ],
+  "TypedArrayConversion": [
+    {
+      "name": "base",
+      "stdout": "[A, B]\n[A, B, null, old]\ntrue\n"
+    },
+    {
+      "name": "wrong-array-cast",
+      "replace": [
+        [
+          "words.toArray(new String[0])",
+          "(String[]) words.toArray()"
+        ]
+      ],
+      "kind": "runtime_error",
+      "exception": "ClassCastException"
+    }
+  ],
+  "BitFlagsAndEnumeration": [
+    {
+      "name": "base",
+      "stdout": "length=10\ncount=2\nlength=3\ncount=1\n[A, B]\n"
+    }
+  ],
+  "FirstStudyFrame": [
+    {
+      "name": "base",
+      "stdout": "edt=true\ncomponents=1\npreferred=320x180\n",
+      "args": [
+        "--check"
+      ]
+    }
+  ],
+  "EdtCallSequence": [
+    {
+      "name": "base",
+      "stdout": "before\nedt=true\nafter\n"
+    }
+  ],
+  "RepaintFromState": [
+    {
+      "name": "base",
+      "stdout": "painted=true\n",
+      "args": [
+        "--check"
+      ]
+    }
+  ],
+  "ShapePaintLab": [
+    {
+      "name": "base",
+      "stdout": "rectangle=true\nellipse=true\n",
+      "args": [
+        "--check"
+      ]
+    }
+  ],
+  "DiagonalRectangle": [
+    {
+      "name": "base",
+      "stdout": "20.0:10.0:80.0:50.0\n60.0:35.0\n"
+    }
+  ],
+  "TextBaselineMeasure": [
+    {
+      "name": "base",
+      "stdout": "inside=true\n"
+    }
+  ],
+  "PositiveTileImage": [
+    {
+      "name": "base",
+      "stdout": "size=8x8\ntiled=true\n"
+    }
+  ],
+  "ButtonEventRoute": [
+    {
+      "name": "base",
+      "stdout": "count=2\nlabel=2\n",
+      "args": [
+        "--check"
+      ]
+    }
+  ],
+  "SharedActionBinding": [
+    {
+      "name": "base",
+      "stdout": "B\nbound=true\nenabled=false:false\n"
+    }
+  ],
+  "MouseModelRoute": [
+    {
+      "name": "base",
+      "stdout": "50:60\n",
+      "args": [
+        "--check"
+      ]
+    }
+  ],
+  "SwingTimerTicks": [
+    {
+      "name": "base",
+      "stdout": "ticks=2 edt=true\n"
+    }
+  ],
+  "CourseEntryForm": [
+    {
+      "name": "base",
+      "stdout": "数组|\nstatus=empty\n",
+      "args": [
+        "--check"
+      ]
+    }
+  ],
+  "SharedTextDocument": [
+    {
+      "name": "base",
+      "stdout": "AB\nAB\ntrue\n"
+    }
+  ],
+  "IndependentAndExclusive": [
+    {
+      "name": "base",
+      "stdout": "true:true\nfalse:true\nLARGE\n"
+    }
+  ],
+  "SelectionModelChanges": [
+    {
+      "name": "base",
+      "stdout": "练习\n80\nnone\n"
+    }
+  ],
+  "PasswordArrayLifecycle": [
+    {
+      "name": "base",
+      "stdout": "length=4\ncleared=true\nmasked=false\n"
+    }
+  ],
+  "NestedLayoutSizes": [
+    {
+      "name": "base",
+      "stdout": "wider=true\ncenterTaller=true\n"
+    }
+  ],
+  "MenuWorkbench": [
+    {
+      "name": "base",
+      "stdout": "2\nfalse:false\n",
+      "args": [
+        "--check"
+      ]
+    }
+  ],
+  "GridBagRows": [
+    {
+      "name": "base",
+      "stdout": "grows=true\n"
+    }
+  ],
+  "GroupLayoutRows": [
+    {
+      "name": "base",
+      "stdout": "sameX=true\nrows=true\n"
+    }
+  ],
+  "PopupChoices": [
+    {
+      "name": "base",
+      "stdout": "true\nfalse:true\n",
+      "args": [
+        "--check"
+      ]
+    }
+  ],
+  "VerticalStack": [
+    {
+      "name": "base",
+      "stdout": "visible=2\nemptyHeight=4\n"
+    }
+  ],
+  "InputCommitRoute": [
+    {
+      "name": "base",
+      "stdout": "cancel\nempty\n数组\n",
+      "args": [
+        "--check"
+      ]
+    }
+  ],
+  "NameDialogTransaction": [
+    {
+      "name": "base",
+      "stdout": "false\ntrue:数组\nfalse\n",
+      "args": [
+        "--check"
+      ]
+    }
+  ],
+  "FileChoicePolicy": [
+    {
+      "name": "base",
+      "stdout": "true\nfalse\n",
+      "args": [
+        "--check"
+      ]
+    }
+  ],
+  "ColorCommitRule": [
+    {
+      "name": "base",
+      "stdout": "true\ntrue\n",
+      "args": [
+        "--check"
+      ]
+    }
+  ],
+  "ComponentTreeWalk": [
+    {
+      "name": "base",
+      "stdout": "root\n  row\n    label\n"
+    }
+  ],
+  "ImageLoadBoundary": [
+    {
+      "name": "base",
+      "stdout": "unsupported\n"
+    },
+    {
+      "name": "missing-file",
+      "args": [
+        "absent-course-image.png"
+      ],
+      "stdout": "io-error\n"
+    }
+  ],
+  "ManifestSections": [
+    {
+      "name": "base",
+      "stdout": "campus.app.Main\nlib/text.jar\ntrue\n"
+    }
+  ],
+  "SealingOriginCheck": [
+    {
+      "name": "base",
+      "stdout": "sealed=true\nmixed-origin=rejected\n"
+    }
+  ],
+  "ConfigFallbackSteps": [
+    {
+      "name": "base",
+      "stdout": "数组\n300\n200\n"
+    }
+  ],
+  "ConfigRoundTrip": [
+    {
+      "name": "base",
+      "stdout": "数组\nnull\n300\n"
+    }
+  ],
+  "ConfigUtf8File": [
+    {
+      "name": "base",
+      "stdout": "path-required\n"
+    },
+    {
+      "name": "new-file",
+      "args": [
+        "settings.properties"
+      ],
+      "stdout": "数组:300\n"
+    },
+    {
+      "name": "existing-file",
+      "args": [
+        "settings.properties"
+      ],
+      "stdout": "already-exists\n",
+      "input_files": {
+        "settings.properties": "keep"
+      },
+      "files": {
+        "settings.properties": "keep"
+      }
+    }
+  ],
+  "MemoryPreferenceTree": [
+    {
+      "name": "base",
+      "stdout": "/com/example/course/window\n420\n300\n"
+    }
+  ],
+  "StandaloneStudyChart": [
+    {
+      "name": "base",
+      "stdout": "bars=2\npainted=true\n",
+      "args": [
+        "--check"
+      ]
+    }
+  ],
+  "SessionLifecycle": [
+    {
+      "name": "base",
+      "stdout": "true\nfalse\ntrue\nfalse\ntrue\n"
+    }
+  ],
+  "StartVersusRun": [
+    {
+      "name": "base",
+      "stdout": "run:main\nstart:helper\njoined\n"
+    }
+  ],
+  "InterruptFlagReads": [
+    {
+      "name": "base",
+      "stdout": "true\ntrue\ntrue\nfalse\n"
+    }
+  ],
+  "InterruptWaitRoute": [
+    {
+      "name": "base",
+      "stdout": "catch=false\nrestored=true\ncleanup\ndone\n"
+    }
+  ],
+  "InterruptPropagation": [
+    {
+      "name": "base",
+      "stdout": "cancelled=true\nreleased\n"
+    }
+  ],
+  "StableThreadStates": [
+    {
+      "name": "base",
+      "stdout": "NEW\nTERMINATED\n"
+    }
+  ],
+  "BlockingStateSnapshots": [
+    {
+      "name": "base",
+      "stdout": "BLOCKED\nWAITING\nTIMED_WAITING\n"
+    }
+  ],
+  "DaemonLifetime": [
+    {
+      "name": "base",
+      "stdout": "daemon=true\nclean-finish\n"
+    },
+    {
+      "name": "daemon-process-exit",
+      "args": [
+        "--abandon"
+      ],
+      "stdout": "main-return\n"
+    }
+  ],
+  "LostUpdateSchedule": [
+    {
+      "name": "base",
+      "stdout": "count=1\n"
+    }
+  ],
+  "SynchronizedCounter": [
+    {
+      "name": "base",
+      "stdout": "2000\n"
+    }
+  ],
+  "LockedCredits": [
+    {
+      "name": "base",
+      "stdout": "2000\ntrue\nnegative-rejected\n"
+    }
+  ],
+  "ConditionMailbox": [
+    {
+      "name": "base",
+      "stdout": "sum=3\nclosed=true\n"
+    }
+  ],
+  "MonitorOneShot": [
+    {
+      "name": "base",
+      "stdout": "ready:数组\n"
+    }
+  ],
+  "VolatilePublishOnce": [
+    {
+      "name": "base",
+      "stdout": "42\nsize=1\n"
+    }
+  ],
+  "LocalTaskNotes": [
+    {
+      "name": "base",
+      "stdout": "A\nB\nmain-size=0\n"
+    }
+  ],
+  "TimedLockAttempt": [
+    {
+      "name": "base",
+      "stdout": "acquired=false\n"
+    }
+  ],
+  "ReadWriteCatalog": [
+    {
+      "name": "base",
+      "stdout": "1:1\n"
+    }
+  ],
+  "BoundedMessageFlow": [
+    {
+      "name": "base",
+      "stdout": "sum=6\n"
+    }
+  ],
+  "QueueFailurePolicies": [
+    {
+      "name": "base",
+      "stdout": "true\nfalse\nA\nnull\nempty-error\nfalse\n"
+    }
+  ],
+  "AtomicStatistics": [
+    {
+      "name": "base",
+      "stdout": "2000\n1999\n2000\n"
+    }
+  ],
+  "ConcurrentWordUpdates": [
+    {
+      "name": "base",
+      "stdout": "2000\n2000\ntrue\nfirst-return-is-null\n"
+    }
+  ],
+  "ConcurrentViewsAndReduction": [
+    {
+      "name": "base",
+      "stdout": "5\nB\nnull\n0\n1:false\ntrue\n"
+    }
+  ],
+  "SnapshotAndSynchronizedWalk": [
+    {
+      "name": "base",
+      "stdout": "A\nsnapshot-remove-rejected\n2\n2\n"
+    }
+  ],
+  "ParallelArraySteps": [
+    {
+      "name": "base",
+      "stdout": "[1, 2, 3]\n[0, 2, 4]\n[1, 3, 6]\n"
+    }
+  ],
+  "SpecializedQueueRoutes": [
+    {
+      "name": "base",
+      "stdout": "1:2\nnull\nready\n5\n"
+    }
+  ],
+  "FutureResultRoutes": [
+    {
+      "name": "base",
+      "stdout": "42\nIllegalArgumentException\n"
+    }
+  ],
+  "FutureTimeoutAndCancellation": [
+    {
+      "name": "base",
+      "stdout": "timeout\ncancelled=false\ncancelled\ntask-cause=InterruptedException\n"
+    }
+  ],
+  "CompletionOrderGate": [
+    {
+      "name": "base",
+      "stdout": "fast\nslow\n"
+    }
+  ],
+  "ScheduledTaskSteps": [
+    {
+      "name": "base",
+      "stdout": "7\nrepeated=true\n"
+    }
+  ],
+  "ForkJoinCount": [
+    {
+      "name": "base",
+      "stdout": "2\n0\n"
+    }
+  ],
+  "ComposedTaskStages": [
+    {
+      "name": "base",
+      "stdout": "[数组]\nfallback\n3\nfirst\n"
+    }
+  ],
+  "LatchAndBarrierRounds": [
+    {
+      "name": "base",
+      "stdout": "latch=3\nround=3\nround=5\n"
+    }
+  ],
+  "SynchronizerShapes": [
+    {
+      "name": "base",
+      "stdout": "permits=2\nright:left\nphase=1\nterminated=true\n"
+    }
+  ],
+  "WorkerProgressView": [
+    {
+      "name": "base",
+      "stdout": "done=5050\nbackground=true\ndone-edt=true\n",
+      "args": [
+        "--check"
+      ]
+    },
+    {
+      "name": "cancel-and-cleanup",
+      "args": [
+        "--cancel-check"
+      ],
+      "stdout": "cancelled\nbackground=true\ndone-edt=true\n"
+    },
+    {
+      "name": "background-failure",
+      "args": [
+        "--fail-check"
+      ],
+      "stdout": "failed=IllegalStateException\nbackground=true\ndone-edt=true\n"
+    }
+  ],
+  "SnapshotReportWarmup": [
+    {
+      "name": "base",
+      "stdout": "50\nlive-size=3\n"
+    }
+  ],
+  "ObjectBoxNeed": [
+    {
+      "name": "base",
+      "stdout": "Java\nread-failed\n"
+    }
+  ],
+  "NumberReaderWalk": [
+    {
+      "name": "base",
+      "stdout": "3.0\n2.0\n0.0\n"
+    }
+  ],
+  "MinimalFrame": [
+    {
+      "args": [
+        "--check"
+      ],
+      "stdout": "preferred=320x180\nactual-before=0x0\nactual-after=360x200\n"
+    }
+  ],
+  "ContentPaneShape": [
+    {
+      "stdout": "content=JPanel\nglass=JPanel\nmenu-bar=absent\nlayered-children=1\n"
+    }
+  ],
+  "ComponentTreeProbe": [
+    {
+      "stdout": "card-children=2\nbody-children=1\nbody-in-card=true\n"
+    }
+  ],
+  "RectParamsProbe": [
+    {
+      "args": [],
+      "stdout": "x=100.0 y=50.0\nw=80.0 h=40.0\nmaxX=180.0 maxY=90.0\ncenter=140.0,70.0\nfloat-width=80.0\nempty=true\n"
+    }
+  ],
+  "CircleFromCenter": [
+    {
+      "args": [],
+      "stdout": "x=70.0 y=50.0 w=60.0 h=60.0\nnaive-empty=true\nnaive-w=-80.0\n"
+    }
+  ],
+  "FillVersusDrawPixels": [
+    {
+      "args": [],
+      "stdout": "fill-inside=true\nfill-right-edge=false\ndraw-edge=true\ndraw-inside=false\n"
+    }
+  ],
+  "FontOverloadTrap": [
+    {
+      "args": [],
+      "stdout": "style-arg: style=0 size=12.0\nsize-arg: style=0 size=14.0\nitalic=true size=12.0\n"
+    }
+  ],
+  "ListenerRegistrationOrder": [
+    {
+      "args": [],
+      "stdout": "third,second,first\nthird,second,first,third,first\n"
+    }
+  ],
+  "ListenerStyles": [
+    {
+      "args": [],
+      "stdout": "count=3\n"
+    }
+  ],
+  "InputMapConditions": [
+    {
+      "args": [],
+      "stdout": "window=course.blue\nfocused=null\nancestor=null\n"
     }
   ]
 }

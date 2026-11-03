@@ -19,3 +19,12 @@
 ```powershell
 .\java.ps1 -Source 'L08_第03章F_循环/code/SumDemo.java'
 ```
+
+
+## 全部源码入口
+
+这些文件的职责、运行位置与实验见讲义；project子目录文件共同编译，不逐个当main启动。
+
+- [CountdownDemo.java](CountdownDemo.java)
+- [NestedDemo.java](NestedDemo.java)
+- [SumDemo.java](SumDemo.java)

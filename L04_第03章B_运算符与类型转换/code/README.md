@@ -13,3 +13,11 @@
 ```powershell
 .\java.ps1 -Source 'L04_第03章B_运算符与类型转换/code/ShortCircuitDemo.java'
 ```
+
+
+## 全部源码入口
+
+这些文件的职责、运行位置与实验见讲义；project子目录文件共同编译，不逐个当main启动。
+
+- [ArithmeticDemo.java](ArithmeticDemo.java)
+- [ShortCircuitDemo.java](ShortCircuitDemo.java)

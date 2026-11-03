@@ -7,3 +7,14 @@
 ```powershell
 .\java.ps1 -Source './S02_结构基础_对象与引用/code/CardBoard.java'
 ```
+
+- [ClassLiteralCards.java](ClassLiteralCards.java)：见讲义对应分步实验。
+
+- [ReferenceAbsence.java](ReferenceAbsence.java)：见讲义对应分步实验。
+
+
+## 全部源码入口
+
+这些文件的职责、运行位置与实验见讲义；project子目录文件共同编译，不逐个当main启动。
+
+- [CardBoard.java](CardBoard.java)

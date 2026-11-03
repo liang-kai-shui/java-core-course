@@ -271,10 +271,766 @@
         "E2",
         "E3"
       ]
+    },
+    {
+      "id": "L11",
+      "folder": "L11_第04章A_对象行为与日期",
+      "title": "对象行为、日期API与不可变值",
+      "section": "4.1–4.2",
+      "book_start": 91,
+      "book_end": 103,
+      "pdf_start": 109,
+      "pdf_end": 121,
+      "questions": [
+        "Q1",
+        "Q2",
+        "E1",
+        "E2",
+        "E3"
+      ]
+    },
+    {
+      "id": "L12",
+      "folder": "L12_第04章B_封装与自定义类",
+      "title": "封装：把数据规则放进自定义类",
+      "section": "4.3",
+      "book_start": 103,
+      "book_end": 112,
+      "pdf_start": 121,
+      "pdf_end": 130,
+      "questions": [
+        "Q1",
+        "Q2",
+        "E1",
+        "E2",
+        "E3"
+      ]
+    },
+    {
+      "id": "L13",
+      "folder": "L13_第04章C_静态成员与工厂",
+      "title": "静态成员与工厂：谁属于整类",
+      "section": "4.4",
+      "book_start": 112,
+      "book_end": 118,
+      "pdf_start": 130,
+      "pdf_end": 136,
+      "questions": [
+        "Q1",
+        "Q2",
+        "E1",
+        "E2",
+        "E3"
+      ]
+    },
+    {
+      "id": "L14",
+      "folder": "L14_第04章D_按值传参",
+      "title": "按值传参：改对象与换变量是两回事",
+      "section": "4.5",
+      "book_start": 118,
+      "book_end": 123,
+      "pdf_start": 136,
+      "pdf_end": 141,
+      "questions": [
+        "Q1",
+        "Q2",
+        "E1",
+        "E2",
+        "E3",
+        "E4",
+        "E5"
+      ]
+    },
+    {
+      "id": "L15",
+      "folder": "L15_第04章E_构造器重载与委托",
+      "title": "构造器：多种入口，同一套有效状态",
+      "section": "4.6.1–4.6.6",
+      "book_start": 123,
+      "book_end": 127,
+      "pdf_start": 141,
+      "pdf_end": 145,
+      "questions": [
+        "Q1",
+        "Q2",
+        "E1",
+        "E2",
+        "E3"
+      ]
+    },
+    {
+      "id": "L16",
+      "folder": "L16_第04章F_初始化与资源生存",
+      "title": "初始化次序与资源生存：出生和收尾分开",
+      "section": "4.6.7–4.6.8",
+      "book_start": 127,
+      "book_end": 131,
+      "pdf_start": 145,
+      "pdf_end": 149,
+      "questions": [
+        "Q1",
+        "Q2",
+        "E1",
+        "E2",
+        "E3"
+      ]
+    },
+    {
+      "id": "L17",
+      "folder": "L17_第04章G_包边界与文档",
+      "title": "包访问边界、类路径与Javadoc",
+      "section": "4.7–4.9",
+      "book_start": 131,
+      "book_end": 144,
+      "pdf_start": 149,
+      "pdf_end": 162,
+      "questions": [
+        "Q1",
+        "Q2",
+        "E1",
+        "E2",
+        "E3"
+      ]
+    },
+    {
+      "id": "L18",
+      "folder": "L18_第04章H_类设计阶段项目",
+      "title": "阶段项目：由对象规则设计学习计划",
+      "section": "4.10及第4章综合",
+      "book_start": 144,
+      "book_end": 146,
+      "pdf_start": 162,
+      "pdf_end": 164,
+      "questions": [
+        "Q1",
+        "Q2",
+        "E1",
+        "E2",
+        "E3"
+      ]
+    },
+    {
+      "id": "L19",
+      "folder": "L19_第05章A_继承覆盖与构造",
+      "title": "继承、覆盖与子类构造：先证明是一种",
+      "section": "5.1.1–5.1.4",
+      "book_start": 147,
+      "book_end": 154,
+      "pdf_start": 165,
+      "pdf_end": 172,
+      "questions": [
+        "Q1",
+        "Q2",
+        "E1",
+        "E2",
+        "E3"
+      ]
+    },
+    {
+      "id": "L20",
+      "folder": "L20_第05章B_多态抽象与访问控制",
+      "title": "多态：声明类型管入口，实际类型管覆盖实现",
+      "section": "5.1.5–5.1.10",
+      "book_start": 154,
+      "book_end": 166,
+      "pdf_start": 172,
+      "pdf_end": 184,
+      "questions": [
+        "Q1",
+        "Q2",
+        "E1",
+        "E2",
+        "E3"
+      ]
+    },
+    {
+      "id": "L21",
+      "folder": "L21_第05章C_对象相等与显示",
+      "title": "Object：身份、相等、散列与显示各管什么",
+      "section": "5.2",
+      "book_start": 166,
+      "book_end": 178,
+      "pdf_start": 184,
+      "pdf_end": 196,
+      "questions": [
+        "Q1",
+        "Q2",
+        "E1",
+        "E2",
+        "E3"
+      ]
+    },
+    {
+      "id": "L22",
+      "folder": "L22_第05章D_数组列表与包装类型",
+      "title": "ArrayList与包装类型：容量不是已有元素",
+      "section": "5.3–5.4",
+      "book_start": 178,
+      "book_end": 187,
+      "pdf_start": 196,
+      "pdf_end": 205,
+      "questions": [
+        "Q1",
+        "Q2",
+        "E1",
+        "E2",
+        "E3"
+      ]
+    },
+    {
+      "id": "L23",
+      "folder": "L23_第05章E_可变参数与枚举",
+      "title": "可变参数与枚举：一组输入和一组合法状态",
+      "section": "5.5–5.6",
+      "book_start": 187,
+      "book_end": 190,
+      "pdf_start": 205,
+      "pdf_end": 208,
+      "questions": [
+        "Q1",
+        "Q2",
+        "E1",
+        "E2",
+        "E3"
+      ]
+    },
+    {
+      "id": "L24",
+      "folder": "L24_第05章F_反射与继承设计",
+      "title": "反射：先拿类型说明，再有边界地操作",
+      "section": "5.7–5.8",
+      "book_start": 190,
+      "book_end": 210,
+      "pdf_start": 208,
+      "pdf_end": 228,
+      "questions": [
+        "Q1",
+        "Q2",
+        "E1",
+        "E2",
+        "E3"
+      ]
+    },
+    {
+      "id": "L25",
+      "folder": "L25_第06章A_接口契约与默认方法",
+      "title": "接口：约定能力，再选择实现",
+      "section": "6.1",
+      "book_start": 211,
+      "book_end": 222,
+      "pdf_start": 229,
+      "pdf_end": 240,
+      "questions": [
+        "Q1",
+        "Q2",
+        "E1",
+        "E2",
+        "E3"
+      ]
+    },
+    {
+      "id": "L26",
+      "folder": "L26_第06章B_回调比较器与克隆",
+      "title": "回调、比较器与克隆：传动作和复制状态分开",
+      "section": "6.2",
+      "book_start": 222,
+      "book_end": 231,
+      "pdf_start": 240,
+      "pdf_end": 249,
+      "questions": [
+        "Q1",
+        "Q2",
+        "E1",
+        "E2",
+        "E3"
+      ]
+    },
+    {
+      "id": "L27",
+      "folder": "L27_第06章C_Lambda与方法引用",
+      "title": "Lambda：把一个动作交出去，何时执行由调用决定",
+      "section": "6.3",
+      "book_start": 231,
+      "book_end": 242,
+      "pdf_start": 249,
+      "pdf_end": 260,
+      "questions": [
+        "Q1",
+        "Q2",
+        "E1",
+        "E2",
+        "E3"
+      ]
+    },
+    {
+      "id": "L28",
+      "folder": "L28_第06章D_内部类与所属对象",
+      "title": "内部类：名字写在里面，对象和引用还要分别画",
+      "section": "6.4",
+      "book_start": 242,
+      "book_end": 258,
+      "pdf_start": 260,
+      "pdf_end": 276,
+      "questions": [
+        "Q1",
+        "Q2",
+        "E1",
+        "E2",
+        "E3"
+      ]
+    },
+    {
+      "id": "L29",
+      "folder": "L29_第06章E_动态代理",
+      "title": "动态代理：把一次接口调用经过的路走清楚",
+      "section": "6.5",
+      "book_start": 258,
+      "book_end": 263,
+      "pdf_start": 276,
+      "pdf_end": 281,
+      "questions": [
+        "Q1",
+        "Q2",
+        "E1",
+        "E2",
+        "E3"
+      ]
+    },
+    {
+      "id": "L30",
+      "folder": "L30_第07章A_异常分类与报告",
+      "title": "异常：正常结果交不出时，沿另一条路线报告",
+      "section": "7.1",
+      "book_start": 264,
+      "book_end": 271,
+      "pdf_start": 282,
+      "pdf_end": 289,
+      "questions": [
+        "Q1",
+        "Q2",
+        "E1",
+        "E2",
+        "E3"
+      ]
+    },
+    {
+      "id": "L31",
+      "folder": "L31_第07章B_捕获与资源关闭",
+      "title": "捕获、finally与自动关闭：正常和失败两条路都走",
+      "section": "7.2–7.3",
+      "book_start": 271,
+      "book_end": 285,
+      "pdf_start": 289,
+      "pdf_end": 303,
+      "questions": [
+        "Q1",
+        "Q2",
+        "E1",
+        "E2",
+        "E3"
+      ]
+    },
+    {
+      "id": "L32",
+      "folder": "L32_第07章C_断言日志与调试",
+      "title": "断言、日志与调试：让问题留下能核对的证据",
+      "section": "7.4–7.6",
+      "book_start": 285,
+      "book_end": 308,
+      "pdf_start": 303,
+      "pdf_end": 326,
+      "questions": [
+        "Q1",
+        "Q2",
+        "E1",
+        "E2",
+        "E3"
+      ]
+    },
+    {
+      "id": "L33",
+      "folder": "L33_第08章A_泛型类方法与限定",
+      "title": "泛型：类型填空，而不是到处强转",
+      "section": "8.1–8.4",
+      "book_start": 309,
+      "book_end": 316,
+      "pdf_start": 327,
+      "pdf_end": 334,
+      "questions": [
+        "Q1",
+        "Q2",
+        "E1",
+        "E2",
+        "E3"
+      ]
+    },
+    {
+      "id": "L34",
+      "folder": "L34_第08章B_擦除桥接与限制",
+      "title": "擦除与桥接：编译期的约定，运行期保留什么",
+      "section": "8.5–8.6",
+      "book_start": 316,
+      "book_end": 328,
+      "pdf_start": 334,
+      "pdf_end": 346,
+      "questions": [
+        "Q1",
+        "Q2",
+        "E1",
+        "E2",
+        "E3"
+      ]
+    },
+    {
+      "id": "L35",
+      "folder": "L35_第08章C_通配符与泛型反射",
+      "title": "通配符：不确定的元素类型，仍然能安全合作",
+      "section": "8.7–8.9",
+      "book_start": 328,
+      "book_end": 343,
+      "pdf_start": 346,
+      "pdf_end": 361,
+      "questions": [
+        "Q1",
+        "Q2",
+        "E1",
+        "E2",
+        "E3"
+      ]
+    },
+    {
+      "id": "L36",
+      "folder": "L36_第09章A_集合接口与迭代器",
+      "title": "集合与迭代器：走过一个元素，再决定是否删除",
+      "section": "9.1–9.2.2",
+      "book_start": 344,
+      "book_end": 363,
+      "pdf_start": 362,
+      "pdf_end": 381,
+      "questions": [
+        "Q1",
+        "Q2",
+        "E1",
+        "E2",
+        "E3"
+      ]
+    },
+    {
+      "id": "L37",
+      "folder": "L37_第09章B_集合顺序与队列",
+      "title": "Set与队列：去重、顺序、优先级是不同约定",
+      "section": "9.2.3–9.2.6",
+      "book_start": 363,
+      "book_end": 372,
+      "pdf_start": 381,
+      "pdf_end": 390,
+      "questions": [
+        "Q1",
+        "Q2",
+        "E1",
+        "E2",
+        "E3"
+      ]
+    },
+    {
+      "id": "L38",
+      "folder": "L38_第09章C_映射更新与视图",
+      "title": "Map：按键找值，更新与视图要看共享关系",
+      "section": "9.3",
+      "book_start": 372,
+      "book_end": 381,
+      "pdf_start": 390,
+      "pdf_end": 399,
+      "questions": [
+        "Q1",
+        "Q2",
+        "E1",
+        "E2",
+        "E3"
+      ]
+    },
+    {
+      "id": "L39",
+      "folder": "L39_第09章D_视图算法与转换",
+      "title": "视图与算法：看起来是列表，修改能力却不一样",
+      "section": "9.4–9.6",
+      "book_start": 381,
+      "book_end": 402,
+      "pdf_start": 399,
+      "pdf_end": 420,
+      "questions": [
+        "Q1",
+        "Q2",
+        "E1",
+        "E2",
+        "E3"
+      ]
+    },
+    {
+      "id": "L40",
+      "folder": "L40_第10章A_窗口组件与事件线程",
+      "title": "Swing起步：窗口、内容组件与事件线程",
+      "section": "10.1–10.4",
+      "book_start": 403,
+      "book_end": 419,
+      "pdf_start": 421,
+      "pdf_end": 437,
+      "questions": [
+        "Q1",
+        "Q2",
+        "E1",
+        "E2",
+        "E3",
+        "E4"
+      ]
+    },
+    {
+      "id": "L41",
+      "folder": "L41_第10章B_图形文字与图像",
+      "title": "Java 2D：坐标、画笔、文字基线与图像",
+      "section": "10.5–10.8",
+      "book_start": 419,
+      "book_end": 438,
+      "pdf_start": 437,
+      "pdf_end": 456,
+      "questions": [
+        "Q1",
+        "Q2",
+        "E1",
+        "E2",
+        "E3",
+        "E4"
+      ]
+    },
+    {
+      "id": "L42",
+      "folder": "L42_第11章_事件监听动作与鼠标",
+      "title": "事件：先注册动作，再沿通知路线改变状态",
+      "section": "11.1–11.4",
+      "book_start": 439,
+      "book_end": 468,
+      "pdf_start": 457,
+      "pdf_end": 486,
+      "questions": [
+        "Q1",
+        "Q2",
+        "E1",
+        "E2",
+        "E3",
+        "E4"
+      ]
+    },
+    {
+      "id": "L43",
+      "folder": "L43_第12章A_模型布局与输入控件",
+      "title": "表单基础：模型、布局、文本与选择控件",
+      "section": "12.1–12.4",
+      "book_start": 469,
+      "book_end": 504,
+      "pdf_start": 487,
+      "pdf_end": 522,
+      "questions": [
+        "Q1",
+        "Q2",
+        "E1",
+        "E2",
+        "E3"
+      ]
+    },
+    {
+      "id": "L44",
+      "folder": "L44_第12章B_菜单布局与焦点",
+      "title": "菜单、共享动作与复杂布局：同一操作，多处入口",
+      "section": "12.5–12.6",
+      "book_start": 504,
+      "book_end": 541,
+      "pdf_start": 522,
+      "pdf_end": 559,
+      "questions": [
+        "Q1",
+        "Q2",
+        "E1",
+        "E2",
+        "E3"
+      ]
+    },
+    {
+      "id": "L45",
+      "folder": "L45_第12章C_对话框选择器与排错",
+      "title": "对话框：先分清确认、取消与真正提交",
+      "section": "12.7–12.8",
+      "book_start": 541,
+      "book_end": 579,
+      "pdf_start": 559,
+      "pdf_end": 597,
+      "questions": [
+        "Q1",
+        "Q2",
+        "E1",
+        "E2",
+        "E3"
+      ]
+    },
+    {
+      "id": "L46",
+      "folder": "L46_第13章A_JAR清单资源与密封",
+      "title": "交付一个能搬走的程序：JAR清单、资源与密封",
+      "section": "13.1",
+      "book_start": 580,
+      "book_end": 586,
+      "pdf_start": 598,
+      "pdf_end": 604,
+      "questions": [
+        "Q1",
+        "Q2",
+        "E1",
+        "E2",
+        "E3"
+      ]
+    },
+    {
+      "id": "L47",
+      "folder": "L47_第13章B_配置首选项与服务加载",
+      "title": "配置不是代码：默认值、首选项与插件发现",
+      "section": "13.2–13.3",
+      "book_start": 586,
+      "book_end": 598,
+      "pdf_start": 604,
+      "pdf_end": 616,
+      "questions": [
+        "Q1",
+        "Q2",
+        "E1",
+        "E2",
+        "E3"
+      ]
+    },
+    {
+      "id": "L48",
+      "folder": "L48_第13章C_旧部署阅读与现代交付",
+      "title": "读懂旧部署，完成今天的独立应用交付",
+      "section": "13.4–13.5（历史正文）＋当前JDK适配",
+      "book_start": 598,
+      "book_end": 623,
+      "pdf_start": 616,
+      "pdf_end": 641,
+      "questions": [
+        "Q1",
+        "Q2",
+        "E1",
+        "E2",
+        "E3"
+      ]
+    },
+    {
+      "id": "L49",
+      "folder": "L49_第14章A_线程启动与中断",
+      "title": "一个程序中的多条执行路线：启动、等待与中断",
+      "section": "14.1–14.2",
+      "book_start": 624,
+      "book_end": 635,
+      "pdf_start": 642,
+      "pdf_end": 653,
+      "questions": [
+        "Q1",
+        "Q2",
+        "E1",
+        "E2",
+        "E3"
+      ]
+    },
+    {
+      "id": "L50",
+      "folder": "L50_第14章B_线程状态与属性",
+      "title": "线程是在等谁：状态、守护属性与失败报告",
+      "section": "14.3–14.4",
+      "book_start": 635,
+      "book_end": 640,
+      "pdf_start": 653,
+      "pdf_end": 658,
+      "questions": [
+        "Q1",
+        "Q2",
+        "E1",
+        "E2",
+        "E3"
+      ]
+    },
+    {
+      "id": "L51",
+      "folder": "L51_第14章C_共享状态锁与条件",
+      "title": "共享状态：先守住完整规则，再选择锁和条件",
+      "section": "14.5",
+      "book_start": 640,
+      "book_end": 668,
+      "pdf_start": 658,
+      "pdf_end": 686,
+      "questions": [
+        "Q1",
+        "Q2",
+        "E1",
+        "E2",
+        "E3",
+        "E4"
+      ]
+    },
+    {
+      "id": "L52",
+      "folder": "L52_第14章D_队列原子类与并发集合",
+      "title": "把数据交给谁：阻塞队列、原子更新与并发容器",
+      "section": "14.6–14.7；回接14.5.10",
+      "book_start": 668,
+      "book_end": 681,
+      "pdf_start": 686,
+      "pdf_end": 699,
+      "questions": [
+        "Q1",
+        "Q2",
+        "E1",
+        "E2",
+        "E3",
+        "E4"
+      ]
+    },
+    {
+      "id": "L53",
+      "folder": "L53_第14章E_Future执行器与SwingWorker",
+      "title": "任务有结果以后：Future、执行器、组合与界面后台工作",
+      "section": "14.8–14.11",
+      "book_start": 681,
+      "book_end": 709,
+      "pdf_start": 699,
+      "pdf_end": 727,
+      "questions": [
+        "Q1",
+        "Q2",
+        "E1",
+        "E2",
+        "E3",
+        "E4"
+      ]
+    },
+    {
+      "id": "L54",
+      "folder": "L54_全书综合_学习记录项目",
+      "title": "全书综合：把规则、文件、后台报告装进一个可交付项目",
+      "section": "第4–14章综合（原创项目）",
+      "book_start": 91,
+      "book_end": 709,
+      "pdf_start": 109,
+      "pdf_end": 727,
+      "questions": [
+        "Q1",
+        "Q2",
+        "E1",
+        "E2",
+        "E3"
+      ]
     }
   ],
   "planned_lessons": 60,
   "pdf_pages": 729,
   "offset": 18,
-  "edition": "结构与对象重构版 · 2026-11-02"
+  "edition": "全书陪读优化版 · 2026-11-03"
 }

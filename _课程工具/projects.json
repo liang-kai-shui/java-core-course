@@ -63,5 +63,103 @@
         "target": "campus/app/message.txt"
       }
     ]
+  },
+  {
+    "id": "L17",
+    "root": "L17_第04章G_包边界与文档/code/project",
+    "main": "campus.app.Main",
+    "sources": [
+      "src/campus/model/Counter.java",
+      "src/campus/model/Inspector.java",
+      "src/campus/app/Main.java"
+    ],
+    "library_sources": [],
+    "stdout": "public=4\nsame-package=4\n",
+    "cases": [],
+    "resources": []
+  },
+  {
+    "id": "L46",
+    "root": "L46_第13章A_JAR清单资源与密封/code/project",
+    "main": "campus.app.ResourceMain",
+    "sources": [
+      "src/campus/app/ResourceMain.java"
+    ],
+    "library_sources": [],
+    "stdout": "随箱文字\nsecond line\n",
+    "cases": [],
+    "resources": [
+      {
+        "source": "resources/campus/app/about.txt",
+        "target": "campus/app/about.txt"
+      }
+    ]
+  },
+  {
+    "id": "L47",
+    "root": "L47_第13章B_配置首选项与服务加载/code/project",
+    "main": "campus.app.PluginMain",
+    "sources": [
+      "src/campus/spi/LabelFormatter.java",
+      "src/campus/impl/PlainFormatter.java",
+      "src/campus/impl/BracketFormatter.java",
+      "src/campus/app/PluginMain.java"
+    ],
+    "library_sources": [],
+    "stdout": "[数组]\n",
+    "cases": [
+      {
+        "args": [
+          "循环"
+        ],
+        "stdout": "[循环]\n"
+      }
+    ],
+    "resources": [
+      {
+        "source": "resources/META-INF/services/campus.spi.LabelFormatter",
+        "target": "META-INF/services/campus.spi.LabelFormatter"
+      }
+    ]
+  },
+  {
+    "id": "L48",
+    "root": "L48_第13章C_旧部署阅读与现代交付/code/project",
+    "main": "campus.app.DeployMain",
+    "sources": [
+      "src/campus/app/DeployMain.java"
+    ],
+    "library_sources": [],
+    "stdout": "ready:独立学习窗口\n",
+    "cases": [],
+    "resources": [
+      {
+        "source": "resources/campus/app/title.txt",
+        "target": "campus/app/title.txt"
+      }
+    ]
+  },
+  {
+    "id": "L54",
+    "root": "L54_全书综合_学习记录项目/code/project",
+    "main": "campus.app.Main",
+    "sources": [
+      "src/campus/model/StudyEntry.java",
+      "src/campus/model/StudyBook.java",
+      "src/campus/io/StudyStore.java",
+      "src/campus/report/StudyReport.java",
+      "src/campus/app/Main.java"
+    ],
+    "library_sources": [],
+    "stdout": "entries=3\ncompleted-minutes=50\npending=1\nrestored=3\n",
+    "cases": [
+      {
+        "args": [
+          "--check-errors"
+        ],
+        "stdout": "duplicate-rejected\nnegative-rejected\nunknown-rejected\ninvalid line 2\ninvalid line 1\ninvalid line 1\ninvalid line 2\ninvalid line 1\npreserved=3\nempty=0\nsnapshot-old=true\n"
+      }
+    ],
+    "resources": []
   }
 ]

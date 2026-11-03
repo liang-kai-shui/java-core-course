@@ -19,3 +19,12 @@
 ```powershell
 .\java.ps1 -Source 'L09_第03章G_多重选择与大数值/code/SkipAndStopDemo.java'
 ```
+
+
+## 全部源码入口
+
+这些文件的职责、运行位置与实验见讲义；project子目录文件共同编译，不逐个当main启动。
+
+- [BigNumberDemo.java](BigNumberDemo.java)
+- [MenuDemo.java](MenuDemo.java)
+- [SkipAndStopDemo.java](SkipAndStopDemo.java)
